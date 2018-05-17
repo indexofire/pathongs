@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>k-mer 分析 - My Docs</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">My Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Welcome to MkDocs</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapter 01 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../chapter_01/01_basic-cml/">基本命令</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_01/02_linux-installation/">02 linux installation</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_01/03_linux-administration/">03 linux administration</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_01/04_awk/">用 awk 处理 NGS 数据</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_01/05_bioawk/">Bioawk</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_01/06_python/">06 python</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_01/07_shell/">07 shell</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_01/">Home</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapter 02 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../01_emboss/">01 emboss</a>
+</li>
+                            
+<li >
+    <a href="../02_blast/">Local Blast 使用说明</a>
+</li>
+                            
+<li >
+    <a href="../08_seqkit/">Seqkit 好用的命令行序列处理工具套件</a>
+</li>
+                            
+<li class="active">
+    <a href="./">k-mer 分析</a>
+</li>
+                            
+<li >
+    <a href="../">Home</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapter 04 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../chapter_04/03_bacteria-assembly/">03 bacteria assembly</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_04/04_virus-assembly/">04 virus assembly</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_04/">Home</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapter 05 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../chapter_05/01_prokka/">01 prokka</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_05/02_rast/">02 rast</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_05/03_PGAAP/">03 PGAAP</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_05/">Home</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../08_seqkit/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#k-mer">k-mer 分析</a></li>
+            <li><a href="#conda">通过 conda 安装</a></li>
+            <li><a href="#khmer">khmer 用途</a></li>
+            <li><a href="#python-api">Python API</a></li>
+            <li><a href="#reference">Reference</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="k-mer">k-mer 分析</h1>
+<p><a href="https://github.com/dib-lab/khmer/" title="KhmerM">khmer</a></p>
+<pre><code class="bash">$ pip install khmer
+</code></pre>
+
+<h3 id="conda">通过 conda 安装</h3>
+<p>用 conda 新建一个虚拟环境安装 <a href="https://github.com/dib-lab/khmer/" title="KhmerM">khmer</a>。当前版本为 [2.12][http://khmer.readthedocs.io/en/v2.1.2/]，安装过程还会自动 [screed][https://github.com/dib-lab/screed]（一个轻量级 python 序列数据库工具）。</p>
+<pre><code class="bash">$ conda create -n khmer
+$ conda activate khmer
+(khmer)$ conda install khmer ipython
+</code></pre>
+
+<p><a href="https://github.com/dib-lab/khmer/" title="KhmerM">khmer</a> 有一套命令行工具，可以非常方便的运行使用。另外也可以使用 <a href="https://github.com/dib-lab/khmer/" title="KhmerM">khmer</a> 的 API，编写 python 代码调用。</p>
+<p><strong>load-into-counting.py</strong></p>
+<pre><code class="bash">$ load-into-counting.py -T 4 -k 32 -x 1e8 -N 4 counts R1.fastq.gz
+</code></pre>
+
+<p><strong>normalize-by-median.py</strong></p>
+<p>去除冗余序列。脚本程序将 Fast[A/Q] 格式数据文件列表化，</p>
+<p>脚本输出的序列可以被组装软件比如 SPAdes 等进行序列组装。</p>
+<pre><code class="bash">$ normalize-by-median.py -p -k 21 -o - read.fq output.fq
+</code></pre>
+
+<p><strong>readstats.py</strong></p>
+<p>统计 FASTA/Q 序列信息。</p>
+<pre><code class="bash">$ readstats.py -o R1.output R1.fastq.gz
+$ cat R1.output
+
+found 449472737 bps / 1879073 seqs; 239.2 average length -- R1.fastq.gz
+---------------
+449472737 bp / 1879073 seqs; 239.2 average length -- R1.fastq.gz
+---------------
+449472737 bp / 1879073 seqs; 239.2 average length -- total
+
+</code></pre>
+
+<h2 id="khmer">khmer 用途</h2>
+<p>对 de novo assembly 进行数字均一化进行预处理</p>
+<h2 id="python-api">Python API</h2>
+<pre><code class="bash">$ ipython
+In [1]: import khmer
+In [2]: counts = khmer.Counttable(31, 1e7, 4)
+In [3]: counts.consume_seqfile('R1.fastq.gz')
+(25000, 1150000)
+# 31 是 kmer 长度，1e7 是 table size，4 是 table 数
+# 25000 表示序列数量，高通量测序里即 reads 数。
+# 1150000 表示指定 kmer 切割后特定 kmer 序列数
+In [4]: counts.get('TGACTTTCTTCGCTTCCTGACGGCTTATGCC')
+105
+</code></pre>
+
+<h2 id="reference">Reference</h2>
+<ol>
+<li>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4608353/</li>
+<li>http://khmer.readthedocs.io/en/latest/</li>
+</ol></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/require.js"></script>
+        <script src="../../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>

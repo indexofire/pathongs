@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>病毒基因组组装 - My Docs</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">My Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Welcome to MkDocs</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapter 01 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../chapter_01/01_basic-cml/">基本命令</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_01/02_linux-installation/">02 linux installation</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_01/03_linux-administration/">03 linux administration</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_01/04_awk/">用 awk 处理 NGS 数据</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_01/05_bioawk/">Bioawk</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_01/06_python/">06 python</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_01/07_shell/">07 shell</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_01/">Home</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapter 02 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../chapter_02/01_emboss/">01 emboss</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_02/02_blast/">Local Blast 使用说明</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_02/08_seqkit/">Seqkit 好用的命令行序列处理工具套件</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_02/09_khmer/">k-mer 分析</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_02/">Home</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapter 04 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../03_bacteria-assembly/">细菌基因组短序列拼接拼接</a>
+</li>
+                            
+<li class="active">
+    <a href="./">病毒基因组组装</a>
+</li>
+                            
+<li >
+    <a href="../">Home</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapter 05 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../chapter_05/01_prokka/">01 prokka</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_05/02_rast/">02 rast</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_05/03_PGAAP/">03 PGAAP</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_05/">Home</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../03_bacteria-assembly/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">病毒基因组组装</a></li>
+            <li><a href="#freebayes">采用 freebayes</a></li>
+            <li><a href="#gatk4">采用 GATK4</a></li>
+            <li><a href="#snippy">使用 snippy</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="_1">病毒基因组组装</h1>
+<p>病毒基因组测序有很多方法，这里只针对二代高通量测序数据进行讨论。用二代测病毒基因组有不同的方法，比如对临床样本中已知病毒进行特异性PCR扩增后测序；有些则采用随机引物扩增后再测序，这种方法可以针对未知病毒序列，但由于不同样本（比如临床样本）中含有的干扰核酸较多（如人源DNA等），往往需要实验中进行特殊处理或者生物信息学分析时筛选。</p>
+<p>因此我们只讨论特异性PCR扩增后（类似一代测序）用二代测序分析已知病毒的方法。和细菌单克隆培养物不同，临床样本即使PCR扩增后，</p>
+<p>由于病毒基因组位点变异较明显，但是大片段的异位重组比较少，因此可以采用基于 mapping 的方法获得基因组。</p>
+<p>首先要选择参考序列，由于病毒编译大，我们一般尽可能选择近源的毒株。我么那可以采用 denovo 的方法先获得一个大片段高覆盖的非污染序列，然后 blast 找到近源毒株基因组序列，将其作为参考基因组再使用 mapping 的方法获得测序毒株的基因组。</p>
+<h2 id="freebayes">采用 freebayes</h2>
+<pre><code class="bash">$ spades.py
+$ blast
+$ bwa index ref.fasta
+$ bwa mem
+$ samtools index
+$ samtools
+$ freebayes
+</code></pre>
+
+<h2 id="gatk4">采用 GATK4</h2>
+<pre><code class="bash">$ trimmomatic
+
+# ID:
+# PL: Platform 测序平台，这里数据来自 illumina 平台
+# PU:
+# LB:
+# SM: Sample 样本名称
+$ bwa mem -t 40 -M -Y -R &quot;@RG\tID:S1\tPL:illumina\tPU:\tLB:\tSM:&quot; ref.fasta \
+&gt;
+$ samtools sort -@ 4 -m 16G -O bam -o .sorted.bam
+
+$ gatk MarkDuplicates -I -M -O
+$ samtools index sorted.markdup.bam
+$ gatk BaseRecalibrator -R ref.fasta -I sorted.markdup.bam \
+&gt; -O sorted.markdup.recal.table
+$ gatk ApplyBQSR --bqsr-recal-file sorted.markdup.recal.table -R ref.fasta
+&gt; -I sorted.markdup.bam -O sorted.markdup.BQSR.bam
+$ samtools index
+$ gatk HaplotypeCaller -R ref.fasta -I sorted.markdup.BQSR.bam \
+&gt; -O HC.vcf.gz
+
+# SNP call
+$ gatk VariantRecalibrator
+# Indel call
+
+</code></pre>
+
+<h2 id="snippy">使用 snippy</h2></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/require.js"></script>
+        <script src="../../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/chapter_01/01_basic-cml/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_01/02_linux-installation/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_01/03_linux-administration/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_01/04_awk/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_01/05_bioawk/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_01/06_python/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_01/07_shell/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_01/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/chapter_02/01_emboss/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_02/02_blast/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_02/08_seqkit/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_02/09_khmer/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_02/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/chapter_04/03_bacteria-assembly/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_04/04_virus-assembly/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_04/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/chapter_05/01_prokka/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_05/02_rast/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_05/03_PGAAP/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/chapter_05/</loc>
+     <lastmod>2018-05-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+</urlset>

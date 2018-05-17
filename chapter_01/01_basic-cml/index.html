@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>基本命令 - My Docs</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">My Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Welcome to MkDocs</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapter 01 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li class="active">
+    <a href="./">基本命令</a>
+</li>
+                            
+<li >
+    <a href="../02_linux-installation/">02 linux installation</a>
+</li>
+                            
+<li >
+    <a href="../03_linux-administration/">03 linux administration</a>
+</li>
+                            
+<li >
+    <a href="../04_awk/">04 awk</a>
+</li>
+                            
+<li >
+    <a href="../05_bioawk/">05 bioawk</a>
+</li>
+                            
+<li >
+    <a href="../06_python/">06 python</a>
+</li>
+                            
+<li >
+    <a href="../07_shell/">07 shell</a>
+</li>
+                            
+<li >
+    <a href="../">Home</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapter 02 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../chapter_02/01_emboss/">01 emboss</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_02/02_blast/">02 blast</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_02/08_seqkit/">08 seqkit</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_02/09_khmer/">09 khmer</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_02/">Home</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapter 04 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../chapter_04/03_bacteria-assembly/">03 bacteria assembly</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_04/04_virus-assembly/">04 virus assembly</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_04/">Home</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chapter 05 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../chapter_05/01_prokka/">01 prokka</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_05/02_rast/">02 rast</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_05/03_PGAAP/">03 PGAAP</a>
+</li>
+                            
+<li >
+    <a href="../../chapter_05/">Home</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../..">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../02_linux-installation/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">基本命令</a></li>
+            <li><a href="#_2">文件操作</a></li>
+            <li><a href="#_3">输出文件头尾部内容</a></li>
+            <li><a href="#_4">压缩/解压缩</a></li>
+            <li><a href="#_5">客户端与服务器端交互</a></li>
+            <li><a href="#reference">Reference</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="_1">基本命令</h1>
+<p>笔记中使用许多 Linux 命令行，这里做一个快速笔记以备查询。以 bash 为例。其他的 shell 比如 csh, tcsh 等大部分命令和参数都是一致的。</p>
+<h2 id="_2">文件操作</h2>
+<ul>
+<li><code>ls</code>: 列出文件夹的文件</li>
+</ul>
+<pre><code class="bash"># 显示 '~/data' 文件夹里的文件
+$ ls ~/data
+
+# 显示包括隐含文件的 '~/data' 文件夹里的所有文件
+$ ls -la ~/data
+
+# 文件按照时间排序
+$ ls -t ~/data
+
+# 查看所有 fastq 文件
+$ ls ~/data/*.fastq
+</code></pre>
+
+<ul>
+<li><code>cd</code>: 改变文件夹</li>
+</ul>
+<pre><code class="bash"># 从当前文件夹 '~/data' 更换到 '~/app' 文件夹
+~/data$ cd ~/app
+
+# 从任何位置切换回用户主目录 '/home/User'
+$ cd
+
+# 回退上一个访问目录
+$ cd -
+
+# 返回上一级目录
+$ cd ..
+
+# 返回多级目录冰前往另一个文件夹，这里 '\' 是转义符，将空格键正确转义
+$ cd ../../../new\ directory
+</code></pre>
+
+<ul>
+<li><code>pwd</code>: 显示当前目录</li>
+</ul>
+<pre><code class="bash"># 当不知道当前处于什么路径时，可以用这个命令显示
+$ pwd
+</code></pre>
+
+<ul>
+<li><code>mkdir</code>: 建立新文件夹</li>
+</ul>
+<pre><code class="bash"># 当前路径下新建一个名叫 'new' 的文件夹
+$ mkdir new
+</code></pre>
+
+<ul>
+<li><code>rmdir</code>: 删除文件夹</li>
+</ul>
+<pre><code class="bash"># 删除当前路径的文件夹 'new'
+$ rmdir new
+</code></pre>
+
+<ul>
+<li><code>rm</code>: 删除文件</li>
+</ul>
+<pre><code class="bash"># 删除当前文件夹的所有后缀是 '.sra' 的文件
+$ rm *.sra
+
+# 删除文件夹 'new' 以及 'new' 下的所有子文件与子目录
+$ rm -R new
+
+# 不弹出删除确认提示，删除所有 '.tmp' 文件
+$ rm -f *.tmp
+</code></pre>
+
+<ul>
+<li><code>cp</code>: 复制文件</li>
+</ul>
+<pre><code class="bash"># 复制 'test.txt' 文件到文件夹 '~/abc' 中
+$ cp test.txt ~/abc
+</code></pre>
+
+<ul>
+<li><code>mv</code>: 移动文件或文件夹</li>
+</ul>
+<pre><code class="bash"># 移动 'test.txt' 文件到文件夹 '~/abc' 中并改名叫 'test1.txt'
+$ mv test.txt ~/abc/test1.txt
+</code></pre>
+
+<ul>
+<li><code>which</code>: 查找可执行文件的系统路径</li>
+</ul>
+<pre><code class="bash"># 打印出系统带的 python 程序的路径
+$ which python
+</code></pre>
+
+<ul>
+<li><code>wc</code>: 统计一个文件的行，字符和字节数</li>
+</ul>
+<pre><code class="bash"># 输出文件 'text.txt' 的行数，字符数和字节数。
+$ wc text.txt
+</code></pre>
+
+<ul>
+<li><code>find</code>: 查找文件</li>
+</ul>
+<pre><code class="bash"># 查找一个文件，比如 .bashrc, /etc路径下的hosts文件
+$ find .bashrc
+$ find /etc/hosts
+
+# 查找当前目录及子目录后缀为gz的文件
+$ find . -type f -name &quot;*.gz&quot;
+
+# 查找子目录深度为4层目录的fasta文件
+$ find . -type f -maxdepth 4 -name &quot;*.fasta&quot;
+
+# 查找/var/log路径下权限为755的目录
+$ find /var/log -type d -perm 755
+
+# 按照用户查找用户，在tmp路径下查找属于用户 nginx 的文件
+$ find /tmp -user nginx
+# 用户主home路径下查找属于 root 权限，属性为644的文件
+$ find . -user root -perm 644
+</code></pre>
+
+<ul>
+<li><code>ps</code>: 查看系统进程</li>
+</ul>
+<pre><code class="bash">#ps会在终端打印系统进程，各列的含义是:
+
+* USER: 运行该进程的用户
+* PID: 运行着的命令(CMD)的进程编号
+* %CPU: CPU占用
+* %MEM: 内存占用
+* VSC:
+* RSS:
+* TTY: 命令所运行的位置（终端）
+* STAT:
+* TIME: 运行着的该命令所占用的CPU处理时间
+* COMMAND: 该进程所运行的命令
+</code></pre>
+
+<pre><code class="bash"># 显示详细的进程信息
+$ ps -waux
+
+# 过滤用户root的进程
+$ ps -u root
+
+# 根据不同参数使用来排序进程，并只现实排名前10的进程
+$ ps -aux --sort -pcpu | head -n 11
+$ ps -aux --sort -pmem | head -n 11
+$ ps -aux --sort -pcpu,+pmem | head -n 11
+
+# 过滤进程名
+$ ps -f -C chrome
+
+# 根据PID过滤
+$ ps -L 1000
+
+# 树形现实进程
+$ ps -axjf
+</code></pre>
+
+<h2 id="_3">输出文件头尾部内容</h2>
+<p>操作大文件如fastq测序原始数据，常常不需要将几百M甚至上G的数据全部写入到内存打开文件，只需要了解头部数据即可。用head就非常轻便。head默认输出前10行内容。</p>
+<pre><code class="bash"># 输出文件前5行内容
+$ head -5 text.txt
+</code></pre>
+
+<ul>
+<li><code>tail</code>: 输出文件尾部内容</li>
+</ul>
+<pre><code class="bash"># 输出文件的最后5行内容
+$ tail -5 text.txt
+</code></pre>
+
+<ul>
+<li><code>cat</code>: 输出文件内容</li>
+</ul>
+<pre><code class="bash"># 显示文件 'text.txt' 内容
+$ cat text.txt
+</code></pre>
+
+<ul>
+<li><code>nl</code>: 将文件标行</li>
+</ul>
+<pre><code class="bash">$ cat text.txt | nl
+</code></pre>
+
+<ul>
+<li><code>grep</code>: 截取输入字符的选定 pattern 并输出所在的行</li>
+</ul>
+<p>虽然很多发行版用egrep代替grep，但是其对正则表达式的支持还是不够优秀，所以常用awk代替grep来进行模式匹配。</p>
+<pre><code class="bash"># 显示文件 'text.txt' 中含有字符 'abc' 的行
+$ cat text.txt | grep 'abc'
+$ awk '/abc/' text.txt
+</code></pre>
+
+<h2 id="_4">压缩/解压缩</h2>
+<pre><code class="bash"># 压缩文件 foo 或者文件夹 foo 成为一个 foo.tar.gz 压缩包
+$ tar -zcf foo.tar.gz foo
+
+# 解压缩文件 foo.tar.gz
+$ tar -zxf foo.tar.gz
+</code></pre>
+
+<h2 id="_5">客户端与服务器端交互</h2>
+<ol>
+<li>ssh 登录服务器</li>
+</ol>
+<pre><code class="bash"># server_ip为所要登录服务器ip
+$ ssh user@server_ip
+$ ssh mark@10.44.35.122
+</code></pre>
+
+<ol>
+<li>客户端与服务器端拷贝文件</li>
+</ol>
+<p>这里以客户端操作为例，服务器ip假设为10.44.35.122</p>
+<pre><code class="bash"># 从服务器拷贝文件 /data/1.fasta 到本地
+$ scp mark@10.44.35.122:/data/1.fasta .
+# 从本地上传文件 2.fasta 到服务器/data
+$ scp 2.fasta mark@10.44.35.122:/data/2.fasta
+</code></pre>
+
+<p>简单的传输单个文件用scp还算方便，但如果频繁交互，或者需要可视化界面来操作，我们需要更方便的工具，这里推荐 sshfs</p>
+<pre><code class="bash"># 挂载服务器 /data 到本地linux机器的 ~/server 目录。
+$ sshfs mark@10.44.35.122:/data ~/server -o idmap=user -o allow_other
+</code></pre>
+
+<p>对于win平台用户，简单的ssh登录工具常用的如putty，如果要上下传文件，也可以搭建ftp服务来实现。</p>
+<ol>
+<li>rsync</li>
+</ol>
+<p>rsync命令是一个远程数据同步工具，可快速同步多台主机间的文件。rsync使用所谓的“rsync算法”来使本地和远程两个主机之间的文件达到同步，这个算法只传送两个文件的不同部分，而不是每次都整份传送，因此速度相当快。</p>
+<pre><code class="bash">$ rsync -avz user@server_ip:/data/* /data
+$ rsync -av ~/test.py user@server_ip::/home/user
+</code></pre>
+
+<h2 id="reference">Reference</h2>
+<ol>
+<li>http://linoxide.com/how-tos/linux-ps-command-examples/</li>
+<li>https://commandlinefu.cn/</li>
+</ol></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/require.js"></script>
+        <script src="../../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>
