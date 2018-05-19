@@ -10,7 +10,13 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
+        <meta name="description" content="病原微生物高通量测序数据分析手册">
       
+      
+        <link rel="canonical" href="https://indexofire.github.io/pathongs/chapter_05/01_prokka/">
+      
+      
+        <meta name="author" content="Mark Renton">
       
       
         <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -36,7 +42,7 @@
     
     
       
-        <title>Prokka - My Docs</title>
+        <title>01. Prokka 快速注释 - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -79,7 +85,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="My Docs" class="md-header-nav__button md-logo">
+        <a href="https://indexofire.github.io/pathongs" title="Pathogen NGS 数据分析入门" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -93,10 +99,10 @@
           
             
               <span class="md-header-nav__topic">
-                My Docs
+                Pathogen NGS 数据分析入门
               </span>
               <span class="md-header-nav__topic">
-                Prokka
+                01. Prokka 快速注释
               </span>
             
           
@@ -156,7 +162,7 @@
         <i class="md-icon"></i>
       
     </span>
-    My Docs
+    Pathogen NGS 数据分析入门
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -167,8 +173,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Welcome to MkDocs" class="md-nav__link">
-      Welcome to MkDocs
+    <a href="../.." title="前言" class="md-nav__link">
+      前言
     </a>
   </li>
 
@@ -183,11 +189,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      Chapter 01
+      第一章 数据获取与质控
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        Chapter 01
+        第一章 数据获取与质控
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -198,8 +204,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/01_basic-cml/" title="基本命令" class="md-nav__link">
-      基本命令
+    <a href="../../chapter_01/01_basic-cml/" title="01. Linux 系统操作基本命令" class="md-nav__link">
+      01. Linux 系统操作基本命令
     </a>
   </li>
 
@@ -210,8 +216,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/02_linux-installation/" title="02 linux installation" class="md-nav__link">
-      02 linux installation
+    <a href="../../chapter_01/02_linux-installation/" title="02. Linux 安装实例" class="md-nav__link">
+      02. Linux 安装实例
     </a>
   </li>
 
@@ -222,8 +228,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/03_linux-administration/" title="03 linux administration" class="md-nav__link">
-      03 linux administration
+    <a href="../../chapter_01/03_linux-administration/" title="03. Linux 系统管理" class="md-nav__link">
+      03. Linux 系统管理
     </a>
   </li>
 
@@ -234,8 +240,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/04_awk/" title="用 awk 处理 NGS 数据" class="md-nav__link">
-      用 awk 处理 NGS 数据
+    <a href="../../chapter_01/04_awk/" title="04. 数据处理常用工具之 awk" class="md-nav__link">
+      04. 数据处理常用工具之 awk
     </a>
   </li>
 
@@ -246,8 +252,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/05_bioawk/" title="Bioawk" class="md-nav__link">
-      Bioawk
+    <a href="../../chapter_01/05_bioawk/" title="05. 测序数据工具 bioawk" class="md-nav__link">
+      05. 测序数据工具 bioawk
     </a>
   </li>
 
@@ -258,8 +264,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/06_python/" title="06 python" class="md-nav__link">
-      06 python
+    <a href="../../chapter_01/06_python/" title="06. 了解 Python 生活轻松一点" class="md-nav__link">
+      06. 了解 Python 生活轻松一点
     </a>
   </li>
 
@@ -270,20 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/07_shell/" title="07 shell" class="md-nav__link">
-      07 shell
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../chapter_01/" title="Home" class="md-nav__link">
-      Home
+    <a href="../../chapter_01/07_shell/" title="07. 生信分析要学一点 shell" class="md-nav__link">
+      07. 生信分析要学一点 shell
     </a>
   </li>
 
@@ -303,11 +297,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Chapter 02
+      第二章 序列处理
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Chapter 02
+        第二章 序列处理
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -318,8 +312,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_02/01_emboss/" title="01 emboss" class="md-nav__link">
-      01 emboss
+    <a href="../../chapter_02/01_emboss/" title="01. EMBOSS 工具集" class="md-nav__link">
+      01. EMBOSS 工具集
     </a>
   </li>
 
@@ -330,8 +324,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_02/02_blast/" title="Local Blast 使用说明" class="md-nav__link">
-      Local Blast 使用说明
+    <a href="../../chapter_02/02_blast/" title="02. Blast 与 Blast+" class="md-nav__link">
+      02. Blast 与 Blast+
     </a>
   </li>
 
@@ -342,8 +336,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_02/08_seqkit/" title="Seqkit 好用的命令行序列处理工具套件" class="md-nav__link">
-      Seqkit 好用的命令行序列处理工具套件
+    <a href="../../chapter_02/08_seqkit/" title="03. 国产序列处理神器 SeqKit" class="md-nav__link">
+      03. 国产序列处理神器 SeqKit
     </a>
   </li>
 
@@ -354,20 +348,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_02/09_khmer/" title="k-mer 分析" class="md-nav__link">
-      k-mer 分析
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../chapter_02/" title="Home" class="md-nav__link">
-      Home
+    <a href="../../chapter_02/09_kmer/" title="04. K-mer 处理工具" class="md-nav__link">
+      04. K-mer 处理工具
     </a>
   </li>
 
@@ -387,11 +369,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Chapter 04
+      第四章 基因组组装
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Chapter 04
+        第四章 基因组组装
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -402,8 +384,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_04/03_bacteria-assembly/" title="细菌基因组短序列拼接拼接" class="md-nav__link">
-      细菌基因组短序列拼接拼接
+    <a href="../../chapter_04/03_bacteria-assembly/" title="03. 细菌基因组组装" class="md-nav__link">
+      03. 细菌基因组组装
     </a>
   </li>
 
@@ -414,20 +396,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_04/04_virus-assembly/" title="病毒基因组组装" class="md-nav__link">
-      病毒基因组组装
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../chapter_04/" title="Home" class="md-nav__link">
-      Home
+    <a href="../../chapter_04/04_virus-assembly/" title="04. 病毒基因组组装" class="md-nav__link">
+      04. 病毒基因组组装
     </a>
   </li>
 
@@ -449,11 +419,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
-      Chapter 05
+      第五章 基因组序列注释
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
-        Chapter 05
+        第五章 基因组序列注释
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -473,11 +443,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Prokka
+        01. Prokka 快速注释
       </label>
     
-    <a href="./" title="Prokka" class="md-nav__link md-nav__link--active">
-      Prokka
+    <a href="./" title="01. Prokka 快速注释" class="md-nav__link md-nav__link--active">
+      01. Prokka 快速注释
     </a>
     
       
@@ -561,8 +531,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../02_rast/" title="02 rast" class="md-nav__link">
-      02 rast
+    <a href="../02_rast/" title="02. rast" class="md-nav__link">
+      02. rast
     </a>
   </li>
 
@@ -573,8 +543,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../03_PGAAP/" title="03 PGAAP" class="md-nav__link">
-      03 PGAAP
+    <a href="../03_PGAAP/" title="03. PGAAP" class="md-nav__link">
+      03. PGAAP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      第十章 基因组分析实践
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        第十章 基因组分析实践
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_10/01_trace-Pae-from-different-source-by-SNP/" title="10.1 铜绿假单胞菌不同来源株SNP溯源" class="md-nav__link">
+      10.1 铜绿假单胞菌不同来源株SNP溯源
     </a>
   </li>
 
@@ -585,8 +591,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Home" class="md-nav__link">
-      Home
+    <a href="../../chapter_10/02_comparative-analysis-Ban-genomes/" title="10.2 炭疽芽胞杆菌比较基因组学研究" class="md-nav__link">
+      10.2 炭疽芽胞杆菌比较基因组学研究
     </a>
   </li>
 
@@ -687,94 +693,94 @@
               
                 
                 
-                <h1 id="prokka">Prokka</h1>
+                <h1 id="prokka">Prokka<a class="headerlink" href="#prokka" title="Permanent link">&para;</a></h1>
 <p><a href="https://github.com/tseemann/prokka" title="Prokka">Prokka</a> 是一个原核物种基因组注释工具，由墨尔本大学生物信息学家 <a href="https://tseemann.github.io/">Torsten Seemann</a> 开发的基于命令行的本地快速注释工具，主要用来注释小基因组比如细菌、病毒等。</p>
-<h2 id="prokka_1">安装 <a href="https://github.com/tseemann/prokka" title="Prokka">Prokka</a></h2>
-<h3 id="1">1. 编译包安装</h3>
+<h2 id="prokka_1">安装 <a href="https://github.com/tseemann/prokka" title="Prokka">Prokka</a><a class="headerlink" href="#prokka_1" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 编译包安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>如果下载预编译包安装的话，需要有Bioperl支持。以及一些第三方库和软件的支持。</p>
 <p><strong>安装 Bioperl</strong></p>
-<pre><code class="bash">$ sudo apt-get install cpanminus
+<div class="codehilite"><pre><span></span>$ sudo apt-get install cpanminus
 $ cpanm Bio::Perl XML::Simple
-</code></pre>
+</pre></div>
 
 <p><strong>安装其他依赖</strong></p>
-<pre><code class="bash">$ sudo apt-get install libdatetime-perl libxml-simple-perl libdigest-md5-perl git default-jre bioperl
-</code></pre>
+<div class="codehilite"><pre><span></span>$ sudo apt-get install libdatetime-perl libxml-simple-perl libdigest-md5-perl git default-jre bioperl
+</pre></div>
 
 <p><strong>安装 rRNA 注释功能</strong></p>
 <p>这里选择 Barrnap 和 MINCED</p>
-<pre><code class="bash">$ wget http://www.vicbioinformatics.com/barrnap-0.6.tar.gz
+<div class="codehilite"><pre><span></span>$ wget http://www.vicbioinformatics.com/barrnap-0.6.tar.gz
 $ tar zxvf barrnap-0.5.tar.gz -C ~/app/
-$ echo &quot;export PATH=$PATH:$HOME/app/barrnap-0.6/bin&quot; &gt;&gt; ~/.bashrc
-$ source ~/.bashrc
+$ <span class="nb">echo</span> <span class="s2">&quot;export PATH=</span><span class="nv">$PATH</span><span class="s2">:</span><span class="nv">$HOME</span><span class="s2">/app/barrnap-0.6/bin&quot;</span> &gt;&gt; ~/.bashrc
+$ <span class="nb">source</span> ~/.bashrc
 
 $ wget https://github.com/ctSkennerton/minced/releases/download/0.3.0/minced
 $ sudo cp minced /usr/local/sbin
-</code></pre>
+</pre></div>
 
 <p><strong>安装 ncRNA 注释功能</strong></p>
 <p>使用 infernal</p>
-<pre><code class="bash">$ wget http://eddylab.org/infernal/infernal-1.1.2.tar.gz
+<div class="codehilite"><pre><span></span>$ wget http://eddylab.org/infernal/infernal-1.1.2.tar.gz
 $ tar zxvf infernal-1.1.2.tar.gz -C ~/app/
-$ echo &quot;export PATH=$PATH:$HOME/app/infernal-1.1.2&quot;
-</code></pre>
+$ <span class="nb">echo</span> <span class="s2">&quot;export PATH=</span><span class="nv">$PATH</span><span class="s2">:</span><span class="nv">$HOME</span><span class="s2">/app/infernal-1.1.2&quot;</span>
+</pre></div>
 
 <p><strong>安装 prokka</strong></p>
-<pre><code class="bash">$ wget http://www.vicbioinformatics.com/prokka-1.12.tar.gz
+<div class="codehilite"><pre><span></span>$ wget http://www.vicbioinformatics.com/prokka-1.12.tar.gz
 $ tar zxvf prokka-1.12.tar.gz -C ~/app
-$ echo &quot;export PATH=$PATH:$HOME/app/prokka-1.12/bin&quot; &gt;&gt; ~/.bashrc
-$ source ~/.bashrc
+$ <span class="nb">echo</span> <span class="s2">&quot;export PATH=</span><span class="nv">$PATH</span><span class="s2">:</span><span class="nv">$HOME</span><span class="s2">/app/prokka-1.12/bin&quot;</span> &gt;&gt; ~/.bashrc
+$ <span class="nb">source</span> ~/.bashrc
 $ prokka --setupdb
-</code></pre>
+</pre></div>
 
 <p>如果要使用 --gram 功能，需要安装 <a href="http://www.cbs.dtu.dk/services/SignalP/">signalp</a>。<a href="http://www.cbs.dtu.dk/services/SignalP/">signalp</a> 是 <a href="http://www.cbs.dtu.dk/index.html">DTU 大学生物及卫生信息学系</a>开发，支持web界面的工具。命令行版本需要提供非商业ISP提供的邮箱帐号注册以后才能下载（比如政府或大学）。点击<a href="http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?signalp">这里</a>。</p>
-<h3 id="2-conda">2. conda 安装</h3>
-<pre><code class="bash">$ conda create -n prokka
+<h3 id="2-conda">2. conda 安装<a class="headerlink" href="#2-conda" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>$ conda create -n prokka
 $ conda activate prokka
-(prokka)$ conda install prokka
-</code></pre>
+<span class="o">(</span>prokka<span class="o">)</span>$ conda install prokka
+</pre></div>
 
-<h2 id="prokka_2">使用 Prokka</h2>
+<h2 id="prokka_2">使用 Prokka<a class="headerlink" href="#prokka_2" title="Permanent link">&para;</a></h2>
 <p>要想注释fasta文件，最简单的方式，不填加任何参数就可以获得。所有的结果会放在</p>
-<pre><code class="bash"># 下载基因组数据
-$ esearch -db nuccore -query &quot;1639[txid] AND egd&quot; | efetch -format fasta &gt; egd.fasta
+<div class="codehilite"><pre><span></span><span class="c1"># 下载基因组数据</span>
+$ esearch -db nuccore -query <span class="s2">&quot;1639[txid] AND egd&quot;</span> <span class="p">|</span> efetch -format fasta &gt; egd.fasta
 
-# 注释数据
+<span class="c1"># 注释数据</span>
 $ prokka egd.fasta
-</code></pre>
+</pre></div>
 
-<p>通过添加<code>--listdb</code>可以查看数据库信息。</p>
-<pre><code class="bash"># 查看可以使用的数据库
+<p>通过添加<code class="codehilite">--listdb</code>可以查看数据库信息。</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 查看可以使用的数据库</span>
 $ prokka --listdb
 
-Looking for databases in: ...
+Looking <span class="k">for</span> databases in: ...
 * Kingdoms: Archaea Bacteria Mitochondria Viruses
 * Genera: Enterococcus Escherichia Staphylococcus
 * HMMs: HAMAP
 * CMs: Bacteria Viruses
-</code></pre>
+</pre></div>
 
 <p>如果需要比较完整的进行序列注释，结果可以比较方便的用来提交的话，可以添加相应的参数来规范注释以及调用不同的工具扫描ncRNA等。</p>
-<pre><code class="bash"># 注释 Listeria monocytogenes 标准株 egd
-$ prokka --outdir egd --prefix egd --addgenes --addmrna --compliant --centre CDC --genus Listeria --species &quot;Listeria monocytogenes&quot; --strain egd
---kingdom Bacteria --usegenus --cpus 4 --rfam --rnammer --force egd.fasta
+<div class="codehilite"><pre><span></span><span class="c1"># 注释 Listeria monocytogenes 标准株 egd</span>
+$ prokka --outdir egd --prefix egd --addgenes --addmrna --compliant --centre CDC --genus Listeria --species <span class="s2">&quot;Listeria monocytogenes&quot;</span> --strain egd
+--kingdom Bacteria --usegenus --cpus <span class="m">4</span> --rfam --rnammer --force egd.fasta
 
-# 生成结果注释文件
-$ ls -l egd | awk '{print $9}'
+<span class="c1"># 生成结果注释文件</span>
+$ ls -l egd <span class="p">|</span> awk <span class="s1">&#39;{print $9}&#39;</span>
 
-egd.err     # prokka 对注释结果存在的一些疑问进行报告的信息
-egd.faa     # 注释的氨基酸序列
-egd.ffn     # 注释的碱基序列
-egd.fna     # 以 NCBI gnl|centre| 为ID命名的碱基序列文件
-egd.fsa     # 以 NCBI gnl|centre| 为ID命名的碱基序列文件
-egd.gbk     # genbank 格式的注释文件
-egd.gff     # gff 格式的注释文件
-egd.log     # prokka 运行日志
-egd.sqn     # sqn 格式的文件，可以用来提交到 NCBI
-egd.tbl     # tbl 格式的文件，可以用来提交到 NCBI
-egd.tsv     # tsv 格式文件，
-egd.txt     # prokka 注释的各种类型序列统计信息
-</code></pre>
+egd.err     <span class="c1"># prokka 对注释结果存在的一些疑问进行报告的信息</span>
+egd.faa     <span class="c1"># 注释的氨基酸序列</span>
+egd.ffn     <span class="c1"># 注释的碱基序列</span>
+egd.fna     <span class="c1"># 以 NCBI gnl|centre| 为ID命名的碱基序列文件</span>
+egd.fsa     <span class="c1"># 以 NCBI gnl|centre| 为ID命名的碱基序列文件</span>
+egd.gbk     <span class="c1"># genbank 格式的注释文件</span>
+egd.gff     <span class="c1"># gff 格式的注释文件</span>
+egd.log     <span class="c1"># prokka 运行日志</span>
+egd.sqn     <span class="c1"># sqn 格式的文件，可以用来提交到 NCBI</span>
+egd.tbl     <span class="c1"># tbl 格式的文件，可以用来提交到 NCBI</span>
+egd.tsv     <span class="c1"># tsv 格式文件，</span>
+egd.txt     <span class="c1"># prokka 注释的各种类型序列统计信息</span>
+</pre></div>
 
 <p><strong>--kingdom</strong></p>
 <p>默认注释的是细菌基因组，如果是其他物种则要添加这个参数。可选项有：</p>
@@ -785,34 +791,34 @@ egd.txt     # prokka 注释的各种类型序列统计信息
 <li>Viruses</li>
 </ul>
 <p>比如要注释病毒基因组：</p>
-<pre><code class="bash">$ prokka --kingdom Viruses contigs.fasta
-</code></pre>
+<div class="codehilite"><pre><span></span>$ prokka --kingdom Viruses contigs.fasta
+</pre></div>
 
-<h3 id="err">.err 文件</h3>
-<h3 id="tsv">.tsv 文件</h3>
-<p>tsv 文件按照 locus_tag 顺序排序了注释的结果。字段包括<code>locus_tag</code>, <code>ftype</code>, <code>length_bp</code>, <code>gene</code>, <code>EC_number</code>, <code>COG</code>, <code>product</code>。</p>
-<pre><code class="bash">$ head egd.tsv
+<h3 id="err">.err 文件<a class="headerlink" href="#err" title="Permanent link">&para;</a></h3>
+<h3 id="tsv">.tsv 文件<a class="headerlink" href="#tsv" title="Permanent link">&para;</a></h3>
+<p>tsv 文件按照 locus_tag 顺序排序了注释的结果。字段包括<code class="codehilite">locus_tag</code>, <code class="codehilite">ftype</code>, <code class="codehilite">length_bp</code>, <code class="codehilite">gene</code>, <code class="codehilite">EC_number</code>, <code class="codehilite">COG</code>, <code class="codehilite">product</code>。</p>
+<div class="codehilite"><pre><span></span>$ head egd.tsv
 locus_tag       ftype   length_bp       gene    EC_number       COG     product
-DJECODEN_00001  CDS     1356    dnaA            COG0593 Chromosomal replication initiator protein DnaA
-DJECODEN_00001  gene    1356    dnaA
-DJECODEN_00001  mRNA    1356    dnaA
-DJECODEN_00002  CDS     1146    dnaN            COG0592 Beta sliding clamp
-DJECODEN_00002  gene    1146    dnaN
-DJECODEN_00002  mRNA    1146    dnaN
-DJECODEN_00003  CDS     1344    yeeO_1          COG0534 putative FMN/FAD exporter YeeO
-DJECODEN_00003  gene    1344    yeeO_1
-DJECODEN_00003  mRNA    1344    yeeO_1
-</code></pre>
+DJECODEN_00001  CDS     <span class="m">1356</span>    dnaA            COG0593 Chromosomal replication initiator protein DnaA
+DJECODEN_00001  gene    <span class="m">1356</span>    dnaA
+DJECODEN_00001  mRNA    <span class="m">1356</span>    dnaA
+DJECODEN_00002  CDS     <span class="m">1146</span>    dnaN            COG0592 Beta sliding clamp
+DJECODEN_00002  gene    <span class="m">1146</span>    dnaN
+DJECODEN_00002  mRNA    <span class="m">1146</span>    dnaN
+DJECODEN_00003  CDS     <span class="m">1344</span>    yeeO_1          COG0534 putative FMN/FAD exporter YeeO
+DJECODEN_00003  gene    <span class="m">1344</span>    yeeO_1
+DJECODEN_00003  mRNA    <span class="m">1344</span>    yeeO_1
+</pre></div>
 
-<pre><code class="bash"># 注释CDS长度排序
-$ awk '/CDS/ {print $0}' egd.tsv | sort -n -k3 -r | less
+<div class="codehilite"><pre><span></span><span class="c1"># 注释CDS长度排序</span>
+$ awk <span class="s1">&#39;/CDS/ {print $0}&#39;</span> egd.tsv <span class="p">|</span> sort -n -k3 -r <span class="p">|</span> less
 
-# 显示所有的不重复注释产物
-$ awk '!a[$1]++{print}' egd.tsv
+<span class="c1"># 显示所有的不重复注释产物</span>
+$ awk <span class="s1">&#39;!a[$1]++{print}&#39;</span> egd.tsv
 
-# 显示所有COG注释
-$ awk '/COG/' egd.tsv
-</code></pre>
+<span class="c1"># 显示所有COG注释</span>
+$ awk <span class="s1">&#39;/COG/&#39;</span> egd.tsv
+</pre></div>
                 
                   
                 
@@ -833,7 +839,7 @@ $ awk '/COG/' egd.tsv
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../chapter_04/" title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../chapter_04/04_virus-assembly/" title="04. 病毒基因组组装" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -842,19 +848,19 @@ $ awk '/COG/' egd.tsv
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                04. 病毒基因组组装
               </span>
             </div>
           </a>
         
         
-          <a href="../02_rast/" title="02 rast" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../02_rast/" title="02. rast" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                02 rast
+                02. rast
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -868,6 +874,10 @@ $ awk '/COG/' egd.tsv
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2018 HZCDC@Lab
+          </div>
         
         powered by
         <a href="http://www.mkdocs.org">MkDocs</a>
@@ -887,6 +897,16 @@ $ awk '/COG/' egd.tsv
       <script src="../../assets/javascripts/application.b438e6c5.js"></script>
       
       <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+      
+        <script src="../../assets/js/umlconvert.js"></script>
       
     
     

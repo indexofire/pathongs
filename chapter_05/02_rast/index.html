@@ -10,7 +10,13 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
+        <meta name="description" content="病原微生物高通量测序数据分析手册">
       
+      
+        <link rel="canonical" href="https://indexofire.github.io/pathongs/chapter_05/02_rast/">
+      
+      
+        <meta name="author" content="Mark Renton">
       
       
         <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -36,7 +42,7 @@
     
     
       
-        <title>02 rast - My Docs</title>
+        <title>02. rast - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -75,7 +81,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="My Docs" class="md-header-nav__button md-logo">
+        <a href="https://indexofire.github.io/pathongs" title="Pathogen NGS 数据分析入门" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -89,10 +95,10 @@
           
             
               <span class="md-header-nav__topic">
-                My Docs
+                Pathogen NGS 数据分析入门
               </span>
               <span class="md-header-nav__topic">
-                02 rast
+                02. rast
               </span>
             
           
@@ -152,7 +158,7 @@
         <i class="md-icon"></i>
       
     </span>
-    My Docs
+    Pathogen NGS 数据分析入门
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -163,8 +169,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Welcome to MkDocs" class="md-nav__link">
-      Welcome to MkDocs
+    <a href="../.." title="前言" class="md-nav__link">
+      前言
     </a>
   </li>
 
@@ -179,11 +185,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      Chapter 01
+      第一章 数据获取与质控
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        Chapter 01
+        第一章 数据获取与质控
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -194,8 +200,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/01_basic-cml/" title="基本命令" class="md-nav__link">
-      基本命令
+    <a href="../../chapter_01/01_basic-cml/" title="01. Linux 系统操作基本命令" class="md-nav__link">
+      01. Linux 系统操作基本命令
     </a>
   </li>
 
@@ -206,8 +212,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/02_linux-installation/" title="02 linux installation" class="md-nav__link">
-      02 linux installation
+    <a href="../../chapter_01/02_linux-installation/" title="02. Linux 安装实例" class="md-nav__link">
+      02. Linux 安装实例
     </a>
   </li>
 
@@ -218,8 +224,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/03_linux-administration/" title="03 linux administration" class="md-nav__link">
-      03 linux administration
+    <a href="../../chapter_01/03_linux-administration/" title="03. Linux 系统管理" class="md-nav__link">
+      03. Linux 系统管理
     </a>
   </li>
 
@@ -230,8 +236,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/04_awk/" title="用 awk 处理 NGS 数据" class="md-nav__link">
-      用 awk 处理 NGS 数据
+    <a href="../../chapter_01/04_awk/" title="04. 数据处理常用工具之 awk" class="md-nav__link">
+      04. 数据处理常用工具之 awk
     </a>
   </li>
 
@@ -242,8 +248,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/05_bioawk/" title="Bioawk" class="md-nav__link">
-      Bioawk
+    <a href="../../chapter_01/05_bioawk/" title="05. 测序数据工具 bioawk" class="md-nav__link">
+      05. 测序数据工具 bioawk
     </a>
   </li>
 
@@ -254,8 +260,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/06_python/" title="06 python" class="md-nav__link">
-      06 python
+    <a href="../../chapter_01/06_python/" title="06. 了解 Python 生活轻松一点" class="md-nav__link">
+      06. 了解 Python 生活轻松一点
     </a>
   </li>
 
@@ -266,20 +272,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/07_shell/" title="07 shell" class="md-nav__link">
-      07 shell
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../chapter_01/" title="Home" class="md-nav__link">
-      Home
+    <a href="../../chapter_01/07_shell/" title="07. 生信分析要学一点 shell" class="md-nav__link">
+      07. 生信分析要学一点 shell
     </a>
   </li>
 
@@ -299,11 +293,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Chapter 02
+      第二章 序列处理
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Chapter 02
+        第二章 序列处理
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -314,8 +308,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_02/01_emboss/" title="01 emboss" class="md-nav__link">
-      01 emboss
+    <a href="../../chapter_02/01_emboss/" title="01. EMBOSS 工具集" class="md-nav__link">
+      01. EMBOSS 工具集
     </a>
   </li>
 
@@ -326,8 +320,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_02/02_blast/" title="Local Blast 使用说明" class="md-nav__link">
-      Local Blast 使用说明
+    <a href="../../chapter_02/02_blast/" title="02. Blast 与 Blast+" class="md-nav__link">
+      02. Blast 与 Blast+
     </a>
   </li>
 
@@ -338,8 +332,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_02/08_seqkit/" title="Seqkit 好用的命令行序列处理工具套件" class="md-nav__link">
-      Seqkit 好用的命令行序列处理工具套件
+    <a href="../../chapter_02/08_seqkit/" title="03. 国产序列处理神器 SeqKit" class="md-nav__link">
+      03. 国产序列处理神器 SeqKit
     </a>
   </li>
 
@@ -350,20 +344,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_02/09_khmer/" title="k-mer 分析" class="md-nav__link">
-      k-mer 分析
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../chapter_02/" title="Home" class="md-nav__link">
-      Home
+    <a href="../../chapter_02/09_kmer/" title="04. K-mer 处理工具" class="md-nav__link">
+      04. K-mer 处理工具
     </a>
   </li>
 
@@ -383,11 +365,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Chapter 04
+      第四章 基因组组装
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Chapter 04
+        第四章 基因组组装
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -398,8 +380,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_04/03_bacteria-assembly/" title="细菌基因组短序列拼接拼接" class="md-nav__link">
-      细菌基因组短序列拼接拼接
+    <a href="../../chapter_04/03_bacteria-assembly/" title="03. 细菌基因组组装" class="md-nav__link">
+      03. 细菌基因组组装
     </a>
   </li>
 
@@ -410,20 +392,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_04/04_virus-assembly/" title="病毒基因组组装" class="md-nav__link">
-      病毒基因组组装
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../chapter_04/" title="Home" class="md-nav__link">
-      Home
+    <a href="../../chapter_04/04_virus-assembly/" title="04. 病毒基因组组装" class="md-nav__link">
+      04. 病毒基因组组装
     </a>
   </li>
 
@@ -445,11 +415,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
-      Chapter 05
+      第五章 基因组序列注释
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
-        Chapter 05
+        第五章 基因组序列注释
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -460,8 +430,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../01_prokka/" title="Prokka" class="md-nav__link">
-      Prokka
+    <a href="../01_prokka/" title="01. Prokka 快速注释" class="md-nav__link">
+      01. Prokka 快速注释
     </a>
   </li>
 
@@ -478,8 +448,8 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
     
-    <a href="./" title="02 rast" class="md-nav__link md-nav__link--active">
-      02 rast
+    <a href="./" title="02. rast" class="md-nav__link md-nav__link--active">
+      02. rast
     </a>
     
   </li>
@@ -491,8 +461,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../03_PGAAP/" title="03 PGAAP" class="md-nav__link">
-      03 PGAAP
+    <a href="../03_PGAAP/" title="03. PGAAP" class="md-nav__link">
+      03. PGAAP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      第十章 基因组分析实践
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        第十章 基因组分析实践
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_10/01_trace-Pae-from-different-source-by-SNP/" title="10.1 铜绿假单胞菌不同来源株SNP溯源" class="md-nav__link">
+      10.1 铜绿假单胞菌不同来源株SNP溯源
     </a>
   </li>
 
@@ -503,8 +509,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Home" class="md-nav__link">
-      Home
+    <a href="../../chapter_10/02_comparative-analysis-Ban-genomes/" title="10.2 炭疽芽胞杆菌比较基因组学研究" class="md-nav__link">
+      10.2 炭疽芽胞杆菌比较基因组学研究
     </a>
   </li>
 
@@ -527,7 +533,7 @@
               
                 
                 
-                  <h1>02 rast</h1>
+                  <h1>02. rast</h1>
                 
                 
                 
@@ -550,7 +556,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../01_prokka/" title="Prokka" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../01_prokka/" title="01. Prokka 快速注释" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -559,19 +565,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Prokka
+                01. Prokka 快速注释
               </span>
             </div>
           </a>
         
         
-          <a href="../03_PGAAP/" title="03 PGAAP" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../03_PGAAP/" title="03. PGAAP" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                03 PGAAP
+                03. PGAAP
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -585,6 +591,10 @@
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2018 HZCDC@Lab
+          </div>
         
         powered by
         <a href="http://www.mkdocs.org">MkDocs</a>
@@ -604,6 +614,16 @@
       <script src="../../assets/javascripts/application.b438e6c5.js"></script>
       
       <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+      
+        <script src="../../assets/js/umlconvert.js"></script>
       
     
     

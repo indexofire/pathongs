@@ -10,7 +10,13 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
+        <meta name="description" content="病原微生物高通量测序数据分析手册">
       
+      
+        <link rel="canonical" href="https://indexofire.github.io/pathongs/chapter_01/05_bioawk/">
+      
+      
+        <meta name="author" content="Mark Renton">
       
       
         <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -36,7 +42,7 @@
     
     
       
-        <title>Bioawk - My Docs</title>
+        <title>05. 测序数据工具 bioawk - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -79,7 +85,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="My Docs" class="md-header-nav__button md-logo">
+        <a href="https://indexofire.github.io/pathongs" title="Pathogen NGS 数据分析入门" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -93,10 +99,10 @@
           
             
               <span class="md-header-nav__topic">
-                My Docs
+                Pathogen NGS 数据分析入门
               </span>
               <span class="md-header-nav__topic">
-                Bioawk
+                05. 测序数据工具 bioawk
               </span>
             
           
@@ -156,7 +162,7 @@
         <i class="md-icon"></i>
       
     </span>
-    My Docs
+    Pathogen NGS 数据分析入门
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -167,8 +173,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Welcome to MkDocs" class="md-nav__link">
-      Welcome to MkDocs
+    <a href="../.." title="前言" class="md-nav__link">
+      前言
     </a>
   </li>
 
@@ -185,11 +191,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
-      Chapter 01
+      第一章 数据获取与质控
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        Chapter 01
+        第一章 数据获取与质控
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -200,8 +206,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../01_basic-cml/" title="基本命令" class="md-nav__link">
-      基本命令
+    <a href="../01_basic-cml/" title="01. Linux 系统操作基本命令" class="md-nav__link">
+      01. Linux 系统操作基本命令
     </a>
   </li>
 
@@ -212,8 +218,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../02_linux-installation/" title="02 linux installation" class="md-nav__link">
-      02 linux installation
+    <a href="../02_linux-installation/" title="02. Linux 安装实例" class="md-nav__link">
+      02. Linux 安装实例
     </a>
   </li>
 
@@ -224,8 +230,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../03_linux-administration/" title="03 linux administration" class="md-nav__link">
-      03 linux administration
+    <a href="../03_linux-administration/" title="03. Linux 系统管理" class="md-nav__link">
+      03. Linux 系统管理
     </a>
   </li>
 
@@ -236,8 +242,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../04_awk/" title="用 awk 处理 NGS 数据" class="md-nav__link">
-      用 awk 处理 NGS 数据
+    <a href="../04_awk/" title="04. 数据处理常用工具之 awk" class="md-nav__link">
+      04. 数据处理常用工具之 awk
     </a>
   </li>
 
@@ -257,11 +263,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Bioawk
+        05. 测序数据工具 bioawk
       </label>
     
-    <a href="./" title="Bioawk" class="md-nav__link md-nav__link--active">
-      Bioawk
+    <a href="./" title="05. 测序数据工具 bioawk" class="md-nav__link md-nav__link--active">
+      05. 测序数据工具 bioawk
     </a>
     
       
@@ -305,8 +311,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../06_python/" title="06 python" class="md-nav__link">
-      06 python
+    <a href="../06_python/" title="06. 了解 Python 生活轻松一点" class="md-nav__link">
+      06. 了解 Python 生活轻松一点
     </a>
   </li>
 
@@ -317,20 +323,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../07_shell/" title="07 shell" class="md-nav__link">
-      07 shell
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../" title="Home" class="md-nav__link">
-      Home
+    <a href="../07_shell/" title="07. 生信分析要学一点 shell" class="md-nav__link">
+      07. 生信分析要学一点 shell
     </a>
   </li>
 
@@ -350,11 +344,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Chapter 02
+      第二章 序列处理
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Chapter 02
+        第二章 序列处理
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -365,8 +359,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_02/01_emboss/" title="01 emboss" class="md-nav__link">
-      01 emboss
+    <a href="../../chapter_02/01_emboss/" title="01. EMBOSS 工具集" class="md-nav__link">
+      01. EMBOSS 工具集
     </a>
   </li>
 
@@ -377,8 +371,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_02/02_blast/" title="02 blast" class="md-nav__link">
-      02 blast
+    <a href="../../chapter_02/02_blast/" title="02. Blast 与 Blast+" class="md-nav__link">
+      02. Blast 与 Blast+
     </a>
   </li>
 
@@ -389,8 +383,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_02/08_seqkit/" title="08 seqkit" class="md-nav__link">
-      08 seqkit
+    <a href="../../chapter_02/08_seqkit/" title="03. 国产序列处理神器 SeqKit" class="md-nav__link">
+      03. 国产序列处理神器 SeqKit
     </a>
   </li>
 
@@ -401,20 +395,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_02/09_khmer/" title="09 khmer" class="md-nav__link">
-      09 khmer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../chapter_02/" title="Home" class="md-nav__link">
-      Home
+    <a href="../../chapter_02/09_kmer/" title="04. K-mer 处理工具" class="md-nav__link">
+      04. K-mer 处理工具
     </a>
   </li>
 
@@ -434,11 +416,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Chapter 04
+      第四章 基因组组装
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Chapter 04
+        第四章 基因组组装
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -449,8 +431,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_04/03_bacteria-assembly/" title="03 bacteria assembly" class="md-nav__link">
-      03 bacteria assembly
+    <a href="../../chapter_04/03_bacteria-assembly/" title="03. 细菌基因组组装" class="md-nav__link">
+      03. 细菌基因组组装
     </a>
   </li>
 
@@ -461,20 +443,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_04/04_virus-assembly/" title="04 virus assembly" class="md-nav__link">
-      04 virus assembly
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../chapter_04/" title="Home" class="md-nav__link">
-      Home
+    <a href="../../chapter_04/04_virus-assembly/" title="04. 病毒基因组组装" class="md-nav__link">
+      04. 病毒基因组组装
     </a>
   </li>
 
@@ -494,11 +464,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
-      Chapter 05
+      第五章 基因组序列注释
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
-        Chapter 05
+        第五章 基因组序列注释
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -509,8 +479,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_05/01_prokka/" title="01 prokka" class="md-nav__link">
-      01 prokka
+    <a href="../../chapter_05/01_prokka/" title="01. Prokka 快速注释" class="md-nav__link">
+      01. Prokka 快速注释
     </a>
   </li>
 
@@ -521,8 +491,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_05/02_rast/" title="02 rast" class="md-nav__link">
-      02 rast
+    <a href="../../chapter_05/02_rast/" title="02. rast" class="md-nav__link">
+      02. rast
     </a>
   </li>
 
@@ -533,8 +503,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_05/03_PGAAP/" title="03 PGAAP" class="md-nav__link">
-      03 PGAAP
+    <a href="../../chapter_05/03_PGAAP/" title="03. PGAAP" class="md-nav__link">
+      03. PGAAP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      第十章 基因组分析实践
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        第十章 基因组分析实践
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_10/01_trace-Pae-from-different-source-by-SNP/" title="10.1 铜绿假单胞菌不同来源株SNP溯源" class="md-nav__link">
+      10.1 铜绿假单胞菌不同来源株SNP溯源
     </a>
   </li>
 
@@ -545,8 +551,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_05/" title="Home" class="md-nav__link">
-      Home
+    <a href="../../chapter_10/02_comparative-analysis-Ban-genomes/" title="10.2 炭疽芽胞杆菌比较基因组学研究" class="md-nav__link">
+      10.2 炭疽芽胞杆菌比较基因组学研究
     </a>
   </li>
 
@@ -607,7 +613,7 @@
               
                 
                 
-                <h1 id="bioawk">Bioawk</h1>
+                <h1 id="bioawk">Bioawk<a class="headerlink" href="#bioawk" title="Permanent link">&para;</a></h1>
 <p><a href="https://github.com/lh3/bioawk">Bioawk</a> 是 Heng Li 开发的 awk 扩展工具，增加了对压缩的 BED, GFF, SAM, VCF, FASTA/Q 等文件格式的支持，并内建一些函数，适用于NGS数据的快速输入输出。</p>
 <ul>
 <li>gc($seq) Returns the GC percentage of a sequence.</li>
@@ -620,31 +626,31 @@
 <li>or(x, y) bit OR operation (| in C)</li>
 <li>xor(x, y) bit XOR operation (^ in C)</li>
 </ul>
-<h2 id="1">1. 安装</h2>
-<pre><code class="bash">$ sudo apt-get install bison
+<h2 id="1">1. 安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>$ sudo apt-get install bison
 $ git clone https://github.com/lh3/bioawk
-$ cd bioawk &amp;&amp; make
+$ <span class="nb">cd</span> bioawk <span class="o">&amp;&amp;</span> make
 $ sudo cp bioawk /usr/local/sbin
-</code></pre>
+</pre></div>
 
-<h2 id="2">2. 使用</h2>
+<h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>构建测序数据分析的 workflow 时，当 fastq 数据在做完 trimming 后，我们往往要关注剩下多少 reads，可以用 Bioawk 进行快速统计。</p>
-<pre><code class="bash"># 快速统计fastq里的reads数量
-$ bioawk -c fastx 'END { print NR }' my_fastq.tar.gz
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1"># 快速统计fastq里的reads数量</span>
+$ bioawk -c fastx <span class="s1">&#39;END { print NR }&#39;</span> my_fastq.tar.gz
+</pre></div>
 
 <p>在一些特殊场合里，需要分析 reads 系列，用 Bioawk 可以很方便快速来完成。比如统计特殊碱基开头的 reads 数。</p>
-<pre><code class="bash"># 统计以GATTAC开头的reads的数量
-$ bioawk -c fastx '$seq~/^GATTAC/ {++n} END { print n }' my_fastq.tar.gz
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1"># 统计以GATTAC开头的reads的数量</span>
+$ bioawk -c fastx <span class="s1">&#39;$seq~/^GATTAC/ {++n} END { print n }&#39;</span> my_fastq.tar.gz
+</pre></div>
 
 <p>如果想看GC含量大于60%的reads的质量情况，可以用下面方法：</p>
-<pre><code class="bash">$ bioawk -c fastx '{if (gc($seq)&gt;0.6) printf &quot;%s\n%s\n\n&quot;, $seq, $qual}' my_fastq.tar.gz
-</code></pre>
+<div class="codehilite"><pre><span></span>$ bioawk -c fastx <span class="s1">&#39;{if (gc($seq)&gt;0.6) printf &quot;%s\n%s\n\n&quot;, $seq, $qual}&#39;</span> my_fastq.tar.gz
+</pre></div>
 
 <p>生成reads的平均Q值</p>
-<pre><code class="bash">$  bioawk -c fastx '{print $name, meanqual($seq)}' my_fastq.tar.gz &gt; meanqual.txt
-</code></pre>
+<div class="codehilite"><pre><span></span>$  bioawk -c fastx <span class="s1">&#39;{print $name, meanqual($seq)}&#39;</span> my_fastq.tar.gz &gt; meanqual.txt
+</pre></div>
                 
                   
                 
@@ -665,7 +671,7 @@ $ bioawk -c fastx '$seq~/^GATTAC/ {++n} END { print n }' my_fastq.tar.gz
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../04_awk/" title="用 awk 处理 NGS 数据" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../04_awk/" title="04. 数据处理常用工具之 awk" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -674,19 +680,19 @@ $ bioawk -c fastx '$seq~/^GATTAC/ {++n} END { print n }' my_fastq.tar.gz
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                用 awk 处理 NGS 数据
+                04. 数据处理常用工具之 awk
               </span>
             </div>
           </a>
         
         
-          <a href="../06_python/" title="06 python" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../06_python/" title="06. 了解 Python 生活轻松一点" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                06 python
+                06. 了解 Python 生活轻松一点
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -700,6 +706,10 @@ $ bioawk -c fastx '$seq~/^GATTAC/ {++n} END { print n }' my_fastq.tar.gz
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2018 HZCDC@Lab
+          </div>
         
         powered by
         <a href="http://www.mkdocs.org">MkDocs</a>
@@ -719,6 +729,16 @@ $ bioawk -c fastx '$seq~/^GATTAC/ {++n} END { print n }' my_fastq.tar.gz
       <script src="../../assets/javascripts/application.b438e6c5.js"></script>
       
       <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+      
+        <script src="../../assets/js/umlconvert.js"></script>
       
     
     
