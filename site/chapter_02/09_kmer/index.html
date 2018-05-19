@@ -10,7 +10,13 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
+        <meta name="description" content="病原微生物高通量测序数据分析手册">
       
+      
+        <link rel="canonical" href="https://indexofire.github.io/pathongs/chapter_02/09_kmer/">
+      
+      
+        <meta name="author" content="Mark Renton">
       
       
         <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -36,7 +42,7 @@
     
     
       
-        <title>k-mer 分析 - My Docs</title>
+        <title>04. K-mer 处理工具 - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -79,7 +85,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="My Docs" class="md-header-nav__button md-logo">
+        <a href="https://indexofire.github.io/pathongs" title="Pathogen NGS 数据分析入门" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -93,10 +99,10 @@
           
             
               <span class="md-header-nav__topic">
-                My Docs
+                Pathogen NGS 数据分析入门
               </span>
               <span class="md-header-nav__topic">
-                k-mer 分析
+                04. K-mer 处理工具
               </span>
             
           
@@ -156,7 +162,7 @@
         <i class="md-icon"></i>
       
     </span>
-    My Docs
+    Pathogen NGS 数据分析入门
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -167,8 +173,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Welcome to MkDocs" class="md-nav__link">
-      Welcome to MkDocs
+    <a href="../.." title="前言" class="md-nav__link">
+      前言
     </a>
   </li>
 
@@ -183,11 +189,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      Chapter 01
+      第一章 数据获取与质控
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        Chapter 01
+        第一章 数据获取与质控
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -198,8 +204,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/01_basic-cml/" title="基本命令" class="md-nav__link">
-      基本命令
+    <a href="../../chapter_01/01_basic-cml/" title="01. Linux 系统操作基本命令" class="md-nav__link">
+      01. Linux 系统操作基本命令
     </a>
   </li>
 
@@ -210,8 +216,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/02_linux-installation/" title="02 linux installation" class="md-nav__link">
-      02 linux installation
+    <a href="../../chapter_01/02_linux-installation/" title="02. Linux 安装实例" class="md-nav__link">
+      02. Linux 安装实例
     </a>
   </li>
 
@@ -222,8 +228,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/03_linux-administration/" title="03 linux administration" class="md-nav__link">
-      03 linux administration
+    <a href="../../chapter_01/03_linux-administration/" title="03. Linux 系统管理" class="md-nav__link">
+      03. Linux 系统管理
     </a>
   </li>
 
@@ -234,8 +240,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/04_awk/" title="用 awk 处理 NGS 数据" class="md-nav__link">
-      用 awk 处理 NGS 数据
+    <a href="../../chapter_01/04_awk/" title="04. 数据处理常用工具之 awk" class="md-nav__link">
+      04. 数据处理常用工具之 awk
     </a>
   </li>
 
@@ -246,8 +252,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/05_bioawk/" title="Bioawk" class="md-nav__link">
-      Bioawk
+    <a href="../../chapter_01/05_bioawk/" title="‘05. 测序数据工具 bioawk’" class="md-nav__link">
+      ‘05. 测序数据工具 bioawk’
     </a>
   </li>
 
@@ -258,8 +264,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/06_python/" title="06 python" class="md-nav__link">
-      06 python
+    <a href="../../chapter_01/06_python/" title="06. 了解 Python 生活轻松一点" class="md-nav__link">
+      06. 了解 Python 生活轻松一点
     </a>
   </li>
 
@@ -270,20 +276,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_01/07_shell/" title="07 shell" class="md-nav__link">
-      07 shell
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../chapter_01/" title="Home" class="md-nav__link">
-      Home
+    <a href="../../chapter_01/07_shell/" title="07. 生信分析要学一点 shell" class="md-nav__link">
+      07. 生信分析要学一点 shell
     </a>
   </li>
 
@@ -305,11 +299,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
-      Chapter 02
+      第二章 序列处理
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        Chapter 02
+        第二章 序列处理
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -320,8 +314,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../01_emboss/" title="01 emboss" class="md-nav__link">
-      01 emboss
+    <a href="../01_emboss/" title="’01. EMBOSS 工具集'" class="md-nav__link">
+      ’01. EMBOSS 工具集'
     </a>
   </li>
 
@@ -332,8 +326,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../02_blast/" title="Local Blast 使用说明" class="md-nav__link">
-      Local Blast 使用说明
+    <a href="../02_blast/" title="02. Blast 与 Blast+" class="md-nav__link">
+      02. Blast 与 Blast+
     </a>
   </li>
 
@@ -344,8 +338,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../08_seqkit/" title="Seqkit 好用的命令行序列处理工具套件" class="md-nav__link">
-      Seqkit 好用的命令行序列处理工具套件
+    <a href="../08_seqkit/" title="03. 国产序列处理神器 SeqKit" class="md-nav__link">
+      03. 国产序列处理神器 SeqKit
     </a>
   </li>
 
@@ -365,11 +359,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        k-mer 分析
+        04. K-mer 处理工具
       </label>
     
-    <a href="./" title="k-mer 分析" class="md-nav__link md-nav__link--active">
-      k-mer 分析
+    <a href="./" title="04. K-mer 处理工具" class="md-nav__link md-nav__link--active">
+      04. K-mer 处理工具
     </a>
     
       
@@ -421,18 +415,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../" title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -448,11 +430,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      Chapter 04
+      第四章 基因组组装
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        Chapter 04
+        第四章 基因组组装
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -463,8 +445,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_04/03_bacteria-assembly/" title="03 bacteria assembly" class="md-nav__link">
-      03 bacteria assembly
+    <a href="../../chapter_04/03_bacteria-assembly/" title="03. 细菌基因组组装" class="md-nav__link">
+      03. 细菌基因组组装
     </a>
   </li>
 
@@ -475,20 +457,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_04/04_virus-assembly/" title="04 virus assembly" class="md-nav__link">
-      04 virus assembly
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../chapter_04/" title="Home" class="md-nav__link">
-      Home
+    <a href="../../chapter_04/04_virus-assembly/" title="04. 病毒基因组组装" class="md-nav__link">
+      04. 病毒基因组组装
     </a>
   </li>
 
@@ -508,11 +478,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
-      Chapter 05
+      第五章 基因组序列注释
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
-        Chapter 05
+        第五章 基因组序列注释
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -523,8 +493,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_05/01_prokka/" title="01 prokka" class="md-nav__link">
-      01 prokka
+    <a href="../../chapter_05/01_prokka/" title="01. Prokka 快速注释" class="md-nav__link">
+      01. Prokka 快速注释
     </a>
   </li>
 
@@ -535,8 +505,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_05/02_rast/" title="02 rast" class="md-nav__link">
-      02 rast
+    <a href="../../chapter_05/02_rast/" title="02. rast" class="md-nav__link">
+      02. rast
     </a>
   </li>
 
@@ -547,8 +517,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_05/03_PGAAP/" title="03 PGAAP" class="md-nav__link">
-      03 PGAAP
+    <a href="../../chapter_05/03_PGAAP/" title="03. PGAAP" class="md-nav__link">
+      03. PGAAP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      第十章 基因组分析实践
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        第十章 基因组分析实践
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_10/01_trace-Pae-from-different-source-by-SNP/" title="10.1 铜绿假单胞菌不同来源株SNP溯源" class="md-nav__link">
+      10.1 铜绿假单胞菌不同来源株SNP溯源
     </a>
   </li>
 
@@ -559,8 +565,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_05/" title="Home" class="md-nav__link">
-      Home
+    <a href="../../chapter_10/02_comparative-analysis-Ban-genomes/" title="10.2 炭疽芽胞杆菌比较基因组学研究" class="md-nav__link">
+      10.2 炭疽芽胞杆菌比较基因组学研究
     </a>
   </li>
 
@@ -635,61 +641,60 @@
               
                 
                 
-                <h1 id="k-mer">k-mer 分析</h1>
+                <h1 id="k-mer">k-mer 分析<a class="headerlink" href="#k-mer" title="Permanent link">&para;</a></h1>
 <p><a href="https://github.com/dib-lab/khmer/" title="KhmerM">khmer</a></p>
-<pre><code class="bash">$ pip install khmer
-</code></pre>
+<div class="codehilite"><pre><span></span>$ pip install khmer
+</pre></div>
 
-<h3 id="conda">通过 conda 安装</h3>
-<p>用 conda 新建一个虚拟环境安装 <a href="https://github.com/dib-lab/khmer/" title="KhmerM">khmer</a>。当前版本为 [2.12][http://khmer.readthedocs.io/en/v2.1.2/]，安装过程还会自动 [screed][https://github.com/dib-lab/screed]（一个轻量级 python 序列数据库工具）。</p>
-<pre><code class="bash">$ conda create -n khmer
+<h3 id="conda">通过 conda 安装<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h3>
+<p>用 conda 新建一个虚拟环境安装 <a href="https://github.com/dib-lab/khmer/" title="KhmerM">khmer</a>。当前版本为 [2.12][<a href="http://khmer.readthedocs.io/en/v2.1.2/">http://khmer.readthedocs.io/en/v2.1.2/</a>]，安装过程还会自动 [screed][<a href="https://github.com/dib-lab/screed">https://github.com/dib-lab/screed</a>]（一个轻量级 python 序列数据库工具）。</p>
+<div class="codehilite"><pre><span></span>$ conda create -n khmer
 $ conda activate khmer
-(khmer)$ conda install khmer ipython
-</code></pre>
+<span class="o">(</span>khmer<span class="o">)</span>$ conda install khmer ipython
+</pre></div>
 
 <p><a href="https://github.com/dib-lab/khmer/" title="KhmerM">khmer</a> 有一套命令行工具，可以非常方便的运行使用。另外也可以使用 <a href="https://github.com/dib-lab/khmer/" title="KhmerM">khmer</a> 的 API，编写 python 代码调用。</p>
 <p><strong>load-into-counting.py</strong></p>
-<pre><code class="bash">$ load-into-counting.py -T 4 -k 32 -x 1e8 -N 4 counts R1.fastq.gz
-</code></pre>
+<div class="codehilite"><pre><span></span>$ load-into-counting.py -T <span class="m">4</span> -k <span class="m">32</span> -x 1e8 -N <span class="m">4</span> counts R1.fastq.gz
+</pre></div>
 
 <p><strong>normalize-by-median.py</strong></p>
 <p>去除冗余序列。脚本程序将 Fast[A/Q] 格式数据文件列表化，</p>
 <p>脚本输出的序列可以被组装软件比如 SPAdes 等进行序列组装。</p>
-<pre><code class="bash">$ normalize-by-median.py -p -k 21 -o - read.fq output.fq
-</code></pre>
+<div class="codehilite"><pre><span></span>$ normalize-by-median.py -p -k <span class="m">21</span> -o - read.fq output.fq
+</pre></div>
 
 <p><strong>readstats.py</strong></p>
 <p>统计 FASTA/Q 序列信息。</p>
-<pre><code class="bash">$ readstats.py -o R1.output R1.fastq.gz
+<div class="codehilite"><pre><span></span>$ readstats.py -o R1.output R1.fastq.gz
 $ cat R1.output
 
-found 449472737 bps / 1879073 seqs; 239.2 average length -- R1.fastq.gz
+found <span class="m">449472737</span> bps / <span class="m">1879073</span> seqs<span class="p">;</span> <span class="m">239</span>.2 average length -- R1.fastq.gz
 ---------------
-449472737 bp / 1879073 seqs; 239.2 average length -- R1.fastq.gz
+<span class="m">449472737</span> bp / <span class="m">1879073</span> seqs<span class="p">;</span> <span class="m">239</span>.2 average length -- R1.fastq.gz
 ---------------
-449472737 bp / 1879073 seqs; 239.2 average length -- total
+<span class="m">449472737</span> bp / <span class="m">1879073</span> seqs<span class="p">;</span> <span class="m">239</span>.2 average length -- total
+</pre></div>
 
-</code></pre>
-
-<h2 id="khmer">khmer 用途</h2>
+<h2 id="khmer">khmer 用途<a class="headerlink" href="#khmer" title="Permanent link">&para;</a></h2>
 <p>对 de novo assembly 进行数字均一化进行预处理</p>
-<h2 id="python-api">Python API</h2>
-<pre><code class="bash">$ ipython
-In [1]: import khmer
-In [2]: counts = khmer.Counttable(31, 1e7, 4)
-In [3]: counts.consume_seqfile('R1.fastq.gz')
-(25000, 1150000)
-# 31 是 kmer 长度，1e7 是 table size，4 是 table 数
-# 25000 表示序列数量，高通量测序里即 reads 数。
-# 1150000 表示指定 kmer 切割后特定 kmer 序列数
-In [4]: counts.get('TGACTTTCTTCGCTTCCTGACGGCTTATGCC')
-105
-</code></pre>
+<h2 id="python-api">Python API<a class="headerlink" href="#python-api" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>$ ipython
+In <span class="o">[</span><span class="m">1</span><span class="o">]</span>: import khmer
+In <span class="o">[</span><span class="m">2</span><span class="o">]</span>: <span class="nv">counts</span> <span class="o">=</span> khmer.Counttable<span class="o">(</span><span class="m">31</span>, 1e7, <span class="m">4</span><span class="o">)</span>
+In <span class="o">[</span><span class="m">3</span><span class="o">]</span>: counts.consume_seqfile<span class="o">(</span><span class="s1">&#39;R1.fastq.gz&#39;</span><span class="o">)</span>
+<span class="o">(</span><span class="m">25000</span>, <span class="m">1150000</span><span class="o">)</span>
+<span class="c1"># 31 是 kmer 长度，1e7 是 table size，4 是 table 数</span>
+<span class="c1"># 25000 表示序列数量，高通量测序里即 reads 数。</span>
+<span class="c1"># 1150000 表示指定 kmer 切割后特定 kmer 序列数</span>
+In <span class="o">[</span><span class="m">4</span><span class="o">]</span>: counts.get<span class="o">(</span><span class="s1">&#39;TGACTTTCTTCGCTTCCTGACGGCTTATGCC&#39;</span><span class="o">)</span>
+<span class="m">105</span>
+</pre></div>
 
-<h2 id="reference">Reference</h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ol>
-<li>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4608353/</li>
-<li>http://khmer.readthedocs.io/en/latest/</li>
+<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4608353/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4608353/</a></li>
+<li><a href="http://khmer.readthedocs.io/en/latest/">http://khmer.readthedocs.io/en/latest/</a></li>
 </ol>
                 
                   
@@ -711,7 +716,7 @@ In [4]: counts.get('TGACTTTCTTCGCTTCCTGACGGCTTATGCC')
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../08_seqkit/" title="Seqkit 好用的命令行序列处理工具套件" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../08_seqkit/" title="03. 国产序列处理神器 SeqKit" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -720,19 +725,19 @@ In [4]: counts.get('TGACTTTCTTCGCTTCCTGACGGCTTATGCC')
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Seqkit 好用的命令行序列处理工具套件
+                03. 国产序列处理神器 SeqKit
               </span>
             </div>
           </a>
         
         
-          <a href="../" title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../chapter_04/03_bacteria-assembly/" title="03. 细菌基因组组装" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Home
+                03. 细菌基因组组装
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -746,6 +751,10 @@ In [4]: counts.get('TGACTTTCTTCGCTTCCTGACGGCTTATGCC')
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2018 HZCDC@Lab
+          </div>
         
         powered by
         <a href="http://www.mkdocs.org">MkDocs</a>
@@ -765,6 +774,16 @@ In [4]: counts.get('TGACTTTCTTCGCTTCCTGACGGCTTATGCC')
       <script src="../../assets/javascripts/application.b438e6c5.js"></script>
       
       <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+      
+        <script src="../../assets/js/umlconvert.js"></script>
       
     
     
