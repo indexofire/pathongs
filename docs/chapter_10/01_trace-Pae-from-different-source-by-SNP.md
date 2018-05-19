@@ -26,19 +26,19 @@
 工作流程将从以下几个方面对于这个案例开展数据分析：
 
 - 测序质量：reads的长度，插入片段的长度
-- 将测序数据比对到参考基因组ST17
- - 每个样品reads的分布情况
- - 每个样品的基因组测序覆盖度
- - 不同样品之间的差异，特别是当设置不同的过滤参数时的情况：
-	     - Quality filter: QUAL > 100
-         - Likelihood filter: QUAL / AO > 10
-         - Variant frequency filter: AO / DP > 0.9 (90% allele frequency)
+- 将测序数据比对到参考基因组ST17：
+  * 每个样品reads的分布情况
+  * 每个样品的基因组测序覆盖度
+  * 不同样品之间的差异，特别是当设置不同的过滤参数时的情况：
+    + Quality filter: QUAL > 100
+    + Likelihood filter: QUAL / AO > 10
+    + Variant frequency filter: AO / DP > 0.9 (90% allele frequency)
 - 哪一个水龙头水样的分离株最有可能是感染源。(方法: 用`vcfsamplediff`比较环境株与临床株SNPs数量)
 - 2个病人分离株之间使用了大量的抗生素治疗，哪一个获得、得了耐药性？
- - 用 joint calling 来比较2个临床样品数据，并用`vcfsamplediff`分析
- - 对于获得的大量SNPs，是否需要过滤以及如何过滤
- - 了解SNPs的分布规律
- - 重点查看SNPs
+  + 用 joint calling 来比较2个临床样品数据，并用`vcfsamplediff`分析
+  * 对于获得的大量SNPs，是否需要过滤以及如何过滤
+  * 了解SNPs的分布规律
+  * 重点查看SNPs
 
 ## 2. 分析流程
 
