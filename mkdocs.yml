@@ -11,9 +11,6 @@ extra:
   palette:
     primary: 'light blue'
 
-use_directory_url: true
-
-
 pages:
   - '前言': index.md
   - '第一章 背景知识介绍':
@@ -38,7 +35,8 @@ pages:
     #- '2.2 a5-miseq': chapter_02/a5-miseq.md
     #- '2.3 masurca': chapter_02/masurca.md
     #- '2.4 prokka': chapter_02/prokka.md
-  #- '第三章 基因组和序列比较':
+  - '第三章 数据的上传和下载':
+    - '01. 玩转 edirect': chapter_03/01_edirect.md 
     #- '3.1 MUMmer': chapter_03/mummer.md
     #- '3.2 C-Sibelia': chapter_03/c-sibelia.md
   - '第四章 基因组组装':
