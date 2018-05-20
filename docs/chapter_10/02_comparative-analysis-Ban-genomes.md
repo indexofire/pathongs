@@ -85,7 +85,7 @@ R 绘制 gc 分布图，如果 gc 含量偏差超过 10% 时就剔除该基因�
 
 其次要去除接头的污染。因为分析流程中不仅包括 mapping 的方式，还包含 de novo assembly，为了避免接头序列对基因组拼接的影响，这里最好进行。这里使用的工具是 `FastQC` 和 `fadapa`
 
-```
+```bash
 # 使用脚本 scan_adaptors.py 来扫描下载的高通量基因组测序数据是否有接头污染的情况。
 $ fastqc -t 40 -q --extract *.fastq.gz
 $ python scan_fastqc_report.py -d qc
@@ -160,10 +160,10 @@ $
 
 **Snippy**
 
-```
+```bash
 # snippy mapping
 $ for i in *.fastq.gz | sort | uniq; \
-> do snippy --cpus 20 --outdir $i -ref reference.fa \
+> do snippy --cpus 40 --outdir $i -ref reference.fa \
 > --R1 $i*_1*.fastq.gz --R2 $i*_2*.fastq.gz; done
 
 # snippy-core 汇集 snps
