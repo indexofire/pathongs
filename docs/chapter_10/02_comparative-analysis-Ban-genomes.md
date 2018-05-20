@@ -17,6 +17,7 @@
 数据采用 NCBI SRA 数据库中的公共数据来作分析。首先检索 NCBI SRA 数据库中所有使用 illumina 平台对炭疽芽胞杆菌基因组进行 PE 测序的 大于 100M 的 NGS 数据，并在下载这些 sra 数据后转换成 fastq.gz 格式。使用的工具主要为 `edirect` 和 `sra-tools`。
 
 ```bash
+# 下载炭疽芽胞杆菌 SRA 双末端测序数据
 $ esearch -db sra -query '"Bacillus anthracis"[Organism] AND \
 > (Hiseq[ALL] OR Miseq[ALL]) AND "strategy wgs"[Properties]' | \
 > efetch -db sra -format runinfo | grep 'PAIRED' | grep '^[DSE]RR*' | \
