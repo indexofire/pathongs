@@ -5,13 +5,18 @@ site_url: 'https://indexofire.github.io/pathongs'
 theme: 'material'
 copyright: 'Copyright &copy; 2016 - 2018 HZCDC@Lab'
 
+repo_url: https://www.github.com/indexofire/pathongs/
+
 extra:
   palette:
     primary: 'light blue'
 
+
+
+
 pages:
   - '前言': index.md
-  - '第一章 数据获取与质控':
+  - '第一章 背景知识介绍':
     - '01. Linux 系统操作基本命令': chapter_01/01_basic-cml.md
     - '02. Linux 安装实例': chapter_01/02_linux-installation.md
     - '03. Linux 系统管理': chapter_01/03_linux-administration.md
@@ -107,6 +112,4 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.superfences
 
-#google_analytics:
-  #- 'UA-55420348-2'
-  #- 'auto'
+google_analytics: ['UA-55420348-2', 'auto']
