@@ -5,13 +5,13 @@ site_url: 'https://indexofire.github.io/pathongs'
 theme: 'material'
 copyright: 'Copyright &copy; 2016 - 2018 HZCDC@Lab'
 
-repo_url: https://www.github.com/indexofire/pathongs/
+repo_url: https://indexofire.github.io/pathongs/
 
 extra:
   palette:
     primary: 'light blue'
 
-
+use_directory_url: true
 
 
 pages:
