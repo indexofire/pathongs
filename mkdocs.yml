@@ -112,4 +112,4 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.superfences
 
-google_analytics: ['GTM-MD2NPLF', 'auto']
+google_analytics: ['UA-55420348-3', 'auto']
