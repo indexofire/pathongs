@@ -5,7 +5,7 @@ site_url: 'https://indexofire.github.io/pathongs'
 theme: 'material'
 copyright: 'Copyright &copy; 2016 - 2018 HZCDC@Lab'
 
-repo_url: https://indexofire.github.io/pathongs/
+repo_url: https://github.com/indexofire/pathongs/
 
 extra:
   palette:
@@ -38,7 +38,7 @@ pages:
   - '第三章 数据的上传和下载':
     - '01 生物公共数据库': chapter_03/01_databases.md
     - '02 生物数据文件格式': chapter_03/02_fileformat.md
-    - '03. 玩转 edirect': chapter_03/03_edirect.md 
+    - '03. 玩转 edirect': chapter_03/03_edirect.md
     #- '3.1 MUMmer': chapter_03/mummer.md
     #- '3.2 C-Sibelia': chapter_03/c-sibelia.md
   - '第四章 基因组组装':
@@ -112,4 +112,4 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.superfences
 
-google_analytics: ['UA-55420348-2', 'auto']
+google_analytics: ['GTM-MD2NPLF', 'auto']
