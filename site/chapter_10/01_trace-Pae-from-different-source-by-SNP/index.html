@@ -1189,7 +1189,7 @@
                 <h1 id="snp">铜绿假单胞菌临床株与环境株SNP溯源<a class="headerlink" href="#snp" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
 <p class="admonition-title">本节实践</p>
-<p>利用高通量测序技术对铜绿假单胞菌的临床分离株与环境分离株在基因组水平上进行SNP分析，从而溯源菌株并做耐药分析。</p>
+<p>利用高通量测序技术对铜绿假单胞菌(<em>Pseudomonas aeruginosa</em>)的临床分离株与环境分离株在基因组水平上进行SNP分析，从而溯源菌株并做耐药分析。</p>
 </div>
 <p><strong>分析方法</strong>：</p>
 <p>利用 bwa 将目标基因组 reads 比对到参考基因组，用 freebayes 做 variant calling，获得各个样本的 SNPs，根据结果做进一步分析。</p>
@@ -1200,14 +1200,12 @@
 <li>freebayes</li>
 <li>vcffilter</li>
 </ul>
-<p><strong>分析流程</strong>:</p>
-<p><strong>实践意义</strong>：</p>
-<p>可以作为今后实验室开展病原菌溯源工作的一个技术指导依据。</p>
+<p><strong>实践意义</strong>：可以作为今后实验室开展病原菌溯源工作的一个技术指导依据。</p>
 <h2 id="1">1. 提出问题<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>工作流程将从以下几个方面对于这个案例开展数据分析：</p>
-<ul>
-<li>测序质量：reads的长度，插入片段的长度</li>
-<li>将测序数据比对到参考基因组ST17：</li>
+<ol>
+<li>测序质量: reads的长度，插入片段的长度</li>
+<li>将测序数据比对到参考基因组ST17</li>
 <li>每个样品reads的分布情况</li>
 <li>每个样品的基因组测序覆盖度</li>
 <li>不同样品之间的差异，特别是当设置不同的过滤参数时的情况：<ul>
@@ -1222,7 +1220,7 @@
 <li>对于获得的大量SNPs，是否需要过滤以及如何过滤</li>
 <li>了解SNPs的分布规律</li>
 <li>重点查看SNPs</li>
-</ul>
+</ol>
 <h2 id="2">2. 分析流程<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h3 id="21">2.1 下载数据<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
 <p>数据可以从<a href="http://www.microbesng.uk/filedist/pseudomonas-practical/">这里</a>下载获得，可以用<code class="codehilite">wget -m</code>递归下载路径下所有文件。文件包括：</p>
@@ -1235,11 +1233,17 @@
 </ul>
 <div class="codehilite"><pre><span></span><span class="c1"># 新建一个目录，数据和操作均在里面进行</span>
 $ mkdir pae-case <span class="o">&amp;&amp;</span> <span class="nb">cd</span> pae-case
+
 <span class="c1"># 下载数据文件</span>
 $ wget -m http://www.microbesng.uk/filedist/pseudomonas-practical/
 $ mv www.microbesng.uk/filedist/pseudomonas-practical/* .
 </pre></div>
 
+<p>wget 的 -m 参数可以递归下载。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>数据下载地址目前已经失效！</p>
+</div>
 <h3 id="22-st17">2.2 建立 ST17 型参考菌株索引<a class="headerlink" href="#22-st17" title="Permanent link">&para;</a></h3>
 <p>软件使用<code class="codehilite">bwa</code>来对参考基因组ST17建立索引，以便后续比对。</p>
 <div class="codehilite"><pre><span></span>$ bwa index ST17.fasta
