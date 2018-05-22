@@ -1000,6 +1000,19 @@
     4.1 基于参考基因组 Mapping 的方法
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-snippy" title="1. Snippy*" class="md-nav__link">
+    1. Snippy*
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1191,6 +1204,19 @@
   <a href="#41-mapping" title="4.1 基于参考基因组 Mapping 的方法" class="md-nav__link">
     4.1 基于参考基因组 Mapping 的方法
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-snippy" title="1. Snippy*" class="md-nav__link">
+    1. Snippy*
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1415,7 +1441,8 @@ $ roary -p -e mafft *.gff
 </pre></div>
 
 <h3 id="34-harvest">3.4 Harvest<a class="headerlink" href="#34-harvest" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>$ parsnp
+<div class="codehilite"><pre><span></span>$ parsnp -g ref.gbk -d data -c -p <span class="m">40</span> -o output
+$ harvesttools -i outut/*.ggr -S snp 
 </pre></div>
 
 <h2 id="4-snps">4. SNPs 构建进化树<a class="headerlink" href="#4-snps" title="Permanent link">&para;</a></h2>
@@ -1423,7 +1450,7 @@ $ roary -p -e mafft *.gff
 </pre></div>
 
 <h3 id="41-mapping">4.1 基于参考基因组 Mapping 的方法<a class="headerlink" href="#41-mapping" title="Permanent link">&para;</a></h3>
-<p><strong>Snippy</strong></p>
+<h4 id="1-snippy">1. Snippy*<a class="headerlink" href="#1-snippy" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span><span class="c1"># snippy mapping</span>
 $ <span class="k">for</span> i in *.fastq.gz <span class="p">|</span> sort <span class="p">|</span> uniq<span class="p">;</span> <span class="se">\</span>
 &gt; <span class="k">do</span> snippy --cpus <span class="m">40</span> --outdir <span class="nv">$i</span> -ref reference.fa <span class="se">\</span>
@@ -1440,11 +1467,10 @@ $ scp user@server-ip:/path/RAxML_bestTree.ex .
 $ figtree RAxML_bestTree.ex <span class="p">&amp;</span>
 </pre></div>
 
-<p><strong>Tools</strong></p>
 <h2 id="5">5. 核心基因分析<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <h3 id="51-get_homologues">5.1 get_homologues<a class="headerlink" href="#51-get_homologues" title="Permanent link">&para;</a></h3>
 <h2 id="6">6. 相关软件安装<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
-<p><strong>edirect</strong></p>
+<p>*****edirect**</p>
 <div class="codehilite"><pre><span></span>$ wget ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/edirect.tar.gz
 $ sudo tar zxf edirect.tar.gz -C /opt
 $ sudo chown -R root:root /opt/edirect
