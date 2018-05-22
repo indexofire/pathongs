@@ -13,7 +13,7 @@
         <meta name="description" content="病原微生物高通量测序数据分析手册">
       
       
-        <link rel="canonical" href="https://indexofire.github.io/pathongs/chapter_01/04_awk/">
+        <link rel="canonical" href="https://indexofire.github.io/pathongs/chapter_09/01_docker/">
       
       
         <meta name="author" content="Mark Renton">
@@ -42,7 +42,7 @@
     
     
       
-        <title>04. 数据处理常用工具之 awk - Pathogen NGS 数据分析入门</title>
+        <title>01. 基于 docker 镜像 - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#awk-ngs" tabindex="1" class="md-skip">
+      <a href="#docker" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -121,7 +121,7 @@
                 Pathogen NGS 数据分析入门
               </span>
               <span class="md-header-nav__topic">
-                04. 数据处理常用工具之 awk
+                01. 基于 docker 镜像
               </span>
             
           
@@ -248,12 +248,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       第一章 背景知识介绍
@@ -271,7 +269,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../01_basic-cml/" title="01. Linux 系统操作基本命令" class="md-nav__link">
+    <a href="../../chapter_01/01_basic-cml/" title="01. Linux 系统操作基本命令" class="md-nav__link">
       01. Linux 系统操作基本命令
     </a>
   </li>
@@ -283,7 +281,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../02_linux-installation/" title="02. Linux 安装实例" class="md-nav__link">
+    <a href="../../chapter_01/02_linux-installation/" title="02. Linux 安装实例" class="md-nav__link">
       02. Linux 安装实例
     </a>
   </li>
@@ -295,7 +293,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../03_linux-administration/" title="03. Linux 系统管理" class="md-nav__link">
+    <a href="../../chapter_01/03_linux-administration/" title="03. Linux 系统管理" class="md-nav__link">
       03. Linux 系统管理
     </a>
   </li>
@@ -305,239 +303,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        04. 数据处理常用工具之 awk
-      </label>
-    
-    <a href="./" title="04. 数据处理常用工具之 awk" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../chapter_01/04_awk/" title="04. 数据处理常用工具之 awk" class="md-nav__link">
       04. 数据处理常用工具之 awk
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-awk" title="1. 了解 awk 基本用法" class="md-nav__link">
-    1. 了解 awk 基本用法
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-awk" title="2. awk 基本语法" class="md-nav__link">
-    2. awk 基本语法
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-pattern" title="2.1 Pattern" class="md-nav__link">
-    2.1 Pattern
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#211" title="2.1.1 正则表达式" class="md-nav__link">
-    2.1.1 正则表达式
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#212" title="2.1.2 语句表达" class="md-nav__link">
-    2.1.2 语句表达
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-action" title="2.2 Action" class="md-nav__link">
-    2.2 Action
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#221-ifelse" title="2.2.1 if...else" class="md-nav__link">
-    2.2.1 if...else
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#222-while" title="2.2.2 while" class="md-nav__link">
-    2.2.2 while
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23" title="2.3. 内建变量" class="md-nav__link">
-    2.3. 内建变量
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#231-awk" title="2.3.1 控制 awk 的变量" class="md-nav__link">
-    2.3.1 控制 awk 的变量
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#232" title="2.3.2 传递信息的变量" class="md-nav__link">
-    2.3.2 传递信息的变量
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24" title="2.4. 内建函数" class="md-nav__link">
-    2.4. 内建函数
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#241" title="2.4.1 数学函数" class="md-nav__link">
-    2.4.1 数学函数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#242" title="2.4.2 字符串函数" class="md-nav__link">
-    2.4.2 字符串函数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#243" title="2.4.3 输入输出函数" class="md-nav__link">
-    2.4.3 输入输出函数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#244" title="2.4.4 时间函数" class="md-nav__link">
-    2.4.4 时间函数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#245-bit" title="2.4.5 Bit操作函数" class="md-nav__link">
-    2.4.5 Bit操作函数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#246" title="2.4.6 其他" class="md-nav__link">
-    2.4.6 其他
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" title="3. 示例" class="md-nav__link">
-    3. 示例
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31" title="3.1 对列的操作" class="md-nav__link">
-    3.1 对列的操作
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32" title="3.2 对行的操作" class="md-nav__link">
-    3.2 对行的操作
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33" title="3.3 格式化输出" class="md-nav__link">
-    3.3 格式化输出
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34" title="3.4 合并文件" class="md-nav__link">
-    3.4 合并文件
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -547,7 +317,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../05_bioawk/" title="05. 测序数据工具 bioawk" class="md-nav__link">
+    <a href="../../chapter_01/05_bioawk/" title="05. 测序数据工具 bioawk" class="md-nav__link">
       05. 测序数据工具 bioawk
     </a>
   </li>
@@ -559,7 +329,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../06_python/" title="06. 了解 Python 生活轻松一点" class="md-nav__link">
+    <a href="../../chapter_01/06_python/" title="06. 了解 Python 生活轻松一点" class="md-nav__link">
       06. 了解 Python 生活轻松一点
     </a>
   </li>
@@ -571,7 +341,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../07_shell/" title="07. 生信分析要学一点 shell" class="md-nav__link">
+    <a href="../../chapter_01/07_shell/" title="07. 生信分析要学一点 shell" class="md-nav__link">
       07. 生信分析要学一点 shell
     </a>
   </li>
@@ -982,10 +752,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
     
     <label class="md-nav__link" for="nav-10">
       第九章 分析工具部署方式
@@ -1001,11 +773,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../chapter_09/01_docker/" title="01. 基于 docker 镜像" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        01. 基于 docker 镜像
+      </label>
+    
+    <a href="./" title="01. 基于 docker 镜像" class="md-nav__link md-nav__link--active">
       01. 基于 docker 镜像
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-ce-for-ubuntu" title="安装 docker CE for Ubuntu" class="md-nav__link">
+    安装 docker CE for Ubuntu
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1015,7 +825,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_09/02_galaxy/" title="02. Galaxy 平台" class="md-nav__link">
+    <a href="../02_galaxy/" title="02. Galaxy 平台" class="md-nav__link">
       02. Galaxy 平台
     </a>
   </li>
@@ -1027,7 +837,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_09/03_amazon/" title="03. Amazon EC2 云平台" class="md-nav__link">
+    <a href="../03_amazon/" title="03. Amazon EC2 云平台" class="md-nav__link">
       03. Amazon EC2 云平台
     </a>
   </li>
@@ -1039,7 +849,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_09/04_others/" title="04. 其他平台" class="md-nav__link">
+    <a href="../04_others/" title="04. 其他平台" class="md-nav__link">
       04. 其他平台
     </a>
   </li>
@@ -1119,199 +929,9 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-awk" title="1. 了解 awk 基本用法" class="md-nav__link">
-    1. 了解 awk 基本用法
+  <a href="#docker-ce-for-ubuntu" title="安装 docker CE for Ubuntu" class="md-nav__link">
+    安装 docker CE for Ubuntu
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-awk" title="2. awk 基本语法" class="md-nav__link">
-    2. awk 基本语法
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-pattern" title="2.1 Pattern" class="md-nav__link">
-    2.1 Pattern
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#211" title="2.1.1 正则表达式" class="md-nav__link">
-    2.1.1 正则表达式
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#212" title="2.1.2 语句表达" class="md-nav__link">
-    2.1.2 语句表达
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-action" title="2.2 Action" class="md-nav__link">
-    2.2 Action
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#221-ifelse" title="2.2.1 if...else" class="md-nav__link">
-    2.2.1 if...else
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#222-while" title="2.2.2 while" class="md-nav__link">
-    2.2.2 while
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23" title="2.3. 内建变量" class="md-nav__link">
-    2.3. 内建变量
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#231-awk" title="2.3.1 控制 awk 的变量" class="md-nav__link">
-    2.3.1 控制 awk 的变量
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#232" title="2.3.2 传递信息的变量" class="md-nav__link">
-    2.3.2 传递信息的变量
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24" title="2.4. 内建函数" class="md-nav__link">
-    2.4. 内建函数
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#241" title="2.4.1 数学函数" class="md-nav__link">
-    2.4.1 数学函数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#242" title="2.4.2 字符串函数" class="md-nav__link">
-    2.4.2 字符串函数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#243" title="2.4.3 输入输出函数" class="md-nav__link">
-    2.4.3 输入输出函数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#244" title="2.4.4 时间函数" class="md-nav__link">
-    2.4.4 时间函数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#245-bit" title="2.4.5 Bit操作函数" class="md-nav__link">
-    2.4.5 Bit操作函数
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#246" title="2.4.6 其他" class="md-nav__link">
-    2.4.6 其他
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" title="3. 示例" class="md-nav__link">
-    3. 示例
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31" title="3.1 对列的操作" class="md-nav__link">
-    3.1 对列的操作
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32" title="3.2 对行的操作" class="md-nav__link">
-    3.2 对行的操作
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33" title="3.3 格式化输出" class="md-nav__link">
-    3.3 格式化输出
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34" title="3.4 合并文件" class="md-nav__link">
-    3.4 合并文件
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1331,230 +951,26 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/chapter_01/04_awk.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/chapter_09/01_docker.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="awk-ngs">用 awk 处理 NGS 数据<a class="headerlink" href="#awk-ngs" title="Permanent link">&para;</a></h1>
-<p>awk 工具常用来对文件内容按行进行匹配搜索，一旦某一行中的内容与搜索条件匹配，则对该内容做进一步操作。本质上讲，awk 属于数据驱动的程序，因此 awk 程序也非常容易编写与阅读。高通量测序技术带来大量的数据，而生物学分析往往直需要其中特定的部分，这时 awk 就可以大显身手为测序数据的转换与分析提供帮助。我们首先来看一个最简单的 awk 命令程序：</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 将contigs.fasta文件中序列ID打印到终端</span>
-<span class="c1"># contigs.fasta内如：</span>
-<span class="c1"># &gt;seq1</span>
-<span class="c1"># ATGGGGTCCGATTACCG</span>
-<span class="c1"># &gt;seq2</span>
-<span class="c1"># CGGNTTACCGYGACAGT</span>
+                <h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+<p><img alt="banner" src="../../assets/images/9.1/banner.jpg" /></p>
+<h2 id="docker-ce-for-ubuntu">安装 docker CE for Ubuntu<a class="headerlink" href="#docker-ce-for-ubuntu" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="c1"># 确保删除旧版本</span>
+$ sudo apt remove docker docker-engine docker.io
 
-$ awk <span class="s1">&#39;/&gt;/&#39;</span> contigs.fasta
+<span class="c1"># Ubuntu 14.04 版本的用户要安装 linux-image-extra-*</span>
+$ sudo apt-get update
+$ sudo apt-get install linux-image-extra-<span class="k">$(</span>uname -r<span class="k">)</span> linux-image-extra-virtual
 
-<span class="c1"># 屏幕上会输出：</span>
-&gt;seq1
-&gt;seq2
-
-$ awk <span class="s1">&#39;/^ATG/&#39;</span> contigs.fasta内如
-
-<span class="c1">#屏幕上会输出：</span>
-ATGGGGTCCGATTACCG
-</pre></div>
-
-<p>这个命令很简单，就是将 fasta 文件中包含 '&gt;' 字符的行输出，实际上就是将所有的序列头内容输出。作用类似<code class="codehilite">grep &quot;&gt;&quot;</code>。</p>
-<p>awk 程序主体主要包括 pattern，action和input file：</p>
-<ul>
-<li>pattern 表示所要搜索的内容，可以用正则表达式。</li>
-<li>{ action } 则表示搜索匹配后要做的操作。</li>
-<li>input file：所要搜索的输入内容，比如前面例子的 contigs.fasta</li>
-</ul>
-<p>awk可以在shell里直接运行：</p>
-<div class="codehilite"><pre><span></span>$ awk <span class="s1">&#39;pattern { action }&#39;</span> input_file
-</pre></div>
-
-<p>也可以写成awk程序来运行。一个 awk 程序往往如下所示：</p>
-<div class="codehilite"><pre><span></span><span class="c1">#!/usr/bin/awk -f</span>
-<span class="nx">pattern</span> <span class="p">{</span> <span class="nx">action</span> <span class="p">}</span>
-</pre></div>
-
-<p>awk 可以不需要输入文件；对于pattern和action来说，2者至少要有一个才能运行。如果没有pattern，则默认匹配任何输入，按行输出并执行action。如果没有action，则匹配pattern并按行输出不做额外操作。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 尝试以下语句，在终端打印`hello world`。这里BEGIN是pattern，{ print &quot;hello world&quot; } 是action</span>
-$ awk <span class="s1">&#39;BEGIN { print &quot;hello world&quot; }&#39;</span>
-
-<span class="c1"># 模拟cat输出终端输入的字符。这里省略了pattern</span>
-$ awk <span class="s1">&#39;{ print }&#39;</span>
-</pre></div>
-
-<p>上面这个例子可以保存成文件（如<code class="codehilite">hello_world</code>）来运行，文件内容如下：</p>
-<div class="codehilite"><pre><span></span><span class="c1">#!/usr/bin/awk -f</span>
-<span class="c1"># 注意不同发行版的linux，awk路径有所区别</span>
-
-<span class="nb">BEGIN</span> <span class="p">{</span> <span class="kr">print</span> <span class="s2">&quot;hello world&quot;</span> <span class="p">}</span>
-</pre></div>
-
-<p>运行这个程序：</p>
-<div class="codehilite"><pre><span></span>$ chmod +x hello_world
-$ ./hello_world
-</pre></div>
-
-<h2 id="1-awk">1. 了解 awk 基本用法<a class="headerlink" href="#1-awk" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>$ awk <span class="s1">&#39;$1~/gene1/ { print $2 }&#39;</span> input_data
-</pre></div>
-
-<p>作用与 cat + grep + sed 类似</p>
-<div class="codehilite"><pre><span></span>$ cat input_data <span class="p">|</span> grep gene1 <span class="p">|</span> sed <span class="o">{</span><span class="nv">$1</span><span class="o">}</span>
-</pre></div>
-
-<h2 id="2-awk">2. awk 基本语法<a class="headerlink" href="#2-awk" title="Permanent link">&para;</a></h2>
-<h3 id="21-pattern">2.1 Pattern<a class="headerlink" href="#21-pattern" title="Permanent link">&para;</a></h3>
-<h4 id="211">2.1.1 正则表达式<a class="headerlink" href="#211" title="Permanent link">&para;</a></h4>
-<p>pattern 可以采用正则表达式来匹配内容。用<code class="codehilite">/ regular expression /</code>来表示。</p>
-<p>几个特殊的Patterns：</p>
-<ul>
-<li>BEGIN:</li>
-<li>END:</li>
-<li>BEGINFILE:</li>
-<li>ENDFILE:</li>
-</ul>
-<h4 id="212">2.1.2 语句表达<a class="headerlink" href="#212" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>$ awk <span class="s1">&#39;$1 == &quot;gene&quot; { print $2 }&#39;</span> genes.list
-</pre></div>
-
-<h3 id="22-action">2.2 Action<a class="headerlink" href="#22-action" title="Permanent link">&para;</a></h3>
-<h4 id="221-ifelse">2.2.1 if...else<a class="headerlink" href="#221-ifelse" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><span class="c1"># if block</span>
-$ awk <span class="s1">&#39;{if(condition) print $1}&#39;</span> input
-
-<span class="c1"># if else block</span>
-$ awk <span class="s1">&#39;{if(condition)</span>
-<span class="s1">&gt;     print $1</span>
-<span class="s1">&gt; else</span>
-<span class="s1">&gt;     print $2</span>
-<span class="s1">&gt; }&#39;</span> input
-</pre></div>
-
-<h4 id="222-while">2.2.2 while<a class="headerlink" href="#222-while" title="Permanent link">&para;</a></h4>
-<p>while 控制语句要换行，用4个空格划分控制块。</p>
-<div class="codehilite"><pre><span></span>$ awk <span class="s1">&#39;{ i = 1</span>
-<span class="s1">&gt;     while (i &lt;= 3) {</span>
-<span class="s1">&gt;         print $i</span>
-<span class="s1">&gt;         i++</span>
-<span class="s1">&gt;     }</span>
-<span class="s1">&gt; }&#39;</span> input
-</pre></div>
-
-<h3 id="23">2.3. 内建变量<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
-<h4 id="231-awk">2.3.1 控制 awk 的变量<a class="headerlink" href="#231-awk" title="Permanent link">&para;</a></h4>
-<ul>
-<li>BINMODE #</li>
-<li>CONVFMT</li>
-<li>FIELDWIDTHS #</li>
-<li>FPAT #</li>
-<li>FS</li>
-<li>IGNORECASE #</li>
-<li>LINT #</li>
-<li>OFMT</li>
-<li>OFS</li>
-<li>ORS</li>
-<li>PREC #</li>
-<li>ROUNDMODE #</li>
-<li>RS</li>
-<li>SUBSEP</li>
-<li>TEXTDOMAIN #</li>
-</ul>
-<h3 id="232">2.3.2 传递信息的变量<a class="headerlink" href="#232" title="Permanent link">&para;</a></h3>
-<ul>
-<li>ARGC , ARGV</li>
-<li>ARGIND #</li>
-<li>ENVIRON</li>
-<li>ERRNO #</li>
-<li>FILENAME</li>
-<li>FNR</li>
-<li>NF</li>
-<li>FUNCTAB #</li>
-<li>NR</li>
-<li>PROCINFO #</li>
-<li>RLENGTH</li>
-<li>RSTART</li>
-<li>RT #</li>
-<li>SYMTAB #</li>
-</ul>
-<h3 id="24">2.4. 内建函数<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
-<h4 id="241">2.4.1 数学函数<a class="headerlink" href="#241" title="Permanent link">&para;</a></h4>
-<ul>
-<li>atan2(y, x)</li>
-<li>cos(x)</li>
-<li>exp(x)</li>
-<li>int(x)</li>
-<li>log(x)</li>
-<li>rand()</li>
-<li>sin(x)</li>
-<li>sqrt(x)</li>
-<li>srand([ x ])</li>
-</ul>
-<h4 id="242">2.4.2 字符串函数<a class="headerlink" href="#242" title="Permanent link">&para;</a></h4>
-<ul>
-<li>asort(source [ , dest [ , how ] ] ) #</li>
-<li>asorti(source [ , dest [ , how ] ] ) #</li>
-<li>gensub(regexp, replacement, how [ , target ] ) #</li>
-<li>gsub(regexp, replacement [ , target ] )</li>
-<li>index(in, find)</li>
-<li>length( [ string ] )</li>
-<li>match(string, regexp [ , array ] )</li>
-<li>patsplit(string, array [ , fieldpat [ , seps ] ] ) #</li>
-<li>split(string, array [ , fieldsep [ , seps ] ] )</li>
-<li>sprintf(format, expression1, ...)</li>
-<li>strtonum(str) #</li>
-<li>sub(regexp, replacement [ , target ] )</li>
-<li>substr(string, start [ , length ] )</li>
-<li>tolower(string)</li>
-<li>toupper(string)</li>
-</ul>
-<h4 id="243">2.4.3 输入输出函数<a class="headerlink" href="#243" title="Permanent link">&para;</a></h4>
-<ul>
-<li>close(filename [ , how ] )</li>
-<li>fflush( [ filename ] )</li>
-<li>system(command)</li>
-</ul>
-<h4 id="244">2.4.4 时间函数<a class="headerlink" href="#244" title="Permanent link">&para;</a></h4>
-<ul>
-<li>mktime(datespec)</li>
-<li>strftime( [ format [ , timestamp [ , utc-flag ] ] ] )</li>
-<li>systime()</li>
-</ul>
-<h4 id="245-bit">2.4.5 Bit操作函数<a class="headerlink" href="#245-bit" title="Permanent link">&para;</a></h4>
-<ul>
-<li>and(v1, v2 [, ...])</li>
-<li>compl(val)</li>
-<li>lshift(val, count)</li>
-<li>or(v1, v2 [, ...])</li>
-<li>rshift(val, count)</li>
-<li>xor(v1, v2 [, ...])</li>
-</ul>
-<h4 id="246">2.4.6 其他<a class="headerlink" href="#246" title="Permanent link">&para;</a></h4>
-<ul>
-<li>isarray(x)</li>
-<li>bindtextdomain(directory [ , domain ] )</li>
-<li>dcgettext(string [ , domain [ , category ] ] )</li>
-<li>dcngettext(string1, string2, number [ , domain [ , category ] ] )</li>
-</ul>
-<h2 id="3">3. 示例<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<p>示例部分介绍 awk 在日常中，特别是处理 ngs 数据时的一些例子。</p>
-<h3 id="31">3.1 对列的操作<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
-<p><strong>调整列顺序</strong>：在有GUI的操作系统里，一般采用类似 excel, calc 之类的软件导入数据文件，然后剪切各列调整顺序。如果用 awk 来解决也很方便，你只需要考虑好调整的各列顺序即可，action 里的{ print ...}顺序就是重新调整后的各列顺序：</p>
-<p><div class="codehilite"><pre><span></span>$ awk <span class="s1">&#39;{ print $3, $5, $7, $2, $1, $4, $6 }&#39;</span> infile.txt &gt; outfile.txt
-</pre></div>
-<strong>插入列</strong>：有时候要插入一列数据，用awk可以很方便的实现：</p>
-<div class="codehilite"><pre><span></span>$ awk <span class="s1">&#39;{ print $1, $2 &quot;gene expression&quot;, $3}&#39;</span> infile.txt &gt; outfile.txt
-</pre></div>
-
-<h3 id="32">3.2 对行的操作<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
-<p><strong>去除重复的行</strong>：有时候数据里含有重复的行，而当你只需要唯一性数据时，就可以用这行程序，只保留具有唯一性的数据行。</p>
-<div class="codehilite"><pre><span></span>$ awk <span class="s1">&#39;!x[$0]++&#39;</span> infile.txt &gt; outfile.txt
-</pre></div>
-
-<h3 id="33">3.3 格式化输出<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>$ awk -F<span class="s2">&quot;:&quot;</span> <span class="s1">&#39;BEGIN { printf &quot;%-8s %-3s&quot;, &quot;User&quot;, &quot;UID&quot; } \</span>
-<span class="s1">&gt; NR==1,NR==20 { printf &quot;%-8s %-3d&quot;, $1, $3 }&#39;</span> /etc/passwd
-</pre></div>
-
-<h3 id="34">3.4 合并文件<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="c1"># 搜索当前目录下所有包含序列ATCCGGA的fasta文件，并输出文件名和行号以及序列</span>
-$ find . -type f -name <span class="s2">&quot;*.fasta&quot;</span> -exec awk <span class="s1">&#39;/ATCCCGGA/ {print FILENAME, NR, $0}&#39;</span> <span class="o">{}</span> <span class="se">\+</span>
+<span class="c1"># 安装 docker ce</span>
+$ sudo apt install apt-transport-https ca-certificates curl software-properties-common
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> sudo apt-key add -
+$ sudo apt-key fingerprint 0EBFCD88
+$ sudo add-apt-repository <span class="s2">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> stable&quot;</span>
+$ sudo apt update
+$ sudo apt install docker-ce
 </pre></div>
                 
                   
@@ -1576,7 +992,7 @@ $ find . -type f -name <span class="s2">&quot;*.fasta&quot;</span> -exec awk <sp
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../03_linux-administration/" title="03. Linux 系统管理" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../chapter_08/03_circos/" title="03. circos 工具使用" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1585,19 +1001,19 @@ $ find . -type f -name <span class="s2">&quot;*.fasta&quot;</span> -exec awk <sp
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                03. Linux 系统管理
+                03. circos 工具使用
               </span>
             </div>
           </a>
         
         
-          <a href="../05_bioawk/" title="05. 测序数据工具 bioawk" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../02_galaxy/" title="02. Galaxy 平台" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                05. 测序数据工具 bioawk
+                02. Galaxy 平台
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
