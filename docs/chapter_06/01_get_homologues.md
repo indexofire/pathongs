@@ -2,6 +2,14 @@
 
 [get_homologues](http://eead-csic-compbio.github.io/get_homologues) 是一个用 perl 语言编写的用来鉴定细菌 core-genomes 和 pan-genomes 的开源工具。
 
+```bash
+# 当前最新版本为 v3.1.2
+$ wget https://github.com/eead-csic-compbio/get_homologues/releases/download/v3.1.2/get_homologues-x86_64-20180524.tgz
+$ tar zxf get_homologues-x86_64-20180524.tgz -C get_homologues
+$ cd get_homologues
+$ ./install.pl
+```
+
 ## 分析案例
 
 我们以 Bacillus cereus 基因组 assembly 数据库为例分析该物种的 Pangenomics。
@@ -36,4 +44,3 @@ $ get_homologues.pl -d gbk_folder -n 40 -X
 
 1. Bacterial Pangenomics, Methods and Protocols, Chapter14
 2. [get_homologues manual](http://eead-csic-compbio.github.io/get_homologues/manual/manual.html)
-
