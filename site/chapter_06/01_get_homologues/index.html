@@ -974,7 +974,15 @@
 $ wget https://github.com/eead-csic-compbio/get_homologues/releases/download/v3.1.2/get_homologues-x86_64-20180524.tgz
 $ tar zxf get_homologues-x86_64-20180524.tgz -C get_homologues
 $ <span class="nb">cd</span> get_homologues
-$ ./install.pl
+
+<span class="c1"># 新建一个虚拟环境</span>
+$ conda create -n get_homologues
+$ conda activate get_homologues
+
+<span class="c1"># 安装 gd 依赖</span>
+<span class="o">(</span>get_homologues<span class="o">)</span>$ conda install libgd
+<span class="c1"># 如果没有安装 R，可以在虚拟机里安装 r-base</span>
+<span class="o">(</span>get_homologues<span class="o">)</span>$ conda install r-base r-base-dev
 </pre></div>
 
 <h2 id="_1">分析案例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>

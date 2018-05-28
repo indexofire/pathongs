@@ -1,11 +1,8 @@
+# Gubbins 分析
 
+## 安装
 
-
-## Gubbins
-
-### 安装 Gubbins
-
-```
+```bash
 # for ubuntu users
 $ sudo apt install gubbins
 
@@ -19,6 +16,9 @@ $ make && sudo make install
 $ cd python && sudo python3 setup.py install
 ```
 
-### 使用 Gubbins
+## 使用
 
-#### 创建 fasta 格式的基因组比对文件
+### 1. 创建 fasta 格式的基因组比对文件
+
+
+## Reference
