@@ -1,7 +1,7 @@
 # 铜绿假单胞菌临床株与环境株SNP溯源
 
 !!! note "本节实践"
-    利用高通量测序技术对铜绿假单胞菌的临床分离株与环境分离株在基因组水平上进行SNP分析，从而溯源菌株并做耐药分析。
+    利用高通量测序技术对铜绿假单胞菌(*Pseudomonas aeruginosa*)的临床分离株与环境分离株在基因组水平上进行SNP分析，从而溯源菌株并做耐药分析。
 
 **分析方法**：
 
@@ -14,22 +14,17 @@
 - freebayes
 - vcffilter
 
-**分析流程**:
-
-
-**实践意义**：
-
-可以作为今后实验室开展病原菌溯源工作的一个技术指导依据。
+**实践意义**：可以作为今后实验室开展病原菌溯源工作的一个技术指导依据。
 
 ## 1. 提出问题
 
 工作流程将从以下几个方面对于这个案例开展数据分析：
 
-- 测序质量：reads的长度，插入片段的长度
-- 将测序数据比对到参考基因组ST17：
-  * 每个样品reads的分布情况
-  * 每个样品的基因组测序覆盖度
-  * 不同样品之间的差异，特别是当设置不同的过滤参数时的情况：
+1. 测序质量: reads的长度，插入片段的长度
+2. 将测序数据比对到参考基因组ST17
+  - 每个样品reads的分布情况
+  - 每个样品的基因组测序覆盖度
+  - 不同样品之间的差异，特别是当设置不同的过滤参数时的情况：
     + Quality filter: QUAL > 100
     + Likelihood filter: QUAL / AO > 10
     + Variant frequency filter: AO / DP > 0.9 (90% allele frequency)
@@ -55,10 +50,16 @@
 ```bash
 # 新建一个目录，数据和操作均在里面进行
 $ mkdir pae-case && cd pae-case
+
 # 下载数据文件
 $ wget -m http://www.microbesng.uk/filedist/pseudomonas-practical/
 $ mv www.microbesng.uk/filedist/pseudomonas-practical/* .
 ```
+
+wget 的 -m 参数可以递归下载。
+
+!!! warning
+    数据下载地址目前已经失效！
 
 ### 2.2 建立 ST17 型参考菌株索引
 
@@ -104,7 +105,7 @@ $ samtools stats TAP1.sorted.bam | grep "^COV" > TAP1.coverage.txt
 > ggplot(cov, aes(x=V3, y=V4)) + geom_bar(stat="identity") + xlab("Coverage") + ylab("Count")
 ```
 
-![coverage plot](../assets/images/10.1/Rplot.png)
+![coverage plot](../assets/images/chapter_10/02/Rplot.png)
 
 ### 2.5 比较1号临床株与环境株的SNPs差异
 

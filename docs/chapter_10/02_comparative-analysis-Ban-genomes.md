@@ -205,7 +205,8 @@ $ roary -p -e mafft *.gff
 ### 3.4 Harvest
 
 ```bash
-$ parsnp
+$ parsnp -g ref.gbk -d data -c -p 40 -o output
+$ harvesttools -i outut/*.ggr -S snp 
 ```
 
 ## 4. SNPs 构建进化树
@@ -214,11 +215,9 @@ $ parsnp
 $ raxml -f a -x 12345 -p 12345 -#100 -n ban -T 40 -s snp -m GTRGAMMA
 ```
 
-
-
 ### 4.1 基于参考基因组 Mapping 的方法
 
-**Snippy**
+#### 1. Snippy*
 
 ```bash
 # snippy mapping
@@ -237,19 +236,13 @@ $ scp user@server-ip:/path/RAxML_bestTree.ex .
 $ figtree RAxML_bestTree.ex &
 ```
 
-**Tools**
-
-
 ## 5. 核心基因分析
 
 ### 5.1 get_homologues
 
-
-
-
 ## 6. 相关软件安装
 
-**edirect**
+*****edirect**
 
 ```bash
 $ wget ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/edirect.tar.gz
