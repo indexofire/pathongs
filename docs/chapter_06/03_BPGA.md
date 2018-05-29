@@ -1,22 +1,33 @@
-# 3.2 [BPGA][]
+# [BPGA][]
 
 [BPGA][] 是由印度 [CSIR-Indian Institute of Chemical Biology](http://www.iicb.res.in/) 研究人员开发的用于细菌 Pangenome 分析工具流。
 
 [BPGA][] 依赖第三方软件，用 [USEARCH][] 构建聚类，用 [Muscle][] 进行多重序列比对。用 [gnuplot][] 和 [ghostscript][] 生成结果图片或pdf文件。
 
-## 使用
+由于 [BPGA][] 通过 Usearch 构建 cluster，因此需要用户自行申请或购买 usearch。
+
+## 1. 安装
+
+```bash
+# 假设已经安装好 usearch
+$ wget  https://sourceforge.net/projects/bpgatool/files/BPGA-1.3-linux-x86_64-0-0-0.tar.gz
+$ tar zxf BPGA-1.3-linux-x86_64-0-0-0.tar.gz -C ~/app/BPGA
+$ cd ~/app/BPGA
+```
+
+## 2. 使用
 
 **输入数据**
 
 * .faa 蛋白质序列文件
-* .pep.fsa HMP蛋白数据文件
-* .gbk/gb [Genbank][]蛋白质序列文件
+* .pep .fsa HMP蛋白数据文件
+* .gbk/gb Genbank蛋白质序列文件
 
 **使用方法**
 
 BPGA 采用了类似phylip式的交互式运行方式。
 
-```
+```bash
 $ BPGA-Version-1.3
 ```
 
@@ -29,7 +40,19 @@ $ BPGA-Version-1.3
 
 **结果文件**
 
-生成的数据包括根目录下的文件和Results、Sequences 和 Supporting_files 3个子文件夹内结果文件
+生成的数据包括根目录下的文件和 Results、Sequences 和 Supporting_files 3个子文件夹内结果文件
+
+根目录下文件：
+
+| 结果文件 | 数据内容 |
+| -------- | -------- |
+| cog.udb | |
+| gi_name | 各个基因组基因的 gi 名称 |
+| INPUT_all.ffn | 各个基因组的编码基因核酸序列 |
+| INPUT_all.seq | 各个基因组的编码基因氨基酸序列|
+| kegg1.udb | |
+| kegg2.udb | |
+| list | 基因组文件列表 |
 
 Results文件夹内主要包含分析结果生成的图：
 
