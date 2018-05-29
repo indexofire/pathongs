@@ -108,6 +108,18 @@
     
         
     <url>
+     <loc>https://indexofire.github.io/pathongs/chapter_04/01_bwa-samtools-pipeline/</loc>
+     <lastmod>2018-05-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://indexofire.github.io/pathongs/chapter_04/02_gatk/</loc>
+     <lastmod>2018-05-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>https://indexofire.github.io/pathongs/chapter_04/03_bacteria-assembly/</loc>
      <lastmod>2018-05-29</lastmod>
      <changefreq>daily</changefreq>
@@ -137,6 +149,12 @@
         
     <url>
      <loc>https://indexofire.github.io/pathongs/chapter_05/03_PGAAP/</loc>
+     <lastmod>2018-05-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://indexofire.github.io/pathongs/chapter_05/04_snpEFF/</loc>
      <lastmod>2018-05-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -271,6 +289,34 @@
         
     <url>
      <loc>https://indexofire.github.io/pathongs/chapter_10/02_comparative-analysis-Ban-genomes/</loc>
+     <lastmod>2018-05-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>https://indexofire.github.io/pathongs/chapter_11/01_srst2/</loc>
+     <lastmod>2018-05-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://indexofire.github.io/pathongs/chapter_11/02_mlst/</loc>
+     <lastmod>2018-05-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://indexofire.github.io/pathongs/chapter_11/03_ariba/</loc>
+     <lastmod>2018-05-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://indexofire.github.io/pathongs/chapter_11/04_csibelia/</loc>
      <lastmod>2018-05-29</lastmod>
      <changefreq>daily</changefreq>
     </url>

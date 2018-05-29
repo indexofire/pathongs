@@ -13,7 +13,7 @@
         <meta name="description" content="病原微生物高通量测序数据分析手册">
       
       
-        <link rel="canonical" href="https://indexofire.github.io/pathongs/chapter_09/02_galaxy/">
+        <link rel="canonical" href="https://indexofire.github.io/pathongs/chapter_11/03_ariba/">
       
       
         <meta name="author" content="Mark Renton">
@@ -42,7 +42,7 @@
     
     
       
-        <title>02. Galaxy 平台 - Pathogen NGS 数据分析入门</title>
+        <title>03. 拼接序列耐药基因扫描工具 Ariba - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#galaxy" tabindex="1" class="md-skip">
+      <a href="#ariba" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -121,7 +121,7 @@
                 Pathogen NGS 数据分析入门
               </span>
               <span class="md-header-nav__topic">
-                02. Galaxy 平台
+                03. 拼接序列耐药基因扫描工具 Ariba
               </span>
             
           
@@ -860,12 +860,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
     <label class="md-nav__link" for="nav-10">
       第九章 分析工具部署方式
@@ -883,7 +881,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../01_docker/" title="01. 基于 docker 镜像" class="md-nav__link">
+    <a href="../../chapter_09/01_docker/" title="01. 基于 docker 镜像" class="md-nav__link">
       01. 基于 docker 镜像
     </a>
   </li>
@@ -893,186 +891,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        02. Galaxy 平台
-      </label>
-    
-    <a href="./" title="02. Galaxy 平台" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../chapter_09/02_galaxy/" title="02. Galaxy 平台" class="md-nav__link">
       02. Galaxy 平台
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" title="1. 小型实验室快速解决方案" class="md-nav__link">
-    1. 小型实验室快速解决方案
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-docker" title="1.1 安装 Docker" class="md-nav__link">
-    1.1 安装 Docker
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-docker" title="1.2 Docker入门" class="md-nav__link">
-    1.2 Docker入门
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-galaxy-docker" title="1.3 安装 galaxy docker 镜像" class="md-nav__link">
-    1.3 安装 galaxy docker 镜像
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#14-galax-stable" title="1.4 启动 galax-stable 容器" class="md-nav__link">
-    1.4 启动 galax-stable 容器
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#15" title="1.5 复制容器内文件" class="md-nav__link">
-    1.5 复制容器内文件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#16" title="1.6 加载数据卷" class="md-nav__link">
-    1.6 加载数据卷
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#17" title="1.7 删除所有不运行的容器" class="md-nav__link">
-    1.7 删除所有不运行的容器
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#18" title="1.8 删除镜像" class="md-nav__link">
-    1.8 删除镜像
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" title="2. 本地安装与基本配置" class="md-nav__link">
-    2. 本地安装与基本配置
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21" title="2.1 下载与安装" class="md-nav__link">
-    2.1 下载与安装
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22" title="2.2 配置与运行" class="md-nav__link">
-    2.2 配置与运行
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-toolshed" title="2.3 添加官方 toolshed 中的工具" class="md-nav__link">
-    2.3 添加官方 toolshed 中的工具
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" title="3. 构建单机产环境" class="md-nav__link">
-    3. 构建单机产环境
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31" title="3.1 系统设置" class="md-nav__link">
-    3.1 系统设置
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-postgresql" title="3.2 安装 postgresql" class="md-nav__link">
-    3.2 安装 postgresql
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-nginx" title="3.3 安装 nginx" class="md-nav__link">
-    3.3 安装 nginx
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rreference" title="Rreference" class="md-nav__link">
-    Rreference
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1082,7 +905,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../03_amazon/" title="03. Amazon EC2 云平台" class="md-nav__link">
+    <a href="../../chapter_09/03_amazon/" title="03. Amazon EC2 云平台" class="md-nav__link">
       03. Amazon EC2 云平台
     </a>
   </li>
@@ -1094,7 +917,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../04_others/" title="04. 其他平台" class="md-nav__link">
+    <a href="../../chapter_09/04_others/" title="04. 其他平台" class="md-nav__link">
       04. 其他平台
     </a>
   </li>
@@ -1157,10 +980,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
     
     <label class="md-nav__link" for="nav-12">
       第十一章 常见分析工具
@@ -1178,7 +1003,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_11/01_srst2/" title="01. SRST2 短序列比对基因工具" class="md-nav__link">
+    <a href="../01_srst2/" title="01. SRST2 短序列比对基因工具" class="md-nav__link">
       01. SRST2 短序列比对基因工具
     </a>
   </li>
@@ -1190,7 +1015,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_11/02_mlst/" title="02. 拼接序列管家基因扫描工具 MLST" class="md-nav__link">
+    <a href="../02_mlst/" title="02. 拼接序列管家基因扫描工具 MLST" class="md-nav__link">
       02. 拼接序列管家基因扫描工具 MLST
     </a>
   </li>
@@ -1200,11 +1025,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../chapter_11/03_ariba/" title="03. 拼接序列耐药基因扫描工具 Ariba" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        03. 拼接序列耐药基因扫描工具 Ariba
+      </label>
+    
+    <a href="./" title="03. 拼接序列耐药基因扫描工具 Ariba" class="md-nav__link md-nav__link--active">
       03. 拼接序列耐药基因扫描工具 Ariba
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1. 安装" class="md-nav__link">
+    1. 安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2. 使用" class="md-nav__link">
+    2. 使用
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1214,7 +1084,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_11/04_csibelia/" title="04. 细菌共线性分析工具 C-Sibelia" class="md-nav__link">
+    <a href="../04_csibelia/" title="04. 细菌共线性分析工具 C-Sibelia" class="md-nav__link">
       04. 细菌共线性分析工具 C-Sibelia
     </a>
   </li>
@@ -1246,145 +1116,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" title="1. 小型实验室快速解决方案" class="md-nav__link">
-    1. 小型实验室快速解决方案
+  <a href="#1" title="1. 安装" class="md-nav__link">
+    1. 安装
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-docker" title="1.1 安装 Docker" class="md-nav__link">
-    1.1 安装 Docker
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-docker" title="1.2 Docker入门" class="md-nav__link">
-    1.2 Docker入门
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13-galaxy-docker" title="1.3 安装 galaxy docker 镜像" class="md-nav__link">
-    1.3 安装 galaxy docker 镜像
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#14-galax-stable" title="1.4 启动 galax-stable 容器" class="md-nav__link">
-    1.4 启动 galax-stable 容器
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#15" title="1.5 复制容器内文件" class="md-nav__link">
-    1.5 复制容器内文件
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#16" title="1.6 加载数据卷" class="md-nav__link">
-    1.6 加载数据卷
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#17" title="1.7 删除所有不运行的容器" class="md-nav__link">
-    1.7 删除所有不运行的容器
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#18" title="1.8 删除镜像" class="md-nav__link">
-    1.8 删除镜像
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" title="2. 本地安装与基本配置" class="md-nav__link">
-    2. 本地安装与基本配置
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21" title="2.1 下载与安装" class="md-nav__link">
-    2.1 下载与安装
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22" title="2.2 配置与运行" class="md-nav__link">
-    2.2 配置与运行
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-toolshed" title="2.3 添加官方 toolshed 中的工具" class="md-nav__link">
-    2.3 添加官方 toolshed 中的工具
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" title="3. 构建单机产环境" class="md-nav__link">
-    3. 构建单机产环境
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31" title="3.1 系统设置" class="md-nav__link">
-    3.1 系统设置
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-postgresql" title="3.2 安装 postgresql" class="md-nav__link">
-    3.2 安装 postgresql
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-nginx" title="3.3 安装 nginx" class="md-nav__link">
-    3.3 安装 nginx
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rreference" title="Rreference" class="md-nav__link">
-    Rreference
+  <a href="#2" title="2. 使用" class="md-nav__link">
+    2. 使用
   </a>
   
 </li>
@@ -1405,204 +1145,21 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/chapter_09/02_galaxy.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/chapter_11/03_ariba.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="galaxy">Galaxy 快速部署方式<a class="headerlink" href="#galaxy" title="Permanent link">&para;</a></h1>
-<p><img alt="banner" src="../../assets/images/9.2/banner.jpg" /></p>
-<h2 id="1">1. 小型实验室快速解决方案<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>使用 Amazon EC2 对于不熟悉 Linux 和服务器配置的用户而言是很方便，节省用户在硬件的经济投入，配置学习以及维护能力的培养。但对于测序数据不适合上传到第三方服务器的实验室或要结合本地 LIMS 系统的实验室，要快速构建 Galaxy 以及相配套的其他软件，目前来说最简便的方法之一是利用 docker 部署到本地服务器上。</p>
-<h3 id="11-docker">1.1 安装 Docker<a class="headerlink" href="#11-docker" title="Permanent link">&para;</a></h3>
-<p>Ubuntu 14.04 已经自带了 docker 安装包，不过版本相对较老，想使用 docker 最新版的功能，添加源来安装 docker:</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 添加 docker 源</span>
-$ sudo apt-get install apt-transport-https
-$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
-$ sudo bash -c <span class="s2">&quot;echo deb https://get.docker.io/ubuntu docker main &gt; /etc/apt/sources.list.d/docker.list&quot;</span>
-
-<span class="c1"># 安装 docker</span>
-$ sudo apt-get update
-$ sudo apt-get install lxc-docker
-
-<span class="c1"># 安装完成后启动 docker 服务</span>
-$ sudo service docker start
+                <h1 id="ariba">ARIBA<a class="headerlink" href="#ariba" title="Permanent link">&para;</a></h1>
+<p><a href="https://github.com/sanger-pathogens/ariba">Ariba</a> 工具是由 Sanger 测序中心病原微生物开发组开发的用于Assembly数据扫描的工具。主要用于耐药基因的扫描，也可以用来对特定基因扫描（如MLST管家基因）。</p>
+<h2 id="1">1. 安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="c1"># bioconda 安装包版本较最新版落后较多，通过 pip 从pypi获取最新版。通过 pip 安装就要手动安装依赖软件，这里还是以 conda 安装为例。</span>
+$ conda create -n ariba <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.6
+<span class="o">(</span>ariba<span class="o">)</span>$ conda install bowtie2 cd-hit mummer
+<span class="o">(</span>ariba<span class="o">)</span>$ pip install ariba
 </pre></div>
 
-<h3 id="12-docker">1.2 Docker入门<a class="headerlink" href="#12-docker" title="Permanent link">&para;</a></h3>
-<p>首先要对 docker 镜像和容器的概念有所了解。细节可以参阅 <a href="https://yeasy.gitbooks.io/docker_practice/content">Docker 从入门到实践</a></p>
-<div class="codehilite"><pre><span></span>$ docker run ubuntu:14.04 /bin/echo <span class="s1">&#39;Hello world&#39;</span>
+<h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="o">(</span>ariba<span class="o">)</span>$ ariba
 </pre></div>
-
-<h3 id="13-galaxy-docker">1.3 安装 galaxy docker 镜像<a class="headerlink" href="#13-galaxy-docker" title="Permanent link">&para;</a></h3>
-<p>galaxy 的 docker 镜像可以自己来创建，建议使用<code class="codehilite">docker galaxy-stable</code>，源代码可以在 <a href="https://github.com/bgruening/docker-galaxy-stable">Github</a> 下载。也可以直接到官方 Hun Registry 里下载<code class="codehilite">galaxy-stable</code>镜像</p>
-<div class="codehilite"><pre><span></span>$ sudo docker pull bgruening/galaxy-stable
-</pre></div>
-
-<p>官方 Registry 非常慢，可以通过国内 daocloud 服务商的加速器来加快<code class="codehilite">docker pull</code>过程：首先注册一个 <a href="../daocloud.io">daocloud</a> 用户，然后在命令行中添加 registry mirror。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># ****** 为daocloud分配给你的ID</span>
-$ <span class="nb">echo</span> <span class="s2">&quot;DOCKER_OPTS=\&quot;\$DOCKER_OPTS --registry-mirror=http://******.m.daocloud.io\&quot;&quot;</span> <span class="p">|</span> sudo tee -a /etc/default/docker
-$ sudo service docker restart
-$ sudo docker pull bgruening/galaxy-stable
-</pre></div>
-
-<p>该脚本可以将<code class="codehilite">--registry-mirror</code>加入到你的Docker配置文件<code class="codehilite">/etc/default/docker</code>中。适用于Ubuntu14.04，其他版本根据docker配置文件和环境变量，可能有细微不同。</p>
-<div class="codehilite"><pre><span></span>$ wget https://github.com/bgruening/docker-galaxy-stable/archive/15.10.tar.gz
-$ tar zxf <span class="m">15</span>.10.tar.gz
-$ <span class="nb">cd</span> docker-galaxy-stable-15.10
-</pre></div>
-
-<h3 id="14-galax-stable">1.4 启动 galax-stable 容器<a class="headerlink" href="#14-galax-stable" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite">docker run -d</code>表示以daemon方式运行docker，执行该命令后，docker完成galaxy初始化需要花几分钟时间才能访问。如果是本地运行，用浏览器访问<code class="codehilite">127.0.0.1:8080</code>可以看到galaxy首页，如果是服务器上用ssh连接执行命令，要访问服务器IP加上8080端口。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 后台运行 galaxy 容器</span>
-$ sudo docker run -d -p <span class="m">8080</span>:80 -p <span class="m">8021</span>:21 bgruening/galaxy-stable
-
-<span class="c1"># 交互方式运行 galaxy 容器</span>
-$ sudo docker run -i -t -p <span class="m">8080</span>:80 bgruening/galaxy-stable /bin/bash
-root$ sh run.sh
-</pre></div>
-
-<p>有时候需要进入docker容器中进行操作，就可以以<code class="codehilite">docker run -i</code>交互模式进行访问。进入容器后运行<code class="codehilite">sh run.sh</code>可以DEBUG方式运行galaxy，适合本地测试使用。</p>
-<h3 id="15">1.5 复制容器内文件<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="c1"># fc3e62e0471d 是想要获取文件的所在容器。foo.txt是想要获得的文件。</span>
-$ sudo docker cp fc3ea62e471d:/home/foo.txt .
-</pre></div>
-
-<h3 id="16">1.6 加载数据卷<a class="headerlink" href="#16" title="Permanent link">&para;</a></h3>
-<p>需要分析的数据通过添加外部数据卷来实现。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 添加服务器上的 /mydata 卷到容器中</span>
-$ sudo docker create -v /mydata --name my_data_vol bgruening/galaxy-stable /bin/bash
-
-<span class="c1"># 或者在运行时将本地卷`/mydata`加入到容器中`/container_data`位置</span>
-$ sudo docker run -d -p <span class="m">8080</span>:80 -v /mydata:/container_data/ bgruening/galaxy-stable
-</pre></div>
-
-<p>镜像是只读的，当<code class="codehilite">Ctrl+D</code>方式退出容器后，再次进入容器时你上次以添加的内容是看不到的。如果想要从上一次运行的容易中获得文件可以用<code class="codehilite">docker cp</code>的方法，不过你得记住上一次运行的container id号。</p>
-<h3 id="17">1.7 删除所有不运行的容器<a class="headerlink" href="#17" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>$ sudo docker ps -a <span class="p">|</span> cut -d <span class="s1">&#39; &#39;</span> -f <span class="m">1</span> <span class="p">|</span> sudo xargs docker rm
-</pre></div>
-
-<h3 id="18">1.8 删除镜像<a class="headerlink" href="#18" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="c1"># IMAGE ID 是该镜像的ID，如果镜像还有容器运行，或有其他镜像的依赖关系，则无法删除要先删除容器或其他镜像。</span>
-$ sudo docker rmi IMAGE_ID
-</pre></div>
-
-<hr />
-<h2 id="2">2. 本地安装与基本配置<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<p>本节介绍 Galaxy 的最基本下载安装与使用。最适合的场景为个人电脑，单用户使用的情况。</p>
-<h3 id="21">2.1 下载与安装<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
-<p>Galaxy 作为一款开源软件，其代码库托管在 <a href="http://bitbucket.org">http://bitbucket.org</a> ，先安装 mercurial ，然后用 hg 工具将 galaxy 代码库克隆到本地。</p>
-<div class="codehilite"><pre><span></span>$ sudo apt-get install mercurial
-$ hg clone https://bitbucket.org/galaxy/galaxy-dist/
-$ <span class="nb">cd</span> galaxy-dist
-</pre></div>
-
-<p>可以用 <code class="codehilite">hg branch</code> 命令查看代码分支是否为 stable，如果是其他分支（galaxy代码库有另一分支'default'），切换到 stable 分支：<code class="codehilite">hg update stable</code>。在生产环境下建议使用 stable 分支的代码。</p>
-<h3 id="22">2.2 配置与运行<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
-<p>克隆到本地的 stable 代码，一般Linux系统自带Python就可以直接运行了。</p>
-<div class="codehilite"><pre><span></span>$ ./run.sh
-</pre></div>
-
-<p>运行 <code class="codehilite">run.sh</code>，这个shell脚本程序会自动完成初始化数据，依赖库下载，数据库迁移等一系列操作，当看到终端显示<code class="codehilite">serving on http://127.0.0.1:8080</code>时，可以打开浏览器，访问 <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a> 即可看到galaxy的界面。</p>
-<h3 id="23-toolshed">2.3 添加官方 toolshed 中的工具<a class="headerlink" href="#23-toolshed" title="Permanent link">&para;</a></h3>
-<p>默认的galaxy只带有基本的工具，对于实际工作中需要的各种分析软件，需要添加到自己建立的 galaxy 实例中。</p>
-<p>高通量测序的生物信息学软件大多是基于命令行的开源工具。galaxy利用python语言将这些工具粘合到galaxy实例中，使得用户可以在web界面中直接调用命令行工具对数据进行操作。</p>
-<p>galaxy有一个toolshed（工具库）的概念：<code class="codehilite">https://toolshed.g2.bx.psu.edu/</code>（官方维护的toolshed），许多著名的工具已经被移植到toolshed中，可以直接被安装到galaxy里，此外也有许多第三方的toolshed包可以添加，甚至掌握了一些python脚本和galaxy xml规范后，也可以自己添加一些分析工具到galaxy中。</p>
-<p>除了分析软件外，toolshed还包含创建的数据类型，以及工作流等。</p>
-<p>首先修改配置文件 <code class="codehilite">tool_sheds_conf.xml</code></p>
-<div class="codehilite"><pre><span></span>$ cp config/tool_sheds_conf.xml.sample config/tool_sheds_conf.xml
-</pre></div>
-
-<p>其次在galaxy.ini中配置依赖包的安装目录（上一部分已经添加了这个参数，将依赖包安装在<code class="codehilite">tool_dep</code>），然后添加管理员帐号，比如你之前用admin@localhost.com注册的galaxy实例，就将galaxy.ini中<code class="codehilite">admin_users</code>设置为：</p>
-<div class="codehilite"><pre><span></span><span class="nv">admin_users</span> <span class="o">=</span> admin@localhost.com
-</pre></div>
-
-<p>重启你的galaxy实例，用admin@localhost.com用户登陆，你就有权限访问<code class="codehilite">http://127.0.0.1:8080/admin</code>，在admin界面可以看到<code class="codehilite">Tool sheds</code>下有<code class="codehilite">Search and browse tool sheds</code>链接，点击后可以看到默认的2个toolsheds源。</p>
-<p>进入<code class="codehilite">Galaxy main tool shed</code>，工具列表上访有搜索框，在这里输入你要安装的工具名称比如<code class="codehilite">spades</code>后，回车进行检索。</p>
-<p><img alt="Instance" src="../../assets/img/appendix_a5_1.png" /></p>
-<p>点击结果列表中的<code class="codehilite">spades</code>下拉菜单，选择<code class="codehilite">Preview and install</code>，在转向页面中点击<code class="codehilite">Install to Galaxy</code>后，会出现如下图的提示。</p>
-<p><img alt="Instance" src="../../assets/img/appendix_a5_2.png" /></p>
-<p>在<code class="codehilite">add new tool panel section</code>中输入<code class="codehilite">Assembly</code>，将<code class="codehilite">spades</code>工具归类到<code class="codehilite">Assembly</code>这个新建的工具类别中，点击页面底部的<code class="codehilite">Install</code>按钮开始安装。</p>
-<hr />
-<h2 id="3">3. 构建单机产环境<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<p>作为个人尝试，前面的步骤在PC机上已经可以正常运行使用。对于要作为生产环境下多用户使用，建议使用专门的代理服务器和数据库来增强效率和速度。这里采用nginx+postgresql构建生产环境下的 Galaxy 服务。这里只是简单的介绍一下最基本的配置方式，对于高负载的web server设置又是另一个很复杂的话题了，这里就不具体展开。也可以参考别人做的<a href="https://registry.hub.docker.com/u/bgruening/galaxy-stable/dockerfile/">galaxy dockerfile</a>。</p>
-<h3 id="31">3.1 系统设置<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
-<p>首先在ubuntu下新建一个用户galaxy。</p>
-<div class="codehilite"><pre><span></span>$ sudo adduser galaxy
-</pre></div>
-
-<p>按照提示，在弹出提示符输入相应内容，主要填好密码即可，其他可以留空。然后切换到galaxy用户：</p>
-<div class="codehilite"><pre><span></span>$ su galaxy
-$ <span class="nb">cd</span>
-</pre></div>
-
-<p>重复<code class="codehilite">Galaxy 本地安装与配置</code>的第一步<code class="codehilite">下载与安装</code>步骤,建立配置文件：</p>
-<div class="codehilite"><pre><span></span>$ cp config/galaxy.ini.sample config/galaxy.ini
-$ vim config/galaxy.ini
-</pre></div>
-
-<p>将配置文件galaxy.ini设置如下，你也可以将内容直接保存成galaxy.ini</p>
-<div class="codehilite"><pre><span></span><span class="o">[</span>server:main<span class="o">]</span>
-<span class="nv">use</span> <span class="o">=</span> egg:Paste#http
-<span class="nv">host</span> <span class="o">=</span> <span class="m">0</span>.0.0.0
-<span class="nv">use_threadpool</span> <span class="o">=</span> True
-<span class="nv">threadpool_kill_thread_limit</span> <span class="o">=</span> <span class="m">10800</span>
-
-<span class="o">[</span>filter:gzip<span class="o">]</span>
-<span class="nv">use</span> <span class="o">=</span> egg:Paste#gzip
-
-<span class="o">[</span>filter:proxy-prefix<span class="o">]</span>
-<span class="nv">use</span> <span class="o">=</span> egg:PasteDeploy#prefix
-<span class="nv">prefix</span> <span class="o">=</span> /galaxy
-
-<span class="o">[</span>app:main<span class="o">]</span>
-paste.app_factory <span class="o">=</span> galaxy.web.buildapp:app_factory
-<span class="nv">database_connection</span> <span class="o">=</span> postgresql://galaxy:galaxy@localhost:5432/galaxyserver
-<span class="nv">tool_dependency_dir</span> <span class="o">=</span> tool_dep
-<span class="nv">use_nglims</span> <span class="o">=</span> False
-<span class="nv">nglims_config_file</span> <span class="o">=</span> tool-data/nglims.yaml
-<span class="nv">debug</span> <span class="o">=</span> False
-<span class="nv">use_interactive</span> <span class="o">=</span> False
-<span class="nv">admin_users</span> <span class="o">=</span> admin@localhost.com
-</pre></div>
-
-<h3 id="32-postgresql">3.2 安装 postgresql<a class="headerlink" href="#32-postgresql" title="Permanent link">&para;</a></h3>
-<p>安装postgresql并建立galaxy数据库，这里用户名和密码都设置为<code class="codehilite">galaxy</code>，要与 galaxy.ini 中<code class="codehilite">database_connection</code>参数对应的值一致。</p>
-<div class="codehilite"><pre><span></span>$ sudo apt-get install postgresql-9.3
-$ su - postgres
-$ psql template1
-
-&gt; CREATE USER galaxy WITH PASSWORD <span class="s1">&#39;galaxy&#39;</span><span class="p">;</span>
-&gt; CREATE DATABASE galaxyserver<span class="p">;</span>
-&gt; GRANT ALL PRIVILEGES ON DATABASE galaxyserver to galaxy<span class="p">;</span>
-&gt; <span class="se">\q</span>
-</pre></div>
-
-<h3 id="33-nginx">3.3 安装 nginx<a class="headerlink" href="#33-nginx" title="Permanent link">&para;</a></h3>
-<p>用nginx做反向代理，处理请求。</p>
-<div class="codehilite"><pre><span></span>$ sudo apt-get install nginx
-</pre></div>
-
-<p>设置nginx.conf</p>
-<div class="codehilite"><pre><span></span>http <span class="o">{</span>
-    upstream galaxy_app <span class="o">{</span>
-        server localhost:8080<span class="p">;</span>
-    <span class="o">}</span>
-
-    server <span class="o">{</span>
-        client_max_body_size 10G<span class="p">;</span>
-        location / <span class="o">{</span>
-            proxy_pass   http://galaxy_app<span class="p">;</span>
-            proxy_set_header   X-Forwarded-Host <span class="nv">$host</span><span class="p">;</span>
-            proxy_set_header   X-Forwarded-For  <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</pre></div>
-
-<h2 id="rreference">Rreference<a class="headerlink" href="#rreference" title="Permanent link">&para;</a></h2>
-<ol>
-<li><a href="https://yeasy.gitbooks.io/docker_practice/content">Docker 从入门到实践</a></li>
-<li><a href="https://github.com/bgruening/docker-galaxy-stable">docker-galaxy-stable</a></li>
-</ol>
                 
                   
                 
@@ -1623,7 +1180,7 @@ $ psql template1
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../01_docker/" title="01. 基于 docker 镜像" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../02_mlst/" title="02. 拼接序列管家基因扫描工具 MLST" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1632,19 +1189,19 @@ $ psql template1
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                01. 基于 docker 镜像
+                02. 拼接序列管家基因扫描工具 MLST
               </span>
             </div>
           </a>
         
         
-          <a href="../03_amazon/" title="03. Amazon EC2 云平台" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../04_csibelia/" title="04. 细菌共线性分析工具 C-Sibelia" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                03. Amazon EC2 云平台
+                04. 细菌共线性分析工具 C-Sibelia
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
