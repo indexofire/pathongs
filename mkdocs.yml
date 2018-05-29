@@ -21,47 +21,39 @@ pages:
     - '05. 测序数据工具 bioawk': chapter_01/05_bioawk.md
     - '06. 了解 Python 生活轻松一点': chapter_01/06_python.md
     - '07. 生信分析要学一点 shell': chapter_01/07_shell.md
-    #- '1.1 玩转 edirect': chapter_01/edirect.md
-    #- '1.2 基因组公共数据库': chapter_01/public_database.md
-    #- '1.3 模拟生成NGS数据': chapter_01/emulation.md
-    #- '1.4 提升Linux生产力': chapter_01/install.md
   - '第二章 序列处理':
     - '01. EMBOSS 工具集': chapter_02/01_emboss.md
     - '02. Blast 与 Blast+': chapter_02/02_blast.md
     - '03. 国产序列处理神器 SeqKit': chapter_02/08_seqkit.md
     - '04. K-mer 处理工具': chapter_02/09_kmer.md
-    #- '2.1 基因组拼接': chapter_02/assembly.md
-    #- '2.1 spades': chapter_02/spades.md
-    #- '2.2 a5-miseq': chapter_02/a5-miseq.md
-    #- '2.3 masurca': chapter_02/masurca.md
-    #- '2.4 prokka': chapter_02/prokka.md
   - '第三章 数据的上传和下载':
     - '01. 生物公共数据库': chapter_03/01_databases.md
     - '02. 生物数据文件格式': chapter_03/02_fileformat.md
     - '03. 玩转 edirect': chapter_03/03_edirect.md
     #- '3.1 MUMmer': chapter_03/mummer.md
     #- '3.2 C-Sibelia': chapter_03/c-sibelia.md
-  - '第四章 基因组组装':
+  - '第四章 基因组组装与比对':
+    - '01. bwa samtools 比对分析流程': chapter_04/01_bwa-samtools-pipeline.md
+    - '02. GATK 分析流程': chapter_04/02_gatk.md
     - '03. 细菌基因组组装': chapter_04/03_bacteria-assembly.md
     - '04. 病毒基因组组装': chapter_04/04_virus-assembly.md
-    #- '4.1 多重序列比对': chapter_04/msa.md
-    #- '4.2 Pan-Genomes 分析': chapter_04/pangenome.md
-    #- '4.3 Phylogenomics': chapter_04/phylogenomics.md
-    #- '4.2 Roary 分析多基因组': chapter_04/roary.md
-    #- '4.3 get_homologs': chapter_04/get_homologs.md
   - '第五章 基因组序列注释':
     - '01. Prokka 快速注释': chapter_05/01_prokka.md
-    - '02. rast': chapter_05/02_rast.md
-    - '03. PGAAP': chapter_05/03_PGAAP.md
-    #- '5.1 snp-pipeline': chapter_05/snp-pipeline.md
+    - '02. 在线注释工具 rast': chapter_05/02_rast.md
+    - '03. 注释工具 PGAAP': chapter_05/03_PGAAP.md
+    - '04. SNP注释工具 snpEFF': chapter_05/04_snpEFF.md
   - '第六章 Pangenome 数据分析':
-    - '01. Get_Homologues 分析': chapter_06/01_get_homologues.md 
-    - '02. Gubbins 分析': chapter_06/02_gubbins.md
-    #- '6.1 igv': chapter_06/igv.md
-    #- '6.2 circos': chapter_06/circos.md
+    - '01. Pangenome 概述': chapter_06/01_pangenome.md
+    - '02. Get_Homologues 分析': chapter_06/02_get_homologues.md
+    - '03. BPGA 分析': chapter_06/03_BPGA.md
+    - '04. Roary 分析': chapter_06/04_roary.md
+    - '05. panseq 分析': chapter_06/05_panseq.md
+    - '06. Gubbins 分析': chapter_06/06_gubbins.md
+    - '07. OrthMCL 分析': chapter_06/07_orthmcl.md
+    - '08. ITEP 分析': chapter_06/08_ITEP.md
   - '第七章 宏基因组分析':
-    - '01 16s 菌群分析': chapter_07/01_16s.md
-    - '02 WGS 宏基因组分析': chapter_07/02_shotgun.md
+    - '01. 16s 菌群分析': chapter_07/01_16s.md
+    - '02. WGS 宏基因组分析': chapter_07/02_shotgun.md
   - '第八章 可视化分析工具':
     - '01. igv 查看比对结果': chapter_08/01_igv.md
     - '02. BRIG 细菌比较基因组分析工具': chapter_08/02_BRIG.md
@@ -72,18 +64,13 @@ pages:
     - '03. Amazon EC2 云平台': chapter_09/03_amazon.md
     - '04. 其他平台': chapter_09/04_others.md
   - '第十章 基因组分析实践':
-    - '01 铜绿假单胞菌不同来源株SNP溯源': chapter_10/01_trace-Pae-from-different-source-by-SNP.md
-    - '02 炭疽芽胞杆菌比较基因组学研究': chapter_10/02_comparative-analysis-Ban-genomes.md
-  #- '附录':
-    #- 'A1. Linux 命令':
-      #- '1. Linux 系统基本命令': appendix/linux/basic.md
-    #- 'A2. Python 语言':
-      #- '1. biopython 基础': appendix/python/biopython.md
-      #- '2. Python 数据科学': appendix/python/data-science.md
-    #- 'A3. R 语言':
-      #- '1. ggplot2 入门': appendix/r/ggplot2.md
-    #- 'awk 和 bioawk': appendix/awk.md
-    #- '文件格式': appendix/fileformat.md
+    - '01. 铜绿假单胞菌不同来源株SNP溯源': chapter_10/01_trace-Pae-from-different-source-by-SNP.md
+    - '02. 炭疽芽胞杆菌比较基因组学研究': chapter_10/02_comparative-analysis-Ban-genomes.md
+  - '第十一章 常见分析工具':
+    - '01. SRST2 短序列比对基因工具': chapter_11/01_srst2.md
+    - '02. 拼接序列管家基因扫描工具 MLST': chapter_11/02_mlst.md
+    - '03. 拼接序列耐药基因扫描工具 Ariba': chapter_11/03_ariba.md
+    - '04. 细菌共线性分析工具 C-Sibelia': chapter_11/04_csibelia.md
 use_directory_urls: true
 
 extra_javascript:

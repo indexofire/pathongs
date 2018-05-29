@@ -13,7 +13,7 @@
         <meta name="description" content="病原微生物高通量测序数据分析手册">
       
       
-        <link rel="canonical" href="https://indexofire.github.io/pathongs/chapter_04/03_bacteria-assembly/">
+        <link rel="canonical" href="https://indexofire.github.io/pathongs/chapter_06/08_ITEP/">
       
       
         <meta name="author" content="Mark Renton">
@@ -42,7 +42,7 @@
     
     
       
-        <title>03. 细菌基因组组装 - Pathogen NGS 数据分析入门</title>
+        <title>08. ITEP 分析 - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#itep" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -121,7 +121,7 @@
                 Pathogen NGS 数据分析入门
               </span>
               <span class="md-header-nav__topic">
-                03. 细菌基因组组装
+                08. ITEP 分析
               </span>
             
           
@@ -488,12 +488,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       第四章 基因组组装
@@ -509,97 +507,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        03. 细菌基因组组装
-      </label>
-    
-    <a href="./" title="03. 细菌基因组组装" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../chapter_04/03_bacteria-assembly/" title="03. 细菌基因组组装" class="md-nav__link">
       03. 细菌基因组组装
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-spades" title="1. SPAdes" class="md-nav__link">
-    1. SPAdes
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-spades" title="1.1 下载并安装 SPAdes" class="md-nav__link">
-    1.1 下载并安装 SPAdes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12" title="1.2 拼装细菌基因组" class="md-nav__link">
-    1.2 拼装细菌基因组
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-macursa" title="2. Macursa" class="md-nav__link">
-    2. Macursa
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-velvet" title="3. Velvet" class="md-nav__link">
-    3. Velvet
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-a5-miseq" title="4. A5-miseq" class="md-nav__link">
-    4. A5-miseq
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" title="Reference:" class="md-nav__link">
-    Reference:
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -609,7 +521,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../04_virus-assembly/" title="04. 病毒基因组组装" class="md-nav__link">
+    <a href="../../chapter_04/04_virus-assembly/" title="04. 病毒基因组组装" class="md-nav__link">
       04. 病毒基因组组装
     </a>
   </li>
@@ -684,10 +596,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
     <label class="md-nav__link" for="nav-7">
       第六章 Pangenome 数据分析
@@ -705,7 +619,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_06/01_pangenome/" title="01. Pangenome 概述" class="md-nav__link">
+    <a href="../01_pangenome/" title="01. Pangenome 概述" class="md-nav__link">
       01. Pangenome 概述
     </a>
   </li>
@@ -717,7 +631,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_06/02_get_homologues/" title="02. Get_Homologues 分析" class="md-nav__link">
+    <a href="../02_get_homologues/" title="02. Get_Homologues 分析" class="md-nav__link">
       02. Get_Homologues 分析
     </a>
   </li>
@@ -729,7 +643,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_06/03_BPGA/" title="03. BPGA 分析" class="md-nav__link">
+    <a href="../03_BPGA/" title="03. BPGA 分析" class="md-nav__link">
       03. BPGA 分析
     </a>
   </li>
@@ -741,7 +655,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_06/04_roary/" title="04. Roary 分析" class="md-nav__link">
+    <a href="../04_roary/" title="04. Roary 分析" class="md-nav__link">
       04. Roary 分析
     </a>
   </li>
@@ -753,7 +667,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_06/05_panseq/" title="05. panseq 分析" class="md-nav__link">
+    <a href="../05_panseq/" title="05. panseq 分析" class="md-nav__link">
       05. panseq 分析
     </a>
   </li>
@@ -765,7 +679,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_06/06_gubbins/" title="06. Gubbins 分析" class="md-nav__link">
+    <a href="../06_gubbins/" title="06. Gubbins 分析" class="md-nav__link">
       06. Gubbins 分析
     </a>
   </li>
@@ -777,7 +691,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_06/07_orthmcl/" title="07. OrthMCL 分析" class="md-nav__link">
+    <a href="../07_orthmcl/" title="07. OrthMCL 分析" class="md-nav__link">
       07. OrthMCL 分析
     </a>
   </li>
@@ -787,11 +701,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../chapter_06/08_ITEP/" title="08. ITEP 分析" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="08. ITEP 分析" class="md-nav__link md-nav__link--active">
       08. ITEP 分析
     </a>
+    
   </li>
 
         
@@ -1045,70 +968,6 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-spades" title="1. SPAdes" class="md-nav__link">
-    1. SPAdes
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-spades" title="1.1 下载并安装 SPAdes" class="md-nav__link">
-    1.1 下载并安装 SPAdes
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12" title="1.2 拼装细菌基因组" class="md-nav__link">
-    1.2 拼装细菌基因组
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-macursa" title="2. Macursa" class="md-nav__link">
-    2. Macursa
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-velvet" title="3. Velvet" class="md-nav__link">
-    3. Velvet
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-a5-miseq" title="4. A5-miseq" class="md-nav__link">
-    4. A5-miseq
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" title="Reference:" class="md-nav__link">
-    Reference:
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1119,179 +978,10 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/chapter_04/03_bacteria-assembly.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/chapter_06/08_ITEP.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">细菌基因组短序列拼接拼接<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>微生物基因组测序后的拼接工作，有许多软件可以完成。近几年不断有新的优秀拼接软件涌现，本节仅挑选几个微生物基因组拼接使用较多也是评测中比较优秀的几个工具。也可以先对自己的测序物种做一个 assembly evaluation，选择比较适合的拼接软件。</p>
-<p><strong>常用拼接软件工具列表</strong></p>
-<ul>
-<li><code class="codehilite">SPAdes &lt;http://spades.bioinf.spbau.ru/&gt;</code>_</li>
-<li><code class="codehilite">MaSuRCA &lt;http://www.genome.umd.edu/masurca.html&gt;</code>_</li>
-<li>Velvet</li>
-<li>A5_miseq</li>
-</ul>
-<p>更多工具可以参见<code class="codehilite">这里 &lt;https://omictools.com/genome-assembly-category&gt;</code>_</p>
-<h2 id="1-spades">1. SPAdes<a class="headerlink" href="#1-spades" title="Permanent link">&para;</a></h2>
-<p>SPAdes 是由</p>
-<h3 id="11-spades">1.1 下载并安装 SPAdes<a class="headerlink" href="#11-spades" title="Permanent link">&para;</a></h3>
-<p><strong>下载编译包安装</strong></p>
-<p>下载预先编译的版本包，将可执行文件添加到系统路径中，可以直接调用运行。</p>
-<div class="codehilite"><pre><span></span>$ curl -O http://spades.bioinf.spbau.ru/release3.11.1/SPAdes-3.9.0-Linux.tar.gz
-$ tar zxf SPAdes-3.9.0-Linux.tar.gz -C ~/app
-$ <span class="nb">cd</span> ~/app
-$ sudo ln -s <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/SPAdes-3.11.0-Linux/bin/* /usr/local/sbin
-</pre></div>
-
-<p><strong>通过conda安装</strong></p>
-<div class="codehilite"><pre><span></span>$ conda create -n assembly
-$ conda activate assembly
-<span class="o">(</span>assembly<span class="o">)</span>$ conda install spades
-</pre></div>
-
-<p><strong>Docker方式安装</strong></p>
-<div class="codehilite"><pre><span></span>$
-</pre></div>
-
-<h3 id="12">1.2 拼装细菌基因组<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="c1"># -t 40 表示用40个 threads 进行拼接，根据自己电脑的CPU情况自行设置。</span>
-$ spades.py --careful -k <span class="m">21</span>,33,55,77,99,121 -1 SRR95386_1.fastq -2 SRR955386_2.fastq -o spades_output -t <span class="m">40</span>
-</pre></div>
-
-<p>SPAdes会尝试不同的Kmer，因此拼装时间也会根据Kmer选择数量成倍增加。对于常见的 Miseq v2/v3 试剂盒，采用 PE150/PE250/PE300 的读长测序，常用的拼接命令是：</p>
-<div class="codehilite"><pre><span></span><span class="c1"># PE150 读长测序数据</span>
-$ spades.py -k <span class="m">21</span>,33,55,77 --careful -1 SRR95386_1.fastq -2 SRR955386_2.fastq -o SRR95386_output -t <span class="m">40</span>
-<span class="c1"># PE250/300 读长测序数据</span>
-$ spades.py -k <span class="m">21</span>,33,55,77,99,127 --careful -1 SRR95386_1.fastq -2 SRR955386_2.fastq -o SRR95386_output -t <span class="m">40</span>
-</pre></div>
-
-<h2 id="2-macursa">2. Macursa<a class="headerlink" href="#2-macursa" title="Permanent link">&para;</a></h2>
-<p>2.1 下载并安装 MaSuRCA
-<sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup>^</p>
-<p>.. code-block:: bash</p>
-<p>~/tmp$ curl -O <a href="ftp://ftp.genome.umd.edu/pub/MaSuRCA/MaSuRCA-3.1.3.tar.gz">ftp://ftp.genome.umd.edu/pub/MaSuRCA/MaSuRCA-3.1.3.tar.gz</a>
-   ~/tmp$ tar zxvf MaSuRCA-3.1.3.tar.gz -C ~/app
-   ~/tmp$ cd ~/app
-   ~/app$ ./MaSuRCA-2.3.0/install.sh
-   ~/app$ sudo ln -s <code class="codehilite">pwd</code>/MaSuRCA-2.3.0/bin/masurca /usr/local/sbin</p>
-<p>2.2 建立拼装配置文件
-<sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup>^^</p>
-<p>.. code-block:: bash</p>
-<p>~/data$ touch SRR955386_masurca.config
-   ~/data$ nano SRR955386_masurca.config</p>
-<p>文件内容修改如下：</p>
-<p>.. code-block:: bash</p>
-<p>DATA
-   PE= p1 500 50 SRR955386_1.fastq SRR955386_2.fastq
-   END</p>
-<p>PARAMETERS
-   GRAPH_KMER_SIZE=auto
-   USE_LINKING_MATES=1
-   LIMIT_JUMP_COVERAGE = 60
-   KMER_COUNT_THRESHOLD = 1
-   NUM_THREADS= 2
-   JF_SIZE=100000000
-   DO_HOMOPOLYMER_TRIM=0
-   END</p>
-<p>设置 <strong>GRAPH_KMER_SIZE=auto</strong>，软件会调用Kmer=31来进行拼装。对于MiSeq PE250以上的插片，可以考虑手动设置使用更大的Kmer。</p>
-<p>2.3 开始拼装
-<sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup></p>
-<p>.. code-block:: bash</p>
-<p>~/app$ masurca SRR955386_masurca.config
-   ~/app$ ./assemble.sh</p>
-<hr />
-<h2 id="3-velvet">3. Velvet<a class="headerlink" href="#3-velvet" title="Permanent link">&para;</a></h2>
-<p>3.1 下载并安装
-<sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup>^^</p>
-<p>Velvet 是一个老牌的基因组测序数据拼接软件。Velvet最新版本是1.2.10，可以访问 <code class="codehilite">官方网站 &lt;https://www.ebi.ac.uk/~zerbino/velvet/&gt;</code>_ 下载源代码包，也可以通过克隆 <code class="codehilite">软件仓库 &lt;https://github.com/dzerbino/velvet.git&gt;</code>_ 的方式获得最新的源代码。</p>
-<p><strong>下载源代码</strong></p>
-<p>普通用户可以下载源代码包自行编译获得软件。</p>
-<p>.. code-block:: bash</p>
-<p>~$ cd /tmp
-   ~/tmp$ wget <a href="https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz">https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz</a>
-   ~/tmp$ tar xvf velvet_1.2.10.tgz -C ~/app/velvet</p>
-<p><strong>克隆代码仓库</strong></p>
-<p>如果在软件运行中遇到问题，想试用最新版代码，或是有能力提交issues，或者想改进软件参与开源代码编写的可以选择克隆代码库的方式。</p>
-<p>.. code-block:: bash</p>
-<p>~$ cd ~/tmp
-   ~/tmp$ git clone <a href="https://github.com/dzerbino/velvet.git">https://github.com/dzerbino/velvet.git</a></p>
-<p><strong>编译安装</strong></p>
-<p>make可以进行编译，有几个编译参数可以选择，分别是MAXKMERLENGTH, DIRECTORY</p>
-<p>.. code-block:: bash</p>
-<p>~$ cd ~/app/velvet
-   ~/app/velvet$ make 'MAXKMERLENGTH=127'
-   ~/app/velvet$ sudo cp velveth velvetg /usr/local/sbin</p>
-<p>3.2 拼接基因组
-<sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup>^^</p>
-<p>velvet软件由2个可执行文件 <code class="codehilite">velveth</code> 和 <code class="codehilite">velvetg</code> 组成。</p>
-<p>.. code-block</p>
-<p>~$ velvet</p>
-<p>3.3 其他组件
-<sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup></p>
-<hr />
-<h2 id="4-a5-miseq">4. A5-miseq<a class="headerlink" href="#4-a5-miseq" title="Permanent link">&para;</a></h2>
-<p><code class="codehilite">A5-miseq &lt;https://sourceforge.net/projects/ngopt/&gt;</code>__ 是一个用 perl
-开发的针对细菌基因组 de novo assembly 的 pipeline
-工具。它本身不参与组装，而是通过组合一套工具来完成工作，工具集包括：</p>
-<ul>
-<li>bwa</li>
-<li>samtools</li>
-<li>SGA</li>
-<li>bowtie</li>
-<li>Trimmomatic</li>
-<li>IDBA-UD</li>
-<li>SSPACE</li>
-</ul>
-<p>这些工具都以及集成在 A5-miseq 中，不需要另外安装。为了避免不同版本的
-samtools，bowtie 对结果产生的差异，建议采用虚拟环境如 docker
-等来隔离运行环境。</p>
-<p>4.1 安装 A5-miseq
-<sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup>^^</p>
-<p>下载预编译包安装
-<sub><del>~</del></sub><sub><del>~</del></sub>~~</p>
-<p>.. code-block:: bash</p>
-<p>~/tmp$ wget <a href="http://downloads.sourceforge.net/project/ngopt/a5_miseq_linux_20150522.tar.gz">http://downloads.sourceforge.net/project/ngopt/a5_miseq_linux_20150522.tar.gz</a>
-   ~/tmp$ tar zxvf a5_miseq_linux_20150522.tar.gz -C ~/app
-   ~/tmp$ sudo ln -s ~/app/a5_miseq_linux_20150522/bin/a5_pipeline.pl /usr/local/sbin</p>
-<p>建立 Docker 容器安装
-<sub><del>~</del></sub><sub><del>~</del></sub><sub>~</sub><sub>~</sub></p>
-<p>.. code-block:: bash</p>
-<p>~/docker$ mkdir -p a5-miseq &amp;&amp; cd a5-miseq
-   ~/docker/a5-miseq$ touch Dockerfile</p>
-<p>.. code-block:: bash</p>
-<p>FROM ubuntu:latest
-   MAINTAINER Mark Renton <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#100;&#101;&#120;&#111;&#102;&#105;&#114;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#105;&#110;&#100;&#101;&#120;&#111;&#102;&#105;&#114;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
-<p>RUN apt-get update -qy
-   RUN apt-get install -qy openjdk-7-jre-headless file
-   ADD <a href="http://downloads.sourceforge.net/project/ngopt/a5_miseq_linux_20150522.tar.gz">http://downloads.sourceforge.net/project/ngopt/a5_miseq_linux_20150522.tar.gz</a> /tmp/a5_miseq.tar.gz
-   RUN mkdir /tmp/a5_miseq
-   RUN tar xzf /tmp/a5_miseq.tar.gz --directory /tmp/a5_miseq --strip-components=1
-   ADD run /usr/local/bin/
-   ADD Procfile /
-   ENTRYPOINT ["/usr/local/bin/run"]</p>
-<p>4.2 使用 A5-miseq
-<sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup>^^</p>
-<p>.. code-block:: bash</p>
-<div class="codehilite"><pre><span></span>$ perl a5_pipeline.pl SRR955386_1.fastq SRR955386_2.fastq ~/data/a5_output
-</pre></div>
-
-
-<p>4.3 A5-miseq 文档
-<sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup><sup>^</sup>^^</p>
-<p>查看 A5-miseq 工具的使用文档可以用 a5_pipeline.pl 工具查看。</p>
-<p>.. code-block:: bash</p>
-<div class="codehilite"><pre><span></span># Usage:
-$ a5_pipeline.pl [--begin=1-5] [--end=1-5] [--preprocessed] &lt;lib_file&gt; &lt;out_base&gt;
-</pre></div>
-
-
-<h2 id="reference">Reference:<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="http://www.chenlianfu.com/?p=1635">http://www.chenlianfu.com/?p=1635</a></li>
-<li><a href="http://www.bbioo.com/lifesciences/40-116878-1.html">http://www.bbioo.com/lifesciences/40-116878-1.html</a></li>
-<li><a href="http://www.plob.org/2012/11/21/4797.html">http://www.plob.org/2012/11/21/4797.html</a></li>
-<li><a href="http://ged.msu.edu/angus/tutorials-2011/short-read-assembly-velvet.html">http://ged.msu.edu/angus/tutorials-2011/short-read-assembly-velvet.html</a></li>
-</ul>
+                <h1 id="itep">ITEP<a class="headerlink" href="#itep" title="Permanent link">&para;</a></h1>
                 
                   
                 
@@ -1312,7 +1002,7 @@ $ a5_pipeline.pl [--begin=1-5] [--end=1-5] [--preprocessed] &lt;lib_file&gt; &lt
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../chapter_03/03_edirect/" title="03. 玩转 edirect" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../07_orthmcl/" title="07. OrthMCL 分析" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1321,19 +1011,19 @@ $ a5_pipeline.pl [--begin=1-5] [--end=1-5] [--preprocessed] &lt;lib_file&gt; &lt
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                03. 玩转 edirect
+                07. OrthMCL 分析
               </span>
             </div>
           </a>
         
         
-          <a href="../04_virus-assembly/" title="04. 病毒基因组组装" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../chapter_07/01_16s/" title="01. 16s 菌群分析" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                04. 病毒基因组组装
+                01. 16s 菌群分析
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
