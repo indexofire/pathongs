@@ -30,8 +30,6 @@ pages:
     - '01. 生物公共数据库': chapter_03/01_databases.md
     - '02. 生物数据文件格式': chapter_03/02_fileformat.md
     - '03. 玩转 edirect': chapter_03/03_edirect.md
-    #- '3.1 MUMmer': chapter_03/mummer.md
-    #- '3.2 C-Sibelia': chapter_03/c-sibelia.md
   - '第四章 基因组组装与比对':
     - '01. bwa samtools 比对分析流程': chapter_04/01_bwa-samtools-pipeline.md
     - '02. GATK 分析流程': chapter_04/02_gatk.md
@@ -71,6 +69,24 @@ pages:
     - '02. 拼接序列管家基因扫描工具 MLST': chapter_11/02_mlst.md
     - '03. 拼接序列耐药基因扫描工具 Ariba': chapter_11/03_ariba.md
     - '04. 细菌共线性分析工具 C-Sibelia': chapter_11/04_csibelia.md
+  - '第十二章 Shotgun Metagenomics 分析':
+    - '01. kraken': chapter_12/01_kraken.md 
+    - '02. centrifuge': chapter_12/02_centrifuge.md 
+    - '03. bracken': chapter_12/03_bracken.md 
+    - '04. sourmash': chapter_12/04_sourmash.md 
+    - '05. clark': chapter_12/05_clark.md 
+    - '06. krona': chapter_12/06_krona.md 
+    - '07. pavian': chapter_12/07_pavian.md 
+  - '第十三章 三代测序数据处理':
+    - '01. nanopore': chapter_13/01_nanopore.md 
+    - '02. pacbio': chapter_13/02_pacbio.md 
+    - '03. canu': chapter_13/03_canu.md 
+    - '04. trimming': chapter_13/04_trimming.md
+    - '06. hybrid': chapter_13/06_hybrid.md 
+  - '第十四章 进化树构建':
+    - '01. 多重序列比对': chapter_14/01_msa.md 
+  - '第十五章 基因组流行病学':
+    - '01. 地理信息软件cartodb': chapter_15/01_cartodb.md    
 use_directory_urls: true
 
 extra_javascript:
