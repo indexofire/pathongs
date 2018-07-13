@@ -14,33 +14,33 @@ extra:
 pages:
   - '前言': index.md
   - '第一章 背景知识介绍':
-    - '01. Linux 系统操作基本命令': chapter_01/01_basic-cml.md
-    - '02. Linux 安装实例': chapter_01/02_linux-installation.md
-    - '03. Linux 系统管理': chapter_01/03_linux-administration.md
-    - '04. 数据处理常用工具之 awk': chapter_01/04_awk.md
-    - '05. 测序数据工具 bioawk': chapter_01/05_bioawk.md
-    - '06. 了解 Python 生活轻松一点': chapter_01/06_python.md
-    - '07. 生信分析要学一点 shell': chapter_01/07_shell.md
-  - '第二章 序列处理':
-    - '01. EMBOSS 工具集': chapter_02/01_emboss.md
-    - '02. Blast 与 Blast+': chapter_02/02_blast.md
-    - '03. 国产序列处理神器 SeqKit': chapter_02/08_seqkit.md
-    - '04. K-mer 处理工具': chapter_02/09_kmer.md
-  - '第三章 数据的上传和下载':
-    - '01. 生物公共数据库': chapter_03/01_databases.md
-    - '02. 生物数据文件格式': chapter_03/02_fileformat.md
-    - '03. 玩转 edirect': chapter_03/03_edirect.md
-  - '第四章 基因组组装与比对':
+    - '01. Linux 系统操作基本命令': C01_Linux_and_Script_Language/01_basic-cml.md
+    - '02. Linux 安装实例': C01_Linux_and_Script_Language/02_linux-installation.md
+    - '03. Linux 系统管理': C01_Linux_and_Script_Language/03_linux-administration.md
+    - '04. 数据处理常用工具之 awk': C01_Linux_and_Script_Language/04_awk.md
+    - '05. 测序数据工具 bioawk': C01_Linux_and_Script_Language/05_bioawk.md
+    - '06. 了解 Python 生活轻松一点': C01_Linux_and_Script_Language/06_python.md
+    - '07. 生信分析要学一点 shell': C01_Linux_and_Script_Language/07_shell.md
+  - '第二章 产用工具':
+    - '01. EMBOSS 工具集': C02_Common_Utility/01_emboss.md
+    - '02. Blast 与 Blast+': C02_Common_Utility/02_blast.md
+    - '03. 国产序列处理神器 SeqKit': C02_Common_Utility/08_seqkit.md
+    - '04. K-mer 处理工具': C02_Common_Utility/09_kmer.md
+    - '01. 生物公共数据库': C02_Common_Utility/01_databases.md
+    - '02. 生物数据文件格式': C02_Common_Utility/02_fileformat.md
+    - '03. 玩转 edirect': C02_Common_Utility/03_edirect.md
+  - '第三章 基因组比对':
     - '01. bwa samtools 比对分析流程': chapter_04/01_bwa-samtools-pipeline.md
     - '02. GATK 分析流程': chapter_04/02_gatk.md
+  - '第四章 基因组组装':
     - '03. 细菌基因组组装': chapter_04/03_bacteria-assembly.md
     - '04. 病毒基因组组装': chapter_04/04_virus-assembly.md
-  - '第五章 基因组序列注释':
+  - '第五章 基因组注释':
     - '01. Prokka 快速注释': chapter_05/01_prokka.md
     - '02. 在线注释工具 rast': chapter_05/02_rast.md
     - '03. 注释工具 PGAAP': chapter_05/03_PGAAP.md
     - '04. SNP注释工具 snpEFF': chapter_05/04_snpEFF.md
-  - '第六章 Pangenome 数据分析':
+  - '第六章 Pan和Core基因组分析':
     - '01. Pangenome 概述': chapter_06/01_pangenome.md
     - '02. Get_Homologues 分析': chapter_06/02_get_homologues.md
     - '03. BPGA 分析': chapter_06/03_BPGA.md
@@ -49,44 +49,41 @@ pages:
     - '06. Gubbins 分析': chapter_06/06_gubbins.md
     - '07. OrthMCL 分析': chapter_06/07_orthmcl.md
     - '08. ITEP 分析': chapter_06/08_ITEP.md
-  - '第七章 宏基因组分析':
-    - '01. 16s 菌群分析': chapter_07/01_16s.md
-    - '02. WGS 宏基因组分析': chapter_07/02_shotgun.md
-  - '第八章 可视化分析工具':
-    - '01. igv 查看比对结果': chapter_08/01_igv.md
-    - '02. BRIG 细菌比较基因组分析工具': chapter_08/02_BRIG.md
-    - '03. circos 工具使用': chapter_08/03_circos.md
-  - '第九章 分析工具部署方式':
-    - '01. 基于 docker 镜像': chapter_09/01_docker.md
-    - '02. Galaxy 平台': chapter_09/02_galaxy.md
-    - '03. Amazon EC2 云平台': chapter_09/03_amazon.md
-    - '04. 其他平台': chapter_09/04_others.md
-  - '第十章 基因组分析实践':
-    - '01. 铜绿假单胞菌不同来源株SNP溯源': chapter_10/01_trace-Pae-from-different-source-by-SNP.md
-    - '02. 炭疽芽胞杆菌比较基因组学研究': chapter_10/02_comparative-analysis-Ban-genomes.md
+  - '第八章 基因组可视化工具':
+    - '01. igv 查看比对结果': C08_Genome_Visualization/01_igv.md
+    - '02. BRIG 细菌比较基因组分析工具': C08_Genome_Visualization/02_BRIG.md
+    - '03. circos 工具使用': C08_Genome_Visualization/03_circos.md
+  - '第九章 分析平台':
+    - '01. 基于 docker 镜像': C09_Analysis_Platform/01_docker.md
+    - '02. Galaxy 平台': C09_Analysis_Platform/02_galaxy.md
+    - '03. Amazon EC2 云平台': C09_Analysis_Platform/03_amazon.md
+    - '04. 其他平台': C09_Analysis_Platform/04_others.md
   - '第十一章 常见分析工具':
-    - '01. SRST2 短序列比对基因工具': chapter_11/01_srst2.md
-    - '02. 拼接序列管家基因扫描工具 MLST': chapter_11/02_mlst.md
-    - '03. 拼接序列耐药基因扫描工具 Ariba': chapter_11/03_ariba.md
-    - '04. 细菌共线性分析工具 C-Sibelia': chapter_11/04_csibelia.md
+    - '01. SRST2 短序列比对基因工具': C11_Pathogen_NGS_Application/01_srst2.md
+    - '02. 拼接序列管家基因扫描工具 MLST': C11_Pathogen_NGS_Application/02_mlst.md
+    - '03. 拼接序列耐药基因扫描工具 Ariba': C11_Pathogen_NGS_Application/03_ariba.md
+    - '04. 细菌共线性分析工具 C-Sibelia': C11_Pathogen_NGS_Application/04_csibelia.md
   - '第十二章 Shotgun Metagenomics 分析':
-    - '01. kraken': chapter_12/01_kraken.md 
-    - '02. centrifuge': chapter_12/02_centrifuge.md 
-    - '03. bracken': chapter_12/03_bracken.md 
-    - '04. sourmash': chapter_12/04_sourmash.md 
-    - '05. clark': chapter_12/05_clark.md 
-    - '06. krona': chapter_12/06_krona.md 
-    - '07. pavian': chapter_12/07_pavian.md 
-  - '第十三章 三代测序数据处理':
-    - '01. nanopore': chapter_13/01_nanopore.md 
-    - '02. pacbio': chapter_13/02_pacbio.md 
-    - '03. canu': chapter_13/03_canu.md 
-    - '04. trimming': chapter_13/04_trimming.md
-    - '06. hybrid': chapter_13/06_hybrid.md 
+    - '01. kraken': C12_Metagenomics_Analysis/01_kraken.md
+    - '02. centrifuge': C12_Metagenomics_Analysis/02_centrifuge.md
+    - '03. bracken': C12_Metagenomics_Analysis/03_bracken.md
+    - '04. sourmash': C12_Metagenomics_Analysis/04_sourmash.md
+    - '05. clark': C12_Metagenomics_Analysis/05_clark.md
+    - '06. krona': C12_Metagenomics_Analysis/06_krona.md
+    - '07. pavian': C12_Metagenomics_Analysis/07_pavian.md
+  - '第十三章 单分子测序':
+    - '01. nanopore': C13_Single_Molecular_Sequencing/01_nanopore.md
+    - '02. pacbio': C13_Single_Molecular_Sequencing/02_pacbio.md
+    - '03. canu': C13_Single_Molecular_Sequencing/03_canu.md
+    - '04. trimming': C13_Single_Molecular_Sequencing/04_trimming.md
+    - '06. hybrid': C13_Single_Molecular_Sequencing/06_hybrid.md
   - '第十四章 进化树构建':
-    - '01. 多重序列比对': chapter_14/01_msa.md 
+    - '01. 多重序列比对': C14_Phylogeny_Construction/01_msa.md
   - '第十五章 基因组流行病学':
-    - '01. 地理信息软件cartodb': chapter_15/01_cartodb.md    
+    - '01. CartoDB': C15_Pathogen_Geospatial_Analysis/01_cartodb.md
+  - '第十六章 基因组分析实践':
+    - '01. 细菌SNP溯源分析一': C16_Analysis_Examples/01_trace-Pae-from-different-source-by-SNP.md
+    - '02. 细菌比较基因组学研究': C16_Analysis_Examples/02_comparative-analysis-Ban-genomes.md
 use_directory_urls: true
 
 extra_javascript:
