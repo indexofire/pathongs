@@ -18,3 +18,12 @@ $ mafft 1.fa > 1.mafft
 # raxml 构建进化树
 $ raxmlHPC -f a -p 12345 -x 12345 -# 1000 -m GTRGAMMA -s 1.mafft -n 1
 ```
+
+
+提取序列
+
+```bash
+#
+$ seqkit 
+
+```

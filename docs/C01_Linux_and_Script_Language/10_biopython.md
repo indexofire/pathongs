@@ -7,3 +7,10 @@
 ```python
 from Bio import 
 ```
+
+## 用 Biopython 处理数据
+
+```python
+from Bio import Seq
+
+```
