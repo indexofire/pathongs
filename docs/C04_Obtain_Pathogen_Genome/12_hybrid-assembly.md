@@ -8,6 +8,15 @@
 
 ## 方法
 
+### 1. spades 组装
+
 ```bash
-(denovo)$ spades
+(denovo)$ spades.py
+```
+
+### 2. unicycler 组装
+
+```bash
+$ conda activate nanopore
+(nanopore)$ unicycle -1 -2 -l 
 ```
