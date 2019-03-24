@@ -20,3 +20,21 @@ $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ub
 $ sudo apt update
 $ sudo apt install docker-ce
 ```
+
+## 安装 docker in Archlinux 
+
+```bash
+# 安装 docker
+$ sudo pacman -S docker
+# 开机自动运行 docker
+$ sudo systemctl enable docker.service
+# 启动 docker 服务
+$ sudo systemctl start docker.service
+```
+
+## 使用 docker
+
+
+```bash
+$ sudo docker images ls
+```

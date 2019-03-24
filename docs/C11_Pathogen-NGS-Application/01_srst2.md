@@ -5,18 +5,26 @@
 ## 1. 安装
 
 ```bash
-# conda 有 SRST2 安装包
-$ conda install srst2
+# 使用 conda 安装 SRST2 安装包
+$ conda create -n srst2 srst2
+$ conda activate srst2
 ```
 
 ## 2. 使用
 
+需要注意的是fastq文件名称
+
 ```bash
 # 下载物种 MLST 数据库
 $ getmlst.py --species "Salmonella enterica"
+
+# 根据测序reads扫描沙门菌MLST型别
 $ srst2 --input_pe S1_1.fastq.gz S1_2.fastq.gz --output S1 \
 > --log --mlst_db Salmonella_enterica.fasta \
 > --mlst_definitions senterica.txt --mlst_delimiter _
+
+# 根据测序reads获得耐药基因
+$ srst2 --input_pe
 ```
 
 ## 3. 实例
