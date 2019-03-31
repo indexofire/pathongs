@@ -9,9 +9,7 @@
 $ a="R1.fastq.gz"
 $ echo $a
 R1.fastq.gz
-```
 
-```bash
 # 给变量赋予默认值
 $ echo ${b=100}
 100
@@ -22,10 +20,10 @@ $ echo ${b=100}
 $ x=1
 $ echo ${y-$x}
 1
+$ echo ${x-$y}
+1
 $ echo $y
-```
 
-```bash
 # 返回字符串长度
 $ echo ${#a}
 11

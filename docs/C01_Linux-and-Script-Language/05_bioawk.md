@@ -11,14 +11,22 @@ bioawk 内建了一些 awk 没有的专用于生物序列的函数：
 - reverse($seq) 将序列5'<->3'反向
 - revcomp($seq) 将序列反向互补
 - qualcount($qual, threshold) 获得大于阈值的序列中碱基数
-- trimq(qual, beg, end, param) Trims the quality string qual in the Sanger scale using Richard Mott's algorithm (used in Phred). The 0-based beginning and ending positions are written back to beg and end, respectively. The last argument param is the single parameter used in the algorithm, which is optional and defaults 0.05.
+- trimq(qual, begin, end, param) Trims the quality string qual in the Sanger scale using Richard Mott's algorithm (used in Phred). The 0-based beginning and ending positions are written back to beg and end, respectively. The last argument param is the single parameter used in the algorithm, which is optional and defaults 0.05.
 - and(x, y) bit AND operation (& in C)
 - or(x, y) bit OR operation (| in C)
 - xor(x, y) bit XOR operation (^ in C)
 
+### 内建变量
+
+- bed: 1:chrom 2:start 3:end 4:name 5:score 6:strand 7:thickstart 8:thickend 9:rgb 10:blockcount 11:blocksizes 12:blockstarts
+- sam: 1:qname 2:flag 3:rname 4:pos 5:mapq 6:cigar 7:rnext 8:pnext 9:tlen 10:seq 11:qual
+- vcf: 1:chrom 2:pos 3:id 4:ref 5:alt 6:qual 7:filter 8:info
+- gff: 1:seqname 2:source 3:feature 4:start 5:end 6:score 7:filter 8:strand 9:group 10:attribute
+- fastx: 1:name 2:seq 3:qual
+
 ## 1. 安装
 
-在 Linux 中安装
+在 Linux 中安装 bioawk
 
 ```bash
 # Ubuntu 中源码编译安装
@@ -50,6 +58,8 @@ $ man ./awk.1
 - fastq: SRR1175124
 - bed:
 - vcf:
+
+### 处理 fastq
 
 **计算reads数量**
 
@@ -104,3 +114,13 @@ $ for i in $(bioawk -c fastx '{if(qualcount($qual, 35)<50) print $name}' \
 ```bash
 $ bioawk -c bed '{ print $end - $start }' .bed
 ```
+
+### 处理 bam
+
+### 处理 vcf
+
+### 处理bed
+
+### 处理gff
+
+
