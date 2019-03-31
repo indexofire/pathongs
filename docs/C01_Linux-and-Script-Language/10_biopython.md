@@ -1,11 +1,15 @@
 # Biopython
 
-## 使用 Biopython
+## 学习材料
 
-使用 Biopython 是一件很有趣的事情。
+- Biopython官方文档
+- Biopython官方文档中文
+- 
+
+## 使用
 
 ```python
-from Bio import 
+from Bio import
 ```
 
 ## 用 Biopython 处理数据
