@@ -1,5 +1,7 @@
 # Linux 基本命令
 
+![Linux基本命令](../assets/images/C01/01/banner.jpg)
+
 在 Linux 操作系统命令行下使用生物信息学软件除了书需软件命令本身外，往往还要结合使用许多 Linux 命令，或者通过管道符号的方式构建数据处理流程。因此对最基本的 Linux 文件查看、复制、粘贴等基本操作必须应掌握。
 
 对于没有只接触过 windows 图形界面的用户，需要知道几个基本知识点：
@@ -172,32 +174,25 @@ $ ps -L 1000
 $ ps -axjf
 ```
 
-## 输出文件头尾部内容
+## 显示文本文件内容
 
 操作大文件如fastq测序原始数据，常常不需要将几百M甚至上G的数据全部写入到内存打开文件，只需要了解头部数据即可。用head就非常轻便。head默认输出前10行内容。
 
 ```bash
 # 输出文件前5行内容
 $ head -5 text.txt
-```
 
-- `tail`: 输出文件尾部内容
-
-```bash
 # 输出文件的最后5行内容
 $ tail -5 text.txt
-```
 
-- `cat`: 输出文件内容
-
-```bash
 # 显示文件 'text.txt' 内容
 $ cat text.txt
-```
 
-- `nl`: 将文件标行
+# 显示文件 'text.txt' 内容，支持分页
+$ less text.txt
+$ more text.txt
 
-```bash
+# 输出行号
 $ cat text.txt | nl
 ```
 
@@ -211,9 +206,9 @@ $ cat text.txt | grep 'abc'
 $ awk '/abc/' text.txt
 ```
 
-## 压缩/解压缩
+## 压缩/解压缩文件
 
-日常压缩处理使用 gzip/tar， 特殊格式压缩可以使用第三方软件，个人常用7z来进行。
+对序列数据常需要进行压缩处理，可以使用 gzip/tar， 特殊格式压缩可以使用第三方软件，个人常用7z来进行。
 
 ```bash
 # gzip 压缩文件 1 为 1.gz
@@ -229,7 +224,11 @@ $ tar -zxf foo.tar.gz
 
 ## 客户端与服务器端交互
 
+Linux 服务器上计算获得的结果，可以通过以下常用方式方便的下载和上传。
+
 1. ssh 登录服务器
+
+安装了 openssh 后，直接通过 ssh 登录开启了 sshd 服务的 Linux 服务器，直接在远端进行操作。
 
 ```bash
 # server_ip为所要登录服务器ip

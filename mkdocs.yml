@@ -7,6 +7,7 @@ copyright: 'Copyright &copy; 2016 - 2018 HZCDC@Lab'
 
 repo_url: https://github.com/indexofire/pathongs/
 
+# theme: light blue
 extra:
   palette:
     primary: 'light blue'
@@ -14,24 +15,27 @@ extra:
 pages:
   - '前言': index.md
   - '第一章 背景知识介绍':
-    - '01. Linux 系统操作基本命令': C01_Linux_and_Script_Language/01_basic-cml.md
-    - '02. Linux 安装实例': C01_Linux_and_Script_Language/02_linux-installation.md
-    - '03. Linux 系统管理': C01_Linux_and_Script_Language/03_linux-administration.md
-    - '04. 数据处理常用工具之 awk': C01_Linux_and_Script_Language/04_awk.md
-    - '05. 测序数据工具 bioawk': C01_Linux_and_Script_Language/05_bioawk.md
-    - '06. 了解 Python 生活轻松一点': C01_Linux_and_Script_Language/06_python.md
-    - '07. 生信分析要学一点 shell': C01_Linux_and_Script_Language/07_shell.md
+    - '01. Linux 基本命令': C01_Linux-and-Script-Language/01_basic-cml.md
+    - '02. Linux 安装实例': C01_Linux-and-Script-Language/02_linux-installation.md
+    - '03. Linux 系统管理': C01_Linux-and-Script-Language/03_linux-administration.md
+    - '04. 数据处理常用工具之 awk': C01_Linux-and-Script-Language/04_awk.md
+    - '05. 测序数据工具 bioawk': C01_Linux-and-Script-Language/05_bioawk.md
+    - '06. Python编程': C01_Linux-and-Script-Language/06_python.md
+    - '07. Shell脚本': C01_Linux-and-Script-Language/07_shell.md
   - '第二章 产用工具':
-    - '01. EMBOSS 工具集': C02_Common_Utility/01_emboss.md
-    - '02. Blast 与 Blast+': C02_Common_Utility/02_blast.md
-    - '03. 国产序列处理神器 SeqKit': C02_Common_Utility/08_seqkit.md
-    - '04. K-mer 处理工具': C02_Common_Utility/09_kmer.md
-    - '01. 生物公共数据库': C02_Common_Utility/01_databases.md
-    - '02. 生物数据文件格式': C02_Common_Utility/02_fileformat.md
-    - '03. 玩转 edirect': C02_Common_Utility/03_edirect.md
-  - '第三章 基因组比对':
-    - '01. bwa samtools 比对分析流程': chapter_04/01_bwa-samtools-pipeline.md
-    - '02. GATK 分析流程': chapter_04/02_gatk.md
+    - '01. EMBOSS 工具集': C02_Common-Utility/01_emboss.md
+    - '02. Blast 与 Blast+': C02_Common-Utility/02_blast.md
+    - '03. 国产序列处理神器 SeqKit': C02_Common-Utility/08_seqkit.md
+    - '04. K-mer 处理工具': C02_Common-Utility/09_kmer.md
+    - '01. 生物公共数据库': C02_Common-Utility/01_databases.md
+    - '02. 生物数据文件格式': C02_Common-Utility/02_fileformat.md
+    - '03. 玩转 edirect': C02_Common-Utility/03_edirect.md
+  - ‘第三章 各类数据文件格式’:
+    - '01. fasta': C03_File-Format/01_fasta.md
+    - '02. embl': C03_File-Format/02_embl.md
+  #- '第三章 基因组比对':
+  #  - '01. bwa samtools 比对分析流程': C03_File-Format/01_bwa-samtools-pipeline.md
+  #  - '02. GATK 分析流程': chapter_04/02_gatk.md
   - '第四章 基因组组装':
     - '03. 细菌基因组组装': chapter_04/03_bacteria-assembly.md
     - '04. 病毒基因组组装': chapter_04/04_virus-assembly.md
@@ -99,9 +103,11 @@ markdown_extensions:
   - admonition
   - footnotes
   - meta
-  - toc(permalink=true)
+  - toc:
+      permalink: true
   - pymdownx.arithmatex
-  - pymdownx.betterem(smart_enable=all)
+  - pymdownx.betterem:
+      smart_enable: all
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.emoji:
@@ -110,7 +116,8 @@ markdown_extensions:
   - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.tasklist(custom_checkbox=true)
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.tilde
   - pymdownx.superfences
 

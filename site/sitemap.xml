@@ -1,426 +1,293 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
-     <loc>https://indexofire.github.io/pathongs/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_01/01_basic-cml/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc>https://indexofire.github.io/pathongs/C01_Linux-and-Script-Language/01_basic-cml/</loc>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_01/02_linux-installation/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc>https://indexofire.github.io/pathongs/C01_Linux-and-Script-Language/02_linux-installation/</loc>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_01/03_linux-administration/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc>https://indexofire.github.io/pathongs/C01_Linux-and-Script-Language/03_linux-administration/</loc>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_01/04_awk/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc>https://indexofire.github.io/pathongs/C01_Linux-and-Script-Language/04_awk/</loc>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_01/05_bioawk/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc>https://indexofire.github.io/pathongs/C01_Linux-and-Script-Language/05_bioawk/</loc>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_01/06_python/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc>https://indexofire.github.io/pathongs/C01_Linux-and-Script-Language/06_python/</loc>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_01/07_shell/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc>https://indexofire.github.io/pathongs/C01_Linux-and-Script-Language/07_shell/</loc>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_02/01_emboss/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc>https://indexofire.github.io/pathongs/C02_Common-Utility/01_emboss/</loc>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_02/02_blast/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc>https://indexofire.github.io/pathongs/C02_Common-Utility/02_blast/</loc>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_02/08_seqkit/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc>https://indexofire.github.io/pathongs/C02_Common-Utility/08_seqkit/</loc>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_02/09_kmer/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc>https://indexofire.github.io/pathongs/C02_Common-Utility/09_kmer/</loc>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_03/01_databases/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc>https://indexofire.github.io/pathongs/C02_Common-Utility/01_databases/</loc>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_03/02_fileformat/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_03/03_edirect/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc>https://indexofire.github.io/pathongs/C02_Common-Utility/03_edirect/</loc>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_04/01_bwa-samtools-pipeline/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_04/02_gatk/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_04/03_bacteria-assembly/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_04/04_virus-assembly/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_05/01_prokka/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_05/02_rast/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_05/03_PGAAP/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_05/04_snpEFF/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_06/01_pangenome/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_06/02_get_homologues/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_06/03_BPGA/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_06/04_roary/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_06/05_panseq/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_06/06_gubbins/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_06/07_orthmcl/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_06/08_ITEP/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_07/01_16s/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_07/02_shotgun/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_08/01_igv/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_08/02_BRIG/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_08/03_circos/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_09/01_docker/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_09/02_galaxy/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_09/03_amazon/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_09/04_others/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_10/01_trace-Pae-from-different-source-by-SNP/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_10/02_comparative-analysis-Ban-genomes/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_11/01_srst2/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_11/02_mlst/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_11/03_ariba/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_11/04_csibelia/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_12/01_kraken/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_12/02_centrifuge/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_12/03_bracken/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_12/04_sourmash/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_12/05_clark/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_12/06_krona/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_12/07_pavian/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_13/01_nanopore/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_13/02_pacbio/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_13/03_canu/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_13/04_trimming/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_13/06_hybrid/</loc>
-     <lastmod>2018-07-13</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_14/01_msa/</loc>
-     <lastmod>2018-07-13</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>https://indexofire.github.io/pathongs/chapter_15/01_cartodb/</loc>
-     <lastmod>2018-07-13</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
 </urlset>
