@@ -1,6 +1,13 @@
 # Linux 基本命令
 
-在 Linux 操作系统命令行下使用生物信息学软件除了软件本身外，还要使用许多 Linux 命令。如果对最基本的 Linux 下如何查看文件，复制粘贴等操作，以 bash 为例。其他的 shell 比如 csh, tcsh 等大部分命令和参数都是一致的。
+在 Linux 操作系统命令行下使用生物信息学软件除了书需软件命令本身外，往往还要结合使用许多 Linux 命令，或者通过管道符号的方式构建数据处理流程。因此对最基本的 Linux 文件查看、复制、粘贴等基本操作必须应掌握。
+
+对于没有只接触过 windows 图形界面的用户，需要知道几个基本知识点：
+
+1. 路径: 和 windows 盘符概念不同，Linux 只有类似树的根状结构一般的目录管理，所有路径都挂在`/`下。和 windows 路径分割符号`\`不同，Linux 是使用`/`。路径中'.'表示当前目录，'..'表示上一级目录。路径分为绝对路径和相关路径。
+2. 用户: Linux 系统多用户管理的权限区别，windows 下个人用户一般都使用管理员权限直接运行，而 Linux 下应严禁使用 root 用户日常操作。所以一般都给一个 wheel 用户组用户以 sudo 权限，以便必要是提供 sudo 来进行管理员操作。
+3. 后缀: windows 下习惯用3位字符来区别不同文件类型。Linux 没有这个必要，后缀可以任何方式表示，也可以不代表任何意义。文件一般只有文本文件和二进制文件2种。前者可以用文本编辑器打开编辑。
+4. 发行版: Linux 有数量众多的发行版，虽然内核使用的都是 Linux，但在软件管理等方式方面往往使用的是不同方式，所以会根据发行版有不同命令来安装软件或更新系统。但对于本节介绍的基本命令，是与发行版无关的，任何桌面 Linux 系统都具有的命令。
 
 ## 文件操作
 
@@ -71,6 +78,9 @@ $ rm -R new
 
 # 不弹出删除确认提示，删除所有 '.tmp' 文件
 $ rm -f *.tmp
+
+# 千万不能做的事情！也是linux频道里经常能看到的笑话
+$ sudo rm -rf /*
 ```
 
 - `cp`: 复制文件
@@ -203,10 +213,16 @@ $ awk '/abc/' text.txt
 
 ## 压缩/解压缩
 
+日常压缩处理使用 gzip/tar， 特殊格式压缩可以使用第三方软件，个人常用7z来进行。
+
 ```bash
+# gzip 压缩文件 1 为 1.gz
+$ gzip 1
+# gunzip 解压缩
+$ gunzip 1.gz
+
 # 压缩文件 foo 或者文件夹 foo 成为一个 foo.tar.gz 压缩包
 $ tar -zcf foo.tar.gz foo
-
 # 解压缩文件 foo.tar.gz
 $ tar -zxf foo.tar.gz
 ```
@@ -218,7 +234,6 @@ $ tar -zxf foo.tar.gz
 ```bash
 # server_ip为所要登录服务器ip
 $ ssh user@server_ip
-$ ssh mark@10.44.35.122
 ```
 
 2. 客户端与服务器端拷贝文件
@@ -232,22 +247,20 @@ $ scp mark@10.44.35.122:/data/1.fasta .
 $ scp 2.fasta mark@10.44.35.122:/data/2.fasta
 ```
 
-简单的传输单个文件用scp还算方便，但如果频繁交互，或者需要可视化界面来操作，我们需要更方便的工具，这里推荐 sshfs
+rsync命令是一个远程数据同步工具，可快速同步多台主机间的文件。rsync使用所谓的“rsync算法”来使本地和远程两个主机之间的文件达到同步，这个算法只传送两个文件的不同部分，而不是每次都整份传送，因此速度相当快。
+
+```bash
+# 传送 server_ip 服务器上的文件到本地 Linux 系统 /data 路径中
+$ rsync -avz user@server_ip:/data/* /data
+# 传送本地 test.py 文件到服务器 server_ip 用户目录中
+$ rsync -av ~/test.py user@server_ip::/home/user
+```
+
+3. 简单的传输单个文件用scp还算方便，但如果频繁交互，或者需要可视化界面来操作，我们需要更方便的工具，对于win平台用户，简单的ssh登录工具常用的如putty，如果要上下传文件，也可以搭建ftp服务来实现。这里推荐 sshfs。
 
 ```bash
 # 挂载服务器 /data 到本地linux机器的 ~/server 目录。
 $ sshfs mark@10.44.35.122:/data ~/server -o idmap=user -o allow_other
-```
-
-对于win平台用户，简单的ssh登录工具常用的如putty，如果要上下传文件，也可以搭建ftp服务来实现。
-
-3. rsync
-
-rsync命令是一个远程数据同步工具，可快速同步多台主机间的文件。rsync使用所谓的“rsync算法”来使本地和远程两个主机之间的文件达到同步，这个算法只传送两个文件的不同部分，而不是每次都整份传送，因此速度相当快。
-
-```bash
-$ rsync -avz user@server_ip:/data/* /data
-$ rsync -av ~/test.py user@server_ip::/home/user
 ```
 
 ## Reference
