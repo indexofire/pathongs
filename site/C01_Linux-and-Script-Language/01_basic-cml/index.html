@@ -42,7 +42,7 @@
     
     
       
-        <title>01. Linux 系统操作基本命令 - Pathogen NGS 数据分析入门</title>
+        <title>01. Linux 基本命令 - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -150,7 +150,7 @@
               Pathogen NGS 数据分析入门
             </span>
             <span class="md-header-nav__topic">
-              01. Linux 系统操作基本命令
+              01. Linux 基本命令
             </span>
           
         </div>
@@ -260,8 +260,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../index.md" title="前言" class="md-nav__link">
-      前言
+    <a href="../.." title="开始之前" class="md-nav__link">
+      开始之前
     </a>
   </li>
 
@@ -302,11 +302,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        01. Linux 系统操作基本命令
+        01. Linux 基本命令
       </label>
     
-    <a href="./" title="01. Linux 系统操作基本命令" class="md-nav__link md-nav__link--active">
-      01. Linux 系统操作基本命令
+    <a href="./" title="01. Linux 基本命令" class="md-nav__link md-nav__link--active">
+      01. Linux 基本命令
     </a>
     
       
@@ -327,21 +327,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="输出文件头尾部内容" class="md-nav__link">
-    输出文件头尾部内容
+  <a href="#_2" title="系统查看" class="md-nav__link">
+    系统查看
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="压缩/解压缩" class="md-nav__link">
-    压缩/解压缩
+  <a href="#_3" title="显示文本文件内容" class="md-nav__link">
+    显示文本文件内容
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="客户端与服务器端交互" class="md-nav__link">
+  <a href="#_4" title="压缩/解压缩文件" class="md-nav__link">
+    压缩/解压缩文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="客户端与服务器端交互" class="md-nav__link">
     客户端与服务器端交互
   </a>
   
@@ -560,11 +567,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      第三章 基因组比对
+      ‘第三章 各类数据文件格式’
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        第三章 基因组比对
+        ‘第三章 各类数据文件格式’
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -575,8 +582,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C03_File-Format/01_bwa-samtools-pipeline.md" title="01. bwa samtools 比对分析流程" class="md-nav__link">
-      01. bwa samtools 比对分析流程
+    <a href="../../C03_File-Format/01_fasta/" title="01. fasta" class="md-nav__link">
+      01. fasta
     </a>
   </li>
 
@@ -587,8 +594,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_04/02_gatk.md" title="02. GATK 分析流程" class="md-nav__link">
-      02. GATK 分析流程
+    <a href="../../C03_File-Format/02_embl/" title="02. embl" class="md-nav__link">
+      02. embl
     </a>
   </li>
 
@@ -1382,21 +1389,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="输出文件头尾部内容" class="md-nav__link">
-    输出文件头尾部内容
+  <a href="#_2" title="系统查看" class="md-nav__link">
+    系统查看
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="压缩/解压缩" class="md-nav__link">
-    压缩/解压缩
+  <a href="#_3" title="显示文本文件内容" class="md-nav__link">
+    显示文本文件内容
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="客户端与服务器端交互" class="md-nav__link">
+  <a href="#_4" title="压缩/解压缩文件" class="md-nav__link">
+    压缩/解压缩文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="客户端与服务器端交互" class="md-nav__link">
     客户端与服务器端交互
   </a>
   
@@ -1430,22 +1444,40 @@
                 
                 <h1 id="linux">Linux 基本命令<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
 <p><img alt="Linux基本命令" src="../../assets/images/C01/01/banner.jpg" /></p>
-<p>在 Linux 操作系统命令行下使用生物信息学软件除了书需软件命令本身外，往往还要结合使用许多 Linux 命令，或者通过管道符号的方式构建数据处理流程。因此对最基本的 Linux 文件查看、复制、粘贴等基本操作必须应掌握。</p>
+<div class="admonition abstract">
+<p class="admonition-title">简介</p>
+<p>在 Linux 操作系统命令行下使用生物信息学软件除了需专门的分析软件外，往往还要结合使用许多 Linux 命令；而且许多 Linux 命令可以通过管道符号的方式构建数据处理流程。因此对最基本的 Linux 文件查看、复制、粘贴等基本操作必须应掌握。</p>
+</div>
 <p>对于没有只接触过 windows 图形界面的用户，需要知道几个基本知识点：</p>
+<div class="admonition info">
+<p class="admonition-title">知识点</p>
 <ol>
 <li>路径: 和 windows 盘符概念不同，Linux 只有类似树的根状结构一般的目录管理，所有路径都挂在<code class="codehilite">/</code>下。和 windows 路径分割符号<code class="codehilite">\</code>不同，Linux 是使用<code class="codehilite">/</code>。路径中'.'表示当前目录，'..'表示上一级目录。路径分为绝对路径和相关路径。</li>
 <li>用户: Linux 系统多用户管理的权限区别，windows 下个人用户一般都使用管理员权限直接运行，而 Linux 下应严禁使用 root 用户日常操作。所以一般都给一个 wheel 用户组用户以 sudo 权限，以便必要是提供 sudo 来进行管理员操作。</li>
 <li>后缀: windows 下习惯用3位字符来区别不同文件类型。Linux 没有这个必要，后缀可以任何方式表示，也可以不代表任何意义。文件一般只有文本文件和二进制文件2种。前者可以用文本编辑器打开编辑。</li>
 <li>发行版: Linux 有数量众多的发行版，虽然内核使用的都是 Linux，但在软件管理等方式方面往往使用的是不同方式，所以会根据发行版有不同命令来安装软件或更新系统。但对于本节介绍的基本命令，是与发行版无关的，任何桌面 Linux 系统都具有的命令。</li>
 </ol>
+</div>
 <h2 id="_1">文件操作<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code class="codehilite">ls</code>: 列出文件夹的文件</li>
+<li><code class="codehilite">ls</code>: 列出目录</li>
+<li><code class="codehilite">cd</code>: 改变目录</li>
+<li><code class="codehilite">pwd</code>: 显示当前目录</li>
+<li><code class="codehilite">mkdir</code>: 建立新目录</li>
+<li><code class="codehilite">rmdir</code>: 删除目录</li>
+<li><code class="codehilite">rm</code>: 删除文件</li>
+<li><code class="codehilite">cp</code>: 复制文件</li>
+<li><code class="codehilite">mv</code>: 移动文件或目录</li>
+<li><code class="codehilite">which</code>: 查找可执行文件的系统路径</li>
+<li><code class="codehilite">wc</code>: 统计一个文件的行，字符和字节数</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="c1"># 显示 &#39;~/data&#39; 文件夹里的文件</span>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">ls</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 显示 &#39;~/data&#39; 目录里的文件</span>
 $ ls ~/data
 
-<span class="c1"># 列表方式显示包括隐含文件的 &#39;~/data&#39; 文件夹里的所有文件</span>
+<span class="c1"># 列表方式显示包括隐含文件的 &#39;~/data&#39; 目录里的所有文件</span>
 $ ls -la ~/data
 
 <span class="c1"># 文件按照时间排序</span>
@@ -1453,12 +1485,10 @@ $ ls -t ~/data
 
 <span class="c1"># 查看所有后缀为 fastq 的文件</span>
 $ ls ~/data/*.fastq
-</pre></div>
-
-<ul>
-<li><code class="codehilite">cd</code>: 改变文件夹</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="c1"># 从当前文件夹切换到 &#39;~/app&#39; 文件夹</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">cd</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 从当前目录切换到 &#39;~/app&#39; 目录</span>
 $ <span class="nb">cd</span> ~/app
 
 <span class="c1"># 从任何位置切换回用户主目录 &#39;/home/User&#39;</span>
@@ -1470,38 +1500,34 @@ $ <span class="nb">cd</span> -
 <span class="c1"># 返回上一级目录</span>
 $ <span class="nb">cd</span> ..
 
-<span class="c1"># 使用相对路径，进入另一个文件夹&quot;new directory&quot;，这里 &#39;\&#39; 是转义符，将空格键正确转义</span>
+<span class="c1"># 使用相对路径，进入另一个目录&quot;new directory&quot;，这里 &#39;\&#39; 是转义符，将空格键正确转义</span>
 $ <span class="nb">cd</span> ../../../new<span class="se">\ </span>directory
-</pre></div>
-
-<ul>
-<li><code class="codehilite">pwd</code>: 显示当前目录</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="c1"># 当不知道当前处于什么路径时，可以用这个命令显示</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_2" />
+<label for="__tab_1_2">pwd</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 当不知道当前处于什么路径时，可以用这个命令显示</span>
 $ <span class="nb">pwd</span>
-</pre></div>
 
-<ul>
-<li><code class="codehilite">mkdir</code>: 建立新文件夹</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="c1"># 当前路径下新建一个名叫 &#39;new&#39; 的文件夹</span>
+<span class="c1"># 需要使用当前路径到命令中，如建立links</span>
+$ ln -s <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/mylib.so /usr/lib/
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_3" />
+<label for="__tab_1_3">mkdir</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 当前路径下新建一个名叫 &#39;new&#39; 的目录</span>
 $ mkdir new
-</pre></div>
-
-<ul>
-<li><code class="codehilite">rmdir</code>: 删除文件夹</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="c1"># 删除当前路径的文件夹 &#39;new&#39;</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_4" />
+<label for="__tab_1_4">rmdir</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 删除当前路径的目录 &#39;new&#39;</span>
 $ rmdir new
-</pre></div>
-
-<ul>
-<li><code class="codehilite">rm</code>: 删除文件</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="c1"># 删除当前文件夹的所有后缀是 &#39;.sra&#39; 的文件</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_5" />
+<label for="__tab_1_5">rm</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 删除当前目录的所有后缀是 &#39;.sra&#39; 的文件</span>
 $ rm *.sra
 
-<span class="c1"># 删除文件夹 &#39;new&#39; 以及 &#39;new&#39; 下的所有子文件与子目录</span>
+<span class="c1"># -R 参数删除目录</span>
+<span class="c1"># 删除目录 &#39;new&#39; 以及 &#39;new&#39; 下的所有子文件与子目录</span>
 $ rm -R new
 
 <span class="c1"># 不弹出删除确认提示，删除所有 &#39;.tmp&#39; 文件</span>
@@ -1509,40 +1535,37 @@ $ rm -f *.tmp
 
 <span class="c1"># 千万不能做的事情！也是linux频道里经常能看到的笑话</span>
 $ sudo rm -rf /*
-</pre></div>
-
-<ul>
-<li><code class="codehilite">cp</code>: 复制文件</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="c1"># 复制 &#39;test.txt&#39; 文件到文件夹 &#39;~/abc&#39; 中</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_6" />
+<label for="__tab_1_6">cp</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 复制 &#39;test.txt&#39; 文件到目录 &#39;~/abc&#39; 中</span>
 $ cp test.txt ~/abc
-</pre></div>
 
-<ul>
-<li><code class="codehilite">mv</code>: 移动文件或文件夹</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="c1"># 移动 &#39;test.txt&#39; 文件到文件夹 &#39;~/abc&#39; 中并改名叫 &#39;test1.txt&#39;</span>
+<span class="c1"># -R 复制目录</span>
+<span class="c1"># 复制 mydir 到用户目录下</span>
+$ cp -R mydir/ ~
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_7" />
+<label for="__tab_1_7">mv</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 移动 &#39;test.txt&#39; 文件到目录 &#39;~/abc&#39; 中并改名叫 &#39;test1.txt&#39;</span>
 $ mv test.txt ~/abc/test1.txt
-</pre></div>
-
-<ul>
-<li><code class="codehilite">which</code>: 查找可执行文件的系统路径</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="c1"># 打印出系统带的 python 程序的路径</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_8" />
+<label for="__tab_1_8">which</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 打印出系统带的 python 程序的路径</span>
 $ which python
-</pre></div>
-
-<ul>
-<li><code class="codehilite">wc</code>: 统计一个文件的行，字符和字节数</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="c1"># 输出文件 &#39;text.txt&#39; 的行数，字符数和字节数。</span>
-$ wc text.txt
-</pre></div>
-
+</pre></div></div>
+</div>
+<h2 id="_2">系统查看<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code class="codehilite">find</code>: 查找文件</li>
+<li><code class="codehilite">ps</code>: 查看系统进程</li>
+<li>'top': </li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="c1"># 查找一个文件，比如 .bashrc, /etc路径下的hosts文件</span>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">find</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 查找一个文件，比如 .bashrc, /etc路径下的hosts文件</span>
 $ find .bashrc
 $ find /etc/hosts
 
@@ -1559,26 +1582,10 @@ $ find /var/log -type d -perm <span class="m">755</span>
 $ find /tmp -user nginx
 <span class="c1"># 用户主home路径下查找属于 root 权限，属性为644的文件</span>
 $ find . -user root -perm <span class="m">644</span>
-</pre></div>
-
-<ul>
-<li><code class="codehilite">ps</code>: 查看系统进程</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="c1">#ps会在终端打印系统进程，各列的含义是:</span>
-
-* USER: 运行该进程的用户
-* PID: 运行着的命令<span class="o">(</span>CMD<span class="o">)</span>的进程编号
-* %CPU: CPU占用
-* %MEM: 内存占用
-* VSC:
-* RSS:
-* TTY: 命令所运行的位置（终端）
-* STAT:
-* TIME: 运行着的该命令所占用的CPU处理时间
-* COMMAND: 该进程所运行的命令
-</pre></div>
-
-<div class="codehilite"><pre><span></span><span class="c1"># 显示详细的进程信息</span>
+</pre></div></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">ps</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 显示详细的进程信息</span>
 $ ps -waux
 
 <span class="c1"># 过滤用户root的进程</span>
@@ -1597,60 +1604,102 @@ $ ps -L <span class="m">1000</span>
 
 <span class="c1"># 树形现实进程</span>
 $ ps -axjf
-</pre></div>
-
-<h2 id="_2">输出文件头尾部内容<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+</pre></div></div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">进程列表</p>
+<p>ps会在终端打印系统进程，各列的含义是:</p>
+<ul>
+<li>USER: 运行该进程的用户</li>
+<li>PID: 运行着的命令(CMD)的进程编号</li>
+<li>%CPU: CPU占用</li>
+<li>%MEM: 内存占用</li>
+<li>VSC:</li>
+<li>RSS:</li>
+<li>TTY: 命令所运行的位置（终端）</li>
+<li>STAT:</li>
+<li>TIME: 运行着的该命令所占用的CPU处理时间</li>
+<li>COMMAND: 该进程所运行的命令</li>
+</ul>
+</div>
+<h2 id="_3">显示文本文件内容<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>操作大文件如fastq测序原始数据，常常不需要将几百M甚至上G的数据全部写入到内存打开文件，只需要了解头部数据即可。用head就非常轻便。head默认输出前10行内容。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 输出文件前5行内容</span>
-$ head -5 text.txt
-</pre></div>
-
 <ul>
-<li><code class="codehilite">tail</code>: 输出文件尾部内容</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="c1"># 输出文件的最后5行内容</span>
-$ tail -5 text.txt
-</pre></div>
-
-<ul>
-<li><code class="codehilite">cat</code>: 输出文件内容</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="c1"># 显示文件 &#39;text.txt&#39; 内容</span>
-$ cat text.txt
-</pre></div>
-
-<ul>
-<li><code class="codehilite">nl</code>: 将文件标行</li>
-</ul>
-<div class="codehilite"><pre><span></span>$ cat text.txt <span class="p">|</span> nl
-</pre></div>
-
-<ul>
+<li><code class="codehilite">head</code></li>
+<li><code class="codehilite">tail</code></li>
+<li><code class="codehilite">cat</code></li>
+<li><code class="codehilite">less</code></li>
+<li><code class="codehilite">more</code></li>
+<li><code class="codehilite">wc</code>:</li>
+<li><code class="codehilite">nl</code>:</li>
 <li><code class="codehilite">grep</code>: 截取输入字符的选定 pattern 并输出所在的行</li>
 </ul>
-<p>虽然很多发行版用egrep代替grep，但是其对正则表达式的支持还是不够优秀，所以常用awk代替grep来进行模式匹配。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 显示文件 &#39;text.txt&#39; 中含有字符 &#39;abc&#39; 的行</span>
-$ cat text.txt <span class="p">|</span> grep <span class="s1">&#39;abc&#39;</span>
-$ awk <span class="s1">&#39;/abc/&#39;</span> text.txt
-</pre></div>
+<div class="superfences-tabs">
+<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
+<label for="__tab_3_0">head</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 输出文件前5行内容</span>
+$ head -5 text.txt
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_1" />
+<label for="__tab_3_1">tail</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 输出文件的最后5行内容</span>
+$ tail -5 text.txt
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_2" />
+<label for="__tab_3_2">cat</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 显示文件 &#39;text.txt&#39; 内容</span>
+$ cat text.txt
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_3" />
+<label for="__tab_3_3">less</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 显示文件 &#39;text.txt&#39; 内容，支持分页</span>
+$ less text.txt
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_4" />
+<label for="__tab_3_4">more</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>$ more text.txt
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_5" />
+<label for="__tab_3_5">wc</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 输出文件 &#39;text.txt&#39; 的行数，字符数和字节数。</span>
+$ wc text.txt
 
-<h2 id="_3">压缩/解压缩<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>日常压缩处理使用 gzip/tar， 特殊格式压缩可以使用第三方软件，个人常用7z来进行。</p>
+<span class="c1"># 输出行数</span>
+$ wc -l text.txt
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_6" />
+<label for="__tab_3_6">nl</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 输出行号</span>
+$ cat text.txt <span class="p">|</span> nl
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_7" />
+<label for="__tab_3_7">grep</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 显示文件 &#39;text.txt&#39; 中含有字符 &#39;abc&#39; 的行</span>
+$ cat text.txt <span class="p">|</span> grep <span class="s1">&#39;abc&#39;</span>
+
+<span class="c1"># 输出文件中行以&gt;开头的行</span>
+$ grep <span class="s1">&#39;^&gt;&#39;</span> myseq.fasta
+</pre></div></div>
+</div>
+<h2 id="_4">压缩/解压缩文件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>对序列数据常需要进行压缩处理，可以使用 gzip/tar， 特殊格式压缩可以使用第三方软件，个人常用7z来进行。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># gzip 压缩文件 1 为 1.gz</span>
 $ gzip <span class="m">1</span>
 <span class="c1"># gunzip 解压缩</span>
 $ gunzip <span class="m">1</span>.gz
 
-<span class="c1"># 压缩文件 foo 或者文件夹 foo 成为一个 foo.tar.gz 压缩包</span>
+<span class="c1"># 压缩文件 foo 或者目录 foo 成为一个 foo.tar.gz 压缩包</span>
 $ tar -zcf foo.tar.gz foo
 <span class="c1"># 解压缩文件 foo.tar.gz</span>
 $ tar -zxf foo.tar.gz
 </pre></div>
 
-<h2 id="_4">客户端与服务器端交互<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">客户端与服务器端交互<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>Linux 服务器上计算获得的结果，可以通过以下常用方式方便的下载和上传。</p>
 <ol>
 <li>ssh 登录服务器</li>
 </ol>
+<p>安装了 openssh 后，直接通过 ssh 登录开启了 sshd 服务的 Linux 服务器，直接在远端进行操作。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># server_ip为所要登录服务器ip</span>
 $ ssh user@server_ip
 </pre></div>
@@ -1703,6 +1752,20 @@ $ sshfs mark@10.44.35.122:/data ~/server -o <span class="nv">idmap</span><span c
   
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../.." title="开始之前" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                开始之前
+              </span>
+            </div>
+          </a>
         
         
           <a href="../02_linux-installation/" title="02. Linux 安装实例" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">

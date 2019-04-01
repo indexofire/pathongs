@@ -2,24 +2,35 @@
 
 ![Linux基本命令](../assets/images/C01/01/banner.jpg)
 
-在 Linux 操作系统命令行下使用生物信息学软件除了书需软件命令本身外，往往还要结合使用许多 Linux 命令，或者通过管道符号的方式构建数据处理流程。因此对最基本的 Linux 文件查看、复制、粘贴等基本操作必须应掌握。
+!!! Abstract "简介"
+    在 Linux 操作系统命令行下使用生物信息学软件除了需专门的分析软件外，往往还要结合使用许多 Linux 命令；而且许多 Linux 命令可以通过管道符号的方式构建数据处理流程。因此对最基本的 Linux 文件查看、复制、粘贴等基本操作必须应掌握。
 
 对于没有只接触过 windows 图形界面的用户，需要知道几个基本知识点：
 
-1. 路径: 和 windows 盘符概念不同，Linux 只有类似树的根状结构一般的目录管理，所有路径都挂在`/`下。和 windows 路径分割符号`\`不同，Linux 是使用`/`。路径中'.'表示当前目录，'..'表示上一级目录。路径分为绝对路径和相关路径。
-2. 用户: Linux 系统多用户管理的权限区别，windows 下个人用户一般都使用管理员权限直接运行，而 Linux 下应严禁使用 root 用户日常操作。所以一般都给一个 wheel 用户组用户以 sudo 权限，以便必要是提供 sudo 来进行管理员操作。
-3. 后缀: windows 下习惯用3位字符来区别不同文件类型。Linux 没有这个必要，后缀可以任何方式表示，也可以不代表任何意义。文件一般只有文本文件和二进制文件2种。前者可以用文本编辑器打开编辑。
-4. 发行版: Linux 有数量众多的发行版，虽然内核使用的都是 Linux，但在软件管理等方式方面往往使用的是不同方式，所以会根据发行版有不同命令来安装软件或更新系统。但对于本节介绍的基本命令，是与发行版无关的，任何桌面 Linux 系统都具有的命令。
+!!! info "知识点"
+    1. 路径: 和 windows 盘符概念不同，Linux 只有类似树的根状结构一般的目录管理，所有路径都挂在`/`下。和 windows 路径分割符号`\`不同，Linux 是使用`/`。路径中'.'表示当前目录，'..'表示上一级目录。路径分为绝对路径和相关路径。
+    2. 用户: Linux 系统多用户管理的权限区别，windows 下个人用户一般都使用管理员权限直接运行，而 Linux 下应严禁使用 root 用户日常操作。所以一般都给一个 wheel 用户组用户以 sudo 权限，以便必要是提供 sudo 来进行管理员操作。
+    3. 后缀: windows 下习惯用3位字符来区别不同文件类型。Linux 没有这个必要，后缀可以任何方式表示，也可以不代表任何意义。文件一般只有文本文件和二进制文件2种。前者可以用文本编辑器打开编辑。
+    4. 发行版: Linux 有数量众多的发行版，虽然内核使用的都是 Linux，但在软件管理等方式方面往往使用的是不同方式，所以会根据发行版有不同命令来安装软件或更新系统。但对于本节介绍的基本命令，是与发行版无关的，任何桌面 Linux 系统都具有的命令。
 
 ## 文件操作
 
-- `ls`: 列出文件夹的文件
+- `ls`: 列出目录
+- `cd`: 改变目录
+- `pwd`: 显示当前目录
+- `mkdir`: 建立新目录
+- `rmdir`: 删除目录
+- `rm`: 删除文件
+- `cp`: 复制文件
+- `mv`: 移动文件或目录
+- `which`: 查找可执行文件的系统路径
+- `wc`: 统计一个文件的行，字符和字节数
 
-```bash
-# 显示 '~/data' 文件夹里的文件
+```bash tab="ls"
+# 显示 '~/data' 目录里的文件
 $ ls ~/data
 
-# 列表方式显示包括隐含文件的 '~/data' 文件夹里的所有文件
+# 列表方式显示包括隐含文件的 '~/data' 目录里的所有文件
 $ ls -la ~/data
 
 # 文件按照时间排序
@@ -29,10 +40,8 @@ $ ls -t ~/data
 $ ls ~/data/*.fastq
 ```
 
-- `cd`: 改变文件夹
-
-```bash
-# 从当前文件夹切换到 '~/app' 文件夹
+```bash tab="cd"
+# 从当前目录切换到 '~/app' 目录
 $ cd ~/app
 
 # 从任何位置切换回用户主目录 '/home/User'
@@ -44,38 +53,34 @@ $ cd -
 # 返回上一级目录
 $ cd ..
 
-# 使用相对路径，进入另一个文件夹"new directory"，这里 '\' 是转义符，将空格键正确转义
+# 使用相对路径，进入另一个目录"new directory"，这里 '\' 是转义符，将空格键正确转义
 $ cd ../../../new\ directory
 ```
 
-- `pwd`: 显示当前目录
-
-```bash
+```bash tab="pwd"
 # 当不知道当前处于什么路径时，可以用这个命令显示
 $ pwd
+
+# 需要使用当前路径到命令中，如建立links
+$ ln -s `pwd`/mylib.so /usr/lib/
 ```
 
-- `mkdir`: 建立新文件夹
-
-```bash
-# 当前路径下新建一个名叫 'new' 的文件夹
+```bash tab="mkdir"
+# 当前路径下新建一个名叫 'new' 的目录
 $ mkdir new
 ```
 
-- `rmdir`: 删除文件夹
-
-```bash
-# 删除当前路径的文件夹 'new'
+```bash tab="rmdir"
+# 删除当前路径的目录 'new'
 $ rmdir new
 ```
 
-- `rm`: 删除文件
-
-```bash
-# 删除当前文件夹的所有后缀是 '.sra' 的文件
+```bash tab="rm"
+# 删除当前目录的所有后缀是 '.sra' 的文件
 $ rm *.sra
 
-# 删除文件夹 'new' 以及 'new' 下的所有子文件与子目录
+# -R 参数删除目录
+# 删除目录 'new' 以及 'new' 下的所有子文件与子目录
 $ rm -R new
 
 # 不弹出删除确认提示，删除所有 '.tmp' 文件
@@ -85,37 +90,33 @@ $ rm -f *.tmp
 $ sudo rm -rf /*
 ```
 
-- `cp`: 复制文件
-
-```bash
-# 复制 'test.txt' 文件到文件夹 '~/abc' 中
+```bash tab="cp"
+# 复制 'test.txt' 文件到目录 '~/abc' 中
 $ cp test.txt ~/abc
+
+# -R 复制目录
+# 复制 mydir 到用户目录下
+$ cp -R mydir/ ~
 ```
 
-- `mv`: 移动文件或文件夹
-
-```bash
-# 移动 'test.txt' 文件到文件夹 '~/abc' 中并改名叫 'test1.txt'
+```bash tab="mv"
+# 移动 'test.txt' 文件到目录 '~/abc' 中并改名叫 'test1.txt'
 $ mv test.txt ~/abc/test1.txt
 ```
 
-- `which`: 查找可执行文件的系统路径
-
-```bash
+```bash tab="which"
 # 打印出系统带的 python 程序的路径
 $ which python
 ```
 
-- `wc`: 统计一个文件的行，字符和字节数
-
-```bash
-# 输出文件 'text.txt' 的行数，字符数和字节数。
-$ wc text.txt
-```
+## 系统查看
 
 - `find`: 查找文件
+- `ps`: 查看系统进程
+- 'top': 
 
-```bash
+
+```bash tab="find"
 # 查找一个文件，比如 .bashrc, /etc路径下的hosts文件
 $ find .bashrc
 $ find /etc/hosts
@@ -135,24 +136,7 @@ $ find /tmp -user nginx
 $ find . -user root -perm 644
 ```
 
-- `ps`: 查看系统进程
-
-```bash
-#ps会在终端打印系统进程，各列的含义是:
-
-* USER: 运行该进程的用户
-* PID: 运行着的命令(CMD)的进程编号
-* %CPU: CPU占用
-* %MEM: 内存占用
-* VSC:
-* RSS:
-* TTY: 命令所运行的位置（终端）
-* STAT:
-* TIME: 运行着的该命令所占用的CPU处理时间
-* COMMAND: 该进程所运行的命令
-```
-
-```bash
+```bash tab="ps"
 # 显示详细的进程信息
 $ ps -waux
 
@@ -174,36 +158,79 @@ $ ps -L 1000
 $ ps -axjf
 ```
 
+!!! info "进程列表"
+
+    ps会在终端打印系统进程，各列的含义是:
+
+    * USER: 运行该进程的用户
+    * PID: 运行着的命令(CMD)的进程编号
+    * %CPU: CPU占用
+    * %MEM: 内存占用
+    * VSC:
+    * RSS:
+    * TTY: 命令所运行的位置（终端）
+    * STAT:
+    * TIME: 运行着的该命令所占用的CPU处理时间
+    * COMMAND: 该进程所运行的命令
+
+
+
 ## 显示文本文件内容
 
 操作大文件如fastq测序原始数据，常常不需要将几百M甚至上G的数据全部写入到内存打开文件，只需要了解头部数据即可。用head就非常轻便。head默认输出前10行内容。
 
-```bash
+- `head`
+- `tail`
+- `cat`
+- `less`
+- `more`
+- `wc`:
+- `nl`:
+- `grep`: 截取输入字符的选定 pattern 并输出所在的行
+
+```bash tab="head"
 # 输出文件前5行内容
 $ head -5 text.txt
+```
 
+```bash tab="tail"
 # 输出文件的最后5行内容
 $ tail -5 text.txt
+```
 
+```bash tab="cat"
 # 显示文件 'text.txt' 内容
 $ cat text.txt
+```
 
+```bash tab="less"
 # 显示文件 'text.txt' 内容，支持分页
 $ less text.txt
-$ more text.txt
+```
 
+```bash tab="more"
+$ more text.txt
+```
+
+```bash tab="wc"
+# 输出文件 'text.txt' 的行数，字符数和字节数。
+$ wc text.txt
+
+# 输出行数
+$ wc -l text.txt
+```
+
+```bash tab="nl"
 # 输出行号
 $ cat text.txt | nl
 ```
 
-- `grep`: 截取输入字符的选定 pattern 并输出所在的行
-
-虽然很多发行版用egrep代替grep，但是其对正则表达式的支持还是不够优秀，所以常用awk代替grep来进行模式匹配。
-
-```bash
+```bash tab="grep"
 # 显示文件 'text.txt' 中含有字符 'abc' 的行
 $ cat text.txt | grep 'abc'
-$ awk '/abc/' text.txt
+
+# 输出文件中行以>开头的行
+$ grep '^>' myseq.fasta
 ```
 
 ## 压缩/解压缩文件
@@ -216,7 +243,7 @@ $ gzip 1
 # gunzip 解压缩
 $ gunzip 1.gz
 
-# 压缩文件 foo 或者文件夹 foo 成为一个 foo.tar.gz 压缩包
+# 压缩文件 foo 或者目录 foo 成为一个 foo.tar.gz 压缩包
 $ tar -zcf foo.tar.gz foo
 # 解压缩文件 foo.tar.gz
 $ tar -zxf foo.tar.gz

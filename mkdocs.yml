@@ -13,7 +13,7 @@ extra:
     primary: 'light blue'
 
 pages:
-  - '前言': index.md
+  - '开始之前': index.md
   - '第一章 背景知识介绍':
     - '01. Linux 基本命令': C01_Linux-and-Script-Language/01_basic-cml.md
     - '02. Linux 安装实例': C01_Linux-and-Script-Language/02_linux-installation.md
