@@ -113,7 +113,7 @@ $ which python
 
 - `find`: 查找文件
 - `ps`: 查看系统进程
-- 'top': 
+- `top`: 查看当前系统状态和进程
 
 
 ```bash tab="find"
@@ -123,6 +123,10 @@ $ find /etc/hosts
 
 # 查找当前目录及子目录后缀为gz的文件
 $ find . -type f -name "*.gz"
+# 查找所有的 html 网页文件
+$ find . -type f -regex ".*html$"
+# 将所有 fasta 文件中序列名字包含node的改成seq
+$ find . -type f -regex ".*fasta$" | xargs sed 's/NODE/Seq/g'
 
 # 查找子目录深度为4层目录的fasta文件
 $ find . -type f -maxdepth 4 -name "*.fasta"
@@ -156,6 +160,10 @@ $ ps -L 1000
 
 # 树形现实进程
 $ ps -axjf
+```
+
+```bash tab="top"
+$ top
 ```
 
 !!! info "进程列表"
