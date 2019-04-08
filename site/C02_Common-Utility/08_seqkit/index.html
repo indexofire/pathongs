@@ -433,9 +433,65 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        03. 国产序列处理神器 SeqKit
+      </label>
+    
     <a href="./" title="03. 国产序列处理神器 SeqKit" class="md-nav__link md-nav__link--active">
       03. 国产序列处理神器 SeqKit
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="使用" class="md-nav__link">
+    使用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grep" title="grep" class="md-nav__link">
+    grep
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seq" title="seq 命令" class="md-nav__link">
+    seq 命令
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="使用案例" class="md-nav__link">
+    使用案例
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1314,6 +1370,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="使用" class="md-nav__link">
+    使用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grep" title="grep" class="md-nav__link">
+    grep
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seq" title="seq 命令" class="md-nav__link">
+    seq 命令
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="使用案例" class="md-nav__link">
+    使用案例
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1327,29 +1426,199 @@
                   <a href="https://github.com/indexofire/pathongs/edit/master/docs/C02_Common-Utility/08_seqkit.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="seqkit">Seqkit 好用的命令行序列处理工具套件<a class="headerlink" href="#seqkit" title="Permanent link">&para;</a></h1>
-<p>Seqkit 是由国人开发的序列处理工具</p>
-<div class="admonition note">
-<p class="admonition-title">例子1</p>
-<p>对注释的多拷贝基因提取序列后进行序列比对。</p>
+                <h1 id="seqkit">Seqkit<a class="headerlink" href="#seqkit" title="Permanent link">&para;</a></h1>
+<p><a href="">Seqkit</a> 是由国人 <a href="">shenwei</a> 开发，功能强大的命令行序列处理工具套件。</p>
+<h2 id="_1">使用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>子命令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>common</td>
+<td>find common sequences of multiple files by id/name/sequence</td>
+</tr>
+<tr>
+<td>concat</td>
+<td>concatenate sequences with same ID from multiple files</td>
+</tr>
+<tr>
+<td>convert</td>
+<td>convert FASTQ quality encoding between Sanger, Solexa and Illumina</td>
+</tr>
+<tr>
+<td>duplicate</td>
+<td>duplicate sequences N times</td>
+</tr>
+<tr>
+<td>faidx</td>
+<td>create FASTA index file and extract subsequence</td>
+</tr>
+<tr>
+<td>fq2fa</td>
+<td>convert FASTQ to FASTA</td>
+</tr>
+<tr>
+<td>fx2tab</td>
+<td>convert FASTA/Q to tabular format (with length/GC content/GC skew)</td>
+</tr>
+<tr>
+<td>genautocomplete</td>
+<td>generate shell autocompletion script</td>
+</tr>
+<tr>
+<td>grep</td>
+<td>search sequences by ID/name/sequence/sequence motifs, mismatch allowed</td>
+</tr>
+<tr>
+<td>head</td>
+<td>print first N FASTA/Q records</td>
+</tr>
+<tr>
+<td>help</td>
+<td>Help about any command</td>
+</tr>
+<tr>
+<td>locate</td>
+<td>locate subsequences/motifs, mismatch allowed</td>
+</tr>
+<tr>
+<td>mutate</td>
+<td>edit sequence (point mutation, insertion, deletion)</td>
+</tr>
+<tr>
+<td>range</td>
+<td>print FASTA/Q records in a range (start:end)</td>
+</tr>
+<tr>
+<td>rename</td>
+<td>rename duplicated IDs</td>
+</tr>
+<tr>
+<td>replace</td>
+<td>replace name/sequence by regular expression</td>
+</tr>
+<tr>
+<td>restart</td>
+<td>reset start position for circular genome</td>
+</tr>
+<tr>
+<td>rmdup</td>
+<td>remove duplicated sequences by id/name/sequence</td>
+</tr>
+<tr>
+<td>sample</td>
+<td>sample sequences by number or proportion</td>
+</tr>
+<tr>
+<td>seq</td>
+<td>transform sequences (revserse, complement, extract ID...)</td>
+</tr>
+<tr>
+<td>shuffle</td>
+<td>shuffle sequences</td>
+</tr>
+<tr>
+<td>sliding</td>
+<td>sliding sequences, circular genome supported</td>
+</tr>
+<tr>
+<td>sort</td>
+<td>sort sequences by id/name/sequence/length</td>
+</tr>
+<tr>
+<td>split</td>
+<td>split sequences into files by id/seq region/size/parts (mainly for FASTA)</td>
+</tr>
+<tr>
+<td>split2</td>
+<td>split sequences into files by size/parts (FASTA, PE/SE FASTQ)</td>
+</tr>
+<tr>
+<td>stats</td>
+<td>simple statistics of FASTA/Q files</td>
+</tr>
+<tr>
+<td>subseq</td>
+<td>get subsequences by region/gtf/bed, including flanking sequences</td>
+</tr>
+<tr>
+<td>tab2fx</td>
+<td>convert tabular format to FASTA/Q format</td>
+</tr>
+<tr>
+<td>translate</td>
+<td>translate DNA/RNA to protein sequence</td>
+</tr>
+<tr>
+<td>version</td>
+<td>print version information and check for update</td>
+</tr>
+</tbody>
+</table>
+<h2 id="grep">grep<a class="headerlink" href="#grep" title="Permanent link">&para;</a></h2>
+<p>spades 组装完毕的序列，提取其中某个 node 或者某些 nodes 序列：</p>
+<div class="codehilite"><pre><span></span>$ seqkit grep -r -p ^node_1$ scaffolds.fasta &gt; node_1.fasta
+</pre></div>
+
+<p>将 scaffolds 中所有 nodes 提取到单独的 fasta 文件中：</p>
+<div class="codehilite"><pre><span></span>$ <span class="k">for</span> i in <span class="k">$(</span>awk <span class="s1">&#39;/&gt;/&#39;</span> scaffolds.fasta <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span><span class="p">;</span> <span class="se">\</span>
+&gt; <span class="k">do</span> seqkit grep -p <span class="si">${</span><span class="nv">i</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span> scaffolds.fasta &gt; <span class="si">${</span><span class="nv">i</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span>.fasta<span class="p">;</span> <span class="se">\</span>
+&gt; <span class="k">done</span>
+</pre></div>
+
+<h3 id="seq">seq 命令<a class="headerlink" href="#seq" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>$ seqkit seq -h
+</pre></div>
+
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">-n和-i</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 将 reads 的名称信息输出，如果要和 bioawk $name 相同，使用 -i 参数</span>
+$ seqkit seq -n SRR1175124_1.fastq.gz SRR1175124_2.fastq.gz
+SRR1175124.102354 <span class="m">102354</span> <span class="nv">length</span><span class="o">=</span><span class="m">150</span>
+...
+$ bioawk -c fastx <span class="s1">&#39;{print $name}&#39;</span> SRR1175124_1.fastq.gz SRR1175124_2.fastq.gz
+SRR1175124.102354
+...
+$ seqkit seq -in SRR1175124_1.fastq.gz SRR1175124_2.fastq.gz
+SRR1175124.102354
+...
+
+<span class="c1">#</span>
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">-l和-u</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 输出小写碱基</span>
+$ seqkit seq -sl SRR1175124_1.fastq.gz
+<span class="c1"># 输出大写碱基</span>
+$ seqkit seq -su SRR1175124_1.fastq.gz
+</pre></div></div>
 </div>
+<h2 id="_2">使用案例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="c1"># 下载 NC_001477</span>
+$ efetch -db nuccore -id NC_001477 -format fasta &gt; NC_001477.fasta
+<span class="c1"># 翻译 DNA 序列为氨基酸序列</span>
+$ seqkit translate -j <span class="m">4</span> -o NC_001477.pep NC_001477.fasta
+<span class="c1">#</span>
+</pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">对注释的多拷贝基因提取序列后进行序列比对</p>
 <div class="codehilite"><pre><span></span><span class="c1"># 用prokka注释基因组拼接序列</span>
-$ prokka --rfam --prefix sample contig.fa
-
+$ prokka --rfam --prefix sample --outdir sample contig.fa
 <span class="c1"># 用 seqkit 提取多拷贝基因 ncRNA Qrr 的序列</span>
-$ grep <span class="s1">&#39;Qrr&#39;</span> sample.gff <span class="p">|</span> <span class="k">for</span> i in <span class="k">$(</span>awk <span class="s1">&#39;{print $9}&#39;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> seqkit grep -p <span class="si">${</span><span class="nv">i</span><span class="p">:</span><span class="nv">3</span><span class="p">:</span><span class="nv">14</span><span class="si">}</span> sample.ffn &gt;&gt; qrr.fa<span class="p">;</span> <span class="k">done</span>
-
+$ grep <span class="s1">&#39;Qrr&#39;</span> sample/sample.gff <span class="p">|</span> <span class="k">for</span> i in <span class="k">$(</span>awk <span class="s1">&#39;{print $9}&#39;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> seqkit grep -p <span class="si">${</span><span class="nv">i</span><span class="p">:</span><span class="nv">3</span><span class="p">:</span><span class="nv">14</span><span class="si">}</span> sample.ffn &gt;&gt; qrr.fa<span class="p">;</span> <span class="k">done</span>
 <span class="c1"># mafft 序列比对</span>
 $ mafft <span class="m">1</span>.fa &gt; <span class="m">1</span>.mafft
-
 <span class="c1"># raxml 构建进化树</span>
 $ raxmlHPC -f a -p <span class="m">12345</span> -x <span class="m">12345</span> -# <span class="m">1000</span> -m GTRGAMMA -s <span class="m">1</span>.mafft -n <span class="m">1</span>
 </pre></div>
 
-<p>提取序列</p>
-<div class="codehilite"><pre><span></span><span class="c1">#</span>
-$ seqkit 
-</pre></div>
+</div>
                 
                   
                 

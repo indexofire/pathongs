@@ -13,7 +13,7 @@
         <meta name="description" content="病原微生物高通量测序数据分析手册">
       
       
-        <link rel="canonical" href="https://indexofire.github.io/pathongs/C10_File_Format/fastq/">
+        <link rel="canonical" href="https://indexofire.github.io/pathongs/C10_Recombination-and-Population-Structure/01_Virus-Recombination/">
       
       
         <meta name="author" content="Mark Renton">
@@ -42,7 +42,7 @@
     
     
       
-        <title>FastQ - Pathogen NGS 数据分析入门</title>
+        <title>Virus Recombination Analysis - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -125,7 +125,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#fastq" tabindex="1" class="md-skip">
+      <a href="#virus-recombination-analysis" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -150,7 +150,7 @@
               Pathogen NGS 数据分析入门
             </span>
             <span class="md-header-nav__topic">
-              FastQ
+              Virus Recombination Analysis
             </span>
           
         </div>
@@ -1303,6 +1303,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rdp4" title="RDP4" class="md-nav__link">
+    RDP4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simplot" title="Simplot" class="md-nav__link">
+    Simplot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programs" title="Programs" class="md-nav__link">
+    Programs
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1313,17 +1343,45 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C10_File_Format/fastq.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C10_Recombination-and-Population-Structure/01_Virus-Recombination.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="fastq">FastQ<a class="headerlink" href="#fastq" title="Permanent link">&para;</a></h1>
-<p>第一行内容包括测序仪信息，实验信息和序列信息等</p>
-<div class="codehilite"><pre><span></span>@&lt;instrument&gt;:&lt;run number&gt;:&lt;flowcell ID&gt;:&lt;lane&gt;:&lt;tile&gt;:&lt;x-pos&gt;:&lt;y-pos&gt; &lt;read&gt;:&lt;is filtered&gt;:&lt;control number&gt;:&lt;index sequence&gt;
-</pre></div>
-
-<p>第二行内容是序列</p>
-<p>第三行为标识符号，没有特殊含义</p>
-<p>第四行为对应的序列质量</p>
+                <h1 id="virus-recombination-analysis">Virus Recombination Analysis<a class="headerlink" href="#virus-recombination-analysis" title="Permanent link">&para;</a></h1>
+<h3 id="rdp4">RDP4<a class="headerlink" href="#rdp4" title="Permanent link">&para;</a></h3>
+<h3 id="simplot">Simplot<a class="headerlink" href="#simplot" title="Permanent link">&para;</a></h3>
+<h2 id="programs">Programs<a class="headerlink" href="#programs" title="Permanent link">&para;</a></h2>
+<p>RDP
+<a href="http://darwin.uvigo.es/rdp/rdp.html">http://darwin.uvigo.es/rdp/rdp.html</a>
+Pros: Alread a compilation of detection algorithms for verification of analysis. Free and easy to install.
+Cons: I can only get Manual methods to work on my Windows 7 machine specifically Bootscan, MaxChi, and 3Seq. Also poor interface.</p>
+<p>SimPlot
+<a href="http://sray.med.som.jhmi.edu/SCRoftw...ot/#disclaimer">http://sray.med.som.jhmi.edu/SCRoftw...ot/#disclaimer</a>
+Pros:Simple interface easy to use and visualize data. Implements algorithms Simplot, Bootscan, and FindSites.
+Cons: Simplot More useful for evolutionarily closely related regions. Manual grouping of sequences in for analysis needs to be fixed. Can't seem to change window size or step size in Bootscan algorithm.</p>
+<p>Algorithms
+Bootscan
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/15665649">http://www.ncbi.nlm.nih.gov/pubmed/15665649</a>
+Pros: Works well with divergent sequences, very visual representation. Not only shows possible recombination but also can show you divergent regions in a proteins primary structure.
+Cons: Not really sure how to best optimize parameters. Specifically for the more divergent sequences.</p>
+<p>MaxChi
+<a href="http://pubmlst.org/software/analysis...red_test.shtml">http://pubmlst.org/software/analysis...red_test.shtml</a>
+Pros: Easy to understand and optimize, visual representation
+Cons: Seems like there is a higher false psotive rate when working with more divergent sequences</p>
+<p>3Seq
+<a href="http://bima.ws/3seq/">http://bima.ws/3seq/</a>
+Pros: Looks specifically at parental and recombinant sequences
+Cons: Basically have no idea how this program works or what I should be looking for.</p>
+<p>Simplot
+<a href="http://sray.med.som.jhmi.edu/SCRoftw...lot/#geography">http://sray.med.som.jhmi.edu/SCRoftw...lot/#geography</a>
+Pros:Visual representation
+Cons: Only works with highly similar sequences.</p>
+<p>bratNextgen
+<a href="http://www.helsinki.fi/bsg/software/BRAT-NextGen/">http://www.helsinki.fi/bsg/software/BRAT-NextGen/</a>
+pros: highly cited, for microorganism
+cons: need to instrall MCR first, encountered a problem, I've been fixing it... not successful yes..</p>
+<p>OmegaMap <a href="http://www.danielwilson.me.uk/omegaMap.html">http://www.danielwilson.me.uk/omegaMap.html</a>
+TOPALi v.2 (<a href="http://www.topali.org/">http://www.topali.org/</a>).</p>
+<p><a href="http://bioinf.man.ac.uk/robertson/recombination/programs.shtml">http://bioinf.man.ac.uk/robertson/recombination/programs.shtml</a></p>
                 
                   
                 

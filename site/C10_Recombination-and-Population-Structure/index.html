@@ -13,7 +13,7 @@
         <meta name="description" content="病原微生物高通量测序数据分析手册">
       
       
-        <link rel="canonical" href="https://indexofire.github.io/pathongs/C10_File_Format/01_fasta/">
+        <link rel="canonical" href="https://indexofire.github.io/pathongs/C10_Recombination-and-Population-Structure/">
       
       
         <meta name="author" content="Mark Renton">
@@ -37,21 +37,21 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
     
     
       
-        <title>01 fasta - Pathogen NGS 数据分析入门</title>
+        <title>Pathogen NGS 数据分析入门</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+      <script src="../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
       
@@ -60,7 +60,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
     
@@ -146,7 +146,7 @@
               Pathogen NGS 数据分析入门
             </span>
             <span class="md-header-nav__topic">
-              01 fasta
+              Home
             </span>
           
         </div>
@@ -256,7 +256,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="开始之前" class="md-nav__link">
+    <a href=".." title="开始之前" class="md-nav__link">
       开始之前
     </a>
   </li>
@@ -287,7 +287,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/01_basic-cml/" title="01. Linux 基本命令" class="md-nav__link">
+    <a href="../C01_Linux-and-Script-Language/01_basic-cml/" title="01. Linux 基本命令" class="md-nav__link">
       01. Linux 基本命令
     </a>
   </li>
@@ -299,7 +299,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/02_linux-installation/" title="02. Linux 安装实例" class="md-nav__link">
+    <a href="../C01_Linux-and-Script-Language/02_linux-installation/" title="02. Linux 安装实例" class="md-nav__link">
       02. Linux 安装实例
     </a>
   </li>
@@ -311,7 +311,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/03_linux-administration/" title="03. Linux 系统管理" class="md-nav__link">
+    <a href="../C01_Linux-and-Script-Language/03_linux-administration/" title="03. Linux 系统管理" class="md-nav__link">
       03. Linux 系统管理
     </a>
   </li>
@@ -323,7 +323,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/04_awk/" title="04. 数据处理常用工具之 awk" class="md-nav__link">
+    <a href="../C01_Linux-and-Script-Language/04_awk/" title="04. 数据处理常用工具之 awk" class="md-nav__link">
       04. 数据处理常用工具之 awk
     </a>
   </li>
@@ -335,7 +335,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/05_bioawk/" title="05. 测序数据工具 bioawk" class="md-nav__link">
+    <a href="../C01_Linux-and-Script-Language/05_bioawk/" title="05. 测序数据工具 bioawk" class="md-nav__link">
       05. 测序数据工具 bioawk
     </a>
   </li>
@@ -347,7 +347,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/06_python/" title="06. Python编程" class="md-nav__link">
+    <a href="../C01_Linux-and-Script-Language/06_python/" title="06. Python编程" class="md-nav__link">
       06. Python编程
     </a>
   </li>
@@ -359,7 +359,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/07_shell/" title="07. Shell脚本" class="md-nav__link">
+    <a href="../C01_Linux-and-Script-Language/07_shell/" title="07. Shell脚本" class="md-nav__link">
       07. Shell脚本
     </a>
   </li>
@@ -395,7 +395,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C02_Common-Utility/01_emboss/" title="01. EMBOSS 工具集" class="md-nav__link">
+    <a href="../C02_Common-Utility/01_emboss/" title="01. EMBOSS 工具集" class="md-nav__link">
       01. EMBOSS 工具集
     </a>
   </li>
@@ -407,7 +407,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C02_Common-Utility/02_blast/" title="02. Blast 与 Blast+" class="md-nav__link">
+    <a href="../C02_Common-Utility/02_blast/" title="02. Blast 与 Blast+" class="md-nav__link">
       02. Blast 与 Blast+
     </a>
   </li>
@@ -419,7 +419,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C02_Common-Utility/08_seqkit/" title="03. 国产序列处理神器 SeqKit" class="md-nav__link">
+    <a href="../C02_Common-Utility/08_seqkit/" title="03. 国产序列处理神器 SeqKit" class="md-nav__link">
       03. 国产序列处理神器 SeqKit
     </a>
   </li>
@@ -431,7 +431,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C02_Common-Utility/09_kmer/" title="04. K-mer 处理工具" class="md-nav__link">
+    <a href="../C02_Common-Utility/09_kmer/" title="04. K-mer 处理工具" class="md-nav__link">
       04. K-mer 处理工具
     </a>
   </li>
@@ -443,7 +443,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C02_Common-Utility/01_databases/" title="01. 生物公共数据库" class="md-nav__link">
+    <a href="../C02_Common-Utility/01_databases/" title="01. 生物公共数据库" class="md-nav__link">
       01. 生物公共数据库
     </a>
   </li>
@@ -455,7 +455,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C02_Common-Utility/02_fileformat.md" title="02. 生物数据文件格式" class="md-nav__link">
+    <a href="../C02_Common-Utility/02_fileformat.md" title="02. 生物数据文件格式" class="md-nav__link">
       02. 生物数据文件格式
     </a>
   </li>
@@ -467,7 +467,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C02_Common-Utility/03_edirect/" title="03. 玩转 edirect" class="md-nav__link">
+    <a href="../C02_Common-Utility/03_edirect/" title="03. 玩转 edirect" class="md-nav__link">
       03. 玩转 edirect
     </a>
   </li>
@@ -503,7 +503,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C03_File-Format/01_fasta/" title="01. fasta" class="md-nav__link">
+    <a href="../C03_File-Format/01_fasta/" title="01. fasta" class="md-nav__link">
       01. fasta
     </a>
   </li>
@@ -515,7 +515,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C03_File-Format/02_embl/" title="02. embl" class="md-nav__link">
+    <a href="../C03_File-Format/02_embl/" title="02. embl" class="md-nav__link">
       02. embl
     </a>
   </li>
@@ -551,7 +551,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_04/03_bacteria-assembly.md" title="03. 细菌基因组组装" class="md-nav__link">
+    <a href="../chapter_04/03_bacteria-assembly.md" title="03. 细菌基因组组装" class="md-nav__link">
       03. 细菌基因组组装
     </a>
   </li>
@@ -563,7 +563,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_04/04_virus-assembly.md" title="04. 病毒基因组组装" class="md-nav__link">
+    <a href="../chapter_04/04_virus-assembly.md" title="04. 病毒基因组组装" class="md-nav__link">
       04. 病毒基因组组装
     </a>
   </li>
@@ -599,7 +599,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_05/01_prokka.md" title="01. Prokka 快速注释" class="md-nav__link">
+    <a href="../chapter_05/01_prokka.md" title="01. Prokka 快速注释" class="md-nav__link">
       01. Prokka 快速注释
     </a>
   </li>
@@ -611,7 +611,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_05/02_rast.md" title="02. 在线注释工具 rast" class="md-nav__link">
+    <a href="../chapter_05/02_rast.md" title="02. 在线注释工具 rast" class="md-nav__link">
       02. 在线注释工具 rast
     </a>
   </li>
@@ -623,7 +623,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_05/03_PGAAP.md" title="03. 注释工具 PGAAP" class="md-nav__link">
+    <a href="../chapter_05/03_PGAAP.md" title="03. 注释工具 PGAAP" class="md-nav__link">
       03. 注释工具 PGAAP
     </a>
   </li>
@@ -635,7 +635,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_05/04_snpEFF.md" title="04. SNP注释工具 snpEFF" class="md-nav__link">
+    <a href="../chapter_05/04_snpEFF.md" title="04. SNP注释工具 snpEFF" class="md-nav__link">
       04. SNP注释工具 snpEFF
     </a>
   </li>
@@ -671,7 +671,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_06/01_pangenome.md" title="01. Pangenome 概述" class="md-nav__link">
+    <a href="../chapter_06/01_pangenome.md" title="01. Pangenome 概述" class="md-nav__link">
       01. Pangenome 概述
     </a>
   </li>
@@ -683,7 +683,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_06/02_get_homologues.md" title="02. Get_Homologues 分析" class="md-nav__link">
+    <a href="../chapter_06/02_get_homologues.md" title="02. Get_Homologues 分析" class="md-nav__link">
       02. Get_Homologues 分析
     </a>
   </li>
@@ -695,7 +695,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_06/03_BPGA.md" title="03. BPGA 分析" class="md-nav__link">
+    <a href="../chapter_06/03_BPGA.md" title="03. BPGA 分析" class="md-nav__link">
       03. BPGA 分析
     </a>
   </li>
@@ -707,7 +707,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_06/04_roary.md" title="04. Roary 分析" class="md-nav__link">
+    <a href="../chapter_06/04_roary.md" title="04. Roary 分析" class="md-nav__link">
       04. Roary 分析
     </a>
   </li>
@@ -719,7 +719,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_06/05_panseq.md" title="05. panseq 分析" class="md-nav__link">
+    <a href="../chapter_06/05_panseq.md" title="05. panseq 分析" class="md-nav__link">
       05. panseq 分析
     </a>
   </li>
@@ -731,7 +731,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_06/06_gubbins.md" title="06. Gubbins 分析" class="md-nav__link">
+    <a href="../chapter_06/06_gubbins.md" title="06. Gubbins 分析" class="md-nav__link">
       06. Gubbins 分析
     </a>
   </li>
@@ -743,7 +743,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_06/07_orthmcl.md" title="07. OrthMCL 分析" class="md-nav__link">
+    <a href="../chapter_06/07_orthmcl.md" title="07. OrthMCL 分析" class="md-nav__link">
       07. OrthMCL 分析
     </a>
   </li>
@@ -755,7 +755,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../chapter_06/08_ITEP.md" title="08. ITEP 分析" class="md-nav__link">
+    <a href="../chapter_06/08_ITEP.md" title="08. ITEP 分析" class="md-nav__link">
       08. ITEP 分析
     </a>
   </li>
@@ -791,7 +791,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C08_Genome_Visualization/01_igv.md" title="01. igv 查看比对结果" class="md-nav__link">
+    <a href="../C08_Genome_Visualization/01_igv.md" title="01. igv 查看比对结果" class="md-nav__link">
       01. igv 查看比对结果
     </a>
   </li>
@@ -803,7 +803,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C08_Genome_Visualization/02_BRIG.md" title="02. BRIG 细菌比较基因组分析工具" class="md-nav__link">
+    <a href="../C08_Genome_Visualization/02_BRIG.md" title="02. BRIG 细菌比较基因组分析工具" class="md-nav__link">
       02. BRIG 细菌比较基因组分析工具
     </a>
   </li>
@@ -815,7 +815,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C08_Genome_Visualization/03_circos.md" title="03. circos 工具使用" class="md-nav__link">
+    <a href="../C08_Genome_Visualization/03_circos.md" title="03. circos 工具使用" class="md-nav__link">
       03. circos 工具使用
     </a>
   </li>
@@ -851,7 +851,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C09_Analysis_Platform/01_docker.md" title="01. 基于 docker 镜像" class="md-nav__link">
+    <a href="../C09_Analysis_Platform/01_docker.md" title="01. 基于 docker 镜像" class="md-nav__link">
       01. 基于 docker 镜像
     </a>
   </li>
@@ -863,7 +863,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C09_Analysis_Platform/02_galaxy.md" title="02. Galaxy 平台" class="md-nav__link">
+    <a href="../C09_Analysis_Platform/02_galaxy.md" title="02. Galaxy 平台" class="md-nav__link">
       02. Galaxy 平台
     </a>
   </li>
@@ -875,7 +875,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C09_Analysis_Platform/03_amazon.md" title="03. Amazon EC2 云平台" class="md-nav__link">
+    <a href="../C09_Analysis_Platform/03_amazon.md" title="03. Amazon EC2 云平台" class="md-nav__link">
       03. Amazon EC2 云平台
     </a>
   </li>
@@ -887,7 +887,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C09_Analysis_Platform/04_others.md" title="04. 其他平台" class="md-nav__link">
+    <a href="../C09_Analysis_Platform/04_others.md" title="04. 其他平台" class="md-nav__link">
       04. 其他平台
     </a>
   </li>
@@ -923,7 +923,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C11_Pathogen_NGS_Application/01_srst2.md" title="01. SRST2 短序列比对基因工具" class="md-nav__link">
+    <a href="../C11_Pathogen_NGS_Application/01_srst2.md" title="01. SRST2 短序列比对基因工具" class="md-nav__link">
       01. SRST2 短序列比对基因工具
     </a>
   </li>
@@ -935,7 +935,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C11_Pathogen_NGS_Application/02_mlst.md" title="02. 拼接序列管家基因扫描工具 MLST" class="md-nav__link">
+    <a href="../C11_Pathogen_NGS_Application/02_mlst.md" title="02. 拼接序列管家基因扫描工具 MLST" class="md-nav__link">
       02. 拼接序列管家基因扫描工具 MLST
     </a>
   </li>
@@ -947,7 +947,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C11_Pathogen_NGS_Application/03_ariba.md" title="03. 拼接序列耐药基因扫描工具 Ariba" class="md-nav__link">
+    <a href="../C11_Pathogen_NGS_Application/03_ariba.md" title="03. 拼接序列耐药基因扫描工具 Ariba" class="md-nav__link">
       03. 拼接序列耐药基因扫描工具 Ariba
     </a>
   </li>
@@ -959,7 +959,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C11_Pathogen_NGS_Application/04_csibelia.md" title="04. 细菌共线性分析工具 C-Sibelia" class="md-nav__link">
+    <a href="../C11_Pathogen_NGS_Application/04_csibelia.md" title="04. 细菌共线性分析工具 C-Sibelia" class="md-nav__link">
       04. 细菌共线性分析工具 C-Sibelia
     </a>
   </li>
@@ -995,7 +995,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C12_Metagenomics_Analysis/01_kraken.md" title="01. kraken" class="md-nav__link">
+    <a href="../C12_Metagenomics_Analysis/01_kraken.md" title="01. kraken" class="md-nav__link">
       01. kraken
     </a>
   </li>
@@ -1007,7 +1007,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C12_Metagenomics_Analysis/02_centrifuge.md" title="02. centrifuge" class="md-nav__link">
+    <a href="../C12_Metagenomics_Analysis/02_centrifuge.md" title="02. centrifuge" class="md-nav__link">
       02. centrifuge
     </a>
   </li>
@@ -1019,7 +1019,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C12_Metagenomics_Analysis/03_bracken.md" title="03. bracken" class="md-nav__link">
+    <a href="../C12_Metagenomics_Analysis/03_bracken.md" title="03. bracken" class="md-nav__link">
       03. bracken
     </a>
   </li>
@@ -1031,7 +1031,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C12_Metagenomics_Analysis/04_sourmash.md" title="04. sourmash" class="md-nav__link">
+    <a href="../C12_Metagenomics_Analysis/04_sourmash.md" title="04. sourmash" class="md-nav__link">
       04. sourmash
     </a>
   </li>
@@ -1043,7 +1043,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C12_Metagenomics_Analysis/05_clark.md" title="05. clark" class="md-nav__link">
+    <a href="../C12_Metagenomics_Analysis/05_clark.md" title="05. clark" class="md-nav__link">
       05. clark
     </a>
   </li>
@@ -1055,7 +1055,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C12_Metagenomics_Analysis/06_krona.md" title="06. krona" class="md-nav__link">
+    <a href="../C12_Metagenomics_Analysis/06_krona.md" title="06. krona" class="md-nav__link">
       06. krona
     </a>
   </li>
@@ -1067,7 +1067,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C12_Metagenomics_Analysis/07_pavian.md" title="07. pavian" class="md-nav__link">
+    <a href="../C12_Metagenomics_Analysis/07_pavian.md" title="07. pavian" class="md-nav__link">
       07. pavian
     </a>
   </li>
@@ -1103,7 +1103,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C13_Single_Molecular_Sequencing/01_nanopore.md" title="01. nanopore" class="md-nav__link">
+    <a href="../C13_Single_Molecular_Sequencing/01_nanopore.md" title="01. nanopore" class="md-nav__link">
       01. nanopore
     </a>
   </li>
@@ -1115,7 +1115,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C13_Single_Molecular_Sequencing/02_pacbio.md" title="02. pacbio" class="md-nav__link">
+    <a href="../C13_Single_Molecular_Sequencing/02_pacbio.md" title="02. pacbio" class="md-nav__link">
       02. pacbio
     </a>
   </li>
@@ -1127,7 +1127,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C13_Single_Molecular_Sequencing/03_canu.md" title="03. canu" class="md-nav__link">
+    <a href="../C13_Single_Molecular_Sequencing/03_canu.md" title="03. canu" class="md-nav__link">
       03. canu
     </a>
   </li>
@@ -1139,7 +1139,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C13_Single_Molecular_Sequencing/04_trimming.md" title="04. trimming" class="md-nav__link">
+    <a href="../C13_Single_Molecular_Sequencing/04_trimming.md" title="04. trimming" class="md-nav__link">
       04. trimming
     </a>
   </li>
@@ -1151,7 +1151,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C13_Single_Molecular_Sequencing/06_hybrid.md" title="06. hybrid" class="md-nav__link">
+    <a href="../C13_Single_Molecular_Sequencing/06_hybrid.md" title="06. hybrid" class="md-nav__link">
       06. hybrid
     </a>
   </li>
@@ -1187,7 +1187,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C14_Phylogeny_Construction/01_msa.md" title="01. 多重序列比对" class="md-nav__link">
+    <a href="../C14_Phylogeny_Construction/01_msa.md" title="01. 多重序列比对" class="md-nav__link">
       01. 多重序列比对
     </a>
   </li>
@@ -1223,7 +1223,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C15_Pathogen_Geospatial_Analysis/01_cartodb.md" title="01. CartoDB" class="md-nav__link">
+    <a href="../C15_Pathogen_Geospatial_Analysis/01_cartodb.md" title="01. CartoDB" class="md-nav__link">
       01. CartoDB
     </a>
   </li>
@@ -1259,7 +1259,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C16_Analysis_Examples/01_trace-Pae-from-different-source-by-SNP.md" title="01. 细菌SNP溯源分析一" class="md-nav__link">
+    <a href="../C16_Analysis_Examples/01_trace-Pae-from-different-source-by-SNP.md" title="01. 细菌SNP溯源分析一" class="md-nav__link">
       01. 细菌SNP溯源分析一
     </a>
   </li>
@@ -1271,7 +1271,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C16_Analysis_Examples/02_comparative-analysis-Ban-genomes.md" title="02. 细菌比较基因组学研究" class="md-nav__link">
+    <a href="../C16_Analysis_Examples/02_comparative-analysis-Ban-genomes.md" title="02. 细菌比较基因组学研究" class="md-nav__link">
       02. 细菌比较基因组学研究
     </a>
   </li>
@@ -1294,10 +1294,10 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C10_File_Format/01_fasta.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C10_Recombination-and-Population-Structure/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>01 fasta</h1>
+                  <h1>Home</h1>
                 
                 
                 
@@ -1338,9 +1338,9 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.dc02f8ce.js"></script>
+      <script src="../assets/javascripts/application.dc02f8ce.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
       
@@ -1350,7 +1350,7 @@
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
       
-        <script src="../../assets/js/umlconvert.js"></script>
+        <script src="../assets/js/umlconvert.js"></script>
       
     
   </body>

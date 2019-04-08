@@ -1560,7 +1560,7 @@ $ which python
 <ul>
 <li><code class="codehilite">find</code>: 查找文件</li>
 <li><code class="codehilite">ps</code>: 查看系统进程</li>
-<li>'top': </li>
+<li><code class="codehilite">top</code>: 查看当前系统状态和进程</li>
 </ul>
 <div class="superfences-tabs">
 <input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
@@ -1571,6 +1571,10 @@ $ find /etc/hosts
 
 <span class="c1"># 查找当前目录及子目录后缀为gz的文件</span>
 $ find . -type f -name <span class="s2">&quot;*.gz&quot;</span>
+<span class="c1"># 查找所有的 html 网页文件</span>
+$ find . -type f -regex <span class="s2">&quot;.*html</span>$<span class="s2">&quot;</span>
+<span class="c1"># 将所有 fasta 文件中序列名字包含node的改成seq</span>
+$ find . -type f -regex <span class="s2">&quot;.*fasta</span>$<span class="s2">&quot;</span> <span class="p">|</span> xargs sed <span class="s1">&#39;s/NODE/Seq/g&#39;</span>
 
 <span class="c1"># 查找子目录深度为4层目录的fasta文件</span>
 $ find . -type f -maxdepth <span class="m">4</span> -name <span class="s2">&quot;*.fasta&quot;</span>
@@ -1604,6 +1608,10 @@ $ ps -L <span class="m">1000</span>
 
 <span class="c1"># 树形现实进程</span>
 $ ps -axjf
+</pre></div></div>
+<input name="__tabs_2" type="radio" id="__tab_2_2" />
+<label for="__tab_2_2">top</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>$ top
 </pre></div></div>
 </div>
 <div class="admonition info">
