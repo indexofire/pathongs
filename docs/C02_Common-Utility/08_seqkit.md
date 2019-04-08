@@ -2,32 +2,6 @@
 
 [Seqkit]() 是由国人 [shenwei]() 开发，功能强大的命令行序列处理工具套件。
 
-!!! note "例子"
- | 对注释的多拷贝基因提取序列后进行序列比对。
-
-```bash
-# 用prokka注释基因组拼接序列
-$ prokka --rfam --prefix sample --outdir sample contig.fa
-
-# 用 seqkit 提取多拷贝基因 ncRNA Qrr 的序列
-$ grep 'Qrr' sample/sample.gff | for i in $(awk '{print $9}'); do seqkit grep -p ${i:3:14} sample.ffn >> qrr.fa; done
-
-# mafft 序列比对
-$ mafft 1.fa > 1.mafft
-
-# raxml 构建进化树
-$ raxmlHPC -f a -p 12345 -x 12345 -# 1000 -m GTRGAMMA -s 1.mafft -n 1
-```
-
-
-提取序列
-
-```bash
-#
-$ seqkit
-
-```
-
 ## 使用
 
 | 子命令 | 用途 |
@@ -63,6 +37,23 @@ $ seqkit
 | translate |  translate DNA/RNA to protein sequence |
 | version |  print version information and check for update |
 
+
+
+## grep
+
+spades 组装完毕的序列，提取其中某个 node 或者某些 nodes 序列：
+
+```bash
+$ seqkit grep -r -p ^node_1$ scaffolds.fasta > node_1.fasta
+```
+
+将 scaffolds 中所有 nodes 提取到单独的 fasta 文件中：
+
+```bash
+$ for i in $(awk '/>/' scaffolds.fasta | awk '{print $1}'); \
+> do seqkit grep -p ${i:1} scaffolds.fasta > ${i:1}.fasta; \
+> done
+```
 
 ### seq 命令
 
@@ -102,6 +93,18 @@ $ seqkit seq -su SRR1175124_1.fastq.gz
 # 下载 NC_001477
 $ efetch -db nuccore -id NC_001477 -format fasta > NC_001477.fasta
 # 翻译 DNA 序列为氨基酸序列
-$ seqkit tranlate -j 4 -o NC_001477.pep NC_001477.fasta
+$ seqkit translate -j 4 -o NC_001477.pep NC_001477.fasta
 #
 ```
+
+!!! note "对注释的多拷贝基因提取序列后进行序列比对"
+    ```bash
+    # 用prokka注释基因组拼接序列
+    $ prokka --rfam --prefix sample --outdir sample contig.fa
+    # 用 seqkit 提取多拷贝基因 ncRNA Qrr 的序列
+    $ grep 'Qrr' sample/sample.gff | for i in $(awk '{print $9}'); do seqkit grep -p ${i:3:14} sample.ffn >> qrr.fa; done
+    # mafft 序列比对
+    $ mafft 1.fa > 1.mafft
+    # raxml 构建进化树
+    $ raxmlHPC -f a -p 12345 -x 12345 -# 1000 -m GTRGAMMA -s 1.mafft -n 1
+    ```
