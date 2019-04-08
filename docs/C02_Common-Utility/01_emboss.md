@@ -61,3 +61,12 @@ output sequence(s) [...]:           <--- 输入序列保存的文件名称
 
 **emma**:
 **edialign**:
+
+
+### 绘图
+
+**density**: 绘制核酸密度图。
+
+```bash
+(emboss)$ density -seqall input.fasta -display D -gragh ps
+```
