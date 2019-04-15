@@ -15,14 +15,14 @@ edirect 直接下载预编译包，添加到系统路径中即可。
 $ wget ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/edirect.tar.gz
 
 # 将 edirect 安装在用户 app 目录下，可以根据需求自行选择安装路径
-$ tar zxvf edirect.tar.gz -C ~/app
+$ tar zxvf edirect.tar.gz -C ~/apps
 
 # 运行安装脚本
-$ cd ~/app/edirect
-$ ./setup.sh
+$ cd ~/apps/edirect
+$ bash ./setup.sh
 
 # 添加软件安装目录到系统环境变量中
-$ echo "export PATH='\$PATH:\$HOME/app/edirect/'" >> ~/.bashrc
+$ echo "export PATH='\$PATH:\$HOME/apps/edirect/'" >> ~/.bashrc
 $ source ~/.bashrc
 ```
 

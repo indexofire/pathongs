@@ -143,12 +143,7 @@ root@archiso~ # arch-chroot /mnt /bin/bash
 # 安装efi
 [root@archiso /]# bootctl install
 [root@archiso /]# vim /boot/efi/entities/arch.conf
-
-
-
-
 [root@archiso /]# vim /boot/efi/load.conf
-
 ```
 
 分区时我们没有建立swap分区，因为在SSD中，更喜欢用文件方式使用swap，更为灵活。
@@ -162,22 +157,20 @@ root@archiso~ # arch-chroot /mnt /bin/bash
 # echo "/swap/swapfile none swap defaults 0 0" >> /etc/fstab
 ```
 
-
-
 ### 安装 teminal 工具 urxvt
 
 从剪贴板中粘贴内容到urxvt中，可以用 shift+insert，或者鼠标中键。从urxvt中复制，直接用鼠标选中即可。复制到其他程序时，只要使用鼠标中键即可。
 
 ```
-# pacman -S xorg xorg-xinit
-
-libgl
+# pacman -S xorg xorg-xinit libgl
 # pacman -S rxvt-unicode urxvt-perls
 # pacman -S linux-headers
 # pacman -S sudo
 # EDITOR=vim visudo
 %wheel ALL=(ALL) ALL
 ```
+
+添加当前用户，并赋予管理员权限。
 
 ```
 # useradd mark -g wheel -m
@@ -188,10 +181,9 @@ Retype new password:
 
 ### 字体设置
 
-```
-# 安装字体
+```bash
+# 安装文泉驿、noto等中文字体
 $ sudo pacman -S ttf-inconsolata wqy-microhei wqy-microhei-light wyq-zenhei wqy-bitmapfont ttf-font-awesome ttf-arphic-ukai ttf-arphic-uming noto-fonts
-
 $ sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 $ sudo unlink /etc/fonts/conf.d/10-scal-bitmap-fonts.conf
 ```
@@ -201,13 +193,15 @@ $ sudo unlink /etc/fonts/conf.d/10-scal-bitmap-fonts.conf
 安装 ArchLinux 过程中，我们用过 wifi-menu 工具连接了无线网络。进入安装完毕的系统，也可以以管理员运行 wifi-menu 连接，再运行 dhcpcd，即可上网。如果要启用网络服务，开机自动运行和连接，需要安装 NetworkManager
 
 ```bash
-##
+# 安装 NetworkManager
 $ sudo pacman -S networkmanager
 $ sudo systemctl enable NetworkManager
 
-## 命令行下建立 wifi 连接
+# 命令行下建立 wifi 连接
 $ nmcli dev wifi connect "your-wifi-ssid" password "wifi-password"
-## netoworkmanager
+
+# 通过终端图形界面设置
+$ nmtui
 ```
 
 ### 设置音频输入输出
@@ -215,21 +209,21 @@ $ nmcli dev wifi connect "your-wifi-ssid" password "wifi-password"
 ArchLinux 的内核模块已经包含 ALSA，没有声音是因为默认设置成静音状态。控制声音，要安装相应的工具。
 
 ```bash
-## alsa 工具
+# alsa 工具
 $ sudo pacman -S alsa-utils alsa-oss
 
-## alsamixer 配置声音，通过ncurse界面。
-## 输出Master下方如果显示是MM，则处于mute静音状态，按m键接触
+# alsamixer 配置声音，通过ncurse界面。
+# 输出Master下方如果显示是MM，则处于mute静音状态，按m键接触
 $ alsamixer
 
-## amixer 命令行声音设置，下面命令解除静音
+# amixer 命令行声音设置，下面命令解除静音
 $ amixer sset Master unmute
 
-## 查看所有 mixer
+# 查看所有 mixer
 $ amixer scontrols
 ```
 
-声音配置文件，系统级的在`/etc/asound.conf`，用户级的在`~/.asound.rc
+声音配置文件，系统级的在`/etc/asound.conf`，用户级的在`~/.asound.rc`
 
 ### 屏幕色彩矫正
 
@@ -300,6 +294,7 @@ EDID block does NOT conform to EDID 1.4!
 没有备份icc文件的话，可以在[这里](https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NV156FHM_N61.icm)下载。通过.xinitrc用户级方式在进入桌面系统并加载。
 
 ```bash
+# 备份icm文件，安装xcalib
 $ wget https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NV156FHM_N61.icm
 $ sudo cp BOE*.icm /usr/local/share/color/icc/BOE_CQ_NV156FHM_N61.icm
 $ git clone https://aur.archlinux.org/xcalib.git
@@ -307,7 +302,6 @@ $ cd xcalib
 $ makepkg -si
 $ echo "/usr/bin/xcalib -d :0 /usr/local/share/color/icc/BOE_CQ_NV156FHM_N61.icm" >> ~/.xinitrc
 ```
-
 
 ### 键盘按键设置
 
@@ -367,12 +361,11 @@ set $power Say Goodbye? [L]ogout | [S]hutdown | [C]ancel
 mode "$power" {
 	bindsym l exec i3-msg exit
 	bindsym s exec systemctl poweroff
-    bindsym c mode "default"
+  bindsym c mode "default"
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
 ```
-
 
 ### 设置触摸板
 
@@ -392,9 +385,9 @@ EndSection
 
 ### 安装 i3-gaps
 
-```
-$ vim .xinitrc
-$ exec i3
+```bash
+# 将启动脚本添加到 .xinitrc
+$ echo "exec i3" >> ~/.xinitrc
 ```
 
 ### 安装polybar
@@ -411,7 +404,7 @@ $ makepkg -si
 
 ### 安装常用软件
 
-```
+```bash
 # 安装浏览器
 $ sudo pacman -S chromium firefox pepper-flash ttf-liberation
 
@@ -422,29 +415,29 @@ $ sudo pacman -S git-core
 $ sudo pacman -S python python-pipenv
 ```
 
-
-
 ### 安装文件管理器
 
 我们用 ranger 来做为文件管理器。
 
-```
+```bash
 $ pacman -S ranger
 ```
 
 ### 中文输入
 
 ```bash
-## 安装 fcitx
+# 安装 fcitx
 $ sudo pacman -S fcitx
 $ vim ~/.xinitrc
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-## 安装 im 和拼音输入法
+# 安装 im 和拼音输入法
 $ sudo pacman -S fcitx-im
 $ sudo pacman -S fcitx-googlepinyin
+
+# 个别版本的 wps 需要在启动脚本中加入 export QT_IM_MODULE=fcitx 才能使用输入法。
 ```
 
 ### 科学上网
@@ -521,10 +514,7 @@ $ sudo systemctl enable bumblebeed.service
 
 # test bumblebee
 $ optirun glxgears -info
-```
 
-
-```bash
 ## 安装 steam
 $ vim /etc/pacman.conf
 [multilib]
@@ -536,7 +526,6 @@ $ sudo pacman -S steam
 
 右键点击游戏-> Properties，添加参数 primusrun
 
-
 ### 电源管理
 
 ```bash
@@ -546,6 +535,7 @@ $ sudo pacman -S tlp
 ### 设置用户目录路径
 
 ```bash
+# 路径可以设置成自己喜爱的方式
 $ sudo pacman -S xdg-user-dirs
 $ vim ~/.config/user-dirs.dirs
 
@@ -558,13 +548,14 @@ XDG_PUBLICSHARE_DIR="$HOME/public"
 XDG_TEMPLATES_DIR="$HOME/templates"
 XDG_VIDEOS_DIR="$HOME/videos"
 
+# 更新路径目录
 $ xdg-user-dirs-update
 ```
-
 
 ### 办公软件 wps
 
 ```bash
+# 添加 archlinux cn 源
 $ sudo echo "[archlinuxcn]" >> /etc/pacman.conf
 $ sudo echo "Server = http://repo.archlinuxcn.org/$arch" >> /etc/pacman.conf
 $ sudo pacman -Syu
@@ -574,12 +565,6 @@ $ sudo pacman -S wps-office ttf-wps-fonts
 # $ git clone https://aur.archlinux.org/ttf-ms-fonts.git
 # $ cd ttf-ms-fonts && makepkg -si
 ```
-
-
-
-### screen session
-
-平时工作经常要通过ssh访问服务器，因此使用screen是避免不了的。
 
 ### 蓝牙
 
@@ -615,38 +600,34 @@ ReconnectIntervals=1,2,4,8,16,32,64
 AutoEnable=true
 ```
 
-
-
-
 ### Conda and Bioconda
 
+采用 conda 管理生物软件
+
 ```bash
+# 下载安装 conda
 $ cd /tmp
 $ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 $ sh Miniconda3-latest-Linux-x86
 ...
-# change path
-[/home/mark/.conda]
 
+# 设置路径，个人一般设置为 $HOME/.conda
 $ conda config --add channels defaults
 $ conda config --add channels conda-forge
 $ conda config --add channels bioconda
 ```
-
 
 ### Music 播放
 
 命令行下的音乐播放器众多，比较符合个人喜欢的是cmus/nm
 
 ```bash
-
+$ sudo pacman -S cmus
 ```
-
-
 
 ### 指纹识别
 
-用`fprintd`验证时，需要将右手食指划第一节慢慢滑过sensor（2秒左右）5次。
+用`fprintd`验证时，需要将右手食指划第一节慢慢滑过sensor（2秒左右）5次。实际使用下来，小米的Linux指纹识别效果不如Win10，可能需要新版本的fprint，目前不建议开启。
 
 ```bash
 ## Archlinux 源里的版本还不支持 Elan。github下载最新源代码
@@ -714,7 +695,6 @@ $ ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 output.mkv
 $ mpv output.mkv
 ```
 
-
 ### Wine
 
 ```bash
@@ -725,7 +705,7 @@ $ WINEARCH=win64 WINEPREFIX=$HOME/.wine64 winetricks fontsmooth=rgb gdiplus vcru
 
 ### Photoshop
 
-Adobe Photoshop CC 2018 v19.1.3.49649
+安装的版本是：Adobe Photoshop CC 2018 v19.1.3.49649，基本能正常使用，个别菜单显示不正常。
 
 ```bash
 $ wget http://209.126.105.33/DownloadBull/Portable_Adobe_Photoshop_CC_2018_v19.0.0.165_x64.zip
@@ -733,8 +713,10 @@ $ 7z e Portable_Adobe_Photoshop_CC_2018_v19.0.0.165_x64.zip
 $ wine64 PhotoshopPortable.exe
 ```
 
-
 ### 美化字体设置
+
+!!! warning: "本节内容更新"
+    随着更新，不建议使用infinality来渲染字体。
 
 许多发行版如Ubuntu优化过字体渲染效果，而 ArchLinux 从头安装的话需要自己来配置。对于普通人来说这是一个复杂而痛苦的过程，那么最简便的方法就是直接安装 Infinality 套装获得现成的字体优化渲染设置。[Infinality]() 是一个 Freetype 的修改版，在 Linux 下提供更好的字体渲染效果，并拥有简便的定制特性。它设置了其他操作系统的字体风格6，可以方便的切换。
 
@@ -746,18 +728,13 @@ $ sudo pacman -R freetype2
 $ gpg --keyserver pgp.mit.edu --recv-keys C1A60EACE707FDA5
 $ git clone https://aur.archlinux.org/packages/freetype2-infinality/
 $ cd freetype2-infinality && makepkg -si
-```
 
-```bash
 ## 安装 fontconfig-infinality-ultimate
 ## 先卸载 fontconfig
 $ sudo pacman -R fontconfig
 $ git clone https://aur.archlinux.org/fontconfig-infinality-ultimate.git
 $ cd fontconfig-infinality-ultimate && makepkg -si
 ```
-
-
-
 
 ###屏幕保护和锁屏
 
@@ -767,22 +744,18 @@ $ cd fontconfig-infinality-ultimate && makepkg -si
 bindsym $mod+F12 exec i3lock
 ```
 
-
 ### 网络工具
 
 ArchLinux 的 net-tools 已经默认 deprecated，原来常用 netstat 命令有[新代替工具](http://inai.de/2008/02/19)。
 
-
 ### vim && Python IDE
 
 ```bash
+# 设置 vim 配置
 $ mv ~/.vim ~/.vim.old
 $ sudo pacman -S python-neovim
 $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/jarolrod/vim-python-ide/master/setup.sh)"
-$
-```
 
-```bash
 ## 安装 nerd 字体
 $ git clone https://aur.archlinux.org/nerd-fonts-complete.git
 $ cd nerd-fonts-complete && makepkg -si
@@ -792,7 +765,7 @@ $ echo '[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE
 ```
 
 ```
-## add these line into .vimrc
+# add these line into .vimrc
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
@@ -800,7 +773,7 @@ endif
 ```
 
 ```bash
-## 安装 python git module
+# 安装 python git module
 $ sudo pacman -S python-gitpython
 ```
 
@@ -819,10 +792,10 @@ Linux 下可以用 xwinwraper 之类的工具将视频或 Gif 动态图片作为
 3. 准备视频文件：建议使用延时摄影或
 
 ```bash
+# 下载 youtube 视频
 $ youtube-dl --proxy `socks server` -F `URL`
 $ youtube-dl --porxy `socks server` -f 137 `URL`
 ```
-
 
 ```bash
 $ touch run_wallpaper.sh
@@ -845,10 +818,8 @@ $ ffmpeg -f x11grab -s 1920x1080 -i $DISPLAY output.mp4
 
 使用CUPS管理打印机。
 
-
 ```bash
 $ lp my.doc
 ```
-
 
 1. [Infinality]: http://www.infinality.net/

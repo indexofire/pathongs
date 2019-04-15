@@ -1541,7 +1541,7 @@ $ samtools stats TAP1.sorted.bam <span class="p">|</span> grep <span class="s2">
 <span class="o">&gt;</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">cov</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">V3</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">V4</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s">&quot;identity&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;Coverage&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;Count&quot;</span><span class="p">)</span>
 </pre></div>
 
-<p><img alt="coverage plot" src="../../assets/images/chapter_10/02/Rplot.png" /></p>
+<p><img alt="coverage plot" src="../assets/images/chapter_10/02/Rplot.png" /></p>
 <h3 id="25-1snps">2.5 比较1号临床株与环境株的SNPs差异<a class="headerlink" href="#25-1snps" title="Permanent link">&para;</a></h3>
 <p>用同样的方法对其他几个样本进行操作，获得sorted的bam格式文件，用<code class="codehilite">freebayes</code>对临床与环境株比较获得vcf文件。然后用vcflib工具过滤<code class="codehilite">QUAL/AO&gt;10</code>的部分(VCF元数据部分可以参考<a href="http://samtools.github.io/hts-specs/VCFv4.1.pdf">文档</a>)，并用<code class="codehilite">wc-l</code>计算行数统计结果。</p>
 <div class="codehilite"><pre><span></span>$ freebayes -p <span class="m">1</span> -C <span class="m">5</span> -f ST17.fasta TAP1.sorted.bam PATIENT1.sorted.bam  &gt; compare_tap1.vcf
