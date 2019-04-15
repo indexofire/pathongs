@@ -42,7 +42,7 @@
     
     
       
-        <title>[circos][] - Pathogen NGS 数据分析入门</title>
+        <title>03. circos 工具使用 - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -150,7 +150,7 @@
               Pathogen NGS 数据分析入门
             </span>
             <span class="md-header-nav__topic">
-              [circos][]
+              03. circos 工具使用
             </span>
           
         </div>
@@ -882,10 +882,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
     
     <label class="md-nav__link" for="nav-9">
       第八章 基因组可视化
@@ -903,7 +905,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C08_Genome_Visualization/01_igv.md" title="01. igv 查看比对结果" class="md-nav__link">
+    <a href="../01_igv/" title="01. igv 查看比对结果" class="md-nav__link">
       01. igv 查看比对结果
     </a>
   </li>
@@ -915,7 +917,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C08_Genome_Visualization/02_BRIG.md" title="02. BRIG 细菌比较基因组分析工具" class="md-nav__link">
+    <a href="../02_BRIG/" title="02. BRIG 细菌比较基因组分析工具" class="md-nav__link">
       02. BRIG 细菌比较基因组分析工具
     </a>
   </li>
@@ -925,11 +927,219 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../C08_Genome_Visualization/03_circos.md" title="03. circos 工具使用" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        03. circos 工具使用
+      </label>
+    
+    <a href="./" title="03. circos 工具使用" class="md-nav__link md-nav__link--active">
       03. circos 工具使用
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1. 安装" class="md-nav__link">
+    1. 安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2. 输入文件类型" class="md-nav__link">
+    2. 输入文件类型
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" title="2.1 数据文件" class="md-nav__link">
+    2.1 数据文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" title="2.2 配置文件" class="md-nav__link">
+    2.2 配置文件
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-circosconf" title="2.2.1 circos.conf" class="md-nav__link">
+    2.2.1 circos.conf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-ideogramconf" title="2.2.2 ideogram.conf" class="md-nav__link">
+    2.2.2 ideogram.conf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-imageconf" title="2.2.3 image.conf" class="md-nav__link">
+    2.2.3 image.conf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-highlightconf" title="2.2.4 highlight.conf" class="md-nav__link">
+    2.2.4 highlight.conf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#225-ticksconf" title="2.2.5 ticks.conf" class="md-nav__link">
+    2.2.5 ticks.conf
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" title="3. 可视化的组成要素" class="md-nav__link">
+    3. 可视化的组成要素
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-circos" title="3. 用circos来绘图" class="md-nav__link">
+    3. 用circos来绘图
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" title="3.1 配置文件" class="md-nav__link">
+    3.1 配置文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" title="3.2 绘制测序拼接结果信息" class="md-nav__link">
+    3.2 绘制测序拼接结果信息
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321" title="3.2.1 数据准备" class="md-nav__link">
+    3.2.1 数据准备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322" title="3.2.2 配置文件" class="md-nav__link">
+    3.2.2 配置文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" title="3.3. 绘制一个比较基因组学数据" class="md-nav__link">
+    3.3. 绘制一个比较基因组学数据
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" title="3.3.1 数据准备" class="md-nav__link">
+    3.3.1 数据准备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332" title="3.3.2 配置文件" class="md-nav__link">
+    3.3.2 配置文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circos_1" title="解析 circos" class="md-nav__link">
+    解析 circos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#circos_2" title="circos 的衍生产品" class="md-nav__link">
+    circos 的衍生产品
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -963,7 +1173,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C09_Analysis_Platform/01_docker.md" title="01. 基于 docker 镜像" class="md-nav__link">
+    <a href="../../C09_Analysis-Platform/01_docker/" title="01. 基于 docker 镜像" class="md-nav__link">
       01. 基于 docker 镜像
     </a>
   </li>
@@ -975,7 +1185,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C09_Analysis_Platform/02_galaxy.md" title="02. Galaxy 平台" class="md-nav__link">
+    <a href="../../C09_Analysis-Platform/02_galaxy/" title="02. Galaxy 平台" class="md-nav__link">
       02. Galaxy 平台
     </a>
   </li>
@@ -987,7 +1197,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C09_Analysis_Platform/03_amazon.md" title="03. Amazon EC2 云平台" class="md-nav__link">
+    <a href="../../C09_Analysis-Platform/03_amazon/" title="03. Amazon EC2 云平台" class="md-nav__link">
       03. Amazon EC2 云平台
     </a>
   </li>
@@ -999,7 +1209,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C09_Analysis_Platform/04_others.md" title="04. 其他平台" class="md-nav__link">
+    <a href="../../C09_Analysis-Platform/04_others/" title="04. 其他平台" class="md-nav__link">
       04. 其他平台
     </a>
   </li>
@@ -2238,6 +2448,41 @@ grid_thickness  = 1p
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../02_BRIG/" title="02. BRIG 细菌比较基因组分析工具" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                02. BRIG 细菌比较基因组分析工具
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../C09_Analysis-Platform/01_docker/" title="01. 基于 docker 镜像" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                01. 基于 docker 镜像
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

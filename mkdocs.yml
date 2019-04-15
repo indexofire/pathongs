@@ -74,7 +74,7 @@ pages:
     - '02. 拼接序列管家基因扫描工具 MLST': C11_Pathogen-NGS-Application/02_mlst.md
     - '03. 拼接序列耐药基因扫描工具 Ariba': C11_Pathogen-NGS-Application/03_ariba.md
     - '04. 细菌共线性分析工具 C-Sibelia': C11_Pathogen-NGS-Application/04_csibelia.md
-  - '第十二章 Metagenomics 分析':
+  - '第十二章 宏基因组分析':
     - '01. kraken': C12_Metagenomics-Analysis/01_kraken.md
     - '02. centrifuge': C12_Metagenomics-Analysis/02_centrifuge.md
     - '03. bracken': C12_Metagenomics-Analysis/03_bracken.md
@@ -83,7 +83,8 @@ pages:
     - '06. krona': C12_Metagenomics-Analysis/06_krona.md
     - '07. pavian': C12_Metagenomics-Analysis/07_pavian.md
     - '08. supri': C12_Metagenomics-Analysis/08_supri.md
-    - '10. 16S 种群分析': C12_Metagenomics-Analysis/01_16s.md
+    - ‘09. shotgun 分析’: C12_Metagenomics-Analysis/09_shotgun.md
+    - '10. 16S 种群分析': C12_Metagenomics-Analysis/10_16s.md
   - '第十三章 单分子测序':
     - '01. nanopore': C13_Single-Molecular-Sequencing/01_nanopore.md
     - '02. pacbio': C13_Single-Molecular-Sequencing/02_pacbio.md
