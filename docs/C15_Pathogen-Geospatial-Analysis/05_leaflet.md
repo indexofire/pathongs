@@ -1,8 +1,8 @@
 # Leaflet
 
-Leaflet 是一个 R
+Leaflet 是一个 R 地图应用包，可以用于病原流行病学分析。
 
-## 安装
+## 1. 安装
 
 ```R
 # https://cloud.tencent.com/developer/article/1092335
@@ -22,4 +22,4 @@ province_city<-data.frame(province_city,co)
 leaflet(province_city)%>%addTiles()%>%setView(lng=116.38,lat=39.9,zoom=3)%>%addMarkers(lng=~jd,lat=~wd,popup=~city)
 ```
 
-## 使用
+## 2. 使用

@@ -1,12 +1,12 @@
 # CartoDB
 
-CartoDB 是 carto.com 开发的地理数据可视化软件。carto.com 是其基于 Web 的实例化应用，其免费帐号数据使用有一些权限限制，同时制作的 map 必须公开。如果要做私有化数据的 map，或者自己团队内部数据分析分享，就要自己建立服务。而CartoDB是开源的，很方便的建立相关应用和服务。
+[CartoDB](http://carto.com) 是一个地理数据可视化软件。carto.com 提供了基于 Web 的实例化应用，其免费帐号数据使用有一些权限限制，同时制作的 map 必须公开。如果要做私有化数据的 map，或者自己团队内部数据分析分享，就要自己建立服务。而CartoDB是开源的，很方便的建立相关应用和服务。
 
-## 安装
+## 1. 安装
 
 cartodb 作为一套应用包，如果自己手动一个个安装，对于普通用户来说学习曲线是比较高的。因此我们一般使用 docker 来安装和部署服务。
 
-### 1.Ubuntu 安装 docker
+### 1.1 Ubuntu 安装 docker
 
 ```bash
 # 删除旧版本 docker
@@ -39,7 +39,7 @@ $ grep 'docker' /etc/group | grep $USER
 $ sudo usermod -aG docker $USER
 ```
 
-### 2. 安装 cartodb
+### 1.2 安装 cartodb
 
 ```bash
 # 克隆 docker-cartodb 到本地仓库，构建镜像
@@ -51,7 +51,7 @@ $ docker build -t=sverhoeven/cartodb docker-cartodb/
 $ docker run -d -p 80:80 -h ip_address sverhoeven/cartodb
 ```
 
-## 使用
+## 2. 使用
 
 ```bash
 # docker数据层是独立的，所以可以建立单独的PostgreSQL persistant
