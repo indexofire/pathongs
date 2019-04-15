@@ -59,14 +59,14 @@ pages:
     - '07. OrthMCL 分析': C07_PanGenome-and-CoreGenome/07_orthmcl.md
     - '08. ITEP 分析': C07_PanGenome-and-CoreGenome/08_ITEP.md
   - '第八章 基因组可视化':
-    - '01. igv 查看比对结果': C08_Genome_Visualization/01_igv.md
-    - '02. BRIG 细菌比较基因组分析工具': C08_Genome_Visualization/02_BRIG.md
-    - '03. circos 工具使用': C08_Genome_Visualization/03_circos.md
+    - '01. igv 查看比对结果': C08_Genome-Visualization/01_igv.md
+    - '02. BRIG 细菌比较基因组分析工具': C08_Genome-Visualization/02_BRIG.md
+    - '03. circos 工具使用': C08_Genome-Visualization/03_circos.md
   - '第九章 分析平台':
-    - '01. 基于 docker 镜像': C09_Analysis_Platform/01_docker.md
-    - '02. Galaxy 平台': C09_Analysis_Platform/02_galaxy.md
-    - '03. Amazon EC2 云平台': C09_Analysis_Platform/03_amazon.md
-    - '04. 其他平台': C09_Analysis_Platform/04_others.md
+    - '01. 基于 docker 镜像': C09_Analysis-Platform/01_docker.md
+    - '02. Galaxy 平台': C09_Analysis-Platform/02_galaxy.md
+    - '03. Amazon EC2 云平台': C09_Analysis-Platform/03_amazon.md
+    - '04. 其他平台': C09_Analysis-Platform/04_others.md
   - '第十章 重组与种群分析':
     - '01. 病毒重组': C10_Recombination-and-Population-Structure/01_virus-recombination.md
   - '第十一章 常见分析工具':
