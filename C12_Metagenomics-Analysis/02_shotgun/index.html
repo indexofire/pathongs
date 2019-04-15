@@ -1,0 +1,1918 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="病原微生物高通量测序数据分析手册">
+      
+      
+        <link rel="canonical" href="https://indexofire.github.io/pathongs/C12_Metagenomics-Analysis/02_shotgun/">
+      
+      
+        <meta name="author" content="Mark Renton">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
+    
+    
+      
+        <title>Metagenomics数据分析 - Pathogen NGS 数据分析入门</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-55420348-3", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#metagenomics" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://indexofire.github.io/pathongs" title="Pathogen NGS 数据分析入门" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Pathogen NGS 数据分析入门
+            </span>
+            <span class="md-header-nav__topic">
+              Metagenomics数据分析
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://indexofire.github.io/pathongs" title="Pathogen NGS 数据分析入门" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Pathogen NGS 数据分析入门
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="开始之前" class="md-nav__link">
+      开始之前
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      第一章 背景知识介绍
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        第一章 背景知识介绍
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Linux-and-Script-Language/01_basic-cml/" title="01. Linux 基本命令" class="md-nav__link">
+      01. Linux 基本命令
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Linux-and-Script-Language/02_linux-installation/" title="02. Linux 安装实例" class="md-nav__link">
+      02. Linux 安装实例
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Linux-and-Script-Language/03_linux-administration/" title="03. Linux 系统管理" class="md-nav__link">
+      03. Linux 系统管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Linux-and-Script-Language/04_awk/" title="04. 数据处理常用工具之 awk" class="md-nav__link">
+      04. 数据处理常用工具之 awk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Linux-and-Script-Language/05_bioawk/" title="05. 测序数据工具 bioawk" class="md-nav__link">
+      05. 测序数据工具 bioawk
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Linux-and-Script-Language/06_python/" title="06. Python编程" class="md-nav__link">
+      06. Python编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Linux-and-Script-Language/07_shell/" title="07. Shell脚本" class="md-nav__link">
+      07. Shell脚本
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      第二章 产用工具
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        第二章 产用工具
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Common-Utility/01_emboss/" title="01. EMBOSS 工具集" class="md-nav__link">
+      01. EMBOSS 工具集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Common-Utility/02_blast/" title="02. Blast 与 Blast+" class="md-nav__link">
+      02. Blast 与 Blast+
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Common-Utility/08_seqkit/" title="03. 国产序列处理神器 SeqKit" class="md-nav__link">
+      03. 国产序列处理神器 SeqKit
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Common-Utility/09_kmer/" title="04. K-mer 处理工具" class="md-nav__link">
+      04. K-mer 处理工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Common-Utility/01_databases/" title="01. 生物公共数据库" class="md-nav__link">
+      01. 生物公共数据库
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Common-Utility/02_fileformat.md" title="02. 生物数据文件格式" class="md-nav__link">
+      02. 生物数据文件格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Common-Utility/03_edirect/" title="03. 玩转 edirect" class="md-nav__link">
+      03. 玩转 edirect
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      ‘第三章 各类数据文件格式’
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        ‘第三章 各类数据文件格式’
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C03_File-Format/01_fasta/" title="01. fasta" class="md-nav__link">
+      01. fasta
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C03_File-Format/02_embl/" title="02. embl" class="md-nav__link">
+      02. embl
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      第四章 基因组组装
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        第四章 基因组组装
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_04/03_bacteria-assembly.md" title="03. 细菌基因组组装" class="md-nav__link">
+      03. 细菌基因组组装
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_04/04_virus-assembly.md" title="04. 病毒基因组组装" class="md-nav__link">
+      04. 病毒基因组组装
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      第五章 基因组注释
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        第五章 基因组注释
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_05/01_prokka.md" title="01. Prokka 快速注释" class="md-nav__link">
+      01. Prokka 快速注释
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_05/02_rast.md" title="02. 在线注释工具 rast" class="md-nav__link">
+      02. 在线注释工具 rast
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_05/03_PGAAP.md" title="03. 注释工具 PGAAP" class="md-nav__link">
+      03. 注释工具 PGAAP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_05/04_snpEFF.md" title="04. SNP注释工具 snpEFF" class="md-nav__link">
+      04. SNP注释工具 snpEFF
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      第六章 Pan和Core基因组分析
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        第六章 Pan和Core基因组分析
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_06/01_pangenome.md" title="01. Pangenome 概述" class="md-nav__link">
+      01. Pangenome 概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_06/02_get_homologues.md" title="02. Get_Homologues 分析" class="md-nav__link">
+      02. Get_Homologues 分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_06/03_BPGA.md" title="03. BPGA 分析" class="md-nav__link">
+      03. BPGA 分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_06/04_roary.md" title="04. Roary 分析" class="md-nav__link">
+      04. Roary 分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_06/05_panseq.md" title="05. panseq 分析" class="md-nav__link">
+      05. panseq 分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_06/06_gubbins.md" title="06. Gubbins 分析" class="md-nav__link">
+      06. Gubbins 分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_06/07_orthmcl.md" title="07. OrthMCL 分析" class="md-nav__link">
+      07. OrthMCL 分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../chapter_06/08_ITEP.md" title="08. ITEP 分析" class="md-nav__link">
+      08. ITEP 分析
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      第八章 基因组可视化工具
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        第八章 基因组可视化工具
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C08_Genome_Visualization/01_igv.md" title="01. igv 查看比对结果" class="md-nav__link">
+      01. igv 查看比对结果
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C08_Genome_Visualization/02_BRIG.md" title="02. BRIG 细菌比较基因组分析工具" class="md-nav__link">
+      02. BRIG 细菌比较基因组分析工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C08_Genome_Visualization/03_circos.md" title="03. circos 工具使用" class="md-nav__link">
+      03. circos 工具使用
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      第九章 分析平台
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        第九章 分析平台
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C09_Analysis_Platform/01_docker.md" title="01. 基于 docker 镜像" class="md-nav__link">
+      01. 基于 docker 镜像
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C09_Analysis_Platform/02_galaxy.md" title="02. Galaxy 平台" class="md-nav__link">
+      02. Galaxy 平台
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C09_Analysis_Platform/03_amazon.md" title="03. Amazon EC2 云平台" class="md-nav__link">
+      03. Amazon EC2 云平台
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C09_Analysis_Platform/04_others.md" title="04. 其他平台" class="md-nav__link">
+      04. 其他平台
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      第十一章 常见分析工具
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        第十一章 常见分析工具
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C11_Pathogen_NGS_Application/01_srst2.md" title="01. SRST2 短序列比对基因工具" class="md-nav__link">
+      01. SRST2 短序列比对基因工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C11_Pathogen_NGS_Application/02_mlst.md" title="02. 拼接序列管家基因扫描工具 MLST" class="md-nav__link">
+      02. 拼接序列管家基因扫描工具 MLST
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C11_Pathogen_NGS_Application/03_ariba.md" title="03. 拼接序列耐药基因扫描工具 Ariba" class="md-nav__link">
+      03. 拼接序列耐药基因扫描工具 Ariba
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C11_Pathogen_NGS_Application/04_csibelia.md" title="04. 细菌共线性分析工具 C-Sibelia" class="md-nav__link">
+      04. 细菌共线性分析工具 C-Sibelia
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      第十二章 Shotgun Metagenomics 分析
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        第十二章 Shotgun Metagenomics 分析
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C12_Metagenomics_Analysis/01_kraken.md" title="01. kraken" class="md-nav__link">
+      01. kraken
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C12_Metagenomics_Analysis/02_centrifuge.md" title="02. centrifuge" class="md-nav__link">
+      02. centrifuge
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C12_Metagenomics_Analysis/03_bracken.md" title="03. bracken" class="md-nav__link">
+      03. bracken
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C12_Metagenomics_Analysis/04_sourmash.md" title="04. sourmash" class="md-nav__link">
+      04. sourmash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C12_Metagenomics_Analysis/05_clark.md" title="05. clark" class="md-nav__link">
+      05. clark
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C12_Metagenomics_Analysis/06_krona.md" title="06. krona" class="md-nav__link">
+      06. krona
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C12_Metagenomics_Analysis/07_pavian.md" title="07. pavian" class="md-nav__link">
+      07. pavian
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      第十三章 单分子测序
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        第十三章 单分子测序
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C13_Single_Molecular_Sequencing/01_nanopore.md" title="01. nanopore" class="md-nav__link">
+      01. nanopore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C13_Single_Molecular_Sequencing/02_pacbio.md" title="02. pacbio" class="md-nav__link">
+      02. pacbio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C13_Single_Molecular_Sequencing/03_canu.md" title="03. canu" class="md-nav__link">
+      03. canu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C13_Single_Molecular_Sequencing/04_trimming.md" title="04. trimming" class="md-nav__link">
+      04. trimming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C13_Single_Molecular_Sequencing/06_hybrid.md" title="06. hybrid" class="md-nav__link">
+      06. hybrid
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      第十四章 进化树构建
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        第十四章 进化树构建
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C14_Phylogeny_Construction/01_msa.md" title="01. 多重序列比对" class="md-nav__link">
+      01. 多重序列比对
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      第十五章 基因组流行病学
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        第十五章 基因组流行病学
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C15_Pathogen_Geospatial_Analysis/01_cartodb.md" title="01. CartoDB" class="md-nav__link">
+      01. CartoDB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      第十六章 基因组分析实践
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        第十六章 基因组分析实践
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C16_Analysis_Examples/01_trace-Pae-from-different-source-by-SNP.md" title="01. 细菌SNP溯源分析一" class="md-nav__link">
+      01. 细菌SNP溯源分析一
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C16_Analysis_Examples/02_comparative-analysis-Ban-genomes.md" title="02. 细菌比较基因组学研究" class="md-nav__link">
+      02. 细菌比较基因组学研究
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-meta-beetl" title="1. Meta-BEETL" class="md-nav__link">
+    1. Meta-BEETL
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" title="1. 已整理的数据库" class="md-nav__link">
+    1. 已整理的数据库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" title="2. 自己建立数据库" class="md-nav__link">
+    2. 自己建立数据库
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-seqan" title="2.1 安装 SeqAn" class="md-nav__link">
+    2.1 安装 SeqAn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" title="2.2 下载目标序列" class="md-nav__link">
+    2.2 下载目标序列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" title="2.3 创建去除质粒序列的单基因组序列" class="md-nav__link">
+    2.3 创建去除质粒序列的单基因组序列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-bwt" title="2.4 创建BWT" class="md-nav__link">
+    2.4 创建BWT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" title="2.5 合并序列" class="md-nav__link">
+    2.5 合并序列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-bwt" title="2.6 转换BWT文件格式" class="md-nav__link">
+    2.6 转换BWT文件格式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-ncbi-taxoonmy" title="2.7 下载NCBI Taxoonmy" class="md-nav__link">
+    2.7 下载NCBI Taxoonmy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-normalisation" title="2.8 计算 normalisation 因子" class="md-nav__link">
+    2.8 计算 normalisation 因子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29" title="2.9 创建数据库文件夹" class="md-nav__link">
+    2.9 创建数据库文件夹
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" title="3. 分析数据" class="md-nav__link">
+    3. 分析数据
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" title="3.1 获取数据" class="md-nav__link">
+    3.1 获取数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" title="3.2 转换数据和合并数据" class="md-nav__link">
+    3.2 转换数据和合并数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-metagenomic-beetl" title="3.3 以 metagenomic 模式运行 BEETL" class="md-nav__link">
+    3.3 以 metagenomic 模式运行 BEETL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" title="3.4 图形化显示结果" class="md-nav__link">
+    3.4 图形化显示结果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-supri" title="2. SUPRI" class="md-nav__link">
+    2. SUPRI
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="安装依赖工具" class="md-nav__link">
+    安装依赖工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supri" title="安装 SUPRI" class="md-nav__link">
+    安装 SUPRI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="建立数据库" class="md-nav__link">
+    建立数据库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surpi" title="运行SURPI" class="md-nav__link">
+    运行SURPI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="输出结果" class="md-nav__link">
+    输出结果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference_1" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference_2" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C12_Metagenomics-Analysis/02_shotgun.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="metagenomics">Metagenomics数据分析<a class="headerlink" href="#metagenomics" title="Permanent link">&para;</a></h1>
+<p>病原微生物<code class="codehilite">Metagenomics</code>根据研究内容，可以分为几个方向：<code class="codehilite">whole genomes</code>测序，例如<code class="codehilite">shotgun metagenomics</code>寻找所有序列;<code class="codehilite">16s rRNA</code>测序，例如研究群菌结构；<code class="codehilite">Transcriptome</code>测序，研究整个样品中转录组。</p>
+<p><strong>Metagenomics 数据分析的基本流程：</strong></p>
+<ol>
+<li>Trimming: 切除引物序列，barcode序列等</li>
+<li>Binnings:</li>
+<li>OTUs:</li>
+<li>Chimeras</li>
+</ol>
+<p><strong>常用工具：</strong></p>
+<ol>
+<li>MEGAN</li>
+<li>mothur</li>
+<li>QIIME</li>
+<li>AXIOME &amp; CloVR</li>
+</ol>
+<hr />
+<h2 id="1-meta-beetl">1. Meta-BEETL<a class="headerlink" href="#1-meta-beetl" title="Permanent link">&para;</a></h2>
+<p><code class="codehilite">BEETL</code> 是一套做 <code class="codehilite">Burrows-Wheeler Transform</code> 的工具集，[Meta-BEETL] 是 <code class="codehilite">BEETL</code> 下的一个子项目，用来分析基于 Shotgun metagenomics 的微生物数据。</p>
+<h3 id="1">1. 已整理的数据库<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>作者已经将研究所用到的数据库整理后提交到 Amazon S3 服务器上，可以直接下载。总数据量在24G左右。</p>
+<div class="codehilite"><pre><span></span>~$ mkdir BeetlMetagenomeDatabase <span class="o">&amp;&amp;</span> <span class="nb">cd</span> BeetlMetagenomeDatabase
+~/BeetlMetagenomDatabase$ <span class="k">for</span> i in <span class="sb">`</span>curl https://s3.amazonaws.com/metaBEETL <span class="p">|</span> grep -oP <span class="s2">&quot;[^&gt;]*bz2&quot;</span><span class="sb">`</span> <span class="p">;</span> <span class="se">\</span>
+&gt; <span class="k">do</span> wget https://s3.amazonaws.com/metaBEETL/<span class="nv">$i</span> <span class="p">&amp;</span> <span class="k">done</span>
+</pre></div>
+
+<p>静态文件的 URL 地址，也可以直接下载。</p>
+<p><div class="codehilite"><pre><span></span>https://s3.amazonaws.com/metaBEETL/filecounter.csv.bz2
+https://s3.amazonaws.com/metaBEETL/headerFile.csv.bz2
+https://s3.amazonaws.com/metaBEETL/names.dmp.bz2
+https://s3.amazonaws.com/metaBEETL/ncbiFileNumToTaxTree.bz2
+https://s3.amazonaws.com/metaBEETL/ncbiMicros-B00.bz2
+https://s3.amazonaws.com/metaBEETL/ncbiMicros-B01.bz2
+https://s3.amazonaws.com/metaBEETL/ncbiMicros-B02.bz2
+https://s3.amazonaws.com/metaBEETL/ncbiMicros-B03.bz2
+https://s3.amazonaws.com/metaBEETL/ncbiMicros-B04.bz2
+https://s3.amazonaws.com/metaBEETL/ncbiMicros-B05.bz2
+https://s3.amazonaws.com/metaBEETL/ncbiMicros-B06.bz2
+https://s3.amazonaws.com/metaBEETL/ncbiMicros-C00.bz2
+https://s3.amazonaws.com/metaBEETL/ncbiMicros-C01.bz2
+https://s3.amazonaws.com/metaBEETL/ncbiMicros-C02.bz2
+https://s3.amazonaws.com/metaBEETL/ncbiMicros-C03.bz2
+https://s3.amazonaws.com/metaBEETL/ncbiMicros-C04.bz2
+https://s3.amazonaws.com/metaBEETL/ncbiMicros-C05.bz2
+https://s3.amazonaws.com/metaBEETL/ncbiMicros-C06.bz2
+</pre></div>
+下载完成后解压缩。</p>
+<div class="codehilite"><pre><span></span>~/BeetlMetagenomDatabase$ bunzip2 *.bz2
+~/BeetlMetagenomDatabase$ export METAGENOME_DATABASE_PATH=`pwd`
+</pre></div>
+
+<h3 id="2">2. 自己建立数据库<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>处于实际目的，有时候我们不需要这么大的数据库，或者需要更多其他的数据加入到数据库，那就需要自行建立数据库。</p>
+<h4 id="21-seqan">2.1 安装 SeqAn<a class="headerlink" href="#21-seqan" title="Permanent link">&para;</a></h4>
+<p><a href="www.seqan.de">SeqAn</a> 是一个高效的 C++ 算法和数据结构库，用于分析生物序列等用途。访问 <a href="www.seqan.de">SeqAn</a> 下载并安装。安装完成后编译BEETL时可以添加<code class="codehilite">--with-seqan</code>参数。</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 安装依赖包</span>
+~$ sudo apt-get install g++ cmake python zlib1g-dev libbz2-dev libboost-dev
+~$ <span class="nb">cd</span> ~/apps
+~/apps$ git clone https://github.com/seqan/seqan.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> seqan
+~/apps/seqan$ git checkout -b develop origin/develop
+</pre></div>
+
+<h4 id="22">2.2 下载目标序列<a class="headerlink" href="#22" title="Permanent link">&para;</a></h4>
+<p>下载需要的序列，比如NCBI上细菌的基因组 ref 数据。</p>
+<div class="codehilite"><pre><span></span>~/BeetlMetagenomDatabase$ wget ftp://ftp.ncbi.nlm.nih.gov/genomes/Bacteria/all.fna.tar.gz -P downloads
+~/BeetlMetagenomDatabase$ mkdir all.fna
+~/BeetlMetagenomDatabase$ tar xzf downloads/all.fna.tar.gz -C all.fna/
+</pre></div>
+
+<h4 id="23">2.3 创建去除质粒序列的单基因组序列<a class="headerlink" href="#23" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>~/BeetlMetagenomDatabase$ metabeetl-db-genomesToSingleSeq -f all.fna/*/*.fna -s singleSeqGenomes
+~/BeetlMetagenomDatabase$ <span class="nb">cd</span> singleSeqGenomes
+</pre></div>
+
+<h4 id="24-bwt">2.4 创建BWT<a class="headerlink" href="#24-bwt" title="Permanent link">&para;</a></h4>
+<p>修改<code class="codehilite">metabeetl-db-arrayBWT.sh</code>文件里数据库路径，创建G_* 和 G_*_rev 文件的BWTs，用qsub来向系统提交任务。也可以运行<code class="codehilite">metabeetl-db-makeBWTSkew</code>来一个个创建。</p>
+<div class="codehilite"><pre><span></span>~/BeetlMetagenomDatabase$ cp <span class="sb">`</span>which metabeetl-db-arrayBWT.sh<span class="sb">`</span> .
+~/BeetlMetagenomDatabase$ vim metabeetl-db-arrayBWT.sh
+<span class="c1"># 如果文件是 G_1 - G_500，那么n=1-500</span>
+~/BeetlMetagenomDatabase$ qsub -t n metabeetl-db-arrayBWT.sh
+
+<span class="c1"># 或者</span>
+~/BeetlMetagenomDatabase$ <span class="o">(</span><span class="nb">echo</span> -n <span class="s2">&quot;all: &quot;</span> <span class="p">;</span> <span class="k">for</span> i in G_*<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> -n <span class="s2">&quot; bwt_</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">-B00&quot;</span><span class="p">;</span> <span class="k">done</span> <span class="p">;</span> <span class="nb">echo</span> -e <span class="s2">&quot;\n&quot;</span> <span class="p">;</span> <span class="se">\</span>
+&gt; <span class="k">for</span> i in G_*<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&quot;bwt_</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">-B00: </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="nb">echo</span> -e <span class="s2">&quot;\tmetabeetl-db-makeBWTSkew </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">\n&quot;</span> <span class="p">;</span> <span class="k">done</span> <span class="o">)</span> &gt; Makefile
+~$ make -j
+</pre></div>
+
+<h4 id="25">2.5 合并序列<a class="headerlink" href="#25" title="Permanent link">&para;</a></h4>
+<p>在一台内存&gt;60G的机器上将序列加载到内存中，并吧所有文件合并。</p>
+<p><div class="codehilite"><pre><span></span>~/BeetlMetagenomDatabase$ <span class="k">for</span> pileNum in <span class="sb">`</span>seq <span class="m">0</span> <span class="m">5</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span> metabeetl-db-mergeBacteria <span class="nv">$pileNum</span> ncbiMicros &lt;<span class="o">(</span> ls G_* <span class="o">)</span> <span class="p">;</span> <span class="k">done</span>
+</pre></div>
+生成的文件名称类似：ncbiMicros-A0*, -B0* and -C0*  </p>
+<ul>
+<li>-A0* 包含每个BWT的位置</li>
+<li>-B0* BWTs</li>
+<li>-C0* 包含每个BWT位置的文件号</li>
+</ul>
+<p>文件 -B0* and -C0* 用于计数算法</p>
+<h4 id="26-bwt">2.6 转换BWT文件格式<a class="headerlink" href="#26-bwt" title="Permanent link">&para;</a></h4>
+<p>可选操作：将BWT文件转换成RLE BWT格式，运行可以更快。</p>
+<div class="codehilite"><pre><span></span>~/BeetlMetagenomDatabase$ <span class="k">for</span> pileNum in <span class="sb">`</span>seq <span class="m">0</span> <span class="m">5</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span> <span class="se">\</span>
+&gt; mv ncbiMicros-B0<span class="si">${</span><span class="nv">pileNum</span><span class="si">}</span> ncbiMicros-B0<span class="si">${</span><span class="nv">pileNum</span><span class="si">}</span>.ascii <span class="p">;</span>  <span class="se">\</span>
+&gt; beetl-convert <span class="se">\ </span> 
+&gt; --input-format<span class="o">=</span>bwt_ascii <span class="se">\ </span> 
+&gt; --output-format<span class="o">=</span>bwt_rle <span class="se">\ </span> 
+&gt; -i ncbiMicros-B0<span class="si">${</span><span class="nv">pileNum</span><span class="si">}</span>.ascii <span class="se">\ </span> 
+&gt; -o ncbiMicros-B0<span class="si">${</span><span class="nv">pileNum</span><span class="si">}</span> <span class="p">;</span> <span class="se">\ </span> 
+&gt; <span class="k">done</span>
+</pre></div>
+
+<h4 id="27-ncbi-taxoonmy">2.7 下载NCBI Taxoonmy<a class="headerlink" href="#27-ncbi-taxoonmy" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>~$ <span class="nb">cd</span> tmp
+~/tmp$ wget ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz
+~/tmp$ wget ftp://ftp.ncbi.nih.gov/pub/taxonomy/gi_taxid_nucl.dmp.gz
+~/tmp$ tar xzf taxdump.tar.gz names.dmp nodes.dmp
+~/tmp$ gunzip gi_taxid_nucl.dmp.gz
+</pre></div>
+
+<p>用<code class="codehilite">metabeetl-db-findTaxa</code>脚本查找数据库中的taxonomic树。
+   Use the metabeetl-db-findTaxa script to find the taxonomic tree corresponding to the file numbers in the database.<br />
+   You will need the headerFile produced by running "metabeetl-db-genomesToSingleSeq" and
+   fileCounter created during the merging of the bacterial reference genomes.<br />
+   Finally, you get for each file number in the database a taxonomic tree with the taxonomic ids.<br />
+   There will be some 0 in the taxonomic tree. This is a taxonomic id which could not be
+   matched to: Superkingdom, Phylum, Order, Class, Family, Genus, Species or Strain.<br />
+   Sometimes there are just missing taxa in the taxonomy. We supplement this with the file <code class="codehilite">metaBeetlExtraNames.dmp</code> below.</p>
+<div class="codehilite"><pre><span></span>~/BeetlMetagenomDatabase$ metabeetl-db-findTaxa <span class="se">\</span>
+&gt; -nA downloads/names.dmp <span class="se">\</span>
+&gt; -nO downloads/nodes.dmp <span class="se">\</span>
+&gt; -nG downloads/gi_taxid_nucl.dmp <span class="se">\</span>
+&gt; -h singleSeqGenomes/headerFile.csv <span class="se">\</span>
+&gt; -f singleSeqGenomes/filecounter.csv &gt; ncbiFileNumToTaxTree
+
+~/BeetlMEtagenomDatabase$ <span class="o">(</span> grep scientific downloads/names.dmp <span class="p">;</span> cat <span class="si">${</span><span class="nv">BEETL_INSTALL_DIR</span><span class="si">}</span>/share/beetl/metaBeetlExtraNames.dmp <span class="o">)</span> &gt; metaBeetlTaxonomyNames.dmp
+</pre></div>
+
+<h4 id="28-normalisation">2.8 计算 normalisation 因子<a class="headerlink" href="#28-normalisation" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>~/BeetlMetagenomDatabase$ mkdir normalisation
+~/BeetlMetagenomDatabase$ <span class="nb">cd</span> normalisation
+~/BeetlMetagenomDatabase/normalisation$ touch normalize.sh
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="c1"># normalize.sh</span>
+<span class="k">for</span> genome in ../singleSeqGenomes/G_*<span class="p">;</span> <span class="k">do</span>
+<span class="o">(</span>
+    <span class="nv">genomeNum</span><span class="o">=</span><span class="sb">`</span>basename <span class="si">${</span><span class="nv">genome</span><span class="si">}</span><span class="sb">`</span>
+    mkdir <span class="si">${</span><span class="nv">genomeNum</span><span class="si">}</span>
+    <span class="nb">cd</span> <span class="si">${</span><span class="nv">genomeNum</span><span class="si">}</span>
+    <span class="k">for</span> i in ../../singleSeqGenomes/bwt_<span class="si">${</span><span class="nv">genomeNum</span><span class="si">}</span>-B0?<span class="p">;</span> <span class="k">do</span> ln -s <span class="si">${</span><span class="nv">i</span><span class="si">}</span> <span class="p">;</span> <span class="k">done</span>
+    <span class="k">for</span> i in <span class="sb">`</span>seq <span class="m">0</span> <span class="m">6</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span> touch bwt_<span class="si">${</span><span class="nv">genomeNum</span><span class="si">}</span>-B0<span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="p">;</span> <span class="k">done</span>
+    <span class="nb">time</span> beetl-compare --mode<span class="o">=</span>metagenomics -a bwt_<span class="si">${</span><span class="nv">genomeNum</span><span class="si">}</span> -b ../../singleSeqGenomes/ncbiMicros -t ../../ncbiFileNumToTaxTree -w <span class="m">20</span> -n <span class="m">1</span> -k <span class="m">50</span> --no-comparison-skip -v <span class="p">&amp;</span>&gt; out.step1
+    rm -f BeetlCompareOutput/cycle51.subset*
+        touch empty.txt
+    <span class="nb">time</span> cat BeetlCompareOutput/cycle*.subset* <span class="p">|</span> metabeetl-convertMetagenomicRangesToTaxa ../../ncbiFileNumToTaxTree ../../singleSeqGenomes/ncbiMicros ../../metaBeetlTaxonomyNames.dmp empty.txt <span class="m">20</span> <span class="m">50</span> - <span class="p">&amp;</span>&gt; out.step2
+    <span class="nb">cd</span> ..
+<span class="o">)</span> <span class="p">&amp;</span>
+<span class="k">done</span> <span class="p">;</span> <span class="nb">wait</span>
+
+<span class="k">for</span> i in <span class="sb">`</span>seq <span class="m">1</span> <span class="m">2977</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&quot;G_</span><span class="nv">$i</span><span class="s2">&quot;</span><span class="p">;</span> <span class="nv">X</span><span class="o">=</span><span class="sb">`</span>grep -P <span class="s2">&quot;G_</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span>$<span class="s2">&quot;</span> ../singleSeqGenomes/filecounter.csv <span class="p">|</span>cut -f <span class="m">1</span> -d <span class="s1">&#39;,&#39;</span><span class="sb">`</span><span class="p">;</span> <span class="nv">TAX</span><span class="o">=</span><span class="sb">`</span>grep -P <span class="s2">&quot;^</span><span class="si">${</span><span class="nv">X</span><span class="si">}</span><span class="s2"> &quot;</span> ../ncbiFileNumToTaxTree <span class="p">|</span> tr -d <span class="s2">&quot;\n\r&quot;</span><span class="sb">`</span> <span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;TAX(</span><span class="si">${</span><span class="nv">X</span><span class="si">}</span><span class="s2">): </span><span class="si">${</span><span class="nv">TAX</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">;</span> <span class="nv">TAXID</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">TAX</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/\( 0\)*$//g&#39;</span> <span class="p">|</span>awk <span class="s1">&#39;{print $NF}&#39;</span><span class="sb">`</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;TAXID=</span><span class="si">${</span><span class="nv">TAXID</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="nv">COUNTS</span><span class="o">=</span><span class="sb">`</span>grep Counts G_<span class="si">${</span><span class="nv">i</span><span class="si">}</span>/out.step2 <span class="p">|</span> head -1<span class="sb">`</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;COUNTS=</span><span class="si">${</span><span class="nv">COUNTS</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="nv">MAIN_COUNT</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">COUNTS</span><span class="si">}</span><span class="s2">  &quot;</span> <span class="p">|</span> sed <span class="s2">&quot;s/^.* </span><span class="si">${</span><span class="nv">TAXID</span><span class="si">}</span><span class="s2">:\([0-9]*\) .*</span>$<span class="s2">/\1/ ; s/Counts.*/0/&quot;</span><span class="sb">`</span> <span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;MAIN_COUNT=</span><span class="si">${</span><span class="nv">MAIN_COUNT</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">;</span> <span class="nv">SUM</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">COUNTS</span><span class="si">}</span><span class="s2">  &quot;</span> <span class="p">|</span> tr <span class="s1">&#39; &#39;</span> <span class="s1">&#39;\n&#39;</span> <span class="p">|</span> sed <span class="s1">&#39;s/.*://&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;BEGIN { sum=0 } { sum+=$1 } END { print sum }&#39;</span><span class="sb">`</span> <span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;SUM=</span><span class="nv">$SUM</span><span class="s2">&quot;</span><span class="p">;</span> <span class="nv">PERCENT</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> -e <span class="s2">&quot;scale=5\n100*</span><span class="si">${</span><span class="nv">MAIN_COUNT</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">SUM</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> bc<span class="sb">`</span> <span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;PERCENT=</span><span class="si">${</span><span class="nv">PERCENT</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;FINAL: G_</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">TAXID</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">MAIN_COUNT</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">SUM</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">COUNTS</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">;</span> <span class="k">done</span> &gt; r2977
+
+grep FINAL r2977 &gt; ../normalisation.txt
+</pre></div>
+
+<h4 id="29">2.9 创建数据库文件夹<a class="headerlink" href="#29" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>~$ mkdir metaBeetlNcbiDb
+~$ <span class="nb">cd</span> ~/metaBeetlNcbiDb
+~$ ln -s ../ncbiFileNumToTaxTree
+~$ ln -s ../normalisation.txt
+~$ ln -s ../downloads/metaBeetlTaxonomyNames.dmp
+~$ ln -s ../singleSeqGenomes/filecounter.csv
+~$ ln -s ../singleSeqGenomes/headerFile.csv
+~$ <span class="k">for</span> i in ../singleSeqGenomes/ncbiMicros-<span class="o">[</span>BC<span class="o">]</span><span class="m">0</span><span class="o">[</span><span class="m">0</span>-5<span class="o">]</span><span class="p">;</span> <span class="k">do</span> ln -s <span class="nv">$i</span> <span class="p">;</span> <span class="k">done</span>
+</pre></div>
+
+<h3 id="3">3. 分析数据<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<h4 id="31">3.1 获取数据<a class="headerlink" href="#31" title="Permanent link">&para;</a></h4>
+<p>用 SRS013948 这个人类肠道细菌组研究项目的数据作为例子。首先下载数据:</p>
+<div class="codehilite"><pre><span></span><span class="c1"># http download</span>
+~/data$ wget http://downloads.hmpdacc.org/data/Illumina/throat/SRS013948.tar.bz2
+
+<span class="c1"># ftp download</span>
+~/data$ wget ftp://public-ftp.hmpdacc.org/Illumina/throat/SRS013948.tar.bz2
+
+<span class="c1"># 解压缩</span>
+~/data$ tar xjf SRS013948.tar.bz2
+~/data$ ls -l
+</pre></div>
+
+<p>解压缩后可以看到下面3个文件：</p>
+<div class="codehilite"><pre><span></span>SRS013948.denovo_duplicates_marked.trimmed.1.fastq
+SRS013948.denovo_duplicates_marked.trimmed.2.fastq
+SRS013948.denovo_duplicates_marked.trimmed.singleton.fastq
+</pre></div>
+
+<h4 id="32">3.2 转换数据和合并数据<a class="headerlink" href="#32" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>~/data$ beetl-convert <span class="se">\</span>
+&gt; -i SRS013948.denovo_duplicates_marked.trimmed.1.fastq <span class="se">\</span>
+&gt; -o paddedSeq1.seq <span class="se">\</span>
+&gt; --sequence-length<span class="o">=</span><span class="m">100</span>
+~/data$ beetl-convert <span class="se">\</span>
+&gt; -i SRS013948.denovo_duplicates_marked.trimmed.2.fastq <span class="se">\</span>
+&gt; -o paddedSeq2.seq <span class="se">\</span>
+&gt; --sequence-length<span class="o">=</span><span class="m">100</span>
+~/data$ beetl-convert <span class="se">\</span>
+&gt; -i SRS013948.denovo_duplicates_marked.trimmed.singleton.fastq <span class="se">\</span>
+&gt; -o paddedSeqSingleton.seq <span class="se">\</span>
+&gt; --sequence-length<span class="o">=</span><span class="m">100</span>
+~/data$ cat paddedSeq1.seq paddedSeq2.seq paddedSeqSingleton.seq &gt; SRS013948.seq
+</pre></div>
+
+<h4 id="33-metagenomic-beetl">3.3 以 metagenomic 模式运行 BEETL<a class="headerlink" href="#33-metagenomic-beetl" title="Permanent link">&para;</a></h4>
+<p>创建 BWT 变换，然后运行 metagenomic 模式的 BEETL</p>
+<div class="codehilite"><pre><span></span>~/data$ beetl-bwt -i SRS013948.seq -o bwt_SRS013948
+~/data$ beetl-compare <span class="se">\</span>
+&gt; --mode<span class="o">=</span>metagenomics <span class="se">\</span>
+&gt; -a bwt_SRS013948 <span class="se">\</span>
+&gt; -b <span class="si">${</span><span class="nv">METAGENOME_DATABASE_PATH</span><span class="si">}</span>/ncbiMicros <span class="se">\</span>
+&gt; -t <span class="si">${</span><span class="nv">METAGENOME_DATABASE_PATH</span><span class="si">}</span>/ncbiFileNumToTaxTree <span class="se">\</span>
+&gt; -w <span class="m">20</span> <span class="se">\</span>
+&gt; -n <span class="m">1</span> <span class="se">\</span>
+&gt; -k <span class="m">50</span> <span class="se">\</span>
+&gt; --no-comparison-skip
+</pre></div>
+
+<p><code class="codehilite">beetl-compare</code> 命令会在文件夹 <code class="codehilite">BeetlCompareOutput</code> 里生成许多文件。k值设置越大，可以获得越多的信息数据，但是输出文件也会变得越大。</p>
+<h4 id="34">3.4 图形化显示结果<a class="headerlink" href="#34" title="Permanent link">&para;</a></h4>
+<p><code class="codehilite">metabeetl-convertMetagenomicRangesToTaxa</code> 工具根据kmer匹配，从而获得基因组以及上一级分类的ID号，并生成文字与图形结果（采用Krona js可视化库来形成网页格式的报告文件）。</p>
+<p>由于算法原因需要频繁读取BWT位置，因此数据库文件 <code class="codehilite">ncbiMicros-C0*</code> 最好放在读取速度比较块的磁盘扇区或者磁盘里如SSD硬盘。另外如果内存足够，可以用 <code class="codehilite">metabeetl-convertMetagenomicRangesToTaxa_withMmap</code> 工具，将这些比对文件读入内存中加快速度。</p>
+<div class="codehilite"><pre><span></span>~/data$ cat BeetlCompareOutput/cycle*.subset* <span class="p">|</span> <span class="se">\</span>
+&gt; metabeetl-convertMetagenomicRangesToTaxa <span class="se">\</span>
+&gt; <span class="si">${</span><span class="nv">METAGENOME_DATABASE_PATH</span><span class="si">}</span>/ncbiFileNumToTaxTree <span class="se">\</span>
+&gt; <span class="si">${</span><span class="nv">METAGENOME_DATABASE_PATH</span><span class="si">}</span>/ncbiMicros <span class="se">\</span>
+&gt; <span class="si">${</span><span class="nv">METAGENOME_DATABASE_PATH</span><span class="si">}</span>/metaBeetlTaxonomyNames.dmp <span class="se">\</span>
+&gt; <span class="si">${</span><span class="nv">METAGENOME_DATABASE_PATH</span><span class="si">}</span>/normalisation.txt <span class="se">\</span>
+&gt; <span class="m">20</span> <span class="m">50</span> - &gt; metaBeetl.log
+</pre></div>
+
+<p><strong>生成的TSV（制表符分隔）文件各列含义：</strong></p>
+<table>
+<thead>
+<tr>
+<th>列</th>
+<th>字段含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>column 1</td>
+<td>Taxonomy Id</td>
+</tr>
+<tr>
+<td>column 2</td>
+<td>Taxonomy level</td>
+</tr>
+<tr>
+<td>column 3</td>
+<td>k-mer count</td>
+</tr>
+<tr>
+<td>column 4</td>
+<td>k-mer count including children</td>
+</tr>
+</tbody>
+</table>
+<p><strong>TSV文件用途：</strong></p>
+<ul>
+<li>metaBeetl.tsv: raw k-mer counts for every leaves and ancestors.</li>
+<li>metaBeetl_normalised.tsv: some counts from ancestors are moved towards leaf items. The proportion thereof is pre-computed by aligning each individual genome to the full database.</li>
+<li>metaBeetl_normalised2.tsv: Only leaves
+ of the taxonomy tree are kept, and counts are normalised relatively to genome sizes.</li>
+</ul>
+<p><strong>Krona JS 结果文件</strong>
+- metaBeetl_krona.html
+- metaBeetl_krona_normalised.html
+- metaBeetl_krona_normalised2.html</p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3622627/">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3622627/</a></li>
+<li><a href="https://github.com/BEETL/BEETL.git">https://github.com/BEETL/BEETL.git</a></li>
+</ul>
+<h2 id="2-supri">2. SUPRI<a class="headerlink" href="#2-supri" title="Permanent link">&para;</a></h2>
+<p>SUPRI 是主要用来对临床样品的 shotgun metagenomics 测序数据中寻找并鉴定病原的工具。它有2种模式：Fast mode 和 Comprehensive mode。前者可以快速对测序的 reads 进行 Mapping，找到细菌或病毒 reads。后者分析更为详细，除了细菌病毒外还比对了真菌，寄生虫等其他物种数据库，并且进行de novo assembly，对contig也进行 Mapping，虽然耗时更长，但可以获得覆盖度，taxonomic 分类等信息。</p>
+<h3 id="_1">安装依赖工具<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="http://genome.sph.umich.edu/wiki/FastQValidator">fastQValidator</a></li>
+<li><a href="http://sourceforge.net/projects/amos/files/amos/3.1.0/">Minimo (v1.6)</a></li>
+<li><a href="http://www.bcgsc.ca/platform/bioinfo/software/abyss">Abyss (v1.3.5)</a></li>
+<li><a href="http://omics.informatics.indiana.edu/mg/RAPSearch2/">RAPSearch (v2.12)</a></li>
+<li><a href="https://github.com/lh3/seqtk">seqtk (v 1.0r31)</a></li>
+<li><a href="http://snap.cs.berkeley.edu">SNAP (v0.15)</a></li>
+<li><a href="http://genometools.org/index.html">gt (v1.5.1)</a></li>
+<li><a href="https://github.com/brentp/bio-playground/tree/master/reads-utils">fastq</a></li>
+<li><a href="https://gist.github.com/drio/1168330">fqextract</a></li>
+<li><a href="https://code.google.com/p/cutadapt/">cutadapt (v1.2.1)</a></li>
+<li><a href="http://prinseq.sourceforge.net">prinseq</a></li>
+<li><a href="http://stackoverflow.com/questions/13646925/allowing-a-non-root-user-to-drop-cache">dropcache</a></li>
+</ul>
+<h3 id="supri">安装 SUPRI<a class="headerlink" href="#supri" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>$ wget https://github.com/chiulab/surpi/releases/download/v1.0.18/surpi-1.0.18.tar.gz
+$ tar zxf surpi-1.0.18.tar.gz -C surpi
+</pre></div>
+
+<h3 id="_2">建立数据库<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>$ mkdir -p SNAP_db
+$ ~/apps/surpi/create_taxonomy_db.sh
+</pre></div>
+
+<h3 id="surpi">运行SURPI<a class="headerlink" href="#surpi" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>$ ~/apps/surpi/SURPI.sh -z input.fastq
+$ ~/apps/surpi/go_input <span class="p">&amp;</span>
+</pre></div>
+
+<h3 id="_3">输出结果<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>当以 Comprehensive mode 运行后，会产生以下文件夹：</p>
+<div class="codehilite"><pre><span></span>DATASETS_input
+deNovoASSEMBLY_input
+LOG_input
+OUTPUT_input
+TRASH_input
+</pre></div>
+
+<p>结果文件在<code class="codehilite">OUTPUT_input</code>文件夹里，“.annotated” 文件是 SAM 格式或者 -m8 格式的比对结果, taxonomic 信息也在文件中的最后一行中。 “.counttable” 文件是 tab 分割的总结文件。每一行表示不同层面的 taxonomic 注释信息。</p>
+<h2 id="reference_1">Reference<a class="headerlink" href="#reference_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="http://chiulab.ucsf.edu/surpi">SUPRI official</a></li>
+</ol>
+<h2 id="reference_2">Reference<a class="headerlink" href="#reference_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="http://www.slideshare.net/ueb52/2013-08mg-training">Introduction to Metagenomics Data Analysis</a></li>
+</ol>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2018 HZCDC@Lab
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.dc02f8ce.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+      
+        <script src="../../assets/js/umlconvert.js"></script>
+      
+    
+  </body>
+</html>
