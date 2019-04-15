@@ -131,5 +131,6 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
   - pymdownx.superfences
+  - pymdownx.progressbar
 
 google_analytics: ['UA-55420348-3', 'auto']
