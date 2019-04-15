@@ -291,8 +291,13 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://indexofire.github.io/pathongs/C12_Metagenomics-Analysis/09_shotgun/</loc>
+     <lastmod>2019-04-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://indexofire.github.io/pathongs/C12_Metagenomics-Analysis/10_16s/</loc>
+     <lastmod>2019-04-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
