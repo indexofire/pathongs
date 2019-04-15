@@ -42,7 +42,7 @@
     
     
       
-        <title>铜绿假单胞菌临床株与环境株SNP溯源 - Pathogen NGS 数据分析入门</title>
+        <title>01. 细菌SNP溯源分析一 - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -150,7 +150,7 @@
               Pathogen NGS 数据分析入门
             </span>
             <span class="md-header-nav__topic">
-              铜绿假单胞菌临床株与环境株SNP溯源
+              01. 细菌SNP溯源分析一
             </span>
           
         </div>
@@ -260,8 +260,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="开始之前" class="md-nav__link">
-      开始之前
+    <a href="../.." title="第零章 开始之前" class="md-nav__link">
+      第零章 开始之前
     </a>
   </li>
 
@@ -1434,10 +1434,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-17" type="checkbox" id="nav-17">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-17" type="checkbox" id="nav-17" checked>
     
     <label class="md-nav__link" for="nav-17">
       第十六章 基因组分析实践
@@ -1453,11 +1455,165 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../C16_Analysis_Examples/01_trace-Pae-from-different-source-by-SNP.md" title="01. 细菌SNP溯源分析一" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        01. 细菌SNP溯源分析一
+      </label>
+    
+    <a href="./" title="01. 细菌SNP溯源分析一" class="md-nav__link md-nav__link--active">
       01. 细菌SNP溯源分析一
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1. 提出问题" class="md-nav__link">
+    1. 提出问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2. 分析流程" class="md-nav__link">
+    2. 分析流程
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" title="2.1 下载数据" class="md-nav__link">
+    2.1 下载数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-st17" title="2.2 建立 ST17 型参考菌株索引" class="md-nav__link">
+    2.2 建立 ST17 型参考菌株索引
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-reads-st17" title="2.3 将测序 reads 比对到 ST17 并排序索引" class="md-nav__link">
+    2.3 将测序 reads 比对到 ST17 并排序索引
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-reads" title="2.4 绘制测序 reads 的覆盖度" class="md-nav__link">
+    2.4 绘制测序 reads 的覆盖度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-1snps" title="2.5 比较1号临床株与环境株的SNPs差异" class="md-nav__link">
+    2.5 比较1号临床株与环境株的SNPs差异
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-2" title="2.6 2个临床株的耐药变迁" class="md-nav__link">
+    2.6 2个临床株的耐药变迁
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-snippy" title="3. 用 Snippy 来实现" class="md-nav__link">
+    3. 用 Snippy 来实现
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-snippy" title="3.1 安装 Snippy" class="md-nav__link">
+    3.1 安装 Snippy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-snippy" title="3.2 使用 Snippy" class="md-nav__link">
+    3.2 使用 Snippy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-workflow" title="4. 用 Workflow 脚本来简化操作" class="md-nav__link">
+    4. 用 Workflow 脚本来简化操作
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" title="4.1 准备数据" class="md-nav__link">
+    4.1 准备数据
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-reference" title="5. 如何选择 Reference" class="md-nav__link">
+    5. 如何选择 Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" title="6. 参考资料" class="md-nav__link">
+    6. 参考资料
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1467,7 +1623,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C16_Analysis_Examples/02_comparative-analysis-Ban-genomes.md" title="02. 细菌比较基因组学研究" class="md-nav__link">
+    <a href="../02_comparative-analysis-Ban-genomes/" title="02. 细菌比较基因组学研究" class="md-nav__link">
       02. 细菌比较基因组学研究
     </a>
   </li>
@@ -1876,6 +2032,41 @@ $ figtree RAxML_bestTree.pae
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../C15_Pathogen-Geospatial-Analysis/04_cartodb/" title="04. CartoDB" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                04. CartoDB
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../02_comparative-analysis-Ban-genomes/" title="02. 细菌比较基因组学研究" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                02. 细菌比较基因组学研究
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

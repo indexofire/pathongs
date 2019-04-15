@@ -13,7 +13,7 @@ extra:
     primary: 'light blue'
 
 pages:
-  - '开始之前': index.md
+  - '第零章 开始之前': index.md
   - '第一章 背景知识介绍':
     - '01. Linux 安装实例': C01_Linux-and-Script-Language/01_linux-installation.md
     - '02. Linux 基本命令': C01_Linux-and-Script-Language/02_basic-cml.md
@@ -97,8 +97,8 @@ pages:
   - '第十五章 基因组流行病学':
     - '04. CartoDB': C15_Pathogen-Geospatial-Analysis/04_cartodb.md
   - '第十六章 基因组分析实践':
-    - '01. 细菌SNP溯源分析一': C16_Analysis_Examples/01_trace-Pae-from-different-source-by-SNP.md
-    - '02. 细菌比较基因组学研究': C16_Analysis_Examples/02_comparative-analysis-Ban-genomes.md
+    - '01. 细菌SNP溯源分析一': C16_Analysis-Examples/01_trace-Pae-from-different-source-by-SNP.md
+    - '02. 细菌比较基因组学研究': C16_Analysis-Examples/02_comparative-analysis-Ban-genomes.md
 use_directory_urls: true
 
 extra_javascript:
