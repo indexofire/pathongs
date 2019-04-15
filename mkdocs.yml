@@ -22,7 +22,7 @@ pages:
     - '05. awk 的扩展 bioawk': C01_Linux-and-Script-Language/05_bioawk.md
     - '06. Python 编程': C01_Linux-and-Script-Language/06_python.md
     - '07. Shell脚本': C01_Linux-and-Script-Language/07_shell.md
-    - ‘08. Perl 编程’: C01_Linux-and-Script-Language/08_perl.md
+    - '08. Perl 编程': C01_Linux-and-Script-Language/08_perl.md
     - '09. R 编程': C01_Linux-and-Script-Language/09_r.md
   - '第二章 产用工具':
     - '01. 公共生物数据库': C02_Common-Utility/01_databases.md
@@ -30,9 +30,9 @@ pages:
     - '03. 玩转 edirect': C02_Common-Utility/03_edirect.md
     - '04. EMBOSS 工具集': C02_Common-Utility/04_emboss.md
     - '07. MUMmer 工具': C02_Common-Utility/07_mummer.md
-    - '08. 国产序列处理神器 SeqKit': C02_Common-Utility/08_seqkit.md
+    - '08. SeqKit 工具': C02_Common-Utility/08_seqkit.md
     - '09. Kmer 工具': C02_Common-Utility/09_kmer.md
-  - ‘第三章 各类数据文件格式’:
+  - '第三章 各类数据文件格式':
     - '01. fasta': C03_File-Format/01_fasta.md
     - '02. embl': C03_File-Format/02_embl.md
     - '03. plain text': C03_File-Format/03_plain-txt.md
@@ -60,7 +60,7 @@ pages:
     - '08. ITEP 分析': C07_PanGenome-and-CoreGenome/08_ITEP.md
   - '第八章 基因组可视化':
     - '01. igv 查看比对结果': C08_Genome-Visualization/01_igv.md
-    - '02. BRIG 细菌比较基因组分析工具': C08_Genome-Visualization/02_BRIG.md
+    - '02. BRIG 分析工具': C08_Genome-Visualization/02_BRIG.md
     - '03. circos 工具使用': C08_Genome-Visualization/03_circos.md
   - '第九章 分析平台':
     - '01. 基于 docker 镜像': C09_Analysis-Platform/01_docker.md
