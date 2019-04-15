@@ -13,7 +13,7 @@
         <meta name="description" content="病原微生物高通量测序数据分析手册">
       
       
-        <link rel="canonical" href="https://indexofire.github.io/pathongs/C12_Metagenomics-Analysis/02_shotgun/">
+        <link rel="canonical" href="https://indexofire.github.io/pathongs/C12_Metagenomics-Analysis/09_shotgun/">
       
       
         <meta name="author" content="Mark Renton">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Metagenomics数据分析 - Pathogen NGS 数据分析入门</title>
+        <title>‘09. shotgun 分析’ - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -150,7 +150,7 @@
               Pathogen NGS 数据分析入门
             </span>
             <span class="md-header-nav__topic">
-              Metagenomics数据分析
+              ‘09. shotgun 分析’
             </span>
           
         </div>
@@ -1122,17 +1122,19 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13" checked>
     
     <label class="md-nav__link" for="nav-13">
-      第十二章 Metagenomics 分析
+      第十二章 宏基因组分析
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-13">
-        第十二章 Metagenomics 分析
+        第十二章 宏基因组分析
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -1237,9 +1239,258 @@
           
           
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        ‘09. shotgun 分析’
+      </label>
+    
+    <a href="./" title="‘09. shotgun 分析’" class="md-nav__link md-nav__link--active">
+      ‘09. shotgun 分析’
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-meta-beetl" title="1. Meta-BEETL" class="md-nav__link">
+    1. Meta-BEETL
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" title="1. 已整理的数据库" class="md-nav__link">
+    1. 已整理的数据库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" title="2. 自己建立数据库" class="md-nav__link">
+    2. 自己建立数据库
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-seqan" title="2.1 安装 SeqAn" class="md-nav__link">
+    2.1 安装 SeqAn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" title="2.2 下载目标序列" class="md-nav__link">
+    2.2 下载目标序列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" title="2.3 创建去除质粒序列的单基因组序列" class="md-nav__link">
+    2.3 创建去除质粒序列的单基因组序列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-bwt" title="2.4 创建BWT" class="md-nav__link">
+    2.4 创建BWT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" title="2.5 合并序列" class="md-nav__link">
+    2.5 合并序列
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-bwt" title="2.6 转换BWT文件格式" class="md-nav__link">
+    2.6 转换BWT文件格式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-ncbi-taxoonmy" title="2.7 下载NCBI Taxoonmy" class="md-nav__link">
+    2.7 下载NCBI Taxoonmy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-normalisation" title="2.8 计算 normalisation 因子" class="md-nav__link">
+    2.8 计算 normalisation 因子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29" title="2.9 创建数据库文件夹" class="md-nav__link">
+    2.9 创建数据库文件夹
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" title="3. 分析数据" class="md-nav__link">
+    3. 分析数据
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" title="3.1 获取数据" class="md-nav__link">
+    3.1 获取数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" title="3.2 转换数据和合并数据" class="md-nav__link">
+    3.2 转换数据和合并数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-metagenomic-beetl" title="3.3 以 metagenomic 模式运行 BEETL" class="md-nav__link">
+    3.3 以 metagenomic 模式运行 BEETL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" title="3.4 图形化显示结果" class="md-nav__link">
+    3.4 图形化显示结果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-supri" title="2. SUPRI" class="md-nav__link">
+    2. SUPRI
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="安装依赖工具" class="md-nav__link">
+    安装依赖工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supri" title="安装 SUPRI" class="md-nav__link">
+    安装 SUPRI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="建立数据库" class="md-nav__link">
+    建立数据库
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surpi" title="运行SURPI" class="md-nav__link">
+    运行SURPI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="输出结果" class="md-nav__link">
+    输出结果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference_1" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference_2" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
-    <a href="../01_16s.md" title="10. 16S 种群分析" class="md-nav__link">
+    <a href="../10_16s/" title="10. 16S 种群分析" class="md-nav__link">
       10. 16S 种群分析
     </a>
   </li>
@@ -1708,7 +1959,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C12_Metagenomics-Analysis/02_shotgun.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C12_Metagenomics-Analysis/09_shotgun.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="metagenomics">Metagenomics数据分析<a class="headerlink" href="#metagenomics" title="Permanent link">&para;</a></h1>
@@ -2057,6 +2308,41 @@ TRASH_input
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../08_supri/" title="08. supri" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                08. supri
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../10_16s/" title="10. 16S 种群分析" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                10. 16S 种群分析
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
