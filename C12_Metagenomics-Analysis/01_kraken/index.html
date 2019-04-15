@@ -375,8 +375,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/08_perl/" title="‘08. Perl 编程’" class="md-nav__link">
-      ‘08. Perl 编程’
+    <a href="../../C01_Linux-and-Script-Language/08_perl/" title="08. Perl 编程" class="md-nav__link">
+      08. Perl 编程
     </a>
   </li>
 
@@ -483,8 +483,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C02_Common-Utility/08_seqkit/" title="08. 国产序列处理神器 SeqKit" class="md-nav__link">
-      08. 国产序列处理神器 SeqKit
+    <a href="../../C02_Common-Utility/08_seqkit/" title="08. SeqKit 工具" class="md-nav__link">
+      08. SeqKit 工具
     </a>
   </li>
 
@@ -516,11 +516,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      ‘第三章 各类数据文件格式’
+      第三章 各类数据文件格式
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        ‘第三章 各类数据文件格式’
+        第三章 各类数据文件格式
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -915,8 +915,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C08_Genome-Visualization/02_BRIG/" title="02. BRIG 细菌比较基因组分析工具" class="md-nav__link">
-      02. BRIG 细菌比较基因组分析工具
+    <a href="../../C08_Genome-Visualization/02_BRIG/" title="02. BRIG 分析工具" class="md-nav__link">
+      02. BRIG 分析工具
     </a>
   </li>
 
@@ -1594,7 +1594,20 @@
                 
                 <h1 id="kraken">Kraken<a class="headerlink" href="#kraken" title="Permanent link">&para;</a></h1>
 <h2 id="1">1. 安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>$ conda create -n kraken kraken2 <span class="nv">bracken</span><span class="o">=</span><span class="m">2</span>.2
+$ conda activate kraken
+<span class="o">(</span>kraken<span class="o">)</span>$ wget https://www.ccb.jhu.edu/software/kraken2/dl/minikraken2_v2_8GB.tgz
+<span class="o">(</span>kraken<span class="o">)</span>$ tar zxvf minikraken2_v2_8GB.tgz -C <span class="nv">$HOME</span>/dbs/minikraken2
+</pre></div>
+
 <h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="o">(</span>kraken<span class="o">)</span>$ kraken2 --use-names --threads <span class="m">4</span> --db <span class="nv">$HOME</span>/dbs/minikraken2 --report report.txt assembly.fna &gt; result.kraken
+<span class="o">(</span>kraken<span class="o">)</span>$ kraken2 --use-names --threads <span class="m">4</span> --db <span class="nv">$HOME</span>/dbs/minikraken2 --report report2.txt --fastq-input --paired S1_R1.fq.gz S1_R2.fq.gz &gt; result2.kraken
+<span class="o">(</span>kraken<span class="o">)</span>$ wget https://ccb.jhu.edu/software/bracken/dl/minikraken2_v2/database200mers.kmer_distrib
+<span class="o">(</span>kraken<span class="o">)</span>$ mv database200mers.kmer_distrib <span class="nv">$HOME</span>/dbs/minikraken2
+<span class="o">(</span>kraken<span class="o">)</span>$ bracken -d <span class="nv">$HOME</span>/dbs/minikraken2 -i kraken2.report -o bracken.species.txt -l S
+</pre></div>
+
 <h2 id="3">3. 示例<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
                 
                   

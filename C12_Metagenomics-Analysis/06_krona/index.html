@@ -375,8 +375,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/08_perl/" title="‘08. Perl 编程’" class="md-nav__link">
-      ‘08. Perl 编程’
+    <a href="../../C01_Linux-and-Script-Language/08_perl/" title="08. Perl 编程" class="md-nav__link">
+      08. Perl 编程
     </a>
   </li>
 
@@ -483,8 +483,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C02_Common-Utility/08_seqkit/" title="08. 国产序列处理神器 SeqKit" class="md-nav__link">
-      08. 国产序列处理神器 SeqKit
+    <a href="../../C02_Common-Utility/08_seqkit/" title="08. SeqKit 工具" class="md-nav__link">
+      08. SeqKit 工具
     </a>
   </li>
 
@@ -516,11 +516,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      ‘第三章 各类数据文件格式’
+      第三章 各类数据文件格式
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        ‘第三章 各类数据文件格式’
+        第三章 各类数据文件格式
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -915,8 +915,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C08_Genome-Visualization/02_BRIG/" title="02. BRIG 细菌比较基因组分析工具" class="md-nav__link">
-      02. BRIG 细菌比较基因组分析工具
+    <a href="../../C08_Genome-Visualization/02_BRIG/" title="02. BRIG 分析工具" class="md-nav__link">
+      02. BRIG 分析工具
     </a>
   </li>
 
@@ -1213,9 +1213,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        06. krona
+      </label>
+    
     <a href="./" title="06. krona" class="md-nav__link md-nav__link--active">
       06. krona
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="安装" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1506,6 +1535,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="安装" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1520,12 +1565,15 @@
                 
                 
                 <h1 id="krona">Krona<a class="headerlink" href="#krona" title="Permanent link">&para;</a></h1>
-<div class="codehilite"><pre><span></span>$ conda activate metagenomics
-<span class="o">(</span>metagenomics<span class="o">)</span>$ conda install krona
+<h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>$ conda create -n krona krona
+$ conda activate krona
+<span class="o">(</span>krona<span class="o">)</span>$ rm -rf <span class="nv">$HOME</span>/.conda/envs/krona/opt/krona/taxonomy
+<span class="o">(</span>krona<span class="o">)</span>$ mkdir <span class="nv">$HOME</span>/dbs/krona/taxonomy
+<span class="o">(</span>krona<span class="o">)</span>$ ln -s <span class="nv">$HOME</span>/dbs/krona/taxonomy <span class="nv">$HOME</span>/.cona/envs/krona/opt/krona/taxonomy
+<span class="o">(</span>krona<span class="o">)</span>$ <span class="nb">cd</span> <span class="nv">$HOME</span>/dbs/krona/taxonomy
+<span class="o">(</span>krona<span class="o">)</span>$ ktUpdateTaxonomy.sh .
 </pre></div>
-
-<p>```bash
-(metagenomics)$ </p>
                 
                   
                 

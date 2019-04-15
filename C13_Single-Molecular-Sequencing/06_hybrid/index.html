@@ -125,7 +125,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#hybrid-assemble" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -375,8 +375,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/08_perl/" title="‘08. Perl 编程’" class="md-nav__link">
-      ‘08. Perl 编程’
+    <a href="../../C01_Linux-and-Script-Language/08_perl/" title="08. Perl 编程" class="md-nav__link">
+      08. Perl 编程
     </a>
   </li>
 
@@ -483,8 +483,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C02_Common-Utility/08_seqkit/" title="08. 国产序列处理神器 SeqKit" class="md-nav__link">
-      08. 国产序列处理神器 SeqKit
+    <a href="../../C02_Common-Utility/08_seqkit/" title="08. SeqKit 工具" class="md-nav__link">
+      08. SeqKit 工具
     </a>
   </li>
 
@@ -516,11 +516,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      ‘第三章 各类数据文件格式’
+      第三章 各类数据文件格式
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        ‘第三章 各类数据文件格式’
+        第三章 各类数据文件格式
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -915,8 +915,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C08_Genome-Visualization/02_BRIG/" title="02. BRIG 细菌比较基因组分析工具" class="md-nav__link">
-      02. BRIG 细菌比较基因组分析工具
+    <a href="../../C08_Genome-Visualization/02_BRIG/" title="02. BRIG 分析工具" class="md-nav__link">
+      02. BRIG 分析工具
     </a>
   </li>
 
@@ -1370,6 +1370,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#unicycle" title="Unicycle" class="md-nav__link">
+    Unicycle
+  </a>
+  
+</li>
+      
       
       
       
@@ -1545,6 +1552,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#unicycle" title="Unicycle" class="md-nav__link">
+    Unicycle
+  </a>
+  
+</li>
+      
       
       
       
@@ -1564,10 +1578,21 @@
                   <a href="https://github.com/indexofire/pathongs/edit/master/docs/C13_Single-Molecular-Sequencing/06_hybrid.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="hybrid-assemble">Hybrid assemble<a class="headerlink" href="#hybrid-assemble" title="Permanent link">&para;</a></h1>
+                <h1 id="_1">二代+三代测序数据混合拼接<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="spades">Spades<a class="headerlink" href="#spades" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1"># Spades 混合拼接同一个样本 miseq 和 nanopore 测序数据</span>
 $ spades.py -m -k <span class="m">33</span>,55,77,99,121 --only_assembler -1 S1_R1.fastq.gz -2 S1_R2.fastq.gz --nanopore minion.fastq.gz -o hybrid -t <span class="m">40</span>
+</pre></div>
+
+<h2 id="unicycle">Unicycle<a class="headerlink" href="#unicycle" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="c1"># 去除接头，将fastq文件压缩</span>
+<span class="o">(</span>nanopore<span class="o">)</span>$ <span class="k">for</span> fq in <span class="o">{</span><span class="m">0</span>..11<span class="o">}</span><span class="p">;</span> <span class="k">do</span> porechop -t <span class="m">8</span> -i *_<span class="si">${</span><span class="nv">fq</span><span class="si">}</span>.fastq -o <span class="si">${</span><span class="nv">fq</span><span class="si">}</span>.fastq.gz<span class="p">;</span> <span class="k">done</span>
+
+<span class="c1"># 去除低质量碱基，将reads平均Q值低于9的去除</span>
+<span class="o">(</span>nanopore<span class="o">)</span>$ <span class="k">for</span> trim in <span class="o">{</span><span class="m">0</span>..11<span class="o">}</span><span class="p">;</span> <span class="k">do</span> zcat <span class="si">${</span><span class="nv">trim</span><span class="si">}</span>.fastq.gz <span class="p">|</span> NanoFilt -q <span class="m">9</span> &gt;&gt; trimmed.fastq<span class="p">;</span> <span class="k">done</span>
+
+<span class="c1"># unicycler 混合组装illumina和nanopore数据</span>
+<span class="o">(</span>nanopore<span class="o">)</span>$ unicycler -1 R1.fastq.gz -2 R2.fastq.gz -l trimmed.fastq.gz -o hybrid
 </pre></div>
                 
                   
