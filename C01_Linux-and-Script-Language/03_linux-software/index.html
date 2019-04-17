@@ -336,8 +336,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-docker" title="3. docker方式" class="md-nav__link">
-    3. docker方式
+  <a href="#3-git" title="3. Git 代码管理工具" class="md-nav__link">
+    3. Git 代码管理工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-docker" title="4. docker方式" class="md-nav__link">
+    4. docker方式
   </a>
   
 </li>
@@ -467,8 +474,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C02_Common-Utility/02_blast/" title="02. Blast 与 Blast+" class="md-nav__link">
-      02. Blast 与 Blast+
+    <a href="../../C02_Common-Utility/02_blast/" title="02. Blast 与 NCBI_Blast" class="md-nav__link">
+      02. Blast 与 NCBI_Blast
     </a>
   </li>
 
@@ -800,11 +807,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      第七章 Pan和Core基因组分析
+      第七章 泛基因组分析
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
-        第七章 Pan和Core基因组分析
+        第七章 泛基因组分析
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -1545,8 +1552,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-docker" title="3. docker方式" class="md-nav__link">
-    3. docker方式
+  <a href="#3-git" title="3. Git 代码管理工具" class="md-nav__link">
+    3. Git 代码管理工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-docker" title="4. docker方式" class="md-nav__link">
+    4. docker方式
   </a>
   
 </li>
@@ -1619,13 +1633,34 @@ $ conda activate myenv
 <span class="o">(</span>myenv<span class="o">)</span>$ conda install mysoftware
 </pre></div>
 
-<h2 id="3-docker">3. docker方式<a class="headerlink" href="#3-docker" title="Permanent link">&para;</a></h2>
+<h2 id="3-git">3. Git 代码管理工具<a class="headerlink" href="#3-git" title="Permanent link">&para;</a></h2>
+<p>git 是 Linux 内核之父 Linus 开发的代码管理工具。目前社区中比较活跃的 git 在线社群服务有 github, gitlab, bitbucket(过去是hg,现在也转为git)，国内的例如coding.net,oschina。github是最早最成功的 git 在线管理社区，极好的粘合了广大“码农”，众多主流的开源软件都驻扎在 github 中。</p>
+<p>许多生物学软件的源代码也选择托管在 github 中（老牌的可能在 sourceforge.net），如果我们要研究代码，或者使用脚本程序，或者通过源代码安装编译安装软件等，就要学会最基本的 git 命令。而且 github 上还有许多基于 markdown, rst, jupyter, pdf 等格式的教学资料，是学习的最好场所之一。</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 安装 git</span>
+<span class="c1"># ubuntu</span>
+$ sudo apt install git-core
+<span class="c1"># archlinux</span>
+$ sudo pacman -S git
+
+<span class="c1"># 克隆 bwa 源码仓库到本地</span>
+$ git clone https://github.com/lh3/bwa.git
+$ <span class="nb">cd</span> bwa
+
+<span class="c1"># 编译安装 bwa</span>
+$ make
+$ sudo cp bwa /usr/local/sbin
+
+<span class="c1"># 使用 bwa</span>
+$ bwa mem ...
+</pre></div>
+
+<h2 id="4-docker">4. docker方式<a class="headerlink" href="#4-docker" title="Permanent link">&para;</a></h2>
 <p>docker 是一种虚拟机，但是其与 virtualbox, vm 等的区别是其启动和调用都是毫秒级的，几乎感觉不到其的加载时间，但又与系统有沙盒模式隔离，保证了安全。docker 最大的好处是直接调用他人写的 DOCKERFILE 就可以下载 image，运行生成 container， DOCKERFILE 解决的安装的过程，除了下载安装速度可能略慢，其他几乎不需要更多的学习曲线。安装完成运行 container 即可使用。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># Archlinux 安装 docker</span>
 $ sudo pacman -S docker
 
 <span class="c1"># 使用 DockerFile</span>
-$ docker 
+$ docker
 </pre></div>
                 
                   

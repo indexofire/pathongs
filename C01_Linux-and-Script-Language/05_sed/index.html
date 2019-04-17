@@ -327,9 +327,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        05. 行处理工具 sed
+      </label>
+    
     <a href="./" title="05. 行处理工具 sed" class="md-nav__link md-nav__link--active">
       05. 行处理工具 sed
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="脚本示例" class="md-nav__link">
+    脚本示例
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -424,8 +453,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C02_Common-Utility/02_blast/" title="02. Blast 与 Blast+" class="md-nav__link">
-      02. Blast 与 Blast+
+    <a href="../../C02_Common-Utility/02_blast/" title="02. Blast 与 NCBI_Blast" class="md-nav__link">
+      02. Blast 与 NCBI_Blast
     </a>
   </li>
 
@@ -757,11 +786,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      第七章 Pan和Core基因组分析
+      第七章 泛基因组分析
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
-        第七章 Pan和Core基因组分析
+        第七章 泛基因组分析
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -1484,6 +1513,22 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="脚本示例" class="md-nav__link">
+    脚本示例
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1501,15 +1546,227 @@
 <p>sed 全称 Stream Editor，即流编辑器。想对于 awk 处理每一行中各个字段的列特点，sed 常用于以行为单位的编辑操作，比如字符替换等。</p>
 <div class="admonition note">
 <p class="admonition-title">基本逻辑</p>
-<p>sed [OPTION]... {script-only-if-no-other-script} [input-file]...</p>
+<p>sed [选项] ... {脚本} [输入] ...</p>
 </div>
-<p>sed 编辑内容可以是标准输入STDIN，也可以是一个文件。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 把pattern1替换为pattern2</span>
-<span class="c1"># 首先搜索pattern1，然后将其替换为pattern2</span>
-$ sed s/pattern1/pattern2/g
+<p><strong>输入</strong></p>
+<p>sed 编辑内容可以是标准输入STDIN，也可以是一个文件。sed 读取内容的一行，放入<code class="codehilite">模式空间</code>，并在<code class="codehilite">模式空间</code>做命令对应的操作，再将<code class="codehilite">模式空间</code>的内容打印到屏幕上</p>
+<p><strong>选项</strong></p>
+<p><code class="codehilite">-n</code> 默认sed处理一行就会在STDOUT终端中打印一行。加上<code class="codehilite">-n</code>参数就不会在输出端打印。</p>
+<p><code class="codehilite">-i</code> 即sed编辑完后直接储存为源文件，与重定向符号类似<code class="codehilite">&gt;</code>（但重定向符号不能覆盖原文件，只会清空）。不过出于数据安全的愿意，建议还是用&gt;重定向到新文件或者保留备份文件比较好。</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 删除file的空格，保存成file.new文件</span>
+$ sed -i <span class="s1">&#39;s/ //g&#39;</span> file &gt; file.new
+$ ls
+file           <span class="c1"># 原始文件</span>
+file.new       <span class="c1"># 新文件</span>
+
+<span class="c1"># 删除file的空格，原始文件保存成file.old</span>
+$ sed -i.old <span class="s1">&#39;s/ //g&#39;</span> file
+$ ls
+file           <span class="c1"># 新文件</span>
+file.old       <span class="c1"># 原始文件</span>
 </pre></div>
 
-<p><strong>文件行首插入新行</strong></p>
+<p><strong>{脚本}</strong></p>
+<p><code class="codehilite">p</code> 打印
+<code class="codehilite">l</code> 打印特殊符号，比如换行符</p>
+<div class="codehilite"><pre><span></span><span class="c1"># file 文件内容</span>
+$ cat file
+Hello everyone
+my food is great
+food is ok
+Food
+fooooooooooood
+
+
+<span class="c1"># 打印文件第2行</span>
+$ sed -n <span class="s1">&#39;2p&#39;</span> file
+my food is great
+
+<span class="c1"># 打印文件第2行到第3行</span>
+$ sed -n <span class="s1">&#39;2,3p&#39;</span> file
+my food is great
+food is ok
+
+<span class="c1"># 不打印第一行</span>
+$ sed -n <span class="s1">&#39;1!p&#39;</span> file
+my food is great
+food is ok
+Food
+fooooooooooood
+
+<span class="c1"># 不打印第2-3行</span>
+$ sed -n <span class="s1">&#39;2,3!p&#39;</span> file
+Hello everyone
+Food
+fooooooooooood
+
+<span class="c1"># 打印文件最后一行, $符号表示文件最后一行</span>
+$ sed -n <span class="s1">&#39;$p&#39;</span> file
+fooooooooooood
+
+<span class="c1"># 打印包含&quot;food&quot;字符开始的行</span>
+$ sed -n <span class="s1">&#39;/^food/p&#39;</span> file
+food is ok
+
+<span class="c1"># 从第2行开始打印，直到第一个匹配的food打印的那一行为止（不包括第5行）</span>
+<span class="c1"># 如果没有匹配则一直输出到文件结束</span>
+$ sed -n <span class="s1">&#39;2,/food/p&#39;</span> file
+my food is great
+food is ok
+
+<span class="c1"># 显示$换行符</span>
+$ sed -n <span class="s1">&#39;1,3l&#39;</span> file
+Hello everyone$
+my food is great$
+food is ok$
+</pre></div>
+
+<p><code class="codehilite">=</code> 打印匹配的行号</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 打印包含fo的行号</span>
+$ sed -n <span class="s1">&#39;/fo/=&#39;</span> file
+<span class="m">2</span>
+<span class="m">3</span>
+<span class="m">5</span>
+</pre></div>
+
+<p><code class="codehilite">a</code> 追加行模式</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 在含fo内容的行后插入一个新行</span>
+$ sed <span class="s1">&#39;/fo/a\Insert a new line&#39;</span> file
+Hello everyone
+my food is great
+insert a new line
+food is ok
+insert a new line
+Food
+fooooooooooood
+insert a new line
+
+<span class="c1"># 在行尾插入内容</span>
+$ sed <span class="s1">&#39;$a\The end&#39;</span> file
+Hello everyone
+my food is great
+food is ok
+Food
+fooooooooooood
+The end
+</pre></div>
+
+<p><code class="codehilite">i</code> 插入行模式</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 在含fo内容的行前插入一个新行</span>
+$ sed <span class="s1">&#39;/fo/i\Insert a new line&#39;</span> file
+Hello everyone
+insert a new line
+my food is great
+insert a new line
+food is ok
+Food
+insert a new line
+fooooooooooood
+
+<span class="c1"># 在第一行前插入新行</span>
+$ sed <span class="s1">&#39;1i\Title:food&#39;</span> file
+Title:food
+Hello everyone
+my food is great
+food is ok
+Food
+fooooooooooood
+</pre></div>
+
+<p><code class="codehilite">c</code> 修改模式</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 含fo的行替换成新的内容</span>
+$ sed <span class="s1">&#39;/fo/c\changed line content&#39;</span> file
+Hello everyone
+changed line content
+changed line content
+Food
+changed line content
+</pre></div>
+
+<p><code class="codehilite">d</code> 删除行</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 删除第一行</span>
+$ sed <span class="s1">&#39;1d&#39;</span> file
+my food is great
+food is ok
+Food
+fooooooooooood
+
+<span class="c1"># 删除第2-4行</span>
+$ sed <span class="s1">&#39;2,4d&#39;</span> file
+Hello everyone
+fooooooooooood
+
+<span class="c1"># 删除匹配 food 的行</span>
+$ sed <span class="s1">&#39;/food/d&#39;</span> file
+Hello everyone
+Food
+fooooooooooood
+</pre></div>
+
+<p><code class="codehilite">s</code> 替换内容</p>
+<p>s 可以算sed中最常用的工具了（想象一下，我们用word处理文本，是不是也经常查找替换！）</p>
+<div class="admonition note">
+<p class="admonition-title">基本例子</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 把pattern1替换为pattern2</span>
+<span class="c1"># 首先搜索pattern1，然后将其替换为pattern2</span>
+$ sed s/pattern1/pattern2/flag
+
+flag:
+</pre></div>
+
+</div>
+<p><code class="codehilite">n</code> 读取下一行，替换当前模式空间
+<code class="codehilite">N</code> 读取下一行，追加在模1式空间后
+<code class="codehilite">q</code> 匹配后推出
+<code class="codehilite">r</code> 读取文本文件，并追加在模式空间后</p>
+<p><strong>执行多个命令</strong></p>
+<p>方法1: -e 参数串联</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 注意&#39;&#39;和&quot;&quot;转义时不同，&quot;&quot;会把$进行转义，所以打印行尾要用单引号</span>
+$ sed -n -e <span class="m">1</span><span class="s2">&quot;p&quot;</span> -e <span class="s2">&quot;2p&quot;</span> -e <span class="s1">&#39;$l&#39;</span> file
+Hello everyone
+my food is great
+fooooooooooood$
+</pre></div>
+
+<p>方法2: {;} 命令在大括号里串联使用，用分号分割</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 注意单双引号区别</span>
+$ sed -n <span class="s2">&quot;{1p;2p;\$l}&quot;</span> file
+$ sed -n <span class="s1">&#39;{1p;2p;$l}&#39;</span> file
+</pre></div>
+
+<p>{} 用法更为简便，也更为常用</p>
+<p><strong>保持空间</strong></p>
+<p>保持空间是对模式空间执行命令时的暂存场所，简单将就是提供了一个处理当前行内容时暂存之后，在下一行时再调用回来，或者反之的操作。</p>
+<p><code class="codehilite">h/H</code> 保存命令，将模式空间的内容复制/追加到保持空间
+<code class="codehilite">g/G</code> 取回命令，将保存空间的内容复制/追加到模式空间
+<code class="codehilite">x</code> 交换命令，将保持空间和模式空间内容互换</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 将文件倒续排列</span>
+$ sed  -e <span class="s1">&#39;{1!G;h;$!d}&#39;</span> file
+fooooooooooood
+Food
+food is ok
+my food is great
+Hello everyone
+
+<span class="c1"># 奇数行偶数行互换</span>
+$ cat data
+<span class="m">1</span>
+<span class="m">2</span>
+<span class="m">3</span>
+<span class="m">4</span>
+$ sed -n <span class="s1">&#39;{h;n;G;p}&#39;</span> <span class="m">2</span>
+<span class="m">2</span>
+<span class="m">1</span>
+<span class="m">4</span>
+<span class="m">3</span>
+<span class="c1"># 这条命令的原理是sed先读取第一行到模式空间，因为-n参数所以不会打印显示;然后h命令将第一行复制到保持空间，{}执行多个命令，进入下一个命令n,表示到第二行。然后是命令G，表示将保持空间的第一行内容追加到第二行后。然后命令p打印;接下来读取第三行</span>
+
+<span class="c1"># 用 sed 将 fastq 的reads数据转换为fasta数据</span>
+$ zcat <span class="m">1</span>.fastq.gz <span class="p">|</span> sed -n <span class="s1">&#39;{s/@/&gt;/g;p;n;p;n;n}&#39;</span> &gt; <span class="m">1</span>.fasta
+</pre></div>
+
+<h2 id="_1">脚本示例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><strong>给序列命名</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1"># 在序列test.fas第一行加入序列名称</span>
 $ <span class="nb">echo</span> <span class="s2">&quot;ATCCGAGTTAG&quot;</span> &gt; test.fas
 $ sed -i <span class="s1">&#39;1i\&gt;seq&#39;</span> test.fas

@@ -415,8 +415,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../02_blast/" title="02. Blast 与 Blast+" class="md-nav__link">
-      02. Blast 与 Blast+
+    <a href="../02_blast/" title="02. Blast 与 NCBI_Blast" class="md-nav__link">
+      02. Blast 与 NCBI_Blast
     </a>
   </li>
 
@@ -474,6 +474,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#_1" title="数据库相关" class="md-nav__link">
+    数据库相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#21" title="2.1 序列处理" class="md-nav__link">
     2.1 序列处理
   </a>
@@ -481,28 +488,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_1" title="引物设计" class="md-nav__link">
+  <a href="#_2" title="引物设计" class="md-nav__link">
     引物设计
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" title="双序列比对" class="md-nav__link">
+  <a href="#_3" title="双序列比对" class="md-nav__link">
     双序列比对
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="多序列比对" class="md-nav__link">
+  <a href="#_4" title="多序列比对" class="md-nav__link">
     多序列比对
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="数据可视化" class="md-nav__link">
+  <a href="#_5" title="数据可视化" class="md-nav__link">
     数据可视化
   </a>
   
@@ -514,7 +521,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="工具列表" class="md-nav__link">
+  <a href="#_6" title="工具列表" class="md-nav__link">
     工具列表
   </a>
   
@@ -834,11 +841,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      第七章 Pan和Core基因组分析
+      第七章 泛基因组分析
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
-        第七章 Pan和Core基因组分析
+        第七章 泛基因组分析
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -1573,6 +1580,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#_1" title="数据库相关" class="md-nav__link">
+    数据库相关
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#21" title="2.1 序列处理" class="md-nav__link">
     2.1 序列处理
   </a>
@@ -1580,28 +1594,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_1" title="引物设计" class="md-nav__link">
+  <a href="#_2" title="引物设计" class="md-nav__link">
     引物设计
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" title="双序列比对" class="md-nav__link">
+  <a href="#_3" title="双序列比对" class="md-nav__link">
     双序列比对
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="多序列比对" class="md-nav__link">
+  <a href="#_4" title="多序列比对" class="md-nav__link">
     多序列比对
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="数据可视化" class="md-nav__link">
+  <a href="#_5" title="数据可视化" class="md-nav__link">
     数据可视化
   </a>
   
@@ -1613,7 +1627,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="工具列表" class="md-nav__link">
+  <a href="#_6" title="工具列表" class="md-nav__link">
     工具列表
   </a>
   
@@ -1671,6 +1685,9 @@ $ conda activate emboss
 <span class="o">(</span>emboss<span class="o">)</span>$ showdb
 </pre></div>
 
+<h3 id="_1">数据库相关<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><strong>showdb</strong>
+<strong>infodb</strong></p>
 <h3 id="21">2.1 序列处理<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
 <p><strong><a href="http://structure.usc.edu/emboss/seqret.html">seqret</a></strong>: 生成序列或格式化序列</p>
 <div class="codehilite"><pre><span></span><span class="c1"># 读入序列，以60字符为长度将其格式化为规范的fasta格式数据</span>
@@ -1703,10 +1720,10 @@ output sequence<span class="o">(</span>s<span class="o">)</span> <span class="o"
 <span class="o">(</span>emboss<span class="o">)</span>$ backtranseq input.pep output.fas
 </pre></div>
 
-<h3 id="_1">引物设计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="_2">引物设计<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p><strong>eprimer3</strong>:
 <strong>primersearch</strong>:</p>
-<h3 id="_2">双序列比对<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_3">双序列比对<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>双序列(Pairwise Alignment)比对的软件</p>
 <p><strong>needle</strong>: local alignment 序列比对
 <strong>water</strong>: global alignment 序列比对，基于 water-smith 算法。</p>
@@ -1715,16 +1732,16 @@ output sequence<span class="o">(</span>s<span class="o">)</span> <span class="o"
 </pre></div>
 
 <p><strong>needleall</strong></p>
-<h3 id="_3">多序列比对<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_4">多序列比对<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p><strong>emma</strong>:
 <strong>edialign</strong>:</p>
-<h3 id="_4">数据可视化<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_5">数据可视化<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p><strong>density</strong>: 绘制核酸密度图。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># 生成序列密度图</span>
 <span class="o">(</span>emboss<span class="o">)</span>$ density -seqall input.fasta -display D -gragh ps
 </pre></div>
 
-<h2 id="_5">工具列表<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">工具列表<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>具体信息参见：<a href="http://emboss.sourceforge.net/apps/release/6.6/emboss/apps/">工具列表</a></p>
 <table>
 <thead>
