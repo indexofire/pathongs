@@ -70,10 +70,10 @@ pages:
   - '第十章 重组与种群分析':
     - '01. 病毒重组': C10_Recombination-and-Population-Structure/01_virus-recombination.md
   - '第十一章 常见分析工具':
-    - '01. SRST2 短序列比对基因工具': C11_Pathogen-NGS-Application/01_srst2.md
-    - '02. 拼接序列管家基因扫描工具 MLST': C11_Pathogen-NGS-Application/02_mlst.md
-    - '03. 拼接序列耐药基因扫描工具 Ariba': C11_Pathogen-NGS-Application/03_ariba.md
-    - '04. 细菌共线性分析工具 C-Sibelia': C11_Pathogen-NGS-Application/04_csibelia.md
+    - '01. SRST2 短序列比对基因工具': C11_Insilico-Genome-Application/01_srst2.md
+    - '02. 拼接序列管家基因扫描工具 MLST': C11_Insilico-Genome-Application/02_mlst.md
+    - '03. 拼接序列耐药基因扫描工具 Ariba': C11_Insilico-Genome-Application/03_ariba.md
+    - '04. 细菌共线性分析工具 C-Sibelia': C11_Insilico-Genome-Application/04_csibelia.md
   - '第十二章 宏基因组分析':
     - '01. kraken': C12_Metagenomics-Analysis/01_kraken.md
     - '02. centrifuge': C12_Metagenomics-Analysis/02_centrifuge.md

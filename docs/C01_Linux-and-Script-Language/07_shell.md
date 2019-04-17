@@ -67,4 +67,15 @@ $ if [ $t == 'ATCCGAC' ]; then echo "yes!"; else echo "no!"; fi
 no!
 ```
 
-##
+## 无聊的脚本
+
+生成一段特定长度的随机DNA序列
+
+```bash
+# 生成1000bp的DNA序列文件
+$ for i in {1..1000}; do c=(A T C G); echo ${c[`expr $RANDOM % 4`]} >> 1; done
+# 取出文件的\n
+$ sed -i ':a;N;$!ba;s/\n//g' 1
+# 添加序列名称
+$ sed -i '1i\>seq' 1
+```
