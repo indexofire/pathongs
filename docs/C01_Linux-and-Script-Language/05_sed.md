@@ -1,14 +1,17 @@
 # sed
 
-相比较与awk，sed常用于以行为单位进行替换。
+sed 全称 Stream Editor，即流编辑器。想对于 awk 处理每一行中各个字段的列特点，sed 常用于以行为单位的编辑操作，比如字符替换等。
+
+!!! note "基本逻辑"
+    sed [OPTION]... {script-only-if-no-other-script} [input-file]...
+
+sed 编辑内容可以是标准输入STDIN，也可以是一个文件。
 
 ```bash
 # 把pattern1替换为pattern2
 # 首先搜索pattern1，然后将其替换为pattern2
 $ sed s/pattern1/pattern2/g
 ```
-
-
 
 **文件行首插入新行**
 

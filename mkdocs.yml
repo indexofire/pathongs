@@ -1,7 +1,7 @@
 site_name: Pathogen NGS 数据分析入门
 site_description: '病原微生物高通量测序数据分析手册'
 site_author: 'Mark Renton'
-site_url: 'https://indexofire.github.io/pathongs'
+site_url: 'https://pathongs.hzcdclab.org/'
 theme: 'material'
 copyright: 'Copyright &copy; 2016 - 2018 HZCDC@Lab'
 
@@ -24,7 +24,7 @@ pages:
     - '07. Shell脚本': C01_Linux-and-Script-Language/07_shell.md
     - '08. Perl 编程': C01_Linux-and-Script-Language/08_perl.md
     - '09. R 编程': C01_Linux-and-Script-Language/09_r.md
-  - '第二章 产用工具':
+  - '第二章 常用工具':
     - '01. 公共生物数据库': C02_Common-Utility/01_databases.md
     - '02. Blast 与 Blast+': C02_Common-Utility/02_blast.md
     - '03. 玩转 edirect': C02_Common-Utility/03_edirect.md
