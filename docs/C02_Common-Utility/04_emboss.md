@@ -36,6 +36,12 @@ EMBOSS 工具集包含众多基于命令行的工具，可以集成到分析工�
 (emboss)$ showdb
 ```
 
+### 数据库相关
+
+**showdb**
+**infodb**
+
+
 ### 2.1 序列处理
 
 **[seqret](http://structure.usc.edu/emboss/seqret.html)**: 生成序列或格式化序列

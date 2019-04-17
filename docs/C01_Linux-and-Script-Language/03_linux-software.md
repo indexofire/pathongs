@@ -58,7 +58,32 @@ $ conda activate myenv
 (myenv)$ conda install mysoftware
 ```
 
-## 3. docker方式
+## 3. Git 代码管理工具
+
+git 是 Linux 内核之父 Linus 开发的代码管理工具。目前社区中比较活跃的 git 在线社群服务有 github, gitlab, bitbucket(过去是hg,现在也转为git)，国内的例如coding.net,oschina。github是最早最成功的 git 在线管理社区，极好的粘合了广大“码农”，众多主流的开源软件都驻扎在 github 中。
+
+许多生物学软件的源代码也选择托管在 github 中（老牌的可能在 sourceforge.net），如果我们要研究代码，或者使用脚本程序，或者通过源代码安装编译安装软件等，就要学会最基本的 git 命令。而且 github 上还有许多基于 markdown, rst, jupyter, pdf 等格式的教学资料，是学习的最好场所之一。
+
+```bash
+# 安装 git
+# ubuntu
+$ sudo apt install git-core
+# archlinux
+$ sudo pacman -S git
+
+# 克隆 bwa 源码仓库到本地
+$ git clone https://github.com/lh3/bwa.git
+$ cd bwa
+
+# 编译安装 bwa
+$ make
+$ sudo cp bwa /usr/local/sbin
+
+# 使用 bwa
+$ bwa mem ...
+```
+
+## 4. docker方式
 
 docker 是一种虚拟机，但是其与 virtualbox, vm 等的区别是其启动和调用都是毫秒级的，几乎感觉不到其的加载时间，但又与系统有沙盒模式隔离，保证了安全。docker 最大的好处是直接调用他人写的 DOCKERFILE 就可以下载 image，运行生成 container， DOCKERFILE 解决的安装的过程，除了下载安装速度可能略慢，其他几乎不需要更多的学习曲线。安装完成运行 container 即可使用。
 
@@ -67,5 +92,5 @@ docker 是一种虚拟机，但是其与 virtualbox, vm 等的区别是其启动
 $ sudo pacman -S docker
 
 # 使用 DockerFile
-$ docker 
+$ docker
 ```

@@ -26,7 +26,7 @@ pages:
     - '09. R 编程': C01_Linux-and-Script-Language/09_r.md
   - '第二章 常用工具':
     - '01. 公共生物数据库': C02_Common-Utility/01_databases.md
-    - '02. Blast 与 Blast+': C02_Common-Utility/02_blast.md
+    - '02. Blast 与 NCBI_Blast': C02_Common-Utility/02_blast.md
     - '03. 玩转 edirect': C02_Common-Utility/03_edirect.md
     - '04. EMBOSS 工具集': C02_Common-Utility/04_emboss.md
     - '07. MUMmer 工具': C02_Common-Utility/07_mummer.md
@@ -49,7 +49,7 @@ pages:
     - '02. 在线注释工具 rast': C06_Genome-Annotation/02_rast.md
     - '03. 注释工具 PGAAP': C06_Genome-Annotation/03_PGAAP.md
     - '04. SNP注释工具 snpEFF': C06_Genome-Annotation/04_snpEFF.md
-  - '第七章 Pan和Core基因组分析':
+  - '第七章 泛基因组分析':
     - '01. Pangenome 概述': C07_PanGenome-and-CoreGenome/01_pangenome.md
     - '02. Get_Homologues 分析': C07_PanGenome-and-CoreGenome/02_get_homologues.md
     - '03. BPGA 分析': C07_PanGenome-and-CoreGenome/03_BPGA.md
