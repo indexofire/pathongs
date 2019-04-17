@@ -1,6 +1,11 @@
 # EMBOSS
 
+---
+
 ![emboss](http://emboss.sourceforge.net/images/emboss.jpg)
+
+!!! note "本节介绍"
+    EMBOSS 是欧洲分子生物学组织开发的 Unix/Linux 下的生物学分析工具。EMBOSS 包含工具众多，这里只介绍与微生物基因组分析可能会用到的一些工具，所有的软件和其文档参考官方文档。
 
 !!! note
     EMBOSS 是欧洲分子生物学组织开发的 Unix/Linux 下的生物学分析工具。EMBOSS 包含工具众多，可以帮助我们在命令行下实现许多简单的生物学操作。但是由于 EMBOSS 的命令行方式比较传统，类似phylip的交互模式，和当前许多新工具的参数设置等不一致，加上许多新的工具代替，因此使用的机会不是很多。这里介绍部分与微生物基因组分析可能会用到的一些工具，所有的软件和其文档参考[官方文档](http://emboss.sourceforge.net/docs/)。
@@ -8,17 +13,28 @@
 ## 1. 安装 EMBOSS
 
 ```bash
-# ubuntu
+# ubuntu 包含 emboss 发行版
 $ sudo apt install emboss
 
-# 通过conda安装
+# 通过下载安装包
+
+# 通过 conda 安装
 $ conda create -n emboss emboss
 $ conda activate emboss
 ```
 
-## 2. 使用 EMBOSS 工具
+EMBOSS 工具集包含众多基于命令行的工具，可以集成到分析工具流中。EMBOSS 中的许多可以直接访问远程数据库，但这需要默认配置。如果是通过 conda 安装，则要将所在conda虚拟环境路径中的`share/EMBOSS/emboss.default.template`复制为`emboss.default`。如果是通过系统级安装，要在当前用户环境中配置数据库，则可以将`emboss.default.template`复制为`~/.embossrc`。
 
-EMBOSS 工具集包含众多基于命令行的工具，可以集成到分析工具流中。
+```bash
+# 建立配置文件
+(emboss)$ cd $CONDA_PREFIX/EMBOSS
+(emboss)$ cp emboss.default.template emboss.default
+(emboss)$ vim emboss.default
+# 将需要激活的数据库注释符号取出，比如embl
+
+# 查看可以使用的数据库
+(emboss)$ showdb
+```
 
 ### 2.1 序列处理
 
