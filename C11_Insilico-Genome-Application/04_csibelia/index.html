@@ -13,7 +13,7 @@
         <meta name="description" content="病原微生物高通量测序数据分析手册">
       
       
-        <link rel="canonical" href="https://indexofire.github.io/pathongs/C11_Pathogen-NGS-Application/02_mlst/">
+        <link rel="canonical" href="https://pathongs.hzcdclab.org/C11_Insilico-Genome-Application/04_csibelia/">
       
       
         <meta name="author" content="Mark Renton">
@@ -42,7 +42,7 @@
     
     
       
-        <title>02. 拼接序列管家基因扫描工具 MLST - Pathogen NGS 数据分析入门</title>
+        <title>04. 细菌共线性分析工具 C-Sibelia - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#mlst" tabindex="1" class="md-skip">
+      <a href="#c-sibelia" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -104,7 +104,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://indexofire.github.io/pathongs" title="Pathogen NGS 数据分析入门" class="md-header-nav__button md-logo">
+        <a href="https://pathongs.hzcdclab.org/" title="Pathogen NGS 数据分析入门" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -121,7 +121,7 @@
                 Pathogen NGS 数据分析入门
               </span>
               <span class="md-header-nav__topic">
-                02. 拼接序列管家基因扫描工具 MLST
+                04. 细菌共线性分析工具 C-Sibelia
               </span>
             
           
@@ -386,11 +386,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      第二章 产用工具
+      第二章 常用工具
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        第二章 产用工具
+        第二章 常用工具
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -1061,63 +1061,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        02. 拼接序列管家基因扫描工具 MLST
-      </label>
-    
-    <a href="./" title="02. 拼接序列管家基因扫描工具 MLST" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../02_mlst/" title="02. 拼接序列管家基因扫描工具 MLST" class="md-nav__link">
       02. 拼接序列管家基因扫描工具 MLST
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" title="1. 安装" class="md-nav__link">
-    1. 安装
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" title="2. 使用" class="md-nav__link">
-    2. 使用
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" title="3. 应用举例" class="md-nav__link">
-    3. 应用举例
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1137,11 +1085,96 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../04_csibelia/" title="04. 细菌共线性分析工具 C-Sibelia" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        04. 细菌共线性分析工具 C-Sibelia
+      </label>
+    
+    <a href="./" title="04. 细菌共线性分析工具 C-Sibelia" class="md-nav__link md-nav__link--active">
       04. 细菌共线性分析工具 C-Sibelia
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-sibelia" title="1. 安装 Sibelia" class="md-nav__link">
+    1. 安装 Sibelia
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" title="1.1 安装依赖包" class="md-nav__link">
+    1.1 安装依赖包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-sibelia" title="1.2 下载 Sibelia 预编译包" class="md-nav__link">
+    1.2 下载 Sibelia 预编译包
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-c-sibelia" title="2. 使用 C-Sibelia" class="md-nav__link">
+    2. 使用 C-Sibelia
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" title="2.1 比较测序结果与参比基因组" class="md-nav__link">
+    2.1 比较测序结果与参比基因组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-reference" title="3. Reference" class="md-nav__link">
+    3. Reference
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1531,22 +1564,55 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" title="1. 安装" class="md-nav__link">
-    1. 安装
+  <a href="#1-sibelia" title="1. 安装 Sibelia" class="md-nav__link">
+    1. 安装 Sibelia
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" title="1.1 安装依赖包" class="md-nav__link">
+    1.1 安装依赖包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-sibelia" title="1.2 下载 Sibelia 预编译包" class="md-nav__link">
+    1.2 下载 Sibelia 预编译包
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" title="2. 使用" class="md-nav__link">
-    2. 使用
+  <a href="#2-c-sibelia" title="2. 使用 C-Sibelia" class="md-nav__link">
+    2. 使用 C-Sibelia
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" title="2.1 比较测序结果与参比基因组" class="md-nav__link">
+    2.1 比较测序结果与参比基因组
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" title="3. 应用举例" class="md-nav__link">
-    3. 应用举例
+  <a href="#3-reference" title="3. Reference" class="md-nav__link">
+    3. Reference
   </a>
   
 </li>
@@ -1567,50 +1633,74 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C11_Pathogen-NGS-Application/02_mlst.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C11_Insilico-Genome-Application/04_csibelia.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="mlst">MLST<a class="headerlink" href="#mlst" title="Permanent link">&para;</a></h1>
-<p>传统的 MLST 分析方法采用对样本进行 PCR 扩增后进行 Sanger 测序、拼接、比对后，获得等位基因序列，根据碱基差异分配序号，再根据相应的序号组合确定 ST 型別。常用的工具有bigsDB，Bionumerics等。</p>
-<p>随着 NGS 技术应用与微生物基因组测序，越来越多的细菌基因组被测序生成草图。几乎所有的数据都可以覆盖 MLST 涉及的管家基因，因此你可以直接通过基因组上管家基因的序列来分析获得其ST型別。</p>
-<p><a href="https://github.com/tseemann/mlst">MLST</a> 是由 <a href="https://twitter.com/torstenseemann">@Torsten Seemann</a> 用 perl 开发的实现从fasta序列获取MLST型別的工具。</p>
-<h2 id="1">1. 安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1"># mlst 工具在 bioconda 有安装包，可以直接通过 conda 安装</span>
-$ conda create -n mlst
-$ conda activate mlst
-<span class="o">(</span>mlst<span class="o">)</span>$ conda install mlst
+                <h1 id="c-sibelia">C-Sibelia<a class="headerlink" href="#c-sibelia" title="Permanent link">&para;</a></h1>
+<p><a href="http://bioinf.spbau.ru/sibelia">Sibelia</a> 是一个由 <a href="http://spbau.ru">St. Petersburg Academic University of the Russian Academy of Sciences</a> 开发的主要用于病原微生物的比较基因组学工具。它可以用来发现微生物的共有区域，非共有区域以及重组区域等。通过对共线性区域的分析与比较，并采用 <a href="http://circos.ca">circos</a> 以及 <a href="http://d3js.org">d3js</a> 生成可视化结果。</p>
+<p><a href="http://bioinf.spbau.ru/sibelia">Sibelia</a> 有2个组件：一个叫<code class="codehilite">Sibelia</code>，可以用来处理多个基因组完成图的共线性分析。另一个叫<code class="codehilite">C-Sibelia</code>，可以用来比较2个基因组（基因组scaffolds与参考基因组）。</p>
+<h2 id="1-sibelia">1. 安装 Sibelia<a class="headerlink" href="#1-sibelia" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 安装依赖包<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>如果要自己编译安装<a href="http://bioinf.spbau.ru/sibelia">Sibelia</a>，需要先安装以下的 C++ 库和软件。然后自行编译。</p>
+<div class="codehilite"><pre><span></span><span class="c1"># install libdivsufsort</span>
+$ wget https://github.com/y-256/libdivsufsort/archive/2.0.1.tar.gz
+$ tar zxf <span class="m">2</span>.0.1.tar.gz
+$ <span class="nb">cd</span> libdivsufsort-2.0.1
+$ mkdir build <span class="o">&amp;&amp;</span> <span class="nb">cd</span> build
+$ cmake -DCMAKE_BUILD_TYPE<span class="o">=</span><span class="s2">&quot;Release&quot;</span> -DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="s2">&quot;/usr/local&quot;</span> ..
+$ make
+$ sudo make install
+
+<span class="c1"># install tclap</span>
+$ wget http://sourceforge.net/projects/tclap/files/tclap-1.2.1.tar.gz
+$ tar zxf tclap-1.2.1.tar.gz
+$ <span class="nb">cd</span> tclap-1.2.1
+$ ./configure
+$ make
+$ sudo make install
+
+<span class="c1"># install seqan</span>
+$ sudo apt-get install lib
+$ wget
+http://packages.seqan.de/seqan-library/seqan-library-2.0.1.tar.bz2
+$ tar xjf seqan-library-2.0.1.tar.bz2
+$ sudo cp -R seqan-library-2.0.1/include/seqan /usr/include
+$ sudo cp -R seqan-library-2.0.1/share/doc/seqan /usr/share/doc
+
+<span class="c1"># install boost</span>
+$ sudo apt-get install libboost-dev
+
+<span class="c1"># build Sibelia</span>
+$ git clone https://github.com/bioinf/Sibelia
+$ <span class="nb">cd</span> Sibelia/build
+$ cmake ../src
+$ make
+$ sudo make install
 </pre></div>
 
-<h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<p>MLST 支持 <code class="codehilite"><span class="na">.fa</span></code>,<code class="codehilite"><span class="na">.fasta</span></code>,<code class="codehilite"><span class="na">.gb</span></code>,<code class="codehilite"><span class="na">.gbk</span></code>,<code class="codehilite"><span class="na">.fna</span></code>以及这些格式的gz压缩包格式的文件。不加参数可以对所有物种数据库进行扫描，加上参数<code class="codehilite">--scheme</code>可以对指定物种进行扫描。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 直接扫描 fasta 数据</span>
-<span class="o">(</span>mlst<span class="o">)</span>$ mlst mygenome.fasta
-
-<span class="c1"># 支持 multiple fasta 格式</span>
-<span class="o">(</span>mlst<span class="o">)</span>$ mlst scaffolds.fasta
-
-<span class="c1"># 支持多文件格式</span>
-<span class="o">(</span>mlst<span class="o">)</span>$ mlst data/*
-
-<span class="c1"># 查看可以扫描的物种</span>
-<span class="o">(</span>mlst<span class="o">)</span>$ mlst --list
-<span class="c1"># 使用 listera monocytogenes 物种数据库扫描</span>
-<span class="o">(</span>mlst<span class="o">)</span>$ mlst --scheme lmonocytogenes data/*
+<h3 id="12-sibelia">1.2 下载 Sibelia 预编译包<a class="headerlink" href="#12-sibelia" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>$ wget http://sourceforge.net/projects/sibelia-bio/files/3.0.6/Sibelia-3.0.6-Linux.tar.gz
+$ tar zxf Sibelia-3.0.6-Linux.tar.gz -C ~/app
+$ <span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$PATH:$HOME/app/Sibelia-3.0.6/bin&quot;&#39;</span> &gt;&gt; ~/.bashc
 </pre></div>
 
-<h2 id="3">3. 应用举例<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<p>对 NCBI genome 数据库中 bacillus cereus 的 Assembly 进行扫描获取 MLST 数据。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># edirect 抓取 FTP 链接，awk补全下载路径，用 wget 工具批量下载（设置相应参数避免进入下载假死状态）</span>
-$ esearch -db assembly -query <span class="s2">&quot;Bacillus cereus[ORGN] AND latest[SB]&quot;</span> <span class="p">|</span> <span class="se">\</span>
-&gt; efetch -format docsum <span class="p">|</span> <span class="se">\</span>
-&gt; xtract -pattern DocumentSummary -element FtpPath_RefSeq <span class="p">|</span> <span class="se">\</span>
-&gt; awk -F<span class="s2">&quot;/&quot;</span> <span class="s1">&#39;{print $0&quot;/&quot;$NF&quot;_genomic.fna.gz&quot;}&#39;</span> <span class="p">|</span> <span class="se">\</span>
-&gt; xargs wget --no-passive-ftp --limit-rate<span class="o">=</span>200k
+<h2 id="2-c-sibelia">2. 使用 C-Sibelia<a class="headerlink" href="#2-c-sibelia" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 比较测序结果与参比基因组<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># run sibelia</span>
+$ C-Sibelia.py reference.fasta sequencing.fasta -o output
 
-<span class="c1"># mlst 扫描</span>
-<span class="o">(</span>mlst<span class="o">)</span>$ mlst --scheme bcereus *.fna.gz &gt; ../bcereus-mlst-result.txt
-<span class="o">(</span>mlst<span class="o">)</span>$ cat ../bcereus-mlst-result.txt
+<span class="c1"># plot circos image</span>
+$ circos -conf output/circos/circos.conf
+<span class="c1"># view circos result</span>
+$ evince output/circos/circos.svg
+<span class="c1"># or view the lines plot</span>
+$ google-chrome output/d3_blocks_diagram.html
 </pre></div>
+
+<h2 id="3-reference">3. Reference<a class="headerlink" href="#3-reference" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="http://bioinf.spbau.ru/sibelia">Sibelia</a></li>
+</ol>
                 
                   
                 
@@ -1631,7 +1721,7 @@ $ esearch -db assembly -query <span class="s2">&quot;Bacillus cereus[ORGN] AND l
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../01_srst2/" title="01. SRST2 短序列比对基因工具" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../03_ariba/" title="03. 拼接序列耐药基因扫描工具 Ariba" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1640,19 +1730,19 @@ $ esearch -db assembly -query <span class="s2">&quot;Bacillus cereus[ORGN] AND l
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                01. SRST2 短序列比对基因工具
+                03. 拼接序列耐药基因扫描工具 Ariba
               </span>
             </div>
           </a>
         
         
-          <a href="../03_ariba/" title="03. 拼接序列耐药基因扫描工具 Ariba" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../C12_Metagenomics-Analysis/01_kraken/" title="01. kraken" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                03. 拼接序列耐药基因扫描工具 Ariba
+                01. kraken
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

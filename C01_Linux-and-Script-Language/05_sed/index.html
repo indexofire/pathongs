@@ -13,7 +13,7 @@
         <meta name="description" content="病原微生物高通量测序数据分析手册">
       
       
-        <link rel="canonical" href="https://indexofire.github.io/pathongs/C01_Linux-and-Script-Language/05_sed/">
+        <link rel="canonical" href="https://pathongs.hzcdclab.org/C01_Linux-and-Script-Language/05_sed/">
       
       
         <meta name="author" content="Mark Renton">
@@ -104,7 +104,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://indexofire.github.io/pathongs" title="Pathogen NGS 数据分析入门" class="md-header-nav__button md-logo">
+        <a href="https://pathongs.hzcdclab.org/" title="Pathogen NGS 数据分析入门" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -397,11 +397,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      第二章 产用工具
+      第二章 常用工具
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        第二章 产用工具
+        第二章 常用工具
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -1060,7 +1060,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C11_Pathogen-NGS-Application/01_srst2/" title="01. SRST2 短序列比对基因工具" class="md-nav__link">
+    <a href="../../C11_Insilico-Genome-Application/01_srst2/" title="01. SRST2 短序列比对基因工具" class="md-nav__link">
       01. SRST2 短序列比对基因工具
     </a>
   </li>
@@ -1072,7 +1072,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C11_Pathogen-NGS-Application/02_mlst/" title="02. 拼接序列管家基因扫描工具 MLST" class="md-nav__link">
+    <a href="../../C11_Insilico-Genome-Application/02_mlst/" title="02. 拼接序列管家基因扫描工具 MLST" class="md-nav__link">
       02. 拼接序列管家基因扫描工具 MLST
     </a>
   </li>
@@ -1084,7 +1084,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C11_Pathogen-NGS-Application/03_ariba/" title="03. 拼接序列耐药基因扫描工具 Ariba" class="md-nav__link">
+    <a href="../../C11_Insilico-Genome-Application/03_ariba/" title="03. 拼接序列耐药基因扫描工具 Ariba" class="md-nav__link">
       03. 拼接序列耐药基因扫描工具 Ariba
     </a>
   </li>
@@ -1096,7 +1096,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C11_Pathogen-NGS-Application/04_csibelia/" title="04. 细菌共线性分析工具 C-Sibelia" class="md-nav__link">
+    <a href="../../C11_Insilico-Genome-Application/04_csibelia/" title="04. 细菌共线性分析工具 C-Sibelia" class="md-nav__link">
       04. 细菌共线性分析工具 C-Sibelia
     </a>
   </li>
@@ -1498,10 +1498,24 @@
                 
                 
                 <h1 id="sed">sed<a class="headerlink" href="#sed" title="Permanent link">&para;</a></h1>
-<p>相比较与awk，sed常用于以行为单位进行替换。</p>
+<p>sed 全称 Stream Editor，即流编辑器。想对于 awk 处理每一行中各个字段的列特点，sed 常用于以行为单位的编辑操作，比如字符替换等。</p>
+<div class="admonition note">
+<p class="admonition-title">基本逻辑</p>
+<p>sed [OPTION]... {script-only-if-no-other-script} [input-file]...</p>
+</div>
+<p>sed 编辑内容可以是标准输入STDIN，也可以是一个文件。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># 把pattern1替换为pattern2</span>
 <span class="c1"># 首先搜索pattern1，然后将其替换为pattern2</span>
 $ sed s/pattern1/pattern2/g
+</pre></div>
+
+<p><strong>文件行首插入新行</strong></p>
+<div class="codehilite"><pre><span></span><span class="c1"># 在序列test.fas第一行加入序列名称</span>
+$ <span class="nb">echo</span> <span class="s2">&quot;ATCCGAGTTAG&quot;</span> &gt; test.fas
+$ sed -i <span class="s1">&#39;1i\&gt;seq&#39;</span> test.fas
+$ cat test.fa
+&gt;seq
+ATCCGAGTTAG
 </pre></div>
                 
                   
