@@ -36,13 +36,41 @@ EMBOSS 工具集包含众多基于命令行的工具，可以集成到分析工�
 (emboss)$ showdb
 ```
 
+## 2. 使用
+
+### 查看各个程序
+
+**wossname**: EMBOSS 包含众多应用程序，为方便查询，有一个专门的程序`wossname`可以查看所有程序及功能。
+
+```bash
+# 显示所有程序及功能
+(emboss)$ wossname
+# 显示某一个类别的程序
+# 显示alignment比对相关的应用程序
+(emboss)$ wossname alignment
+
+# 按功能分组显示应用
+(emboss)$ wossname -search "" | less
+
+# 按字母顺序显示应用
+(emboss)$ wossname -search "" -alphabetic | less
+```
+
 ### 数据库相关
 
-**showdb**
-**infodb**
+**showdb**: 显示可用的数据库
+**dbtell**: 显示数据库相关信息
+
+```bash
+# 显示当前可用数据库
+(emboss)$ showdb -full
+
+# 显示embl数据库信息
+(emboss)$ dbtell embl
+```
 
 
-### 2.1 序列处理
+### 序列处理
 
 **[seqret](http://structure.usc.edu/emboss/seqret.html)**: 生成序列或格式化序列
 
@@ -94,17 +122,22 @@ output sequence(s) [...]:           <--- 输入序列保存的文件名称
 **water**: global alignment 序列比对，基于 water-smith 算法。
 
 ```bash
-# 对2条序列 seq1.fas 和 seq2.fas 进行全局比对，生成 seq1v2.alignment
-(emboss)$ water seq1.fas seq2.fas seq1v2.alignment
+# 对2条序列 seq1.fas 和 seq2.fas 进行全局比对，生成 seq1v2 alignment
+(emboss)$ water seq1.fas seq2.fas seq1v2.sw
+(emboss)$ needle seq1.fas seq2.fas seq1v2.nl
 ```
 
 **needleall**
 
 ### 多序列比对
 
-**emma**:
-**edialign**:
+**emma**: 基于 clustalW 的多序列比对程序
+**edialign**: Local 多序列比对
 
+```bash
+(emboss)$ emma msa1.fas msa1.phy
+(emboss)$ edialign
+```
 
 ### 数据可视化
 

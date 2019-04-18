@@ -87,10 +87,51 @@ $ bwa mem ...
 
 docker 是一种虚拟机，但是其与 virtualbox, vm 等的区别是其启动和调用都是毫秒级的，几乎感觉不到其的加载时间，但又与系统有沙盒模式隔离，保证了安全。docker 最大的好处是直接调用他人写的 DOCKERFILE 就可以下载 image，运行生成 container， DOCKERFILE 解决的安装的过程，除了下载安装速度可能略慢，其他几乎不需要更多的学习曲线。安装完成运行 container 即可使用。
 
-```bash
-# Archlinux 安装 docker
-$ sudo pacman -S docker
+**Ubuntu 18.04 Server安装docker**
 
-# 使用 DockerFile
-$ docker
+```bash
+# 添加 docker 仓库
+$ sudo apt update
+$ sudo apt install apt-transport-https ca-certificates curl software-properties-common
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+$ sudo apt update
+$ apt-cache policy docker-ce
+# 安装 docker
+$ sudo apt install docker-ce
+# 查看 docker 启动状态
+$ sudo systemctl status docker
+# 如果没有启动系统是运行 docker
+
+# 将当前用户加入 docker 组，运行 docker 时可以不用输入 sudo 命令
+$ sudo usermod -aG docker ${USER}
+# 更新组信息
+$ su - ${USER}
+# 确认当前用户已经加入 docker 组
+$ id -nG
+```
+
+**docker镜像下载**
+
+```bash
+# 运行软件自带的 hello-world 镜像
+$ docker run hello-world
+# 镜像搜索
+$ docker search ubuntu
+# 镜像下载
+$ docker pull ubuntu
+# 查看当前已有的镜像
+$ docker images
+```
+
+**docker容器运行**
+
+```bash
+# 以交互方式运行容器 ubuntu
+$ docker run -it ubuntu
+
+# 查看当前运行容器
+$ docker ps
+# 查看所有容器
+$ docker ps -a
 ```
