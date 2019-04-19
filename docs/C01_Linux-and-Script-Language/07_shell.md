@@ -67,15 +67,19 @@ $ if [ $t == 'ATCCGAC' ]; then echo "yes!"; else echo "no!"; fi
 no!
 ```
 
-## 无聊的脚本
+## 一些无聊的脚本
 
-生成一段特定长度的随机DNA序列
+**生成一段特定长度的随机DNA序列**
 
 ```bash
 # 生成1000bp的DNA序列文件
-$ for i in {1..1000}; do c=(A T C G); echo ${c[`expr $RANDOM % 4`]} >> 1; done
-# 取出文件的\n
-$ sed -i ':a;N;$!ba;s/\n//g' 1
+$ for i in {1..1000}; do c=(A T C G); echo ${c[`expr $RANDOM % 4`]} >> 1.fa; done
+# 去除文件的换行符号
+# sed 流处理的特殊机制，将一行储存在模式空间时会去除\n，返回时再加上\n
+# 因此直接用 s/\n//g 匹配是无法去除的
+# 这个命令其实是一个多 sed 命令，省略了{}
+# :a 定义一个label，用来处理跳转
+$ sed -i ':a;N;$!ba;s/\n//g' 1.fa
 # 添加序列名称
-$ sed -i '1i\>seq' 1
+$ sed -i '1i\>seq' 1.fa
 ```

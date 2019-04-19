@@ -1,5 +1,7 @@
 # Biopython
 
+---
+
 ## 学习材料
 
 - Biopython官方文档
@@ -15,11 +17,12 @@ from Bio import SeqIO
 
 ```python
 from Bio import Seq
-
 ```
 
 
 ## 使用 Entrez
+
+Biopython 内建了对 NCBI Entrez API 操作的模块，可以编写脚本进行数据库检索等操作。
 
 ```python
 # example from dbSNP
@@ -80,12 +83,13 @@ for start in range(0, total_count, retmax):
         attempt += 1
         try:
             fetch_handle = Entrez.efetch(db="snp",
-                                         rettype="uilist", #available types [uilist | docsum (use retmode=xml))
-                                         #retmode="xml",
-                                         retstart=start,
-                                         retmax=retmax,
-                                         webenv=webenv,
-                                         query_key=query_key )
+                rettype="uilist", #available types [uilist | docsum (use retmode=xml))
+                #retmode="xml",
+                retstart=start,
+                retmax=retmax,
+                webenv=webenv,
+                query_key=query_key
+            )
         except HTTPError as err:
             if 500 <= err.code <= 599:
                 print("Received error from server %s" % err)
@@ -98,4 +102,45 @@ for start in range(0, total_count, retmax):
         print(data)
         fetch_handle.close()
 
+```
+
+## 多序列比对文件格式转换
+
+参考：[fasta格式转换为phylip](https://www.evernote.com/client/web?login=true)
+
+```python
+seqs = []
+
+with open('aln.fasta', 'r') as f:
+    for line in f:
+        line = line.strip('\n')
+        if line.startswith('&gt;'):
+            seqs.append('%-14s' % line[1:14])  # The length of sequence name in test.fasta is 12
+        else:
+            seqs[-1] += line
+
+with open('aln.phy', 'w') as f:
+    f.write('%s %s\n%s\n' % (len(seqs), len(seqs[0])-14, '\n'.join(seqs)))
+```
+
+```python
+# 用正则表达式
+import re
+
+with open('aln.fasta', 'r') as f:
+    seqs = [(m.group(1), ''.join(m.group(2).split()))
+    for m in re.finditer(r'(?m)^>([^ \n]+)[^\n]*([^>]*)', f.read())]
+
+with open('aln.phy', 'w') as f:
+    f.write('%d %d\n' % (len(seqs), len(seqs[0][1])))
+    for i in seqs:
+        f.write('%-14s %s\n' % i)
+```
+
+使用 biopython 解决
+
+```python
+# Biopython
+from Bio import SeqIO
+from Bio import Seq
 ```

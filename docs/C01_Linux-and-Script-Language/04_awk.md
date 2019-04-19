@@ -1,28 +1,41 @@
 # 用 awk 处理 NGS 数据
 
-awk 工具常用来对文件内容按行进行匹配搜索，一旦某一行中的内容与搜索条件匹配，则对该内容做进一步操作。本质上讲，awk 属于数据驱动的程序，因此 awk 程序也非常容易编写与阅读。高通量测序技术带来大量的数据，而生物学分析往往直需要其中特定的部分，这时 awk 就可以大显身手为测序数据的转换与分析提供帮助。我们首先来看一个最简单的 awk 命令程序：
+---
+
+![awk](https://pbs.twimg.com/media/DeLcVfSWAAAw6OZ.jpg)
+
+!!! Abstract "内容简介"
+    awk 工具常用来对文件内容按行进行匹配搜索，一旦某一行中的内容与搜索条件匹配，则对该内容做进一步操作。本质上讲，awk 属于数据驱动的程序，因此 awk 程序也非常容易编写与阅读。高通量测序技术带来大量的数据，而生物学分析往往直需要其中特定的部分，这时 awk 就可以大显身手为测序数据的转换与分析提供帮助。
+
+**我们首先来看一个最简单的 awk 命令程序：**
 
 ```bash
 # 将contigs.fasta文件中序列ID打印到终端
-# contigs.fasta内如：
-# >seq1
-# ATGGGGTCCGATTACCG
-# >seq2
-# CGGNTTACCGYGACAGT
+$ cat contigs.fasta
+>seq1
+ATGGGGTCCGATTACCG
+>seq2
+CGGNTTACCGYGACAGT
 
+# 提取序列名称
 $ awk '/>/' contigs.fasta
-
-# 屏幕上会输出：
 >seq1
 >seq2
 
-$ awk '/^ATG/' contigs.fasta内如
-
-#屏幕上会输出：
+# 提取ATG开始的序列
+$ awk '/^ATG/' contigs.fasta
 ATGGGGTCCGATTACCG
+
+# 当第一列包含gene1字符时，打印第二列信息
+$ awk '$1 ~/gene1/ {print $2}' input_data
+# 用 grep 和 sed 实现类似效果
+$ cat input_data | grep gene1 | sed {$1}
 ```
 
-这个命令很简单，就是将 fasta 文件中包含 '>' 字符的行输出，实际上就是将所有的序列头内容输出。作用类似`grep ">"`。
+!!! note
+    awk也是一行行输出，用模式匹配时，与 grep 类似。使用这个命令很简单，就是将 fasta 文件中包含 '>' 字符的行输出，实际上就是将所有的序列头内容输出。作用类似`grep ">"`。
+
+## 1. awk 命令构成
 
 awk 程序主体主要包括 pattern，action和input file：
 
@@ -30,18 +43,19 @@ awk 程序主体主要包括 pattern，action和input file：
 * { action } 则表示搜索匹配后要做的操作。
 * input file：所要搜索的输入内容，比如前面例子的 contigs.fasta
 
-awk可以在shell里直接运行：
+!!! info "知识点"
+    awk可以在shell里直接运行：
 
-```bash
-$ awk 'pattern { action }' input_file
-```
+    ```bash
+    $ awk 'pattern { action }' input_file
+    ```
 
-也可以写成awk程序来运行。一个 awk 程序往往如下所示：
+    也可以写成awk程序来运行。一个 awk 程序往往如下所示：
 
-```awk
-#!/usr/bin/awk -f
-pattern { action }
-```
+    ```awk
+    #!/usr/bin/awk -f
+    pattern { action }
+    ```
 
 awk 可以不需要输入文件；对于pattern和action来说，2者至少要有一个才能运行。如果没有pattern，则默认匹配任何输入，按行输出并执行action。如果没有action，则匹配pattern并按行输出不做额外操作。
 
@@ -69,19 +83,10 @@ $ chmod +x hello_world
 $ ./hello_world
 ```
 
-## 1. 了解 awk 基本用法
-
-```bash
-$ awk '$1~/gene1/ { print $2 }' input_data
-```
-
-作用与 cat + grep + sed 类似
-
-```bash
-$ cat input_data | grep gene1 | sed {$1}
-```
-
 ## 2. awk 基本语法
+
+
+
 
 ### 2.1 Pattern
 

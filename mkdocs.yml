@@ -18,12 +18,14 @@ pages:
     - '01. Linux 安装实例': C01_Linux-and-Script-Language/01_linux-installation.md
     - '02. Linux 基本命令': C01_Linux-and-Script-Language/02_basic-cml.md
     - '03. Linux 软件管理': C01_Linux-and-Script-Language/03_linux-software.md
-    - '04. 列处理工具 awk': C01_Linux-and-Script-Language/04_awk.md
-    - '05. 行处理工具 sed': C01_Linux-and-Script-Language/05_sed.md
-    - '06. Python 编程': C01_Linux-and-Script-Language/06_python.md
+    - '04. awk 列处理工具': C01_Linux-and-Script-Language/04_awk.md
+    - '05. sed 行处理工具': C01_Linux-and-Script-Language/05_sed.md
+    - '06. 其他命令行工具': C01_Linux-and-Script-Language/06_tools.md
     - '07. Shell脚本': C01_Linux-and-Script-Language/07_shell.md
     - '08. Perl 编程': C01_Linux-and-Script-Language/08_perl.md
-    - '09. R 编程': C01_Linux-and-Script-Language/09_r.md
+    - '09. Python 编程': C01_Linux-and-Script-Language/09_python.md
+    - '10. Biopython 编程': C01_Linux-and-Script-Language/10_biopython.md
+    - '11. R 编程': C01_Linux-and-Script-Language/11_r.md
   - '第二章 常用工具':
     - '01. 公共生物数据库': C02_Common-Utility/01_databases.md
     - '02. Blast 与 NCBI_Blast': C02_Common-Utility/02_blast.md
