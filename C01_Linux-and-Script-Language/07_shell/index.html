@@ -307,8 +307,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../04_awk/" title="04. 列处理工具 awk" class="md-nav__link">
-      04. 列处理工具 awk
+    <a href="../04_awk/" title="04. awk 列处理工具" class="md-nav__link">
+      04. awk 列处理工具
     </a>
   </li>
 
@@ -319,8 +319,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../05_sed/" title="05. 行处理工具 sed" class="md-nav__link">
-      05. 行处理工具 sed
+    <a href="../05_sed/" title="05. sed 行处理工具" class="md-nav__link">
+      05. sed 行处理工具
     </a>
   </li>
 
@@ -331,8 +331,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../06_python/" title="06. Python 编程" class="md-nav__link">
-      06. Python 编程
+    <a href="../06_tools/" title="06. 其他命令行工具" class="md-nav__link">
+      06. 其他命令行工具
     </a>
   </li>
 
@@ -377,8 +377,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="无聊的脚本" class="md-nav__link">
-    无聊的脚本
+  <a href="#_2" title="一些无聊的脚本" class="md-nav__link">
+    一些无聊的脚本
   </a>
   
 </li>
@@ -412,8 +412,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../09_r/" title="09. R 编程" class="md-nav__link">
-      09. R 编程
+    <a href="../09_python/" title="09. Python 编程" class="md-nav__link">
+      09. Python 编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10_biopython/" title="10. Biopython 编程" class="md-nav__link">
+      10. Biopython 编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11_r/" title="11. R 编程" class="md-nav__link">
+      11. R 编程
     </a>
   </li>
 
@@ -1531,8 +1555,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="无聊的脚本" class="md-nav__link">
-    无聊的脚本
+  <a href="#_2" title="一些无聊的脚本" class="md-nav__link">
+    一些无聊的脚本
   </a>
   
 </li>
@@ -1619,14 +1643,18 @@ $ <span class="k">if</span> <span class="o">[</span> <span class="nv">$t</span> 
 no!
 </pre></div>
 
-<h2 id="_2">无聊的脚本<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>生成一段特定长度的随机DNA序列</p>
+<h2 id="_2">一些无聊的脚本<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><strong>生成一段特定长度的随机DNA序列</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1"># 生成1000bp的DNA序列文件</span>
-$ <span class="k">for</span> i in <span class="o">{</span><span class="m">1</span>..1000<span class="o">}</span><span class="p">;</span> <span class="k">do</span> <span class="nv">c</span><span class="o">=(</span>A T C G<span class="o">)</span><span class="p">;</span> <span class="nb">echo</span> <span class="si">${</span><span class="nv">c</span><span class="p">[</span><span class="sb">`</span>expr <span class="nv">$RANDOM</span> % <span class="m">4</span><span class="sb">`</span><span class="p">]</span><span class="si">}</span> &gt;&gt; <span class="m">1</span><span class="p">;</span> <span class="k">done</span>
-<span class="c1"># 取出文件的\n</span>
-$ sed -i <span class="s1">&#39;:a;N;$!ba;s/\n//g&#39;</span> <span class="m">1</span>
+$ <span class="k">for</span> i in <span class="o">{</span><span class="m">1</span>..1000<span class="o">}</span><span class="p">;</span> <span class="k">do</span> <span class="nv">c</span><span class="o">=(</span>A T C G<span class="o">)</span><span class="p">;</span> <span class="nb">echo</span> <span class="si">${</span><span class="nv">c</span><span class="p">[</span><span class="sb">`</span>expr <span class="nv">$RANDOM</span> % <span class="m">4</span><span class="sb">`</span><span class="p">]</span><span class="si">}</span> &gt;&gt; <span class="m">1</span>.fa<span class="p">;</span> <span class="k">done</span>
+<span class="c1"># 去除文件的换行符号</span>
+<span class="c1"># sed 流处理的特殊机制，将一行储存在模式空间时会去除\n，返回时再加上\n</span>
+<span class="c1"># 因此直接用 s/\n//g 匹配是无法去除的</span>
+<span class="c1"># 这个命令其实是一个多 sed 命令，省略了{}</span>
+<span class="c1"># :a 定义一个label，用来处理跳转</span>
+$ sed -i <span class="s1">&#39;:a;N;$!ba;s/\n//g&#39;</span> <span class="m">1</span>.fa
 <span class="c1"># 添加序列名称</span>
-$ sed -i <span class="s1">&#39;1i\&gt;seq&#39;</span> <span class="m">1</span>
+$ sed -i <span class="s1">&#39;1i\&gt;seq&#39;</span> <span class="m">1</span>.fa
 </pre></div>
                 
                   
@@ -1648,7 +1676,7 @@ $ sed -i <span class="s1">&#39;1i\&gt;seq&#39;</span> <span class="m">1</span>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../06_python/" title="06. Python 编程" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../06_tools/" title="06. 其他命令行工具" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1657,7 +1685,7 @@ $ sed -i <span class="s1">&#39;1i\&gt;seq&#39;</span> <span class="m">1</span>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                06. Python 编程
+                06. 其他命令行工具
               </span>
             </div>
           </a>

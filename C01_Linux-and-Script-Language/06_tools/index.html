@@ -13,7 +13,7 @@
         <meta name="description" content="病原微生物高通量测序数据分析手册">
       
       
-        <link rel="canonical" href="https://pathongs.hzcdclab.org/C04_Pathogen-Genome-Assembly/05_quast/">
+        <link rel="canonical" href="https://pathongs.hzcdclab.org/C01_Linux-and-Script-Language/06_tools/">
       
       
         <meta name="author" content="Mark Renton">
@@ -42,7 +42,7 @@
     
     
       
-        <title>05. Quast 验证 - Pathogen NGS 数据分析入门</title>
+        <title>06. 其他命令行工具 - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#quast" tabindex="1" class="md-skip">
+      <a href="#linux" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -121,7 +121,7 @@
                 Pathogen NGS 数据分析入门
               </span>
               <span class="md-header-nav__topic">
-                05. Quast 验证
+                06. 其他命令行工具
               </span>
             
           
@@ -248,10 +248,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       第一章 背景知识介绍
@@ -269,7 +271,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/01_linux-installation/" title="01. Linux 安装实例" class="md-nav__link">
+    <a href="../01_linux-installation/" title="01. Linux 安装实例" class="md-nav__link">
       01. Linux 安装实例
     </a>
   </li>
@@ -281,7 +283,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/02_basic-cml/" title="02. Linux 基本命令" class="md-nav__link">
+    <a href="../02_basic-cml/" title="02. Linux 基本命令" class="md-nav__link">
       02. Linux 基本命令
     </a>
   </li>
@@ -293,7 +295,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/03_linux-software/" title="03. Linux 软件管理" class="md-nav__link">
+    <a href="../03_linux-software/" title="03. Linux 软件管理" class="md-nav__link">
       03. Linux 软件管理
     </a>
   </li>
@@ -305,7 +307,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/04_awk/" title="04. awk 列处理工具" class="md-nav__link">
+    <a href="../04_awk/" title="04. awk 列处理工具" class="md-nav__link">
       04. awk 列处理工具
     </a>
   </li>
@@ -317,7 +319,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/05_sed/" title="05. sed 行处理工具" class="md-nav__link">
+    <a href="../05_sed/" title="05. sed 行处理工具" class="md-nav__link">
       05. sed 行处理工具
     </a>
   </li>
@@ -327,11 +329,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/06_tools/" title="06. 其他命令行工具" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="06. 其他命令行工具" class="md-nav__link md-nav__link--active">
       06. 其他命令行工具
     </a>
+    
   </li>
 
         
@@ -341,7 +352,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/07_shell/" title="07. Shell脚本" class="md-nav__link">
+    <a href="../07_shell/" title="07. Shell脚本" class="md-nav__link">
       07. Shell脚本
     </a>
   </li>
@@ -353,7 +364,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/08_perl/" title="08. Perl 编程" class="md-nav__link">
+    <a href="../08_perl/" title="08. Perl 编程" class="md-nav__link">
       08. Perl 编程
     </a>
   </li>
@@ -365,7 +376,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/09_python/" title="09. Python 编程" class="md-nav__link">
+    <a href="../09_python/" title="09. Python 编程" class="md-nav__link">
       09. Python 编程
     </a>
   </li>
@@ -377,7 +388,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/10_biopython/" title="10. Biopython 编程" class="md-nav__link">
+    <a href="../10_biopython/" title="10. Biopython 编程" class="md-nav__link">
       10. Biopython 编程
     </a>
   </li>
@@ -389,7 +400,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/11_r/" title="11. R 编程" class="md-nav__link">
+    <a href="../11_r/" title="11. R 编程" class="md-nav__link">
       11. R 编程
     </a>
   </li>
@@ -572,12 +583,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       第四章 基因组组装
@@ -595,7 +604,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../01_bwa-samtools-pipeline/" title="01. bwa samtools 流程" class="md-nav__link">
+    <a href="../../C04_Pathogen-Genome-Assembly/01_bwa-samtools-pipeline/" title="01. bwa samtools 流程" class="md-nav__link">
       01. bwa samtools 流程
     </a>
   </li>
@@ -607,7 +616,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../02_gatk/" title="02. GATK 流程" class="md-nav__link">
+    <a href="../../C04_Pathogen-Genome-Assembly/02_gatk/" title="02. GATK 流程" class="md-nav__link">
       02. GATK 流程
     </a>
   </li>
@@ -619,7 +628,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../03_bacteria-assembly/" title="03. 细菌基因组组装" class="md-nav__link">
+    <a href="../../C04_Pathogen-Genome-Assembly/03_bacteria-assembly/" title="03. 细菌基因组组装" class="md-nav__link">
       03. 细菌基因组组装
     </a>
   </li>
@@ -631,7 +640,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../04_virus-assembly/" title="04. 病毒基因组组装" class="md-nav__link">
+    <a href="../../C04_Pathogen-Genome-Assembly/04_virus-assembly/" title="04. 病毒基因组组装" class="md-nav__link">
       04. 病毒基因组组装
     </a>
   </li>
@@ -641,56 +650,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        05. Quast 验证
-      </label>
-    
-    <a href="./" title="05. Quast 验证" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../C04_Pathogen-Genome-Assembly/05_quast/" title="05. Quast 验证" class="md-nav__link">
       05. Quast 验证
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="安装" class="md-nav__link">
-    安装
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="使用" class="md-nav__link">
-    使用
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1544,29 +1508,6 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="安装" class="md-nav__link">
-    安装
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="使用" class="md-nav__link">
-    使用
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1577,29 +1518,19 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C04_Pathogen-Genome-Assembly/05_quast.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C01_Linux-and-Script-Language/06_tools.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="quast">Quast<a class="headerlink" href="#quast" title="Permanent link">&para;</a></h1>
-<h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1"># Quast 依赖 python2.x，因此新建一个 virtualenv</span>
-$ conda create -n quast
-$ conda activate quast
-<span class="o">(</span>quast<span class="o">)</span>$ conda install quast
-</pre></div>
-
-<h2 id="_2">使用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1"># -o 制定输出目录 contig.fa 为拼接结果序列</span>
-$ quast -o outdir assembly/contig.fa
-<span class="c1"># 浏览器打开报告</span>
-$ chromium outdir/report.html
-</pre></div>
-
+                <h1 id="linux">Linux 常用数据处理工具<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
 <ul>
-<li>N50: Reads拼接后会获得一些不同长度的Contigs。将所有的Contig长度相加，能获得一个Contig总长度。然后将所有的Contigs按照从长到短进行排序，将Contig按照这个顺序依次相加，当相加的长度达到Contig总长度的一半时，最后一个加上的Contig长度即为Contig N50。举例：Contig 1+Contig 2+ Contig 3 +Contig 4=Contig总长度*&frac12;时，Contig 4的长度即为Contig N50。Contig N50可以作为基因组拼接的结果好坏的一个判断标准。</li>
-<li>N75: 与N50方法一致，不过长度为超过Contigs总长度75%时的contig序列长度。</li>
-<li>L50: 为获得N50时contigs数量。</li>
-<li>L75: 为获得N75时contigs数量。</li>
+<li><code class="codehilite">sort</code></li>
+<li><code class="codehilite">uniq</code></li>
+<li><code class="codehilite">cut</code>:</li>
+<li><code class="codehilite">split</code>:</li>
+<li><code class="codehilite">join</code>:</li>
+<li><code class="codehilite">paste</code>: 将文件按列复制</li>
+<li><code class="codehilite">diff</code>: 比较2个文件差异</li>
+<li><code class="codehilite">parallel</code>: 并行处理程序</li>
 </ul>
                 
                   
@@ -1621,7 +1552,7 @@ $ chromium outdir/report.html
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../04_virus-assembly/" title="04. 病毒基因组组装" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../05_sed/" title="05. sed 行处理工具" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1630,19 +1561,19 @@ $ chromium outdir/report.html
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                04. 病毒基因组组装
+                05. sed 行处理工具
               </span>
             </div>
           </a>
         
         
-          <a href="../../C05_Pathogen-Mapping-Pipeline/01_bwa-long-sequence-mapping/" title="01. bwa 长序列比对" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../07_shell/" title="07. Shell脚本" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                01. bwa 长序列比对
+                07. Shell脚本
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

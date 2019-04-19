@@ -13,7 +13,7 @@
         <meta name="description" content="病原微生物高通量测序数据分析手册">
       
       
-        <link rel="canonical" href="https://pathongs.hzcdclab.org/C01_Linux-and-Script-Language/06_python/">
+        <link rel="canonical" href="https://pathongs.hzcdclab.org/C01_Linux-and-Script-Language/09_python/">
       
       
         <meta name="author" content="Mark Renton">
@@ -42,7 +42,7 @@
     
     
       
-        <title>06. Python 编程 - Pathogen NGS 数据分析入门</title>
+        <title>09. Python 编程 - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -121,7 +121,7 @@
                 Pathogen NGS 数据分析入门
               </span>
               <span class="md-header-nav__topic">
-                06. Python 编程
+                09. Python 编程
               </span>
             
           
@@ -307,8 +307,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../04_awk/" title="04. 列处理工具 awk" class="md-nav__link">
-      04. 列处理工具 awk
+    <a href="../04_awk/" title="04. awk 列处理工具" class="md-nav__link">
+      04. awk 列处理工具
     </a>
   </li>
 
@@ -319,8 +319,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../05_sed/" title="05. 行处理工具 sed" class="md-nav__link">
-      05. 行处理工具 sed
+    <a href="../05_sed/" title="05. sed 行处理工具" class="md-nav__link">
+      05. sed 行处理工具
     </a>
   </li>
 
@@ -329,49 +329,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        06. Python 编程
-      </label>
-    
-    <a href="./" title="06. Python 编程" class="md-nav__link md-nav__link--active">
-      06. Python 编程
+  <li class="md-nav__item">
+    <a href="../06_tools/" title="06. 其他命令行工具" class="md-nav__link">
+      06. 其他命令行工具
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="基本语法" class="md-nav__link">
-    基本语法
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -403,10 +365,141 @@
           
           
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        09. Python 编程
+      </label>
+    
+    <a href="./" title="09. Python 编程" class="md-nav__link md-nav__link--active">
+      09. Python 编程
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="基本语法" class="md-nav__link">
+    基本语法
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" title="1. 变量赋值" class="md-nav__link">
+    1. 变量赋值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" title="2. 数据类型" class="md-nav__link">
+    2. 数据类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" title="3. 导入模块" class="md-nav__link">
+    3. 导入模块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" title="4. 循环控制" class="md-nav__link">
+    4. 循环控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" title="5. 条件判断" class="md-nav__link">
+    5. 条件判断
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" title="6. 函数定义与调用" class="md-nav__link">
+    6. 函数定义与调用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="常用模块" class="md-nav__link">
+    常用模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-jupyter-notebook" title="- Jupyter Notebook" class="md-nav__link">
+    - Jupyter Notebook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
-    <a href="../09_r/" title="09. R 编程" class="md-nav__link">
-      09. R 编程
+    <a href="../10_biopython/" title="10. Biopython 编程" class="md-nav__link">
+      10. Biopython 编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11_r/" title="11. R 编程" class="md-nav__link">
+      11. R 编程
     </a>
   </li>
 
@@ -1521,6 +1614,75 @@
     基本语法
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" title="1. 变量赋值" class="md-nav__link">
+    1. 变量赋值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" title="2. 数据类型" class="md-nav__link">
+    2. 数据类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" title="3. 导入模块" class="md-nav__link">
+    3. 导入模块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" title="4. 循环控制" class="md-nav__link">
+    4. 循环控制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" title="5. 条件判断" class="md-nav__link">
+    5. 条件判断
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" title="6. 函数定义与调用" class="md-nav__link">
+    6. 函数定义与调用
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="常用模块" class="md-nav__link">
+    常用模块
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-jupyter-notebook" title="- Jupyter Notebook" class="md-nav__link">
+    - Jupyter Notebook
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
 </li>
       
       
@@ -1539,11 +1701,81 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C01_Linux-and-Script-Language/06_python.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C01_Linux-and-Script-Language/09_python.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h1>
+<hr />
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
+<p>随着大数据时代的到来，Python 作为一门简单快速的脚本语言，成为了几乎是目前最热门的编程语言。Python 语法见到，书写快速，被越来越多的新进入生物信息学领域的学者作为首选语言进行程序开发。其丰富的第三方库和活跃的社区也是推动 Python 持续发展的动因之一。你可以很方便的搜索到大量的遍布于各个领域的 Python 学习材料。如果要处理生物数据，或者看懂别人程序代码，掌握一点基本的语法知识是非常必要的。本节主要介绍 Python 的基本语法和与生物信息数据处理相关的软件和库。</p>
+</div>
 <h2 id="_1">基本语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 变量赋值<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+</pre></div>
+
+<h3 id="2">2. 数据类型<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># 字符串</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;中文&quot;</span>
+
+<span class="c1"># 数字</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+<span class="c1"># 列表</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># 元组</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># 字典</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;var1&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;var2&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">}</span>
+</pre></div>
+
+<h3 id="3">3. 导入模块<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">Bio</span>
+<span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+</pre></div>
+
+<h3 id="4">4. 循环控制<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="o">...</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+
+<h3 id="5">5. 条件判断<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">100</span> <span class="ow">and</span> <span class="n">b</span> <span class="ow">is</span> <span class="bp">True</span> <span class="ow">or</span> <span class="n">c</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;wrong&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span><span class="mi">100</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span>
+<span class="k">elif</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;def&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;ghi&quot;</span><span class="p">)</span>
+</pre></div>
+
+<h3 id="6">6. 函数定义与调用<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span>
+
+<span class="c1"># 运行函数</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+<h2 id="_2">常用模块<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>对与生物信息或基因组数据常用的学习和分析模块：</p>
+<h2 id="-jupyter-notebook">- Jupyter Notebook<a class="headerlink" href="#-jupyter-notebook" title="Permanent link">&para;</a></h2>
+<h2 id="_3">参考资料<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
                 
                   
                 
@@ -1564,7 +1796,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../05_sed/" title="05. 行处理工具 sed" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../08_perl/" title="08. Perl 编程" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1573,19 +1805,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                05. 行处理工具 sed
+                08. Perl 编程
               </span>
             </div>
           </a>
         
         
-          <a href="../07_shell/" title="07. Shell脚本" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../10_biopython/" title="10. Biopython 编程" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                07. Shell脚本
+                10. Biopython 编程
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

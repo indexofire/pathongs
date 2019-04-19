@@ -13,7 +13,7 @@
         <meta name="description" content="病原微生物高通量测序数据分析手册">
       
       
-        <link rel="canonical" href="https://pathongs.hzcdclab.org/C01_Linux-and-Script-Language/09_r/">
+        <link rel="canonical" href="https://pathongs.hzcdclab.org/C01_Linux-and-Script-Language/10_biopython/">
       
       
         <meta name="author" content="Mark Renton">
@@ -42,7 +42,7 @@
     
     
       
-        <title>09. R 编程 - Pathogen NGS 数据分析入门</title>
+        <title>10. Biopython 编程 - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#r" tabindex="1" class="md-skip">
+      <a href="#biopython" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -121,7 +121,7 @@
                 Pathogen NGS 数据分析入门
               </span>
               <span class="md-header-nav__topic">
-                09. R 编程
+                10. Biopython 编程
               </span>
             
           
@@ -307,8 +307,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../04_awk/" title="04. 列处理工具 awk" class="md-nav__link">
-      04. 列处理工具 awk
+    <a href="../04_awk/" title="04. awk 列处理工具" class="md-nav__link">
+      04. awk 列处理工具
     </a>
   </li>
 
@@ -319,8 +319,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../05_sed/" title="05. 行处理工具 sed" class="md-nav__link">
-      05. 行处理工具 sed
+    <a href="../05_sed/" title="05. sed 行处理工具" class="md-nav__link">
+      05. sed 行处理工具
     </a>
   </li>
 
@@ -331,8 +331,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../06_python/" title="06. Python 编程" class="md-nav__link">
-      06. Python 编程
+    <a href="../06_tools/" title="06. 其他命令行工具" class="md-nav__link">
+      06. 其他命令行工具
     </a>
   </li>
 
@@ -365,6 +365,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../09_python/" title="09. Python 编程" class="md-nav__link">
+      09. Python 编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -376,11 +388,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        09. R 编程
+        10. Biopython 编程
       </label>
     
-    <a href="./" title="09. R 编程" class="md-nav__link md-nav__link--active">
-      09. R 编程
+    <a href="./" title="10. Biopython 编程" class="md-nav__link md-nav__link--active">
+      10. Biopython 编程
     </a>
     
       
@@ -394,49 +406,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="基本语法" class="md-nav__link">
-    基本语法
+  <a href="#_1" title="学习材料" class="md-nav__link">
+    学习材料
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="数据分析常用软件包" class="md-nav__link">
-    数据分析常用软件包
+  <a href="#_2" title="使用" class="md-nav__link">
+    使用
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#rstudio" title="Rstudio" class="md-nav__link">
-    Rstudio
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rstudio_1" title="安装Rstudio" class="md-nav__link">
-    安装Rstudio
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#r_1" title="R 教程" class="md-nav__link">
-    R 教程
+  <a href="#biopython_1" title="用 Biopython 处理数据" class="md-nav__link">
+    用 Biopython 处理数据
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" title="Reference" class="md-nav__link">
-    Reference
+  <a href="#entrez" title="使用 Entrez" class="md-nav__link">
+    使用 Entrez
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="多序列比对文件格式转换" class="md-nav__link">
+    多序列比对文件格式转换
   </a>
   
 </li>
@@ -449,6 +448,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11_r/" title="11. R 编程" class="md-nav__link">
+      11. R 编程
+    </a>
   </li>
 
         
@@ -1558,49 +1569,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="基本语法" class="md-nav__link">
-    基本语法
+  <a href="#_1" title="学习材料" class="md-nav__link">
+    学习材料
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="数据分析常用软件包" class="md-nav__link">
-    数据分析常用软件包
+  <a href="#_2" title="使用" class="md-nav__link">
+    使用
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#rstudio" title="Rstudio" class="md-nav__link">
-    Rstudio
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#rstudio_1" title="安装Rstudio" class="md-nav__link">
-    安装Rstudio
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#r_1" title="R 教程" class="md-nav__link">
-    R 教程
+  <a href="#biopython_1" title="用 Biopython 处理数据" class="md-nav__link">
+    用 Biopython 处理数据
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" title="Reference" class="md-nav__link">
-    Reference
+  <a href="#entrez" title="使用 Entrez" class="md-nav__link">
+    使用 Entrez
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="多序列比对文件格式转换" class="md-nav__link">
+    多序列比对文件格式转换
   </a>
   
 </li>
@@ -1621,38 +1619,138 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C01_Linux-and-Script-Language/09_r.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C01_Linux-and-Script-Language/10_biopython.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="r">R 语言<a class="headerlink" href="#r" title="Permanent link">&para;</a></h1>
-<h2 id="_1">基本语法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h2 id="_2">数据分析常用软件包<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+                <h1 id="biopython">Biopython<a class="headerlink" href="#biopython" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="_1">学习材料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>tidyverse: 数据清洗工具集</li>
-<li>ggplot2: 数据可视化</li>
-<li>ggtree: 绘制进化树</li>
-<li>gggenes: 绘制基因分布图</li>
-<li>pheatmap: 绘制热度图</li>
+<li>Biopython官方文档</li>
+<li>Biopython官方文档中文</li>
 </ul>
-<h2 id="rstudio">Rstudio<a class="headerlink" href="#rstudio" title="Permanent link">&para;</a></h2>
-<h3 id="rstudio_1">安装Rstudio<a class="headerlink" href="#rstudio_1" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>$ sudo pacman -S rstudio
+<h2 id="_2">使用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
 </pre></div>
 
-<h2 id="r_1">R 教程<a class="headerlink" href="#r_1" title="Permanent link">&para;</a></h2>
-<p>R 在线电子书：
-- <a href="https://adv-r.hadley.nz/">Advanced R</a>
-- <a href="http://advanced-r-solutions.rbind.io/">Advanced R solutions</a>
-- <a href="https://r4ds.had.co.nz/">R for Data Science</a>
-- <a href="http://r-pkgs.had.co.nz/">R Packages</a></p>
-<p>R 相关资源：
-- <a href="https://awesome-r.com/">Awesome R</a>
-- []</p>
-<p>R 工具：
-- <a href="">R Studio</a>
-- <a href=""></a>
-- <a href=""></a></p>
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<h2 id="biopython_1">用 Biopython 处理数据<a class="headerlink" href="#biopython_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">Seq</span>
+</pre></div>
+
+<h2 id="entrez">使用 Entrez<a class="headerlink" href="#entrez" title="Permanent link">&para;</a></h2>
+<p>Biopython 内建了对 NCBI Entrez API 操作的模块，可以编写脚本进行数据库检索等操作。</p>
+<div class="codehilite"><pre><span></span><span class="c1"># example from dbSNP</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">Entrez</span>
+
+<span class="c1"># email address</span>
+<span class="n">Entrez</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;your@email.com&quot;</span>
+
+<span class="c1"># API key from NCBI (https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/).</span>
+<span class="c1"># 10 queries per second a valid API key, otherwise 3 queries per seconds are allowed for &#39;None&#39;</span>
+<span class="n">Entrez</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="c1"># entrez query (term) can be build and test online using web query builder (https://www.ncbi.nlm.nih.gov/snp/advanced)</span>
+<span class="c1"># esearch handle</span>
+<span class="c1"># db: dbsnp</span>
+<span class="c1"># term: gene LPL</span>
+<span class="c1"># usehistory: cache result on server for download in batches</span>
+<span class="c1"># retmax: return max RSID number</span>
+<span class="n">eShandle</span> <span class="o">=</span> <span class="n">Entrez</span><span class="o">.</span><span class="n">esearch</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="s2">&quot;snp&quot;</span><span class="p">,</span>
+  <span class="n">term</span><span class="o">=</span><span class="s1">&#39;LPL[All Fields] AND (pathogenic[Clinical_Significance] AND missense[Function_Class])&#39;</span><span class="p">,</span>
+  <span class="n">usehistory</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
+  <span class="n">retmax</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="c1"># get esearch result</span>
+<span class="n">eSresult</span> <span class="o">=</span> <span class="n">Entrez</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">eShandle</span><span class="p">)</span>
+<span class="c1"># review results</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">eSresult</span><span class="p">:</span>
+    <span class="k">print</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">eSresult</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+<span class="c1">#Output: Web environment (&amp;WebEnv) and query key (&amp;query_key) parameters specifying the location on the Entrez history server of the list of UIDs matching the Entrez query</span>
+<span class="c1">#https://www.ncbi.nlm.nih.gov/books/NBK25500/#chapter1.Storing_Search_Results</span>
+
+<span class="c1"># get result RSIDs list &#39;Idlist&#39;</span>
+<span class="c1"># total rs count</span>
+<span class="n">rslist</span> <span class="o">=</span> <span class="p">(</span><span class="n">eSresult</span><span class="p">[</span><span class="s1">&#39;IdList&#39;</span><span class="p">])</span>
+
+<span class="c1"># retmax = 20 so print only 20 RSIDs</span>
+<span class="c1"># additional results can be retrieved by batches</span>
+<span class="c1"># download in batches example http://biopython.org/DIST/docs/tutorial/Tutorial.html#htoc139 or see below.</span>
+<span class="k">for</span> <span class="n">rs</span> <span class="ow">in</span> <span class="n">rslist</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">rs</span><span class="p">)</span>
+
+<span class="c1"># get the WebEnv session cookie, and the QueryKey:</span>
+<span class="n">webenv</span> <span class="o">=</span> <span class="n">eSresult</span><span class="p">[</span><span class="s2">&quot;WebEnv&quot;</span><span class="p">]</span>
+<span class="n">query_key</span> <span class="o">=</span> <span class="n">eSresult</span><span class="p">[</span><span class="s2">&quot;QueryKey&quot;</span><span class="p">]</span>
+<span class="n">total_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">eSresult</span><span class="p">[</span><span class="s2">&quot;Count&quot;</span><span class="p">])</span>
+<span class="n">query_key</span> <span class="o">=</span> <span class="n">eSresult</span><span class="p">[</span><span class="s2">&quot;QueryKey&quot;</span><span class="p">]</span>
+<span class="n">retmax</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># sample codes adopted from http://biopython.org/DIST/docs/tutorial/Tutorial.html#htoc139.</span>
+<span class="n">fetch_count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">start</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">total_count</span><span class="p">,</span> <span class="n">retmax</span><span class="p">):</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">total_count</span><span class="p">,</span> <span class="n">start</span><span class="o">+</span><span class="n">retmax</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Going to download record </span><span class="si">%i</span><span class="s2"> to </span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">start</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
+    <span class="n">attempt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1">#fetch_count += 1</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">attempt</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">):</span> <span class="c1"># &amp; (fetch_count &lt; 2):</span>
+        <span class="n">attempt</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">fetch_handle</span> <span class="o">=</span> <span class="n">Entrez</span><span class="o">.</span><span class="n">efetch</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="s2">&quot;snp&quot;</span><span class="p">,</span>
+                <span class="n">rettype</span><span class="o">=</span><span class="s2">&quot;uilist&quot;</span><span class="p">,</span> <span class="c1">#available types [uilist | docsum (use retmode=xml))</span>
+                <span class="c1">#retmode=&quot;xml&quot;,</span>
+                <span class="n">retstart</span><span class="o">=</span><span class="n">start</span><span class="p">,</span>
+                <span class="n">retmax</span><span class="o">=</span><span class="n">retmax</span><span class="p">,</span>
+                <span class="n">webenv</span><span class="o">=</span><span class="n">webenv</span><span class="p">,</span>
+                <span class="n">query_key</span><span class="o">=</span><span class="n">query_key</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="n">HTTPError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="k">if</span> <span class="mi">500</span> <span class="o">&lt;=</span> <span class="n">err</span><span class="o">.</span><span class="n">code</span> <span class="o">&lt;=</span> <span class="mi">599</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Received error from server </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">err</span><span class="p">)</span>
+                <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Attempt </span><span class="si">%i</span><span class="s2"> of 3&quot;</span> <span class="o">%</span> <span class="n">attempt</span><span class="p">)</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">fetch_handle</span><span class="p">):</span>        
+        <span class="n">data</span> <span class="o">=</span> <span class="n">fetch_handle</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">fetch_handle</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+<h2 id="_3">多序列比对文件格式转换<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>参考：<a href="https://www.evernote.com/client/web?login=true">fasta格式转换为phylip</a></p>
+<div class="codehilite"><pre><span></span><span class="n">seqs</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;aln.fasta&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;&amp;gt;&#39;</span><span class="p">):</span>
+            <span class="n">seqs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%-14s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">14</span><span class="p">])</span>  <span class="c1"># The length of sequence name in test.fasta is 12</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">seqs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">line</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;aln.phy&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="se">\n</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seqs</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">seqs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">-</span><span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">seqs</span><span class="p">)))</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="c1"># 用正则表达式</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;aln.fasta&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">seqs</span> <span class="o">=</span> <span class="p">[(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?m)^&gt;([^ \n]+)[^\n]*([^&gt;]*)&#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;aln.phy&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1"> </span><span class="si">%d</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">seqs</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">seqs</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">seqs</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%-14s</span><span class="s1"> </span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+<p>使用 biopython 解决</p>
+<div class="codehilite"><pre><span></span><span class="c1"># Biopython</span>
+<span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
+<span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">Seq</span>
+</pre></div>
                 
                   
                 
@@ -1673,7 +1771,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../08_perl/" title="08. Perl 编程" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../09_python/" title="09. Python 编程" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1682,19 +1780,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                08. Perl 编程
+                09. Python 编程
               </span>
             </div>
           </a>
         
         
-          <a href="../../C02_Common-Utility/01_databases/" title="01. 公共生物数据库" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../11_r/" title="11. R 编程" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                01. 公共生物数据库
+                11. R 编程
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -42,7 +42,7 @@
     
     
       
-        <title>05. 行处理工具 sed - Pathogen NGS 数据分析入门</title>
+        <title>05. sed 行处理工具 - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -121,7 +121,7 @@
                 Pathogen NGS 数据分析入门
               </span>
               <span class="md-header-nav__topic">
-                05. 行处理工具 sed
+                05. sed 行处理工具
               </span>
             
           
@@ -307,8 +307,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../04_awk/" title="04. 列处理工具 awk" class="md-nav__link">
-      04. 列处理工具 awk
+    <a href="../04_awk/" title="04. awk 列处理工具" class="md-nav__link">
+      04. awk 列处理工具
     </a>
   </li>
 
@@ -328,11 +328,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        05. 行处理工具 sed
+        05. sed 行处理工具
       </label>
     
-    <a href="./" title="05. 行处理工具 sed" class="md-nav__link md-nav__link--active">
-      05. 行处理工具 sed
+    <a href="./" title="05. sed 行处理工具" class="md-nav__link md-nav__link--active">
+      05. sed 行处理工具
     </a>
     
       
@@ -346,8 +346,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="脚本示例" class="md-nav__link">
-    脚本示例
+  <a href="#1-sed" title="1. sed 命令基本逻辑" class="md-nav__link">
+    1. sed 命令基本逻辑
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" title="1.1 输入" class="md-nav__link">
+    1.1 输入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" title="1.2 选项" class="md-nav__link">
+    1.2 选项
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" title="1.3 脚本" class="md-nav__link">
+    1.3 脚本
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2. 脚本示例" class="md-nav__link">
+    2. 脚本示例
   </a>
   
 </li>
@@ -369,8 +403,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../06_python/" title="06. Python 编程" class="md-nav__link">
-      06. Python 编程
+    <a href="../06_tools/" title="06. 其他命令行工具" class="md-nav__link">
+      06. 其他命令行工具
     </a>
   </li>
 
@@ -405,8 +439,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../09_r/" title="09. R 编程" class="md-nav__link">
-      09. R 编程
+    <a href="../09_python/" title="09. Python 编程" class="md-nav__link">
+      09. Python 编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10_biopython/" title="10. Biopython 编程" class="md-nav__link">
+      10. Biopython 编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11_r/" title="11. R 编程" class="md-nav__link">
+      11. R 编程
     </a>
   </li>
 
@@ -1517,8 +1575,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="脚本示例" class="md-nav__link">
-    脚本示例
+  <a href="#1-sed" title="1. sed 命令基本逻辑" class="md-nav__link">
+    1. sed 命令基本逻辑
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" title="1.1 输入" class="md-nav__link">
+    1.1 输入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" title="1.2 选项" class="md-nav__link">
+    1.2 选项
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" title="1.3 脚本" class="md-nav__link">
+    1.3 脚本
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2. 脚本示例" class="md-nav__link">
+    2. 脚本示例
   </a>
   
 </li>
@@ -1543,16 +1635,27 @@
                 
                 
                 <h1 id="sed">sed<a class="headerlink" href="#sed" title="Permanent link">&para;</a></h1>
+<hr />
+<p><img alt="sed" src="../../assets/images/C01/05/header.jpg" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
 <p>sed 全称 Stream Editor，即流编辑器。想对于 awk 处理每一行中各个字段的列特点，sed 常用于以行为单位的编辑操作，比如字符替换等。</p>
-<div class="admonition note">
-<p class="admonition-title">基本逻辑</p>
-<p>sed [选项] ... {脚本} [输入] ...</p>
 </div>
-<p><strong>输入</strong></p>
+<h2 id="1-sed">1. sed 命令基本逻辑<a class="headerlink" href="#1-sed" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>sed [选项] ... {脚本} [输入] ...</p>
+</blockquote>
+<h3 id="11">1.1 输入<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
 <p>sed 编辑内容可以是标准输入STDIN，也可以是一个文件。sed 读取内容的一行，放入<code class="codehilite">模式空间</code>，并在<code class="codehilite">模式空间</code>做命令对应的操作，再将<code class="codehilite">模式空间</code>的内容打印到屏幕上</p>
-<p><strong>选项</strong></p>
+<h3 id="12">1.2 选项<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
 <p><code class="codehilite">-n</code> 默认sed处理一行就会在STDOUT终端中打印一行。加上<code class="codehilite">-n</code>参数就不会在输出端打印。</p>
+</li>
+<li>
 <p><code class="codehilite">-i</code> 即sed编辑完后直接储存为源文件，与重定向符号类似<code class="codehilite">&gt;</code>（但重定向符号不能覆盖原文件，只会清空）。不过出于数据安全的愿意，建议还是用&gt;重定向到新文件或者保留备份文件比较好。</p>
+</li>
+</ul>
 <div class="codehilite"><pre><span></span><span class="c1"># 删除file的空格，保存成file.new文件</span>
 $ sed -i <span class="s1">&#39;s/ //g&#39;</span> file &gt; file.new
 $ ls
@@ -1566,9 +1669,15 @@ file           <span class="c1"># 新文件</span>
 file.old       <span class="c1"># 原始文件</span>
 </pre></div>
 
-<p><strong>{脚本}</strong></p>
-<p><code class="codehilite">p</code> 打印
-<code class="codehilite">l</code> 打印特殊符号，比如换行符</p>
+<h3 id="13">1.3 脚本<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><code class="codehilite">p</code> 打印行内容</p>
+</li>
+<li>
+<p><code class="codehilite">l</code> 打印行内容，包括特殊符号，比如换行符</p>
+</li>
+</ul>
 <div class="codehilite"><pre><span></span><span class="c1"># file 文件内容</span>
 $ cat file
 Hello everyone
@@ -1576,7 +1685,6 @@ my food is great
 food is ok
 Food
 fooooooooooood
-
 
 <span class="c1"># 打印文件第2行</span>
 $ sed -n <span class="s1">&#39;2p&#39;</span> file
@@ -1621,7 +1729,9 @@ my food is great$
 food is ok$
 </pre></div>
 
-<p><code class="codehilite">=</code> 打印匹配的行号</p>
+<ul>
+<li><code class="codehilite">=</code> 打印匹配的行号</li>
+</ul>
 <div class="codehilite"><pre><span></span><span class="c1"># 打印包含fo的行号</span>
 $ sed -n <span class="s1">&#39;/fo/=&#39;</span> file
 <span class="m">2</span>
@@ -1629,7 +1739,9 @@ $ sed -n <span class="s1">&#39;/fo/=&#39;</span> file
 <span class="m">5</span>
 </pre></div>
 
-<p><code class="codehilite">a</code> 追加行模式</p>
+<ul>
+<li><code class="codehilite">a</code> 追加行模式</li>
+</ul>
 <div class="codehilite"><pre><span></span><span class="c1"># 在含fo内容的行后插入一个新行</span>
 $ sed <span class="s1">&#39;/fo/a\Insert a new line&#39;</span> file
 Hello everyone
@@ -1765,7 +1877,7 @@ $ sed -n <span class="s1">&#39;{h;n;G;p}&#39;</span> <span class="m">2</span>
 $ zcat <span class="m">1</span>.fastq.gz <span class="p">|</span> sed -n <span class="s1">&#39;{s/@/&gt;/g;p;n;p;n;n}&#39;</span> &gt; <span class="m">1</span>.fasta
 </pre></div>
 
-<h2 id="_1">脚本示例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="2">2. 脚本示例<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p><strong>给序列命名</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1"># 在序列test.fas第一行加入序列名称</span>
 $ <span class="nb">echo</span> <span class="s2">&quot;ATCCGAGTTAG&quot;</span> &gt; test.fas
@@ -1794,7 +1906,7 @@ ATCCGAGTTAG
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../04_awk/" title="04. 列处理工具 awk" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../04_awk/" title="04. awk 列处理工具" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1803,19 +1915,19 @@ ATCCGAGTTAG
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                04. 列处理工具 awk
+                04. awk 列处理工具
               </span>
             </div>
           </a>
         
         
-          <a href="../06_python/" title="06. Python 编程" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../06_tools/" title="06. 其他命令行工具" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                06. Python 编程
+                06. 其他命令行工具
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

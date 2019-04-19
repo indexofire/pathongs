@@ -366,8 +366,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../04_awk/" title="04. 列处理工具 awk" class="md-nav__link">
-      04. 列处理工具 awk
+    <a href="../04_awk/" title="04. awk 列处理工具" class="md-nav__link">
+      04. awk 列处理工具
     </a>
   </li>
 
@@ -378,8 +378,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../05_sed/" title="05. 行处理工具 sed" class="md-nav__link">
-      05. 行处理工具 sed
+    <a href="../05_sed/" title="05. sed 行处理工具" class="md-nav__link">
+      05. sed 行处理工具
     </a>
   </li>
 
@@ -390,8 +390,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../06_python/" title="06. Python 编程" class="md-nav__link">
-      06. Python 编程
+    <a href="../06_tools/" title="06. 其他命令行工具" class="md-nav__link">
+      06. 其他命令行工具
     </a>
   </li>
 
@@ -426,8 +426,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../09_r/" title="09. R 编程" class="md-nav__link">
-      09. R 编程
+    <a href="../09_python/" title="09. Python 编程" class="md-nav__link">
+      09. Python 编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10_biopython/" title="10. Biopython 编程" class="md-nav__link">
+      10. Biopython 编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11_r/" title="11. R 编程" class="md-nav__link">
+      11. R 编程
     </a>
   </li>
 
@@ -1656,11 +1680,47 @@ $ bwa mem ...
 
 <h2 id="4-docker">4. docker方式<a class="headerlink" href="#4-docker" title="Permanent link">&para;</a></h2>
 <p>docker 是一种虚拟机，但是其与 virtualbox, vm 等的区别是其启动和调用都是毫秒级的，几乎感觉不到其的加载时间，但又与系统有沙盒模式隔离，保证了安全。docker 最大的好处是直接调用他人写的 DOCKERFILE 就可以下载 image，运行生成 container， DOCKERFILE 解决的安装的过程，除了下载安装速度可能略慢，其他几乎不需要更多的学习曲线。安装完成运行 container 即可使用。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># Archlinux 安装 docker</span>
-$ sudo pacman -S docker
+<p><strong>Ubuntu 18.04 Server安装docker</strong></p>
+<div class="codehilite"><pre><span></span><span class="c1"># 添加 docker 仓库</span>
+$ sudo apt update
+$ sudo apt install apt-transport-https ca-certificates curl software-properties-common
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> sudo apt-key add -
+$ sudo add-apt-repository <span class="s2">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable&quot;</span>
+$ sudo apt update
+$ apt-cache policy docker-ce
+<span class="c1"># 安装 docker</span>
+$ sudo apt install docker-ce
+<span class="c1"># 查看 docker 启动状态</span>
+$ sudo systemctl status docker
+<span class="c1"># 如果没有启动系统是运行 docker</span>
 
-<span class="c1"># 使用 DockerFile</span>
-$ docker
+<span class="c1"># 将当前用户加入 docker 组，运行 docker 时可以不用输入 sudo 命令</span>
+$ sudo usermod -aG docker <span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
+<span class="c1"># 更新组信息</span>
+$ su - <span class="si">${</span><span class="nv">USER</span><span class="si">}</span>
+<span class="c1"># 确认当前用户已经加入 docker 组</span>
+$ id -nG
+</pre></div>
+
+<p><strong>docker镜像下载</strong></p>
+<div class="codehilite"><pre><span></span><span class="c1"># 运行软件自带的 hello-world 镜像</span>
+$ docker run hello-world
+<span class="c1"># 镜像搜索</span>
+$ docker search ubuntu
+<span class="c1"># 镜像下载</span>
+$ docker pull ubuntu
+<span class="c1"># 查看当前已有的镜像</span>
+$ docker images
+</pre></div>
+
+<p><strong>docker容器运行</strong></p>
+<div class="codehilite"><pre><span></span><span class="c1"># 以交互方式运行容器 ubuntu</span>
+$ docker run -it ubuntu
+
+<span class="c1"># 查看当前运行容器</span>
+$ docker ps
+<span class="c1"># 查看所有容器</span>
+$ docker ps -a
 </pre></div>
                 
                   
@@ -1697,13 +1757,13 @@ $ docker
           </a>
         
         
-          <a href="../04_awk/" title="04. 列处理工具 awk" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../04_awk/" title="04. awk 列处理工具" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                04. 列处理工具 awk
+                04. awk 列处理工具
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -42,7 +42,7 @@
     
     
       
-        <title>04. 列处理工具 awk - Pathogen NGS 数据分析入门</title>
+        <title>04. awk 列处理工具 - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -121,7 +121,7 @@
                 Pathogen NGS 数据分析入门
               </span>
               <span class="md-header-nav__topic">
-                04. 列处理工具 awk
+                04. awk 列处理工具
               </span>
             
           
@@ -316,11 +316,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        04. 列处理工具 awk
+        04. awk 列处理工具
       </label>
     
-    <a href="./" title="04. 列处理工具 awk" class="md-nav__link md-nav__link--active">
-      04. 列处理工具 awk
+    <a href="./" title="04. awk 列处理工具" class="md-nav__link md-nav__link--active">
+      04. awk 列处理工具
     </a>
     
       
@@ -334,8 +334,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-awk" title="1. 了解 awk 基本用法" class="md-nav__link">
-    1. 了解 awk 基本用法
+  <a href="#1-awk" title="1. awk 命令构成" class="md-nav__link">
+    1. awk 命令构成
   </a>
   
 </li>
@@ -615,8 +615,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../05_sed/" title="05. 行处理工具 sed" class="md-nav__link">
-      05. 行处理工具 sed
+    <a href="../05_sed/" title="05. sed 行处理工具" class="md-nav__link">
+      05. sed 行处理工具
     </a>
   </li>
 
@@ -627,8 +627,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../06_python/" title="06. Python 编程" class="md-nav__link">
-      06. Python 编程
+    <a href="../06_tools/" title="06. 其他命令行工具" class="md-nav__link">
+      06. 其他命令行工具
     </a>
   </li>
 
@@ -663,8 +663,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../09_r/" title="09. R 编程" class="md-nav__link">
-      09. R 编程
+    <a href="../09_python/" title="09. Python 编程" class="md-nav__link">
+      09. Python 编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10_biopython/" title="10. Biopython 编程" class="md-nav__link">
+      10. Biopython 编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11_r/" title="11. R 编程" class="md-nav__link">
+      11. R 编程
     </a>
   </li>
 
@@ -1775,8 +1799,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-awk" title="1. 了解 awk 基本用法" class="md-nav__link">
-    1. 了解 awk 基本用法
+  <a href="#1-awk" title="1. awk 命令构成" class="md-nav__link">
+    1. awk 命令构成
   </a>
   
 </li>
@@ -2059,33 +2083,48 @@
                 
                 
                 <h1 id="awk-ngs">用 awk 处理 NGS 数据<a class="headerlink" href="#awk-ngs" title="Permanent link">&para;</a></h1>
-<p>awk 工具常用来对文件内容按行进行匹配搜索，一旦某一行中的内容与搜索条件匹配，则对该内容做进一步操作。本质上讲，awk 属于数据驱动的程序，因此 awk 程序也非常容易编写与阅读。高通量测序技术带来大量的数据，而生物学分析往往直需要其中特定的部分，这时 awk 就可以大显身手为测序数据的转换与分析提供帮助。我们首先来看一个最简单的 awk 命令程序：</p>
+<hr />
+<p><img alt="awk" src="https://pbs.twimg.com/media/DeLcVfSWAAAw6OZ.jpg" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
+<p>awk 工具常用来对文件内容按行进行匹配搜索，一旦某一行中的内容与搜索条件匹配，则对该内容做进一步操作。本质上讲，awk 属于数据驱动的程序，因此 awk 程序也非常容易编写与阅读。高通量测序技术带来大量的数据，而生物学分析往往直需要其中特定的部分，这时 awk 就可以大显身手为测序数据的转换与分析提供帮助。</p>
+</div>
+<p><strong>我们首先来看一个最简单的 awk 命令程序：</strong></p>
 <div class="codehilite"><pre><span></span><span class="c1"># 将contigs.fasta文件中序列ID打印到终端</span>
-<span class="c1"># contigs.fasta内如：</span>
-<span class="c1"># &gt;seq1</span>
-<span class="c1"># ATGGGGTCCGATTACCG</span>
-<span class="c1"># &gt;seq2</span>
-<span class="c1"># CGGNTTACCGYGACAGT</span>
+$ cat contigs.fasta
+&gt;seq1
+ATGGGGTCCGATTACCG
+&gt;seq2
+CGGNTTACCGYGACAGT
 
+<span class="c1"># 提取序列名称</span>
 $ awk <span class="s1">&#39;/&gt;/&#39;</span> contigs.fasta
-
-<span class="c1"># 屏幕上会输出：</span>
 &gt;seq1
 &gt;seq2
 
-$ awk <span class="s1">&#39;/^ATG/&#39;</span> contigs.fasta内如
-
-<span class="c1">#屏幕上会输出：</span>
+<span class="c1"># 提取ATG开始的序列</span>
+$ awk <span class="s1">&#39;/^ATG/&#39;</span> contigs.fasta
 ATGGGGTCCGATTACCG
+
+<span class="c1"># 当第一列包含gene1字符时，打印第二列信息</span>
+$ awk <span class="s1">&#39;$1 ~/gene1/ {print $2}&#39;</span> input_data
+<span class="c1"># 用 grep 和 sed 实现类似效果</span>
+$ cat input_data <span class="p">|</span> grep gene1 <span class="p">|</span> sed <span class="o">{</span><span class="nv">$1</span><span class="o">}</span>
 </pre></div>
 
-<p>这个命令很简单，就是将 fasta 文件中包含 '&gt;' 字符的行输出，实际上就是将所有的序列头内容输出。作用类似<code class="codehilite">grep &quot;&gt;&quot;</code>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>awk也是一行行输出，用模式匹配时，与 grep 类似。使用这个命令很简单，就是将 fasta 文件中包含 '&gt;' 字符的行输出，实际上就是将所有的序列头内容输出。作用类似<code class="codehilite">grep &quot;&gt;&quot;</code>。</p>
+</div>
+<h2 id="1-awk">1. awk 命令构成<a class="headerlink" href="#1-awk" title="Permanent link">&para;</a></h2>
 <p>awk 程序主体主要包括 pattern，action和input file：</p>
 <ul>
 <li>pattern 表示所要搜索的内容，可以用正则表达式。</li>
 <li>{ action } 则表示搜索匹配后要做的操作。</li>
 <li>input file：所要搜索的输入内容，比如前面例子的 contigs.fasta</li>
 </ul>
+<div class="admonition info">
+<p class="admonition-title">知识点</p>
 <p>awk可以在shell里直接运行：</p>
 <div class="codehilite"><pre><span></span>$ awk <span class="s1">&#39;pattern { action }&#39;</span> input_file
 </pre></div>
@@ -2095,6 +2134,7 @@ ATGGGGTCCGATTACCG
 <span class="nx">pattern</span> <span class="p">{</span> <span class="nx">action</span> <span class="p">}</span>
 </pre></div>
 
+</div>
 <p>awk 可以不需要输入文件；对于pattern和action来说，2者至少要有一个才能运行。如果没有pattern，则默认匹配任何输入，按行输出并执行action。如果没有action，则匹配pattern并按行输出不做额外操作。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># 尝试以下语句，在终端打印`hello world`。这里BEGIN是pattern，{ print &quot;hello world&quot; } 是action</span>
 $ awk <span class="s1">&#39;BEGIN { print &quot;hello world&quot; }&#39;</span>
@@ -2113,14 +2153,6 @@ $ awk <span class="s1">&#39;{ print }&#39;</span>
 <p>运行这个程序：</p>
 <div class="codehilite"><pre><span></span>$ chmod +x hello_world
 $ ./hello_world
-</pre></div>
-
-<h2 id="1-awk">1. 了解 awk 基本用法<a class="headerlink" href="#1-awk" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>$ awk <span class="s1">&#39;$1~/gene1/ { print $2 }&#39;</span> input_data
-</pre></div>
-
-<p>作用与 cat + grep + sed 类似</p>
-<div class="codehilite"><pre><span></span>$ cat input_data <span class="p">|</span> grep gene1 <span class="p">|</span> sed <span class="o">{</span><span class="nv">$1</span><span class="o">}</span>
 </pre></div>
 
 <h2 id="2-awk">2. awk 基本语法<a class="headerlink" href="#2-awk" title="Permanent link">&para;</a></h2>
@@ -2429,13 +2461,13 @@ $ <span class="k">for</span> i in <span class="k">$(</span>bioawk -c fastx <span
           </a>
         
         
-          <a href="../05_sed/" title="05. 行处理工具 sed" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../05_sed/" title="05. sed 行处理工具" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                05. 行处理工具 sed
+                05. sed 行处理工具
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
