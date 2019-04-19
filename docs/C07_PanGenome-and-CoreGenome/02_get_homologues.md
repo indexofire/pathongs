@@ -1,10 +1,12 @@
 # Get_Homologues 分析 Pangenomes
 
-![Chapter 6.1](../assets/images/chapter_06/02/get_homologues_banner.png)
+---
 
-[get_homologues](http://eead-csic-compbio.github.io/get_homologues) 是一个用 perl 语言编写的应用软件。可以通过对蛋白质和核酸序列相似性来进行同源基因分组，并用来鉴定细菌 core-genomes 和 pan-genomes 的开源工具。
+![Chapter 6.1](../../assets/images/C07/02/get_homologues_banner.png)
 
-!!! note
+!!! Abstract "内容简介"
+    [get_homologues](http://eead-csic-compbio.github.io/get_homologues) 是一个用 perl 语言编写的应用软件。可以通过对蛋白质和核酸序列相似性来进行同源基因分组，并用来鉴定细菌 core-genomes 和 pan-genomes 的开源工具。
+
     - 软件版本: v 3.1.2
     - 官方网站: http://www.github.io/eead-csic-compbio/get_homologues
     - 聚类算法: BDBH/MCL/COG
@@ -65,9 +67,24 @@ NLOPT_URL='file:///path-to-nlopt-pkg/nlopt-2.4.2.tar.gz'
 > install.packages("ape")
 ```
 
+
 ## 2. 使用
 
-我们以 Bacillus cereus 基因组 assembly 数据库为例分析该物种的 Pangenomics。
+### 绘制核心基因和泛基因图
+
+
+
+
+## 3. 算法
+
+get_homologues.pl 默认采用BDBH的算法，通过添加不同参数可以调用其他算法。
+
+* `-G`: COG
+* '-M': MCL (OrthMCL)
+
+## 4. 示例
+
+最后我们以一个例子大致介绍一下菌种的`Get_homologues`的`Pangenome`分析过程：`Bacillus cereus`基因组`assembly`数据库为例分析该物种的`Pangenomics`。
 
 ```bash
 # 抓取 gbk 格式的 assembly 文件在 NCBI FTP 上的下载路径
@@ -75,35 +92,13 @@ $ esearch -db assembly -query "Bacillus cereus[ORGN] AND latest[SB]" | \
 > efetch -format docsum | \
 > xtract -pattern DocumentSummary -element FtpPath_RefSeq | \
 > awk -F"/" '{print $0"/"$NF"_genomic.gbff.gz"}' > bcereus.path
-```
 
-运行 `cat bcereus.path`，你可以看到终端打印输出这些基因组在ftp服务器上的下载地址。
-
-```
+# 运行 `cat bcereus.path`，你可以看到终端打印输出这些基因组在ftp服务器上的下载地址。
+$ cat bcereus.path
 ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/220/285/GCF_002220285.1_ASM222028v1/GCF_002220285.1_ASM222028v1_genomic.gbff.gz
 ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/216/125/GCF_002216125.1_ASM221612v1/GCF_002216125.1_ASM221612v1_genomic.gbff.gz
 ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/215/175/GCF_002215175.1_ASM221517v1/GCF_002215175.1_ASM221517v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/214/765/GCF_002214765.1_ASM221476v1/GCF_002214765.1_ASM221476v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/214/725/GCF_002214725.1_ASM221472v1/GCF_002214725.1_ASM221472v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/214/705/GCF_002214705.1_ASM221470v1/GCF_002214705.1_ASM221470v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/000/005/GCF_002000005.1_ASM200000v1/GCF_002000005.1_ASM200000v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/941/925/GCF_001941925.1_ASM194192v1/GCF_001941925.1_ASM194192v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/941/905/GCF_001941905.1_ASM194190v1/GCF_001941905.1_ASM194190v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/941/885/GCF_001941885.1_ASM194188v1/GCF_001941885.1_ASM194188v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/880/305/GCF_001880305.1_ASM188030v1/GCF_001880305.1_ASM188030v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/721/145/GCF_001721145.1_ASM172114v1/GCF_001721145.1_ASM172114v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/635/895/GCF_000635895.2_ASM63589v2/GCF_000635895.2_ASM63589v2_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/635/995/GCF_001635995.1_ASM163599v1/GCF_001635995.1_ASM163599v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/635/955/GCF_001635955.1_ASM163595v1/GCF_001635955.1_ASM163595v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/635/915/GCF_001635915.1_ASM163591v1/GCF_001635915.1_ASM163591v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/518/875/GCF_001518875.1_ASM151887v1/GCF_001518875.1_ASM151887v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/277/915/GCF_001277915.1_ASM127791v1/GCF_001277915.1_ASM127791v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/978/375/GCF_000978375.1_ASM97837v1/GCF_000978375.1_ASM97837v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/835/185/GCF_000835185.1_ASM83518v1/GCF_000835185.1_ASM83518v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/832/765/GCF_000832765.1_ASM83276v1/GCF_000832765.1_ASM83276v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/832/525/GCF_000832525.1_ASM83252v1/GCF_000832525.1_ASM83252v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/789/315/GCF_000789315.1_ASM78931v1/GCF_000789315.1_ASM78931v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/724/585/GCF_000724585.1_ASM72458v1/GCF_000724585.1_ASM72458v1_genomic.gbff.gz
+...
 ```
 
 接下来用 wget 工具的`-i`参数下载带路径的文件 bcereus.path。
@@ -170,24 +165,10 @@ $ plot_matrix_heatmap.sh -i compare/pangenome_matrix_t0.tab -o pdf -r -H 8 -W 14
 -H -W 高度和宽度
 ```
 
-
 ```bash
+# 构建
 $ parse_pangenome_matrix.pl -m compare/pangenome_matrix_t0.tab -s
 ```
-
-
-### 算法
-
-get_homologues.pl 默认采用BDBH的算法，通过添加不同参数可以调用其他算法。
-
-* `-G`: COG
-* '-M': MCL (OrthMCL)
-
-
-
-### 绘制核心基因和泛基因图
-
-
 
 ## Reference
 

@@ -1,37 +1,47 @@
-# Local Blast 使用说明
-
-> Blast 工具可以进行序列相似性比对，在 NGS 数据分析中经常会被使用到，特别是一些工具中需要 Blast 或 Blast+ 程序来作为第三方比对工具调用。拿到测序完成的草图后，因为基因组数据较大，连接NCBI网站往往又非常缓慢，所以要做 Blast 比对的话都需要做 Local Blast。这里介绍2个方式来实现：
-
-1. 用命令行进行本地 Blast
-2. 快速构建 Blast Web 服务
+# Blast 使用说明
 
 ---
 
-## 1. 基于命令行的 Local Blast
+!!! Abstract "内容简介"
+    Blast 工具可以进行序列相似性比对，在 NGS 数据分析中经常会被使用到，特别是一些工具中需要 Blast 或 Blast+ 程序来作为第三方比对工具调用。拿到测序完成的草图后，因为基因组数据较大，连接NCBI网站往往又非常缓慢，所以要做 Blast 比对的话都需要做 Local Blast。这里介绍2个方式来实现：
 
-`blast` 和 `blast+` 这2个程序集容易搞混。NCBI 最早在1989年创建`Basic Local Alignment Search Tool`工具，沿用至2009年无论是命令行工具或是在线程序，都称呼其为`blast`。2009年 NCBI 鉴于 `blast` 的一些不足，重新开发了新的`blast+`命令行工具，新的 blast+ 工具在速度上有了提升，在输入输出上也更为灵活。
+    1. 用命令行进行本地 Blast
+    2. 快速构建 Blast Web 服务
 
-目前 Blast 工具最新版是2012年发布的**2.2.26**（可能已经处于暂停升级的状态？），而 Blast+ 目前一直在更新。要区分2者也很简单，blast 是通过 blastall -p 的方式调用子程序来比对搜索的，而 blast+ 则是直接使用 blastn 或 blastp 等子程序来比对搜索。另外前者用 formatdb 程序来格式化数据库，后者用 makeblastdb 程序来格式化数据。
+## 1. Blast 原理
 
-### 1.1 Blast
+## 2. 在线 blast
+
+## 3. 基于命令行的 Local Blast
+
+`Blast` 和 `NCBI Blast` 是 NCBI 先后发布的序列比对工具。`**B**asic **L**ocal **A**lignment **S**earch **T**ool`工具最早公布与1989年，我们一般都称呼其为`Blast`。2009年 NCBI 为了克服`Blast`的不足之处，为以后开发方便，重写代码，新的`NCBI Blast`（也称其为`Blast+`）工具应运而生。新版`Blast`工具在速度上有了提升，在输入输出上也更为灵活。
+
+`[Blast](ftp://ftp.ncbi.nlm.nih.gov/blast/)`工具最新版是2012年发布的**2.2.26**，目前已不再提供更新。`NCBI Blast`目前最新版为**2.9.0**。要区分2者也很简单，2个版本的程序运行方式不同：`Blast` 是通过 blastall -p 的方式调用子程序来比对搜索的，而`Blast+`则是直接使用blastn或blastp等子程序来比对搜索。另外前者用formatdb程序来格式化数据库，后者用makeblastdb程序来格式化数据。
+
+### 3.1 Blast
 
 **Blast的下载与安装**
 
 ```bash
-# 安装 Ubuntu 编译包。
-$ sudo apt-get install blast2
+# Ubuntu 中安装 blast
+$ sudo apt install blast2
 
 # 或者直接下载NCBI Linux预编译包，并解压缩安装
 $ wget ftp://ftp.ncbi.nih.gov/blast/executables/release/2.2.26/blast-2.2.26-x64-linux.tar.gz
 $ tar -zxvf blast-2.2.26-x64 -C ~/app
+# 在系统可执行路径中添加 blast 链接
 $ sudo ln -s ~/app/blast-2.2.26-x64/blastall /usr/local/sbin
+
+# 通过 conda 安装 blast
+(blast)$ conda install blast-legacy
 ```
 
 **运行 Blast**
 
-Blast 通过调用 blastall 这个 gateway 程序，来分别调用不同算法和程序实现序列比对。在命令行中输入`blastall`，会打印出一份参数列表。你也可以使用 `man blast` 来查看 Blast 工具的用户手册。
+`Blast`通过调用 blastall 程序来调用不同子程序实现不同类型序列比对。在命令行中输入`blastall`，会打印出一份参数列表。你也可以使用`man blast`来查看`Blast`工具的用户手册。
 
 ```bash
+# 运行主命令
 $ blastall
 ```
 
@@ -56,8 +66,8 @@ $ blastall
 -m: 比对结果的输出显示方式，值为0~11，默认是0。各个数字含义见下表。
 ```
 
-| options | meaning |
-| -- | -- |
+| 参数 | 含义 |
+| ---- | ---- |
 | 0 | pairwise |
 | 1 | query-anchored showing identities |
 | 2 | query-anchored no identities |
@@ -75,38 +85,50 @@ $ blastall
 
 **应用举例:**
 
-Local blast例子：首先下载一个基因组文件并格式化作为本地数据库，然后使用 blastn 对序列进行比对。
+Local blast例子：
 
 ```bash
+# 使用 custom_genome.fasta 文件作为数据库
+# formatdb 格式化作为本地数据库
 $ formatdb -i custom_genome.fasta -o T -p F
+# 使用 blastn 对 myseq.fasta 序列进行比对
 $ blastall -i myseq.fasta -d custom_genome.fasta -p blastn
 ```
 
-### 1.2 Blast+
+### 3.2 Blast+
 
 **下载安装 NCBI Blast+**
 
 ```bash
-$ sudo apt-get install ncbi-blast+
+# Ubuntu 系统中安装 ncbi blast
+$ sudo apt install ncbi-blast+
+
+# Archlinux 系统中安装 ncbi blast
+$ sudo pacman -S
 ```
 
 **构建数据库**
 
 ```bash
+# 将序列文件 data/database.fasta 格式化成数据库
+# 数据类型为核酸，则参数为 -dbtype nucl
 $ makeblastdb -in data/database.fasta -dbtype nucl -parse_seqids
 ```
 
 **运行 blast**
 
 ```bash
-$ blastn -query my_seq.fasta -db data/database.fasta -out result.txt
+# 使用 blastn 程序比对 myseq.fasta 序列。
+$ blastn -query myseq.fasta -db data/database.fasta -out result.txt
+# 常用简单输出方式
+$ blastn -query myseq.fasta -db data/database.fasta -outfmt 6 -out result.txt
 ```
 
 http://www.personal.psu.edu/iua1/courses/files/2014/lecture-12.pdf
 
-## 2. 构建本地的 blast web 服务
+## 4. 构建本地的 blast web 服务
 
-### 2.1 blastkit
+### 4.1 blastkit
 
 blastkit 是一个包含webserver等工具的blast工具集。
 
@@ -146,23 +168,26 @@ $ lighttpd restart
 **安装 blastkit**
 
 ```bash
-$ cd ~/app
+# 克隆软件仓库 blastkit
 $ git clone https://github.com/ctb/blastkit.git -b ec2
 $ cd blastkit/www
-~/app/blastkit/www$ sudo ln -fs $PWD /var/www/blastkit
-~/app/blastkit/www$ mkdir files
-~/app/blastkit/www$ chmod a+rxwt files
-~/app/blastkit/www$ chmod +x /root
-~/app/blastkit/www$ cd ..
-~/app/blastkit$ python ./check.py
-```
+# 将www路径链接到 /var 中
+$ sudo ln -fs $PWD /var/www/blastkit
+# 建立临时文件存放目录
+$ mkdir files
+$ chmod a+rxwt files
+#
+$ chmod +x /root
+$ cd ..
+# 运行检测脚本
+$ python ./check.py
 
-如果安装顺利，就会提示一切已经准备完毕。接下来要准备数据。
-
-```bash
-$ cp /mnt/assembly/ecoli.21/contigs.fa ~/app/blastkit/db/db.fa
-$ cd ~/app/blastkit
+#如果安装顺利，就会提示一切已经准备完毕。接下来要准备数据。
+# 将大肠埃希菌DNA序列文件contigs.fa复制到数据库目录下
+$ cp ~/contigs.fa blastkit/db/db.fa
+# 使用 formatdb 格式化数据库
 $ formatdb -i db/db.fa -o T -p F
+# 建立索引
 $ python index-db.py db/db.fa
 ```
 

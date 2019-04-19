@@ -1,8 +1,11 @@
 # 玩转 edirect
 
-![Chapter 1.1](../assets/images/1.1/banner.jpg)
+---
 
-[NCBI][] 的 [Entrez][] 工具功能非常强大，既可以从 web 页面访问 [NCBI][] 来查询，也可以利用 [Entrez][] 提供的 [Web Services](https://www.ncbi.nlm.nih.gov/books/NBK25501/) 来实现诸多功能（编写第三方程序等）。此外 [NCBI][] 还提供了 [Entrez][] 的命令行工具 edirect[^1]。edirect 全名为 **Entrez Direct**，里面包含了一组各司其职的工具和脚本，通过 Linux 系统下的管道pipeline[^4]功能联合使用这些命令行工具，在服务器上实现高效的进行 [Entrez][] 的检索，抓取，过滤，排序等操作。
+![edirect](../../assets/images/C02/03/banner.jpg)
+
+!!! Abstract "内容简介"
+    [NCBI][] 的 [Entrez][] 工具功能非常强大，既可以从 web 页面访问 [NCBI][] 来查询，也可以利用 [Entrez][] 提供的 [Web Services](https://www.ncbi.nlm.nih.gov/books/NBK25501/) 来实现诸多功能（编写第三方程序等）。此外 [NCBI][] 还提供了 [Entrez][] 的命令行工具 edirect[^1]。edirect 全名为 **Entrez Direct**，里面包含了一组各司其职的工具和脚本，通过 Linux 系统下的管道pipeline[^4]功能联合使用这些命令行工具，在服务器上实现高效的进行 [Entrez][] 的检索，抓取，过滤，排序等操作。
 
 ## 1. 安装
 
@@ -28,10 +31,9 @@ $ source ~/.bashrc
 
 !!! note "安装说明"
     耐心等待一会，当看到下面字符时，表示安装成功。
-
-```
-ENTREZ DIRECT HAS BEEN SUCCESSFULLY INSTALLED AND CONFIGURED
-```
+    ```
+    ENTREZ DIRECT HAS BEEN SUCCESSFULLY INSTALLED AND CONFIGURED
+    ```
 
 也可以不运行 `setup.sh` 直接使用 edirect 的一些工具，不过如果要使用全部功能，有些perl模块需要安装，运行 `setup.sh` 来自动完成 CPAN 的 modual 安装以及 go 版本的 xtract 的编译（不运行安装脚本会调用 perl 版本的 xtract，数据量大时速度略慢）。
 
@@ -58,8 +60,7 @@ $ conda install entrez-direct
 
 ## 2. 基本用法
 
-!!! note "主要工具列表"
-    在 edirect 安装目录下可以看到所有的可执行命令，其中最常用的工具参见下表
+表. 最常用的工具参见下表
 
 | 工具名称 | 工具用途 | 常用参数 |
 | -------- | -------- | ---- |
@@ -196,6 +197,15 @@ $ esearch -db pubmed -query "Salmonella[ORGN]" -days 5 | efetch -format xml | \
 
 **-and、-or、-position、-def 参数**: 关系运算符
 
+
+### 2.4 elink
+
+当我们要检索一个数据库数据所关联到其他数据库时，就要用到elink工具了。比如我们先在SRA数据库中搜索到所有鼠伤寒沙门菌的SRA实验数据，然后链接到biosample数据库，获得这些菌株的生物样本信息。
+
+```bash
+$ esearch -db sra -query "salmonella typhimurium" | elink -target biosample | efetch -format docsum > result.xml
+```
+
 ### 2.4 einfo
 
 对于 NCBI 数据库的各项复杂参数，字段等要完全了解和掌握比较困难。edirect 里提供了 einfo 工具，这样其他工具所能访问的具体数据库、字段和可链接数据库等信息都可以用 einfo 了解。
@@ -211,7 +221,7 @@ $ einfo -db sra -fields
 $ einfo -db sra -links
 ```
 
-## 3. Filtering Queries
+## 3. 高级检索
 
 工具 esearch 和 efilter 在做检索时如果做好筛选，能有助于获得准确的结果。筛选有2种方式，一种是通过添加参数来筛选。另一种是对 query 参数添加字段定义来筛选。
 
@@ -253,7 +263,7 @@ $ einfo -db sra | xtract -pattern Field -element Name Description
 
 -query '"salmonella paratyphi A"[ORGN] AND latest[filter] AND "complete genome[filter]"'
 
-## 4. 具体使用示例
+## 4. 具体示例
 
 下面我们就用几个简单的例子来尝试 edirect 的功能。结合 Linux 其他命令行工具，可以极大的提升我们在命令行界面下检索和抓取 NCBI 数据库的效率。
 
@@ -383,7 +393,7 @@ df = pd.read_table("meta.txt")
 sns.jointplot(x="contig_count", y="scaffold_n50", data=df)
 ```
 
-![plot](../assets/images/1.1/plot_1.png)
+![plot](../../assets/images/C02/03/plot.png)
 
 **获取SRA菌株信息**
 
@@ -398,7 +408,6 @@ $ esearch -db bioproject -query 273159 | elink -target sra | \
 
 ```bash
 $ head sample.txt
-
 ```
 
 这样输出的问题在于各个测序数据的 SAMPLE_ATTRIBUTE 的 TAG 顺序是乱序的，每个 SRR 输出的顺序不同导致各个字段要重新排序，比较麻烦。如果我们只需要其中一个字段，可以用 -if *** -eqauls *** 来过滤。比如下面代码我们输出菌株名称：
@@ -410,7 +419,7 @@ $ esearch -db bioproject -query 273159 | elink -target sra | \
 > -element VALUE | sort > strain-name.csv
 ```
 
--if 在一行输出中不能反复使用，如果要同时对多个样品信息字段分别输出，我们采用变通的方法，先把 xml 数据保存到本地，然后循环分别输出各个所需内容，用 sort 排序，再用 paste 合并。
+`-if`在一行输出中不能反复使用，如果要同时对多个样品信息字段分别输出，我们采用变通的方法，先把 xml 数据保存到本地，然后循环分别输出各个所需内容，用 sort 排序，再用 paste 合并。
 
 ```bash
 # 分别输出 csv 格式的数据

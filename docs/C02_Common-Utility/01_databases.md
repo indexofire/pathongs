@@ -1,8 +1,11 @@
 # 基因组公共数据库
 
+---
+
 ![基因组公共数据库]()
 
-测序的数据如原始 reads 数据我们可以上传到 NCBI 或 EBI 的公共数据库，发表的文章中可以使用。此外公共数据库中的数据也可以为我们的研究提供帮助。本节我们就来了解一下如何上传和下载基因组测序数据。首先让我们来了解一下网络上的测序公共数据库：
+!!! Abstract "内容简介"
+    测序的数据如原始 reads 数据我们可以上传到 NCBI 或 EBI 的公共数据库，发表的文章中可以使用。此外公共数据库中的数据也可以为我们的研究提供帮助。本节我们就来了解一下如何上传和下载基因组测序数据。首先让我们来了解一下网络上的测序公共数据库：
 
 **常见的测序公共数据库：**
 
@@ -10,7 +13,7 @@
 - [ENA][] 欧洲核酸数据库：由 [EBI][] 负责维护
 - [GSA][] 中国组学数据库：由[中科院北京基因研究所](http://www.big.ac.cn)负责维护
 
-[SRA][] 是 [NCBI][] 为了应对越来越多的高通量测序数据而在 2007 年底推出的测序数据库，用于存储、显示、提取和分析高通量测序数据。而 [ENA][] 则是由 [EBI][] 负责维护的功能类似的数据库，同时作为 [Ensembl](www.ensembl.org)、[UniProt](www.uniprot.org) 和 [ArrayExpress](www.ebi.ac.uk/arrayexpress) 等服务的底层基础。2者在主要功能方面非常类似，同时数据互通。
+[SRA][] 是 [NCBI][] 为了应对越来越多的高通量测序数据而在 2007 年底推出的测序数据库，用于存储、显示、提取和分析高通量测序数据。而 [ENA][] 则是由 [EBI][] 负责维护的功能类似的数据库，同时作为 [Ensembl](http://www.ensembl.org)、[UniProt](http://www.uniprot.org) 和 [ArrayExpress](http://www.ebi.ac.uk/arrayexpress) 等服务的底层基础。2者在主要功能方面非常类似，同时数据互通。
 
 ## 1. SRA 数据库
 
@@ -38,7 +41,7 @@
 
 [Aspera Connect][] 下载解压缩后，可以看到一个 .sh 文件，执行后运行后会安装到当前用户 $HOME.aspera/connect 目录下。
 
-```
+```bash
 # 下载并解压缩程序
 $ wget http://download.asperasoft.com/download/sw/connect/3.6.1/aspera-connect-3.6.1.110647-linux-64.tar.gz
 $ tar zxf asper-connect-3.6.1.110647-linux.tar.gz
@@ -52,9 +55,9 @@ $ echo 'PATH="$PATH:$HOME/.aspera/connect/bin/"' >> ~/.bashrc
 
 对于喜欢使用客户端的桌面用户，也可以使用 [Aspera Desktop Client][] 客户端程序来下载数据。
 
-``` bash
+```bash
 $ sed 's/^INSTALL_DIR/INSTALL_DIR=~/envs/srst2/src/ascp/connect/' aspera-connect-3.6.1.110647-linux-64.sh > install.sh
-/tmp$ ./install.sh
+$ ./install.sh
 ```
 
 **下载 SRA 数据**
@@ -62,7 +65,7 @@ $ sed 's/^INSTALL_DIR/INSTALL_DIR=~/envs/srst2/src/ascp/connect/' aspera-connect
 !!! warning "注意"
     注意新版的`ascp`用`.openssh`作为密钥文件而不是原来的`.putty`
 
-```
+```bash
 # ascp 下载 SRA 数据
 $ ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh \
 > --user=anonftp --host=ftp.ncbi.nlm.nih.gov --mode=recv -l 100m -pQTk1 \
@@ -90,20 +93,20 @@ $ ascp /data/sracloud/srapub/ERR579922 ./ERR578822.sra
 
 ```bash
 # download from NCBI
-~$ cd /tmp
-/tmp$ wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.5.6/sratoolkit.2.5.6-ubuntu64.tar.gz
-/tmp$ tar zxf sratoolkit.2.5.6-ubuntu64.tar.gz -C ~/app
+$ cd /tmp
+$ wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.5.6/sratoolkit.2.5.6-ubuntu64.tar.gz
+$ tar zxf sratoolkit.2.5.6-ubuntu64.tar.gz -C ~/app
 ```
 
 #### 2.2.2 下载 SRA 格式文件
 
 如果你安装并设置了 [Aspera Connect][]，那么`prefetch`会优先使用`ascp`方式来下载，如果没有安装或则`ascp`下载失败，则切换成 HTTP 方式下载 sra 数据。另外`fastq-dump`命令也能从远端直接下载数据，加上`-X 1`参数，会预先下载最前的5个 reads，加上`-Z`参数，则会将这些 reads 打印到终端输出。
 
-```
+```bash
 # 下载 SRR955386.sra 到 你安装 sratoolkit 时配置的 public 目录中，默认是 ~/ncbi/public/sra
-~$ prefetch -v SRR955386
+$ prefetch -v SRR955386
 # 下载 SRR955386.sra 到 你安装 sratoolkit 时配置的 public 目录中，默认是 ~/ncbi/public/sra，并且在终端输出5行 reads 数据。
-~$ fastq-dump -X 5 -Z SRR955386
+$ fastq-dump -X 5 -Z SRR955386
 ```
 
 #### 2.2.3 并转换成 .fastq 格式
@@ -112,11 +115,11 @@ $ ascp /data/sracloud/srapub/ERR579922 ./ERR578822.sra
 
 ```bash
 # 将 sra 文件移动到 ~/data 目录中
-~$ mv ~/.ncbi/public/sra/SRR955386.sra ~/data
+$ mv ~/.ncbi/public/sra/SRR955386.sra ~/data
 # 如果是 SE 测序数据，直接运行以下命令
-~$ fastq-dump SRR955386.sra
+$ fastq-dump SRR955386.sra
 # 如果是 PE 测序数据，则要添加参数：--split-files
-~$ fastq-dump --split-files SRR955386.sra
+$ fastq-dump --split-files SRR955386.sra
 ```
 
 #### 2.2.4 SE/PE 文件判断
@@ -125,15 +128,15 @@ $ ascp /data/sracloud/srapub/ERR579922 ./ERR578822.sra
 
 ```bash
 # it's SE if nreads=1, and PE when nreads=2，统计整个文件，因此速度比较慢
-~$ sra-stat -xs SRR955386.sra | grep "nreads"
+$ sra-stat -xs SRR955386.sra | grep "nreads"
 
 # 如果输出是4，那么就是SE，如果是8,则是PE
-~$ fastq-dump -X 1 --split-spot -Z SRR955386.sra | wc -l
+$ fastq-dump -X 1 --split-spot -Z SRR955386.sra | wc -l
 
 # 或者加上参数让 fastq-dump 自己判断
 # 当 sra 文件是 SE 测序时，fastq-dump只能dump出1个 *_1.fastq 文件
-~$ fastq-dump --split-files ERR493452.sra
-~$ mv ERR493452_1.fastq ERR493452.fastq
+$ fastq-dump --split-files ERR493452.sra
+$ mv ERR493452_1.fastq ERR493452.fastq
 ```
 
 当需要判断批量下载的 sra 文件时，区分那些是 PE 的那些是 SE 的文件，可以用以下脚本：
@@ -171,11 +174,11 @@ def check_SRA_type(fn):
 
 如果想下载不同 research 的数据，可以自己建立一个 accession number list 的文件，比如利用 [NCBI] 的 entrez 网页界面，导出所需要的数据 accession number，然后利用 `ascp` 下载。不过建议`ascp`下载不要太狠心，否则容易被 [NCBI][] 给封掉。
 
-## 2. Assembly 数据库
+## 3. Assembly 数据库
 
 如果不需要研究 reads 数据，而是只想研究拼接的基因组数据，可以从 NCBI assembly 数据库去寻找数据，并通过 ascp/ftp 等工具下载。
 
-## 3. 上传数据
+## 4. 上传数据
 
 SRA 上传测序结果可以参照 [NCBI文档](http://www.ncbi.nlm.nih.gov/books/NBK47529/) 来实现。一般上传数据到NCBI SRA的过程需要6步：
 

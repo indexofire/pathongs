@@ -2,7 +2,7 @@
 
 ---
 
-!!! reminder "本节内容简介"
+!!! Abstract "内容简介"
     利用高通量测序技术对铜绿假单胞菌(*Pseudomonas aeruginosa*)的临床分离株与环境分离株在基因组水平上进行SNP分析，从而溯源菌株并做耐药分析。
     内容完成情况：[=85% "85%"]
 
@@ -108,7 +108,7 @@ $ samtools stats TAP1.sorted.bam | grep "^COV" > TAP1.coverage.txt
 > ggplot(cov, aes(x=V3, y=V4)) + geom_bar(stat="identity") + xlab("Coverage") + ylab("Count")
 ```
 
-![coverage plot](../assets/images/chapter_10/02/Rplot.png)
+![coverage plot](../../assets/images/C16/01/Rplot.png)
 
 ### 2.5 比较1号临床株与环境株的SNPs差异
 

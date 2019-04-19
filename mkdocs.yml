@@ -28,7 +28,7 @@ pages:
     - '11. R 编程': C01_Linux-and-Script-Language/11_r.md
   - '第二章 常用工具':
     - '01. 公共生物数据库': C02_Common-Utility/01_databases.md
-    - '02. Blast 与 NCBI_Blast': C02_Common-Utility/02_blast.md
+    - '02. Blast 比对': C02_Common-Utility/02_blast.md
     - '03. 玩转 edirect': C02_Common-Utility/03_edirect.md
     - '04. EMBOSS 工具集': C02_Common-Utility/04_emboss.md
     - '07. MUMmer 工具': C02_Common-Utility/07_mummer.md
@@ -57,7 +57,6 @@ pages:
     - '03. BPGA 分析': C07_PanGenome-and-CoreGenome/03_BPGA.md
     - '04. Roary 分析': C07_PanGenome-and-CoreGenome/04_roary.md
     - '05. panseq 分析': C07_PanGenome-and-CoreGenome/05_panseq.md
-    - '06. Gubbins 分析': C07_PanGenome-and-CoreGenome/06_gubbins.md
     - '07. OrthMCL 分析': C07_PanGenome-and-CoreGenome/07_orthmcl.md
     - '08. ITEP 分析': C07_PanGenome-and-CoreGenome/08_ITEP.md
   - '第八章 基因组可视化':
@@ -71,6 +70,7 @@ pages:
     - '04. 其他平台': C09_Analysis-Platform/04_others.md
   - '第十章 重组与种群分析':
     - '01. 病毒重组': C10_Recombination-and-Population-Structure/01_virus-recombination.md
+    - '02. Gubbins 分析': C07_PanGenome-and-CoreGenome/06_gubbins.md
   - '第十一章 常见分析工具':
     - '01. SRST2 短序列比对基因工具': C11_Insilico-Genome-Application/01_srst2.md
     - '02. 拼接序列管家基因扫描工具 MLST': C11_Insilico-Genome-Application/02_mlst.md
