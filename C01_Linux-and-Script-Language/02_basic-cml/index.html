@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.7.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
       
@@ -46,20 +46,50 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
       
     
     
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-55420348-3", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -71,7 +101,7 @@
         
         
           <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="github">
+    viewBox="0 0 416 448" id="__github">
   <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
         8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
         18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
@@ -91,9 +121,9 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
       <a href="#linux" tabindex="1" class="md-skip">
         Skip to content
@@ -111,33 +141,30 @@
         </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Pathogen NGS 数据分析入门
-              </span>
-              <span class="md-header-nav__topic">
-                02. Linux 基本命令
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Pathogen NGS 数据分析入门
+            </span>
+            <span class="md-header-nav__topic">
+              02. Linux 基本命令
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
+  <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="search"></label>
+      <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
       </button>
@@ -154,7 +181,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -165,20 +191,18 @@
 
   
 
-
-  <a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -199,12 +223,12 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    <span class="md-nav__button md-logo">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://pathongs.hzcdclab.org/" title="Pathogen NGS 数据分析入门" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
-    </span>
+    </a>
     Pathogen NGS 数据分析入门
   </label>
   
@@ -214,20 +238,18 @@
 
   
 
-
-  <a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -286,12 +308,12 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      <label class="md-nav__link md-nav__link--active" for="__toc">
         02. Linux 基本命令
       </label>
     
@@ -306,12 +328,47 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#_1" title="文件操作" class="md-nav__link">
     文件操作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="系统查看" class="md-nav__link">
+    系统查看
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="显示文本文件内容" class="md-nav__link">
+    显示文本文件内容
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="压缩/解压缩文件" class="md-nav__link">
+    压缩/解压缩文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="客户端与服务器端交互" class="md-nav__link">
+    客户端与服务器端交互
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
   </a>
   
 </li>
@@ -477,8 +534,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C02_Common-Utility/02_blast/" title="02. Blast 与 NCBI_Blast" class="md-nav__link">
-      02. Blast 与 NCBI_Blast
+    <a href="../../C02_Common-Utility/02_blast/" title="02. Blast 比对" class="md-nav__link">
+      02. Blast 比对
     </a>
   </li>
 
@@ -885,18 +942,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C07_PanGenome-and-CoreGenome/06_gubbins/" title="06. Gubbins 分析" class="md-nav__link">
-      06. Gubbins 分析
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../C07_PanGenome-and-CoreGenome/07_orthmcl/" title="07. OrthMCL 分析" class="md-nav__link">
       07. OrthMCL 分析
     </a>
@@ -1079,6 +1124,18 @@
   <li class="md-nav__item">
     <a href="../../C10_Recombination-and-Population-Structure/01_virus-recombination/" title="01. 病毒重组" class="md-nav__link">
       01. 病毒重组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C07_PanGenome-and-CoreGenome/06_gubbins.md" title="02. Gubbins 分析" class="md-nav__link">
+      02. Gubbins 分析
     </a>
   </li>
 
@@ -1537,12 +1594,47 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#_1" title="文件操作" class="md-nav__link">
     文件操作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="系统查看" class="md-nav__link">
+    系统查看
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="显示文本文件内容" class="md-nav__link">
+    显示文本文件内容
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="压缩/解压缩文件" class="md-nav__link">
+    压缩/解压缩文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="客户端与服务器端交互" class="md-nav__link">
+    客户端与服务器端交互
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
   </a>
   
 </li>
@@ -1595,118 +1687,149 @@
 <li><code class="codehilite">which</code>: 查找可执行文件的系统路径</li>
 <li><code class="codehilite">wc</code>: 统计一个文件的行，字符和字节数</li>
 </ul>
-<p>```bash tab="ls"</p>
-<h1 id="data">显示 '~/data' 目录里的文件<a class="headerlink" href="#data" title="Permanent link">&para;</a></h1>
-<p>$ ls ~/data</p>
-<h1 id="data_1">列表方式显示包括隐含文件的 '~/data' 目录里的所有文件<a class="headerlink" href="#data_1" title="Permanent link">&para;</a></h1>
-<p>$ ls -la ~/data</p>
-<h1 id="_2">文件按照时间排序<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
-<p>$ ls -t ~/data</p>
-<h1 id="fastq">查看所有后缀为 fastq 的文件<a class="headerlink" href="#fastq" title="Permanent link">&para;</a></h1>
-<p>$ ls ~/data/*.fastq
-<div class="codehilite"><pre><span></span>```bash tab=&quot;cd&quot;
-# 从当前目录切换到 &#39;~/app&#39; 目录
-$ cd ~/app
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">ls</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 显示 &#39;~/data&#39; 目录里的文件</span>
+$ ls ~/data
 
-# 从任何位置切换回用户主目录 &#39;/home/User&#39;
-$ cd
+<span class="c1"># 列表方式显示包括隐含文件的 &#39;~/data&#39; 目录里的所有文件</span>
+$ ls -la ~/data
 
-# 回退上一个访问目录
-$ cd -
+<span class="c1"># 文件按照时间排序</span>
+$ ls -t ~/data
 
-# 返回上一级目录
-$ cd ..
+<span class="c1"># 查看所有后缀为 fastq 的文件</span>
+$ ls ~/data/*.fastq
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">cd</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 从当前目录切换到 &#39;~/app&#39; 目录</span>
+$ <span class="nb">cd</span> ~/app
 
-# 使用相对路径，进入另一个目录&quot;new directory&quot;，这里 &#39;\&#39; 是转义符，将空格键正确转义
-$ cd ../../../new\ directory
-</pre></div></p>
-<p>```bash tab="pwd"</p>
-<h1 id="_3">当不知道当前处于什么路径时，可以用这个命令显示<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
-<p>$ pwd</p>
-<h1 id="links">需要使用当前路径到命令中，如建立links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h1>
-<p>$ ln -s <code class="codehilite">pwd</code>/mylib.so /usr/lib/
-<div class="codehilite"><pre><span></span>```bash tab=&quot;mkdir&quot;
-# 当前路径下新建一个名叫 &#39;new&#39; 的目录
+<span class="c1"># 从任何位置切换回用户主目录 &#39;/home/User&#39;</span>
+$ <span class="nb">cd</span>
+
+<span class="c1"># 回退上一个访问目录</span>
+$ <span class="nb">cd</span> -
+
+<span class="c1"># 返回上一级目录</span>
+$ <span class="nb">cd</span> ..
+
+<span class="c1"># 使用相对路径，进入另一个目录&quot;new directory&quot;，这里 &#39;\&#39; 是转义符，将空格键正确转义</span>
+$ <span class="nb">cd</span> ../../../new<span class="se">\ </span>directory
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_2" />
+<label for="__tab_1_2">pwd</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 当不知道当前处于什么路径时，可以用这个命令显示</span>
+$ <span class="nb">pwd</span>
+
+<span class="c1"># 需要使用当前路径到命令中，如建立links</span>
+$ ln -s <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/mylib.so /usr/lib/
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_3" />
+<label for="__tab_1_3">mkdir</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 当前路径下新建一个名叫 &#39;new&#39; 的目录</span>
 $ mkdir new
-</pre></div></p>
-<p>```bash tab="rmdir"</p>
-<h1 id="new">删除当前路径的目录 'new'<a class="headerlink" href="#new" title="Permanent link">&para;</a></h1>
-<p>$ rmdir new
-<div class="codehilite"><pre><span></span>```bash tab=&quot;rm&quot;
-# 删除当前目录的所有后缀是 &#39;.sra&#39; 的文件
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_4" />
+<label for="__tab_1_4">rmdir</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 删除当前路径的目录 &#39;new&#39;</span>
+$ rmdir new
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_5" />
+<label for="__tab_1_5">rm</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 删除当前目录的所有后缀是 &#39;.sra&#39; 的文件</span>
 $ rm *.sra
 
-# -R 参数删除目录
-# 删除目录 &#39;new&#39; 以及 &#39;new&#39; 下的所有子文件与子目录
+<span class="c1"># -R 参数删除目录</span>
+<span class="c1"># 删除目录 &#39;new&#39; 以及 &#39;new&#39; 下的所有子文件与子目录</span>
 $ rm -R new
 
-# 不弹出删除确认提示，删除所有 &#39;.tmp&#39; 文件
+<span class="c1"># 不弹出删除确认提示，删除所有 &#39;.tmp&#39; 文件</span>
 $ rm -f *.tmp
 
-# 千万不能做的事情！也是linux频道里经常能看到的笑话
+<span class="c1"># 千万不能做的事情！也是linux频道里经常能看到的笑话</span>
 $ sudo rm -rf /*
-</pre></div></p>
-<p>```bash tab="cp"</p>
-<h1 id="testtxt-abc">复制 'test.txt' 文件到目录 '~/abc' 中<a class="headerlink" href="#testtxt-abc" title="Permanent link">&para;</a></h1>
-<p>$ cp test.txt ~/abc</p>
-<h1 id="-r">-R 复制目录<a class="headerlink" href="#-r" title="Permanent link">&para;</a></h1>
-<h1 id="mydir">复制 mydir 到用户目录下<a class="headerlink" href="#mydir" title="Permanent link">&para;</a></h1>
-<p>$ cp -R mydir/ ~
-<div class="codehilite"><pre><span></span>```bash tab=&quot;mv&quot;
-# 移动 &#39;test.txt&#39; 文件到目录 &#39;~/abc&#39; 中并改名叫 &#39;test1.txt&#39;
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_6" />
+<label for="__tab_1_6">cp</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 复制 &#39;test.txt&#39; 文件到目录 &#39;~/abc&#39; 中</span>
+$ cp test.txt ~/abc
+
+<span class="c1"># -R 复制目录</span>
+<span class="c1"># 复制 mydir 到用户目录下</span>
+$ cp -R mydir/ ~
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_7" />
+<label for="__tab_1_7">mv</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 移动 &#39;test.txt&#39; 文件到目录 &#39;~/abc&#39; 中并改名叫 &#39;test1.txt&#39;</span>
 $ mv test.txt ~/abc/test1.txt
-</pre></div></p>
-<p>```bash tab="which"</p>
-<h1 id="python">打印出系统带的 python 程序的路径<a class="headerlink" href="#python" title="Permanent link">&para;</a></h1>
-<p>$ which python
-<div class="codehilite"><pre><span></span>## 系统查看
-
-- `find`: 查找文件
-- `ps`: 查看系统进程
-- `top`: 查看当前系统状态和进程
-
-
-```bash tab=&quot;find&quot;
-# 查找一个文件，比如 .bashrc, /etc路径下的hosts文件
+</pre></div></div>
+<input name="__tabs_1" type="radio" id="__tab_1_8" />
+<label for="__tab_1_8">which</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 打印出系统带的 python 程序的路径</span>
+$ which python
+</pre></div></div>
+</div>
+<h2 id="_2">系统查看<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code class="codehilite">find</code>: 查找文件</li>
+<li><code class="codehilite">ps</code>: 查看系统进程</li>
+<li><code class="codehilite">top</code>: 查看当前系统状态和进程</li>
+</ul>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">find</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 查找一个文件，比如 .bashrc, /etc路径下的hosts文件</span>
 $ find .bashrc
 $ find /etc/hosts
 
-# 查找当前目录及子目录后缀为gz的文件
-$ find . -type f -name &quot;*.gz&quot;
-# 查找所有的 html 网页文件
-$ find . -type f -regex &quot;.*html$&quot;
-# 将所有 fasta 文件中序列名字包含node的改成seq
-$ find . -type f -regex &quot;.*fasta$&quot; | xargs sed &#39;s/NODE/Seq/g&#39;
+<span class="c1"># 查找当前目录及子目录后缀为gz的文件</span>
+$ find . -type f -name <span class="s2">&quot;*.gz&quot;</span>
+<span class="c1"># 查找所有的 html 网页文件</span>
+$ find . -type f -regex <span class="s2">&quot;.*html</span>$<span class="s2">&quot;</span>
+<span class="c1"># 将所有 fasta 文件中序列名字包含node的改成seq</span>
+$ find . -type f -regex <span class="s2">&quot;.*fasta</span>$<span class="s2">&quot;</span> <span class="p">|</span> xargs sed <span class="s1">&#39;s/NODE/Seq/g&#39;</span>
 
-# 查找子目录深度为4层目录的fasta文件
-$ find . -type f -maxdepth 4 -name &quot;*.fasta&quot;
+<span class="c1"># 查找子目录深度为4层目录的fasta文件</span>
+$ find . -type f -maxdepth <span class="m">4</span> -name <span class="s2">&quot;*.fasta&quot;</span>
 
-# 查找/var/log路径下权限为755的目录
-$ find /var/log -type d -perm 755
+<span class="c1"># 查找/var/log路径下权限为755的目录</span>
+$ find /var/log -type d -perm <span class="m">755</span>
 
-# 按照用户查找用户，在tmp路径下查找属于用户 nginx 的文件
+<span class="c1"># 按照用户查找用户，在tmp路径下查找属于用户 nginx 的文件</span>
 $ find /tmp -user nginx
-# 用户主home路径下查找属于 root 权限，属性为644的文件
-$ find . -user root -perm 644
-</pre></div></p>
-<p>```bash tab="ps"</p>
-<h1 id="_4">显示详细的进程信息<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
-<p>$ ps -waux</p>
-<h1 id="root">过滤用户root的进程<a class="headerlink" href="#root" title="Permanent link">&para;</a></h1>
-<p>$ ps -u root</p>
-<h1 id="10">根据不同参数使用来排序进程，并只现实排名前10的进程<a class="headerlink" href="#10" title="Permanent link">&para;</a></h1>
-<p>$ ps -aux --sort -pcpu | head -n 11
-$ ps -aux --sort -pmem | head -n 11
-$ ps -aux --sort -pcpu,+pmem | head -n 11</p>
-<h1 id="_5">过滤进程名<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
-<p>$ ps -f -C chrome</p>
-<h1 id="pid">根据PID过滤<a class="headerlink" href="#pid" title="Permanent link">&para;</a></h1>
-<p>$ ps -L 1000</p>
-<h1 id="_6">树形现实进程<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h1>
-<p>$ ps -axjf
-<div class="codehilite"><pre><span></span>```bash tab=&quot;top&quot;
-$ top
-</pre></div></p>
+<span class="c1"># 用户主home路径下查找属于 root 权限，属性为644的文件</span>
+$ find . -user root -perm <span class="m">644</span>
+</pre></div></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">ps</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 显示详细的进程信息</span>
+$ ps -waux
+
+<span class="c1"># 过滤用户root的进程</span>
+$ ps -u root
+
+<span class="c1"># 根据不同参数使用来排序进程，并只现实排名前10的进程</span>
+$ ps -aux --sort -pcpu <span class="p">|</span> head -n <span class="m">11</span>
+$ ps -aux --sort -pmem <span class="p">|</span> head -n <span class="m">11</span>
+$ ps -aux --sort -pcpu,+pmem <span class="p">|</span> head -n <span class="m">11</span>
+
+<span class="c1"># 过滤进程名</span>
+$ ps -f -C chrome
+
+<span class="c1"># 根据PID过滤</span>
+$ ps -L <span class="m">1000</span>
+
+<span class="c1"># 树形现实进程</span>
+$ ps -axjf
+</pre></div></div>
+<input name="__tabs_2" type="radio" id="__tab_2_2" />
+<label for="__tab_2_2">top</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>$ top
+</pre></div></div>
+</div>
 <div class="admonition info">
 <p class="admonition-title">进程列表</p>
 <p>ps会在终端打印系统进程，各列的含义是:</p>
@@ -1723,7 +1846,7 @@ $ top
 <li>COMMAND: 该进程所运行的命令</li>
 </ul>
 </div>
-<h2 id="_7">显示文本文件内容<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_3">显示文本文件内容<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>操作大文件如fastq测序原始数据，常常不需要将几百M甚至上G的数据全部写入到内存打开文件，只需要了解头部数据即可。用head就非常轻便。head默认输出前10行内容。</p>
 <ul>
 <li><code class="codehilite">head</code></li>
@@ -1735,40 +1858,54 @@ $ top
 <li><code class="codehilite">nl</code>:</li>
 <li><code class="codehilite">grep</code>: 截取输入字符的选定 pattern 并输出所在的行</li>
 </ul>
-<p>```bash tab="head"</p>
-<h1 id="5">输出文件前5行内容<a class="headerlink" href="#5" title="Permanent link">&para;</a></h1>
-<p>$ head -5 text.txt
-<div class="codehilite"><pre><span></span>```bash tab=&quot;tail&quot;
-# 输出文件的最后5行内容
+<div class="superfences-tabs">
+<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
+<label for="__tab_3_0">head</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 输出文件前5行内容</span>
+$ head -5 text.txt
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_1" />
+<label for="__tab_3_1">tail</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 输出文件的最后5行内容</span>
 $ tail -5 text.txt
-</pre></div></p>
-<p>```bash tab="cat"</p>
-<h1 id="texttxt">显示文件 'text.txt' 内容<a class="headerlink" href="#texttxt" title="Permanent link">&para;</a></h1>
-<p>$ cat text.txt
-<div class="codehilite"><pre><span></span>```bash tab=&quot;less&quot;
-# 显示文件 &#39;text.txt&#39; 内容，支持分页
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_2" />
+<label for="__tab_3_2">cat</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 显示文件 &#39;text.txt&#39; 内容</span>
+$ cat text.txt
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_3" />
+<label for="__tab_3_3">less</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 显示文件 &#39;text.txt&#39; 内容，支持分页</span>
 $ less text.txt
-</pre></div></p>
-<p>```bash tab="more"
-$ more text.txt
-<div class="codehilite"><pre><span></span>```bash tab=&quot;wc&quot;
-# 输出文件 &#39;text.txt&#39; 的行数，字符数和字节数。
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_4" />
+<label for="__tab_3_4">more</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>$ more text.txt
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_5" />
+<label for="__tab_3_5">wc</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 输出文件 &#39;text.txt&#39; 的行数，字符数和字节数。</span>
 $ wc text.txt
 
-# 输出行数
+<span class="c1"># 输出行数</span>
 $ wc -l text.txt
-</pre></div></p>
-<p>```bash tab="nl"</p>
-<h1 id="_8">输出行号<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
-<p>$ cat text.txt | nl
-<div class="codehilite"><pre><span></span>```bash tab=&quot;grep&quot;
-# 显示文件 &#39;text.txt&#39; 中含有字符 &#39;abc&#39; 的行
-$ cat text.txt | grep &#39;abc&#39;
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_6" />
+<label for="__tab_3_6">nl</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 输出行号</span>
+$ cat text.txt <span class="p">|</span> nl
+</pre></div></div>
+<input name="__tabs_3" type="radio" id="__tab_3_7" />
+<label for="__tab_3_7">grep</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="c1"># 显示文件 &#39;text.txt&#39; 中含有字符 &#39;abc&#39; 的行</span>
+$ cat text.txt <span class="p">|</span> grep <span class="s1">&#39;abc&#39;</span>
 
-# 输出文件中行以&gt;开头的行
-$ grep &#39;^&gt;&#39; myseq.fasta
-</pre></div></p>
-<h2 id="_9">压缩/解压缩文件<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<span class="c1"># 输出文件中行以&gt;开头的行</span>
+$ grep <span class="s1">&#39;^&gt;&#39;</span> myseq.fasta
+</pre></div></div>
+</div>
+<h2 id="_4">压缩/解压缩文件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>对序列数据常需要进行压缩处理，可以使用 gzip/tar， 特殊格式压缩可以使用第三方软件，个人常用7z来进行。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># gzip 压缩文件 1 为 1.gz</span>
 $ gzip <span class="m">1</span>
@@ -1781,7 +1918,7 @@ $ tar -zcf foo.tar.gz foo
 $ tar -zxf foo.tar.gz
 </pre></div>
 
-<h2 id="_10">客户端与服务器端交互<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h2 id="_5">客户端与服务器端交互<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>Linux 服务器上计算获得的结果，可以通过以下常用方式方便的下载和上传。</p>
 <ol>
 <li>ssh 登录服务器</li>
@@ -1881,13 +2018,11 @@ $ sshfs mark@10.44.35.122:/data ~/server -o <span class="nv">idmap</span><span c
           </div>
         
         powered by
-        <a href="http://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -1895,9 +2030,9 @@ $ sshfs mark@10.44.35.122:/data ~/server -o <span class="nv">idmap</span><span c
       
     </div>
     
-      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
+      <script src="../../assets/javascripts/application.267712eb.js"></script>
       
-      <script>app.initialize({version:"0.17.1",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
       
@@ -1908,11 +2043,6 @@ $ sshfs mark@10.44.35.122:/data ~/server -o <span class="nv">idmap</span><span c
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
       
         <script src="../../assets/js/umlconvert.js"></script>
-      
-    
-    
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-55420348-3","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
       
     
   </body>

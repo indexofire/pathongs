@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.7.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
       
@@ -46,20 +46,50 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
       
     
     
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-55420348-3", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -71,7 +101,7 @@
         
         
           <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="github">
+    viewBox="0 0 416 448" id="__github">
   <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
         8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
         18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
@@ -91,9 +121,9 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
       <a href="#edirect" tabindex="1" class="md-skip">
         Skip to content
@@ -111,33 +141,30 @@
         </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Pathogen NGS 数据分析入门
-              </span>
-              <span class="md-header-nav__topic">
-                03. 玩转 edirect
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Pathogen NGS 数据分析入门
+            </span>
+            <span class="md-header-nav__topic">
+              03. 玩转 edirect
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
+  <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="search"></label>
+      <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
       </button>
@@ -154,7 +181,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -165,20 +191,18 @@
 
   
 
-
-  <a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -199,12 +223,12 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    <span class="md-nav__button md-logo">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://pathongs.hzcdclab.org/" title="Pathogen NGS 数据分析入门" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
-    </span>
+    </a>
     Pathogen NGS 数据分析入门
   </label>
   
@@ -214,20 +238,18 @@
 
   
 
-
-  <a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -439,8 +461,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../02_blast/" title="02. Blast 与 NCBI_Blast" class="md-nav__link">
-      02. Blast 与 NCBI_Blast
+    <a href="../02_blast/" title="02. Blast 比对" class="md-nav__link">
+      02. Blast 比对
     </a>
   </li>
 
@@ -454,12 +476,12 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      <label class="md-nav__link md-nav__link--active" for="__toc">
         03. 玩转 edirect
       </label>
     
@@ -474,7 +496,7 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -534,6 +556,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#24-elink" title="2.4 elink" class="md-nav__link">
+    2.4 elink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#24-einfo" title="2.4 einfo" class="md-nav__link">
     2.4 einfo
   </a>
@@ -546,15 +575,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-filtering-queries" title="3. Filtering Queries" class="md-nav__link">
-    3. Filtering Queries
+  <a href="#3" title="3. 高级检索" class="md-nav__link">
+    3. 高级检索
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" title="4. 具体使用示例" class="md-nav__link">
-    4. 具体使用示例
+  <a href="#4" title="4. 具体示例" class="md-nav__link">
+    4. 具体示例
   </a>
   
 </li>
@@ -967,18 +996,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C07_PanGenome-and-CoreGenome/06_gubbins/" title="06. Gubbins 分析" class="md-nav__link">
-      06. Gubbins 分析
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../C07_PanGenome-and-CoreGenome/07_orthmcl/" title="07. OrthMCL 分析" class="md-nav__link">
       07. OrthMCL 分析
     </a>
@@ -1161,6 +1178,18 @@
   <li class="md-nav__item">
     <a href="../../C10_Recombination-and-Population-Structure/01_virus-recombination/" title="01. 病毒重组" class="md-nav__link">
       01. 病毒重组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C07_PanGenome-and-CoreGenome/06_gubbins.md" title="02. Gubbins 分析" class="md-nav__link">
+      02. Gubbins 分析
     </a>
   </li>
 
@@ -1619,7 +1648,7 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -1679,6 +1708,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#24-elink" title="2.4 elink" class="md-nav__link">
+    2.4 elink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#24-einfo" title="2.4 einfo" class="md-nav__link">
     2.4 einfo
   </a>
@@ -1691,15 +1727,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-filtering-queries" title="3. Filtering Queries" class="md-nav__link">
-    3. Filtering Queries
+  <a href="#3" title="3. 高级检索" class="md-nav__link">
+    3. 高级检索
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" title="4. 具体使用示例" class="md-nav__link">
-    4. 具体使用示例
+  <a href="#4" title="4. 具体示例" class="md-nav__link">
+    4. 具体示例
   </a>
   
 </li>
@@ -1731,8 +1767,12 @@
                 
                 
                 <h1 id="edirect">玩转 edirect<a class="headerlink" href="#edirect" title="Permanent link">&para;</a></h1>
-<p><img alt="Chapter 1.1" src="../../assets/images/1.1/banner.jpg" /></p>
-<p><a href="https://www.ncbi.nlm.nih.gov/">NCBI</a> 的 <a href="https://www.ncbi.nlm.nih.gov/gquery/">Entrez</a> 工具功能非常强大，既可以从 web 页面访问 <a href="https://www.ncbi.nlm.nih.gov/">NCBI</a> 来查询，也可以利用 <a href="https://www.ncbi.nlm.nih.gov/gquery/">Entrez</a> 提供的 <a href="https://www.ncbi.nlm.nih.gov/books/NBK25501/">Web Services</a> 来实现诸多功能（编写第三方程序等）。此外 <a href="https://www.ncbi.nlm.nih.gov/">NCBI</a> 还提供了 <a href="https://www.ncbi.nlm.nih.gov/gquery/">Entrez</a> 的命令行工具 edirect<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>。edirect 全名为 <strong>Entrez Direct</strong>，里面包含了一组各司其职的工具和脚本，通过 Linux 系统下的管道pipeline<sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">2</a></sup>功能联合使用这些命令行工具，在服务器上实现高效的进行 <a href="https://www.ncbi.nlm.nih.gov/gquery/">Entrez</a> 的检索，抓取，过滤，排序等操作。</p>
+<hr />
+<p><img alt="edirect" src="../../assets/images/C02/03/banner.jpg" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
+<p><a href="https://www.ncbi.nlm.nih.gov/">NCBI</a> 的 <a href="https://www.ncbi.nlm.nih.gov/gquery/">Entrez</a> 工具功能非常强大，既可以从 web 页面访问 <a href="https://www.ncbi.nlm.nih.gov/">NCBI</a> 来查询，也可以利用 <a href="https://www.ncbi.nlm.nih.gov/gquery/">Entrez</a> 提供的 <a href="https://www.ncbi.nlm.nih.gov/books/NBK25501/">Web Services</a> 来实现诸多功能（编写第三方程序等）。此外 <a href="https://www.ncbi.nlm.nih.gov/">NCBI</a> 还提供了 <a href="https://www.ncbi.nlm.nih.gov/gquery/">Entrez</a> 的命令行工具 edirect<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>。edirect 全名为 <strong>Entrez Direct</strong>，里面包含了一组各司其职的工具和脚本，通过 Linux 系统下的管道pipeline<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">2</a></sup>功能联合使用这些命令行工具，在服务器上实现高效的进行 <a href="https://www.ncbi.nlm.nih.gov/gquery/">Entrez</a> 的检索，抓取，过滤，排序等操作。</p>
+</div>
 <h2 id="1">1. 安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <h3 id="11">1.1 下载安装<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
 <p>edirect 直接下载预编译包，添加到系统路径中即可。</p>
@@ -1753,11 +1793,10 @@ $ <span class="nb">source</span> ~/.bashrc
 
 <div class="admonition note">
 <p class="admonition-title">安装说明</p>
-<p>耐心等待一会，当看到下面字符时，表示安装成功。</p>
-</div>
+<p>耐心等待一会，当看到下面字符时，表示安装成功。
 <div class="codehilite"><pre><span></span>ENTREZ DIRECT HAS BEEN SUCCESSFULLY INSTALLED AND CONFIGURED
-</pre></div>
-
+</pre></div></p>
+</div>
 <p>也可以不运行 <code class="codehilite">setup.sh</code> 直接使用 edirect 的一些工具，不过如果要使用全部功能，有些perl模块需要安装，运行 <code class="codehilite">setup.sh</code> 来自动完成 CPAN 的 modual 安装以及 go 版本的 xtract 的编译（不运行安装脚本会调用 perl 版本的 xtract，数据量大时速度略慢）。</p>
 <div class="admonition hint">
 <p class="admonition-title">提示</p>
@@ -1777,10 +1816,7 @@ $ sudo ln -s /bin/uname /usr/bin/uname
 
 <p>不过 conda 安装的还是 perl 版本的 xtract，而不是 go 版本的，需要到 conda/pkgs 包根目录中的 edirect 相应目录，用 <code class="codehilite">setup.sh</code> 自行编译后生成 xtract.Linux(Linux 操作系统)，将其复制到 conda 的 bin 路径即可。go 版本的 xtract 可以用 -help 参数查看帮助。</p>
 <h2 id="2">2. 基本用法<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">主要工具列表</p>
-<p>在 edirect 安装目录下可以看到所有的可执行命令，其中最常用的工具参见下表</p>
-</div>
+<p>表. 最常用的工具参见下表</p>
 <table>
 <thead>
 <tr>
@@ -1875,7 +1911,7 @@ $ sudo ln -s /bin/uname /usr/bin/uname
 </pre></div>
 
 <p><strong>efetch</strong> 设置的参数是 <strong>-db</strong>，将搜索命中的记录从该数据库进行。如果 <strong>esearch</strong> 检索的结果和需要下载的结果来自同一数据库，可以不添加 <strong>-db</strong> 参数，系统会默认使用esearch的数据库。</p>
-<p><strong>efetch</strong> 还要设置的参数是 <strong>-format</strong>，即下载数据的格式。常用的有 <strong>xml</strong> 格式，后续可以通过 <strong>xtract</strong> 和 <strong>linux</strong> 一些命令行工具来做处理。你也可以直接添加 <strong>-id</strong> 参数直接进行下载而不通过 <strong>esearch</strong> 检索后下载。如下面例子中将 <strong>pubmed id 2137412</strong> 的文献输出，格式为 Medline<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">3</a></sup></p>
+<p><strong>efetch</strong> 还要设置的参数是 <strong>-format</strong>，即下载数据的格式。常用的有 <strong>xml</strong> 格式，后续可以通过 <strong>xtract</strong> 和 <strong>linux</strong> 一些命令行工具来做处理。你也可以直接添加 <strong>-id</strong> 参数直接进行下载而不通过 <strong>esearch</strong> 检索后下载。如下面例子中将 <strong>pubmed id 2137412</strong> 的文献输出，格式为 Medline<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">3</a></sup></p>
 <div class="codehilite"><pre><span></span><span class="c1"># 搜索 pubmed 数据库编号 2137412 的文献，以 medline 格式输出</span>
 $ efetch -db pubmed -id <span class="m">2137412</span> -format medline
 </pre></div>
@@ -1885,7 +1921,7 @@ $ efetch -db pubmed -id <span class="m">2137412</span> -format medline
 </pre></div>
 
 <h3 id="23-xtract">2.3 xtract<a class="headerlink" href="#23-xtract" title="Permanent link">&para;</a></h3>
-<p>edirect 的核心命令，由于 <strong>esearch</strong> 查询和下载的数据常常是 xml 格式的，对于 XML<sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">4</a></sup> 格式的数据，可以用 <strong>xtract</strong> 工具将其转换成纯文本格式的内容。xtract 不仅可以转换 <a href="https://www.ncbi.nlm.nih.gov/">NCBI</a> 的 XML 格式文件，对于任何通用的 XML 格式文件都可以进行转换。</p>
+<p>edirect 的核心命令，由于 <strong>esearch</strong> 查询和下载的数据常常是 xml 格式的，对于 XML<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">4</a></sup> 格式的数据，可以用 <strong>xtract</strong> 工具将其转换成纯文本格式的内容。xtract 不仅可以转换 <a href="https://www.ncbi.nlm.nih.gov/">NCBI</a> 的 XML 格式文件，对于任何通用的 XML 格式文件都可以进行转换。</p>
 <p>xtract 基本用法：</p>
 <div class="codehilite"><pre><span></span># 读取 XML 文件方式
 $ xtract -input XML-file.xml
@@ -1924,6 +1960,11 @@ $ xtract -input XML-file.xml
 <p><strong>@</strong>: 指定 XML 元素 element 的 attribute 值</p>
 <p><strong>-if、-if/-equals、-if/-contains 参数</strong>: 条件运算符</p>
 <p><strong>-and、-or、-position、-def 参数</strong>: 关系运算符</p>
+<h3 id="24-elink">2.4 elink<a class="headerlink" href="#24-elink" title="Permanent link">&para;</a></h3>
+<p>当我们要检索一个数据库数据所关联到其他数据库时，就要用到elink工具了。比如我们先在SRA数据库中搜索到所有鼠伤寒沙门菌的SRA实验数据，然后链接到biosample数据库，获得这些菌株的生物样本信息。</p>
+<div class="codehilite"><pre><span></span>$ esearch -db sra -query <span class="s2">&quot;salmonella typhimurium&quot;</span> <span class="p">|</span> elink -target biosample <span class="p">|</span> efetch -format docsum &gt; result.xml
+</pre></div>
+
 <h3 id="24-einfo">2.4 einfo<a class="headerlink" href="#24-einfo" title="Permanent link">&para;</a></h3>
 <p>对于 NCBI 数据库的各项复杂参数，字段等要完全了解和掌握比较困难。edirect 里提供了 einfo 工具，这样其他工具所能访问的具体数据库、字段和可链接数据库等信息都可以用 einfo 了解。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># 查询 `esearch -db` 参数所能访问的所有数据库名称</span>
@@ -1936,7 +1977,7 @@ $ einfo -db sra -fields
 $ einfo -db sra -links
 </pre></div>
 
-<h2 id="3-filtering-queries">3. Filtering Queries<a class="headerlink" href="#3-filtering-queries" title="Permanent link">&para;</a></h2>
+<h2 id="3">3. 高级检索<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>工具 esearch 和 efilter 在做检索时如果做好筛选，能有助于获得准确的结果。筛选有2种方式，一种是通过添加参数来筛选。另一种是对 query 参数添加字段定义来筛选。</p>
 <p><strong>参数过滤</strong>：</p>
 <p>常用的参数为日期参数</p>
@@ -1969,7 +2010,7 @@ $ einfo -db sra <span class="p">|</span> xtract -pattern Field -element Name Des
 <p><strong>-query 字符串定义</strong></p>
 <p>建议用 '...' 定义 -query 值，里面的各个关键词用 AND/OR 等建立逻辑关系。关键词组添加 filter 时用 "..." 定义。如：</p>
 <p>-query '"salmonella paratyphi A"[ORGN] AND latest[filter] AND "complete genome[filter]"'</p>
-<h2 id="4">4. 具体使用示例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h2 id="4">4. 具体示例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>下面我们就用几个简单的例子来尝试 edirect 的功能。结合 Linux 其他命令行工具，可以极大的提升我们在命令行界面下检索和抓取 NCBI 数据库的效率。</p>
 <p><strong>查看2014~2016年发表的霍乱弧菌CTX相关文献的摘要</strong></p>
 <p>用关键词 vibrio cholerae CTX 检索 pubmed 数据库，将搜索到的文献的摘要保存到文件中，方便查看。由于是文本格式的内容，方便后期进一步处理，比如提取单词进行词频计算，用翻译API将摘要进行自动翻译等等。</p>
@@ -2066,7 +2107,7 @@ $ esearch -db taxonomy -query <span class="s2">&quot;Salmonella[NXLV]&quot;</spa
 <span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;contig_count&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;scaffold_n50&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
-<p><img alt="plot" src="../../assets/images/1.1/plot_1.png" /></p>
+<p><img alt="plot" src="../../assets/images/C02/03/plot.png" /></p>
 <p><strong>获取SRA菌株信息</strong></p>
 <p>对某个物种开展进化研究时，我们往往会竟可能收集公共数据库中的菌株背景信息。下面这个例子搜索某个 bioproject，然后获得该研究的所有测序数据的 sra 背景信息。通过 \&lt;SAMPLE_ATTRIBUTE> 元素下的各个 TAG 和 VALUE 来提取所需信息。</p>
 <div class="codehilite"><pre><span></span>$ esearch -db bioproject -query <span class="m">273159</span> <span class="p">|</span> elink -target sra <span class="p">|</span> <span class="se">\</span>
@@ -2085,7 +2126,7 @@ $ esearch -db taxonomy -query <span class="s2">&quot;Salmonella[NXLV]&quot;</spa
 &gt; -element VALUE <span class="p">|</span> sort &gt; strain-name.csv
 </pre></div>
 
-<p>-if 在一行输出中不能反复使用，如果要同时对多个样品信息字段分别输出，我们采用变通的方法，先把 xml 数据保存到本地，然后循环分别输出各个所需内容，用 sort 排序，再用 paste 合并。</p>
+<p><code class="codehilite">-if</code>在一行输出中不能反复使用，如果要同时对多个样品信息字段分别输出，我们采用变通的方法，先把 xml 数据保存到本地，然后循环分别输出各个所需内容，用 sort 排序，再用 paste 合并。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># 分别输出 csv 格式的数据</span>
 $ <span class="k">for</span> i in serovar strain isolate_name_alias collection_date isolation_source<span class="p">;</span> <span class="se">\</span>
 &gt; <span class="k">do</span> xtract -input bioproject.xml -pattern EXPERIMENT_PACKAGE -tab <span class="s2">&quot;,&quot;</span> <span class="se">\</span>
@@ -2100,16 +2141,16 @@ $ paste -d , strain serovar isolate_name_alias collection_date &gt; sample.csv
 <hr />
 <ol>
 <li id="fn:1">
-<p><a href="http://www.ncbi.nlm.nih.gov/books/NBK179288">Entrez Direct: E-utilities on the UNIX Command Line</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a href="http://www.ncbi.nlm.nih.gov/books/NBK179288">Entrez Direct: E-utilities on the UNIX Command Line</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p><a href="https://en.wikipedia.org/wiki/Pipeline_(Unix)">Unix Pipeline Wikipedia</a>&#160;<a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Pipeline_(Unix)">Unix Pipeline Wikipedia</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://www.nlm.nih.gov/bsd/licensee/elements_descriptions.html">Medline Element Description</a>&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p><a href="https://www.nlm.nih.gov/bsd/licensee/elements_descriptions.html">Medline Element Description</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p><a href="http://www.w3school.com.cn/xml/">XML</a>&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p><a href="http://www.w3school.com.cn/xml/">XML</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -2133,7 +2174,7 @@ $ paste -d , strain serovar isolate_name_alias collection_date &gt; sample.csv
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../02_blast/" title="02. Blast 与 NCBI_Blast" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../02_blast/" title="02. Blast 比对" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2142,7 +2183,7 @@ $ paste -d , strain serovar isolate_name_alias collection_date &gt; sample.csv
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                02. Blast 与 NCBI_Blast
+                02. Blast 比对
               </span>
             </div>
           </a>
@@ -2174,13 +2215,11 @@ $ paste -d , strain serovar isolate_name_alias collection_date &gt; sample.csv
           </div>
         
         powered by
-        <a href="http://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -2188,9 +2227,9 @@ $ paste -d , strain serovar isolate_name_alias collection_date &gt; sample.csv
       
     </div>
     
-      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
+      <script src="../../assets/javascripts/application.267712eb.js"></script>
       
-      <script>app.initialize({version:"0.17.1",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
       
@@ -2201,11 +2240,6 @@ $ paste -d , strain serovar isolate_name_alias collection_date &gt; sample.csv
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
       
         <script src="../../assets/js/umlconvert.js"></script>
-      
-    
-    
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-55420348-3","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
       
     
   </body>

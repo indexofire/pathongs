@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.7.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
       
@@ -46,20 +46,50 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
       
     
     
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-55420348-3", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -71,7 +101,7 @@
         
         
           <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="github">
+    viewBox="0 0 416 448" id="__github">
   <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
         8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
         18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
@@ -91,9 +121,9 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
       <a href="#get_homologues-pangenomes" tabindex="1" class="md-skip">
         Skip to content
@@ -111,33 +141,30 @@
         </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Pathogen NGS 数据分析入门
-              </span>
-              <span class="md-header-nav__topic">
-                02. Get_Homologues 分析
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Pathogen NGS 数据分析入门
+            </span>
+            <span class="md-header-nav__topic">
+              02. Get_Homologues 分析
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
+  <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="search"></label>
+      <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
       </button>
@@ -154,7 +181,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -165,20 +191,18 @@
 
   
 
-
-  <a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -199,12 +223,12 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    <span class="md-nav__button md-logo">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://pathongs.hzcdclab.org/" title="Pathogen NGS 数据分析入门" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
-    </span>
+    </a>
     Pathogen NGS 数据分析入门
   </label>
   
@@ -214,20 +238,18 @@
 
   
 
-
-  <a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -437,8 +459,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C02_Common-Utility/02_blast/" title="02. Blast 与 NCBI_Blast" class="md-nav__link">
-      02. Blast 与 NCBI_Blast
+    <a href="../../C02_Common-Utility/02_blast/" title="02. Blast 比对" class="md-nav__link">
+      02. Blast 比对
     </a>
   </li>
 
@@ -802,12 +824,12 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      <label class="md-nav__link md-nav__link--active" for="__toc">
         02. Get_Homologues 分析
       </label>
     
@@ -822,7 +844,7 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -841,14 +863,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="算法" class="md-nav__link">
-    算法
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="绘制核心基因和泛基因图" class="md-nav__link">
+  <a href="#_1" title="绘制核心基因和泛基因图" class="md-nav__link">
     绘制核心基因和泛基因图
   </a>
   
@@ -856,6 +871,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" title="3. 算法" class="md-nav__link">
+    3. 算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" title="4. 示例" class="md-nav__link">
+    4. 示例
+  </a>
   
 </li>
       
@@ -909,18 +938,6 @@
   <li class="md-nav__item">
     <a href="../05_panseq/" title="05. panseq 分析" class="md-nav__link">
       05. panseq 分析
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../06_gubbins/" title="06. Gubbins 分析" class="md-nav__link">
-      06. Gubbins 分析
     </a>
   </li>
 
@@ -1113,6 +1130,18 @@
   <li class="md-nav__item">
     <a href="../../C10_Recombination-and-Population-Structure/01_virus-recombination/" title="01. 病毒重组" class="md-nav__link">
       01. 病毒重组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06_gubbins.md" title="02. Gubbins 分析" class="md-nav__link">
+      02. Gubbins 分析
     </a>
   </li>
 
@@ -1571,7 +1600,7 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -1590,14 +1619,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="算法" class="md-nav__link">
-    算法
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="绘制核心基因和泛基因图" class="md-nav__link">
+  <a href="#_1" title="绘制核心基因和泛基因图" class="md-nav__link">
     绘制核心基因和泛基因图
   </a>
   
@@ -1605,6 +1627,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" title="3. 算法" class="md-nav__link">
+    3. 算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" title="4. 示例" class="md-nav__link">
+    4. 示例
+  </a>
   
 </li>
       
@@ -1635,10 +1671,11 @@
                 
                 
                 <h1 id="get_homologues-pangenomes">Get_Homologues 分析 Pangenomes<a class="headerlink" href="#get_homologues-pangenomes" title="Permanent link">&para;</a></h1>
-<p><img alt="Chapter 6.1" src="../../assets/images/chapter_06/02/get_homologues_banner.png" /></p>
+<hr />
+<p><img alt="Chapter 6.1" src="../../assets/images/C07/02/get_homologues_banner.png" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
 <p><a href="http://eead-csic-compbio.github.io/get_homologues">get_homologues</a> 是一个用 perl 语言编写的应用软件。可以通过对蛋白质和核酸序列相似性来进行同源基因分组，并用来鉴定细菌 core-genomes 和 pan-genomes 的开源工具。</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
 <ul>
 <li>软件版本: v 3.1.2</li>
 <li>官方网站: <a href="http://www.github.io/eead-csic-compbio/get_homologues">http://www.github.io/eead-csic-compbio/get_homologues</a></li>
@@ -1699,39 +1736,27 @@ $ conda activate get_homologues
 </pre></div>
 
 <h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<p>我们以 Bacillus cereus 基因组 assembly 数据库为例分析该物种的 Pangenomics。</p>
+<h3 id="_1">绘制核心基因和泛基因图<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h2 id="3">3. 算法<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>get_homologues.pl 默认采用BDBH的算法，通过添加不同参数可以调用其他算法。</p>
+<ul>
+<li><code class="codehilite">-G</code>: COG</li>
+<li>'-M': MCL (OrthMCL)</li>
+</ul>
+<h2 id="4">4. 示例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>最后我们以一个例子大致介绍一下菌种的<code class="codehilite">Get_homologues</code>的<code class="codehilite">Pangenome</code>分析过程：<code class="codehilite">Bacillus cereus</code>基因组<code class="codehilite">assembly</code>数据库为例分析该物种的<code class="codehilite">Pangenomics</code>。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># 抓取 gbk 格式的 assembly 文件在 NCBI FTP 上的下载路径</span>
 $ esearch -db assembly -query <span class="s2">&quot;Bacillus cereus[ORGN] AND latest[SB]&quot;</span> <span class="p">|</span> <span class="se">\</span>
 &gt; efetch -format docsum <span class="p">|</span> <span class="se">\</span>
 &gt; xtract -pattern DocumentSummary -element FtpPath_RefSeq <span class="p">|</span> <span class="se">\</span>
 &gt; awk -F<span class="s2">&quot;/&quot;</span> <span class="s1">&#39;{print $0&quot;/&quot;$NF&quot;_genomic.gbff.gz&quot;}&#39;</span> &gt; bcereus.path
-</pre></div>
 
-<p>运行 <code class="codehilite">cat bcereus.path</code>，你可以看到终端打印输出这些基因组在ftp服务器上的下载地址。</p>
-<div class="codehilite"><pre><span></span>ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/220/285/GCF_002220285.1_ASM222028v1/GCF_002220285.1_ASM222028v1_genomic.gbff.gz
+<span class="c1"># 运行 `cat bcereus.path`，你可以看到终端打印输出这些基因组在ftp服务器上的下载地址。</span>
+$ cat bcereus.path
+ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/220/285/GCF_002220285.1_ASM222028v1/GCF_002220285.1_ASM222028v1_genomic.gbff.gz
 ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/216/125/GCF_002216125.1_ASM221612v1/GCF_002216125.1_ASM221612v1_genomic.gbff.gz
 ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/215/175/GCF_002215175.1_ASM221517v1/GCF_002215175.1_ASM221517v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/214/765/GCF_002214765.1_ASM221476v1/GCF_002214765.1_ASM221476v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/214/725/GCF_002214725.1_ASM221472v1/GCF_002214725.1_ASM221472v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/214/705/GCF_002214705.1_ASM221470v1/GCF_002214705.1_ASM221470v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/000/005/GCF_002000005.1_ASM200000v1/GCF_002000005.1_ASM200000v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/941/925/GCF_001941925.1_ASM194192v1/GCF_001941925.1_ASM194192v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/941/905/GCF_001941905.1_ASM194190v1/GCF_001941905.1_ASM194190v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/941/885/GCF_001941885.1_ASM194188v1/GCF_001941885.1_ASM194188v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/880/305/GCF_001880305.1_ASM188030v1/GCF_001880305.1_ASM188030v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/721/145/GCF_001721145.1_ASM172114v1/GCF_001721145.1_ASM172114v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/635/895/GCF_000635895.2_ASM63589v2/GCF_000635895.2_ASM63589v2_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/635/995/GCF_001635995.1_ASM163599v1/GCF_001635995.1_ASM163599v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/635/955/GCF_001635955.1_ASM163595v1/GCF_001635955.1_ASM163595v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/635/915/GCF_001635915.1_ASM163591v1/GCF_001635915.1_ASM163591v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/518/875/GCF_001518875.1_ASM151887v1/GCF_001518875.1_ASM151887v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/001/277/915/GCF_001277915.1_ASM127791v1/GCF_001277915.1_ASM127791v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/978/375/GCF_000978375.1_ASM97837v1/GCF_000978375.1_ASM97837v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/835/185/GCF_000835185.1_ASM83518v1/GCF_000835185.1_ASM83518v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/832/765/GCF_000832765.1_ASM83276v1/GCF_000832765.1_ASM83276v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/832/525/GCF_000832525.1_ASM83252v1/GCF_000832525.1_ASM83252v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/789/315/GCF_000789315.1_ASM78931v1/GCF_000789315.1_ASM78931v1_genomic.gbff.gz
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/724/585/GCF_000724585.1_ASM72458v1/GCF_000724585.1_ASM72458v1_genomic.gbff.gz
+...
 </pre></div>
 
 <p>接下来用 wget 工具的<code class="codehilite">-i</code>参数下载带路径的文件 bcereus.path。</p>
@@ -1791,16 +1816,10 @@ $ plot_matrix_heatmap.sh -i compare/pangenome_matrix_t0.tab -o pdf -r -H <span c
 -H -W 高度和宽度
 </pre></div>
 
-<div class="codehilite"><pre><span></span>$ parse_pangenome_matrix.pl -m compare/pangenome_matrix_t0.tab -s
+<div class="codehilite"><pre><span></span><span class="c1"># 构建</span>
+$ parse_pangenome_matrix.pl -m compare/pangenome_matrix_t0.tab -s
 </pre></div>
 
-<h3 id="_1">算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>get_homologues.pl 默认采用BDBH的算法，通过添加不同参数可以调用其他算法。</p>
-<ul>
-<li><code class="codehilite">-G</code>: COG</li>
-<li>'-M': MCL (OrthMCL)</li>
-</ul>
-<h3 id="_2">绘制核心基因和泛基因图<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Bacterial Pangenomics, Methods and Protocols, Chapter14</li>
@@ -1867,13 +1886,11 @@ $ plot_matrix_heatmap.sh -i compare/pangenome_matrix_t0.tab -o pdf -r -H <span c
           </div>
         
         powered by
-        <a href="http://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -1881,9 +1898,9 @@ $ plot_matrix_heatmap.sh -i compare/pangenome_matrix_t0.tab -o pdf -r -H <span c
       
     </div>
     
-      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
+      <script src="../../assets/javascripts/application.267712eb.js"></script>
       
-      <script>app.initialize({version:"0.17.1",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
       
@@ -1894,11 +1911,6 @@ $ plot_matrix_heatmap.sh -i compare/pangenome_matrix_t0.tab -o pdf -r -H <span c
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
       
         <script src="../../assets/js/umlconvert.js"></script>
-      
-    
-    
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-55420348-3","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
       
     
   </body>
