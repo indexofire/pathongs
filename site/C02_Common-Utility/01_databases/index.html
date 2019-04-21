@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.7.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
       
@@ -46,20 +46,50 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
       
     
     
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-55420348-3", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -71,7 +101,7 @@
         
         
           <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="github">
+    viewBox="0 0 416 448" id="__github">
   <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
         8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
         18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
@@ -91,9 +121,9 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
       <a href="#_1" tabindex="1" class="md-skip">
         Skip to content
@@ -111,33 +141,30 @@
         </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Pathogen NGS 数据分析入门
-              </span>
-              <span class="md-header-nav__topic">
-                01. 公共生物数据库
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Pathogen NGS 数据分析入门
+            </span>
+            <span class="md-header-nav__topic">
+              01. 公共生物数据库
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
+  <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="search"></label>
+      <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
       </button>
@@ -154,7 +181,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -165,20 +191,18 @@
 
   
 
-
-  <a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
           </div>
         </div>
       
@@ -199,12 +223,12 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    <span class="md-nav__button md-logo">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://pathongs.hzcdclab.org/" title="Pathogen NGS 数据分析入门" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
-    </span>
+    </a>
     Pathogen NGS 数据分析入门
   </label>
   
@@ -214,20 +238,18 @@
 
   
 
-
-  <a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      GitHub
+<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -305,8 +327,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/04_awk/" title="04. 列处理工具 awk" class="md-nav__link">
-      04. 列处理工具 awk
+    <a href="../../C01_Linux-and-Script-Language/04_awk/" title="04. awk 列处理工具" class="md-nav__link">
+      04. awk 列处理工具
     </a>
   </li>
 
@@ -317,8 +339,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/05_sed/" title="05. 行处理工具 sed" class="md-nav__link">
-      05. 行处理工具 sed
+    <a href="../../C01_Linux-and-Script-Language/05_sed/" title="05. sed 行处理工具" class="md-nav__link">
+      05. sed 行处理工具
     </a>
   </li>
 
@@ -329,8 +351,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/06_python/" title="06. Python 编程" class="md-nav__link">
-      06. Python 编程
+    <a href="../../C01_Linux-and-Script-Language/06_tools/" title="06. 其他命令行工具" class="md-nav__link">
+      06. 其他命令行工具
     </a>
   </li>
 
@@ -365,8 +387,32 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/09_r/" title="09. R 编程" class="md-nav__link">
-      09. R 编程
+    <a href="../../C01_Linux-and-Script-Language/09_python/" title="09. Python 编程" class="md-nav__link">
+      09. Python 编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Linux-and-Script-Language/10_biopython/" title="10. Biopython 编程" class="md-nav__link">
+      10. Biopython 编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Linux-and-Script-Language/11_r/" title="11. R 编程" class="md-nav__link">
+      11. R 编程
     </a>
   </li>
 
@@ -406,12 +452,12 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="toc">
+      <label class="md-nav__link md-nav__link--active" for="__toc">
         01. 公共生物数据库
       </label>
     
@@ -426,7 +472,7 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -525,15 +571,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-assembly" title="2. Assembly 数据库" class="md-nav__link">
-    2. Assembly 数据库
+  <a href="#3-assembly" title="3. Assembly 数据库" class="md-nav__link">
+    3. Assembly 数据库
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" title="3. 上传数据" class="md-nav__link">
-    3. 上传数据
+  <a href="#4" title="4. 上传数据" class="md-nav__link">
+    4. 上传数据
   </a>
   
 </li>
@@ -562,8 +608,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../02_blast/" title="02. Blast 与 NCBI_Blast" class="md-nav__link">
-      02. Blast 与 NCBI_Blast
+    <a href="../02_blast/" title="02. Blast 比对" class="md-nav__link">
+      02. Blast 比对
     </a>
   </li>
 
@@ -970,18 +1016,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C07_PanGenome-and-CoreGenome/06_gubbins/" title="06. Gubbins 分析" class="md-nav__link">
-      06. Gubbins 分析
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../C07_PanGenome-and-CoreGenome/07_orthmcl/" title="07. OrthMCL 分析" class="md-nav__link">
       07. OrthMCL 分析
     </a>
@@ -1164,6 +1198,18 @@
   <li class="md-nav__item">
     <a href="../../C10_Recombination-and-Population-Structure/01_virus-recombination/" title="01. 病毒重组" class="md-nav__link">
       01. 病毒重组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C07_PanGenome-and-CoreGenome/06_gubbins.md" title="02. Gubbins 分析" class="md-nav__link">
+      02. Gubbins 分析
     </a>
   </li>
 
@@ -1622,7 +1668,7 @@
     
   
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -1721,15 +1767,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-assembly" title="2. Assembly 数据库" class="md-nav__link">
-    2. Assembly 数据库
+  <a href="#3-assembly" title="3. Assembly 数据库" class="md-nav__link">
+    3. Assembly 数据库
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" title="3. 上传数据" class="md-nav__link">
-    3. 上传数据
+  <a href="#4" title="4. 上传数据" class="md-nav__link">
+    4. 上传数据
   </a>
   
 </li>
@@ -1761,15 +1807,19 @@
                 
                 
                 <h1 id="_1">基因组公共数据库<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<hr />
 <p><img alt="基因组公共数据库" src="" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
 <p>测序的数据如原始 reads 数据我们可以上传到 NCBI 或 EBI 的公共数据库，发表的文章中可以使用。此外公共数据库中的数据也可以为我们的研究提供帮助。本节我们就来了解一下如何上传和下载基因组测序数据。首先让我们来了解一下网络上的测序公共数据库：</p>
+</div>
 <p><strong>常见的测序公共数据库：</strong></p>
 <ul>
 <li><a href="http://www.ncbi.nlm.nih.gov/sra">SRA</a> 短序列数据库：由 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 负责维护</li>
 <li><a href="http://www.ebi.ac.uk/ena">ENA</a> 欧洲核酸数据库：由 <a href="http://www.ebi.ac.uk">EBI</a> 负责维护</li>
 <li><a href="http://gsa.big.ac.cn/">GSA</a> 中国组学数据库：由<a href="http://www.big.ac.cn">中科院北京基因研究所</a>负责维护</li>
 </ul>
-<p><a href="http://www.ncbi.nlm.nih.gov/sra">SRA</a> 是 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 为了应对越来越多的高通量测序数据而在 2007 年底推出的测序数据库，用于存储、显示、提取和分析高通量测序数据。而 <a href="http://www.ebi.ac.uk/ena">ENA</a> 则是由 <a href="http://www.ebi.ac.uk">EBI</a> 负责维护的功能类似的数据库，同时作为 <a href="../www.ensembl.org">Ensembl</a>、<a href="../www.uniprot.org">UniProt</a> 和 <a href="../www.ebi.ac.uk/arrayexpress">ArrayExpress</a> 等服务的底层基础。2者在主要功能方面非常类似，同时数据互通。</p>
+<p><a href="http://www.ncbi.nlm.nih.gov/sra">SRA</a> 是 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 为了应对越来越多的高通量测序数据而在 2007 年底推出的测序数据库，用于存储、显示、提取和分析高通量测序数据。而 <a href="http://www.ebi.ac.uk/ena">ENA</a> 则是由 <a href="http://www.ebi.ac.uk">EBI</a> 负责维护的功能类似的数据库，同时作为 <a href="http://www.ensembl.org">Ensembl</a>、<a href="http://www.uniprot.org">UniProt</a> 和 <a href="http://www.ebi.ac.uk/arrayexpress">ArrayExpress</a> 等服务的底层基础。2者在主要功能方面非常类似，同时数据互通。</p>
 <h2 id="1-sra">1. SRA 数据库<a class="headerlink" href="#1-sra" title="Permanent link">&para;</a></h2>
 <h3 id="11">1.1 简介<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
 <p><a href="http://www.ncbi.nlm.nih.gov/sra">SRA</a> 是 Sequence Read Archive 的首字母缩写。SRA 与 Trace 最大的区别是将实验数据与 metadata（元数据）分离。metadata 是指与测序实验及其实验样品相关的数据，如实验目的、实验设计、测序平台、样本数据(物种，菌株，个体表型等)。metadata可以分为以下几类：</p>
@@ -1787,20 +1837,20 @@
 <p>在服务器上我们只需要命令行工具 <code class="codehilite">ascp</code> 即可。而对于桌面用户来说，可以选择安装 <a href="http://downloads.asperasoft.com/en/downloads/8?list">Aspera Connent</a> 等工具。由于 Ascp Client 工具需要登录后才能下载，因此选择了 <a href="http://download.asperasoft.com/download/docs/connect/3.6.1/user_linux/webhelp/index.html#dita/introduction.html">Aspera Connect</a> 来安装。它是 <a href="http://asperasoft.com">Aspera</a> 用于浏览器下载的高效插件，其内嵌了 <code class="codehilite">ascp</code> 命令也可以直接在服务器上运行。安装了 <a href="http://download.asperasoft.com/download/docs/connect/3.6.1/user_linux/webhelp/index.html#dita/introduction.html">Aspera Connect</a> 的带图形界面的客户端，浏览器会在有 Connect, Faspex 或者 Shares 页面的链接处添加 ascp 下载快捷按钮。</p>
 <p><strong>安装 aspera connect</strong></p>
 <p><a href="http://download.asperasoft.com/download/docs/connect/3.6.1/user_linux/webhelp/index.html#dita/introduction.html">Aspera Connect</a> 下载解压缩后，可以看到一个 .sh 文件，执行后运行后会安装到当前用户 $HOME.aspera/connect 目录下。</p>
-<div class="codehilite"><pre><span></span># 下载并解压缩程序
+<div class="codehilite"><pre><span></span><span class="c1"># 下载并解压缩程序</span>
 $ wget http://download.asperasoft.com/download/sw/connect/3.6.1/aspera-connect-3.6.1.110647-linux-64.tar.gz
 $ tar zxf asper-connect-3.6.1.110647-linux.tar.gz
 
-# 安装到本地用户
+<span class="c1"># 安装到本地用户</span>
 $ ./aspera-connect-3.6.1.110647-linux-64.sh
 
-# 添加用户执行路径
-$ echo &#39;PATH=&quot;$PATH:$HOME/.aspera/connect/bin/&quot;&#39; &gt;&gt; ~/.bashrc
+<span class="c1"># 添加用户执行路径</span>
+$ <span class="nb">echo</span> <span class="s1">&#39;PATH=&quot;$PATH:$HOME/.aspera/connect/bin/&quot;&#39;</span> &gt;&gt; ~/.bashrc
 </pre></div>
 
 <p>对于喜欢使用客户端的桌面用户，也可以使用 <a href="http://downloads.asperasoft.com/en/downloads/2">Aspera Desktop Client</a> 客户端程序来下载数据。</p>
 <div class="codehilite"><pre><span></span>$ sed <span class="s1">&#39;s/^INSTALL_DIR/INSTALL_DIR=~/envs/srst2/src/ascp/connect/&#39;</span> aspera-connect-3.6.1.110647-linux-64.sh &gt; install.sh
-/tmp$ ./install.sh
+$ ./install.sh
 </pre></div>
 
 <p><strong>下载 SRA 数据</strong></p>
@@ -1808,61 +1858,61 @@ $ echo &#39;PATH=&quot;$PATH:$HOME/.aspera/connect/bin/&quot;&#39; &gt;&gt; ~/.b
 <p class="admonition-title">注意</p>
 <p>注意新版的<code class="codehilite">ascp</code>用<code class="codehilite"><span class="na">.openssh</span></code>作为密钥文件而不是原来的<code class="codehilite"><span class="na">.putty</span></code></p>
 </div>
-<div class="codehilite"><pre><span></span># ascp 下载 SRA 数据
-$ ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh \
-&gt; --user=anonftp --host=ftp.ncbi.nlm.nih.gov --mode=recv -l 100m -pQTk1 \
+<div class="codehilite"><pre><span></span><span class="c1"># ascp 下载 SRA 数据</span>
+$ ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh <span class="se">\</span>
+&gt; --user<span class="o">=</span>anonftp --host<span class="o">=</span>ftp.ncbi.nlm.nih.gov --mode<span class="o">=</span>recv -l 100m -pQTk1 <span class="se">\</span>
 &gt; /sra/sra-instant/reads/ByRun/sra/SRR/SRR955/SRR955386/SRR955386.sra .
 
-# 添加 alias 简化操作
-$ echo &quot;alias ascp=&#39;ascp -i ~/.ascpera/connect/etc/asperaweb_id_dsa.openssh --user=dbtest --host=sra-download.ncbi.nlm.nih.gov --mode=recv -l 100m -pQTk1&#39;&quot; &gt;&gt; ~/.bashrc
-$ source ~/.bashrc
+<span class="c1"># 添加 alias 简化操作</span>
+$ <span class="nb">echo</span> <span class="s2">&quot;alias ascp=&#39;ascp -i ~/.ascpera/connect/etc/asperaweb_id_dsa.openssh --user=dbtest --host=sra-download.ncbi.nlm.nih.gov --mode=recv -l 100m -pQTk1&#39;&quot;</span> &gt;&gt; ~/.bashrc
+$ <span class="nb">source</span> ~/.bashrc
 
-# 测试下载
+<span class="c1"># 测试下载</span>
 $ ascp /data/sracloud/srapub/ERR579922 ./ERR578822.sra
 </pre></div>
 
 <h4 id="122-ftp">1.2.2 ftp 下载<a class="headerlink" href="#122-ftp" title="Permanent link">&para;</a></h4>
 <p>从国内公网访问 NCBI FTP 服务器往往是非常缓慢的，而 <a href="http://www.ebi.ac.uk">EBI</a> 就不同了，有些地方的速度很快，下载甚至可以超过 <a href="http://asperasoft.com">Aspera</a>。由于 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 和 <a href="http://www.ebi.ac.uk">EBI</a> 共享数据库，因此对于国内 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 下载缓慢或者无法用 ascp 的用户，可以考虑在 <a href="http://www.ebi.ac.uk">EBI</a> 下载数据。</p>
 <h3 id="22-sratoolkit">2.2 sratoolkit<a class="headerlink" href="#22-sratoolkit" title="Permanent link">&para;</a></h3>
-<p><a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 开发了 <a href="../(https://github.com/ncbi/sra-tools)">sratoolkit</a> 工具来帮助处理 SRA 数据，正确配置后可以很方便的下载 SRA 数据。</p>
+<p><a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 开发了 <a href="(https://github.com/ncbi/sra-tools)">sratoolkit</a> 工具来帮助处理 SRA 数据，正确配置后可以很方便的下载 SRA 数据。</p>
 <h4 id="221-sratoolkit">2.2.1 安装sratoolkit<a class="headerlink" href="#221-sratoolkit" title="Permanent link">&para;</a></h4>
 <p>可以直接从 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 上下载。最新的源码可以在 <a href="https://github.com/ncbi/sra-tools">Github</a> 获得。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># download from NCBI</span>
-~$ <span class="nb">cd</span> /tmp
-/tmp$ wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.5.6/sratoolkit.2.5.6-ubuntu64.tar.gz
-/tmp$ tar zxf sratoolkit.2.5.6-ubuntu64.tar.gz -C ~/app
+$ <span class="nb">cd</span> /tmp
+$ wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.5.6/sratoolkit.2.5.6-ubuntu64.tar.gz
+$ tar zxf sratoolkit.2.5.6-ubuntu64.tar.gz -C ~/app
 </pre></div>
 
 <h4 id="222-sra">2.2.2 下载 SRA 格式文件<a class="headerlink" href="#222-sra" title="Permanent link">&para;</a></h4>
 <p>如果你安装并设置了 <a href="http://download.asperasoft.com/download/docs/connect/3.6.1/user_linux/webhelp/index.html#dita/introduction.html">Aspera Connect</a>，那么<code class="codehilite">prefetch</code>会优先使用<code class="codehilite">ascp</code>方式来下载，如果没有安装或则<code class="codehilite">ascp</code>下载失败，则切换成 HTTP 方式下载 sra 数据。另外<code class="codehilite">fastq-dump</code>命令也能从远端直接下载数据，加上<code class="codehilite">-X 1</code>参数，会预先下载最前的5个 reads，加上<code class="codehilite">-Z</code>参数，则会将这些 reads 打印到终端输出。</p>
-<div class="codehilite"><pre><span></span># 下载 SRR955386.sra 到 你安装 sratoolkit 时配置的 public 目录中，默认是 ~/ncbi/public/sra
-~$ prefetch -v SRR955386
-# 下载 SRR955386.sra 到 你安装 sratoolkit 时配置的 public 目录中，默认是 ~/ncbi/public/sra，并且在终端输出5行 reads 数据。
-~$ fastq-dump -X 5 -Z SRR955386
+<div class="codehilite"><pre><span></span><span class="c1"># 下载 SRR955386.sra 到 你安装 sratoolkit 时配置的 public 目录中，默认是 ~/ncbi/public/sra</span>
+$ prefetch -v SRR955386
+<span class="c1"># 下载 SRR955386.sra 到 你安装 sratoolkit 时配置的 public 目录中，默认是 ~/ncbi/public/sra，并且在终端输出5行 reads 数据。</span>
+$ fastq-dump -X <span class="m">5</span> -Z SRR955386
 </pre></div>
 
 <h4 id="223-fastq">2.2.3 并转换成 .fastq 格式<a class="headerlink" href="#223-fastq" title="Permanent link">&para;</a></h4>
 <p>获得了 .sra 文件后，需要将其转换成 .fastq 格式的文件，用<code class="codehilite">fastq-dump</code>可以很方便的实现。转换之前要注意的是该 run 的 metadata 里，测序类型是 SE 还是 PE 的。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># 将 sra 文件移动到 ~/data 目录中</span>
-~$ mv ~/.ncbi/public/sra/SRR955386.sra ~/data
+$ mv ~/.ncbi/public/sra/SRR955386.sra ~/data
 <span class="c1"># 如果是 SE 测序数据，直接运行以下命令</span>
-~$ fastq-dump SRR955386.sra
+$ fastq-dump SRR955386.sra
 <span class="c1"># 如果是 PE 测序数据，则要添加参数：--split-files</span>
-~$ fastq-dump --split-files SRR955386.sra
+$ fastq-dump --split-files SRR955386.sra
 </pre></div>
 
 <h4 id="224-sepe">2.2.4 SE/PE 文件判断<a class="headerlink" href="#224-sepe" title="Permanent link">&para;</a></h4>
 <p>正常的 sra 文件的 metadata 应该包含测序采用的是 SE 还是 PE 的方式。但如果你不知道所下载的到底是 SE 还是 PE 格式的文件可以用<code class="codehilite">fastq-dump -X 1 --split-spot</code>的方法来判断。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># it&#39;s SE if nreads=1, and PE when nreads=2，统计整个文件，因此速度比较慢</span>
-~$ sra-stat -xs SRR955386.sra <span class="p">|</span> grep <span class="s2">&quot;nreads&quot;</span>
+$ sra-stat -xs SRR955386.sra <span class="p">|</span> grep <span class="s2">&quot;nreads&quot;</span>
 
 <span class="c1"># 如果输出是4，那么就是SE，如果是8,则是PE</span>
-~$ fastq-dump -X <span class="m">1</span> --split-spot -Z SRR955386.sra <span class="p">|</span> wc -l
+$ fastq-dump -X <span class="m">1</span> --split-spot -Z SRR955386.sra <span class="p">|</span> wc -l
 
 <span class="c1"># 或者加上参数让 fastq-dump 自己判断</span>
 <span class="c1"># 当 sra 文件是 SE 测序时，fastq-dump只能dump出1个 *_1.fastq 文件</span>
-~$ fastq-dump --split-files ERR493452.sra
-~$ mv ERR493452_1.fastq ERR493452.fastq
+$ fastq-dump --split-files ERR493452.sra
+$ mv ERR493452_1.fastq ERR493452.fastq
 </pre></div>
 
 <p>当需要判断批量下载的 sra 文件时，区分那些是 PE 的那些是 SE 的文件，可以用以下脚本：</p>
@@ -1894,9 +1944,9 @@ $ ascp /data/sracloud/srapub/ERR579922 ./ERR578822.sra
 </pre></div>
 
 <p>如果想下载不同 research 的数据，可以自己建立一个 accession number list 的文件，比如利用 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 的 entrez 网页界面，导出所需要的数据 accession number，然后利用 <code class="codehilite">ascp</code> 下载。不过建议<code class="codehilite">ascp</code>下载不要太狠心，否则容易被 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 给封掉。</p>
-<h2 id="2-assembly">2. Assembly 数据库<a class="headerlink" href="#2-assembly" title="Permanent link">&para;</a></h2>
+<h2 id="3-assembly">3. Assembly 数据库<a class="headerlink" href="#3-assembly" title="Permanent link">&para;</a></h2>
 <p>如果不需要研究 reads 数据，而是只想研究拼接的基因组数据，可以从 NCBI assembly 数据库去寻找数据，并通过 ascp/ftp 等工具下载。</p>
-<h2 id="3">3. 上传数据<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h2 id="4">4. 上传数据<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>SRA 上传测序结果可以参照 <a href="http://www.ncbi.nlm.nih.gov/books/NBK47529/">NCBI文档</a> 来实现。一般上传数据到NCBI SRA的过程需要6步：</p>
 <ol>
 <li>Create a BioProject for this research</li>
@@ -1938,7 +1988,7 @@ $ ascp /data/sracloud/srapub/ERR579922 ./ERR578822.sra
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../C01_Linux-and-Script-Language/09_r/" title="09. R 编程" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../C01_Linux-and-Script-Language/11_r/" title="11. R 编程" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1947,19 +1997,19 @@ $ ascp /data/sracloud/srapub/ERR579922 ./ERR578822.sra
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                09. R 编程
+                11. R 编程
               </span>
             </div>
           </a>
         
         
-          <a href="../02_blast/" title="02. Blast 与 NCBI_Blast" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../02_blast/" title="02. Blast 比对" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                02. Blast 与 NCBI_Blast
+                02. Blast 比对
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1979,13 +2029,11 @@ $ ascp /data/sracloud/srapub/ERR579922 ./ERR578822.sra
           </div>
         
         powered by
-        <a href="http://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org">MkDocs</a>
         and
         <a href="https://squidfunk.github.io/mkdocs-material/">
           Material for MkDocs</a>
       </div>
-      
-        
       
     </div>
   </div>
@@ -1993,9 +2041,9 @@ $ ascp /data/sracloud/srapub/ERR579922 ./ERR578822.sra
       
     </div>
     
-      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
+      <script src="../../assets/javascripts/application.267712eb.js"></script>
       
-      <script>app.initialize({version:"0.17.1",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
       
@@ -2006,11 +2054,6 @@ $ ascp /data/sracloud/srapub/ERR579922 ./ERR578822.sra
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
       
         <script src="../../assets/js/umlconvert.js"></script>
-      
-    
-    
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-55420348-3","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
       
     
   </body>
