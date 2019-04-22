@@ -2,7 +2,7 @@
 
 ---
 
-![Chapter 6.1](../../assets/images/C07/02/get_homologues_banner.png)
+![get_homologues](../../assets/images/C07/02/get_homologues_banner.png)
 
 !!! Abstract "内容简介"
     [get_homologues](http://eead-csic-compbio.github.io/get_homologues) 是一个用 perl 语言编写的应用软件。可以通过对蛋白质和核酸序列相似性来进行同源基因分组，并用来鉴定细菌 core-genomes 和 pan-genomes 的开源工具。
@@ -28,7 +28,7 @@ $ conda activate get_homologues
 
 # 安装 gd 依赖
 (get_homologues)$ conda install perl-gd
-# 如果没有安装 R，可以在虚拟环境里安装 r-base
+# 如果没有安装系统级 R 语言，可以在虚拟环境里安装 r-base
 (get_homologues)$ conda install r-base libcurl icu
 
 # 下载 pfam 和 swissprot 数据库
@@ -67,8 +67,9 @@ NLOPT_URL='file:///path-to-nlopt-pkg/nlopt-2.4.2.tar.gz'
 > install.packages("ape")
 ```
 
-
 ## 2. 使用
+
+
 
 ### 绘制核心基因和泛基因图
 
