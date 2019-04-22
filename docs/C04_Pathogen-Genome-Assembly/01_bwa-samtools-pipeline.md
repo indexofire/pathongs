@@ -34,3 +34,8 @@ $ freebayes -m 20 -p 1 -f ref.fa 1.markdup.sorted.bam > 1.vcf
 # 使用 snpEff 获得 SNP 为点注释
 $ snpEff lmo_database 1.vcf > 1.snpEff.vcf
 ```
+
+
+## Reference
+
+[BWA中文手册](http://cncbi.github.io/BWA-Manual-CN/)
