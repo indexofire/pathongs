@@ -81,14 +81,14 @@ from math import sqrt
 sqrt(2)
 ```
 
-
-
-
 ## 常用模块
 
 对与生物信息或基因组数据常用的学习和分析模块：
 
 - Jupyter Notebook
--
+- numpy
+- scipy
+- biopython
+- matplotlib
 
 ## 参考资料
