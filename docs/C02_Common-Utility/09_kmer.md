@@ -1,8 +1,15 @@
 # k-mer 分析
 
-[khmer][]
+---
+
+!!! Abstract "内容简介"
+    k-mer 分析可以不依赖参考基因组，对序列 ATCG 特定 kmer 进行统计计算差异的方法。
 
 ## 安装
+
+### 通过 pip 安装
+
+khmer 是一个 python 包，可以使用 python 包安装工具 pip 来安装。
 
 ```bash
 # 安装 khmer 工具
@@ -11,12 +18,12 @@ $ pip install khmer
 
 ### 通过 conda 安装
 
-用 conda 新建一个虚拟环境安装 [khmer][]。当前版本为 [2.12][http://khmer.readthedocs.io/en/v2.1.2/]，安装过程还会自动安装 [screed][https://github.com/dib-lab/screed]（一个轻量级 python 序列数据库工具）。
+用 conda 新建一个虚拟环境安装 [khmer][]。当前版本为 [2.12][http://khmer.readthedocs.io/en/v2.1.2/]，安装过程还会自动安装依赖工具 [screed][https://github.com/dib-lab/screed]（一个轻量级 python 序列数据库工具）。
 
 ```bash
 $ conda create -n khmer
 $ conda activate khmer
-(khmer)$ conda install khmer ipython
+(khmer)$ conda install khmer
 ```
 
 ## 使用
@@ -60,6 +67,7 @@ found 449472737 bps / 1879073 seqs; 239.2 average length -- R1.fastq.gz
 ## Python API
 
 ```bash
+# ipython 环境中调用 khmer 模块
 $ ipython
 In [1]: import khmer
 In [2]: counts = khmer.Counttable(31, 1e7, 4)
@@ -67,7 +75,7 @@ In [3]: counts.consume_seqfile('R1.fastq.gz')
 (25000, 1150000)
 # 31 是 kmer 长度，1e7 是 table size，4 是 table 数
 # 25000 表示序列数量，高通量测序里即 reads 数。
-# 1150000 表示指定 kmer 切割后特定 kmer 序列数
+# 1150000 表示指定 kmer 切割后各种 kmer 序列数
 In [4]: counts.get('TGACTTTCTTCGCTTCCTGACGGCTTATGCC')
 105
 ```
