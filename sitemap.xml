@@ -81,11 +81,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://pathongs.hzcdclab.org/C02_Common-Utility/08_seqkit/</loc>
      <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
@@ -107,6 +102,41 @@
     </url>
     <url>
      <loc>https://pathongs.hzcdclab.org/C03_File-Format/03_plain-txt/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C03_File-Format/04_gcg/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C03_File-Format/05_fastq/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C03_File-Format/06_sam-bam/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C03_File-Format/07_bed/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C03_File-Format/08_vcf/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C03_File-Format/09_gff/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C03_File-Format/10_cram/</loc>
      <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -136,28 +166,83 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://pathongs.hzcdclab.org/C04_Pathogen-Genome-Assembly/10_snap/</loc>
+     <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://pathongs.hzcdclab.org/C04_Pathogen-Genome-Assembly/11_long-noisy-reads-assembly/</loc>
+     <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://pathongs.hzcdclab.org/C04_Pathogen-Genome-Assembly/12_hybrid-assembly/</loc>
+     <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://pathongs.hzcdclab.org/C04_Pathogen-Genome-Assembly/14_bwa-long-sequence-mapping/</loc>
+     <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://pathongs.hzcdclab.org/C04_Pathogen-Genome-Assembly/15_whatshap/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C05_Genome-Annotation/01_prokka/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C05_Genome-Annotation/02_rast/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C05_Genome-Annotation/03_pgaap/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C05_Genome-Annotation/04_snpeff/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C05_Genome-Annotation/05_cog/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C06_Genome-Compare/01_mummer/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C06_Genome-Compare/02_nucdiff/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C06_Genome-Compare/03_mauve/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C06_Genome-Compare/04_sibelia/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C06_Genome-Compare/05_ani/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C06_Genome-Compare/10_bigsi/</loc>
+     <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
@@ -171,8 +256,8 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://pathongs.hzcdclab.org/C07_PanGenome-and-CoreGenome/03_bpga/</loc>
+     <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
@@ -191,7 +276,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://pathongs.hzcdclab.org/C07_PanGenome-and-CoreGenome/08_ITEP/</loc>
+     <loc>https://pathongs.hzcdclab.org/C07_PanGenome-and-CoreGenome/08_itep/</loc>
      <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -201,8 +286,8 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://pathongs.hzcdclab.org/C08_Genome-Visualization/02_brig/</loc>
+     <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
@@ -236,8 +321,13 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://pathongs.hzcdclab.org/C10_Recombination-and-Population-Structure/02_gubbins/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C10_Recombination-and-Population-Structure/03_baps/</loc>
+     <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
@@ -326,38 +416,58 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://pathongs.hzcdclab.org/C13_Single-Molecular-Sequencing/04_seqs-polish/</loc>
+     <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://pathongs.hzcdclab.org/C13_Single-Molecular-Sequencing/06_hybrid-assembling/</loc>
+     <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://pathongs.hzcdclab.org/C14_Multiple-Sequence-Alignment/01_msa/</loc>
+     <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://pathongs.hzcdclab.org/C15_Phylogeny-Analysis/01_figtree/</loc>
+     <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://pathongs.hzcdclab.org/C15_Phylogeny-Analysis/02_ggtree/</loc>
+     <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://pathongs.hzcdclab.org/C16_Standalone-Platform/01_anvio/</loc>
+     <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://pathongs.hzcdclab.org/C16_Standalone-Platform/02_galaxy/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C17_Pathogen-Geospatial-Analysis/04_cartodb/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C17_Pathogen-Geospatial-Analysis/05_leaflet/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C18_Analysis-Examples/01_trace-Pae-from-different-source-by-SNP/</loc>
+     <lastmod>2019-05-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://pathongs.hzcdclab.org/C18_Analysis-Examples/02_comparative-analysis-Ban-genomes/</loc>
+     <lastmod>2019-05-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
