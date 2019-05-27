@@ -67,7 +67,7 @@ https://s3.amazonaws.com/metaBEETL/ncbiMicros-C06.bz2
 
 #### 2.1 安装 SeqAn
 
-[SeqAn](www.seqan.de) 是一个高效的 C++ 算法和数据结构库，用于分析生物序列等用途。访问 [SeqAn](www.seqan.de) 下载并安装。安装完成后编译BEETL时可以添加`--with-seqan`参数。
+[SeqAn](http://www.seqan.de) 是一个高效的 C++ 算法和数据结构库，用于分析生物序列等用途。访问 [SeqAn](http://www.seqan.de) 下载并安装。安装完成后编译BEETL时可以添加`--with-seqan`参数。
 
 ```bash
 # 安装依赖包
