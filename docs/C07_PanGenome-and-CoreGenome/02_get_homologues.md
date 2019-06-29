@@ -18,6 +18,7 @@
 
 ```bash
 # 下载安装包，内含主要的依赖软件
+# 最新版在github/release界面
 $ wget https://github.com/eead-csic-compbio/get_homologues/releases/download/v3.1.2/get_homologues-x86_64-20180524.tgz
 $ tar zxf get_homologues-x86_64-20180524.tgz -C get_homologues
 $ cd get_homologues
@@ -35,7 +36,7 @@ $ conda activate get_homologues
 (get_homologues)$ wget -P db/  ftp://ftp.uniprot.org//pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
 (get_homologues)$ wget -P db/  ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/Pfam-A.hmm.gz
 
-# 安装
+# 安装脚本也可以帮你自动下载并解压缩 pfam 和 swissprot 数据库
 (get_homologues)$ ./install.pl
 
 # 安装R额外功能依赖包，nlopt不是R包，在S3AMAZON服务器上，往往不能正常在R中下载，所以要手动通过代理下载。
