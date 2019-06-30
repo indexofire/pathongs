@@ -1,5 +1,10 @@
 # centrifuge
 
+---
+
+!!! Abstract "内容简介"
+    Centrifuge 是一个序列taxnomic分类软件，可以用来做宏基因组分析，也常用来做微生物测序序列污染鉴定。
+
 ## 安装
 
 ```bash

@@ -252,8 +252,7 @@ $ figtree RAxML_bestTree.pae
 
 ### 4.1 准备数据
 
->undone
-
+>not finished
 
 ## 5. 如何选择 Reference
 

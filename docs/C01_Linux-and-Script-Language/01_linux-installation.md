@@ -150,7 +150,7 @@ root@archiso~ # arch-chroot /mnt /bin/bash
 
 分区时我们没有建立swap分区，因为在SSD中，更喜欢用文件方式使用swap，更为灵活。
 
-```
+```bash
 # mkdir /swap
 # fallocate -l 2G /swap/swapfile
 # chmod 600 /swap/swapfile
@@ -163,7 +163,7 @@ root@archiso~ # arch-chroot /mnt /bin/bash
 
 从剪贴板中粘贴内容到urxvt中，可以用 shift+insert，或者鼠标中键。从urxvt中复制，直接用鼠标选中即可。复制到其他程序时，只要使用鼠标中键即可。
 
-```
+```bash
 # pacman -S xorg xorg-xinit libgl
 # pacman -S rxvt-unicode urxvt-perls
 # pacman -S linux-headers
@@ -174,7 +174,7 @@ root@archiso~ # arch-chroot /mnt /bin/bash
 
 添加当前用户，并赋予管理员权限。
 
-```
+```bash
 # useradd mark -g wheel -m
 # passwd mark
 New password:
