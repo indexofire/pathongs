@@ -2513,27 +2513,27 @@ root@archiso~ <span class="c1"># arch-chroot /mnt /bin/bash</span>
 </pre></div>
 
 <p>分区时我们没有建立swap分区，因为在SSD中，更喜欢用文件方式使用swap，更为灵活。</p>
-<div class="codehilite"><pre><span></span># mkdir /swap
-# fallocate -l 2G /swap/swapfile
-# chmod 600 /swap/swapfile
-# mkswap /swap/swapfile
-# swapon /swap/swapfile
-# echo &quot;/swap/swapfile none swap defaults 0 0&quot; &gt;&gt; /etc/fstab
+<div class="codehilite"><pre><span></span><span class="c1"># mkdir /swap</span>
+<span class="c1"># fallocate -l 2G /swap/swapfile</span>
+<span class="c1"># chmod 600 /swap/swapfile</span>
+<span class="c1"># mkswap /swap/swapfile</span>
+<span class="c1"># swapon /swap/swapfile</span>
+<span class="c1"># echo &quot;/swap/swapfile none swap defaults 0 0&quot; &gt;&gt; /etc/fstab</span>
 </pre></div>
 
 <h3 id="teminal-urxvt">安装 teminal 工具 urxvt<a class="headerlink" href="#teminal-urxvt" title="Permanent link">&para;</a></h3>
 <p>从剪贴板中粘贴内容到urxvt中，可以用 shift+insert，或者鼠标中键。从urxvt中复制，直接用鼠标选中即可。复制到其他程序时，只要使用鼠标中键即可。</p>
-<div class="codehilite"><pre><span></span><span class="cp"># pacman -S xorg xorg-xinit libgl</span>
-<span class="cp"># pacman -S rxvt-unicode urxvt-perls</span>
-<span class="cp"># pacman -S linux-headers</span>
-<span class="cp"># pacman -S sudo</span>
-<span class="cp"># EDITOR=vim visudo</span>
-<span class="nf">%wheel</span> <span class="n">ALL</span><span class="o">=</span><span class="p">(</span><span class="n">ALL</span><span class="p">)</span> <span class="n">ALL</span>
+<div class="codehilite"><pre><span></span><span class="c1"># pacman -S xorg xorg-xinit libgl</span>
+<span class="c1"># pacman -S rxvt-unicode urxvt-perls</span>
+<span class="c1"># pacman -S linux-headers</span>
+<span class="c1"># pacman -S sudo</span>
+<span class="c1"># EDITOR=vim visudo</span>
+%wheel <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> ALL
 </pre></div>
 
 <p>添加当前用户，并赋予管理员权限。</p>
-<div class="codehilite"><pre><span></span># useradd mark -g wheel -m
-# passwd mark
+<div class="codehilite"><pre><span></span><span class="c1"># useradd mark -g wheel -m</span>
+<span class="c1"># passwd mark</span>
 New password:
 Retype new password:
 </pre></div>

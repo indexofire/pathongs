@@ -1929,14 +1929,23 @@
                 
                 
                 <h1 id="kraken">Kraken<a class="headerlink" href="#kraken" title="Permanent link">&para;</a></h1>
+<hr />
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
+<p>Kraken 是一个序列taxnomic分类软件，可以用来做宏基因组分析，也常用来做微生物测序序列污染鉴定。</p>
+</div>
 <h2 id="1">1. 安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>$ conda create -n kraken kraken2 <span class="nv">bracken</span><span class="o">=</span><span class="m">2</span>.2
+<p><a href="https://www.ccb.jhu.edu/software/kraken2/">kraken2</a> 是目前最新的版本。</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 建立conda环境</span>
+$ conda create -n kraken kraken2 <span class="nv">bracken</span><span class="o">=</span><span class="m">2</span>.2
 $ conda activate kraken
 <span class="o">(</span>kraken<span class="o">)</span>$ wget https://www.ccb.jhu.edu/software/kraken2/dl/minikraken2_v2_8GB.tgz
+<span class="c1"># 下载比对数据库</span>
 <span class="o">(</span>kraken<span class="o">)</span>$ tar zxvf minikraken2_v2_8GB.tgz -C <span class="nv">$HOME</span>/dbs/minikraken2
 </pre></div>
 
 <h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>使用kraken2需要用<code class="codehilite">--db</code>指向其数据库，比如微生物鉴定常用minikraken2数据库。用<code class="codehilite">--report</code>参数生成结果报告。</p>
 <div class="codehilite"><pre><span></span><span class="o">(</span>kraken<span class="o">)</span>$ kraken2 --use-names --threads <span class="m">4</span> --db <span class="nv">$HOME</span>/dbs/minikraken2 --report report.txt assembly.fna &gt; result.kraken
 <span class="o">(</span>kraken<span class="o">)</span>$ kraken2 --use-names --threads <span class="m">4</span> --db <span class="nv">$HOME</span>/dbs/minikraken2 --report report2.txt --fastq-input --paired S1_R1.fq.gz S1_R2.fq.gz &gt; result2.kraken
 <span class="o">(</span>kraken<span class="o">)</span>$ wget https://ccb.jhu.edu/software/bracken/dl/minikraken2_v2/database200mers.kmer_distrib

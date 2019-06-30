@@ -1477,9 +1477,73 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        08. supri
+      </label>
+    
     <a href="./" title="08. supri" class="md-nav__link md-nav__link--active">
       08. supri
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1.安装依赖工具" class="md-nav__link">
+    1.安装依赖工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-supri" title="2.安装 SUPRI" class="md-nav__link">
+    2.安装 SUPRI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" title="3.建立数据库" class="md-nav__link">
+    3.建立数据库
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4surpi" title="4.运行SURPI" class="md-nav__link">
+    4.运行SURPI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" title="5.输出结果" class="md-nav__link">
+    5.输出结果
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1842,6 +1906,57 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1.安装依赖工具" class="md-nav__link">
+    1.安装依赖工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-supri" title="2.安装 SUPRI" class="md-nav__link">
+    2.安装 SUPRI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" title="3.建立数据库" class="md-nav__link">
+    3.建立数据库
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4surpi" title="4.运行SURPI" class="md-nav__link">
+    4.运行SURPI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" title="5.输出结果" class="md-nav__link">
+    5.输出结果
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1856,6 +1971,57 @@
                 
                 
                 <h1 id="supri">Supri<a class="headerlink" href="#supri" title="Permanent link">&para;</a></h1>
+<hr />
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
+<p>Supri 是一个老牌的宏基因组序列扫描软件，创建它之初是用来做临床上病原微生物序列检索的。</p>
+</div>
+<p>SUPRI 是主要用来对临床样品的 shotgun metagenomics 测序数据中寻找并鉴定病原的工具。它有2种模式：Fast mode 和 Comprehensive mode。前者可以快速对测序的 reads 进行 Mapping，找到细菌或病毒 reads。后者分析更为详细，除了细菌病毒外还比对了真菌，寄生虫等其他物种数据库，并且进行de novo assembly，对contig也进行 Mapping，虽然耗时更长，但可以获得覆盖度，taxonomic 分类等信息。</p>
+<h2 id="1">1.安装依赖工具<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>先要安装依赖工具：</p>
+<ul>
+<li><a href="http://genome.sph.umich.edu/wiki/FastQValidator">fastQValidator</a></li>
+<li><a href="http://sourceforge.net/projects/amos/files/amos/3.1.0/">Minimo v1.6</a></li>
+<li><a href="http://www.bcgsc.ca/platform/bioinfo/software/abyss">Abyss v1.3.5</a></li>
+<li><a href="http://omics.informatics.indiana.edu/mg/RAPSearch2/">RAPSearch v2.12</a></li>
+<li><a href="https://github.com/lh3/seqtk">seqtk v 1.0r31</a></li>
+<li><a href="http://snap.cs.berkeley.edu">SNAP v0.15</a></li>
+<li><a href="http://genometools.org/index.html">gt v1.5.1</a></li>
+<li><a href="https://github.com/brentp/bio-playground/tree/master/reads-utils">fastq</a></li>
+<li><a href="https://gist.github.com/drio/1168330">fqextract</a></li>
+<li><a href="https://code.google.com/p/cutadapt/">cutadapt v1.2.1</a></li>
+<li><a href="http://prinseq.sourceforge.net">prinseq-lite.pl</a></li>
+<li><a href="http://stackoverflow.com/questions/13646925/allowing-a-non-root-user-to-drop-cache">dropcache</a></li>
+</ul>
+<h2 id="2-supri">2.安装 SUPRI<a class="headerlink" href="#2-supri" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>$ wget https://github.com/chiulab/surpi/releases/download/v1.0.18/surpi-1.0.18.tar.gz
+$ tar zxf surpi-1.0.18.tar.gz -C surpi
+</pre></div>
+
+<h2 id="3">3.建立数据库<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>$ mkdir -p SNAP_db
+$ create_taxonomy_db.sh
+</pre></div>
+
+<h2 id="4surpi">4.运行SURPI<a class="headerlink" href="#4surpi" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>$ SURPI.sh -z input.fastq
+$ ./go_input <span class="p">&amp;</span>
+</pre></div>
+
+<h2 id="5">5.输出结果<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p>当以 Comprehensive mode 运行后，会产生以下文件夹：</p>
+<ul>
+<li>DATASETS_input</li>
+<li>deNovoASSEMBLY_input</li>
+<li>LOG_input</li>
+<li>OUTPUT_input</li>
+<li>TRASH_input</li>
+</ul>
+<p>结果文件在OUTPUT_input文件夹里，“.annotated” 文件是 SAM 格式或者 -m8 格式的比对结果, taxonomic 信息也在文件中的最后一行中。 “.counttable” 文件是 tab 分割的总结文件。每一行表示不同层面的 taxonomic 注释信息。</p>
+<h2 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://chiulab.ucsf.edu/surpi/">SUPRI official</a></li>
+</ol>
                 
                   
                 

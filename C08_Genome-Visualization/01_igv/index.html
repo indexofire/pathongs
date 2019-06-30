@@ -1168,6 +1168,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
       
       
       
@@ -1909,6 +1916,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" title="参考资料" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
       
       
       
@@ -1929,11 +1943,16 @@
                 
                 
                 <h1 id="igv">IGV<a class="headerlink" href="#igv" title="Permanent link">&para;</a></h1>
+<hr />
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
+<p>igv是最常用的比对结果可视化软件之一，使用java开发可以跨平台使用。</p>
+</div>
 <h2 id="1">1. 准备数据<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span># 下载参考基因组 NC_012967
-$ esearch -db nuccore -query &#39;NC_012967&#39; | efetch -format fasta &gt; NC_012967.1.fasta
+<div class="codehilite"><pre><span></span><span class="c1"># 下载参考基因组 NC_012967</span>
+$ esearch -db nuccore -query <span class="s1">&#39;NC_012967&#39;</span> <span class="p">|</span> efetch -format fasta &gt; NC_012967.1.fasta
 
-# 下载比对序列
+<span class="c1"># 下载比对序列sra</span>
 $ prefetch -v SRR030257
 </pre></div>
 
@@ -1946,6 +1965,10 @@ $ <span class="nb">cd</span> v2.3.37
 $ java -Xmx2g -jar igv.jar
 </pre></div>
 
+<div class="admonition infomation">
+<p class="admonition-title">Infomation</p>
+<p>Linux下使用igv建议采用java8，其他版本可能会出错。因此通过conda安装也是一个不错的方式。</p>
+</div>
 <h2 id="3">3. 生成比对文件<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>首先将 sra 格式的比对文件转换成 fastq 格式，并进行质控去除接头和外缘污染等序列。然后用samtools</p>
 <p><strong>用 samtools 转换数据格式</strong></p>
@@ -1956,8 +1979,8 @@ $ samtools index bowtie/SRR030257.sorted.bam
 </pre></div>
 
 <p><strong>分析结果</strong></p>
-<p>弹出的IGV图形界面，下拉菜单选择<code class="codehilite">Genomes</code>/<code class="codehilite">Create .genome File...</code>,在弹出的窗口中<code class="codehilite">FASTA file</code>选项选择基因组fasta文件，在<code class="codehilite">Gene File</code>选项选择转换的文件。
-``````</p>
+<p>弹出的IGV图形界面，下拉菜单选择<code class="codehilite">Genomes</code>/<code class="codehilite">Create .genome File...</code>,在弹出的窗口中<code class="codehilite">FASTA file</code>选项选择基因组fasta文件，在<code class="codehilite">Gene File</code>选项选择转换的文件。</p>
+<h2 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
                 
                   
                 

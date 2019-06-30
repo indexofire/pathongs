@@ -1998,6 +1998,7 @@
 <h2 id="1">1. 安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>使用 conda 建立一个单独的虚拟环境，采用其他安装方式也可以。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># 下载安装包，内含主要的依赖软件</span>
+<span class="c1"># 最新版在github/release界面</span>
 $ wget https://github.com/eead-csic-compbio/get_homologues/releases/download/v3.1.2/get_homologues-x86_64-20180524.tgz
 $ tar zxf get_homologues-x86_64-20180524.tgz -C get_homologues
 $ <span class="nb">cd</span> get_homologues
@@ -2015,7 +2016,7 @@ $ conda activate get_homologues
 <span class="o">(</span>get_homologues<span class="o">)</span>$ wget -P db/  ftp://ftp.uniprot.org//pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
 <span class="o">(</span>get_homologues<span class="o">)</span>$ wget -P db/  ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/Pfam-A.hmm.gz
 
-<span class="c1"># 安装</span>
+<span class="c1"># 安装脚本也可以帮你自动下载并解压缩 pfam 和 swissprot 数据库</span>
 <span class="o">(</span>get_homologues<span class="o">)</span>$ ./install.pl
 
 <span class="c1"># 安装R额外功能依赖包，nlopt不是R包，在S3AMAZON服务器上，往往不能正常在R中下载，所以要手动通过代理下载。</span>

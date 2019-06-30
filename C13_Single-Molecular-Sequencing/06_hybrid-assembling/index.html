@@ -1604,8 +1604,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#spades" title="Spades" class="md-nav__link">
-    Spades
+  <a href="#spades" title="Spades 混合组装" class="md-nav__link">
+    Spades 混合组装
   </a>
   
 </li>
@@ -1613,6 +1613,13 @@
         <li class="md-nav__item">
   <a href="#unicycle" title="Unicycle" class="md-nav__link">
     Unicycle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="参考资料" class="md-nav__link">
+    参考资料
   </a>
   
 </li>
@@ -1882,8 +1889,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#spades" title="Spades" class="md-nav__link">
-    Spades
+  <a href="#spades" title="Spades 混合组装" class="md-nav__link">
+    Spades 混合组装
   </a>
   
 </li>
@@ -1891,6 +1898,13 @@
         <li class="md-nav__item">
   <a href="#unicycle" title="Unicycle" class="md-nav__link">
     Unicycle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="参考资料" class="md-nav__link">
+    参考资料
   </a>
   
 </li>
@@ -1914,22 +1928,29 @@
                   <a href="https://github.com/indexofire/pathongs/edit/master/docs/C13_Single-Molecular-Sequencing/06_hybrid-assembling.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">二代+三代测序数据混合拼接<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="spades">Spades<a class="headerlink" href="#spades" title="Permanent link">&para;</a></h2>
+                <h1 id="_1">二代/三代测序数据混合拼接<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<hr />
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
+<p>微生物基因组用二代加三代测序可以获得较好的基因组序列，往往可以直接获得成环的染色体。本节接单介绍一些混合组装的方法。</p>
+</div>
+<h2 id="spades">Spades 混合组装<a class="headerlink" href="#spades" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1"># Spades 混合拼接同一个样本 miseq 和 nanopore 测序数据</span>
-$ spades.py -m -k <span class="m">33</span>,55,77,99,121 --only_assembler -1 S1_R1.fastq.gz -2 S1_R2.fastq.gz --nanopore minion.fastq.gz -o hybrid -t <span class="m">40</span>
+<span class="o">(</span>spades<span class="o">)</span>$ spades.py -m -k <span class="m">33</span>,55,77,99,121 --only_assembler -1 S1_R1.fastq.gz -2 S1_R2.fastq.gz --nanopore minion.fastq.gz -o hybrid -t <span class="m">40</span>
 </pre></div>
 
 <h2 id="unicycle">Unicycle<a class="headerlink" href="#unicycle" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1"># 去除接头，将fastq文件压缩</span>
-<span class="o">(</span>nanopore<span class="o">)</span>$ <span class="k">for</span> fq in <span class="o">{</span><span class="m">0</span>..11<span class="o">}</span><span class="p">;</span> <span class="k">do</span> porechop -t <span class="m">8</span> -i *_<span class="si">${</span><span class="nv">fq</span><span class="si">}</span>.fastq -o <span class="si">${</span><span class="nv">fq</span><span class="si">}</span>.fastq.gz<span class="p">;</span> <span class="k">done</span>
+<span class="o">(</span>nanopore<span class="o">)</span>$ <span class="k">for</span> fq in <span class="o">{</span><span class="m">0</span>..11<span class="o">}</span><span class="p">;</span> <span class="k">do</span> porechop -t <span class="m">8</span> -i *_<span class="si">${</span><span class="nv">fq</span><span class="si">}</span>.fastq -o <span class="si">${</span><span class="nv">fq</span><span class="si">}</span>.fastq<span class="p">;</span> <span class="k">done</span>
 
 <span class="c1"># 去除低质量碱基，将reads平均Q值低于9的去除</span>
-<span class="o">(</span>nanopore<span class="o">)</span>$ <span class="k">for</span> trim in <span class="o">{</span><span class="m">0</span>..11<span class="o">}</span><span class="p">;</span> <span class="k">do</span> zcat <span class="si">${</span><span class="nv">trim</span><span class="si">}</span>.fastq.gz <span class="p">|</span> NanoFilt -q <span class="m">9</span> &gt;&gt; trimmed.fastq<span class="p">;</span> <span class="k">done</span>
+<span class="o">(</span>nanopore<span class="o">)</span>$ <span class="k">for</span> trim in <span class="o">{</span><span class="m">0</span>..11<span class="o">}</span><span class="p">;</span> <span class="k">do</span> cat <span class="si">${</span><span class="nv">trim</span><span class="si">}</span>.fastq <span class="p">|</span> NanoFilt -q <span class="m">9</span> &gt;&gt; trimmed.fastq<span class="p">;</span> <span class="k">done</span>
 
 <span class="c1"># unicycler 混合组装illumina和nanopore数据</span>
-<span class="o">(</span>nanopore<span class="o">)</span>$ unicycler -1 R1.fastq.gz -2 R2.fastq.gz -l trimmed.fastq.gz -o hybrid
+<span class="o">(</span>nanopore<span class="o">)</span>$ unicycler -1 R1.fastq.gz -2 R2.fastq.gz -l trimmed.fastq -o hybrid
 </pre></div>
+
+<h2 id="_2">参考资料<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
                 
                   
                 
