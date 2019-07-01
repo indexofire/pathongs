@@ -1,5 +1,7 @@
 # Galaxy 快速部署方式
 
+---
+
 ![banner](../assets/images/9.2/banner.jpg)
 
 ## 1. 小型实验室快速解决方案

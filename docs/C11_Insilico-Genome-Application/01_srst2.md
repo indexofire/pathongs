@@ -1,5 +1,7 @@
 # SRST2
 
+---
+
 [SRST2](https://github.com/katholt/srst2) 工具可以对 reads 进行扫描，分析其MLST型別以及基因部分情况。
 
 ## 1. 安装

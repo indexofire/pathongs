@@ -1,13 +1,16 @@
 # snpEFF 使用
 
+---
+
 snpEFF 是许多 variant calling pipeline 中常用的 vcf 注释工具。
 
 ## 安装
 
 ```bash
 $ conda install snpEFF
-
 ```
+
+## 使用
 
 ```bash
 # 将 Listeria monocytogenes 涉及的数据库下载

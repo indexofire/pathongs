@@ -13,9 +13,31 @@
     - `paste`: 将文件按列复制
     - `diff`: 比较2个文件差异
     - `parallel`: 并行处理程序
+    - `curl`: 下载数据
+    - `cvskit`: 命令行cvs工具
 
 ## sort
 
 ```bash
 $
 ```
+
+## uniq
+
+## cut
+
+## split
+
+## tr
+
+## join
+
+## paste
+
+## diff
+
+## parallel
+
+## curl
+
+## cvskit

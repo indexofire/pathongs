@@ -1,4 +1,6 @@
-# [BPGA][]
+# BPGA
+
+---
 
 [BPGA][] 是由印度 [CSIR-Indian Institute of Chemical Biology](http://www.iicb.res.in/) 研究人员开发的用于细菌 Pangenome 分析工具流。
 

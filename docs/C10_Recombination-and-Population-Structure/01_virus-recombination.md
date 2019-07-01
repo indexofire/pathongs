@@ -1,23 +1,18 @@
 # Virus Recombination Analysis
 
-### RDP4
+---
 
+### RDP4
 
 ### Simplot
 
-
-
-
-
-
 ## Programs
-RDP
-http://darwin.uvigo.es/rdp/rdp.html
+
+RDP: http://darwin.uvigo.es/rdp/rdp.html
 Pros: Alread a compilation of detection algorithms for verification of analysis. Free and easy to install.
 Cons: I can only get Manual methods to work on my Windows 7 machine specifically Bootscan, MaxChi, and 3Seq. Also poor interface.
 
-SimPlot
-http://sray.med.som.jhmi.edu/SCRoftw...ot/#disclaimer
+SimPlot: http://sray.med.som.jhmi.edu/SCRoftw...ot/#disclaimer
 Pros:Simple interface easy to use and visualize data. Implements algorithms Simplot, Bootscan, and FindSites.
 Cons: Simplot More useful for evolutionarily closely related regions. Manual grouping of sequences in for analysis needs to be fixed. Can't seem to change window size or step size in Bootscan algorithm.
 

@@ -1,5 +1,7 @@
 ## bwa mem
 
+---
+
 [Phil Ashton](http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.3103.html)等人最近发表的一篇论文引发了一些讨论，即如何采用 bwa-mem 应用到长片段测序如牛津纳米孔（ONT）。
 
 尽管bwa-mem的第一个版本与PacBio一起工作，但它产生的对齐过于分散而无法使用。我最初认为bwa-mem使用的长精确种子对PacBio读数的~15％错误率不够敏感，但 Homolog.us 指出BLASR也使用长精确种子。然后我意识到bwa-mem算法也可以使用PacBio数据。随着越来越多有趣的PacBio数据集的出现，我决定尝试一下。

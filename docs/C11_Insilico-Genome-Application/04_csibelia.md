@@ -1,5 +1,7 @@
 # C-Sibelia
 
+---
+
 [Sibelia][] 是一个由 [St. Petersburg Academic University of the Russian Academy of Sciences][] 开发的主要用于病原微生物的比较基因组学工具。它可以用来发现微生物的共有区域，非共有区域以及重组区域等。通过对共线性区域的分析与比较，并采用 [circos][] 以及 [d3js][] 生成可视化结果。
 
 [Sibelia][] 有2个组件：一个叫`Sibelia`，可以用来处理多个基因组完成图的共线性分析。另一个叫`C-Sibelia`，可以用来比较2个基因组（基因组scaffolds与参考基因组）。
