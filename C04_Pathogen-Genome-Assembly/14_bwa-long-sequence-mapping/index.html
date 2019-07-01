@@ -351,8 +351,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C01_Linux-and-Script-Language/06_tools/" title="06. 其他命令行工具" class="md-nav__link">
-      06. 其他命令行工具
+    <a href="../../C01_Linux-and-Script-Language/06_tools/" title="06. 其他Linux命令行工具" class="md-nav__link">
+      06. 其他Linux命令行工具
     </a>
   </li>
 
@@ -1540,6 +1540,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C12_Metagenomics-Analysis/11_kmerfinder/" title="11. KmerFinder" class="md-nav__link">
+      11. KmerFinder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C12_Metagenomics-Analysis/12_meta-beetl/" title="12. Meta-BEETL" class="md-nav__link">
+      12. Meta-BEETL
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1660,6 +1684,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C14_Phylogeny-Analysis/02_raxml.md" title="02. RAxML" class="md-nav__link">
+      02. RAxML
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1683,6 +1719,18 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C15_Phylogeny-Analysis/00_all-about-phylogeny/" title="00. 构建进化书" class="md-nav__link">
+      00. 构建进化书
+    </a>
+  </li>
+
         
           
           
@@ -1857,6 +1905,78 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+    
+    <label class="md-nav__link" for="nav-20">
+      第十九章 创建工具流
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-20">
+        第十九章 创建工具流
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C19_Pipelines-and-Workflows/05_workflow-software/" title="05. workflow工具软件" class="md-nav__link">
+      05. workflow工具软件
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-21" type="checkbox" id="nav-21">
+    
+    <label class="md-nav__link" for="nav-21">
+      第二十章 其他
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-21">
+        第二十章 其他
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C20_Others/02_gi-to-accession/" title="02. GI转Accession" class="md-nav__link">
+      02. GI转Accession
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -1911,6 +2031,7 @@
                   <h1>14. bwa 长序列比对</h1>
                 
                 <h2 id="bwa-mem">bwa mem<a class="headerlink" href="#bwa-mem" title="Permanent link">&para;</a></h2>
+<hr />
 <p><a href="http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.3103.html">Phil Ashton</a>等人最近发表的一篇论文引发了一些讨论，即如何采用 bwa-mem 应用到长片段测序如牛津纳米孔（ONT）。</p>
 <p>尽管bwa-mem的第一个版本与PacBio一起工作，但它产生的对齐过于分散而无法使用。我最初认为bwa-mem使用的长精确种子对PacBio读数的~15％错误率不够敏感，但 Homolog.us 指出BLASR也使用长精确种子。然后我意识到bwa-mem算法也可以使用PacBio数据。随着越来越多有趣的PacBio数据集的出现，我决定尝试一下。</p>
 <p>BWA-MEM 算法有两个主要变化，可以更好地支持PacBio数据。首先，我们必须使用放松的评分矩阵，以便Smith-Waterman（SW）可以在有效匹配上给出正分数。在0.7.9和0.7.10中，评分方案是：match = 2，mismatch = -5，gapOpen = -2和gapExt = -1。其次，我添加了一个启发式来过滤初始种子，以减少不成功的种子扩展。对于PacBio读数，bwa-mem在每个种子周围的小窗口中执行SSE2-SW，然后如果SW得分太小（阈值与选项-W成比例）则拒绝种子。这类似于BLAST的X-dropoff启发式算法。除此之外，bwa-mem还实现了间隙修补启发式算法，即使结果对齐不是最优的，它也会尝试将两个共线局部命中与全局对齐连接起来。这种启发式方法有助于让对齐遍历低质量区域，从而减少碎片。通过这些更改，bwa-mem适用于PacBio数据。</p>
