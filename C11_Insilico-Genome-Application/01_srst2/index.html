@@ -1354,8 +1354,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" title="3. 实例" class="md-nav__link">
-    3. 实例
+  <a href="#3" title="3. 分析示例" class="md-nav__link">
+    3. 分析示例
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" title="3.1 获得分析数据" class="md-nav__link">
+    3.1 获得分析数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-fastq" title="3.2 生成fastq数据" class="md-nav__link">
+    3.2 生成fastq数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" title="3.3 扫描数据" class="md-nav__link">
+    3.3 扫描数据
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="参考资料" class="md-nav__link">
+    参考资料
   </a>
   
 </li>
@@ -2023,8 +2057,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" title="3. 实例" class="md-nav__link">
-    3. 实例
+  <a href="#3" title="3. 分析示例" class="md-nav__link">
+    3. 分析示例
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" title="3.1 获得分析数据" class="md-nav__link">
+    3.1 获得分析数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-fastq" title="3.2 生成fastq数据" class="md-nav__link">
+    3.2 生成fastq数据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" title="3.3 扫描数据" class="md-nav__link">
+    3.3 扫描数据
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="参考资料" class="md-nav__link">
+    参考资料
   </a>
   
 </li>
@@ -2050,39 +2118,83 @@
                 
                 <h1 id="srst2">SRST2<a class="headerlink" href="#srst2" title="Permanent link">&para;</a></h1>
 <hr />
-<p><a href="https://github.com/katholt/srst2">SRST2</a> 工具可以对 reads 进行扫描，分析其MLST型別以及基因部分情况。</p>
+<p><img alt="srst2" src="../../assets/images/C11/01/srst2.png" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
+<p><a href="https://github.com/katholt/srst2">SRST2</a> 采用比对到基因序列的方法来提取如MLST等基因位点的序列，输入数据为测序reads。它自带MLST、耐药基因等数据库，可以获得扫描结果。也提供了工具便于自行建立如毒力基因等特异性为点序列。</p>
+</div>
 <h2 id="1">1. 安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1"># 使用 conda 安装 SRST2 安装包</span>
+<div class="codehilite"><pre><span></span><span class="c1"># 使用 conda 在虚拟环境 srst2 中安装 SRST2 安装包</span>
 $ conda create -n srst2 srst2
 $ conda activate srst2
+
+<span class="c1"># srst2 是python开发的，也可以用pip安装</span>
+<span class="o">(</span>srst2<span class="o">)</span>$ pip install srst2
 </pre></div>
 
 <h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<p>需要注意的是fastq文件名称</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 下载物种 MLST 数据库</span>
-$ getmlst.py --species <span class="s2">&quot;Salmonella enterica&quot;</span>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>需要注意的是fastq文件名称要符合Miseq命名规范。</p>
+</div>
+<div class="codehilite"><pre><span></span><span class="c1"># 下载 MLST 数据库</span>
+<span class="c1"># 数据库会下载到当前目录</span>
+<span class="o">(</span>srst2<span class="o">)</span>$ getmlst.py --species <span class="s2">&quot;Vibrio parahaemolyticus&quot;</span>
 
-<span class="c1"># 根据测序reads扫描沙门菌MLST型别</span>
-$ srst2 --input_pe S1_1.fastq.gz S1_2.fastq.gz --output S1 <span class="se">\</span>
+<span class="c1"># 根据测序reads扫描副溶血性弧菌MLST型别</span>
+<span class="o">(</span>srst2<span class="o">)</span>$ srst2 --input_pe S1_1.fastq.gz S1_2.fastq.gz --output S1 <span class="se">\</span>
 &gt; --log --mlst_db Salmonella_enterica.fasta <span class="se">\</span>
 &gt; --mlst_definitions senterica.txt --mlst_delimiter _
-
-<span class="c1"># 根据测序reads获得耐药基因</span>
-$ srst2 --input_pe
 </pre></div>
 
-<h2 id="3">3. 实例<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>对于 --mlst_delimiter 用什么分割符，需要根据具体数据库使用。大部分pubmlst数据库的基因分配号都是用'_'，其他的一般使用 '-'。具体使用哪个参见 --mlst_db 数据库文件，上面的例子就是 Salmonella_enterica.fasta 文件的序列名称，如果是例如 &gt;abc_1，那么就是下划线。如果是 &gt;abc-1，那么就是破折号。</p>
+</div>
+<p>MLST扫描结果字段：</p>
+<ul>
+<li>Sample：扫描数据的样品名称，比如S1，或者SRR1002045等</li>
+<li>ST：扫描比对数据库后获得ST型别</li>
+<li>7个具体管家基因：扫描每个基因allele分配的型别</li>
+<li>mismatches：7个管家基因中是否有不匹配的碱基</li>
+<li>uncertainty：由于序列深度或者覆盖度不够造成的不确定情况</li>
+<li>depth：基因比对的覆盖度</li>
+<li>maxMAF：扫描的7个管家基因中最高的minor等位基因频率</li>
+</ul>
+<p>根据测序reads获得耐药基因，conda 版本的srst2没有默认的数据库，需要自行下载。srst2 自带的数据库，参见: <a href="https://github.com/katholt/srst2/tree/master/data">https://github.com/katholt/srst2/tree/master/data</a></p>
+<div class="codehilite"><pre><span></span><span class="o">(</span>srst2<span class="o">)</span>$ srst2 --input_pe S1_1.fastq.gz S1_2.fastq.gz --gene_db ARGannot_r3.fasta --output S1_result
+</pre></div>
+
+<p>扫描结果直接以tsv格式标注扫描获得的目标基因名称</p>
+<p><strong>自定义基因数据库</strong></p>
+<p>扫描获得基因的有无，构建自定义数据库</p>
+<div class="codehilite"><pre><span></span><span class="c1"># SRST2可以自定义序列，作为数据库进行比对</span>
+<span class="c1"># conda 版本的srst2没有自带转换工具，需要自行下载，具体参见：</span>
+<span class="c1"># https://github.com/katholt/srst2/tree/master/scripts</span>
+<span class="o">(</span>srst2<span class="o">)</span>$ conda install cdhit
+<span class="o">(</span>srst2<span class="o">)</span>$ cdhit-est -i rawseqs.fasta -o rawseqs_cdhit90 -d <span class="m">0</span> &gt; rawseqs_cdhit90.stdout
+<span class="o">(</span>srst2<span class="o">)</span>$ cdhit_to_csv.py --cluster_file rawseqs_cdhit90.clstr --infasta raw_sequences.fasta --outfile rawseqs_clustered.csv
+<span class="c1"># 生成的 seqs_clustered.fasta 可以作为 --gene_db 数据库文件进行扫描</span>
+<span class="o">(</span>srst2<span class="o">)</span>$ csv_to_gene_db.py -t rawseqs_clustered.csv -o seqs_clustered.fasta -f rawseqs.fasta -c <span class="m">4</span>
+</pre></div>
+
+<p>扫描基因的不同型别，构建自定义数据库</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 基因型别数据库的序列要用这种格式命名，具体可以参考耐药数据库的序列内容</span>
+&gt;<span class="o">[</span>clusterUniqueIdentifier<span class="o">]</span>__<span class="o">[</span>clusterSymbol<span class="o">]</span>__<span class="o">[</span>alleleSymbol<span class="o">]</span>__<span class="o">[</span>alleleUniqueIdentifier<span class="o">]</span>
+</pre></div>
+
+<h2 id="3">3. 分析示例<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 获得分析数据<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
 <p>下载 Bacillus anthracis SRA 数据库miseq测序平台的基因组测序数据。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># edirect 工具生成 sra 的 runinfo 信息列表</span>
 <span class="c1"># 过滤了测序数据过小和平均读长过小的数据</span>
 $ esearch -query <span class="s1">&#39;&quot;Bacillus anthracis&quot;[Organism] AND \</span>
 <span class="s1">&gt; &quot;miseq&quot;[All Fields] AND (&quot;biomol dna&quot;[Properties] AND \</span>
 <span class="s1">&gt; &quot;strategy wgs&quot;[Properties])&#39;</span> -db sra <span class="p">|</span> efetch -format runinfo <span class="se">\</span>
-&gt; -db sra <span class="p">|</span> awk <span class="s1">&#39;/^[SDE]RR/&#39;</span> <span class="p">|</span> <span class="se">\</span>
-&gt; awk -F<span class="s1">&#39;,&#39;</span> <span class="s1">&#39;{if($8&gt;150  &amp;&amp; $16==&quot;PAIRED&quot; &amp;&amp; $20 ==&quot;Illumina MiSeq&quot;) print $1}&#39;</span> <span class="p">|</span> <span class="se">\</span>
-&gt; prefetch -v
+&gt; -db sra <span class="p">|</span> awk <span class="s1">&#39;/^[SDE]RR/&#39;</span> <span class="p">|</span> awk -F<span class="s1">&#39;,&#39;</span> <span class="s1">&#39;{if($8&gt;150  &amp;&amp; $16==&quot;PAIRED&quot; &amp;&amp; $20 ==&quot;Illumina MiSeq&quot;) print $1}&#39;</span> <span class="p">|</span> prefetch -v
 </pre></div>
 
+<h3 id="32-fastq">3.2 生成fastq数据<a class="headerlink" href="#32-fastq" title="Permanent link">&para;</a></h3>
 <p>将 SRA 格式的数据转换成 fastq 格式。</p>
 <div class="codehilite"><pre><span></span><span class="c1"># 批量转化成 fastq.gz 格式文件</span>
 $ parallel <span class="s2">&quot;fastq-dump --split-files --gzip --outdir fastq&quot;</span> ::: *.sra
@@ -2095,6 +2207,7 @@ $ parallel <span class="s2">&quot;bioawk -c fastx &#39;BEGIN{n=0;q=0}{n+=gc(\$se
 <span class="s2">&gt; &gt;&gt; gc_result.txt&quot;</span> ::: *.fastq.gz
 </pre></div>
 
+<h3 id="33">3.3 扫描数据<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
 <p>srst2 对数据进行扫描，获得MLST型别，毒力基因</p>
 <div class="codehilite"><pre><span></span><span class="c1"># 准备目录结构</span>
 $ mkdir -p mlst vfdb ardb result
@@ -2132,6 +2245,11 @@ $ <span class="k">for</span> i in <span class="k">$(</span>ls *.fastq.gz <span c
 &gt; --gene_db path/srst2/datab/ARGannot.r1.fasta<span class="p">;</span> <span class="se">\</span>
 &gt; <span class="k">done</span>
 </pre></div>
+
+<h2 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>srst2: <a href="https://github.com/katholt/srst2#gene-databases">https://github.com/katholt/srst2#gene-databases</a></li>
+</ol>
                 
                   
                 
