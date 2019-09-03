@@ -1,8 +1,10 @@
 # NucDiff
 
-https://github.com/uio-cels/NucDiff
+---
 
+## 安装
 
+NucDiff源码：https://github.com/uio-cels/NucDiff
 
 ## 参考材料
 

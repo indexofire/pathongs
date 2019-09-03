@@ -20,7 +20,7 @@ pages:
     - '03. Linux 软件管理': C01_Linux-and-Script-Language/03_linux-software.md
     - '04. awk 列处理工具': C01_Linux-and-Script-Language/04_awk.md
     - '05. sed 行处理工具': C01_Linux-and-Script-Language/05_sed.md
-    - '06. 其他命令行工具': C01_Linux-and-Script-Language/06_tools.md
+    - '06. 其他Linux命令行工具': C01_Linux-and-Script-Language/06_tools.md
     - '07. Shell脚本': C01_Linux-and-Script-Language/07_shell.md
     - '08. Perl 编程': C01_Linux-and-Script-Language/08_perl.md
     - '09. Python 编程': C01_Linux-and-Script-Language/09_python.md
@@ -89,11 +89,11 @@ pages:
     - '01. 病毒重组': C10_Recombination-and-Population-Structure/01_virus-recombination.md
     - '02. Gubbins 分析': C10_Recombination-and-Population-Structure/02_gubbins.md
     - '03. BAPS': C10_Recombination-and-Population-Structure/03_baps.md
-  - '第十一章 insilico 应用':
-    - '01. SRST2 短序列比对基因工具': C11_Insilico-Genome-Application/01_srst2.md
-    - '02. 拼接序列管家基因扫描工具 MLST': C11_Insilico-Genome-Application/02_mlst.md
-    - '03. 拼接序列耐药基因扫描工具 Ariba': C11_Insilico-Genome-Application/03_ariba.md
-    - '04. 细菌共线性分析工具 C-Sibelia': C11_Insilico-Genome-Application/04_csibelia.md
+  - '第十一章 扫描工具':
+    - '01. SRST2 短序列扫描工具': C11_Insilico-Genome-Application/01_srst2.md
+    - '02. MLST 扫描工具': C11_Insilico-Genome-Application/02_mlst.md
+    - '03. Ariba 耐药基因': C11_Insilico-Genome-Application/03_ariba.md
+    - '04. Abricate 多功能扫描工具': C11_Insilico-Genome-Application/04_abricate.md
   - '第十二章 宏基因组分析':
     - '01. kraken': C12_Metagenomics-Analysis/01_kraken.md
     - '02. centrifuge': C12_Metagenomics-Analysis/02_centrifuge.md
@@ -105,6 +105,8 @@ pages:
     - '08. supri': C12_Metagenomics-Analysis/08_supri.md
     - ‘09. shotgun 分析’: C12_Metagenomics-Analysis/09_shotgun.md
     - '10. 16S 种群分析': C12_Metagenomics-Analysis/10_16s.md
+    - '11. KmerFinder': C12_Metagenomics-Analysis/11_kmerfinder.md
+    - '12. Meta-BEETL': C12_Metagenomics-Analysis/12_meta-beetl.md
   - '第十三章 单分子测序':
     - '01. nanopore': C13_Single-Molecular-Sequencing/01_nanopore.md
     - '02. pacbio': C13_Single-Molecular-Sequencing/02_pacbio.md
@@ -113,9 +115,9 @@ pages:
     - '06. hybrid': C13_Single-Molecular-Sequencing/06_hybrid-assembling.md
   - '第十四章 多重序列比对':
     - '01. 多重序列比对': C14_Multiple-Sequence-Alignment/01_msa.md
-    #- '02. RAxML': C14_Phylogeny-Analysis/02_raxml.md
+    - '02. RAxML': C14_Phylogeny-Analysis/02_raxml.md
   - '第十五章 进化树构建分析':
-    #- '00. 构建进化书': C15_Phylogeny-Analysis/00_all-about-phylogeny.md
+    - '00. 构建进化书': C15_Phylogeny-Analysis/00_all-about-phylogeny.md
     - '01. figtree': C15_Phylogeny-Analysis/01_figtree.md
     - '02. ggtree': C15_Phylogeny-Analysis/02_ggtree.md
   - '第十六章 综合分析平台':
@@ -127,6 +129,10 @@ pages:
   - '第十八章 基因组分析实践':
     - '01. 细菌SNP溯源分析一': C18_Analysis-Examples/01_trace-Pae-from-different-source-by-SNP.md
     - '02. 细菌比较基因组学研究': C18_Analysis-Examples/02_comparative-analysis-Ban-genomes.md
+  - '第十九章 创建工具流':
+    - '05. workflow工具软件': C19_Pipelines-and-Workflows/05_workflow-software.md
+  - '第二十章 其他':
+    - '02. GI转Accession': C20_Others/02_gi-to-accession.md
 use_directory_urls: true
 
 extra_javascript:

@@ -1,5 +1,7 @@
 # 基因功能注释
 
+---
+
 >### 同源基因概念
 
 >**Homolog**: A gene related to a second gene by descent from a common ancestral DNA sequence. The term "homolog" may apply to the relationship between genes separated by speciation (ortholog), OR to the relationship betwen genes originating via genetic duplication (see paralog).

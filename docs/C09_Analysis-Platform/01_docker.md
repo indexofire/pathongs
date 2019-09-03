@@ -1,5 +1,7 @@
 # Docker
 
+---
+
 ![banner](../assets/images/9.1/banner.jpg)
 
 ## 安装 docker CE for Ubuntu
@@ -21,7 +23,7 @@ $ sudo apt update
 $ sudo apt install docker-ce
 ```
 
-## 安装 docker in Archlinux 
+## 安装 docker in Archlinux
 
 ```bash
 # 安装 docker
