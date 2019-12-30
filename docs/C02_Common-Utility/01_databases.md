@@ -5,7 +5,7 @@
 !!! Abstract "内容简介"
     测序的数据如原始 reads 数据我们可以上传到 NCBI 或 EBI 的公共数据库，发表的文章中可以使用。此外公共数据库中的数据也可以为我们的研究提供帮助。本节我们就来了解一下如何上传和下载基因组测序数据。首先让我们来了解一下网络上的测序公共数据库：
 
-**常见的测序公共数据库：**
+**常见的高通量测序数据的公共数据库：**
 
 - [SRA][] 短序列数据库：由 [NCBI][] 负责维护
 - [ENA][] 欧洲核酸数据库：由 [EBI][] 负责维护
@@ -19,7 +19,7 @@
 
 ### 1.1 简介
 
-[SRA][] 是 Sequence Read Archive 的首字母缩写。SRA 与 Trace 最大的区别是将实验数据与 metadata（元数据）分离。metadata 是指与测序实验及其实验样品相关的数据，如实验目的、实验设计、测序平台、样本数据(物种，菌株，个体表型等)。metadata可以分为以下几类：
+[SRA][] 是 Sequence Read Archive 的首字母缩写。[SRA][] 与 Trace 最大的区别是将实验数据与 metadata（元数据）分离。metadata 是指与测序实验及其实验样品相关的数据，如实验目的、实验设计、测序平台、样本数据(物种，菌株，个体表型等)。metadata可以分为以下几类：
 
 * Study：accession number 以 DRP，SRP，ERP 开头，表示的是一个特定目的的研究课题，可以包含多个研究机构和研究类型等。study 包含了项目的所有 metadata，并有一个 NCBI 和 EBI 共同承认的项目编号（universal project id），一个 study 可以包含多个实验（experiment）。
 * Sample：accession number以 DRS，SRS，ERS 开头，表示的是样品信息。样本信息可以包括物种信息、菌株(品系) 信息、家系信息、表型数据、临床数据,组织类型等。可以通过[Trace](http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=search_obj) 来查询。
@@ -28,6 +28,8 @@
 * Submission：一个 study 的数据，可以分多次递交至 SRA 数据库。比如在一个项目启动前期，就可以把 study，experiment 的数据递交上去，随着项目的进展，逐批递交 run 数据。study 等同于项目，submission 等同于批次的概念。
 
 ### 1.2 数据下载
+
+这些公共数据库的数据可以通过不同方式下载，如https、ftp，或者使用aspera这个工具进行高速下载。
 
 #### 1.2.1 用 Aspera 工具下载 SRA
 

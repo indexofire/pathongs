@@ -27,7 +27,7 @@ pages:
     - '10. Biopython 编程': C01_Linux-and-Script-Language/10_biopython.md
     - '11. R 编程': C01_Linux-and-Script-Language/11_r.md
   - '第二章 常用工具':
-    - '01. 公共生物数据库': C02_Common-Utility/01_databases.md
+    - '01. 基因组公共数据库': C02_Common-Utility/01_databases.md
     - '02. Blast 比对': C02_Common-Utility/02_blast.md
     - '03. Edirect 工具': C02_Common-Utility/03_edirect.md
     - '04. EMBOSS 工具集': C02_Common-Utility/04_emboss.md
