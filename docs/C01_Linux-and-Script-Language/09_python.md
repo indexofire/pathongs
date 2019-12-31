@@ -91,4 +91,9 @@ sqrt(2)
 - biopython
 - matplotlib
 
+
+## Python学习资料
+
+- [Python Cookbook 中文版](https://python3-cookbook.readthedocs.io/zh_CN/latest/index.html)
+
 ## 参考资料
