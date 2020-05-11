@@ -1,14 +1,12 @@
 
 
 
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="病原微生物高通量测序数据分析手册">
       
@@ -18,27 +16,8 @@
       
         <meta name="author" content="Mark Renton">
       
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.6">
     
     
       
@@ -46,134 +25,97 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b9ffd7b.min.css">
       
       
     
-    
-      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
     
       
         
-<script>
-  window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments)
-  }
-  ga.l = +new Date
-  /* Setup integration and send page view */
-  ga("create", "UA-55420348-3", "auto")
-  ga("set", "anonymizeIp", true)
-  ga("send", "pageview")
-  /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.forms.search) {
-      var query = document.forms.search.query
-      query.addEventListener("blur", function() {
-        if (this.value) {
-          var path = document.location.pathname;
-          ga("send", "pageview", path + "?q=" + this.value)
-        }
-      })
-    }
-  })
-</script>
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-55420348-3","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
   </head>
   
+  
     <body dir="ltr">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="__github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
-        
-      </defs>
-    </svg>
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#snps" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#snps" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
     
       <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://pathongs.hzcdclab.org/" title="Pathogen NGS 数据分析入门" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon"></i>
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              Pathogen NGS 数据分析入门
-            </span>
-            <span class="md-header-nav__topic">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://pathongs.hzcdclab.org/" title="Pathogen NGS 数据分析入门" class="md-header-nav__button md-logo" aria-label="Pathogen NGS 数据分析入门">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Pathogen NGS 数据分析入门
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
               02. 细菌比较基因组学研究
-            </span>
-          
+            
+          </span>
         </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-          
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Type to start searching
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -181,71 +123,56 @@
     </div>
   </div>
 </div>
+    
+    
+      <div class="md-header-nav__source">
         
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
   <div class="md-source__repository">
     GitHub
   </div>
 </a>
-          </div>
-        </div>
-      
-    </div>
+      </div>
+    
   </nav>
 </header>
     
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
       
         
       
       
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://pathongs.hzcdclab.org/" title="Pathogen NGS 数据分析入门" class="md-nav__button md-logo">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://pathongs.hzcdclab.org/" title="Pathogen NGS 数据分析入门" class="md-nav__button md-logo" aria-label="Pathogen NGS 数据分析入门">
       
-        <i class="md-icon"></i>
-      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
     </a>
     Pathogen NGS 数据分析入门
   </label>
   
     <div class="md-nav__source">
       
-
-
-  
-
-<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
   <div class="md-source__repository">
     GitHub
   </div>
@@ -273,13 +200,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       第一章 Linux与脚本编程
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第一章 Linux与脚本编程" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第一章 Linux与脚本编程
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -429,13 +362,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       第二章 常用工具
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第二章 常用工具" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第二章 常用工具
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -447,8 +386,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C02_Common-Utility/01_databases/" title="01. 公共生物数据库" class="md-nav__link">
-      01. 公共生物数据库
+    <a href="../../C02_Common-Utility/01_databases.md" title="01. 基因组公共数据库" class="md-nav__link">
+      01. 基因组公共数据库
     </a>
   </li>
 
@@ -525,13 +464,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       第三章 数据文件格式
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第三章 数据文件格式" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第三章 数据文件格式
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -669,13 +614,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       第四章 基因组组装
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第四章 基因组组装" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第四章 基因组组装
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -813,13 +764,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
       第五章 基因组注释
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第五章 基因组注释" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第五章 基因组注释
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -897,13 +854,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
     <label class="md-nav__link" for="nav-7">
       第六章 基因组比较
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第六章 基因组比较" data-md-level="1">
       <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第六章 基因组比较
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -993,13 +956,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
       第七章 泛基因组分析
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第七章 泛基因组分析" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第七章 泛基因组分析
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1101,13 +1070,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
       第八章 基因组可视化
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第八章 基因组可视化" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第八章 基因组可视化
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1161,13 +1136,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
     <label class="md-nav__link" for="nav-10">
       第九章 分析平台
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第九章 分析平台" data-md-level="1">
       <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第九章 分析平台
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1233,13 +1214,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
     <label class="md-nav__link" for="nav-11">
       第十章 重组与种群分析
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第十章 重组与种群分析" data-md-level="1">
       <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第十章 重组与种群分析
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1293,13 +1280,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
     <label class="md-nav__link" for="nav-12">
       第十一章 扫描工具
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第十一章 扫描工具" data-md-level="1">
       <label class="md-nav__title" for="nav-12">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第十一章 扫描工具
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1365,13 +1358,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
     
     <label class="md-nav__link" for="nav-13">
       第十二章 宏基因组分析
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第十二章 宏基因组分析" data-md-level="1">
       <label class="md-nav__title" for="nav-13">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第十二章 宏基因组分析
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1533,13 +1532,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
     
     <label class="md-nav__link" for="nav-14">
       第十三章 单分子测序
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第十三章 单分子测序" data-md-level="1">
       <label class="md-nav__title" for="nav-14">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第十三章 单分子测序
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1617,13 +1622,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
     
     <label class="md-nav__link" for="nav-15">
       第十四章 多重序列比对
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第十四章 多重序列比对" data-md-level="1">
       <label class="md-nav__title" for="nav-15">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第十四章 多重序列比对
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1665,13 +1676,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-16" type="checkbox" id="nav-16">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-16" type="checkbox" id="nav-16">
     
     <label class="md-nav__link" for="nav-16">
       第十五章 进化树构建分析
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第十五章 进化树构建分析" data-md-level="1">
       <label class="md-nav__title" for="nav-16">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第十五章 进化树构建分析
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1725,13 +1742,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-17" type="checkbox" id="nav-17">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-17" type="checkbox" id="nav-17">
     
     <label class="md-nav__link" for="nav-17">
       第十六章 综合分析平台
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第十六章 综合分析平台" data-md-level="1">
       <label class="md-nav__title" for="nav-17">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第十六章 综合分析平台
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1773,13 +1796,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-18" type="checkbox" id="nav-18">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-18" type="checkbox" id="nav-18">
     
     <label class="md-nav__link" for="nav-18">
       第十七章 地理流行病学分析
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第十七章 地理流行病学分析" data-md-level="1">
       <label class="md-nav__title" for="nav-18">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第十七章 地理流行病学分析
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1823,13 +1852,19 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-19" type="checkbox" id="nav-19" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-19" type="checkbox" id="nav-19" checked>
     
     <label class="md-nav__link" for="nav-19">
       第十八章 基因组分析实践
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第十八章 基因组分析实践" data-md-level="1">
       <label class="md-nav__title" for="nav-19">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第十八章 基因组分析实践
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1856,13 +1891,16 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         02. 细菌比较基因组学研究
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
       </label>
     
     <a href="./" title="02. 细菌比较基因组学研究" class="md-nav__link md-nav__link--active">
@@ -1870,39 +1908,44 @@
     </a>
     
       
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" title="1. 获取公共数据库数据" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     1. 获取公共数据库数据
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1. 获取公共数据库数据">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-sra" title="1.1 下载 sra" class="md-nav__link">
+  <a href="#11-sra" class="md-nav__link">
     1.1 下载 sra
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-pese" title="1.2 区分 PE/SE 数据" class="md-nav__link">
+  <a href="#12-pese" class="md-nav__link">
     1.2 区分 PE/SE 数据
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#13-fastqgz" title="1.3 验证 fastq.gz 文件名的一致性" class="md-nav__link">
+  <a href="#13-fastqgz" class="md-nav__link">
     1.3 验证 fastq.gz 文件名的一致性
   </a>
   
@@ -1914,22 +1957,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" title="2. 数据的前期处理" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     2. 数据的前期处理
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="2. 数据的前期处理">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-qc" title="2.1 数据 QC" class="md-nav__link">
+  <a href="#21-qc" class="md-nav__link">
     2.1 数据 QC
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#22" title="2.2 去除接头" class="md-nav__link">
+  <a href="#22" class="md-nav__link">
     2.2 去除接头
   </a>
   
@@ -1941,36 +1984,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-pangenome" title="3. Pangenome 分析" class="md-nav__link">
+  <a href="#3-pangenome" class="md-nav__link">
     3. Pangenome 分析
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="3. Pangenome 分析">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31" title="3.1 基因组组装" class="md-nav__link">
+  <a href="#31" class="md-nav__link">
     3.1 基因组组装
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#32" title="3.2 基因组注释" class="md-nav__link">
+  <a href="#32" class="md-nav__link">
     3.2 基因组注释
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#33-roary" title="3.3 用 Roary 进行分析" class="md-nav__link">
+  <a href="#33-roary" class="md-nav__link">
     3.3 用 Roary 进行分析
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#34-harvest" title="3.4 Harvest" class="md-nav__link">
+  <a href="#34-harvest" class="md-nav__link">
     3.4 Harvest
   </a>
   
@@ -1982,23 +2025,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-snps" title="4. SNPs 构建进化树" class="md-nav__link">
+  <a href="#4-snps" class="md-nav__link">
     4. SNPs 构建进化树
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="4. SNPs 构建进化树">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#41-mapping" title="4.1 基于参考基因组 Mapping 的方法" class="md-nav__link">
+  <a href="#41-mapping" class="md-nav__link">
     4.1 基于参考基因组 Mapping 的方法
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="4.1 基于参考基因组 Mapping 的方法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-snippy" title="1. Snippy*" class="md-nav__link">
+  <a href="#1-snippy" class="md-nav__link">
     1. Snippy*
   </a>
   
@@ -2015,15 +2058,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" title="5. 核心基因分析" class="md-nav__link">
+  <a href="#5" class="md-nav__link">
     5. 核心基因分析
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="5. 核心基因分析">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51-get_homologues" title="5.1 get_homologues" class="md-nav__link">
+  <a href="#51-get_homologues" class="md-nav__link">
     5.1 get_homologues
   </a>
   
@@ -2035,22 +2078,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" title="6. 相关软件安装" class="md-nav__link">
+  <a href="#6" class="md-nav__link">
     6. 相关软件安装
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-reference" title="7. Reference" class="md-nav__link">
+  <a href="#7-reference" class="md-nav__link">
     7. Reference
   </a>
   
 </li>
-      
-      
-      
-      
       
     </ul>
   
@@ -2071,13 +2110,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-20" type="checkbox" id="nav-20">
     
     <label class="md-nav__link" for="nav-20">
       第十九章 创建工具流
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第十九章 创建工具流" data-md-level="1">
       <label class="md-nav__title" for="nav-20">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第十九章 创建工具流
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2107,13 +2152,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-21" type="checkbox" id="nav-21">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-21" type="checkbox" id="nav-21">
     
     <label class="md-nav__link" for="nav-21">
       第二十章 其他
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="第二十章 其他" data-md-level="1">
       <label class="md-nav__title" for="nav-21">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         第二十章 其他
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2147,39 +2198,44 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" title="1. 获取公共数据库数据" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     1. 获取公共数据库数据
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="1. 获取公共数据库数据">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-sra" title="1.1 下载 sra" class="md-nav__link">
+  <a href="#11-sra" class="md-nav__link">
     1.1 下载 sra
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-pese" title="1.2 区分 PE/SE 数据" class="md-nav__link">
+  <a href="#12-pese" class="md-nav__link">
     1.2 区分 PE/SE 数据
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#13-fastqgz" title="1.3 验证 fastq.gz 文件名的一致性" class="md-nav__link">
+  <a href="#13-fastqgz" class="md-nav__link">
     1.3 验证 fastq.gz 文件名的一致性
   </a>
   
@@ -2191,22 +2247,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" title="2. 数据的前期处理" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     2. 数据的前期处理
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="2. 数据的前期处理">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-qc" title="2.1 数据 QC" class="md-nav__link">
+  <a href="#21-qc" class="md-nav__link">
     2.1 数据 QC
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#22" title="2.2 去除接头" class="md-nav__link">
+  <a href="#22" class="md-nav__link">
     2.2 去除接头
   </a>
   
@@ -2218,36 +2274,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-pangenome" title="3. Pangenome 分析" class="md-nav__link">
+  <a href="#3-pangenome" class="md-nav__link">
     3. Pangenome 分析
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="3. Pangenome 分析">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31" title="3.1 基因组组装" class="md-nav__link">
+  <a href="#31" class="md-nav__link">
     3.1 基因组组装
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#32" title="3.2 基因组注释" class="md-nav__link">
+  <a href="#32" class="md-nav__link">
     3.2 基因组注释
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#33-roary" title="3.3 用 Roary 进行分析" class="md-nav__link">
+  <a href="#33-roary" class="md-nav__link">
     3.3 用 Roary 进行分析
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#34-harvest" title="3.4 Harvest" class="md-nav__link">
+  <a href="#34-harvest" class="md-nav__link">
     3.4 Harvest
   </a>
   
@@ -2259,23 +2315,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-snps" title="4. SNPs 构建进化树" class="md-nav__link">
+  <a href="#4-snps" class="md-nav__link">
     4. SNPs 构建进化树
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="4. SNPs 构建进化树">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#41-mapping" title="4.1 基于参考基因组 Mapping 的方法" class="md-nav__link">
+  <a href="#41-mapping" class="md-nav__link">
     4.1 基于参考基因组 Mapping 的方法
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="4.1 基于参考基因组 Mapping 的方法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-snippy" title="1. Snippy*" class="md-nav__link">
+  <a href="#1-snippy" class="md-nav__link">
     1. Snippy*
   </a>
   
@@ -2292,15 +2348,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" title="5. 核心基因分析" class="md-nav__link">
+  <a href="#5" class="md-nav__link">
     5. 核心基因分析
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="5. 核心基因分析">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51-get_homologues" title="5.1 get_homologues" class="md-nav__link">
+  <a href="#51-get_homologues" class="md-nav__link">
     5.1 get_homologues
   </a>
   
@@ -2312,22 +2368,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" title="6. 相关软件安装" class="md-nav__link">
+  <a href="#6" class="md-nav__link">
     6. 相关软件安装
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-reference" title="7. Reference" class="md-nav__link">
+  <a href="#7-reference" class="md-nav__link">
     7. Reference
   </a>
   
 </li>
-      
-      
-      
-      
       
     </ul>
   
@@ -2341,7 +2393,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C18_Analysis-Examples/02_comparative-analysis-Ban-genomes.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/C18_Analysis-Examples/02_comparative-analysis-Ban-genomes.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
                 
                 
                 <h1 id="snps">炭疽芽胞杆菌基因组 SNPs 分析<a class="headerlink" href="#snps" title="Permanent link">&para;</a></h1>
@@ -2362,18 +2419,18 @@
 </ul>
 </div>
 <h2 id="1">1. 获取公共数据库数据<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>数据采用 NCBI SRA 数据库中的公共数据来作分析。首先检索 NCBI SRA 数据库中所有使用 illumina 平台对炭疽芽胞杆菌基因组进行 PE 测序的 大于 100M 的 NGS 数据，并在下载这些 sra 数据后转换成 fastq.gz 格式。使用的工具主要为 <code class="codehilite">edirect</code> 和 <code class="codehilite">sra-tools</code>。</p>
+<p>数据采用 NCBI SRA 数据库中的公共数据来作分析。首先检索 NCBI SRA 数据库中所有使用 illumina 平台对炭疽芽胞杆菌基因组进行 PE 测序的 大于 100M 的 NGS 数据，并在下载这些 sra 数据后转换成 fastq.gz 格式。使用的工具主要为 <code>edirect</code> 和 <code>sra-tools</code>。</p>
 <h3 id="11-sra">1.1 下载 sra<a class="headerlink" href="#11-sra" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="c1"># 下载炭疽芽胞杆菌 SRA 双末端测序数据</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 下载炭疽芽胞杆菌 SRA 双末端测序数据</span>
 $ esearch -db sra -query <span class="s1">&#39;&quot;Bacillus anthracis&quot;[Organism] AND \</span>
 <span class="s1">&gt; (Hiseq[ALL] OR Miseq[ALL]) AND &quot;strategy wgs&quot;[Properties] AND paired[ALL]&#39;</span> <span class="p">|</span> <span class="se">\</span>
 &gt; efetch -db sra -format runinfo <span class="p">|</span> grep <span class="s1">&#39;^[DSE]RR*&#39;</span> <span class="p">|</span> <span class="se">\</span>
 &gt; awk -F<span class="s1">&#39;,&#39;</span> <span class="s1">&#39;{if($5&gt;100000000) print $1}&#39;</span> <span class="p">|</span> sort -n <span class="p">|</span> <span class="se">\</span>
 &gt; xargs fastq-dump --split-files --gzip --outdir bacillus_anthracis
-</pre></div>
+</code></pre></div>
 
-<p>上面的命令会直接调用 <code class="codehilite">fastq-dump</code> 下载数据到 <code class="codehilite">--outdir</code> 中。虽然我们用了 <code class="codehilite">grep PAIRED</code> 来区分不同的测序方式，但是由于信息是提交者上传的，可能信息不一定是正确的。由于后面的流程中牵涉到组装和比对等操作，PE/SE的方式会有区别，最好还是进行验证后再下载，或者将PE/SE的数据区分存放。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 先生成数据记录</span>
+<p>上面的命令会直接调用 <code>fastq-dump</code> 下载数据到 <code>--outdir</code> 中。虽然我们用了 <code>grep PAIRED</code> 来区分不同的测序方式，但是由于信息是提交者上传的，可能信息不一定是正确的。由于后面的流程中牵涉到组装和比对等操作，PE/SE的方式会有区别，最好还是进行验证后再下载，或者将PE/SE的数据区分存放。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 先生成数据记录</span>
 $ esearch -db sra -query <span class="s1">&#39;&quot;Bacillus anthracis&quot;[Organism] AND \</span>
 <span class="s1">&gt; (Hiseq[ALL] OR Miseq[ALL]) AND &quot;strategy wgs&quot;[Properties]&#39;</span> <span class="p">|</span> <span class="se">\</span>
 &gt; efetch -db sra -format runinfo <span class="p">|</span> grep <span class="s1">&#39;PAIRED&#39;</span> <span class="p">|</span> grep <span class="s1">&#39;^[DSE]RR*&#39;</span> <span class="p">|</span> <span class="se">\</span>
@@ -2381,22 +2438,22 @@ $ esearch -db sra -query <span class="s1">&#39;&quot;Bacillus anthracis&quot;[Or
 
 <span class="c1"># 下载 sra</span>
 $ cat ban-sra.txt <span class="p">|</span> xargs prefetch
-</pre></div>
+</code></pre></div>
 
 <p>这样会下载 sra 文件到默认目录(~/.ncbi/public/sra)，然后用下面的方法来区分下载的数据到底是PE还是SE测序。</p>
 <h3 id="12-pese">1.2 区分 PE/SE 数据<a class="headerlink" href="#12-pese" title="Permanent link">&para;</a></h3>
 <p>虽然我们检索时限定了 PE 测序数据，但是很多时候数据库里的信息不准确，还是会有很多 SE 的数据会被下载。确定 PE 或者 SE 的方法很多。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># sra-stat 统计 sra 文件，nreads=1 表示 SE 测序，nreads=2 表示 PE 测序。-e 2 只统计前2个spot，如果去掉-e参数，程序统计整个文件，速度比较慢</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># sra-stat 统计 sra 文件，nreads=1 表示 SE 测序，nreads=2 表示 PE 测序。-e 2 只统计前2个spot，如果去掉-e参数，程序统计整个文件，速度比较慢</span>
 $ <span class="k">for</span> i in *.sra<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="nv">$i</span> <span class="sb">`</span>sra-stat -xs -e <span class="m">2</span> <span class="nv">$i</span> <span class="p">|</span> grep <span class="s2">&quot;nreads&quot;</span><span class="sb">`</span><span class="p">;</span> <span class="k">done</span>
 
 <span class="c1"># 批量删除</span>
 $ parallel <span class="s1">&#39;sra-stat -xs -e 2&#39;</span> ::: *.sra <span class="p">|</span> xtract -Pattern Run -element Run@accession <span class="se">\</span>
 &gt; Statistics@nreads <span class="p">|</span> awk <span class="s1">&#39;{if($2==1) print $1}&#39;</span> <span class="p">|</span> xargs rm
-</pre></div>
+</code></pre></div>
 
-<p><code class="codehilite">sra-stat</code> 工具可以提取 sra 文件的测序相关信息。<code class="codehilite">-xs</code> 参数生成 xml 格式的统计信息。里面属性值 nreads 可以表示采用的是哪一种测序方式。如果 spot-id 是规则排列，那么可以添加 <code class="codehilite">-e 2</code> 最快时间获得结果。</p>
-<p><code class="codehilite">parallel</code> 工具来并行化处理 <code class="codehilite">sra-stat</code>，如果计算量大是很好的利用多核CPU处理终端命令的方法。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># fastq-dump 输出一个 reads，计算行数如果是4，那么就是 SE，如果是8,则是 PE</span>
+<p><code>sra-stat</code> 工具可以提取 sra 文件的测序相关信息。<code>-xs</code> 参数生成 xml 格式的统计信息。里面属性值 nreads 可以表示采用的是哪一种测序方式。如果 spot-id 是规则排列，那么可以添加 <code>-e 2</code> 最快时间获得结果。</p>
+<p><code>parallel</code> 工具来并行化处理 <code>sra-stat</code>，如果计算量大是很好的利用多核CPU处理终端命令的方法。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># fastq-dump 输出一个 reads，计算行数如果是4，那么就是 SE，如果是8,则是 PE</span>
 $ fastq-dump -X <span class="m">1</span> --split-spot -Z SRR955386.sra <span class="p">|</span> wc -l
 
 <span class="c1"># 利用 -A 参数远程获得结果</span>
@@ -2407,24 +2464,24 @@ $ fastq-dump --split-files ERR493452.sra
 
 <span class="c1"># fastq-dump 只能调用单核转换，可以使用 parallel 工具并行处理加快速度。</span>
 $ parallel <span class="s2">&quot;fastq-dump --split-files --gzip --outdir bacillus_anthracis&quot;</span> ::: *.sra
-</pre></div>
+</code></pre></div>
 
-<p>另外一种获得是 PE/SE 的方法是用 <code class="codehilite">fastq-dump</code> 来读取出相同 spot-id 的 reads 再计算行数。<code class="codehilite">-X</code> 表示最多读取的 spot-id 数量；<code class="codehilite">--split-spot</code> 区分spot到reads然后用<code class="codehilite">-Z</code>输出，再<code class="codehilite">wc -l</code>统计行数。</p>
-<p>有时候有些sra文件在 dump 时会出错，不能生成对应的 PE fastq 文件，这就需要比较后删除了。如果是 mate pair 的数据，会生成 <code class="codehilite">*_3.fastq.gz</code>，如果不需要则可手工删除。</p>
+<p>另外一种获得是 PE/SE 的方法是用 <code>fastq-dump</code> 来读取出相同 spot-id 的 reads 再计算行数。<code>-X</code> 表示最多读取的 spot-id 数量；<code>--split-spot</code> 区分spot到reads然后用<code>-Z</code>输出，再<code>wc -l</code>统计行数。</p>
+<p>有时候有些sra文件在 dump 时会出错，不能生成对应的 PE fastq 文件，这就需要比较后删除了。如果是 mate pair 的数据，会生成 <code>*_3.fastq.gz</code>，如果不需要则可手工删除。</p>
 <h3 id="13-fastqgz">1.3 验证 fastq.gz 文件名的一致性<a class="headerlink" href="#13-fastqgz" title="Permanent link">&para;</a></h3>
-<p><code class="codehilite">fastq-dump</code> 批量生成 fastq 数据后，有时因为各种原因，还是会 dump 出非 PE 类型的 <code class="codehilite">*._1</code> 和 <code class="codehilite">*._2</code> 命名风格的2个PE数据文件。文件量大时通过肉眼很难判断。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 核对 PE 双端测序文件是否一致</span>
+<p><code>fastq-dump</code> 批量生成 fastq 数据后，有时因为各种原因，还是会 dump 出非 PE 类型的 <code>*._1</code> 和 <code>*._2</code> 命名风格的2个PE数据文件。文件量大时通过肉眼很难判断。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 核对 PE 双端测序文件是否一致</span>
 $ ls -l *_1.fastq.gz <span class="p">|</span> awk <span class="s1">&#39;{print $9}&#39;</span> <span class="p">|</span> awk -F<span class="s1">&#39;_&#39;</span> <span class="s1">&#39;{print $1}&#39;</span> &gt; R1.txt
 $ ls -l *_2.fastq.gz <span class="p">|</span> awk <span class="s1">&#39;{print $9}&#39;</span> <span class="p">|</span> awk -F<span class="s1">&#39;_&#39;</span> <span class="s1">&#39;{print $1}&#39;</span> &gt; R2.txt
 $ diff R1.txt R2.txt
-</pre></div>
+</code></pre></div>
 
-<p>通过 <code class="codehilite">diff</code> 工具比较，如果2个文件内容一致，则终端不会有输出。否则就要删除差异的那个文件了。</p>
+<p>通过 <code>diff</code> 工具比较，如果2个文件内容一致，则终端不会有输出。否则就要删除差异的那个文件了。</p>
 <h2 id="2">2. 数据的前期处理<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>由于是公共数据库下载的数据，并不能保证测序实验质量或者数据提交者是否提交的是质控后的数据。因此建议要对数据做一些前期的质控处理。</p>
 <h3 id="21-qc">2.1 数据 QC<a class="headerlink" href="#21-qc" title="Permanent link">&para;</a></h3>
-<p>首先对基因组 GC 含量和 Q 值进行初步筛选，对于偏差较大的数据考虑直接剔除（或者用其他软件验证看是否是错误物种）。这里使用的工具为 <code class="codehilite">bioawk</code> 或 <code class="codehilite">parallel</code>。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 因为 reads 覆盖度可能并不均一，高覆盖度的区域 GC 含量比重会略高。但是大部分情况下，正常测序的基因组这种区域相对来说不多，平均到基因组后会整体 GC 含量影响不大。</span>
+<p>首先对基因组 GC 含量和 Q 值进行初步筛选，对于偏差较大的数据考虑直接剔除（或者用其他软件验证看是否是错误物种）。这里使用的工具为 <code>bioawk</code> 或 <code>parallel</code>。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 因为 reads 覆盖度可能并不均一，高覆盖度的区域 GC 含量比重会略高。但是大部分情况下，正常测序的基因组这种区域相对来说不多，平均到基因组后会整体 GC 含量影响不大。</span>
 $ <span class="k">for</span> i in *.fastq.gz<span class="p">;</span> <span class="k">do</span> bioawk -c fastx <span class="s1">&#39;BEGIN{n=0;q=0}{n+=gc($seq);q+=meanqual($seq)}END{print $name,n/NR,q/NR}&#39;</span> <span class="nv">$i</span> &gt;&gt; result.txt<span class="p">;</span> <span class="k">done</span>
 
 <span class="c1"># awk 类工具是单进程的，为了加速可以使用 parallel 来并行计算</span>
@@ -2432,24 +2489,24 @@ $ parallel <span class="s2">&quot;bioawk -c fastx &#39;BEGIN{n=0;q=0}{n+=gc(\$se
 
 <span class="c1"># 按照 GC 含量排序</span>
 $ cat result.txt <span class="p">|</span> sort -n -k3
-</pre></div>
+</code></pre></div>
 
 <p>R 绘制 gc 分布图，如果 gc 含量偏差超过 10% 时就剔除该基因组数据。</p>
-<div class="codehilite"><pre><span></span><span class="o">&gt;</span> <span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="n">data</span><span class="o">&lt;-</span><span class="nf">read.table</span><span class="p">(</span><span class="s">&quot;result.txt&quot;</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="nf">qplot</span><span class="p">(</span><span class="n">v2</span><span class="p">,</span> <span class="n">v3</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>结果显示有一个黑点的GC含量特别低，且Q值特别高。结果显示测序实验 SRR2155551 和 SRR2164197 的 GC 含量仅为22%，而其他样本 GC 含量范围在34%～41%。且这2个实验的样本均为同一个，是1个样本的2此测序（或者数据上传了2次），因此将其剔除。</p>
 <h3 id="22">2.2 去除接头<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
-<p>其次要去除接头的污染。因为分析流程中不仅包括 mapping 的方式，还包含 de novo assembly，为了避免接头序列对基因组拼接的影响，这里最好进行。这里使用的工具是 <code class="codehilite">FastQC</code> 和 <code class="codehilite">fadapa</code></p>
-<div class="codehilite"><pre><span></span><span class="c1"># 使用脚本 scan_adaptors.py 来扫描下载的高通量基因组测序数据是否有接头污染的情况。</span>
+<p>其次要去除接头的污染。因为分析流程中不仅包括 mapping 的方式，还包含 de novo assembly，为了避免接头序列对基因组拼接的影响，这里最好进行。这里使用的工具是 <code>FastQC</code> 和 <code>fadapa</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 使用脚本 scan_adaptors.py 来扫描下载的高通量基因组测序数据是否有接头污染的情况。</span>
 $ fastqc -t <span class="m">40</span> -q --extract *.fastq.gz
 $ python scan_fastqc_report.py -d qc
-</pre></div>
+</code></pre></div>
 
 <p>接头去除软件很多，但是要自动判断并且批量处理最好自己写脚本比较方便。这里用 python 写一个批量移除的脚本。</p>
-<div class="codehilite"><pre><span></span><span class="ch">#!usr/bin/env python</span>
+<div class="highlight"><pre><span></span><code><span class="ch">#!usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="c1"># scripts name: scan_fastqc_report.py</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -2479,46 +2536,46 @@ $ python scan_fastqc_report.py -d qc
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">adaptor</span><span class="p">):</span>
         <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">adaptor</span><span class="p">)</span>
     <span class="n">SeqIO</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">adaptors</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/adaptor.fasta&quot;</span> <span class="o">%</span> <span class="n">args</span><span class="o">.</span><span class="n">adaptor</span><span class="p">,</span> <span class="s2">&quot;fasta&quot;</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s2">&quot;Overrepresented sequences has been save to adaptors.fasta&quot;</span>
+    <span class="nb">print</span> <span class="s2">&quot;Overrepresented sequences has been save to adaptors.fasta&quot;</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s2">&quot;No Overrepresented sequences&quot;</span>
-</pre></div>
+    <span class="nb">print</span> <span class="s2">&quot;No Overrepresented sequences&quot;</span>
+</code></pre></div>
 
 <h2 id="3-pangenome">3. Pangenome 分析<a class="headerlink" href="#3-pangenome" title="Permanent link">&para;</a></h2>
 <p>常用的 Pangenome 分析包括基因组组装注释后对基因</p>
 <h3 id="31">3.1 基因组组装<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
-<p>组装细菌基因组最常用的工具是 <code class="codehilite">spades</code>，它可以分批对多个kmer进行组装。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># spades 组装</span>
+<p>组装细菌基因组最常用的工具是 <code>spades</code>，它可以分批对多个kmer进行组装。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># spades 组装</span>
 $ <span class="k">for</span> i in <span class="k">$(</span>awk -F<span class="s1">&#39;_&#39;</span> <span class="s1">&#39;!a[$1]++{print}&#39;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> spades.py --careful <span class="se">\</span>
 &gt; -k <span class="m">21</span>,33,55,77,99,121 -1 <span class="nv">$i_1</span>.fastq.gz -2 <span class="nv">$i_2</span>.fastq.gz -T <span class="m">40</span> -o <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span>
-</pre></div>
+</code></pre></div>
 
-<p>但是由于下载的批量数据采用不同平台，在不同时间进行的测序，读长彼此差异还是比较大的。比如10K病原基因组计划里，很多样本适用 miseq 进行测序的，读长可达250以上，而很多商业公司或者科研院校则用 hiseq 测序，读长一般在100～150。用同一个参数来组装可能不会获得较好的结果。<code class="codehilite">shovill</code>工具可以帮我们自动化最佳kmer选择，去除低覆盖contigs等操作，一步达到较好的组装序列。</p>
-<div class="codehilite"><pre><span></span><span class="c1"># shovill 组装</span>
+<p>但是由于下载的批量数据采用不同平台，在不同时间进行的测序，读长彼此差异还是比较大的。比如10K病原基因组计划里，很多样本适用 miseq 进行测序的，读长可达250以上，而很多商业公司或者科研院校则用 hiseq 测序，读长一般在100～150。用同一个参数来组装可能不会获得较好的结果。<code>shovill</code>工具可以帮我们自动化最佳kmer选择，去除低覆盖contigs等操作，一步达到较好的组装序列。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># shovill 组装</span>
 $ <span class="k">for</span> i in <span class="k">$(</span>awk -F<span class="s1">&#39;_&#39;</span> <span class="s1">&#39;!a[$1]++{print}&#39;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> shovill -R1 <span class="nv">$i_1</span>.fastq.gz -R2 <span class="nv">$i_2</span>.fastq.gz -o <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="32">3.2 基因组注释<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>$ <span class="k">for</span> i in <span class="k">$(</span>awk -F<span class="s1">&#39;_&#39;</span> <span class="s1">&#39;!a[$1]++{print}&#39;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> prokka --prefix prokka_<span class="nv">$i</span> <span class="nv">$i</span>/contigs.fa<span class="p">;</span> <span class="k">done</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>$ <span class="k">for</span> i in <span class="k">$(</span>awk -F<span class="s1">&#39;_&#39;</span> <span class="s1">&#39;!a[$1]++{print}&#39;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> prokka --prefix prokka_<span class="nv">$i</span> <span class="nv">$i</span>/contigs.fa<span class="p">;</span> <span class="k">done</span>
+</code></pre></div>
 
 <h3 id="33-roary">3.3 用 Roary 进行分析<a class="headerlink" href="#33-roary" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>$ cp prokka_*/<span class="nv">$i</span>.gff gff/ <span class="o">&amp;&amp;</span> <span class="nb">cd</span> gff
+<div class="highlight"><pre><span></span><code>$ cp prokka_*/<span class="nv">$i</span>.gff gff/ <span class="o">&amp;&amp;</span> <span class="nb">cd</span> gff
 $ roary -p -e mafft *.gff
-</pre></div>
+</code></pre></div>
 
 <h3 id="34-harvest">3.4 Harvest<a class="headerlink" href="#34-harvest" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>$ parsnp -g ref.gbk -d data -c -p <span class="m">40</span> -o output
+<div class="highlight"><pre><span></span><code>$ parsnp -g ref.gbk -d data -c -p <span class="m">40</span> -o output
 $ harvesttools -i outut/*.ggr -S snp
-</pre></div>
+</code></pre></div>
 
 <h2 id="4-snps">4. SNPs 构建进化树<a class="headerlink" href="#4-snps" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>$ raxml -f a -x <span class="m">12345</span> -p <span class="m">12345</span> -#100 -n ban -T <span class="m">40</span> -s snp -m GTRGAMMA
-</pre></div>
+<div class="highlight"><pre><span></span><code>$ raxml -f a -x <span class="m">12345</span> -p <span class="m">12345</span> -#100 -n ban -T <span class="m">40</span> -s snp -m GTRGAMMA
+</code></pre></div>
 
 <h3 id="41-mapping">4.1 基于参考基因组 Mapping 的方法<a class="headerlink" href="#41-mapping" title="Permanent link">&para;</a></h3>
 <h4 id="1-snippy">1. Snippy*<a class="headerlink" href="#1-snippy" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><span class="c1"># snippy mapping</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># snippy mapping</span>
 $ <span class="k">for</span> i in *.fastq.gz <span class="p">|</span> sort <span class="p">|</span> uniq<span class="p">;</span> <span class="se">\</span>
 &gt; <span class="k">do</span> snippy --cpus <span class="m">40</span> --outdir <span class="nv">$i</span> -ref reference.fa <span class="se">\</span>
 &gt; --R1 <span class="nv">$i</span>*_1*.fastq.gz --R2 <span class="nv">$i</span>*_2*.fastq.gz<span class="p">;</span> <span class="k">done</span>
@@ -2532,67 +2589,67 @@ $ raxml -f a -x <span class="m">12345</span> -p <span class="m">12345</span> -# 
 <span class="c1"># 将 raxml 进化树结果文件从服务器传到本地电脑，用 figtree 生成图片</span>
 $ scp user@server-ip:/path/RAxML_bestTree.ex .
 $ figtree RAxML_bestTree.ex <span class="p">&amp;</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="5">5. 核心基因分析<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <h3 id="51-get_homologues">5.1 get_homologues<a class="headerlink" href="#51-get_homologues" title="Permanent link">&para;</a></h3>
 <h2 id="6">6. 相关软件安装<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <p>*****edirect**</p>
-<div class="codehilite"><pre><span></span>$ wget ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/edirect.tar.gz
+<div class="highlight"><pre><span></span><code>$ wget ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/edirect.tar.gz
 $ sudo tar zxf edirect.tar.gz -C /opt
 $ sudo chown -R root:root /opt/edirect
 $ <span class="nb">cd</span> /opt/edirect <span class="o">&amp;&amp;</span> sudo ./setup.sh
 $ sudo ln -s /opt/edirect/* /usr/local/sbin/
-</pre></div>
+</code></pre></div>
 
 <p><strong>sra-tools</strong></p>
-<div class="codehilite"><pre><span></span>$ wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.7.0/sratoolkit.2.7.0-ubuntu64.tar.gz
+<div class="highlight"><pre><span></span><code>$ wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.7.0/sratoolkit.2.7.0-ubuntu64.tar.gz
 $ sudo tar zxf sratoolkit.2.7.0-ubuntu64.tar.gz -C /opt/sratoolkit
 $ sudo chown -R root:root /opt/sratoolkit <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /opt/sratoolkit
 $ sudo ln -s <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/bin/* /usr/local/sbin/
-</pre></div>
+</code></pre></div>
 
 <p><strong>bio-awk</strong></p>
-<div class="codehilite"><pre><span></span>$ sudo apt-get install bison
+<div class="highlight"><pre><span></span><code>$ sudo apt-get install bison
 $ git clone https://github.com/lh3/bioawk
 $ <span class="nb">cd</span> bioawk <span class="o">&amp;&amp;</span> make
 $ sudo cp bioawk /usr/local/sbin
-</pre></div>
+</code></pre></div>
 
 <p><strong>parallel</strong></p>
-<div class="codehilite"><pre><span></span>$ sudo apt install parallel
-</pre></div>
+<div class="highlight"><pre><span></span><code>$ sudo apt install parallel
+</code></pre></div>
 
 <p><strong>gplot</strong></p>
-<div class="codehilite"><pre><span></span>$ sudo apt install gnuplot
+<div class="highlight"><pre><span></span><code>$ sudo apt install gnuplot
 $ git clone https://github.com/RhysU/gplot
 $ sudo cp gplot/gplot /usr/local/sbin
-</pre></div>
+</code></pre></div>
 
 <p><strong>FastQC</strong></p>
-<div class="codehilite"><pre><span></span>$ wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.5.zip
+<div class="highlight"><pre><span></span><code>$ wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.5.zip
 $ sudo unzip fastqc_v0.11.5.zip
 $ sudo mv fastqc_v0.11.5 /opt/fastqc <span class="o">&amp;&amp;</span> sudo chown -R root:root /opt/fastqc
 $ sudo cp /opt/fastqc/fastqc /usr/local/sbin
-</pre></div>
+</code></pre></div>
 
 <p><strong>Fadapa</strong></p>
-<div class="codehilite"><pre><span></span>$ sudo pip install fadapa
-</pre></div>
+<div class="highlight"><pre><span></span><code>$ sudo pip install fadapa
+</code></pre></div>
 
 <p><strong>snippy</strong></p>
-<div class="codehilite"><pre><span></span>$ git clone https://github.com/tseemann/snippy
+<div class="highlight"><pre><span></span><code>$ git clone https://github.com/tseemann/snippy
 $ sudo cp snippy/bin/* /usr/local/sbin
 $ sudo cp snippy/binaries/linux/* /usr/local/sbin
-</pre></div>
+</code></pre></div>
 
 <p><strong>RAxML</strong></p>
-<div class="codehilite"><pre><span></span>$ wget https://github.com/stamatak/standard-RAxML/archive/v8.1.17.tar.gz
+<div class="highlight"><pre><span></span><code>$ wget https://github.com/stamatak/standard-RAxML/archive/v8.1.17.tar.gz
 $ sudo tar zxf v8.1.17.tar.gz -C /opt/raxml
 $ sudo chown -R root:root /opt/raxml <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /opt/raxml
 $ sudo make -f Makefile.SSE3.PTHREADS.gcc
 $ sudo ln -s <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/raxmlHPC-PTHREADS-SSE3 /usr/local/raxml
-</pre></div>
+</code></pre></div>
 
 <h2 id="7-reference">7. Reference<a class="headerlink" href="#7-reference" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2602,8 +2659,6 @@ $ sudo ln -s <span class="sb">`</span><span class="nb">pwd</span><span class="sb
 <li>gnuplot tutorial: <a href="http://lzz5235.github.io/2016/01/12/gnuplot.html">http://lzz5235.github.io/2016/01/12/gnuplot.html</a></li>
 <li>gplot usage: <a href="https://github.com/RhysU/gplot/blob/master/README.md">https://github.com/RhysU/gplot/blob/master/README.md</a></li>
 </ol>
-                
-                  
                 
               
               
@@ -2620,34 +2675,34 @@ $ sudo ln -s <span class="sb">`</span><span class="nb">pwd</span><span class="sb
 <footer class="md-footer">
   
     <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../01_trace-Pae-from-different-source-by-SNP/" title="01. 细菌SNP溯源分析一" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+          <a href="../01_trace-Pae-from-different-source-by-SNP/" title="01. 细菌SNP溯源分析一" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
                 01. 细菌SNP溯源分析一
-              </span>
+              </div>
             </div>
           </a>
         
         
-          <a href="../../C19_Pipelines-and-Workflows/05_workflow-software/" title="05. workflow工具软件" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+          <a href="../../C19_Pipelines-and-Workflows/05_workflow-software/" title="05. workflow工具软件" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
                 05. workflow工具软件
-              </span>
+              </div>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
             </div>
           </a>
         
@@ -2662,11 +2717,10 @@ $ sudo ln -s <span class="sb">`</span><span class="nb">pwd</span><span class="sb
             Copyright &copy; 2016 - 2018 HZCDC@Lab
           </div>
         
-        powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
       </div>
       
     </div>
@@ -2675,9 +2729,18 @@ $ sudo ln -s <span class="sb">`</span><span class="nb">pwd</span><span class="sb
       
     </div>
     
-      <script src="../../assets/javascripts/application.dc02f8ce.js"></script>
+      <script src="../../assets/javascripts/vendor.a0c4167b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fb26dd1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.37585f48.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
       
