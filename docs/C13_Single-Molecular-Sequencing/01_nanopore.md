@@ -1,9 +1,46 @@
-# Nanopore Minion 测序数据分析
+# Nanopore Minion/Gridon 测序数据分析
 
 ---
 
 !!! Abstract "内容介绍"
     本节以 Minion 为例介绍纳米孔测序下机数据的常用分析路线。
+
+Nanopore 测序因为其特点，因此在 basecalling 和 demultiplexing 上有许多软件可以对其操作。不同软件有基于自己的算法，在速度和准确性上有一定的差异，目前许多软件也在不断的发展和改进中。因此与illumina数据不同，在对其数据进行分析前，这2步操作需要有一个基本的认识。
+
+## basecalling
+
+目前 Minion/Gridion 采用的 MinKNOW 软件使用的是 Guppy 进行 basecalling 和 demultiplexing。可以使用 fast 和 accuracy 2种模式，前者在高性能的CPU和SSD上可以达到实时basecalling，后者则需要在一个高性能的GPU和SSD上可以做到实时。
+
+
+
+## demultiplexing
+
+目前版本的一张 Minion/Gridion 的 Flowcell 上，上样密度优化后可以获得20G以上的碱基数据。虽然芯片可以清洗使用多次，但次数和时间也有限制。实际工作中往往需要在一张芯片同时进行多个样本的测序，这就需要我们在实验室流程中采用连接法或者PCR法把barcode生成到测序序列上，以区分样本。
+
+由于 Nanopore 测序准确度相比 illumina 低很多，因此准确做 demultiplexing 的难度也会大很多。特别是如果使用的是连接酶连接街头，实际获得的连接序列会比较复杂。目前有一些软件可以进行
+
+如果一张芯片上一次进行多个样本的测序，那么就要家barcode序列区分样本，分析时如果拿到的数据没有做过demultiplexing，那么需要自己手工做。这个操作可以有多个软件实现。
+
+官方的 guppy 可以进行 demultiplexing，也可以采用第三方软件对 fast5 进行 demultiplexing 工作。
+
+- deepbinner
+- porechop
+- qcat
+- guppy
+
+deepbinner 与 albacore、porechop 不同，他通过CNN神经网络进行 demultiplexing，目前最新版的MinKnow也使用了Guppy等RNN工具提升basecalling，精度比过去的软件有所提升。
+
+```guppy
+
+
+
+```bash
+# porechop 使用 -b 参数，可以对reads进行demultiplexing操作
+# 解开的各个样本序列放在ouput目录中
+(nanopore)$ porechop -i data.fq.gz -b output
+```
+
+
 
 ## 组装分析
 
@@ -67,20 +104,7 @@ $ conda activate nanopore
 - [unicycler](https://github.com/rrwick/Unicycler): 主流的混合组装软件
 - [spades](http://cab.spbu.ru/software/spades/): 主流的二代测序组装软件，可支持混合组装
 
-## DeMultiplexing
-
-如果一张芯片上一次进行多个样本的测序，那么就要家barcode序列区分样本，分析时如果拿到的数据没有做过demultiplexing，那么需要自己手工做。这个操作可以有多个软件实现。
-
-- deepbinner
-- porechop
-
-deepbinner 与 albacore、porechop 不同，他通过CNN神经网络进行 demultiplexing，目前最新版的MinKnow也使用了Guppy等RNN工具提升basecalling，精度比过去的软件有所提升。
-
-```bash
-# porechop 使用 -b 参数，可以对reads进行demultiplexing操作
-# 解开的各个样本序列放在ouput目录中
-(nanopore)$ porechop -i data.fq.gz -b output
-```
+---
 
 ## 参考资料
 

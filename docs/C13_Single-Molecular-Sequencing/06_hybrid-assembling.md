@@ -5,14 +5,16 @@
 !!! Abstract "内容简介"
     微生物基因组用二代加三代测序可以获得较好的基因组序列，往往可以直接获得成环的染色体。本节接单介绍一些混合组装的方法。
 
-## Spades 混合组装
+## 2代+3代数据混合组装
+
+### 1.Spades
 
 ```bash
 # Spades 混合拼接同一个样本 miseq 和 nanopore 测序数据
 (spades)$ spades.py -m -k 33,55,77,99,121 --only_assembler -1 S1_R1.fastq.gz -2 S1_R2.fastq.gz --nanopore minion.fastq.gz -o hybrid -t 40
 ```
 
-## Unicycle
+### 2.Unicycle
 
 ```bash
 # 去除接头，将fastq文件压缩

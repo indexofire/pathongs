@@ -3,17 +3,19 @@
 ---
 
 !!! note "内容简介"
-    本节将之前一篇在小米 15 pro笔记本上安装ArchLinux的教程作为介绍Linux安装的范例。由于许多的Linux发行版都有图形化的安装界面，只要稍微具备一些计算机知识，加上搜索引擎，安装完成难度不大。但是对于计算机、Linux和生物信息命令的学习来说，还是ArchLinux这种命令行安装界面更有帮助。以此安装作为入门读物，希望对Linux和安装有所帮助。
+    本节将之前一篇个人购买的小米 15 pro笔记本上安装 ArchLinux 的教程作为介绍Linux安装的范例。由于许多的 Linux 发行版都有图形化的安装界面，只要稍微具备一些计算机知识，加上搜索引擎帮助，安装完成难度不大。但是对于计算机、Linux和生物信息命令的学习来说，ArchLinux 这种命令行安装界面更有帮助。以此安装作为入门读物，希望对计算机和 Linux 学习有所帮助。
 
-## 小米 pro 15.6 安装 Archlinux 笔记
+## 小米 pro 15.6 安装 ArchLinux
 
 - 操作系统: ArchLinux
 - WM: i3wm
 - DM: none
 
-### 选择小米pro
+### 选择小米 15.6 pro
 
-仔细评估了自己的需求，横向比较了dell xps，华为mate，小米pro等几款笔记本。最终在看到小米新出的游戏本并不适合我之后，果断淘宝了小米 pro 15.6 低配版，5000以内可以拿下。个人的需求是一款和儿子共同使用的笔记本。自己主要做数据分析和开发用，同时教儿子编程，还可以玩玩简单的游戏。加上小米pro极简化的设计，非常符合个人的装逼风格，因此果断入手。曾经在新款小米13和15.6中犹豫过，最终在散热+噪音 vs 便携性中妥协了前者。
+仔细评估了自己的需求，横向比较了dell xps，华为mate，小米pro等几款笔记本。最终在看到小米新出的游戏本并不适合我之后，果断淘宝了小米 pro 15.6 低配版，5000以内可以拿下。个人的需求是一款和儿子共同使用的笔记本。自己主要做数据分析和开发用，同时教儿子编程，还可以玩玩简单的游戏。加上小米pro极简化的设计，非常符合个人的装逼风格，因此果断入手。曾经在新款小米13和15.6 pro中犹豫过，最终在散热+噪音 vs 便携性中妥协了前者。
+
+如果要作为主要的生物信息学处理电脑，强烈建议将内存升级成16G，再自行添加硬盘。
 
 ### 硬件与软件
 
@@ -766,6 +768,8 @@ $ echo 'BASE16_SHELL=$HOME/.config/base16-shell/' >> ~/.bashrc
 $ echo '[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"' >> ~/.bashrc
 ```
 
+设置
+
 ```
 # add these line into .vimrc
 if filereadable(expand("~/.vimrc_background"))
@@ -782,6 +786,7 @@ $ sudo pacman -S python-gitpython
 ### 图标美化
 
 ```bash
+# 使用 numix 套件，也可以选择自己喜欢的theme
 $ sudo pacman -S numix-icon-theme-git numix-circle-icon-theme-git numix-gtk-theme
 ```
 
@@ -801,8 +806,11 @@ $ youtube-dl --porxy `socks server` -f 137 `URL`
 
 ```bash
 $ touch run_wallpaper.sh
+```
 
-# run_wallpaper.sh
+run_wallpaper.sh 脚本内容
+
+```
 #!/bin/sh
 mpv $1 --wid="$2" --loop
 ```
