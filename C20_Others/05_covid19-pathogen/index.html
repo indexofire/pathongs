@@ -21,7 +21,7 @@
     
     
       
-        <title>新型冠状病毒基因组测序 - Pathogen NGS 数据分析入门</title>
+        <title>05. Covid-19基因组测序 - Pathogen NGS 数据分析入门</title>
       
     
     
@@ -87,7 +87,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              新型冠状病毒基因组测序
+              05. Covid-19基因组测序
             
           </span>
         </div>
@@ -1943,10 +1943,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-21" type="checkbox" id="nav-21">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-21" type="checkbox" id="nav-21" checked>
     
     <label class="md-nav__link" for="nav-21">
       第二十章 其他
@@ -1973,6 +1975,60 @@
     <a href="../02_gi-to-accession/" title="02. GI转Accession" class="md-nav__link">
       02. GI转Accession
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        05. Covid-19基因组测序
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="05. Covid-19基因组测序" class="md-nav__link md-nav__link--active">
+      05. Covid-19基因组测序
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    实验方法
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2011,39 +2067,6 @@
     实验方法
   </a>
   
-    <nav class="md-nav" aria-label="实验方法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    实验流程
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    分析方法
-  </a>
-  
-    <nav class="md-nav" aria-label="分析方法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    软件安装
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -2074,9 +2097,811 @@
 <blockquote>
 <p>测序方法汇总可参考CDC的资料 <a href="https://github.com/CDCgov/SARS-CoV-2_Sequencing">https://github.com/CDCgov/SARS-CoV-2_Sequencing</a></p>
 </blockquote>
-<h3 id="_3">实验流程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<h2 id="_4">分析方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h3 id="_5">软件安装<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<hr />
+<blockquote>
+<p>本文档采用 ARTIC Network 流程进行实验，可用于illumina平台和nanopore平台对SARS-Cov-2病毒进行基因组测序。</p>
+</blockquote>
+<p>@indexofire <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#100;&#101;&#120;&#111;&#102;&#105;&#114;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#105;&#110;&#100;&#101;&#120;&#111;&#102;&#105;&#114;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></p>
+<h1 id="1-cdna">1. cDNA获取<a class="headerlink" href="#1-cdna" title="Permanent link">&para;</a></h1>
+<h2 id="11">1.1 试剂与耗材<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<ul>
+<li>RNA提取试剂</li>
+<li><a href="https://www.thermofisher.com/order/catalog/product/18091050#/18091050">Invitrogen SuperScript™ IV First-Strand Synthesis System</a></li>
+<li>0.2mL PCR管</li>
+</ul>
+<blockquote>
+<p>SSIV的酶无RNaseH活性，获得长片段(～12kb)的全长cDNA效果更好。我们使用SSIII，有中等活性的RNaseH活性，获得的cDNA进行测序也可以成功，在目标reads丰度上SSIV似乎更好一些。</p>
+</blockquote>
+<p><img alt="不同酶的关键逆转录性能比较" src="https://upload-images.jianshu.io/upload_images/18923961-779adbe79350150a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<h2 id="12">1.2 实验流程<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<ul>
+<li>采用RNA试剂盒手工提取样本总RNA，也可以用机器自动提取。</li>
+</ul>
+<blockquote>
+<p>RNA通过Qiagen RNeasy Mini Kit 手工提取试剂盒或者机器提取的都可以，PCR实验结果CT无明显差异。有<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6733840/">文章</a>比较过Qiagen不同的RNA提取试剂盒的宏基因组测序reads产出效果，可以供大家参考。</p>
+</blockquote>
+<ul>
+<li>取EP管，依次装入以下试剂，分装到0.2mL PCR中，加入RNA模板，PCR管用移液器吹吸混匀，离心将管壁残液甩下。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">试剂</th>
+<th align="center">1x</th>
+<th align="center">8x</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">50µM random hexamers</td>
+<td align="center">1 µl</td>
+<td align="center">8µl</td>
+</tr>
+<tr>
+<td align="left">10mM dNTPs mix (10mM each)</td>
+<td align="center">1 µl</td>
+<td align="center">8µl</td>
+</tr>
+<tr>
+<td align="left">Template RNA</td>
+<td align="center">11 µl</td>
+<td align="center">11µl * 8</td>
+</tr>
+<tr>
+<td align="left"><strong>Total</strong></td>
+<td align="center"><strong>13 µl</strong></td>
+<td align="center"><strong>13µl * 8</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注意事项：样本RNA做过SARS-CoV-2 qPCR测试，可以根据CT值初步判断RNA含量。如果RNA量在CT18～35之间，可以直接加入模板RNA。如果在12～15之间，100倍稀释；如果在15～18之间，10倍稀释。对于临床病例来说，大部分样本CT值在18～35之间。</p>
+<p>使用random hexamers是为了最大程度获得全长cDNA，SSIV自带的random hexamers浓度是50ng/µl，6mers长度，如果加1µl，相当与摩尔数 25e-6µmol，因此根据表中量，需要加2µl。但根据试剂盒说明书中也是加1µl量，因此这里参考说明书。
+推荐加入样本前，在PCR仪上预热。</p>
+</blockquote>
+<ul>
+<li>反应体系在PCR仪器中 65°C 5min。然后立即置于冰上至少1min。</li>
+<li>按下表配置反应体系，添加到冰上的PCR管中。置于PCR仪器中，42°C 50min，70°C 10min，结束后5°C 保温。这一步要设置105°C热盖。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">试剂</th>
+<th align="center">1x</th>
+<th align="center">8x</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">5x SSIV Buffer</td>
+<td align="center">4 µl</td>
+<td align="center">32 µl</td>
+</tr>
+<tr>
+<td align="left">100mM DTT</td>
+<td align="center">1 µl</td>
+<td align="center">8 µl</td>
+</tr>
+<tr>
+<td align="left">RNaseOUT RNase Inhibitor</td>
+<td align="center">1 µl</td>
+<td align="center">8 µl</td>
+</tr>
+<tr>
+<td align="left">SSIV Reverse Transcriptase</td>
+<td align="center">1 µl</td>
+<td align="center">8 µl</td>
+</tr>
+<tr>
+<td align="left">前一步PCR管内液体</td>
+<td align="center">13 µl</td>
+<td align="center">13 µl * 8</td>
+</tr>
+<tr>
+<td align="left"><strong>Total</strong></td>
+<td align="center"><strong>20 µl</strong></td>
+<td align="center"><strong>20 µl * 8</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>以上配液操作在PCR工作站或生物安全柜内进行。使用前紫外处理30分钟并通风。</p>
+</blockquote>
+<h1 id="2-pcr">2. PCR扩增<a class="headerlink" href="#2-pcr" title="Permanent link">&para;</a></h1>
+<h2 id="21">2.1 试剂与耗材<a class="headerlink" href="#21" title="Permanent link">&para;</a></h2>
+<ul>
+<li>DEPC H2O</li>
+<li><a href="https://www.qiagen.com/us/products/discovery-and-translational-research/pcr-qpcr/pcr-enzymes-and-kits/end-point-pcr/qiagen-multiplex-pcr-kit/">QIAGEN Multiplex PCR Kit</a></li>
+<li><a href="https://international.neb.com/products/m0493-q5-hot-start-high-fidelity-dna-polymerase">Q5 Hot Start High-Fidelity DNA Polymerase</a></li>
+</ul>
+<blockquote>
+<p>ARTIC Network流程里使用的是NEB Q5酶，试用Qiagen的多重PCR产品，效果也可以。</p>
+</blockquote>
+<h2 id="22">2.2 实验流程<a class="headerlink" href="#22" title="Permanent link">&para;</a></h2>
+<ul>
+<li>将98组冻干引物 8000rpm 离心 10min。将每个引物配置成100uM浓度。</li>
+<li>准备2个EP管，标记为P1和P2。从98个100uM的引物，每管吸取5uL分别到Pool1和2中，最终每管含100uM浓度的引物共980uL。</li>
+<li>震荡混匀，离心甩干后，各取20uL P&frac12; 引物，加入180uL水。使得Pool1和Pool2引物终浓度为10uM。</li>
+</ul>
+<blockquote>
+<p>以上配液操作在PCR工作站或生物安全柜内进行。使用前紫外处理30分钟并通风。</p>
+</blockquote>
+<ul>
+<li>每个样本取2个PCR管，使用NEB Q5 Hot Start DNA Polymerase试剂或者Qiagen Multiplex PCR试剂进行PCR扩增，配液参见表&frac12;。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">NEB Q5 Hot Start DNA Polymerase</th>
+<th align="center">Pool1</th>
+<th align="center">Pool2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">5X Q5 Reaction Buffer</td>
+<td align="center">5 µl</td>
+<td align="center">5 µl</td>
+</tr>
+<tr>
+<td align="left">10 mM dNTPs</td>
+<td align="center">0.5 µl</td>
+<td align="center">0.5 µl</td>
+</tr>
+<tr>
+<td align="left">Q5 Hot Start DNA Polymerase</td>
+<td align="center">0.25 µl</td>
+<td align="center">0.25 µl</td>
+</tr>
+<tr>
+<td align="left">Primer Pool 1 or 2 (10µM)</td>
+<td align="center">3.6 µl</td>
+<td align="center">3.6 µl</td>
+</tr>
+<tr>
+<td align="left">Nuclease-free water</td>
+<td align="center">13.15 µl</td>
+<td align="center">13.15 µl</td>
+</tr>
+<tr>
+<td align="left">cDNA</td>
+<td align="center">2.5uL</td>
+<td align="center">2.5uL</td>
+</tr>
+<tr>
+<td align="left"><strong>Total</strong></td>
+<td align="center"><strong>25 µl</strong></td>
+<td align="center"><strong>25 µl</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="left">Qiagen Multiplex PCR Kit</th>
+<th align="center">Pool1</th>
+<th align="center">Pool2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2X Qiagen Multiplex PCR Master Mix</td>
+<td align="center">12.5 µl</td>
+<td align="center">12.5 µl</td>
+</tr>
+<tr>
+<td align="left">Primer Pool 1 or 2 (10µM)</td>
+<td align="center">3.6 µl</td>
+<td align="center">3.6 µl</td>
+</tr>
+<tr>
+<td align="left">5X Q Solution</td>
+<td align="center">2.5 µl</td>
+<td align="center">2.5 µl</td>
+</tr>
+<tr>
+<td align="left">Nuclease-free water</td>
+<td align="center">3.9 µl</td>
+<td align="center">3.9 µl</td>
+</tr>
+<tr>
+<td align="left">cDNA</td>
+<td align="center">2.5uL</td>
+<td align="center">2.5uL</td>
+</tr>
+<tr>
+<td align="left"><strong>Total</strong></td>
+<td align="center"><strong>25 µl</strong></td>
+<td align="center"><strong>25 µl</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>根据体系优化，每个引物的终浓度为0.015uM。</p>
+</blockquote>
+<ul>
+<li>NEB Q5 的PCR程序为：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="center">温度</th>
+<th align="center">时间</th>
+<th align="center">前往</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1.</td>
+<td align="center">98°C</td>
+<td align="center">30s</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">2.</td>
+<td align="center">98°C</td>
+<td align="center">15s</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">3.</td>
+<td align="center">65°C</td>
+<td align="center">5min</td>
+<td align="center">前往2, 循环25～35cycles</td>
+</tr>
+<tr>
+<td align="left">4.</td>
+<td align="center">4°C</td>
+<td align="center">Hold</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Qiagen Multiplex Kit的PCR程序为：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">序号</th>
+<th align="center">温度</th>
+<th align="center">时间</th>
+<th align="center">前往</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1.</td>
+<td align="center">95°C</td>
+<td align="center">15min</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">2.</td>
+<td align="center">94°C</td>
+<td align="center">30s</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">3.</td>
+<td align="center">58°C</td>
+<td align="center">90s</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">4.</td>
+<td align="center">72°C</td>
+<td align="center">45s</td>
+<td align="center">前往2, 循环25～35cycles</td>
+</tr>
+<tr>
+<td align="left">5.</td>
+<td align="center">72°C</td>
+<td align="center">10min</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">6.</td>
+<td align="center">4°C</td>
+<td align="center">Hold</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Ct18-21的样本用25循环, Ct 35的样本用35个循环。CT值介于21～35的根据分布自行设置。</p>
+<p>应用本方法到其他病原检测时，需要设计多重PCR的话，可以使用<a href="http://primal.zibraproject.org">这里</a>的引物设计工具获得引物组。</p>
+</blockquote>
+<h2 id="3-amplicon">3. Amplicon纯化回收<a class="headerlink" href="#3-amplicon" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 试剂与耗材<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.qiagen.com/us/products/discovery-and-translational-research/lab-essentials/buffers-reagents/buffer-eb">Elution Buffer</a></li>
+<li><a href="https://www.beckman.com/reagents/genomic/cleanup-and-size-selection/pcr">AMPure XP Beads</a></li>
+</ul>
+<h3 id="32">3.2 实验流程<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<ul>
+<li>将每个样本的Pool1和Pool2混合，因为测序文库与上样量有关，本实验流程设计的是针对8个以上样本的上样量。建议检测样本带质控DNA做为阴性对照，以便检查是否有污染序列。</li>
+<li>将AMPure XP Beads 提前30min取出置于常温，使用前在震荡仪上混合均匀。</li>
+<li>取50uL AMPure XP Beads 到 50uL 混合pooling Amplicon中。震荡混匀（增加震荡时间能极大提高回收率），离心甩干。</li>
+</ul>
+<blockquote>
+<p>1x 磁珠吸附250～1000bp效率较好。具体<a href="https://research.fhcrc.org/content/dam/stripe/hahn/methods/mol_biol/SPRIselect%20User%20Guide.pdf">参见</a></p>
+</blockquote>
+<ul>
+<li>室温放置5min。</li>
+<li>将EP管放置于磁力架上2min，直至液体澄清。</li>
+<li>吸弃液体，用200uL新鲜配置的70～80%乙醇洗2次。</li>
+<li>用10uL移液器吸弃残液，开盖1min，让乙醇挥发。</li>
+<li>从磁力架上取下，用15～30uL Elution Buffer或者水重悬磁珠，用枪头或手指轻轻混匀，静置2min。</li>
+<li>置于磁力架上，液体澄清后吸取30uL液体到一个新的EP管中。取1uL进行Qubit定量。</li>
+</ul>
+<blockquote>
+<p>样本浓度与PCR产物回收相关性：
+- 10E5大约200ng/uL
+- 10E4大约120ng/uL
+- 10E3大约80ng/uL
+- 10E2大约25ng/uL
+- 10E1大约10ng/uL</p>
+</blockquote>
+<h2 id="4">4. 文库构建<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="41-nanopore">4.1 Nanopore 测序文库<a class="headerlink" href="#41-nanopore" title="Permanent link">&para;</a></h3>
+<h4 id="411">4.1.1 试剂与耗材<a class="headerlink" href="#411" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Nanopore EXP-NBD104/114</li>
+<li>Nanopore SQK-LSK109</li>
+<li>Nanopore 测序芯片制备试剂盒 EXP-FLP002</li>
+<li>Eppendorf DNA LoBind Tubes</li>
+<li><a href="https://international.neb.com/products/e7645-nebnext-ultra-ii-dna-library-prep-kit-for-illumina">NEBNext® Ultra™ II DNA Library Prep Kit for Illumina E7645</a></li>
+</ul>
+<h4 id="412">4.1.2 实验流程<a class="headerlink" href="#412" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>注意此流程是根据6~24个样本混样的量规划的。如果只做单个样本，可以不加barcodes，但需要调整input DNA量，建议加入DNA达40ng，保证上机时能约有20ng DNA，达到最佳的芯片测序分子数。</p>
+</blockquote>
+<ul>
+<li>将定量的DNA稀释成1ng/uL，该浓度是针对700bp长度的Amplicon，如果片段长400bp，建议浓度为2ng/uL，这样分子浓度约为100～200fmol。</li>
+<li>取0.2mLPCR管，根据下表进行配液，进行末端修复。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">试剂</th>
+<th align="center">量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">DNA amplicons</td>
+<td align="center">5 µl</td>
+</tr>
+<tr>
+<td align="left">Nuclease-free water</td>
+<td align="center">7.5 µl</td>
+</tr>
+<tr>
+<td align="left">Ultra II End Prep Reaction Buffer</td>
+<td align="center">1.75 µl</td>
+</tr>
+<tr>
+<td align="left">Ultra II End Prep Enzyme Mix</td>
+<td align="center">0.75 µl</td>
+</tr>
+<tr>
+<td align="left"><strong>总量</strong></td>
+<td align="center"><strong>15 µl</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>室温放置10min。置于PCR仪上，65°C 5min，立即置于冰上至少1min</li>
+<li>在PCR管中加入以下试剂：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">试剂</th>
+<th align="center">量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">连接NBXX的混合液</td>
+<td align="center">15 µl</td>
+</tr>
+<tr>
+<td align="left">NBXX barcode</td>
+<td align="center">2.5 µl</td>
+</tr>
+<tr>
+<td align="left">Ultra II Ligation Master Mix</td>
+<td align="center">17.5 µl</td>
+</tr>
+<tr>
+<td align="left">Ligation Enhancer</td>
+<td align="center">0.5 µl</td>
+</tr>
+<tr>
+<td align="left"><strong>总量</strong></td>
+<td align="center"><strong>35.5 µl</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>NBXX barcodes 为 EXP-NBD104(01~12)和EXP-NBD114(13～24) 试剂中的 barcodes</p>
+</blockquote>
+<ul>
+<li>室温放置15min。置于PCR仪上，70°C 10min，立即置于冰上至少1min</li>
+</ul>
+<blockquote>
+<p>70°C 10min 目的是抑制DNA Ligase活性，避免接头形成二聚体。</p>
+</blockquote>
+<ul>
+<li>将连接barcodes后的所有样本的混合到一个EP管中。取1uL进行定量</li>
+<li>取LoBind Tubes EP管，按照下表进行配液，室温放置15min。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">试剂</th>
+<th align="center">量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Barcoded amplicon pools</td>
+<td align="center">30 µl</td>
+</tr>
+<tr>
+<td align="left">NEBNext Quick Ligation Reaction Buffer (5X)</td>
+<td align="center">10 µl</td>
+</tr>
+<tr>
+<td align="left">AMII adapter mix</td>
+<td align="center">5 µl</td>
+</tr>
+<tr>
+<td align="left">Quick T4 DNA Ligase</td>
+<td align="center">5 µl</td>
+</tr>
+<tr>
+<td align="left"><strong>总量</strong></td>
+<td align="center"><strong>50 µl</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>input DNA的量根据barcods数量决定，数量在40ng～160ng(8～24 barcods)。</p>
+</blockquote>
+<ul>
+<li>加入50uL AMPure XP Beads，轻轻混匀。室温放置5min</li>
+<li>置于磁力架上2min，液体澄清后吸弃液体。</li>
+<li>磁力架上取下EP管，加入200uL SFB，重悬磁珠。</li>
+<li>EP管放到磁力架上静置2min，液体澄清后吸弃。用SFB再洗1次。</li>
+<li>加入15uL EB重悬磁珠，室温放置2min。</li>
+<li>将EP管置于磁力架上。吸取澄清液体到一个新的EP管中，为测序文库。</li>
+</ul>
+<blockquote>
+<p>用于上机测序的文库DNA量为20ng</p>
+</blockquote>
+<ul>
+<li>将30uL FLT 加入到1管FB中，震荡混匀。</li>
+<li>打开测序芯片的priming port，用1mL移液器垂直顶住priming port，慢慢旋转移液器量程，黄色纳米孔保护液，直到没有气泡。</li>
+<li>吸取800uL FLT/FB混合液，从Priming port中加入，可以不用加完，避免气泡加入芯片中。等待5min。</li>
+</ul>
+<p><img alt="芯片Priming port和SpotON port Cover位置介绍" src="https://upload-images.jianshu.io/upload_images/18923961-6970fac21978e41e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<ul>
+<li>打开Spot on port，滴加200uL FLT/FB混合液。直至Spoton port完全吸收。</li>
+<li>取一个EP管，按照下表配液：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">试剂</th>
+<th align="center">量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">SQB</td>
+<td align="center">37.5 µl</td>
+</tr>
+<tr>
+<td align="left">LB</td>
+<td align="center">25.5 µl</td>
+</tr>
+<tr>
+<td align="left">Final library</td>
+<td align="center">12 µl</td>
+</tr>
+<tr>
+<td align="left"><strong>总量</strong></td>
+<td align="center"><strong>75 µl</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>LB使用前再充分混匀</p>
+</blockquote>
+<ul>
+<li>滴加75uL文库到Spoton Port中，液体完全吸收后关闭Spoton Port和Priming Port，将芯片装入测序仪，打开MinKnow测序软件进行测序。</li>
+</ul>
+<blockquote>
+<p>对于没用用完nanopores的芯片，可以启用清洗程序以后继续使用：</p>
+</blockquote>
+<ul>
+<li>取 1管 Wash Solution B置于室温，震荡混匀后放在冰上待用。</li>
+<li>在 1个 EP管中，加入20uL Wash Solution A和380uL Wash Solution B。吹吸混匀（不要震荡），置于冰上。</li>
+<li>暂停测序，但不要取出芯片。</li>
+<li>确定Priming Port和SpotON Port关闭。用1000uL移液器，从Waste Port1中吸出所有液体，确定芯片纳米孔处没有残液。</li>
+<li>打开Priming Port，先确认消除气泡。然后加入400Wash Solution洗液，注意避免加入气泡。</li>
+<li>关闭Priming Port，等30min后，用1000uL移液器从Waste Port1中吸弃所有液体。</li>
+<li>如果还要测其他样本，可参考上样流程操作。如果暂时不用，则按照下面流程进行保存芯片。</li>
+<li>将一管Storage Buffer(S)取出置于室温，溶解后上下颠倒混匀。</li>
+<li>打开用完的芯片Priming Port，1000uL移液器设置成200uL量程，然后枪头Priming Port顶住孔，旋转移液器量程20uL，以确定排除气泡。</li>
+<li>吸取500uL Storage Buffer(S)，从Priming Port中缓慢加入。关闭Priming Port。</li>
+<li>关闭Priming Port和SpotON Port，用1000uL移液器从Waste Port1中吸取所有液体。</li>
+<li>芯片置于冰箱冷藏。</li>
+</ul>
+<blockquote>
+<p>下一次使用的芯片，最好设置成不同的电压以获得更好的结果，<a href="https://community.nanoporetech.com/protocols/experiment-companion-minknow/v/mke_1013_v1_revar_11apr2016/adjusting-the-starting-pot">参见</a></p>
+</blockquote>
+<h3 id="42-illumina-miseq">4.2 illumina Miseq 测序文库<a class="headerlink" href="#42-illumina-miseq" title="Permanent link">&para;</a></h3>
+<h4 id="421">4.2.1 试剂与耗材<a class="headerlink" href="#421" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Nextera XT LIbrary Preparation Kit</li>
+<li>NEB Ultra II DNA Library Prep Kit for Illumina</li>
+<li>AMPure XP Beads</li>
+<li>Miseq Reagent v2 PE150</li>
+</ul>
+<blockquote>
+<p>对于浓度较高的样本，illumina扩增子测序推荐使用PCR-Free的方式进行。这里用NEB Ultra II DNA Library Prep Kit for Illumina(E7645)文库构建试剂盒进行。如果使用Nextera XT之类的酶片段化试剂盒，后期数据分析时要考虑引物扩增位点对于consensus序列的影响。</p>
+</blockquote>
+<h4 id="422">4.2.2 实验流程<a class="headerlink" href="#422" title="Permanent link">&para;</a></h4>
+<ul>
+<li>将 pool1 和 pool2 的 PCR 产物混合后，使用Qubit进行定量。NEB文库构建试剂盒适合500pg~1ug的起始input DNA量。</li>
+<li>取新的 PCR 管，按照下表配液。用200uL枪的50uL量程吹吸10次混匀。离心甩干。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">试剂</th>
+<th align="center">量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">NEBNext Ultra II End Prep Enzyme Mix</td>
+<td align="center">3 µl</td>
+</tr>
+<tr>
+<td align="left">NEBNext Ultra II End Prep Reaction Buffer</td>
+<td align="center">7 µl</td>
+</tr>
+<tr>
+<td align="left">DNA</td>
+<td align="center">50 µl</td>
+</tr>
+<tr>
+<td align="left"><strong>总量</strong></td>
+<td align="center"><strong>60 µl</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>放置于PCR仪器上，热盖温度大于等于75°C ，运行以下程序：20°C 30min，65°C 30min，4°C hold。</li>
+<li>按照下表稀释 adaptor。建议初始DNA量大于100ng，如200ng左右。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Input DNA</th>
+<th align="center">Adaptor</th>
+<th align="center">Adaptor 工作浓度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1ug-101ng</td>
+<td align="center">不稀释</td>
+<td align="center">15uM</td>
+</tr>
+<tr>
+<td align="left">100ng-5ng</td>
+<td align="center">1:10稀释</td>
+<td align="center">1.5 uM</td>
+</tr>
+<tr>
+<td align="left">&lt;5ng</td>
+<td align="center">1:25稀释</td>
+<td align="center">0.6uM</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>根据下表配置Adaptor连接体系。NEBNext Ultra II Ligation Master Mix加入前要颠倒混匀。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">试剂</th>
+<th align="center">量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">前一步反应液</td>
+<td align="center">60 µl</td>
+</tr>
+<tr>
+<td align="left">NEBNext Ultra II Ligation Master Mix</td>
+<td align="center">30 µl</td>
+</tr>
+<tr>
+<td align="left">NEBNext LIgation Enhancer</td>
+<td align="center">1 µl</td>
+</tr>
+<tr>
+<td align="left">NEBNext Adaptor for illumina</td>
+<td align="center">2.5 µl</td>
+</tr>
+<tr>
+<td align="left"><strong>总量</strong></td>
+<td align="center"><strong>93.5 µl</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>可以采用的Adaptor产品：单端（E7350），双端（E7335,E7500,E7710,E7730,E7600,E7535,E6609）</p>
+</blockquote>
+<ul>
+<li>用200uL枪的80uL量程吹戏10次混匀。离心甩干。</li>
+<li>置于金属浴或PCR仪上（不开热盖）20°C 15min。</li>
+<li>向反应体系中加入3uL USER Enzyme（这个试剂包含在接头试剂盒中）。在PCR仪器上37°C 15min（热盖大于等于47°C）。</li>
+<li>将液体转移到深孔板内，当input DNA大于50ng时，进行下面的DNA纯化回收。对于小于50ng DNA的样本，只需要用磁株纯化1次，用87uL量。</li>
+<li>加入18uL AMPure Beads到反应液中，吹吸10次混匀，注意枪头中的液体要全部打出。室温孵育5min。</li>
+<li>将深孔板置于磁力架上，静置5min待液体澄清。吸出液体到新的孔中。</li>
+<li>将深孔板从磁力架上取下，加入10uL AMPure Beads，吹吸10次混匀后，室温孵育5min。</li>
+<li>将深孔板置于磁力架上，静置5min待液体澄清。将液体吸弃。</li>
+<li>加入80%新鲜配置的乙醇200uL，室温放置30s后吸弃。重复洗1次。</li>
+<li>开盖风干磁珠5min。如果风干时间过长，会导致DNA回收率下降。</li>
+<li>从磁力架上取下深孔板，17uL 10mM Tris-HCl或0.1xTE洗脱。</li>
+<li>震荡仪上1800rpm震荡10min，室温放置2min。</li>
+<li>将深孔板置于磁力架上，5min后待液体澄清，取1uL进行Qubit定量。</li>
+<li>吸取15uL液体到新的PCR板。</li>
+</ul>
+<h2 id="5">5. 数据分析<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="51-nanopore">5.1 Nanopore 测序数据<a class="headerlink" href="#51-nanopore" title="Permanent link">&para;</a></h3>
+<h4 id="511">5.1.1 软件安装<a class="headerlink" href="#511" title="Permanent link">&para;</a></h4>
+<p>使用 conda 构建独立的运行环境。</p>
+<div class="highlight"><pre><span></span><code>$ git clone --recursive https://github.com/artic-network/artic-ncov2019.git
+$ conda env create -n ncov -f artic-ncov2019/environment.yml
+$ conda activate ncov
+<span class="o">(</span>ncov<span class="o">)</span>$ conda list
+</code></pre></div>
+
+<p>如果使用docker images来运行guppy</p>
+<div class="highlight"><pre><span></span><code>$ docker pull genomicpariscentre/guppy
+<span class="c1"># 如果服务器有GPU支持，可以选择guppy-gpu</span>
+$ docker pull genomicpariscentre/guppy-gpu
+
+<span class="c1"># 交互模式运行container</span>
+$ docker run --name my_exp -it -v local_dir_of_fast5:/media/ genomicpariscentre/guppy /bin/bash
+
+<span class="c1"># 对fast5数据进行basecalling</span>
+$ guppy_basecaller -i <span class="nv">$HOME</span>/data/fast5 -s output_folder <span class="se">\</span>
+&gt; -c dna_r9.4.1_450bps_hac.cfg --barcode_kits EXP-NBD104 <span class="se">\</span>
+&gt; --num_callers <span class="m">40</span> --trim_barcodes
+</code></pre></div>
+
+<h4 id="512">5.1.2 分析流程<a class="headerlink" href="#512" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>与illumina原始数据是图像文件不同，Nanopore的原始数据以HDF5格式保存。HDF是"Hierarchical Data Format"首字母缩写，HDF5是一种纯文本，类似json的数据格式记录电信号。查看HDF5原始数据可以用 <a href="https://support.hdfgroup.org/products/hdf5_tools/">hdf5_tools</a> 工具。数据文件后缀一般用.fast5表示。</p>
+</blockquote>
+<p>Nanopore 测序数据期初由于其错误率高而“闻名”，特别是对二聚体的区分。电信号数据随着处理软件和算法的不断改进，准确率得到不断的提升。HDF5数据进行basecalling的软件目前很多，采用的算法也各异。官方的如albacore，guppy等，第三方工具也有很多。</p>
+<p>MinKnow软件 将fast5数据复制到服务器，使用guppy进行分析</p>
+<p>guppy是一个是用</p>
+<p>我们的实验室用一台Workstation挂载MinION测序仪，进行测序工作。基本配置是i7-7700k+16G+1TSSD/1T HD。一般可以做到70%以上的MinKnow实时basecalling。但是如果要使用guppy进行更准确的basecalling的话，就需要将数据同步到服务器上进行。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 在服务器上 rsync 同步数据到本地</span>
+<span class="o">(</span>ncov<span class="o">)</span>$ rsync -avz username@minknow_ip:/var/lib/minknown/path/to/fast5 .
+<span class="c1"># 或者在工作站上同步数据到服务器端</span>
+$ rsync -avz /var/lib/minknown/path/to/fast5 username@server_ip:~/data/fast5
+</code></pre></div>
+
+<p>这里设置服务器端 fast5 数据目录存放于：$HOME/data/fast5；采用的是R9.4的测序芯片，各个不同测序芯片basecalling设置参数可以参见<a href="https://denbi-nanopore-training-course.readthedocs.io/en/latest/basecalling/basecalling.html">这里</a></p>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>ncov<span class="o">)</span>$ guppy_basecaller -c dna_r9.4.1_450bps_fast.cfg <span class="se">\</span>
+&gt; -i <span class="nv">$HOME</span>/data/fast5 -s run_name -x auto -r
+</code></pre></div>
+
+<blockquote>
+<p>我们的MinION测序仪连接的是一台Ubuntu 16.04的Workstation，测序仪最大测序状态时，跑默认的basecalling基本上可以实时达到80%的状态。如果需要用guppy做更准确的basecalling，我们会用inotify-tools之类的工具加上 rsync 实时同步到服务器，在服务器上进行。</p>
+</blockquote>
+<p>artic 的 demultiplex 命令是</p>
+<div class="highlight"><pre><span></span><code>$ porechop --verbosity <span class="m">2</span> --untrimmed -i <span class="s2">&quot;re_all.fastq&quot;</span> -b ./tmp5vx2iwn0 --native_barcodes --discard_middle --require_two_barcodes --barcode_threshold <span class="m">80</span> --threads <span class="m">8</span> --check_reads <span class="m">10000</span> --barcode_diff <span class="m">5</span> &gt; re_all.fastq.demultiplexreport.txt
+</code></pre></div>
+
+<h3 id="52-illumina">5.2 Illumina 测序数据<a class="headerlink" href="#52-illumina" title="Permanent link">&para;</a></h3>
+<h4 id="521">5.2.1 软件安装<a class="headerlink" href="#521" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>暴发疫情中病毒毒株发生结构变异的可能性较小，可以直接使用比对参考基因组的方法获得毒株基因组序列。如果是研究新发的远源病毒或长时间演化的病毒序列，可能与参考基因组差异较大时，应结合组装与比对的方法获得基因组序列。</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>$ conda create -n mapping
+$ conda activate mapping
+<span class="o">(</span>mapping<span class="o">)</span>$ conda install bwa samtools igv
+</code></pre></div>
+
+<h4 id="522">5.2.2 分析流程<a class="headerlink" href="#522" title="Permanent link">&para;</a></h4>
+<ul>
+<li>使用Miseq自带的SAV软件进行basecalling，生成fastq数据复制到服务器端</li>
+<li>可以采用bwa+samtools进行参考序列比对获得一致性序列，或者采用bwa等工具比对获得新冠病毒序列后在进行de novo组装。</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># 最基本的比对分析流程</span>
+<span class="o">(</span>mapping<span class="o">)</span>$ bwa index MN909847.3.fasta
+<span class="o">(</span>mapping<span class="o">)</span>$ bwa mem -k <span class="m">45</span> -R <span class="s2">&quot;@RG\tID:HZ-1_1\tSM:HZ-1&quot;</span> MN909847.3.fasta <span class="se">\</span>
+&gt; HZ-1_S1...R1.fastq.gz HZ-1_S1...R2.fastq.gz <span class="p">|</span> samtools view -bS &gt; HZ-1.bam
+<span class="o">(</span>mapping<span class="o">)</span>$ samtools sort -O bam -o HZ-1.sorted.bam -@4 HZ-1.bam
+<span class="o">(</span>mapping<span class="o">)</span>$ samtools index HZ-1.sorted.bam
+<span class="o">(</span>mapping<span class="o">)</span>$ igv HZ-1.sorted.bam
+
+<span class="c1"># 以bwa为例进行reads过滤后spades组装</span>
+$ bwa index MN908947.3.fasta
+$ bwa mem -k <span class="m">47</span> -R <span class="s2">&quot;@RG\tID:HZ-1\tSM:HZ-1&quot;</span> MN908947.3.fasta <span class="se">\</span>
+&gt; HZ-1_S1_L001_R1_001.fastq.gz HZ-1_S1_L001_R2_001.fastq.gz -t <span class="m">40</span> <span class="p">|</span> <span class="se">\</span>
+&gt; samtools view -bS - <span class="p">|</span> samtools sorted -@40 -O bam HZ-1.sorted.bam
+$ samtools index HZ-1.sorted.bam
+$ samtools faidx MN908947.3.fasta
+$ samtools mpileup -uf MN908047.3.fasta HZ-1.sorted.bam <span class="p">|</span> <span class="se">\</span>
+&gt; bcftools call --ploidy <span class="m">1</span> -mv -Oz &gt; HZ-1.vcf.gz
+$ tabix HZ-1.vcf.gz
+$ cat MN908947.3.fasta <span class="p">|</span> bcftools consensus HZ-1.vcf.gz &gt; Hz-1_consensus.fasta
+
+<span class="c1"># de novo 组装</span>
+$ bwa index MN908947.3.fasta
+$ bwa mem -k <span class="m">45</span> -R <span class="s2">&quot;@RG\tID:HZ-1\tSM:HZ-1&quot;</span> MN908947.3.fasta <span class="se">\</span>
+&gt; HZ-1_S1_L001_R1_001.fastq.gz HZ-1_S1_L001_R2_001.fastq.gz -t <span class="m">4</span> <span class="p">|</span> <span class="se">\</span>
+&gt; samtools view -bS &gt; HZ-1.bam
+<span class="c1"># 提取双端都比对到参考序列的reads</span>
+$ samtools view -bF <span class="m">12</span> HZ-1.bam &gt; HZ-1.mapped.bam
+<span class="c1"># bam格式转化成fastq格式</span>
+$ bamToFastq -i HZ-1.mapped.bam -fq HZ-1.mapped_R1.fastq -fq2 HZ-1.mapped_R2.fastq
+<span class="c1"># de novo assembly</span>
+$ shovill --trim --outdir <span class="nb">test</span> --R1 HZ-1.mapped_R1.fastq -fq2 HZ-1.mapped_R2.fastq --ram <span class="m">16</span> --cpus <span class="m">40</span>
+$ bwa mem -t <span class="m">40</span> -x ont2d MN908947.3.fasta test/contigs.fa <span class="p">|</span> samtools view -bS - <span class="p">|</span> samtools sort -o test.sorted.bam -
+$ samtools index test.sorted.bam
+</code></pre></div>
+
+<h2 id="_3">自定义分析流程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>针对MinKnow生成的数据</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 生成样本的 fastq</span>
+$ <span class="k">for</span> i in *.fastq<span class="p">;</span> <span class="k">do</span> zcat <span class="nv">$i</span> &gt;&gt; s1.fq<span class="p">;</span> <span class="k">done</span>
+$ gzip s1.fq
+<span class="c1"># 去除可能的接头序列</span>
+$ porechop -t <span class="m">4</span> -i s1.fq.gz --format fastq.gz -o s1.clean.fq.gz
+<span class="c1"># 去除低质量序列</span>
+$ gunzip -c s1.clean.fq.gz <span class="p">|</span> NanoFilt -q <span class="m">10</span> -l <span class="m">400</span> --maxlength <span class="m">700</span> <span class="p">|</span> gzip &gt; s1.clean.hq.fq.gz
+<span class="c1"># 获得比对结果</span>
+$ bwa index MN908947.3.fasta
+$ bwa mem -t <span class="m">4</span> -x ont2d MN908947.3.fasta s1.clean.hq.fq.gz <span class="p">|</span> <span class="se">\</span>
+&gt; samtools view -bS - <span class="p">|</span> <span class="se">\</span>
+&gt; samtools sort -o s1.clean.hq.sorted.bam -
+$ samtools index s1.clean.hq.sorted.bam
+$ samtools faidx MN908947.3.fasta
+<span class="c1"># vcf calling</span>
+$ bcftools mpileup -f --threads <span class="m">4</span> MN908047.3.fasta s1.clean.hq.sorted.bam <span class="p">|</span> <span class="se">\</span>
+&gt; bcftools call --ploidy <span class="m">1</span> -mv -Oz &gt; s1.vcf.gz
+$ tabix s1.vcf.gz
+<span class="c1"># 获得 consensus 序列</span>
+$ bcftools consensus -f MN908947.3.fasta -H <span class="m">1</span> s1.vcf.gz -o s1_consensus.fasta
+
+
+<span class="c1"># 或者使用minimap工具进行比对</span>
+</code></pre></div>
+
+<h2 id="_4">参考资料<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.protocols.io/view/ncov-2019-sequencing-protocol-bbmuik6w">https://www.protocols.io/view/ncov-2019-sequencing-protocol-bbmuik6w</a></li>
+<li><a href="https://artic.network/ncov-2019/ncov2019-bioinformatics-sop.html">https://artic.network/ncov-2019/ncov2019-bioinformatics-sop.html</a></li>
+<li><a href="https://nanoporetech.com/resource-centre/nanopore-sequencing-sars-cov-2-genome-introduction-protocol">https://nanoporetech.com/resource-centre/nanopore-sequencing-sars-cov-2-genome-introduction-protocol</a></li>
+</ul>
                 
               
               
@@ -2091,6 +2916,27 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../02_gi-to-accession/" title="02. GI转Accession" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                02. GI转Accession
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
