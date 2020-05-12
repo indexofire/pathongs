@@ -17,7 +17,7 @@
         <meta name="author" content="Mark Renton">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.6">
+      <meta name="generator" content="mkdocs-1.1.1, mkdocs-material-5.1.6">
     
     
       
@@ -2033,7 +2033,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../C20_Others/05_covid19-pathogen/" title="05. Covid-19基因组测序" class="md-nav__link">
+    <a href="../../C20_Others/05_covid-pathogen.md" title="05. Covid-19基因组测序" class="md-nav__link">
       05. Covid-19基因组测序
     </a>
   </li>
@@ -2117,7 +2117,7 @@
 <span class="c1">#导入中国各省会城市地理信息数据：</span>
 <span class="n">province_city</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;c:/rstudy/chinaprovincecity.csv&quot;</span><span class="p">)</span>
 <span class="n">province_city</span><span class="o">$</span><span class="n">size</span><span class="o">&lt;-</span><span class="nf">round</span><span class="p">(</span><span class="nf">runif</span><span class="p">(</span><span class="m">34</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">10</span><span class="p">),</span><span class="m">2</span><span class="p">)</span>
-<span class="n">province_city</span><span class="o">$</span><span class="n">type</span><span class="o">&lt;-</span><span class="nf">factor</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="kc">LETTERS</span><span class="n">[1</span><span class="o">:</span><span class="m">5</span><span class="n">]</span><span class="p">,</span><span class="m">34</span><span class="p">,</span><span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
+<span class="n">province_city</span><span class="o">$</span><span class="n">type</span><span class="o">&lt;-</span><span class="nf">factor</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="kc">LETTERS</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">],</span><span class="m">34</span><span class="p">,</span><span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
 <span class="n">co</span><span class="o">&lt;-</span><span class="nf">substr</span><span class="p">(</span><span class="nf">rainbow</span><span class="p">(</span><span class="m">34</span><span class="p">),</span><span class="m">1</span><span class="p">,</span><span class="m">7</span><span class="p">)</span>
 <span class="n">province_city</span><span class="o">&lt;-</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">province_city</span><span class="p">,</span><span class="n">co</span><span class="p">)</span>
 
