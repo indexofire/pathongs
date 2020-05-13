@@ -2,7 +2,7 @@
 
 **2020.3.20**
 
-1. 添加 artic network 关于 [covid19 新冠病毒基因组测序方法](C20_Others/05_covid-pathogen/)
+1. 添加 artic network 关于 [covid19 新冠病毒基因组测序方法](C20_Others/05_covid19-pathogen/)
 
 ---
 

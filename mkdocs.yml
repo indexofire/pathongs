@@ -133,7 +133,7 @@ pages:
     - '05. workflow工具软件': C19_Pipelines-and-Workflows/05_workflow-software.md
   - '第二十章 其他':
     - '02. GI转Accession': C20_Others/02_gi-to-accession.md
-    - '05. Covid-19基因组测序': C20_Others/05_covid-pathogen.md
+    - '05. Covid-19基因组测序': C20_Others/05_covid19-pathogen.md
 use_directory_urls: true
 
 extra_javascript:
