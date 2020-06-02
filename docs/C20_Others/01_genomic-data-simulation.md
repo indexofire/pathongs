@@ -1,1 +1,6 @@
-# illumina reads simulation
+# 基因组数据模拟
+
+当需要对所开发的高通量测序数据分析软件进行测试时，使用模拟数据可以
+
+
+## illumina fastq数据模拟
