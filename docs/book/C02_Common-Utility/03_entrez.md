@@ -1,15 +1,21 @@
-# 玩转 edirect
-
----
+# Entrez
 
 ![edirect](../../assets/images/C02/03/banner.jpg)
 
-!!! Abstract "内容简介"
+---
+
+## Entrez 是什么
+
+---
+
+## 玩转 entrez-direct
+
+!!! abstract "内容简介"
     [NCBI][] 的 [Entrez][] 工具功能非常强大，既可以从 web 页面访问 [NCBI][] 来查询，也可以利用 [Entrez][] 提供的 [Web Services](https://www.ncbi.nlm.nih.gov/books/NBK25501/) 来实现诸多功能（编写第三方程序等）。此外 [NCBI][] 还提供了 [Entrez][] 的命令行工具 edirect[^1]。edirect 全名为 **Entrez Direct**，里面包含了一组各司其职的工具和脚本，通过 Linux 系统下的管道pipeline[^4]功能联合使用这些命令行工具，在服务器上实现高效的进行 [Entrez][] 的检索，抓取，过滤，排序等操作。
 
-## 1. 安装
+### 1. 安装
 
-### 1.1 下载安装
+#### 1.1 下载安装
 
 edirect 直接下载预编译包，添加到系统路径中即可。
 
@@ -48,7 +54,7 @@ $ which uname
 $ sudo ln -s /bin/uname /usr/bin/uname
 ```
 
-### 1.2 conda 中安装
+#### 1.2 conda 中安装
 
 如果系统通过 conda 进行软件管理，可以通过如下方式安装。
 
@@ -58,7 +64,7 @@ $ conda install entrez-direct
 
 不过 conda 安装的还是 perl 版本的 xtract，而不是 go 版本的，需要到 conda/pkgs 包根目录中的 edirect 相应目录，用 `setup.sh` 自行编译后生成 xtract.Linux(Linux 操作系统)，将其复制到 conda 的 bin 路径即可。go 版本的 xtract 可以用 -help 参数查看帮助。
 
-## 2. 基本用法
+### 2. 基本用法
 
 表. 最常用的工具参见下表
 
@@ -74,7 +80,7 @@ $ conda install entrez-direct
 | **esummary** | 获得 XML 格式的建立 | -db、-id、-format、-mode |
 | **ecitmatch** | 统计引用数据 |  -journal、-year、-volume、-page、-author |
 
-### 2.1 esearch
+#### 2.1 esearch
 
 **esearch** 负责检索并返回 xml 格式的命中情况。使用 esearch 命令，相当于平时你通过浏览器访问 NCBI，在 [GQuery](https://www.ncbi.nlm.nih.gov/gquery/) 的 [nucletide](https://www.ncbi.nlm.nih.gov/nuccore/) 数据库搜索见面搜素关键字 `salmonella`，返回命中结果。
 
@@ -84,7 +90,7 @@ $ esearch -db nuccore -query "salmonella"
 
 终端里会返回命中结果：
 
-```xml
+``` xml
 <ENTREZ_DIRECT>
   <Db>nuccore</Db>
   <WebEnv>NCID_1_153624467_130.14.18.34_9001_1490828308_1411373464_0MetA0_S_MegaStore_F_1</WebEnv>
@@ -100,7 +106,7 @@ $ esearch -db nuccore -query "salmonella"
 
 **esearch** 还有一个参数 -sort 可以根据数据库类型返回不同的排序方式。默认的排序方式是按照时间逆序排列的。想要得到准确的查询结果，优化 query 很重，可以参见 [Filter](#3-filtering-queries) 相关内容。
 
-### 2.2 efetch
+#### 2.2 efetch
 
 **efetch** 可以用来下载各个数据库的各种格式数据。你可以通过2种方式下载：
 
@@ -135,7 +141,7 @@ $ efetch -db pubmed -id 2137412 -format medline
 $ efetch -h
 ```
 
-### 2.3 xtract
+#### 2.3 xtract
 
 edirect 的核心命令，由于 **esearch** 查询和下载的数据常常是 xml 格式的，对于 XML[^3] 格式的数据，可以用 **xtract** 工具将其转换成纯文本格式的内容。xtract 不仅可以转换 [NCBI][] 的 XML 格式文件，对于任何通用的 XML 格式文件都可以进行转换。
 
@@ -197,8 +203,7 @@ $ esearch -db pubmed -query "Salmonella[ORGN]" -days 5 | efetch -format xml | \
 
 **-and、-or、-position、-def 参数**: 关系运算符
 
-
-### 2.4 elink
+#### 2.4 elink
 
 当我们要检索一个数据库数据所关联到其他数据库时，就要用到elink工具了。比如我们先在SRA数据库中搜索到所有鼠伤寒沙门菌的SRA实验数据，然后链接到biosample数据库，获得这些菌株的生物样本信息。
 
@@ -206,7 +211,7 @@ $ esearch -db pubmed -query "Salmonella[ORGN]" -days 5 | efetch -format xml | \
 $ esearch -db sra -query "salmonella typhimurium" | elink -target biosample | efetch -format docsum > result.xml
 ```
 
-### 2.4 einfo
+#### 2.4 einfo
 
 对于 NCBI 数据库的各项复杂参数，字段等要完全了解和掌握比较困难。edirect 里提供了 einfo 工具，这样其他工具所能访问的具体数据库、字段和可链接数据库等信息都可以用 einfo 了解。
 
@@ -221,7 +226,7 @@ $ einfo -db sra -fields
 $ einfo -db sra -links
 ```
 
-## 3. 高级检索
+### 3. 高级检索
 
 工具 esearch 和 efilter 在做检索时如果做好筛选，能有助于获得准确的结果。筛选有2种方式，一种是通过添加参数来筛选。另一种是对 query 参数添加字段定义来筛选。
 
@@ -263,7 +268,7 @@ $ einfo -db sra | xtract -pattern Field -element Name Description
 
 -query '"salmonella paratyphi A"[ORGN] AND latest[filter] AND "complete genome[filter]"'
 
-## 4. 具体示例
+### 4. 具体示例
 
 下面我们就用几个简单的例子来尝试 edirect 的功能。结合 Linux 其他命令行工具，可以极大的提升我们在命令行界面下检索和抓取 NCBI 数据库的效率。
 
@@ -431,7 +436,7 @@ $ for i in serovar strain isolate_name_alias collection_date isolation_source; \
 $ paste -d , strain serovar isolate_name_alias collection_date > sample.csv
 ```
 
-## Reference
+### Reference
 
 [^1]: [Entrez Direct: E-utilities on the UNIX Command Line](http://www.ncbi.nlm.nih.gov/books/NBK179288)
 [^4]: [Unix Pipeline Wikipedia](https://en.wikipedia.org/wiki/Pipeline_(Unix))
