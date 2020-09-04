@@ -24,23 +24,23 @@ nav:
   - '首页': index.md
   - '数据分析笔记':
     - '第一章 常用工具':
-      - '01. 基因组公共数据库': book/C02_Common-Utility/01_database.md
-      - '02. 下载基因组数据': book/C02_Common-Utility/02_get-data.md
-      - '03. Entrez 工具': book/C02_Common-Utility/03_entrez.md
-      - '04. EMBOSS 工具集': book/C02_Common-Utility/04_emboss.md
-      - '05. Blast 比对': book/C02_Common-Utility/05_blast.md
-      - '08. SeqKit 工具': book/C02_Common-Utility/08_seqkit.md
-      - '09. Kmer 工具': book/C02_Common-Utility/09_kmer.md
+      - '01. 基因组公共数据库': book/C01_Common-Utility/01_database.md
+      - '02. 下载基因组数据': book/C01_Common-Utility/02_get-data.md
+      - '03. Entrez 工具': book/C01_Common-Utility/03_entrez.md
+      - '04. EMBOSS 工具集': book/C01_Common-Utility/04_emboss.md
+      - '05. Blast 比对': book/C01_Common-Utility/05_blast.md
+      - '08. SeqKit 工具': book/C01_Common-Utility/08_seqkit.md
+      - '09. Kmer 工具': book/C01_Common-Utility/09_kmer.md
     - '第二章 组装与比对':
-      - '01. 基本比对流程': book/C04_Pathogen-Genome-Assembly/01_bwa-samtools-pipeline.md
-      - '02. GATK 流程': C04_Pathogen-Genome-Assembly/02_gatk.md
-      - '03. 细菌基因组组装': C04_Pathogen-Genome-Assembly/03_bacteria-assembly.md
-      - '04. 病毒基因组组装': C04_Pathogen-Genome-Assembly/04_virus-assembly.md
-      - '05. Quast 验证': C04_Pathogen-Genome-Assembly/05_quast.md
+      - '01. 基本比对流程': book/C02_Assembly-and-Mapping/01_bwa-samtools-pipeline.md
+      - '02. GATK 流程': book/C02_Assembly-and-Mapping/02_gatk.md
+      - '03. 细菌基因组组装': book/C02_Assembly-and-Mapping/03_bacteria-assembly.md
+      - '04. 病毒基因组组装': book/C02_Assembly-and-Mapping/04_virus-assembly.md
+      - '05. Quast 验证': book/C02_Assembly-and-Mapping/05_quast.md
       #- '10. snap': C04_Pathogen-Genome-Assembly/10_snap.md
-      - '11. 长序列比对': C04_Pathogen-Genome-Assembly/11_long-noisy-reads-assembly.md
-      - '12. 二代三代混合组装': C04_Pathogen-Genome-Assembly/12_hybrid-assembly.md
-      - '14. bwa 长序列比对': C04_Pathogen-Genome-Assembly/14_bwa-long-sequence-mapping.md
+      - '11. 长序列比对': book/C02_Assembly-and-Mapping/11_long-noisy-reads-assembly.md
+      - '12. 二代三代混合组装': book/C02_Assembly-and-Mapping/12_hybrid-assembly.md
+      - '14. bwa 长序列比对': book/C02_Assembly-and-Mapping/14_bwa-long-sequence-mapping.md
       #- '15. whatshap': C04_Pathogen-Genome-Assembly/15_whatshap.md
     - '第三章 基因组注释':
       - '01. Prokka 快速注释': C05_Genome-Annotation/01_prokka.md

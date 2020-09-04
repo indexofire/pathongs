@@ -1,37 +1,15 @@
-# 基因组公共数据库
+# 命令行下载公共数据库基因组数据
 
 ---
 
-!!! Abstract "内容简介"
-    测序的数据如原始 reads 数据我们可以上传到 NCBI 或 EBI 的公共数据库，发表的文章中可以使用。此外公共数据库中的数据也可以为我们的研究提供帮助。本节我们就来了解一下如何上传和下载基因组测序数据。首先让我们来了解一下网络上的测序公共数据库：
+- SRA
+- Assembly
 
-**常见的高通量测序数据的公共数据库：**
-
-- [SRA][] 短序列数据库：由 [NCBI][] 负责维护
-- [ENA][] 欧洲核酸数据库：由 [EBI][] 负责维护
-- [GSA][] 中国组学数据库：由[中科院北京基因研究所](http://www.big.ac.cn)负责维护
-
-[SRA][] 是 [NCBI][] 为了应对越来越多的高通量测序数据而在 2007 年底推出的测序数据库，用于存储、显示、提取和分析高通量测序数据。而 [ENA][] 则是由 [EBI][] 负责维护的功能类似的数据库，同时作为 [Ensembl](http://www.ensembl.org)、[UniProt](http://www.uniprot.org) 和 [ArrayExpress](http://www.ebi.ac.uk/arrayexpress) 等服务的底层基础。2者在主要功能方面非常类似，同时数据互通。
-
----
-
-## 1. SRA 数据库
-
-### 1.1 简介
-
-[SRA][] 是 Sequence Read Archive 的首字母缩写。[SRA][] 与 Trace 最大的区别是将实验数据与 metadata（元数据）分离。metadata 是指与测序实验及其实验样品相关的数据，如实验目的、实验设计、测序平台、样本数据(物种，菌株，个体表型等)。metadata可以分为以下几类：
-
-* Study：accession number 以 DRP，SRP，ERP 开头，表示的是一个特定目的的研究课题，可以包含多个研究机构和研究类型等。study 包含了项目的所有 metadata，并有一个 NCBI 和 EBI 共同承认的项目编号（universal project id），一个 study 可以包含多个实验（experiment）。
-* Sample：accession number以 DRS，SRS，ERS 开头，表示的是样品信息。样本信息可以包括物种信息、菌株(品系) 信息、家系信息、表型数据、临床数据,组织类型等。可以通过[Trace](http://www.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=search_obj) 来查询。
-* Experiment：accession number 以 DRX，SRX，ERX 开头。表示一个实验记载的实验设计（Design），实验平台（Platform）和结果处理（processing）三部分信息。实验是 [SRA][] 数据库的最基本单元，一个实验信息可以同时包含多个结果集（run）。
-* Run：accession number 以DRR，SRR，ERR 开头。一个 Run 包括测序序列及质量数据。
-* Submission：一个 study 的数据，可以分多次递交至 SRA 数据库。比如在一个项目启动前期，就可以把 study，experiment 的数据递交上去，随着项目的进展，逐批递交 run 数据。study 等同于项目，submission 等同于批次的概念。
-
-### 1.2 数据下载
+## SRA 数据下载
 
 这些公共数据库的数据可以通过不同方式下载，如https、ftp，或者使用aspera这个工具进行高速下载。
 
-#### 1.2.1 用 Aspera 工具下载 SRA
+### 1.2.1 用 Aspera 工具下载 SRA
 
 **Aspera 介绍**
 
@@ -81,15 +59,15 @@ $ source ~/.bashrc
 $ ascp /data/sracloud/srapub/ERR579922 ./ERR578822.sra
 ```
 
-#### 1.2.2 ftp 下载
+### 1.2.2 ftp 下载
 
 从国内公网访问 NCBI FTP 服务器往往是非常缓慢的，而 [EBI][] 就不同了，有些地方的速度很快，下载甚至可以超过 [Aspera][]。由于 [NCBI][] 和 [EBI][] 共享数据库，因此对于国内 [NCBI][] 下载缓慢或者无法用 ascp 的用户，可以考虑在 [EBI][] 下载数据。
 
-### 2.2 sratoolkit
+## 2.2 sratoolkit
 
 [NCBI][] 开发了 [sratoolkit][] 工具来帮助处理 SRA 数据，正确配置后可以很方便的下载 SRA 数据。
 
-#### 2.2.1 安装sratoolkit
+### 2.2.1 安装sratoolkit
 
 可以直接从 [NCBI][] 上下载。最新的源码可以在 [Github](https://github.com/ncbi/sra-tools) 获得。
 
@@ -100,7 +78,7 @@ $ wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.5.6/sratoolkit.2.5.6-ubuntu64
 $ tar zxf sratoolkit.2.5.6-ubuntu64.tar.gz -C ~/app
 ```
 
-#### 2.2.2 下载 SRA 格式文件
+### 2.2.2 下载 SRA 格式文件
 
 如果你安装并设置了 [Aspera Connect][]，那么`prefetch`会优先使用`ascp`方式来下载，如果没有安装或则`ascp`下载失败，则切换成 HTTP 方式下载 sra 数据。另外`fastq-dump`命令也能从远端直接下载数据，加上`-X 1`参数，会预先下载最前的5个 reads，加上`-Z`参数，则会将这些 reads 打印到终端输出。
 
@@ -111,7 +89,7 @@ $ prefetch -v SRR955386
 $ fastq-dump -X 5 -Z SRR955386
 ```
 
-#### 2.2.3 并转换成 .fastq 格式
+### 2.2.3 并转换成 .fastq 格式
 
 获得了 .sra 文件后，需要将其转换成 .fastq 格式的文件，用`fastq-dump`可以很方便的实现。转换之前要注意的是该 run 的 metadata 里，测序类型是 SE 还是 PE 的。
 
@@ -124,7 +102,7 @@ $ fastq-dump SRR955386.sra
 $ fastq-dump --split-files SRR955386.sra
 ```
 
-#### 2.2.4 SE/PE 文件判断
+### 2.2.4 SE/PE 文件判断
 
 正常的 sra 文件的 metadata 应该包含测序采用的是 SE 还是 PE 的方式。但如果你不知道所下载的到底是 SE 还是 PE 格式的文件可以用`fastq-dump -X 1 --split-spot`的方法来判断。
 
@@ -165,13 +143,11 @@ def check_SRA_type(fn):
 
 #### 2.2.5 利用entrez批量下载
 
-如果想下载一个完整的 project 数据，可以利用 entrezdirect 工具。
+如果想下载一个完整的 project 数据，可以利用 entrez-direct 工具。
 
 ```bash
-~/tmp$ wget ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/edirect.tar.gz
-~/tmp$ tar zxvf edirect.tar.gz -C ~/app
-~/tmp$ sudo ln -s ~/app/edirect/* /usr/local/sbin/
-~/data$ esearch -db sra -query PRJNA40075  | efetch --format runinfo | cut -d ',' -f 1 | grep SRR | xargs fastq-dump --split-files
+# 希望下载研究PRJNA40075项目的数据
+$ esearch -db sra -query PRJNA40075  | efetch --format runinfo | cut -d ',' -f 1 | grep SRR | xargs fastq-dump --split-files
 ```
 
 如果想下载不同 research 的数据，可以自己建立一个 accession number list 的文件，比如利用 [NCBI] 的 entrez 网页界面，导出所需要的数据 accession number，然后利用 `ascp` 下载。不过建议`ascp`下载不要太狠心，否则容易被 [NCBI][] 给封掉。
