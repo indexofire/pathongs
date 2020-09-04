@@ -1,8 +1,11 @@
-site_name: Pathogen NGS 数据分析入门
+site_name: 杭州疾控中心测序实验室
 site_description: '病原微生物高通量测序数据分析手册'
 site_author: 'Mark Renton'
 site_url: 'https://pathongs.hzcdclab.org/'
-theme: 'material'
+theme:
+  name: 'material'
+  features:
+    - tabs
 copyright: 'Copyright &copy; 2016 - 2018 HZCDC@Lab'
 
 repo_url: https://github.com/indexofire/pathongs/
@@ -12,128 +15,129 @@ extra:
   palette:
     primary: 'light blue'
 
-pages:
-  - '第零章 开始之前': index.md
-  - '第一章 Linux与脚本编程':
-    - '01. Linux 安装实例': C01_Linux-and-Script-Language/01_linux-installation.md
-    - '02. Linux 基本命令': C01_Linux-and-Script-Language/02_basic-cml.md
-    - '03. Linux 软件管理': C01_Linux-and-Script-Language/03_linux-software.md
-    - '04. awk 列处理工具': C01_Linux-and-Script-Language/04_awk.md
-    - '05. sed 行处理工具': C01_Linux-and-Script-Language/05_sed.md
-    - '06. 其他Linux命令行工具': C01_Linux-and-Script-Language/06_tools.md
-    - '07. Shell脚本': C01_Linux-and-Script-Language/07_shell.md
-    - '08. Perl 编程': C01_Linux-and-Script-Language/08_perl.md
-    - '09. Python 编程': C01_Linux-and-Script-Language/09_python.md
-    - '10. Biopython 编程': C01_Linux-and-Script-Language/10_biopython.md
-    - '11. R 编程': C01_Linux-and-Script-Language/11_r.md
-  - '第二章 常用工具':
-    - '01. 基因组公共数据库': C02_Common-Utility/01_databases.md
-    - '02. Blast 比对': C02_Common-Utility/02_blast.md
-    - '03. Edirect 工具': C02_Common-Utility/03_edirect.md
-    - '04. EMBOSS 工具集': C02_Common-Utility/04_emboss.md
-    - '08. SeqKit 工具': C02_Common-Utility/08_seqkit.md
-    - '09. Kmer 工具': C02_Common-Utility/09_kmer.md
-  - '第三章 数据文件格式':
-    - '01. fasta': C03_File-Format/01_fasta.md
-    - '02. embl': C03_File-Format/02_embl.md
-    - '03. plain text': C03_File-Format/03_plain-txt.md
-    - '04. gcg': C03_File-Format/04_gcg.md
-    - '05. fastq': C03_File-Format/05_fastq.md
-    - '06. sam && bam': C03_File-Format/06_sam-bam.md
-    - '07. bed': C03_File-Format/07_bed.md
-    - '08. vcf': C03_File-Format/08_vcf.md
-    - '09. gff': C03_File-Format/09_gff.md
-    - '10. cram': C03_File-Format/10_cram.md
-  - '第四章 基因组组装':
-    - '01. bwa samtools 流程': C04_Pathogen-Genome-Assembly/01_bwa-samtools-pipeline.md
-    - '02. GATK 流程': C04_Pathogen-Genome-Assembly/02_gatk.md
-    - '03. 细菌基因组组装': C04_Pathogen-Genome-Assembly/03_bacteria-assembly.md
-    - '04. 病毒基因组组装': C04_Pathogen-Genome-Assembly/04_virus-assembly.md
-    - '05. Quast 验证': C04_Pathogen-Genome-Assembly/05_quast.md
-    - '10. snap': C04_Pathogen-Genome-Assembly/10_snap.md
-    - '11. 长序列比对': C04_Pathogen-Genome-Assembly/11_long-noisy-reads-assembly.md
-    - '12. hybrid 组装': C04_Pathogen-Genome-Assembly/12_hybrid-assembly.md
-    - '14. bwa 长序列比对': C04_Pathogen-Genome-Assembly/14_bwa-long-sequence-mapping.md
-    - '15. whatshap': C04_Pathogen-Genome-Assembly/15_whatshap.md
-  - '第五章 基因组注释':
-    - '01. Prokka 快速注释': C05_Genome-Annotation/01_prokka.md
-    - '02. 在线注释工具 rast': C05_Genome-Annotation/02_rast.md
-    - '03. 注释工具 PGAAP': C05_Genome-Annotation/03_pgaap.md
-    - '04. SNP注释工具 snpEFF': C05_Genome-Annotation/04_snpeff.md
-    - '05. COG注释': C05_Genome-Annotation/05_cog.md
-  - '第六章 基因组比较':
-    - '01. mummer': C06_Genome-Compare/01_mummer.md
-    - '02. nucdiff': C06_Genome-Compare/02_nucdiff.md
-    - '03. mauve': C06_Genome-Compare/03_mauve.md
-    - '04. sibelia': C06_Genome-Compare/04_sibelia.md
-    - '05. ani': C06_Genome-Compare/05_ani.md
-    - '10. bigsi': C06_Genome-Compare/10_bigsi.md
-  - '第七章 泛基因组分析':
-    - '01. Pangenome 概述': C07_PanGenome-and-CoreGenome/01_pangenome.md
-    - '02. Get_Homologues 分析': C07_PanGenome-and-CoreGenome/02_get_homologues.md
-    - '03. BPGA 分析': C07_PanGenome-and-CoreGenome/03_bpga.md
-    - '04. Roary 分析': C07_PanGenome-and-CoreGenome/04_roary.md
-    - '05. panseq 分析': C07_PanGenome-and-CoreGenome/05_panseq.md
-    - '07. OrthMCL 分析': C07_PanGenome-and-CoreGenome/07_orthmcl.md
-    - '08. ITEP 分析': C07_PanGenome-and-CoreGenome/08_itep.md
-  - '第八章 基因组可视化':
-    - '01. igv 查看比对结果': C08_Genome-Visualization/01_igv.md
-    - '02. BRIG 分析工具': C08_Genome-Visualization/02_brig.md
-    - '03. circos 工具使用': C08_Genome-Visualization/03_circos.md
-  - '第九章 分析平台':
-    - '01. 基于 docker 镜像': C09_Analysis-Platform/01_docker.md
-    - '02. Galaxy 平台': C09_Analysis-Platform/02_galaxy.md
-    - '03. Amazon EC2 云平台': C09_Analysis-Platform/03_amazon.md
-    - '04. 其他平台': C09_Analysis-Platform/04_others.md
-  - '第十章 重组与种群分析':
-    - '01. 病毒重组': C10_Recombination-and-Population-Structure/01_virus-recombination.md
-    - '02. Gubbins 分析': C10_Recombination-and-Population-Structure/02_gubbins.md
-    - '03. BAPS': C10_Recombination-and-Population-Structure/03_baps.md
-  - '第十一章 扫描工具':
-    - '01. SRST2 短序列扫描工具': C11_Insilico-Genome-Application/01_srst2.md
-    - '02. MLST 扫描工具': C11_Insilico-Genome-Application/02_mlst.md
-    - '03. Ariba 耐药基因': C11_Insilico-Genome-Application/03_ariba.md
-    - '04. Abricate 多功能扫描工具': C11_Insilico-Genome-Application/04_abricate.md
-  - '第十二章 宏基因组分析':
-    - '01. kraken': C12_Metagenomics-Analysis/01_kraken.md
-    - '02. centrifuge': C12_Metagenomics-Analysis/02_centrifuge.md
-    - '03. bracken': C12_Metagenomics-Analysis/03_bracken.md
-    - '04. sourmash': C12_Metagenomics-Analysis/04_sourmash.md
-    - '05. clark': C12_Metagenomics-Analysis/05_clark.md
-    - '06. krona': C12_Metagenomics-Analysis/06_krona.md
-    - '07. pavian': C12_Metagenomics-Analysis/07_pavian.md
-    - '08. supri': C12_Metagenomics-Analysis/08_supri.md
-    - ‘09. shotgun 分析’: C12_Metagenomics-Analysis/09_shotgun.md
-    - '10. 16S 种群分析': C12_Metagenomics-Analysis/10_16s.md
-    - '11. KmerFinder': C12_Metagenomics-Analysis/11_kmerfinder.md
-    - '12. Meta-BEETL': C12_Metagenomics-Analysis/12_meta-beetl.md
-  - '第十三章 单分子测序':
-    - '01. nanopore': C13_Single-Molecular-Sequencing/01_nanopore.md
-    - '02. pacbio': C13_Single-Molecular-Sequencing/02_pacbio.md
-    - '03. canu': C13_Single-Molecular-Sequencing/03_canu.md
-    - '04. trimming': C13_Single-Molecular-Sequencing/04_seqs-polish.md
-    - '06. hybrid': C13_Single-Molecular-Sequencing/06_hybrid-assembling.md
-  - '第十四章 多重序列比对':
-    - '01. 多重序列比对': C14_Multiple-Sequence-Alignment/01_msa.md
-    - '02. RAxML': C14_Phylogeny-Analysis/02_raxml.md
-  - '第十五章 进化树构建分析':
-    - '00. 构建进化书': C15_Phylogeny-Analysis/00_all-about-phylogeny.md
-    - '01. figtree': C15_Phylogeny-Analysis/01_figtree.md
-    - '02. ggtree': C15_Phylogeny-Analysis/02_ggtree.md
-  - '第十六章 综合分析平台':
-    - '01. anvio': C16_Standalone-Platform/01_anvio.md
-    - '02. galaxy': C16_Standalone-Platform/02_galaxy.md
-  - '第十七章 地理流行病学分析':
-    - '04. CartoDB': C17_Pathogen-Geospatial-Analysis/04_cartodb.md
-    - '05. leaflet': C17_Pathogen-Geospatial-Analysis/05_leaflet.md
-  - '第十八章 基因组分析实践':
-    - '01. 细菌SNP溯源分析一': C18_Analysis-Examples/01_trace-Pae-from-different-source-by-SNP.md
-    - '02. 细菌比较基因组学研究': C18_Analysis-Examples/02_comparative-analysis-Ban-genomes.md
-  - '第十九章 创建工具流':
-    - '05. workflow工具软件': C19_Pipelines-and-Workflows/05_workflow-software.md
-  - '第二十章 其他':
-    - '02. GI转Accession': C20_Others/02_gi-to-accession.md
-    - '05. Covid-19基因组测序': C20_Others/05_covid19-pathogen.md
+nav:
+  - '首页': index.md
+  - '数据分析教程':
+    - '第一章 Linux与脚本编程':
+      - '01. Linux 安装实例': C01_Linux-and-Script-Language/01_linux-installation.md
+      - '02. Linux 基本命令': C01_Linux-and-Script-Language/02_basic-cml.md
+      - '03. Linux 软件管理': C01_Linux-and-Script-Language/03_linux-software.md
+      - '04. awk 列处理工具': C01_Linux-and-Script-Language/04_awk.md
+      - '05. sed 行处理工具': C01_Linux-and-Script-Language/05_sed.md
+      - '06. 其他Linux命令行工具': C01_Linux-and-Script-Language/06_tools.md
+      - '07. Shell脚本': C01_Linux-and-Script-Language/07_shell.md
+      - '08. Perl 编程': C01_Linux-and-Script-Language/08_perl.md
+      - '09. Python 编程': C01_Linux-and-Script-Language/09_python.md
+      - '10. Biopython 编程': C01_Linux-and-Script-Language/10_biopython.md
+      - '11. R 编程': C01_Linux-and-Script-Language/11_r.md
+    - '第二章 常用工具':
+      - '01. 基因组公共数据库': C02_Common-Utility/01_databases.md
+      - '02. Blast 比对': C02_Common-Utility/02_blast.md
+      - '03. Edirect 工具': C02_Common-Utility/03_edirect.md
+      - '04. EMBOSS 工具集': C02_Common-Utility/04_emboss.md
+      - '08. SeqKit 工具': C02_Common-Utility/08_seqkit.md
+      - '09. Kmer 工具': C02_Common-Utility/09_kmer.md
+    - '第三章 数据文件格式':
+      - '01. fasta': C03_File-Format/01_fasta.md
+      - '02. embl': C03_File-Format/02_embl.md
+      - '03. plain text': C03_File-Format/03_plain-txt.md
+      - '04. gcg': C03_File-Format/04_gcg.md
+      - '05. fastq': C03_File-Format/05_fastq.md
+      - '06. sam && bam': C03_File-Format/06_sam-bam.md
+      - '07. bed': C03_File-Format/07_bed.md
+      - '08. vcf': C03_File-Format/08_vcf.md
+      - '09. gff': C03_File-Format/09_gff.md
+      - '10. cram': C03_File-Format/10_cram.md
+    - '第四章 基因组组装':
+      - '01. bwa samtools 流程': C04_Pathogen-Genome-Assembly/01_bwa-samtools-pipeline.md
+      - '02. GATK 流程': C04_Pathogen-Genome-Assembly/02_gatk.md
+      - '03. 细菌基因组组装': C04_Pathogen-Genome-Assembly/03_bacteria-assembly.md
+      - '04. 病毒基因组组装': C04_Pathogen-Genome-Assembly/04_virus-assembly.md
+      - '05. Quast 验证': C04_Pathogen-Genome-Assembly/05_quast.md
+      - '10. snap': C04_Pathogen-Genome-Assembly/10_snap.md
+      - '11. 长序列比对': C04_Pathogen-Genome-Assembly/11_long-noisy-reads-assembly.md
+      - '12. hybrid 组装': C04_Pathogen-Genome-Assembly/12_hybrid-assembly.md
+      - '14. bwa 长序列比对': C04_Pathogen-Genome-Assembly/14_bwa-long-sequence-mapping.md
+      - '15. whatshap': C04_Pathogen-Genome-Assembly/15_whatshap.md
+    - '第五章 基因组注释':
+      - '01. Prokka 快速注释': C05_Genome-Annotation/01_prokka.md
+      - '02. 在线注释工具 rast': C05_Genome-Annotation/02_rast.md
+      - '03. 注释工具 PGAAP': C05_Genome-Annotation/03_pgaap.md
+      - '04. SNP注释工具 snpEFF': C05_Genome-Annotation/04_snpeff.md
+      - '05. COG注释': C05_Genome-Annotation/05_cog.md
+    - '第六章 基因组比较':
+      - '01. mummer': C06_Genome-Compare/01_mummer.md
+      - '02. nucdiff': C06_Genome-Compare/02_nucdiff.md
+      - '03. mauve': C06_Genome-Compare/03_mauve.md
+      - '04. sibelia': C06_Genome-Compare/04_sibelia.md
+      - '05. ani': C06_Genome-Compare/05_ani.md
+      - '10. bigsi': C06_Genome-Compare/10_bigsi.md
+    - '第七章 泛基因组分析':
+      - '01. Pangenome 概述': C07_PanGenome-and-CoreGenome/01_pangenome.md
+      - '02. Get_Homologues 分析': C07_PanGenome-and-CoreGenome/02_get_homologues.md
+      - '03. BPGA 分析': C07_PanGenome-and-CoreGenome/03_bpga.md
+      - '04. Roary 分析': C07_PanGenome-and-CoreGenome/04_roary.md
+      - '05. panseq 分析': C07_PanGenome-and-CoreGenome/05_panseq.md
+      - '07. OrthMCL 分析': C07_PanGenome-and-CoreGenome/07_orthmcl.md
+      - '08. ITEP 分析': C07_PanGenome-and-CoreGenome/08_itep.md
+    - '第八章 基因组可视化':
+      - '01. igv 查看比对结果': C08_Genome-Visualization/01_igv.md
+      - '02. BRIG 分析工具': C08_Genome-Visualization/02_brig.md
+      - '03. circos 工具使用': C08_Genome-Visualization/03_circos.md
+    - '第九章 分析平台':
+      - '01. 基于 docker 镜像': C09_Analysis-Platform/01_docker.md
+      - '02. Galaxy 平台': C09_Analysis-Platform/02_galaxy.md
+      - '03. Amazon EC2 云平台': C09_Analysis-Platform/03_amazon.md
+      - '04. 其他平台': C09_Analysis-Platform/04_others.md
+    - '第十章 重组与种群分析':
+      - '01. 病毒重组': C10_Recombination-and-Population-Structure/01_virus-recombination.md
+      - '02. Gubbins 分析': C10_Recombination-and-Population-Structure/02_gubbins.md
+      - '03. BAPS': C10_Recombination-and-Population-Structure/03_baps.md
+    - '第十一章 扫描工具':
+      - '01. SRST2 短序列扫描工具': C11_Insilico-Genome-Application/01_srst2.md
+      - '02. MLST 扫描工具': C11_Insilico-Genome-Application/02_mlst.md
+      - '03. Ariba 耐药基因': C11_Insilico-Genome-Application/03_ariba.md
+      - '04. Abricate 多功能扫描工具': C11_Insilico-Genome-Application/04_abricate.md
+    - '第十二章 宏基因组分析':
+      - '01. kraken': C12_Metagenomics-Analysis/01_kraken.md
+      - '02. centrifuge': C12_Metagenomics-Analysis/02_centrifuge.md
+      - '03. bracken': C12_Metagenomics-Analysis/03_bracken.md
+      - '04. sourmash': C12_Metagenomics-Analysis/04_sourmash.md
+      - '05. clark': C12_Metagenomics-Analysis/05_clark.md
+      - '06. krona': C12_Metagenomics-Analysis/06_krona.md
+      - '07. pavian': C12_Metagenomics-Analysis/07_pavian.md
+      - '08. supri': C12_Metagenomics-Analysis/08_supri.md
+      - ‘09. shotgun 分析’: C12_Metagenomics-Analysis/09_shotgun.md
+      - '10. 16S 种群分析': C12_Metagenomics-Analysis/10_16s.md
+      - '11. KmerFinder': C12_Metagenomics-Analysis/11_kmerfinder.md
+      - '12. Meta-BEETL': C12_Metagenomics-Analysis/12_meta-beetl.md
+    - '第十三章 单分子测序':
+      - '01. nanopore': C13_Single-Molecular-Sequencing/01_nanopore.md
+      - '02. pacbio': C13_Single-Molecular-Sequencing/02_pacbio.md
+      - '03. canu': C13_Single-Molecular-Sequencing/03_canu.md
+      - '04. trimming': C13_Single-Molecular-Sequencing/04_seqs-polish.md
+      - '06. hybrid': C13_Single-Molecular-Sequencing/06_hybrid-assembling.md
+    - '第十四章 多重序列比对':
+      - '01. 多重序列比对': C14_Multiple-Sequence-Alignment/01_msa.md
+      - '02. RAxML': C14_Phylogeny-Analysis/02_raxml.md
+    - '第十五章 进化树构建分析':
+      - '00. 构建进化书': C15_Phylogeny-Analysis/00_all-about-phylogeny.md
+      - '01. figtree': C15_Phylogeny-Analysis/01_figtree.md
+      - '02. ggtree': C15_Phylogeny-Analysis/02_ggtree.md
+    - '第十六章 综合分析平台':
+      - '01. anvio': C16_Standalone-Platform/01_anvio.md
+      - '02. galaxy': C16_Standalone-Platform/02_galaxy.md
+    - '第十七章 地理流行病学分析':
+      - '04. CartoDB': C17_Pathogen-Geospatial-Analysis/04_cartodb.md
+      - '05. leaflet': C17_Pathogen-Geospatial-Analysis/05_leaflet.md
+    - '第十八章 基因组分析实践':
+      - '01. 细菌SNP溯源分析一': C18_Analysis-Examples/01_trace-Pae-from-different-source-by-SNP.md
+      - '02. 细菌比较基因组学研究': C18_Analysis-Examples/02_comparative-analysis-Ban-genomes.md
+    - '第十九章 创建工具流':
+      - '05. workflow工具软件': C19_Pipelines-and-Workflows/05_workflow-software.md
+    - '第二十章 其他':
+      - '02. GI转Accession': C20_Others/02_gi-to-accession.md
+      - '05. Covid-19基因组测序': C20_Others/05_covid19-pathogen.md
 use_directory_urls: true
 
 extra_javascript:
