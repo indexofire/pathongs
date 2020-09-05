@@ -10,20 +10,21 @@
 
 ### 1.1 安装 Docker
 
-Ubuntu 14.04 已经自带了 docker 安装包，不过版本相对较老，想使用 docker 最新版的功能，添加源来安装 docker:
-
 ```bash
-# 添加 docker 源
-$ sudo apt-get install apt-transport-https
-$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
-$ sudo bash -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+# 对于 Ubuntu 20.04 LTS 的用户
+$ sudo apt update
+$ sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+$ sudo apt update
+$ sudo apt install docker-ce docker-ce-cli containerd.io
 
-# 安装 docker
-$ sudo apt-get update
-$ sudo apt-get install lxc-docker
+# 查看 docker 运行状态
+$ sudo systemctl status docker
 
-# 安装完成后启动 docker 服务
-$ sudo service docker start
+# 如果需要以非管理员身份运行 docker
+# 需要将用户加入 docker 组，比如将当前用户加入，即可不需要sudu即可执行docker命令
+$ sudo usermod -aG docker $USER
 ```
 
 ### 1.2 Docker入门
@@ -31,12 +32,13 @@ $ sudo service docker start
 首先要对 docker 镜像和容器的概念有所了解。细节可以参阅 [Docker 从入门到实践](https://yeasy.gitbooks.io/docker_practice/content)
 
 ```bash
-$ docker run ubuntu:14.04 /bin/echo 'Hello world'
+# 测试 docker 是否运行正常
+$ docker container run hello-world
 ```
 
 ### 1.3 安装 galaxy docker 镜像
 
-galaxy 的 docker 镜像可以自己来创建，建议使用`docker galaxy-stable`，源代码可以在 [Github](https://github.com/bgruening/docker-galaxy-stable) 下载。也可以直接到官方 Hun Registry 里下载`galaxy-stable`镜像
+使用`docker-galaxy-stable`作为镜像，源代码可以在 [Github](https://github.com/bgruening/docker-galaxy-stable) 下载。也可以直接到官方 Hub Registry 里下载`galaxy-stable`镜像。
 
 ```bash
 $ sudo docker pull bgruening/galaxy-stable
@@ -112,26 +114,23 @@ $ sudo docker rmi IMAGE_ID
 
 ## 2. 本地安装与基本配置
 
-本节介绍 Galaxy 的最基本下载安装与使用。最适合的场景为个人电脑，单用户使用的情况。
+本节介绍 Galaxy 下载安装与使用。最适合的场景为个人电脑，单用户使用的情况。
 
 ### 2.1 下载与安装
 
-Galaxy 作为一款开源软件，其代码库托管在 http://bitbucket.org ，先安装 mercurial ，然后用 hg 工具将 galaxy 代码库克隆到本地。
+Galaxy 作为一款开源软件，可以访问其[代码仓库](https://github.com/galaxyproject/galaxy)获得最新版本，或将 galaxy 代码库克隆到本地。
 
 ```bash
-$ sudo apt-get install mercurial
-$ hg clone https://bitbucket.org/galaxy/galaxy-dist/
-$ cd galaxy-dist
+$ git clone https://github.com/galaxyproject/galaxy
+$ cd galaxy
 ```
-
-可以用 `hg branch` 命令查看代码分支是否为 stable，如果是其他分支（galaxy代码库有另一分支'default'），切换到 stable 分支：`hg update stable`。在生产环境下建议使用 stable 分支的代码。
 
 ### 2.2 配置与运行
 
 克隆到本地的 stable 代码，一般Linux系统自带Python就可以直接运行了。
 
 ```bash
-$ ./run.sh
+$ sh run.sh
 ```
 
 运行 `run.sh`，这个shell脚本程序会自动完成初始化数据，依赖库下载，数据库迁移等一系列操作，当看到终端显示`serving on http://127.0.0.1:8080`时，可以打开浏览器，访问 http://127.0.0.1:8080 即可看到galaxy的界面。
@@ -266,6 +265,21 @@ http {
     }
 }
 ```
+
+
+## docker 安装
+
+Galaxy 由于依赖众多，安装比较复杂，推荐用 docker 镜像安装，比较简单。
+
+```bash
+# 下载镜像
+$ docker pull bgruening/galaxy-stable
+
+# 运行images
+$ docker run -d -p 8080:80 -p 8021:21 -p 8022:22 bgruening/galaxy-stable
+```
+打开浏览器，访问 http://127.0.0.1:8080 可以看到 galaxy 界面
+
 
 ## Rreference
 

@@ -5,7 +5,7 @@
 ## 安装
 
 ```bash
-# for ubuntu users
+# Ubuntu系统自带gubbins
 $ sudo apt install gubbins
 
 # 发行版版本冻结在1.x上，如果要使用2.x，比如不想用fastml的可以从源码编译
@@ -16,6 +16,14 @@ $ ./autoreconf -i
 $ ./configure
 $ make && sudo make install
 $ cd python && sudo python3 setup.py install
+```
+
+使用 conda 安装到虚拟环境中
+
+```bash
+$ conda create -n gubbins
+$ conda activate gubbins
+(gubbins)$ conda install gubbins=2.4.1
 ```
 
 ## 使用
