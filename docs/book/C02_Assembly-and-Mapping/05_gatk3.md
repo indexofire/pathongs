@@ -1,8 +1,8 @@
-# GATK
+# GATK3
 
 ---
 
-## GATK3
+## 突变位点分析流程
 
 ```bash
 $ bwa index ref.fa
@@ -15,5 +15,3 @@ $ java -jar picard.jar MarkDuplicates \
 > M=S1.markdup_metrics.txt
 $ samtools index S1.sorted.markdup.bam
 ```
-
-## GATK4

@@ -54,7 +54,7 @@ EBI ENA 支持直接下载 fastq 格式的基因组数据，可以用 aspera 加
 **使用 ftp 模式下载**
 
 ```bash
-(dlngs)$ wget ftp://ftp.ebi.ac.uk/vol1/fastq/SRR100/000/SRR1001720/SRR1001720_1.fastq.gz
+(dlngs)$ aria2c ftp://ftp.ebi.ac.uk/vol1/fastq/SRR100/000/SRR1001720/SRR1001720_1.fastq.gz
 ```
 
 如果我们希望批量下载，可以用下面的脚本。现将要下载的SRA数据的Accession保存成list.txt文件，然后用`ena-dl.sh list.txt output`下载到output目录

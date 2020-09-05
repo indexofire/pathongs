@@ -23,6 +23,7 @@ extra_css:
 nav:
   - '首页': index.md
   - '数据分析笔记':
+    - '第零章 开始之前': book/main.md
     - '第一章 常用工具':
       - '01. 基因组公共数据库': book/C01_Common-Utility/01_database.md
       - '02. 下载基因组数据': book/C01_Common-Utility/02_get-data.md
@@ -33,10 +34,11 @@ nav:
       - '09. Kmer 工具': book/C01_Common-Utility/09_kmer.md
     - '第二章 组装与比对':
       - '01. 基本比对流程': book/C02_Assembly-and-Mapping/01_bwa-samtools-pipeline.md
-      - '02. GATK 流程': book/C02_Assembly-and-Mapping/02_gatk.md
+      - '02. Quast 验证': book/C02_Assembly-and-Mapping/02_quast.md
       - '03. 细菌基因组组装': book/C02_Assembly-and-Mapping/03_bacteria-assembly.md
       - '04. 病毒基因组组装': book/C02_Assembly-and-Mapping/04_virus-assembly.md
-      - '05. Quast 验证': book/C02_Assembly-and-Mapping/05_quast.md
+      - '05. GATK3': book/C02_Assembly-and-Mapping/05_gatk3.md
+      - '06. GATK4': book/C02_Assembly-and-Mapping/06_gatk4.md
       #- '10. snap': C04_Pathogen-Genome-Assembly/10_snap.md
       - '11. 长序列比对': book/C02_Assembly-and-Mapping/11_long-noisy-reads-assembly.md
       - '12. 二代三代混合组装': book/C02_Assembly-and-Mapping/12_hybrid-assembly.md
@@ -119,7 +121,6 @@ nav:
       - '05. workflow工具软件': C19_Pipelines-and-Workflows/05_workflow-software.md
     - '第二十章 其他':
       - '02. GI转Accession': C20_Others/02_gi-to-accession.md
-      - '05. Covid-19基因组测序': C20_Others/05_covid19-pathogen.md
   - '专项教程':
     - 'Linux入门':
       - '01. Linux 安装示例': tutorial/Linux/01_linux-installation.md
@@ -145,6 +146,9 @@ nav:
       - '08. vcf': tutorial/Format/08_vcf.md
       - '09. gff': tutorial/Format/09_gff.md
       - '10. cram': tutorial/Format/10_cram.md
+  - '实验手册':
+    - '': protocol.md
+    - 'ArticNetwork Covid-19测序': protocol/artic-network-covid19.md
   - '关于我们':
     - '': about.md
 use_directory_urls: true
