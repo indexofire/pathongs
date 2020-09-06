@@ -8,34 +8,22 @@
 
 - `SPAdes <http://spades.bioinf.spbau.ru/>`_
 - `MaSuRCA <http://www.genome.umd.edu/masurca.html>`_
-- Velvet
-- A5_miseq
+- `Velvet`
+- `A5_miseq`
 
 更多工具可以参见`这里 <https://omictools.com/genome-assembly-category>`_
-
 
 ## 1. SPAdes
 
 SPAdes 是由
 
-### 1.1 下载并安装 SPAdes
-
-**下载编译包安装**
-
-下载预先编译的版本包，将可执行文件添加到系统路径中，可以直接调用运行。
-
-```bash
-$ curl -O http://spades.bioinf.spbau.ru/release3.11.1/SPAdes-3.9.0-Linux.tar.gz
-$ tar zxf SPAdes-3.9.0-Linux.tar.gz -C ~/app
-$ cd ~/app
-$ sudo ln -s `pwd`/SPAdes-3.11.0-Linux/bin/* /usr/local/sbin
-```
+### 1.1 安装 SPAdes
 
 **通过conda安装**
 
 ```bash
-$ conda create -n assembly
-$ conda activate assembly
+$ conda create -n spades
+$ conda activate spades
 (assembly)$ conda install spades
 ```
 
@@ -45,14 +33,18 @@ $ conda activate assembly
 $
 ```
 
-### 1.2 拼装细菌基因组
+### 1.2 使用 spades 拼接二代细菌基因组测序数据
 
 ```bash
+# 以SRR95386 为例
+$ prefetch SRR956386
+$ fastq-dump --split-e --gzip SRR956386.sra
 # -t 40 表示用40个 threads 进行拼接，根据自己电脑的CPU情况自行设置。
-$ spades.py --careful -k 21,33,55,77,99,121 -1 SRR95386_1.fastq -2 SRR955386_2.fastq -o spades_output -t 40
+$ spades.py --careful -k 21,33,55,77,99,121 -1 SRR95386_1.fastq -2 SRR955386_2.fastq \
+> -o spades_output -t 40
 ```
 
-SPAdes会尝试不同的Kmer，因此拼装时间也会根据Kmer选择数量成倍增加。对于常见的 Miseq v2/v3 试剂盒，采用 PE150/PE250/PE300 的读长测序，常用的拼接命令是：
+SPAdes会根据 `-k` 参数选择不同的 Kmer 进行 de novo 组装。对于常见的 Miseq v2/v3 试剂盒，采用 PE150/PE250/PE300 的读长测序，常用的拼接命令是：
 
 ```bash
 # PE150 读长测序数据
@@ -61,63 +53,55 @@ $ spades.py -k 21,33,55,77 --careful -1 SRR95386_1.fastq -2 SRR955386_2.fastq -o
 $ spades.py -k 21,33,55,77,99,127 --careful -1 SRR95386_1.fastq -2 SRR955386_2.fastq -o SRR95386_output -t 40
 ```
 
-2. Macursa
-----------
+## 2. Macursa
 
-2.1 下载并安装 MaSuRCA
-^^^^^^^^^^^^^^^^^^^^^^
+### 2.1 安装 MaSuRCA
 
-.. code-block:: bash
+```bash
+$ conda create -n masurca
+$ conda activate masurca
+(masurac)$ conda install masurca
+```
 
-   ~/tmp$ curl -O ftp://ftp.genome.umd.edu/pub/MaSuRCA/MaSuRCA-3.1.3.tar.gz
-   ~/tmp$ tar zxvf MaSuRCA-3.1.3.tar.gz -C ~/app
-   ~/tmp$ cd ~/app
-   ~/app$ ./MaSuRCA-2.3.0/install.sh
-   ~/app$ sudo ln -s `pwd`/MaSuRCA-2.3.0/bin/masurca /usr/local/sbin
+## 2.2 建立拼装配置文件
 
-2.2 建立拼装配置文件
-^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: bash
-
-   ~/data$ touch SRR955386_masurca.config
-   ~/data$ nano SRR955386_masurca.config
+```bash
+$ touch SRR955386_masurca.config
+$ vim SRR955386_masurca.config
+```
 
 文件内容修改如下：
 
-.. code-block:: bash
+```
+DATA
+PE= p1 500 50 SRR955386_1.fastq SRR955386_2.fastq
+END
 
-   DATA
-   PE= p1 500 50 SRR955386_1.fastq SRR955386_2.fastq
-   END
-
-   PARAMETERS
-   GRAPH_KMER_SIZE=auto
-   USE_LINKING_MATES=1
-   LIMIT_JUMP_COVERAGE = 60
-   KMER_COUNT_THRESHOLD = 1
-   NUM_THREADS= 2
-   JF_SIZE=100000000
-   DO_HOMOPOLYMER_TRIM=0
-   END
+PARAMETERS
+GRAPH_KMER_SIZE=auto
+USE_LINKING_MATES=1
+LIMIT_JUMP_COVERAGE = 60
+KMER_COUNT_THRESHOLD = 1
+NUM_THREADS= 2
+JF_SIZE=100000000
+DO_HOMOPOLYMER_TRIM=0
+END
+```
 
 设置 **GRAPH_KMER_SIZE=auto**，软件会调用Kmer=31来进行拼装。对于MiSeq PE250以上的插片，可以考虑手动设置使用更大的Kmer。
 
-2.3 开始拼装
-^^^^^^^^^^^^
+### 2.3 开始拼装
 
-.. code-block:: bash
+```bash
+# 运行 masurca
+$ masurca SRR955386_masurca.config
+# 生成组装脚本，运行
+$ ./assemble.sh
+```
 
-   ~/app$ masurca SRR955386_masurca.config
-   ~/app$ ./assemble.sh
+## 3. Velvet
 
---------------------------------------------------------------------------------
-
-3. Velvet
----------
-
-3.1 下载并安装
-^^^^^^^^^^^^^^
+### 3.1 下载并安装
 
 Velvet 是一个老牌的基因组测序数据拼接软件。Velvet最新版本是1.2.10，可以访问 `官方网站 <https://www.ebi.ac.uk/~zerbino/velvet/>`_ 下载源代码包，也可以通过克隆 `软件仓库 <https://github.com/dzerbino/velvet.git>`_ 的方式获得最新的源代码。
 
@@ -125,20 +109,20 @@ Velvet 是一个老牌的基因组测序数据拼接软件。Velvet最新版本�
 
 普通用户可以下载源代码包自行编译获得软件。
 
-.. code-block:: bash
-
-   ~$ cd /tmp
-   ~/tmp$ wget https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz
-   ~/tmp$ tar xvf velvet_1.2.10.tgz -C ~/app/velvet
+```bash
+$ cd /tmp
+$ wget https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz
+$ tar xvf velvet_1.2.10.tgz -C ~/app/velvet
+```
 
 **克隆代码仓库**
 
 如果在软件运行中遇到问题，想试用最新版代码，或是有能力提交issues，或者想改进软件参与开源代码编写的可以选择克隆代码库的方式。
 
-.. code-block:: bash
-
-   ~$ cd ~/tmp
-   ~/tmp$ git clone https://github.com/dzerbino/velvet.git
+```bash
+$ cd ~/tmp
+$ git clone https://github.com/dzerbino/velvet.git
+```
 
 **编译安装**
 
@@ -150,22 +134,15 @@ make可以进行编译，有几个编译参数可以选择，分别是MAXKMERLEN
    ~/app/velvet$ make 'MAXKMERLENGTH=127'
    ~/app/velvet$ sudo cp velveth velvetg /usr/local/sbin
 
-3.2 拼接基因组
-^^^^^^^^^^^^^^
+### 3.2 拼接基因组
 
 velvet软件由2个可执行文件 `velveth` 和 `velvetg` 组成。
 
-.. code-block
+```bash
+$ velvet
+```
 
-   ~$ velvet
-
-3.3 其他组件
-^^^^^^^^^^^^
-
---------------------------------------------------------------------------------
-
-4. A5-miseq
------------
+## 4. A5-miseq
 
 `A5-miseq <https://sourceforge.net/projects/ngopt/>`__ 是一个用 perl
 开发的针对细菌基因组 de novo assembly 的 pipeline
@@ -183,59 +160,66 @@ velvet软件由2个可执行文件 `velveth` 和 `velvetg` 组成。
 samtools，bowtie 对结果产生的差异，建议采用虚拟环境如 docker
 等来隔离运行环境。
 
-4.1 安装 A5-miseq
-^^^^^^^^^^^^^^^^^
+### 4.1 安装 A5-miseq
 
 下载预编译包安装
-~~~~~~~~~~~~~~~~
 
-.. code-block:: bash
+```bash
+$ wget http://downloads.sourceforge.net/project/ngopt/a5_miseq_linux_20150522.tar.gz
+$ tar zxvf a5_miseq_linux_20150522.tar.gz -C ~/app
+$ sudo ln -s ~/app/a5_miseq_linux_20150522/bin/a5_pipeline.pl /usr/local/sbin
+```
 
-   ~/tmp$ wget http://downloads.sourceforge.net/project/ngopt/a5_miseq_linux_20150522.tar.gz
-   ~/tmp$ tar zxvf a5_miseq_linux_20150522.tar.gz -C ~/app
-   ~/tmp$ sudo ln -s ~/app/a5_miseq_linux_20150522/bin/a5_pipeline.pl /usr/local/sbin
+### 建立 Docker 容器安装
 
-建立 Docker 容器安装
-~~~~~~~~~~~~~~~~~~~~
+```bash
+FROM ubuntu:latest
+MAINTAINER Mark Renton <indexofire@gmail.com>
 
-.. code-block:: bash
+RUN apt-get update -qy
+RUN apt-get install -qy openjdk-7-jre-headless file
+ADD http://downloads.sourceforge.net/project/ngopt/a5_miseq_linux_20150522.tar.gz /tmp/a5_miseq.tar.gz
+RUN mkdir /tmp/a5_miseq
+RUN tar xzf /tmp/a5_miseq.tar.gz --directory /tmp/a5_miseq --strip-components=1
+ADD run /usr/local/bin/
+ADD Procfile /
+ENTRYPOINT ["/usr/local/bin/run"]
+```
 
-   ~/docker$ mkdir -p a5-miseq && cd a5-miseq
-   ~/docker/a5-miseq$ touch Dockerfile
+### 4.2 使用 A5-miseq
 
-.. code-block:: bash
+```bash
+$ perl a5_pipeline.pl SRR955386_1.fastq SRR955386_2.fastq ~/data/a5_output
+```
 
-   FROM ubuntu:latest
-   MAINTAINER Mark Renton <indexofire@gmail.com>
-
-   RUN apt-get update -qy
-   RUN apt-get install -qy openjdk-7-jre-headless file
-   ADD http://downloads.sourceforge.net/project/ngopt/a5_miseq_linux_20150522.tar.gz /tmp/a5_miseq.tar.gz
-   RUN mkdir /tmp/a5_miseq
-   RUN tar xzf /tmp/a5_miseq.tar.gz --directory /tmp/a5_miseq --strip-components=1
-   ADD run /usr/local/bin/
-   ADD Procfile /
-   ENTRYPOINT ["/usr/local/bin/run"]
-
-4.2 使用 A5-miseq
-^^^^^^^^^^^^^^^^^
-
-.. code-block:: bash
-
-    $ perl a5_pipeline.pl SRR955386_1.fastq SRR955386_2.fastq ~/data/a5_output
-
-4.3 A5-miseq 文档
-^^^^^^^^^^^^^^^^^
+###4.3 A5-miseq 文档
 
 查看 A5-miseq 工具的使用文档可以用 a5_pipeline.pl 工具查看。
 
-.. code-block:: bash
+```bash
+# Usage:
+$ a5_pipeline.pl [--begin=1-5] [--end=1-5] [--preprocessed] <lib_file> <out_base>
+```
 
-    # Usage:
-    $ a5_pipeline.pl [--begin=1-5] [--end=1-5] [--preprocessed] <lib_file> <out_base>
+## 5.Shovill
 
-Reference:
-----------
+Shovill 是一个第三方组装流程，它调用spades或velvet等软件进行拼接，生成适用于细菌基因组组装的结果。
+
+### 5.1 安装
+
+```bash
+$ conda create -n shovill
+$ conda activate shovill
+(shovill)$ conda install shovill
+```
+
+### 5.2 使用
+
+```bash
+(shovill)$ shovill --R1 --R2
+```
+
+## Reference:
 
 * http://www.chenlianfu.com/?p=1635
 * http://www.bbioo.com/lifesciences/40-116878-1.html
