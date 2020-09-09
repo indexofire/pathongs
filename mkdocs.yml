@@ -138,10 +138,10 @@ nav:
     - '数据文件格式':
       - '01. fasta': tutorial/Format/01_fasta.md
       - '02. embl': tutorial/Format/02_embl.md
-      - '03. plain text': tutorial/Format/03_txt.md
+      - '03. fastq': tutorial/Format/05_fastq.md
       - '04. gcg': tutorial/Format/04_gcg.md
-      - '05. fastq': tutorial/Format/05_fastq.md
-      - '06. sam && bam': tutorial/Format/06_sam-bam.md
+      - '05. sam': tutorial/Format/05_sam.md
+      - ‘06. bam’: tutorial/Format/06_bam.md
       - '07. bed': tutorial/Format/07_bed.md
       - '08. vcf': tutorial/Format/08_vcf.md
       - '09. gff': tutorial/Format/09_gff.md
