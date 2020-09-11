@@ -4,6 +4,8 @@
 
 ## 安装
 
+Ubuntu系统级安装管理
+
 ```bash
 # Ubuntu系统自带gubbins
 $ sudo apt install gubbins
