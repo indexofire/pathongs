@@ -94,7 +94,7 @@ nav:
       - '06. krona': C12_Metagenomics-Analysis/06_krona.md
       - '07. pavian': C12_Metagenomics-Analysis/07_pavian.md
       - '08. supri': C12_Metagenomics-Analysis/08_supri.md
-      - ‘09. shotgun 分析’: C12_Metagenomics-Analysis/09_shotgun.md
+      - '09. shotgun 分析': C12_Metagenomics-Analysis/09_shotgun.md
       - '10. 16S 种群分析': C12_Metagenomics-Analysis/10_16s.md
       - '11. KmerFinder': C12_Metagenomics-Analysis/11_kmerfinder.md
       - '12. Meta-BEETL': C12_Metagenomics-Analysis/12_meta-beetl.md
@@ -129,6 +129,7 @@ nav:
       - '04. awk 列处理工具': tutorial/Linux/04_awk.md
       - '05. sed 行处理工具': tutorial/Linux/05_sed.md
       - '06. 其他命令行工具': tutorial/Linux/06_tools.md
+      - '07. vim': tutorial/Linux/07_vim.md
     - '常用编程语言':
       - '01. Shell 脚本': tutorial/Programming/01_shell.md
       - '02. Perl 编程': tutorial/Programming/02_perl.md
