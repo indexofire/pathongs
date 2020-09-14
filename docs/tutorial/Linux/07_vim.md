@@ -1,5 +1,7 @@
 # Vim 使用
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 vim 工具的基本使用

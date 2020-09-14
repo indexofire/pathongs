@@ -1,5 +1,9 @@
 # Other Format
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
+---
+
 ## Genomatix annotation syntax
 
 Some Genomatix tools, e.g. Gene2Promoter or GPD allow the extraction of sequences. Genomatix uses the following syntax to annotate sequence information: each information item is denoted by a keyword, followed by a "=" and the value. These information items are separated by a pipe symbol "|".

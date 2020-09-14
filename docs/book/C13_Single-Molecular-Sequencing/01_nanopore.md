@@ -1,6 +1,6 @@
 # Nanopore Minion/Gridon 测序数据分析
 
-更新于: {{ git_revision_date }}
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
 
 ---
 

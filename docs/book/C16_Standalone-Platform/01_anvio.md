@@ -1,5 +1,7 @@
 # Anvi'o
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 ![anvio](../../assets/images/C16/01/anvio.png)

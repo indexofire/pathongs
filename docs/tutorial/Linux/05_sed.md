@@ -1,4 +1,6 @@
-# sed
+# sed 用法
+
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
 
 ---
 

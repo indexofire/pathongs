@@ -1,5 +1,7 @@
 # Virus Recombination Analysis
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 ## 常见的病毒重组分析软件

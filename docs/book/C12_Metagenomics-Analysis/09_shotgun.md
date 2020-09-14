@@ -1,5 +1,7 @@
 # Metagenomics数据分析
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 病原微生物`Metagenomics`根据研究内容，可以分为几个方向：`whole genomes`测序，例如`shotgun metagenomics`寻找所有序列;`16s rRNA`测序，例如研究群菌结构；`Transcriptome`测序，研究整个样品中转录组。

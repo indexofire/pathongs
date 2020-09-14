@@ -1,4 +1,6 @@
-# RAxML
+# RAxML 使用
+
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
 
 ---
 

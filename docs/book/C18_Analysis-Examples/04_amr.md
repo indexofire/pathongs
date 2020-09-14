@@ -1,5 +1,7 @@
 # 基于高通量测序技术进行病原细菌耐药研究
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 !!! Abstract "内容简介"

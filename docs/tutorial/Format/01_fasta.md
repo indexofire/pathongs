@@ -1,5 +1,7 @@
 # FASTA 格式
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 序列的最基本格式，只需要一个`>`符号表示序列开始，后跟序列名称。再换一行内容为DNA或蛋白质序列。

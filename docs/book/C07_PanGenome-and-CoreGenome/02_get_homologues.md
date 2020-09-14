@@ -1,5 +1,7 @@
 # Get_Homologues 分析 Pangenomes
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 ![get_homologues](../../assets/images/C07/02/get_homologues_banner.png)

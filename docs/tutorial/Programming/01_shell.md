@@ -1,6 +1,6 @@
 # Shell 脚本编程
 
-{{ git_page_authors }}更新于：{{ git_revision_date }}
+{{ git_page_authors }} 更新于：{{ git_revision_date }}
 
 ---
 

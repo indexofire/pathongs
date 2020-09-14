@@ -1,4 +1,6 @@
-# 分析流程1
+# bwa + samtools 基本分析流程
+
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
 
 ---
 

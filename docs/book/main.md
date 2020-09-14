@@ -1,5 +1,9 @@
 # 开始之前
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
+---
+
 ## **病原微生物与测序技术**
 
 !!! Abstract "测序技术"

@@ -1,5 +1,7 @@
 # MicroScope
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 ![interface](../../assets/C09/10/interface.png)

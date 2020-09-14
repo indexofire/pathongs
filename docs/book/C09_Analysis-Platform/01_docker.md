@@ -1,5 +1,7 @@
 # Docker
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 ![banner](../assets/images/9.1/banner.jpg)

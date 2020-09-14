@@ -1,5 +1,7 @@
 # GFF 格式数据
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 GFF（General Feature Format，通用特征格式）基于Sanger GFF2规范。 GFF格式内有九个必填字段，必须以制表符分隔。 如果字段由空格而不是制表符分隔，则轨道将无法正确显示。 有关GFF格式的更多信息，请参阅Sanger的[GFF页面](http://www.sanger.ac.uk/resources/software/gff/)。

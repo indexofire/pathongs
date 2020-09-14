@@ -1,5 +1,8 @@
 # in silico 毒力基因扫描
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
+---
 
 **毒力基因数据库**
 

@@ -1,5 +1,7 @@
 # SRST2
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 ![srst2](../assets/images/C11/01/srst2.png)

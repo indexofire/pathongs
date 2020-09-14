@@ -1,5 +1,9 @@
 # PhyML 使用
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
+---
+
 [PhyML](https://github.com/stephaneguindon/phyml/) 是由 Stephane Guindon 开发的一款进化树软件。
 
 ## 1. 安装

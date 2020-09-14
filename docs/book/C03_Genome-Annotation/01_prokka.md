@@ -1,5 +1,7 @@
 # Prokka
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 [Prokka][] 是一个原核物种基因组注释工具，由墨尔本大学生物信息学家 [Torsten Seemann](https://tseemann.github.io/) 开发的基于命令行的本地快速注释工具，用来注释小基因组比如细菌、病毒等非常方便、快速。

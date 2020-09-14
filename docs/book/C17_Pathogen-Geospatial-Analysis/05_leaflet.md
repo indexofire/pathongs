@@ -1,5 +1,7 @@
 # Leaflet
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 --
 
 Leaflet 是一个 R 地图应用包，可以用于病原流行病学分析。

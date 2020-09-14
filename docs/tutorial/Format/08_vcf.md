@@ -1,5 +1,7 @@
 # VCF 格式数据文件
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 VCF（Variant Calling File）体现序列位点变化（点突变、删除、结构变化等）的标准格式文件。文件是压缩并索引过的。最早是为了1000基因组计划而设计的。可以用vcftools从基因组数据中创建。

@@ -1,5 +1,7 @@
 # 用 awk 处理 NGS 数据
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 ![awk](https://pbs.twimg.com/media/DeLcVfSWAAAw6OZ.jpg)

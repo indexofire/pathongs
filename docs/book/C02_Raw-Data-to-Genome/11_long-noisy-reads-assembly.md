@@ -1,5 +1,7 @@
 # 长读长测序数据组装
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 目前 Pacbio 和 Nanopore 测序技术可以成生 K 级别甚至 M 级别的reads，但是其目前来说 base calling 产生的错误还是较高，因此一般称其 long noisy reads 数据。本节介绍 pacbio/nanopore 测序数据进行基因组组装。用到的软件有：

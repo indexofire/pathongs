@@ -1,5 +1,7 @@
 # MLST
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 传统的 MLST 分析方法采用对样本进行 PCR 扩增后进行 Sanger 测序、拼接、比对后，获得等位基因序列，根据碱基差异分配序号，再根据相应的序号组合确定 ST 型別。常用的工具有bigsDB，Bionumerics等。

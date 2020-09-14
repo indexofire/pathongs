@@ -1,5 +1,7 @@
 # Linux 安装
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 !!! note "内容简介"

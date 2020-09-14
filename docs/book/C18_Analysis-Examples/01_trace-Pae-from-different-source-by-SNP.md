@@ -1,5 +1,7 @@
 # 铜绿假单胞菌临床株与环境株SNP溯源
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 !!! Abstract "内容简介"

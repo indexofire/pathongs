@@ -1,5 +1,9 @@
 # Seqkit
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
+---
+
 [Seqkit]() 是由国人 [shenwei]() 开发，功能强大的命令行序列处理工具套件。
 
 ## 使用

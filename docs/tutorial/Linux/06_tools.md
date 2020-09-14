@@ -1,5 +1,7 @@
 # Linux 常用数据处理工具
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 !!! Abstract "内容介绍"

@@ -1,5 +1,7 @@
 # GATK4
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 ## 安装

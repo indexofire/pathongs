@@ -1,5 +1,7 @@
 # PGAAP
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 http://www.ncbi.nlm.nih.gov/genome/annotation_prok/

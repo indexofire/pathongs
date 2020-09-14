@@ -1,5 +1,7 @@
 # FastQ 格式
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 fastq 格式的数据由若干条reads组成，每条read由4行表示信息为

@@ -1,5 +1,7 @@
 # Entrez
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ![edirect](../../assets/images/C02/03/banner.jpg)
 
 ---

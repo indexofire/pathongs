@@ -1,5 +1,7 @@
 # snpEFF 使用
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 snpEFF 是许多 variant calling pipeline 中常用的 vcf 注释工具。

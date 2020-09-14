@@ -1,5 +1,9 @@
 # Workflow Software
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
+---
+
 * [Taverna](http://www.taverna.org.uk/)
 * [Galaxy](http://galaxyproject.org/)
 * [SHIWA](https://www.shiwa-workflow.eu/)

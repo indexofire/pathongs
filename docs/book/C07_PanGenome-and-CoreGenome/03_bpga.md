@@ -1,5 +1,7 @@
 # BPGA
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 [BPGA][] 是由印度 [CSIR-Indian Institute of Chemical Biology](http://www.iicb.res.in/) 研究人员开发的用于细菌 Pangenome 分析工具流。

@@ -1,4 +1,6 @@
-# Quast
+# Quast 质量分析
+
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
 
 ---
 

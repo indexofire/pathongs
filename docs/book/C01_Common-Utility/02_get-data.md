@@ -1,5 +1,7 @@
 # 命令行下载公共数据库基因组数据
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 - SRA

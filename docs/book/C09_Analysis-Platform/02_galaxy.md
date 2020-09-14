@@ -1,5 +1,7 @@
 # Galaxy 快速部署方式
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 ![banner](../assets/images/9.2/banner.jpg)

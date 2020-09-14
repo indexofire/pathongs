@@ -1,4 +1,6 @@
-## bwa mem
+## bwa 长片段比对
+
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
 
 ---
 

@@ -1,5 +1,7 @@
 # Linux 基本命令
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ![Linux基本命令](../assets/images/C01/01/banner.jpg)
 
 ---

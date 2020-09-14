@@ -1,5 +1,7 @@
 # GATK3
 
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
+
 ---
 
 ## 突变位点分析流程
