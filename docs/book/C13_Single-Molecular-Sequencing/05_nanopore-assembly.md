@@ -4,17 +4,21 @@
 
 ---
 
+## minimap2 + miniasm
+
 - minimap2
 - miniasm
 - Minion_QC
 
-# 建立环境
+### 建立环境
 
 ```bash
 $ conda create -n minasm
 $ conda activate minasm
 (minasm)$ conda install minimap2 miniasm Minion_QC
 ```
+
+### 组装流程
 
 ```bash
 # QC
@@ -31,5 +35,21 @@ $ conda activate minasm
 (minasm)$ awk '/^S/{print ">"$2"\n"$3}' miniasm.gfa > miniasm.fasta
 (minasm)$ assembly-stats miniasm.fasta
 
-(minasm)$ dnadiff -p dnadiff ref.fasta miniasm.fasta
+# mummer 比较2个基因组共线性
+(mummer)$ dnadiff -p result ref.fasta miniasm.fasta
+# 访问 www.assemblytics.com，用可视化工具查看比较接俄国
 ```
+
+## Flye 组装
+
+```bash
+# 组装
+(flye)$ flye --nano-raw reads_trimmed.fastq --genome-size 5m --out-dir flye_result
+
+# mummer 比较2个基因组
+(mummer)$ dnadiff -p result ref.fasta flye_result/assembly.fasta
+```
+
+## Reference
+
+1. https://timkahlke.github.io/LongRead_tutorials

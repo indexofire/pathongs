@@ -1,4 +1,4 @@
-# Nanopore Minion/Gridon 测序数据分析
+# Nanopore Minion/Gridon 测序数据处理
 
 {{ git_page_authors }} 更新于: {{ git_revision_date }}
 

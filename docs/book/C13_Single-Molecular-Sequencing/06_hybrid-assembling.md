@@ -20,10 +20,12 @@
 
 ```bash
 # 去除接头，将fastq文件压缩
-(nanopore)$ for fq in {0..11}; do porechop -t 8 -i *_${fq}.fastq -o ${fq}.fastq; done
+(nanopore)$ for fq in {0..11}; do porechop -i *_${fq}.fastq -o ../clean/${fq}.fq; done
+# 文件数量多时可用 parallel 加速
+(nanopore)$ find . -name *.fastq | parallel --max-args=1 porechop -i {1} -o ../clean/{1}
 
 # 去除低质量碱基，将reads平均Q值低于9的去除
-(nanopore)$ for trim in {0..11}; do cat ${trim}.fastq | NanoFilt -q 9 >> trimmed.fastq; done
+(nanopore)$ for trim in ../clean/*.fastq; do cat ${trim} | NanoFilt -q 9 >> trimmed.fastq; done
 
 # unicycler 混合组装illumina和nanopore数据
 (nanopore)$ unicycler -1 R1.fastq.gz -2 R2.fastq.gz -l trimmed.fastq -o hybrid
