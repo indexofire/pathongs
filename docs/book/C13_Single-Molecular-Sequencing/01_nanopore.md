@@ -1,16 +1,31 @@
 # Nanopore Minion/Gridon 测序数据分析
 
+更新于: {{ git_revision_date }}
+
 ---
 
 !!! Abstract "内容介绍"
-    本节以 Minion 为例介绍纳米孔测序下机数据的常用分析路线。
+    本节以介绍纳米孔测序下机数据的常用分析路线。
+
+Nanopore 测序的优点：
+
+- 实验操作方便
+- 数据实时生成，第一时间分析
+- 长读长
+
+Nanopore 测序的
 
 Nanopore 测序因为其特点，因此在 basecalling 和 demultiplexing 上有许多软件可以对其操作。不同软件有基于自己的算法，在速度和准确性上有一定的差异，目前许多软件也在不断的发展和改进中。因此与illumina数据不同，在对其数据进行分析前，这2步操作需要有一个基本的认识。
 
-## basecalling
+## Basecalling
+
+**High accuracy basecalling**
+
+如果只是用于病原检测，那么可以直接使用 fast basecalling 模式获得碱基，普通高性能电脑基本就可以满足需求。而对于数据质量更高，特别对单个碱基进行分析的工作，最好采用基于 GPU 的高精度 basecalling。
 
 目前 Minion/Gridion 采用的 MinKNOW 软件使用的是 Guppy 进行 basecalling 和 demultiplexing。可以使用 fast 和 accuracy 2种模式，前者在高性能的CPU和SSD上可以达到实时basecalling，后者则需要在一个高性能的GPU和SSD上可以做到实时。
 
+Gridion X5 机器自带了 GV100 GPU 可以实时同时为5张芯片进行basecalling。如果是Minion，则需要外接 GPU 做
 
 
 ## demultiplexing
