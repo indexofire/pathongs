@@ -21,11 +21,11 @@
 
 ### **关于我们**
 
-![hzcdc](assets/images/hzcdc.jpg)
+![hzcdc](assets/images/book/hzcdc.jpg)
 
 **杭州市疾控中心微生物检验科病原微生物测序实验室**：从2011年起开始关注NGS技术的发展和在CDC领域内的应用。目前已经基本建设了二代高通量测序和三代单分子实时测序实验室，也构建了生物信息计算硬件设备。通过有计划的学习和进修，初步具备了应用测序技术开展病原应急防控的能力。最近几年也在流感病毒、登革热病毒、诺如病毒和霍乱弧菌、副溶血性弧菌、单增李斯特菌、沙门菌、空肠弯曲菌、蜡样芽胞杆菌、阪崎肠杆菌等病原体的应急检测和科学研究方面做了一些工作。
 
-![lab](assets/images/lab.png)
+![lab](assets/images/book/lab.png)
 
 ---
 
@@ -37,7 +37,7 @@
 
 本笔记主要针对 Miseq 机器的产出数据开展分析，由于原理类似分析软件也大都可以应用在 Illumina 其他型号的仪器数据上。例子都是运行在安装了 Ubuntu 发行版的 Linux PC 服务器或者 Ubuntu 的个人电脑上。
 
-![miseq](assets/images/miseq.jpg) ![ubuntu](assets/images/ubuntu.jpg)
+![miseq](assets/images/book/miseq.jpg) ![ubuntu](assets/images/book/ubuntu.jpg)
 
 本笔记使用开源工具 [Gitbook][] 创作，介绍的工具也几乎均为开源软件。笔记中的许多内容都是来源于网络上的资料，部分来源可能有误或记忆不全，如果原作者发现没有内容链接，或者链接错误，请发送 [电子邮件](mailto:indexofire@gmail.com) 通知修改。同时希望 [Open Source][] 思想能对科研工作和科研工作者有所帮助。
 
@@ -47,7 +47,7 @@
 
 1. 在GitHub上访问本书源码，并fork成为自己的仓库。如下图所示，点击fork按钮，然后用 `git clone` 到本地，设置好代码仓库用户信息。就可以修改并提交代码了。
 
-![](assets/images/fork.png)
+![](assets/images/book/fork.png)
 
 ```bash
 $ git clone git@github.com:your_github_username/pathongs.git
@@ -65,7 +65,7 @@ $ git push
 ```
 
 3. 这样你自己的代码分支`master`与源代码分支就会出现差异，要合并这些差异，就要在GitHub网站上提交`pull request`。如下图所示如果有代码。
-![](assets/images/pull_request.png)
+![](assets/images/book/pull_request.png)
 
 4. 由于源代码仓库也会经常更新或者合并其他pull request代码，需要定期使用源项目仓库内容来更新自己仓库内容。
 

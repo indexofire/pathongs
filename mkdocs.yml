@@ -33,30 +33,30 @@ nav:
       - '08. SeqKit 工具': book/C01_Common-Utility/08_seqkit.md
       - '09. Kmer 工具': book/C01_Common-Utility/09_kmer.md
     - '第二章 组装与比对':
-      - '01. 基本比对流程': book/C02_Assembly-and-Mapping/01_bwa-samtools-pipeline.md
-      - '02. Quast 验证': book/C02_Assembly-and-Mapping/02_quast.md
-      - '03. 细菌基因组组装': book/C02_Assembly-and-Mapping/03_bacteria-assembly.md
-      - '04. 病毒基因组组装': book/C02_Assembly-and-Mapping/04_virus-assembly.md
-      - '05. GATK3': book/C02_Assembly-and-Mapping/05_gatk3.md
-      - '06. GATK4': book/C02_Assembly-and-Mapping/06_gatk4.md
+      - '01. 基本比对流程': book/C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline.md
+      - '02. Quast 验证': book/C02_Raw-Data-to-Genome/02_quast.md
+      - '03. 细菌基因组组装': book/C02_Raw-Data-to-Genome/03_bacteria-assembly.md
+      - '04. 病毒基因组组装': book/C02_Raw-Data-to-Genome/04_virus-assembly.md
+      - '05. GATK3': book/C02_Raw-Data-to-Genome/05_gatk3.md
+      - '06. GATK4': book/C02_Raw-Data-to-Genome/06_gatk4.md
       #- '10. snap': C04_Pathogen-Genome-Assembly/10_snap.md
-      - '11. 长序列比对': book/C02_Assembly-and-Mapping/11_long-noisy-reads-assembly.md
-      - '12. 二代三代混合组装': book/C02_Assembly-and-Mapping/12_hybrid-assembly.md
-      - '14. bwa 长序列比对': book/C02_Assembly-and-Mapping/14_bwa-long-sequence-mapping.md
+      - '11. 长序列比对': book/C02_Raw-Data-to-Genome/11_long-noisy-reads-assembly.md
+      - '12. 二代三代混合组装': book/C02_Raw-Data-to-Genome/12_hybrid-assembly.md
+      - '14. bwa 长序列比对': book/C02_Raw-Data-to-Genome/14_bwa-long-sequence-mapping.md
       #- '15. whatshap': C04_Pathogen-Genome-Assembly/15_whatshap.md
     - '第三章 基因组注释':
-      - '01. Prokka 快速注释': book/C05_Genome-Annotation/01_prokka.md
-      - '02. 在线注释工具 rast': book/C05_Genome-Annotation/02_rast.md
-      - '03. 注释工具 PGAAP': book/C05_Genome-Annotation/03_pgaap.md
-      - '04. SNP注释工具 snpEFF': book/C05_Genome-Annotation/04_snpeff.md
-      - '05. COG注释': book/C05_Genome-Annotation/05_cog.md
+      - '01. Prokka 快速注释': book/C03_Genome-Annotation/01_prokka.md
+      - '02. 在线注释工具 rast': book/C03_Genome-Annotation/02_rast.md
+      - '03. 注释工具 PGAAP': book/C03_Genome-Annotation/03_pgaap.md
+      - '04. SNP注释工具 snpEFF': book/C03_Genome-Annotation/04_snpeff.md
+      - '05. COG注释': book/C03_Genome-Annotation/05_cog.md
     - '第四章 基因组比较':
       - '01. mummer': book/C06_Genome-Compare/01_mummer.md
       - '02. nucdiff': book/C06_Genome-Compare/02_nucdiff.md
       - '03. mauve': book/C06_Genome-Compare/03_mauve.md
       - '04. sibelia': book/C06_Genome-Compare/04_sibelia.md
       - '05. ani': book/C06_Genome-Compare/05_ani.md
-      - '10. bigsi': book/06_Genome-Compare/10_bigsi.md
+      - '10. bigsi': book/C06_Genome-Compare/10_bigsi.md
     - '第五章 泛基因组分析':
       - '01. Pangenome 概述': book/C07_PanGenome-and-CoreGenome/01_pangenome.md
       - '02. Get_Homologues 分析': book/C07_PanGenome-and-CoreGenome/02_get_homologues.md
@@ -81,10 +81,10 @@ nav:
       - '02. Gubbins 分析': book/C10_Recombination-and-Population-Structure/02_gubbins.md
       - '03. BAPS': book/C10_Recombination-and-Population-Structure/03_baps.md
     - '第九章 细菌扫描工具':
-      - '01. SRST2 短序列扫描工具': book/C11_Insilico-Genome-Application/01_srst2.md
-      - '02. MLST 扫描工具': book/C11_Insilico-Genome-Application/02_mlst.md
-      - '03. Ariba 耐药基因': book/C11_Insilico-Genome-Application/03_ariba.md
-      - '04. Abricate 多功能扫描工具': book/C11_Insilico-Genome-Application/04_abricate.md
+      - '01. SRST2 短序列扫描工具': book/C11_Insilico-Scanning/01_srst2.md
+      - '02. MLST 扫描工具': book/C11_Insilico-Scanning/02_mlst.md
+      - '03. Ariba 耐药基因': book/C11_Insilico-Scanning/03_ariba.md
+      - '04. Abricate 多功能扫描工具': book/C11_Insilico-Scanning/04_abricate.md
     - '第十章 宏基因组分析':
       - '01. kraken': book/C12_Metagenomics-Analysis/01_kraken.md
       - '02. centrifuge': book/C12_Metagenomics-Analysis/02_centrifuge.md
@@ -106,11 +106,11 @@ nav:
       - '06. hybrid': book/C13_Single-Molecular-Sequencing/06_hybrid-assembling.md
     - '第十二章 多重序列比对':
       - '01. 多重序列比对': book/C14_Multiple-Sequence-Alignment/01_msa.md
-      - '02. RAxML': book/C14_Phylogeny-Analysis/02_raxml.md
     - '第十三章 进化树构建分析':
       - '00. 构建进化书': book/C15_Phylogeny-Analysis/00_all-about-phylogeny.md
-      - '01. figtree': book/C15_Phylogeny-Analysis/01_figtree.md
-      - '02. ggtree': book/C15_Phylogeny-Analysis/02_ggtree.md
+      - '01. RAxML': book/C15_Phylogeny-Analysis/02_raxml.md
+      - '02. figtree': book/C15_Phylogeny-Analysis/01_figtree.md
+      - '03. ggtree': book/C15_Phylogeny-Analysis/02_ggtree.md
     - '第十七章 分子地理流行病学':
       - '04. CartoDB': book/C17_Pathogen-Geospatial-Analysis/04_cartodb.md
       - '05. leaflet': book/C17_Pathogen-Geospatial-Analysis/05_leaflet.md
