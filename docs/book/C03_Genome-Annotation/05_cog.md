@@ -1,4 +1,4 @@
-# 基因功能注释
+# COG 数据库
 
 {{ git_page_authors }} 更新于: {{ git_revision_date }}
 
@@ -27,67 +27,53 @@
 
 **COG**是通过把所有完整测序的基因组的编码蛋白一个一个的互相比较确定的。在考虑来自一个给定基因组的蛋白时，这种比较将给出每个其他基因组的一个最相似的蛋白。这些基因的每一个都轮番的被考虑。如果在这些蛋白（或子集）之间一个相互的最佳匹配关系被发现，那么那些相互的最佳匹配将形成一个COG。这样，一个COG中的成员将与这个COG中的其他成员比起被比较的基因组中的其他蛋白更相像，尽管如果绝对相似性比较的。最佳匹配原则的使用，没有了人为选择的统计切除的限制，这就兼顾了进化慢和进化快的蛋白。然而，还有一个加的限制就是一个COG必须包含来自于3个种系发生上远的基因组的一个蛋白。
 
+COG数据库主要包括细菌和真菌的蛋白信息；真核生物的一般称为KOG数据库。通过比对可以将某个蛋白序列注释到某一个COG中。根据直系同源序列构成的COG，如果序列近似，则可以推测该序列的功能。
 
 ### COG的分类
 
+COG数据库可以根据特性分为3个方向，按照功能一共可以分为二十六类。
 
 INFORMATION STORAGE AND PROCESSING
 
-[J] Translation, ribosomal structure and biogenesis
-
-[A] RNA processing and modification
-
-[K] Transcription
-
-[L] Replication, recombination and repair
-
-[B] Chromatin structure and dynamics
+- [J] Translation, ribosomal structure and biogenesis
+- [A] RNA processing and modification
+- [K] Transcription
+- [L] Replication, recombination and repair
+- [B] Chromatin structure and dynamics
 
 CELLULAR PROCESSES AND SIGNALING
 
-[D] Cell cycle control, cell division, chromosome partitioning
-
-[Y] Nuclear structure
-
-[V] Defense mechanisms
-
-[T] Signal transduction mechanisms
-
-[M] Cell wall/membrane/envelope biogenesis
-
-[N] Cell motility
-
-[Z] Cytoskeleton
-
-[W] Extracellular structures
-
-[U] Intracellular trafficking, secretion, and vesicular transport
-
-[O] Posttranslational modification, protein turnover, chaperones
+- [D] Cell cycle control, cell division, chromosome partitioning
+- [Y] Nuclear structure
+- [V] Defense mechanisms
+- [T] Signal transduction mechanisms
+- [M] Cell wall/membrane/envelope biogenesis
+- [N] Cell motility
+- [Z] Cytoskeleton
+- [W] Extracellular structures
+- [U] Intracellular trafficking, secretion, and vesicular transport
+- [O] Posttranslational modification, protein turnover, chaperones
+- [X] Mobilome: prophages, transposons
 
 METABOLISM
 
-[C] Energy production and conversion
-
-[G] Carbohydrate transport and metabolism
-
-[E] Amino acid transport and metabolism
-
-[F] Nucleotide transport and metabolism
-
-[H] Coenzyme transport and metabolism
-
-[I] Lipid transport and metabolism
-
-[P] Inorganic ion transport and metabolism
-
-[Q] Secondary metabolites biosynthesis, transport and catabolism
+- [C] Energy production and conversion
+- [G] Carbohydrate transport and metabolism
+- [E] Amino acid transport and metabolism
+- [F] Nucleotide transport and metabolism
+- [H] Coenzyme transport and metabolism
+- [I] Lipid transport and metabolism
+- [P] Inorganic ion transport and metabolism
+- [Q] Secondary metabolites biosynthesis, transport and catabolism
 
 POORLY CHARACTERIZED
 
-[R] General function prediction only
+- [R] General function prediction only
+- [S] Function unknown
 
-[S] Function unknown
+最早从1997年开始推出COG，到2003年发布版本，2014年更新过一次，2020年由有一个新的版本。目前项目主页：https://www.ncbi.nlm.nih.gov/research/cog，可以在线检索获得COG信息以及携带该COG的细菌基因组Assembly信息，并链接到Genbank的蛋白质序列数据。
+
+如果开发web应用，NCBI也可提供了相应的Web Services。如果要获得数据库信息，可以到 https://www.ncbi.nlm.nih.gov/research/cog-project/，访问NCBI Ftp下载。COG的软件可以到ftp://ftp.ncbi.nih.gov/pub/wolf/COGs/COGsoft下载。
 
 ```bash
 # 2003版 COGs
@@ -96,8 +82,19 @@ $ makeblastdb -in myva -dbtype prot -title cog -parse_seqids \
 > -out PATH/TO/DB/cog -logfile PATH/TO/DB/cog.log
 
 # 2014版 COGs
-$
+$ wget -r ftp://ftp.ncbi.nih.gov/pub/COG/COG2014/data/* .
+$ gunzip prot2003-2014.fa.gz
 ```
+
+**2020版 COGs**
+
+ftp://ftp.ncbi.nih.gov/pub/COG/COG2020/data
+
+- cog-20.cog.tsv COG蛋白信息
+- cog-20.def.tab COG注释信息
+- cog-20.org.csv Genome Assembly
+- cog-20.tax.csv 物种分类信息
+- fun.tab COG分类信息
 
 ### 2014版 COGs的数据文件
 
@@ -138,71 +135,8 @@ fasta格式的所有序列以及信息
 MIIFKRHSQAILFSHNKQEKALLGIEGMHCEGCAIAIETALKNVKGIIDTKVNYSRGSAI
 VTFDDTLVSINDILEHYIFKVPSNYRAKLVSFIS`
 
-## 2. KEGG
+COG软件下载地址
 
-[KEGG](https://www.genome.jp/kegg/)是日本构建的为基因组、酶促途径以及生物化学物质在线数据库。它主要构建了代谢关系中的分子相互作用网络以及具体生物所有的变化形式。
-
-系统信息
-- PATHWAY — 细胞与生物机能的路径图
-- MODULE — 基因模组与功能单位
-- BRITE — 生物实体的阶层分类
-
-基因组信息
-- GENOME — 基因组全体
-- GENES — 基因组全域的基因与蛋白列表
-- ORTHOLOGY — 基因组全域的基因直系同源组别
-
-化学信息
-- COMPOUND, GLYCAN — 化合物与聚糖
-- REACTION, RPAIR, RCLASS — 化学反应
-- ENZYME — 酶命名法
-
-健康信息
-- DISEASE — 人类疾病
-- DRUG — 已批准药物
-- 环境 — 生药及与健康相关的物质
-
-## 3. EggNOG
-
-[EggNOG](http://eggnogdb.embl.de/#/app/home)
-
-[EggNOG-mapper](https://github.com/jhcepas/eggnog-mapper)
-
-### 3.1 本地安装 EggNOG-mapper
-
-```bash
-# 安装
-$ conda create -n eggnog
-$ conda activate eggnog
-(eggnog)$ conda install eggnog-mapper
-# 我们只关心细菌和病毒的基因组注释，因此只下载这2个数据库
-# 各个单独数据库参见 http://beta-eggnogdb.embl.de/download/eggnog_4.5/hmmdb_levels
-(eggnog)$ cd PATH/TO/DATA
-(eggnog)$ download_eggnog_data.py -yq --data_dir `pwd` bact
-```
-
-### 3.2 注释
-
-emapper 的默认算法是hmm，如果想用diamond来做cluster，可以用`-m diamond`参数
-
-```bash
-# HMM 注释
-# 针对细菌基因组数据库，使用40个CPU内核，数据库运行在内存中
-(eggnog)$ emapper.py -i mygenome.fa -d bact --data_dir PATH/TO/DATA \
-> --cpus 40 --usemem -o mygenome_bact_result
-# 针对病毒基因组数据库
-(eggnog)$ emapper.py -i mygenome.fa -d viruses --data_dir PATH/TO/DATA -o mygenome_virus_result
-# Diamond 注释
-(eggnog)$ emapper.py -i mygenome.fa -d bact -m diamond --data_dir PATH/TO/DATA -o mygenome_bact_result
-```
-
-### 3.3 结果
-
-- \*.emapper.hmm_hits
-- \*.emapper.seed_orthologs
-- \*.emapper.annotations
-
-hmm_hits 文件
 
 ## 参考资料
 
@@ -212,3 +146,4 @@ hmm_hits 文件
 4. Li WH, Yang J, Gu X (2005) "Expression divergence between duplicate genes". Trends Genet, 21:602-607.
 5. http://blog.sciencenet.cn/blog-217859-280960.html
 6. http://homepage.usask.ca/~ctl271/857/def_homolog.shtml
+7. https://www.jianshu.com/p/f4060461c951

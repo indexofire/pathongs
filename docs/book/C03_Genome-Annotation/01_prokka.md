@@ -6,9 +6,9 @@
 
 [Prokka][] 是一个原核物种基因组注释工具，由墨尔本大学生物信息学家 [Torsten Seemann](https://tseemann.github.io/) 开发的基于命令行的本地快速注释工具，用来注释小基因组比如细菌、病毒等非常方便、快速。
 
-## 安装
+## 安装 Prokka
 
-### 1. 系统级安装
+### 1.下载安装
 
 如果下载预编译包安装的话，需要有Bioperl支持。以及一些第三方库和软件的支持。
 
@@ -17,11 +17,11 @@
 $ sudo apt-get install cpanminus
 $ cpanm Bio::Perl XML::Simple
 
-安装其他依赖
+# 安装其他依赖
 $ sudo apt-get install libdatetime-perl libxml-simple-perl libdigest-md5-perl git default-jre bioperl
 
-#安装 rRNA 注释功能
-#这里选择 Barrnap 和 MINCED
+# 安装 rRNA 注释功能
+# 这里选择 Barrnap 和 MINCED
 $ wget http://www.vicbioinformatics.com/barrnap-0.6.tar.gz
 $ tar zxvf barrnap-0.5.tar.gz -C ~/app/
 $ echo "export PATH=$PATH:$HOME/app/barrnap-0.6/bin" >> ~/.bashrc
@@ -29,13 +29,13 @@ $ source ~/.bashrc
 $ wget https://github.com/ctSkennerton/minced/releases/download/0.3.0/minced
 $ sudo cp minced /usr/local/sbin
 
-#安装 ncRNA 注释功能**
-#使用 infernal
+# 安装 ncRNA 注释功能**
+# 使用 infernal
 $ wget http://eddylab.org/infernal/infernal-1.1.2.tar.gz
 $ tar zxvf infernal-1.1.2.tar.gz -C ~/app/
 $ echo "export PATH=$PATH:$HOME/app/infernal-1.1.2"
 
-#安装 prokka
+# 安装 prokka
 $ wget http://www.vicbioinformatics.com/prokka-1.12.tar.gz
 $ tar zxvf prokka-1.12.tar.gz -C ~/app
 $ echo "export PATH=$PATH:$HOME/app/prokka-1.12/bin" >> ~/.bashrc
@@ -49,12 +49,15 @@ $ prokka --setupdb
 ### 2. conda 安装
 
 ```bash
+# 创建 conda 虚拟环境
 $ conda create -n prokka
 $ conda activate prokka
 (prokka)$ conda install prokka=1.14
 ```
 
 ## 使用 Prokka
+
+Prokka 的使用非常简单，准备好需要注释的核酸序列fasta格式文件即可。这里用*Listeria monocytogenes*的参考基因组egd为例。
 
 ```bash
 # 下载基因组数据
@@ -103,22 +106,24 @@ $ prokka --outdir egd --prefix egd --addgenes --addmrna --compliant --centre CDC
 
 **--kingdom**
 
-默认注释的是细菌基因组，如果是其他物种则要添加这个参数。可选项有：
+默认注释的是细菌基因组，如果是其他物种则建议添加物种参数。可选项有：
 
-* Archaea
-* Bacteria
-* Mitochondria
-* Viruses
+* Archaea: 真菌
+* Bacteria: 细菌
+* Mitochondria: 线立体
+* Viruses: 病毒
 
-比如要注释病毒基因组：
+如果要注释病毒基因组，除了添加`--kingdom`外
 
 ```bash
 $ prokka --kingdom Viruses contigs.fasta
 ```
 
-### .err 文件
+**.err 文件**
 
-### .tsv 文件
+err 文件记录了注释过程中的反馈日志。
+
+**.tsv 文件**
 
 tsv 文件按照 locus_tag 顺序排序了注释的结果。
 
@@ -146,17 +151,6 @@ DJECODEN_00003  mRNA    1344    yeeO_1
 - COG: 基因对应的COG
 - product: 基因编码的蛋白质产物
 
-```bash
-# 将注释CDS长度排序
-$ awk '/CDS/ {print $0}' egd.tsv | sort -kn3 -r | less
-
-# 显示所有的不重复注释产物
-$ awk '!a[$1]++{print}' egd.tsv
-
-# 显示所有COG注释
-$ awk '/COG/' egd.tsv
-```
-
 ## 应用示例
 
 ```bash
@@ -168,6 +162,15 @@ $ find . -name *.fna | sed 's/\.fna//g' | \
 
 # 注释宏基因组
 $ prokka --metagenome --outdir meta contigs.fa
+
+# 将注释CDS长度排序
+$ awk '/CDS/ {print $0}' egd.tsv | sort -kn3 -r | less
+
+# 显示所有的不重复注释产物
+$ awk '!a[$1]++{print}' egd.tsv
+
+# 显示所有COG注释
+$ awk '/COG/' egd.tsv
 ```
 
 ## Reference
