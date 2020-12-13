@@ -1,0 +1,2458 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="杭州疾控中心测序实验室">
+      
+      
+        <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C12_Metagenomics-Analysis/10_16s/">
+      
+      
+        <meta name="author" content="indexofire">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+    
+    
+      
+        <title>10. 16S 种群分析 - 杭州疾控中心测序实验室</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4dd2dd8d.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.6a5ad368.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4051b5">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-55420348-3","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#16s-rrna-metagenomics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            杭州疾控中心测序实验室
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              10. 16S 种群分析
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        首页
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../main/" class="md-tabs__link md-tabs__link--active">
+          数据分析笔记
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../tutorial/Linux/01_linux-installation/" class="md-tabs__link">
+          专项教程
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../protocol/" class="md-tabs__link">
+          实验手册
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../about/" class="md-tabs__link">
+          关于我们
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    杭州疾控中心测序实验室
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="首页" class="md-nav__link">
+      首页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      数据分析笔记
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="数据分析笔记" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        数据分析笔记
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../main/" title="第零章 开始之前" class="md-nav__link">
+      第零章 开始之前
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      第一章 常用工具
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第一章 常用工具" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        第一章 常用工具
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/01_database/" title="01. 基因组公共数据库" class="md-nav__link">
+      01. 基因组公共数据库
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/02_get-data/" title="02. 下载基因组数据" class="md-nav__link">
+      02. 下载基因组数据
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/03_entrez/" title="03. Entrez 工具" class="md-nav__link">
+      03. Entrez 工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/04_emboss/" title="04. EMBOSS 工具集" class="md-nav__link">
+      04. EMBOSS 工具集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/05_blast/" title="05. Blast 比对" class="md-nav__link">
+      05. Blast 比对
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/08_seqkit/" title="08. SeqKit 工具" class="md-nav__link">
+      08. SeqKit 工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/09_kmer/" title="09. Kmer 工具" class="md-nav__link">
+      09. Kmer 工具
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      第二章 组装与比对
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第二章 组装与比对" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        第二章 组装与比对
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline/" title="01. 基本比对流程" class="md-nav__link">
+      01. 基本比对流程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Raw-Data-to-Genome/02_quast/" title="02. Quast 验证" class="md-nav__link">
+      02. Quast 验证
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Raw-Data-to-Genome/03_bacteria-assembly/" title="03. 细菌基因组组装" class="md-nav__link">
+      03. 细菌基因组组装
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Raw-Data-to-Genome/04_virus-assembly/" title="04. 病毒基因组组装" class="md-nav__link">
+      04. 病毒基因组组装
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Raw-Data-to-Genome/05_gatk3/" title="05. GATK3" class="md-nav__link">
+      05. GATK3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Raw-Data-to-Genome/06_gatk4/" title="06. GATK4" class="md-nav__link">
+      06. GATK4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Raw-Data-to-Genome/11_long-noisy-reads-assembly/" title="11. 长序列比对" class="md-nav__link">
+      11. 长序列比对
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Raw-Data-to-Genome/12_hybrid-assembly/" title="12. 二代三代混合组装" class="md-nav__link">
+      12. 二代三代混合组装
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C02_Raw-Data-to-Genome/14_bwa-long-sequence-mapping/" title="14. bwa 长序列比对" class="md-nav__link">
+      14. bwa 长序列比对
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      第三章 基因组注释
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第三章 基因组注释" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        <span class="md-nav__icon md-icon"></span>
+        第三章 基因组注释
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C03_Genome-Annotation/01_prokka/" title="01. Prokka 快速注释" class="md-nav__link">
+      01. Prokka 快速注释
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C03_Genome-Annotation/02_rast/" title="02. 在线注释工具 rast" class="md-nav__link">
+      02. 在线注释工具 rast
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C03_Genome-Annotation/03_pgaap/" title="03. 注释工具 PGAAP" class="md-nav__link">
+      03. 注释工具 PGAAP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C03_Genome-Annotation/04_snpeff/" title="04. SNP注释工具 snpEFF" class="md-nav__link">
+      04. SNP注释工具 snpEFF
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C03_Genome-Annotation/05_cog/" title="05. COG注释" class="md-nav__link">
+      05. COG注释
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      第四章 基因组比较
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第四章 基因组比较" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        <span class="md-nav__icon md-icon"></span>
+        第四章 基因组比较
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C06_Genome-Compare/01_mummer/" title="01. mummer" class="md-nav__link">
+      01. mummer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C06_Genome-Compare/02_nucdiff/" title="02. nucdiff" class="md-nav__link">
+      02. nucdiff
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C06_Genome-Compare/03_mauve/" title="03. mauve" class="md-nav__link">
+      03. mauve
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C06_Genome-Compare/04_sibelia/" title="04. sibelia" class="md-nav__link">
+      04. sibelia
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C06_Genome-Compare/05_ani/" title="05. ani" class="md-nav__link">
+      05. ani
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C06_Genome-Compare/10_bigsi/" title="10. bigsi" class="md-nav__link">
+      10. bigsi
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      第五章 泛基因组分析
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第五章 泛基因组分析" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        <span class="md-nav__icon md-icon"></span>
+        第五章 泛基因组分析
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C07_PanGenome-and-CoreGenome/01_pangenome/" title="01. Pangenome 概述" class="md-nav__link">
+      01. Pangenome 概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C07_PanGenome-and-CoreGenome/02_get_homologues/" title="02. Get_Homologues 分析" class="md-nav__link">
+      02. Get_Homologues 分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C07_PanGenome-and-CoreGenome/03_bpga/" title="03. BPGA 分析" class="md-nav__link">
+      03. BPGA 分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C07_PanGenome-and-CoreGenome/04_roary/" title="04. Roary 分析" class="md-nav__link">
+      04. Roary 分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C07_PanGenome-and-CoreGenome/05_panseq/" title="05. panseq 分析" class="md-nav__link">
+      05. panseq 分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C07_PanGenome-and-CoreGenome/07_orthmcl/" title="07. OrthMCL 分析" class="md-nav__link">
+      07. OrthMCL 分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C07_PanGenome-and-CoreGenome/08_itep/" title="08. ITEP 分析" class="md-nav__link">
+      08. ITEP 分析
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
+    
+    <label class="md-nav__link" for="nav-2-7">
+      第六章 基因组可视化
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第六章 基因组可视化" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-7">
+        <span class="md-nav__icon md-icon"></span>
+        第六章 基因组可视化
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C08_Genome-Visualization/01_igv/" title="01. igv 查看比对结果" class="md-nav__link">
+      01. igv 查看比对结果
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C08_Genome-Visualization/02_brig/" title="02. BRIG 分析工具" class="md-nav__link">
+      02. BRIG 分析工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C08_Genome-Visualization/03_circos/" title="03. circos 工具使用" class="md-nav__link">
+      03. circos 工具使用
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-8" type="checkbox" id="nav-2-8">
+    
+    <label class="md-nav__link" for="nav-2-8">
+      第七章 综合分析平台
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第七章 综合分析平台" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-8">
+        <span class="md-nav__icon md-icon"></span>
+        第七章 综合分析平台
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C09_Analysis-Platform/01_docker/" title="01. 基于 docker 镜像" class="md-nav__link">
+      01. 基于 docker 镜像
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C09_Analysis-Platform/02_galaxy/" title="02. Galaxy 平台" class="md-nav__link">
+      02. Galaxy 平台
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C09_Analysis-Platform/03_amazon/" title="03. Amazon EC2 云平台" class="md-nav__link">
+      03. Amazon EC2 云平台
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C09_Analysis-Platform/04_others/" title="04. 其他平台" class="md-nav__link">
+      04. 其他平台
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C16_Standalone-Platform/01_anvio/" title="05. anvio" class="md-nav__link">
+      05. anvio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C16_Standalone-Platform/02_galaxy/" title="02. galaxy" class="md-nav__link">
+      02. galaxy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-9" type="checkbox" id="nav-2-9">
+    
+    <label class="md-nav__link" for="nav-2-9">
+      第八章 重组与种群分析
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第八章 重组与种群分析" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-9">
+        <span class="md-nav__icon md-icon"></span>
+        第八章 重组与种群分析
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C10_Recombination-and-Population-Structure/01_virus-recombination/" title="01. 病毒重组" class="md-nav__link">
+      01. 病毒重组
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C10_Recombination-and-Population-Structure/02_gubbins/" title="02. Gubbins 分析" class="md-nav__link">
+      02. Gubbins 分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C10_Recombination-and-Population-Structure/03_baps/" title="03. BAPS" class="md-nav__link">
+      03. BAPS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-10" type="checkbox" id="nav-2-10">
+    
+    <label class="md-nav__link" for="nav-2-10">
+      第九章 细菌扫描工具
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第九章 细菌扫描工具" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-10">
+        <span class="md-nav__icon md-icon"></span>
+        第九章 细菌扫描工具
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C11_Insilico-Scanning/01_srst2/" title="01. SRST2 短序列扫描工具" class="md-nav__link">
+      01. SRST2 短序列扫描工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C11_Insilico-Scanning/02_mlst/" title="02. MLST 扫描工具" class="md-nav__link">
+      02. MLST 扫描工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C11_Insilico-Scanning/03_ariba/" title="03. Ariba 耐药基因" class="md-nav__link">
+      03. Ariba 耐药基因
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C11_Insilico-Scanning/04_abricate/" title="04. Abricate 多功能扫描工具" class="md-nav__link">
+      04. Abricate 多功能扫描工具
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-11" type="checkbox" id="nav-2-11" checked>
+    
+    <label class="md-nav__link" for="nav-2-11">
+      第十章 宏基因组分析
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第十章 宏基因组分析" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-11">
+        <span class="md-nav__icon md-icon"></span>
+        第十章 宏基因组分析
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01_kraken/" title="01. kraken" class="md-nav__link">
+      01. kraken
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02_centrifuge/" title="02. centrifuge" class="md-nav__link">
+      02. centrifuge
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03_bracken/" title="03. bracken" class="md-nav__link">
+      03. bracken
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04_sourmash/" title="04. sourmash" class="md-nav__link">
+      04. sourmash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05_clark/" title="05. clark" class="md-nav__link">
+      05. clark
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06_krona/" title="06. krona" class="md-nav__link">
+      06. krona
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07_pavian/" title="07. pavian" class="md-nav__link">
+      07. pavian
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08_supri/" title="08. supri" class="md-nav__link">
+      08. supri
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09_shotgun/" title="09. shotgun 分析" class="md-nav__link">
+      09. shotgun 分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        10. 16S 种群分析
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="10. 16S 种群分析" class="md-nav__link md-nav__link--active">
+      10. 16S 种群分析
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-16s" class="md-nav__link">
+    1. 原核生物16s宏基因组介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-16s-rrna" class="md-nav__link">
+    2. 16s rRNA 测序数据分析
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 16s rRNA 测序数据分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-pca" class="md-nav__link">
+    2.1 PCA 分析
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 分析实践
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../11_kmerfinder/" title="11. KmerFinder" class="md-nav__link">
+      11. KmerFinder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../12_meta-beetl/" title="12. Meta-BEETL" class="md-nav__link">
+      12. Meta-BEETL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-12" type="checkbox" id="nav-2-12">
+    
+    <label class="md-nav__link" for="nav-2-12">
+      第十一章 单分子测序
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第十一章 单分子测序" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-12">
+        <span class="md-nav__icon md-icon"></span>
+        第十一章 单分子测序
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C13_Single-Molecular-Sequencing/01_nanopore/" title="01. nanopore" class="md-nav__link">
+      01. nanopore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C13_Single-Molecular-Sequencing/02_pacbio/" title="02. pacbio" class="md-nav__link">
+      02. pacbio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C13_Single-Molecular-Sequencing/03_canu/" title="03. canu" class="md-nav__link">
+      03. canu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C13_Single-Molecular-Sequencing/04_seqs-polish/" title="04. trimming" class="md-nav__link">
+      04. trimming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C13_Single-Molecular-Sequencing/06_hybrid-assembling/" title="06. hybrid" class="md-nav__link">
+      06. hybrid
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-13" type="checkbox" id="nav-2-13">
+    
+    <label class="md-nav__link" for="nav-2-13">
+      第十二章 多重序列比对
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第十二章 多重序列比对" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-13">
+        <span class="md-nav__icon md-icon"></span>
+        第十二章 多重序列比对
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C14_Multiple-Sequence-Alignment/01_msa/" title="01. 多重序列比对" class="md-nav__link">
+      01. 多重序列比对
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-14" type="checkbox" id="nav-2-14">
+    
+    <label class="md-nav__link" for="nav-2-14">
+      第十三章 进化树构建分析
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第十三章 进化树构建分析" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-14">
+        <span class="md-nav__icon md-icon"></span>
+        第十三章 进化树构建分析
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C15_Phylogeny-Analysis/00_all-about-phylogeny/" title="00. 构建进化书" class="md-nav__link">
+      00. 构建进化书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C15_Phylogeny-Analysis/02_raxml.md" title="01. RAxML" class="md-nav__link">
+      01. RAxML
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C15_Phylogeny-Analysis/01_figtree.md" title="02. figtree" class="md-nav__link">
+      02. figtree
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C15_Phylogeny-Analysis/02_ggtree.md" title="03. ggtree" class="md-nav__link">
+      03. ggtree
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-15" type="checkbox" id="nav-2-15">
+    
+    <label class="md-nav__link" for="nav-2-15">
+      第十七章 分子地理流行病学
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第十七章 分子地理流行病学" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-15">
+        <span class="md-nav__icon md-icon"></span>
+        第十七章 分子地理流行病学
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C17_Pathogen-Geospatial-Analysis/04_cartodb/" title="04. CartoDB" class="md-nav__link">
+      04. CartoDB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C17_Pathogen-Geospatial-Analysis/05_leaflet/" title="05. leaflet" class="md-nav__link">
+      05. leaflet
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-16" type="checkbox" id="nav-2-16">
+    
+    <label class="md-nav__link" for="nav-2-16">
+      第十八章 分析实践
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第十八章 分析实践" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-16">
+        <span class="md-nav__icon md-icon"></span>
+        第十八章 分析实践
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C18_Analysis-Examples/01_trace-Pae-from-different-source-by-SNP/" title="01. 细菌SNP溯源分析一" class="md-nav__link">
+      01. 细菌SNP溯源分析一
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C18_Analysis-Examples/02_comparative-analysis-Ban-genomes/" title="02. 细菌比较基因组学研究" class="md-nav__link">
+      02. 细菌比较基因组学研究
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-17" type="checkbox" id="nav-2-17">
+    
+    <label class="md-nav__link" for="nav-2-17">
+      第十九章 工具流工具
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第十九章 工具流工具" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-17">
+        <span class="md-nav__icon md-icon"></span>
+        第十九章 工具流工具
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C19_Pipelines-and-Workflows/05_workflow-software/" title="05. workflow工具软件" class="md-nav__link">
+      05. workflow工具软件
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-18" type="checkbox" id="nav-2-18">
+    
+    <label class="md-nav__link" for="nav-2-18">
+      第二十章 其他
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="第二十章 其他" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-18">
+        <span class="md-nav__icon md-icon"></span>
+        第二十章 其他
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../C20_Others/02_gi-to-accession/" title="02. GI转Accession" class="md-nav__link">
+      02. GI转Accession
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      专项教程
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="专项教程" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        专项教程
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Linux入门
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Linux入门" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Linux入门
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Linux/01_linux-installation/" title="01. Linux 安装示例" class="md-nav__link">
+      01. Linux 安装示例
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Linux/02_basic-cml/" title="02. Linux 基本命令" class="md-nav__link">
+      02. Linux 基本命令
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Linux/03_linux-software/" title="03. Linux 软件管理" class="md-nav__link">
+      03. Linux 软件管理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Linux/04_awk/" title="04. awk 列处理工具" class="md-nav__link">
+      04. awk 列处理工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Linux/05_sed/" title="05. sed 行处理工具" class="md-nav__link">
+      05. sed 行处理工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Linux/06_tools/" title="06. 其他命令行工具" class="md-nav__link">
+      06. 其他命令行工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Linux/07_vim/" title="07. vim" class="md-nav__link">
+      07. vim
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      常用编程语言
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="常用编程语言" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon"></span>
+        常用编程语言
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Programming/01_shell/" title="01. Shell 脚本" class="md-nav__link">
+      01. Shell 脚本
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Programming/02_perl/" title="02. Perl 编程" class="md-nav__link">
+      02. Perl 编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Programming/03_python/" title="03. Python 编程" class="md-nav__link">
+      03. Python 编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Programming/04_biopython/" title="04. Biopython 编程" class="md-nav__link">
+      04. Biopython 编程
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Programming/05_r/" title="05. R 编程" class="md-nav__link">
+      05. R 编程
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      数据文件格式
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="数据文件格式" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        <span class="md-nav__icon md-icon"></span>
+        数据文件格式
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Format/01_fasta/" title="01. fasta" class="md-nav__link">
+      01. fasta
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Format/02_embl/" title="02. embl" class="md-nav__link">
+      02. embl
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Format/05_fastq.md" title="03. fastq" class="md-nav__link">
+      03. fastq
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Format/04_gcg/" title="04. gcg" class="md-nav__link">
+      04. gcg
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Format/05_sam/" title="05. sam" class="md-nav__link">
+      05. sam
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Format/06_bam/" title="‘06. bam’" class="md-nav__link">
+      ‘06. bam’
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Format/07_bed/" title="07. bed" class="md-nav__link">
+      07. bed
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Format/08_vcf/" title="08. vcf" class="md-nav__link">
+      08. vcf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Format/09_gff/" title="09. gff" class="md-nav__link">
+      09. gff
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorial/Format/10_cram/" title="10. cram" class="md-nav__link">
+      10. cram
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      实验手册
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="实验手册" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        实验手册
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../protocol/" title="" class="md-nav__link">
+      
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../protocol/artic-network-covid19/" title="ArticNetwork Covid-19测序" class="md-nav__link">
+      ArticNetwork Covid-19测序
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      关于我们
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="关于我们" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        关于我们
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../about/" title="" class="md-nav__link">
+      
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-16s" class="md-nav__link">
+    1. 原核生物16s宏基因组介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-16s-rrna" class="md-nav__link">
+    2. 16s rRNA 测序数据分析
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 16s rRNA 测序数据分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-pca" class="md-nav__link">
+    2.1 PCA 分析
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 分析实践
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/book/C12_Metagenomics-Analysis/10_16s.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="16s-rrna-metagenomics">16s rRNA Metagenomics 研究<a class="headerlink" href="#16s-rrna-metagenomics" title="Permanent link">&para;</a></h1>
+<p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2020-09-14</p>
+<hr />
+<h2 id="1-16s">1. 原核生物16s宏基因组介绍<a class="headerlink" href="#1-16s" title="Permanent link">&para;</a></h2>
+<p>宏基因组 ( Metagenome)(也称微生物环境基因组 Microbial Environmental Genome, 或元基因组) 。是由 Handelsman 等 1998 年提出的新名词, 其定义为“the genomes of the total microbiota found in nature” , 即生境中全部微小生物遗传物质的总和。它包含了可培养的和未可培养的微生物的基因, 目前主要指环境样品中的细菌和真菌的基因组总和。而所谓宏基因组学 (或元基因组学, metagenomics) 就是一种以环境样品中的微生群物体基因组为研究对象, 以功能基因筛选和/或测序分析为研究手段, 以微生物多样性、 种群结构、 进化关系、 功能活性、 相互协作关系及与环境之间的关系为研究目的的新的微生物研究方法。</p>
+<p><strong>如何估计宏基因组样本中的物种组成及丰度？</strong></p>
+<p>宏基因组中的物种分类，一般用OTU (operational taxonomic unit), 即可操作物种单元，来表示。在典型情况下，原核生物的OTU使用16S rDNA来衡量，真核生物的OUT使用18s rDNA来衡量。但选择16S/18S rDNA鉴定物种，存在以下几个问题：</p>
+<ol>
+<li>rDNA之间的平行转移来干扰rDNA鉴定的可靠性。</li>
+<li>在单个细菌中，16r DNA可能存在序列不同的几个拷贝，干扰估计OTU数目的准确性。</li>
+</ol>
+<p>所以，其他备选的标记基因，比如单拷贝的看家基因被推荐用来作为菌种鉴定的标记。</p>
+<p><strong>如何衡量样本中物种的多样性？</strong></p>
+<p>为了估算测序的物种的比例，通常用rarefaction curse来表示。</p>
+<p><strong>宏基因组如何做De Novo拼接？</strong></p>
+<p>由于宏基因组测序的覆盖率通常是不完全的，所以组装所需要的序列并不是很完整。并且组装的时候，可能会把来自不同分类单元（OTU）的序列组装在一起，产生嵌合体基因组。Phrap,Forge,Arachne,JAZZ和Celera Assembler等可用来组装由sanger法产生的宏基因组序列。这些算法大部分都利用mate-pair信息来参与组装。这些算法用顶点来代表每条read,互相重叠的read之间用边连起来，它们的组装问题可以转换成“哈密尔顿路径”搜索问题，即找到一条路径走过所有顶点，且每个顶点只走一次。</p>
+<p><strong>如何进行菌群间差异分析？</strong></p>
+<p>有几种基于序列特征的比较，包括样品间GC含量的比较，微生物基因组大小的比较，系统发育关系树的比较和功能组分的比较。许多比较分析都用到了关联统计学的方法，通常假设有几种元数据影响观测到的宏基因组群体的组分。主成分分析（PCA）和非度量多维标度（NM-MDS）用来图形化展示数据并揭示有哪些因素最影响数据。
+有几种进行宏基因组比较分析的软件。第一个是MEGAN，可以比较两个或几个标准化后的样品的GC含量。第二种是MG-RAST，提供了一种比较功能和基于序列的分析来上传样本。第三种是CAMERA，提供了BLAST接口让客户可以比对40多种现有的宏基因组数据。</p>
+<p><strong>如何预测编码基因？</strong></p>
+<p>目前发现编码基因的方法有两种。一种是基于BLAST比对的方法，这种方法通过比对已有的数据库，可以发现宏基因组数据中有哪些已知基因的同源基因的存在，但缺陷是找不到哪些和已经基因没有同源关系的新基因。第二方法是重新预测基因的方法，这些方法大部分是基于有指导学习和统计模式识别的方法，包括隐马尔科夫模型。GeneMark.hmm就是基于单密码子频率的非均一马尔科夫模型来预测基因的软件，当这些软件用到宏基因组数据上时，这些软件通常无法确定部分的ORF,即使这些 ORF是真实基因的一部分。</p>
+<h2 id="2-16s-rrna">2. 16s rRNA 测序数据分析<a class="headerlink" href="#2-16s-rrna" title="Permanent link">&para;</a></h2>
+<h3 id="21-pca">2.1 PCA 分析<a class="headerlink" href="#21-pca" title="Permanent link">&para;</a></h3>
+<p>PCA 分析(Principal Component Analysis)，即主成分分析，是一种对数据进行简化分析的技术，这种方法可以有效的找出数据中最“主要”的元素和结构，去除噪音和冗余，将原有的复杂数据降维，揭示隐藏在复杂数据背后的简单结构。其优点是简单且无参数限制。通过分析不同样品OTU(97%相似性)组成可以反映样品间的差异和距离，PCA 运用方差分解，将多组数据的差异反映在二维坐标图上，坐标轴取能够最大反映方差值的两个特征值。如样品组成越相似，反映在PCA 图中的距离越近。不同环境间的样品可能表现出分散和聚集的分布情况，PCA 结果中对样品差异性解释度最高的两个或三个成分可以用于对假设因素进行验证。
+软件：使用97%相似度的OTU，PC-ORD或是CANOCO作图。</p>
+<p>PCA 结果图示中坐标轴百分比解释：如果PC1值为50%，则表示x轴的差异可以解释全面分析结果的50%。不同颜色或形状的点代表不同环境或条件下的样本组，横、纵坐标轴的刻度是相对距离，无实际意义。PC1、PC2 分别代表对于两组样本微生物组成发生偏移的疑似影响因素，需要结合样本特征信息归纳总结，例如C组（黄色）和D组（蓝色）样品在PC1轴的方向上分离开来，则可分析为PC1是导致C组和D组分开（可以是两个地点或酸碱不同）的主要因素，同时验证了这个因素有较高的可能性影响了样品的组成。</p>
+<h2 id="3">3. 分析实践<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p><strong>流程</strong></p>
+<ol>
+<li>剪切序列</li>
+<li>FastQC 质控 + SeqQA 统计</li>
+<li>Pandaseq 双向测序数据拼接</li>
+<li>UCHIME 移除复制序列</li>
+<li>UCHIME 移除嵌合体序列</li>
+<li>CREST/RDP Classifier 查询非嵌合体序列，生成物种分配比例</li>
+<li>生成物种各分类层级的结果</li>
+</ol>
+<p><strong>所需安装软件</strong></p>
+<ul>
+<li>sickle</li>
+<li>usearch</li>
+<li>Pandaseq</li>
+<li>FastQC</li>
+<li>CREST/RDP Classifier</li>
+</ul>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: 2020-09-14
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../09_shotgun/" title="09. shotgun 分析" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                09. shotgun 分析
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../11_kmerfinder/" title="11. KmerFinder" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                11. KmerFinder
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2020 HZCDC@Lab
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.3636a4ec.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+      
+        <script src="../../../assets/js/umlconvert.js"></script>
+      
+    
+  </body>
+</html>
