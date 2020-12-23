@@ -189,7 +189,7 @@ Retype new password:
 
 ```bash
 # 安装文泉驿、noto等中文字体
-$ sudo pacman -S ttf-inconsolata wqy-microhei wqy-microhei-light wyq-zenhei wqy-bitmapfont ttf-font-awesome ttf-arphic-ukai ttf-arphic-uming noto-fonts
+$ sudo pacman -S ttf-inconsolata wqy-microhei wqy-microhei-lite wqy-zenhei wqy-bitmapfont ttf-font-awesome ttf-arphic-ukai ttf-arphic-uming noto-fonts
 $ sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 $ sudo unlink /etc/fonts/conf.d/10-scal-bitmap-fonts.conf
 ```
