@@ -8,7 +8,8 @@ theme:
     scheme: default
     primary: 'indigo'
   features:
-    - tabs
+    - navigation.tabs
+    - navigation.sections
   custom_dir: overrides
 copyright: 'Copyright &copy; 2016 - 2020 HZCDC@Lab'
 repo_url: https://github.com/indexofire/pathongs/
