@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C12_Metagenomics-Analysis/02_centrifuge/">
-      
-      
         <meta name="author" content="indexofire">
       
+      
+        <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C12_Metagenomics-Analysis/02_centrifuge/">
+      
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.19753c6b.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.196e0c26.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
         
           
           
@@ -39,7 +39,7 @@
     
       
         
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -67,6 +67,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="">
       
   
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -96,18 +97,20 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             杭州疾控中心测序实验室
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               02. centrifuge
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
@@ -161,17 +164,117 @@
       
       
         
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../main/" class="md-tabs__link md-tabs__link--active">
+        数据分析笔记
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../tutorial/Linux/01_linux-installation/" class="md-tabs__link">
+        专项教程
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../protocol/" class="md-tabs__link">
+        实验手册
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        关于我们
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
       
@@ -202,6 +305,7 @@
       
 
 
+
   <li class="md-nav__item">
     <a href="../../.." class="md-nav__link">
       首页
@@ -213,12 +317,16 @@
       
       
 
+
   
 
 
+  
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
     <label class="md-nav__link" for="nav-2">
       数据分析笔记
       <span class="md-nav__icon md-icon"></span>
@@ -236,6 +344,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../main/" class="md-nav__link">
       第零章 开始之前
@@ -248,9 +357,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" >
+    
     <label class="md-nav__link" for="nav-2-2">
       第一章 常用工具
       <span class="md-nav__icon md-icon"></span>
@@ -268,6 +383,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C01_Common-Utility/01_database/" class="md-nav__link">
       01. 基因组公共数据库
@@ -278,6 +394,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -292,6 +409,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C01_Common-Utility/03_entrez/" class="md-nav__link">
       03. Entrez 工具
@@ -302,6 +420,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -316,6 +435,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C01_Common-Utility/05_blast/" class="md-nav__link">
       05. Blast 比对
@@ -328,6 +448,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C01_Common-Utility/08_seqkit/" class="md-nav__link">
       08. SeqKit 工具
@@ -338,6 +459,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -357,9 +479,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" >
+    
     <label class="md-nav__link" for="nav-2-3">
       第二章 组装与比对
       <span class="md-nav__icon md-icon"></span>
@@ -377,6 +505,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline/" class="md-nav__link">
       01. 基本比对流程
@@ -387,6 +516,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -401,6 +531,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C02_Raw-Data-to-Genome/03_bacteria-assembly/" class="md-nav__link">
       03. 细菌基因组组装
@@ -411,6 +542,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -425,6 +557,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C02_Raw-Data-to-Genome/05_gatk3/" class="md-nav__link">
       05. GATK3
@@ -435,6 +568,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -449,6 +583,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C02_Raw-Data-to-Genome/11_long-noisy-reads-assembly/" class="md-nav__link">
       11. 长序列比对
@@ -461,6 +596,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C02_Raw-Data-to-Genome/12_hybrid-assembly/" class="md-nav__link">
       12. 二代三代混合组装
@@ -471,6 +607,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -490,9 +627,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" >
+    
     <label class="md-nav__link" for="nav-2-4">
       第三章 基因组注释
       <span class="md-nav__icon md-icon"></span>
@@ -510,6 +653,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C03_Genome-Annotation/01_prokka/" class="md-nav__link">
       01. Prokka 快速注释
@@ -520,6 +664,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -534,6 +679,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C03_Genome-Annotation/03_pgaap/" class="md-nav__link">
       03. 注释工具 PGAAP
@@ -546,6 +692,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C03_Genome-Annotation/04_snpeff/" class="md-nav__link">
       04. SNP注释工具 snpEFF
@@ -556,6 +703,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -575,9 +723,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" >
+    
     <label class="md-nav__link" for="nav-2-5">
       第四章 基因组比较
       <span class="md-nav__icon md-icon"></span>
@@ -595,6 +749,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C06_Genome-Compare/01_mummer/" class="md-nav__link">
       01. mummer
@@ -605,6 +760,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -619,6 +775,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C06_Genome-Compare/03_mauve/" class="md-nav__link">
       03. mauve
@@ -629,6 +786,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -643,6 +801,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C06_Genome-Compare/05_ani/" class="md-nav__link">
       05. ani
@@ -653,6 +812,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -672,9 +832,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6" >
+    
     <label class="md-nav__link" for="nav-2-6">
       第五章 泛基因组分析
       <span class="md-nav__icon md-icon"></span>
@@ -692,6 +858,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C07_PanGenome-and-CoreGenome/01_pangenome/" class="md-nav__link">
       01. Pangenome 概述
@@ -702,6 +869,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -716,6 +884,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C07_PanGenome-and-CoreGenome/03_bpga/" class="md-nav__link">
       03. BPGA 分析
@@ -726,6 +895,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -740,6 +910,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C07_PanGenome-and-CoreGenome/05_panseq/" class="md-nav__link">
       05. panseq 分析
@@ -752,6 +923,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C07_PanGenome-and-CoreGenome/07_orthmcl/" class="md-nav__link">
       07. OrthMCL 分析
@@ -762,6 +934,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -781,9 +954,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7" >
+    
     <label class="md-nav__link" for="nav-2-7">
       第六章 基因组可视化
       <span class="md-nav__icon md-icon"></span>
@@ -801,6 +980,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C08_Genome-Visualization/01_igv/" class="md-nav__link">
       01. igv 查看比对结果
@@ -813,6 +993,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C08_Genome-Visualization/02_brig/" class="md-nav__link">
       02. BRIG 分析工具
@@ -823,6 +1004,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -842,9 +1024,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-8" type="checkbox" id="nav-2-8" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-8" type="checkbox" id="nav-2-8" >
+    
     <label class="md-nav__link" for="nav-2-8">
       第七章 综合分析平台
       <span class="md-nav__icon md-icon"></span>
@@ -862,6 +1050,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C09_Analysis-Platform/01_docker/" class="md-nav__link">
       01. 基于 docker 镜像
@@ -872,6 +1061,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -886,6 +1076,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C09_Analysis-Platform/03_amazon/" class="md-nav__link">
       03. Amazon EC2 云平台
@@ -896,6 +1087,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -910,6 +1102,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C16_Standalone-Platform/01_anvio/" class="md-nav__link">
       05. anvio
@@ -920,6 +1113,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -939,9 +1133,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-9" type="checkbox" id="nav-2-9" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-9" type="checkbox" id="nav-2-9" >
+    
     <label class="md-nav__link" for="nav-2-9">
       第八章 重组与种群分析
       <span class="md-nav__icon md-icon"></span>
@@ -959,6 +1159,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C10_Recombination-and-Population-Structure/01_virus-recombination/" class="md-nav__link">
       01. 病毒重组
@@ -971,6 +1172,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C10_Recombination-and-Population-Structure/02_gubbins/" class="md-nav__link">
       02. Gubbins 分析
@@ -981,6 +1183,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1000,9 +1203,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-10" type="checkbox" id="nav-2-10" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-10" type="checkbox" id="nav-2-10" >
+    
     <label class="md-nav__link" for="nav-2-10">
       第九章 细菌扫描工具
       <span class="md-nav__icon md-icon"></span>
@@ -1020,6 +1229,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C11_Insilico-Scanning/01_srst2/" class="md-nav__link">
       01. SRST2 短序列扫描工具
@@ -1030,6 +1240,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1044,6 +1255,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C11_Insilico-Scanning/03_ariba/" class="md-nav__link">
       03. Ariba 耐药基因
@@ -1054,6 +1266,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1072,12 +1285,18 @@
           
           
 
+
   
 
 
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-11" type="checkbox" id="nav-2-11" checked>
+  
+  <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-11" type="checkbox" id="nav-2-11" checked>
+    
     <label class="md-nav__link" for="nav-2-11">
       第十章 宏基因组分析
       <span class="md-nav__icon md-icon"></span>
@@ -1095,6 +1314,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../01_kraken/" class="md-nav__link">
       01. kraken
@@ -1105,6 +1325,7 @@
           
           
           
+
 
   
 
@@ -1164,6 +1385,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../03_bracken/" class="md-nav__link">
       03. bracken
@@ -1174,6 +1396,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1188,6 +1411,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../05_clark/" class="md-nav__link">
       05. clark
@@ -1198,6 +1422,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1212,6 +1437,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../07_pavian/" class="md-nav__link">
       07. pavian
@@ -1222,6 +1448,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1236,6 +1463,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../09_shotgun/" class="md-nav__link">
       09. shotgun 分析
@@ -1246,6 +1474,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1260,6 +1489,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../11_kmerfinder/" class="md-nav__link">
       11. KmerFinder
@@ -1270,6 +1500,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1289,9 +1520,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-12" type="checkbox" id="nav-2-12" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-12" type="checkbox" id="nav-2-12" >
+    
     <label class="md-nav__link" for="nav-2-12">
       第十一章 单分子测序
       <span class="md-nav__icon md-icon"></span>
@@ -1309,6 +1546,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C13_Single-Molecular-Sequencing/01_nanopore/" class="md-nav__link">
       01. nanopore
@@ -1319,6 +1557,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1333,6 +1572,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C13_Single-Molecular-Sequencing/03_canu/" class="md-nav__link">
       03. canu
@@ -1345,6 +1585,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C13_Single-Molecular-Sequencing/04_seqs-polish/" class="md-nav__link">
       04. trimming
@@ -1355,6 +1596,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1374,9 +1616,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-13" type="checkbox" id="nav-2-13" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-13" type="checkbox" id="nav-2-13" >
+    
     <label class="md-nav__link" for="nav-2-13">
       第十二章 多重序列比对
       <span class="md-nav__icon md-icon"></span>
@@ -1392,6 +1640,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1411,9 +1660,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-14" type="checkbox" id="nav-2-14" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-14" type="checkbox" id="nav-2-14" >
+    
     <label class="md-nav__link" for="nav-2-14">
       第十三章 进化树构建分析
       <span class="md-nav__icon md-icon"></span>
@@ -1431,6 +1686,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C15_Phylogeny-Analysis/00_all-about-phylogeny/" class="md-nav__link">
       00. 构建进化书
@@ -1441,6 +1697,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1455,6 +1712,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C15_Phylogeny-Analysis/01_figtree.md" class="md-nav__link">
       02. figtree
@@ -1465,6 +1723,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1484,9 +1743,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-15" type="checkbox" id="nav-2-15" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-15" type="checkbox" id="nav-2-15" >
+    
     <label class="md-nav__link" for="nav-2-15">
       第十七章 分子地理流行病学
       <span class="md-nav__icon md-icon"></span>
@@ -1504,6 +1769,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C17_Pathogen-Geospatial-Analysis/04_cartodb/" class="md-nav__link">
       04. CartoDB
@@ -1514,6 +1780,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1533,9 +1800,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-16" type="checkbox" id="nav-2-16" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-16" type="checkbox" id="nav-2-16" >
+    
     <label class="md-nav__link" for="nav-2-16">
       第十八章 分析实践
       <span class="md-nav__icon md-icon"></span>
@@ -1553,6 +1826,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../C18_Analysis-Examples/01_trace-Pae-from-different-source-by-SNP/" class="md-nav__link">
       01. 细菌SNP溯源分析一
@@ -1563,6 +1837,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1582,9 +1857,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-17" type="checkbox" id="nav-2-17" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-17" type="checkbox" id="nav-2-17" >
+    
     <label class="md-nav__link" for="nav-2-17">
       第十九章 工具流工具
       <span class="md-nav__icon md-icon"></span>
@@ -1600,6 +1881,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1619,9 +1901,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-18" type="checkbox" id="nav-2-18" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-18" type="checkbox" id="nav-2-18" >
+    
     <label class="md-nav__link" for="nav-2-18">
       第二十章 其他
       <span class="md-nav__icon md-icon"></span>
@@ -1637,6 +1925,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1661,9 +1950,13 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+    
     <label class="md-nav__link" for="nav-3">
       专项教程
       <span class="md-nav__icon md-icon"></span>
@@ -1681,9 +1974,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" >
+    
     <label class="md-nav__link" for="nav-3-1">
       Linux入门
       <span class="md-nav__icon md-icon"></span>
@@ -1701,6 +2000,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../../tutorial/Linux/01_linux-installation/" class="md-nav__link">
       01. Linux 安装示例
@@ -1711,6 +2011,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1725,6 +2026,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../../tutorial/Linux/03_linux-software/" class="md-nav__link">
       03. Linux 软件管理
@@ -1735,6 +2037,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1749,6 +2052,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../../tutorial/Linux/05_sed/" class="md-nav__link">
       05. sed 行处理工具
@@ -1761,6 +2065,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../../tutorial/Linux/06_tools/" class="md-nav__link">
       06. 其他命令行工具
@@ -1771,6 +2076,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1790,9 +2096,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+    
     <label class="md-nav__link" for="nav-3-2">
       常用编程语言
       <span class="md-nav__icon md-icon"></span>
@@ -1810,6 +2122,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../../tutorial/Programming/01_shell/" class="md-nav__link">
       01. Shell 脚本
@@ -1820,6 +2133,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1834,6 +2148,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../../tutorial/Programming/03_python/" class="md-nav__link">
       03. Python 编程
@@ -1846,6 +2161,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../../tutorial/Programming/04_biopython/" class="md-nav__link">
       04. Biopython 编程
@@ -1856,6 +2172,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1875,9 +2192,15 @@
           
 
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
+    
     <label class="md-nav__link" for="nav-3-3">
       数据文件格式
       <span class="md-nav__icon md-icon"></span>
@@ -1895,6 +2218,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/01_fasta/" class="md-nav__link">
       01. fasta
@@ -1905,6 +2229,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1919,6 +2244,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/05_fastq.md" class="md-nav__link">
       03. fastq
@@ -1929,6 +2255,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1943,6 +2270,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/05_sam/" class="md-nav__link">
       05. sam
@@ -1953,6 +2281,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1967,6 +2296,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/07_bed/" class="md-nav__link">
       07. bed
@@ -1977,6 +2307,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -1991,6 +2322,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/09_gff/" class="md-nav__link">
       09. gff
@@ -2001,6 +2333,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -2025,9 +2358,13 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+    
     <label class="md-nav__link" for="nav-4">
       实验手册
       <span class="md-nav__icon md-icon"></span>
@@ -2045,6 +2382,7 @@
           
 
 
+
   <li class="md-nav__item">
     <a href="../../../protocol/" class="md-nav__link">
       
@@ -2055,6 +2393,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -2074,9 +2413,13 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+    
     <label class="md-nav__link" for="nav-5">
       关于我们
       <span class="md-nav__icon md-icon"></span>
@@ -2092,6 +2435,7 @@
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -2113,7 +2457,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -2295,15 +2640,15 @@ $ conda activate centrifuge
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.0ac82a11.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.08c56446.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
-          features: ['tabs'],
+          features: ['navigation.tabs', 'navigation.sections'],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../../assets/javascripts/worker/search.8c7e0a7e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
