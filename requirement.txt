@@ -1,4 +1,3 @@
-backcall @ file:///home/conda/feedstock_root/build_artifacts/backcall_1592338393461/work
 backports.functools-lru-cache==1.6.1
 certifi==2020.12.5
 click==7.1.2
