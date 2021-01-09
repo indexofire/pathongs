@@ -7,7 +7,6 @@ gitdb==4.0.5
 GitPython==3.1.8
 htmlmin==0.1.12
 importlib-metadata==1.6.0
-ipython @ file:///home/conda/feedstock_root/build_artifacts/ipython_1598749946943/work
 ipython-genutils==0.2.0
 jedi==0.15.2
 Jinja2==2.11.2
@@ -29,9 +28,7 @@ parso==0.5.2
 pep562==1.0
 pexpect==4.8.0
 pickleshare==0.7.5
-prompt-toolkit @ file:///home/conda/feedstock_root/build_artifacts/prompt-toolkit_1598885455507/work
 ptyprocess==0.6.0
-Pygments @ file:///home/conda/feedstock_root/build_artifacts/pygments_1599933597045/work
 pymdown-extensions==7.1
 python-dateutil==2.8.1
 PyYAML==5.3.1
@@ -42,6 +39,4 @@ smmap==3.0.4
 termcolor==1.1.0
 tornado==6.0.4
 tqdm==4.46.0
-traitlets @ file:///home/conda/feedstock_root/build_artifacts/traitlets_1599471676085/work
-wcwidth @ file:///home/conda/feedstock_root/build_artifacts/wcwidth_1595859607677/work
 zipp==3.1.0
