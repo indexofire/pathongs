@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # ARTIC纳米孔新型冠状病毒基因组测序方案
-=======
-# 新冠状病毒基因组测序
->>>>>>> 329012db3407edb98dc53c7c5d14759b4599738f
 
 {{ git_page_authors }} 更新于: {{ git_revision_date }}
 
