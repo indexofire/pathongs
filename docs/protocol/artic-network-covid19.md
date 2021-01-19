@@ -1,34 +1,36 @@
-# 新型冠状病毒基因组测序
+# ARTIC纳米孔新型冠状病毒基因组测序方案
+
+{{ git_page_authors }} 更新于: {{ git_revision_date }}
 
 ---
 
-本节围绕目前新型冠状病毒基因组测序，根据我们自己实验室的工作流程结合网络上的资源，给需要开展病毒基因组测序的实验室提供帮助。
+!!! abstract "内容简介"
+    根据目前 ARTIC-Network v3 版 Sars-Cov-2 基因组测序方案，根据我们自己实验室的工作流程结合网络上的资源，建立实验方案。
 
-## 实验方法
+## 实验简介
 
-目前常见的新型冠状病毒基因组测序方法较多，这里主要针对ARTIC Network的实验方案进行介绍。该方案采用分组的多重PCR扩增500bp左右的小片段覆盖全基因组，采用Nanopore测序方法进行。对CT30以下的临床标本提取RNA可以获得较好的基因组数据。CT30以上的样本，可能会出现部分区域gap的情况。我们采用该方法在illumina miseq平台也获得了较好的结果。实验方法一并在这里介绍。
+新冠病毒培养需要P3实验室，因此普通实验室只能针对样品核酸进行测序，如何把新冠病毒核酸富集到能够测序的水平是首先要解决的，虽然目前也有探针捕获等试剂盒或者方法，但最常用的方法是采用PCR扩增。我们可以自行设计扩增引物，获得目标片段，不过新冠病毒基因组达～30k，。扩增的方式一般都是采用多重PCR，ARTIC Network的实验方案采用短片段（300~700bp）进行扩增，有利于扩增获得样品中病毒序列较高的丰度。采用Nanopore测序方法，对CT32以下的临床标本容易获得覆盖度较为完整的基因组数据。高CT值的样本，容易出现部分区域测序深度过低或存在gap的情况。我们采用类似方法通过illumina测序平台也获得了较好的结果，有需要时可以互相补充。
 
-> 测序方法汇总可参考CDC的资料 https://github.com/CDCgov/SARS-CoV-2_Sequencing
+本方案适合多样本上机测序，如果样品数量较少，
 
----
+!!! info "测序质量"
+    很多人担心三代测序数据的质量，是否会导致基因组不准确。Artic Network给出了通用的方案。
+    测序方法汇总可参考CDC的资料 https://github.com/CDCgov/SARS-CoV-2_Sequencing
 
-> 本文档采用 ARTIC Network 流程进行实验，可用于illumina平台和nanopore平台对SARS-Cov-2病毒进行基因组测序。
+### 1. cDNA获取
 
-@indexofire <indexofire@gmail.com>
-
-# 1. cDNA获取
-
-## 1.1 试剂与耗材
+#### 1.1 试剂与耗材
 
 - RNA提取试剂
 - [Invitrogen SuperScript™ IV First-Strand Synthesis System](https://www.thermofisher.com/order/catalog/product/18091050#/18091050)
 - 0.2mL PCR管
 
->SSIV的酶无RNaseH活性，获得长片段(～12kb)的全长cDNA效果更好。我们使用SSIII，有中等活性的RNaseH活性，获得的cDNA进行测序也可以成功，在目标reads丰度上SSIV似乎更好一些。
+!!! info "注意事项"
+    SSIV的酶无RNaseH活性，获得长片段cDNA效果更好。SSIII，有中等活性的RNaseH活性，获得的cDNA进行短片段测序也可以成功，如果是长度更长一些的片段，SSIV效果明显更好一些。
 
 ![不同酶的关键逆转录性能比较](https://upload-images.jianshu.io/upload_images/18923961-779adbe79350150a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-## 1.2 实验流程
+#### 1.2 实验流程
 
 - 采用RNA试剂盒手工提取样本总RNA，也可以用机器自动提取。
 
@@ -36,17 +38,17 @@
 
 - 取EP管，依次装入以下试剂，分装到0.2mL PCR中，加入RNA模板，PCR管用移液器吹吸混匀，离心将管壁残液甩下。
 
-| 试剂 | 1x | 8x |
+| 试剂      | 1x        | 8x        |
 | :-------- | :--------:| :--------:|
-| 50µM random hexamers | 1 µl | 8µl |
+| 50µM random hexamers  | 1 µl | 8µl |
 | 10mM dNTPs mix (10mM each) | 1 µl | 8µl |
 | Template RNA | 11 µl | 11µl * 8 |
 | **Total** | **13 µl** | **13µl * 8** |
 
->注意事项：样本RNA做过SARS-CoV-2 qPCR测试，可以根据CT值初步判断RNA含量。如果RNA量在CT18～35之间，可以直接加入模板RNA。如果在12～15之间，100倍稀释；如果在15～18之间，10倍稀释。对于临床病例来说，大部分样本CT值在18～35之间。
-
->使用random hexamers是为了最大程度获得全长cDNA，SSIV自带的random hexamers浓度是50ng/µl，6mers长度，如果加1µl，相当与摩尔数 25e-6µmol，因此根据表中量，需要加2µl。但根据试剂盒说明书中也是加1µl量，因此这里参考说明书。
->推荐加入样本前，在PCR仪上预热。
+!!! info "注意事项"
+    1. 样本RNA做过SARS-CoV-2 qPCR测试，可以根据CT值初步判断RNA含量。如果RNA量在CT18～35之间，可以直接加入模板RNA。如果在12～15之间，100倍稀释；如果在15～18之间，10倍稀释。对于临床病例来说，大部分样本CT值在18～35之间。
+    2. 使用random hexamers是为了最大程度获得全长cDNA，SSIV自带的random hexamers浓度是50ng/µl，6mers长度，如果加1µl，相当与摩尔数 25e-6µmol，因此根据表中量，需要加2µl。但根据试剂盒说明书中也是加1µl量，因此这里参考说明书。
+    3. 推荐加入样本前，在PCR仪上预热。
 
 - 反应体系在PCR仪器中 65°C 5min。然后立即置于冰上至少1min。
 - 按下表配置反应体系，添加到冰上的PCR管中。置于PCR仪器中，42°C 50min，70°C 10min，结束后5°C 保温。这一步要设置105°C热盖。
