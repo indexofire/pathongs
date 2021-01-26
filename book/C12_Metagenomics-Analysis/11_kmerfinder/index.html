@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C12_Metagenomics-Analysis/11_kmerfinder/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2597,13 +2597,11 @@ $ conda activate kmerfinder
 <span class="o">(</span>kmerfinder<span class="o">)</span>$ tar -zxf *.tar.gz
 <span class="o">(</span>kmerfinder<span class="o">)</span>$ rm *.tar.gz
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="c1"># 利用脚本下载</span>
 <span class="o">(</span>kmerfinder<span class="o">)</span>$ git clone https://bitbucket.org/genomicepidemiology/kmerfinder_db.git
 <span class="o">(</span>kmerfinder<span class="o">)</span>$ <span class="nb">cd</span> kmerfinder_db/
 <span class="o">(</span>kmerfinder<span class="o">)</span>$ bash install.sh
 </code></pre></div>
-
 <h3 id="2">2.运行<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>使用 python 脚本运行</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 设置数据库路径</span>
@@ -2622,7 +2620,6 @@ $ conda activate kmerfinder
 <span class="c1"># 生成的结果</span>
 <span class="o">(</span>kmerfinder<span class="o">)</span>$ cat result/results.spa
 </code></pre></div>
-
 <p>生成结果文件：</p>
 <ul>
 <li>data.json</li>
@@ -2632,7 +2629,6 @@ $ conda activate kmerfinder
 <p>建立服务器，提供web页面访问，用docker安装配置更为方便。</p>
 <div class="highlight"><pre><span></span><code>$ docker run --rm -it -v <span class="nv">$HOME</span>/dbs/kmerfinder -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/workdir kmerfinder -h
 </code></pre></div>
-
 <h2 id="_2">参考资料<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li><a href="https://bitbucket.org/genomicepidemiology/kmerfinder">https://bitbucket.org/genomicepidemiology/kmerfinder</a></li>

@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C03_Genome-Annotation/04_snpeff/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2512,7 +2512,6 @@
 <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>$ conda install snpEFF
 </code></pre></div>
-
 <h2 id="_2">使用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># 将 Listeria monocytogenes 涉及的数据库下载</span>
 $ snpEFF databases <span class="p">|</span> awk <span class="s1">&#39;/^Listeria_monocytogenes&#39;</span>/ <span class="o">{</span>print <span class="nv">$4</span><span class="o">}</span><span class="s1">&#39; | awk &#39;</span>!a<span class="o">[</span><span class="nv">$1</span><span class="o">]</span>++<span class="o">{</span>print<span class="o">}</span><span class="err">&#39;</span> <span class="p">|</span> xargs wget

@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C11_Insilico-Scanning/02_mlst/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2545,7 +2545,6 @@ $ conda create -n mlst
 $ conda activate mlst
 <span class="o">(</span>mlst<span class="o">)</span>$ conda install mlst
 </code></pre></div>
-
 <h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>MLST 支持 <code>.fa</code>,<code>.fasta</code>,<code>.gb</code>,<code>.gbk</code>,<code>.fna</code>以及这些格式的gz压缩包格式的文件。不加参数可以对所有物种数据库进行扫描，加上参数<code>--scheme</code>可以对指定物种进行扫描。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 直接扫描 fasta 数据，软件会对序列位点进行判断，选择合适的物种数据库</span>
@@ -2566,7 +2565,6 @@ $ conda activate mlst
 <span class="c1"># 将结果保存</span>
 <span class="o">(</span>mlst<span class="o">)</span>$ mlst --scheme senterica fna/*.fna &gt; mlst.result
 </code></pre></div>
-
 <p>更新数据库：MLST数据库随着新添加的数据而不断更新，使用bigsdb建立的MLST数据库可以很方便的更新allele序列和菌株数据。mlst工具也提供了自动化脚本工具更新数据库。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 更新pubmlst数据库</span>
 <span class="o">(</span>mlst<span class="o">)</span>$ <span class="nb">cd</span> <span class="nv">$CONDA_PREFIX</span>/scripts
@@ -2576,7 +2574,6 @@ $ conda activate mlst
 <span class="c1"># 更新blast数据库</span>
 <span class="o">(</span>mlst<span class="o">)</span>$ ./mlst-make_blast_db
 </code></pre></div>
-
 <h2 id="3">3. 应用举例<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>对 NCBI genome 数据库中 bacillus cereus 的 Assembly 进行扫描获取 MLST 数据。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># edirect 抓取 FTP 链接，awk补全下载路径，用 wget 工具批量下载（设置相应参数避免进入下载假死状态）</span>
@@ -2590,7 +2587,6 @@ $ esearch -db assembly -query <span class="s2">&quot;Bacillus cereus[ORGN] AND l
 <span class="o">(</span>mlst<span class="o">)</span>$ mlst --scheme bcereus *.fna.gz &gt; ../bcereus-mlst-result.txt
 <span class="o">(</span>mlst<span class="o">)</span>$ cat ../bcereus-mlst-result.txt
 </code></pre></div>
-
 <h2 id="4">4. 其他<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>与MLST分析的相关操作</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 对沙门菌某个序列位点进行多重序列比对并构建进化树</span>

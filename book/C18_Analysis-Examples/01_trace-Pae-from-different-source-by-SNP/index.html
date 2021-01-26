@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C18_Analysis-Examples/01_trace-Pae-from-different-source-by-SNP/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2783,7 +2783,6 @@ $ mkdir pae-case <span class="o">&amp;&amp;</span> <span class="nb">cd</span> pa
 $ wget -m http://www.microbesng.uk/filedist/pseudomonas-practical/
 $ mv www.microbesng.uk/filedist/pseudomonas-practical/* .
 </code></pre></div>
-
 <p>wget 的 -m 参数可以递归下载。</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2793,7 +2792,6 @@ $ mv www.microbesng.uk/filedist/pseudomonas-practical/* .
 <p>软件使用<code>bwa</code>来对参考基因组ST17建立索引，以便后续比对。</p>
 <div class="highlight"><pre><span></span><code>$ bwa index ST17.fasta
 </code></pre></div>
-
 <h3 id="23-reads-st17">2.3 将测序 reads 比对到 ST17 并排序索引<a class="headerlink" href="#23-reads-st17" title="Permanent link">&para;</a></h3>
 <p>用<code>bwa mem</code>进行比对，输出的结果通过管道由samtools转换成BAM文件并进行排序和索引</p>
 <div class="highlight"><pre><span></span><code>$ bwa mem -t <span class="m">4</span> -R <span class="s1">&#39;@RG\tID:TAP1\tSM:TAP1&#39;</span> ST17.fasta <span class="se">\</span>
@@ -2801,7 +2799,6 @@ $ mv www.microbesng.uk/filedist/pseudomonas-practical/* .
 &gt; samtools view -bS - <span class="p">|</span> samtools sort - TAP1.sorted
 $ samtools index TAP1.sorted.bam
 </code></pre></div>
-
 <div class="admonition note">
 <p class="admonition-title">参数介绍</p>
 <ul>
@@ -2816,14 +2813,12 @@ $ samtools index TAP1.sorted.bam
 $ samtools stats TAP1.sorted.bam <span class="p">|</span> grep <span class="s2">&quot;insert size&quot;</span>
 $ samtools stats TAP1.sorted.bam <span class="p">|</span> grep <span class="s2">&quot;^COV&quot;</span> &gt; TAP1.coverage.txt
 </code></pre></div>
-
 <p>将截取的覆盖度相关信息保存成<code>.txt</code>文件，在R里用ggplot2绘制覆盖度图：</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="n">cov</span><span class="o">=</span><span class="nf">read.table</span><span class="p">(</span><span class="s">&quot;TAP1.coverage.txt&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;\t&quot;</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="n">cov</span><span class="p">[</span><span class="m">1</span><span class="p">,]</span>
 <span class="o">&gt;</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">cov</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">V3</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">V4</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s">&quot;identity&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;Coverage&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;Count&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 <p><img alt="coverage plot" src="../../assets/images/C16/01/Rplot.png" /></p>
 <h3 id="25-1snps">2.5 比较1号临床株与环境株的SNPs差异<a class="headerlink" href="#25-1snps" title="Permanent link">&para;</a></h3>
 <p>用同样的方法对其他几个样本进行操作，获得sorted的bam格式文件，用<code>freebayes</code>对临床与环境株比较获得vcf文件。然后用vcflib工具过滤<code>QUAL/AO&gt;10</code>的部分(VCF元数据部分可以参考<a href="http://samtools.github.io/hts-specs/VCFv4.1.pdf">文档</a>)，并用<code>wc-l</code>计算行数统计结果。</p>
@@ -2832,18 +2827,15 @@ $ vcffilter -f <span class="s2">&quot;QUAL / AO &gt; 10&quot;</span> compare_tap
 
 <span class="m">6685</span>
 </code></pre></div>
-
 <p>获得临床株与环境株之间的SNP差异数量，结果表明这2株之间只有5个SNPs。</p>
 <div class="highlight"><pre><span></span><code>$ vcfsamplediff SAME TAP1 PATIENT1 compare_tap1.vcf <span class="p">|</span> vcffilter -f <span class="s2">&quot;QUAL / AO &gt; 10&quot;</span> <span class="p">|</span> vcffilter -f <span class="s2">&quot;NS = 2&quot;</span> <span class="p">|</span> vcffilter -f <span class="s2">&quot;! ( SAME = germline ) &quot;</span> <span class="p">|</span> grep -v <span class="s2">&quot;^#&quot;</span> <span class="p">|</span> wc -l
 
 <span class="m">5</span>
 </code></pre></div>
-
 <p>用<code>vcfsamplediff</code>了解SNPs差异的基因，可以知道是那些gene/CDS里面发生了变化，还可以根据定位看突变是否是同义突变。如果snps数量接近无法区分，但是定位的基因有差异，那么菌株的溯源还需要进一步考虑。</p>
 <div class="highlight"><pre><span></span><code>$ vcfsamplediff SAME PATIENT1 TAP1 compare_tap1.vcf  <span class="p">|</span> vcffilter -f <span class="s2">&quot;QUAL / AO &gt; 10&quot;</span> <span class="p">|</span> vcffilter -f <span class="s2">&quot;NS = 2&quot;</span> <span class="p">|</span> vcffilter -f <span class="s2">&quot;! ( SAME = germline ) &quot;</span> &gt; tap_differences.vcf
 $ bedtools intersect -a ST17.gff -b tap_differences.vcf <span class="p">|</span> awk -F<span class="s2">&quot;;&quot;</span> <span class="s1">&#39;{print NR, $2}&#39;</span> <span class="nv">OFS</span><span class="o">=</span><span class="s2">&quot;\t&quot;</span>
 </code></pre></div>
-
 <p>结果输出：</p>
 <div class="highlight"><pre><span></span><code><span class="m">1</span>   <span class="nv">gene</span><span class="o">=</span>yfiR
 <span class="m">2</span>   <span class="nv">inference</span><span class="o">=</span>ab initio prediction:Prodigal:2.60,similar to AA sequence:RefSeq:YP_261793.1,protein motif:TIGRFAMs:TIGR03756,protein motif:Pfam:PF06834.5
@@ -2851,14 +2843,12 @@ $ bedtools intersect -a ST17.gff -b tap_differences.vcf <span class="p">|</span>
 <span class="m">4</span>   <span class="nv">gene</span><span class="o">=</span>trbL
 <span class="m">5</span>   <span class="nv">inference</span><span class="o">=</span>ab initio prediction:Prodigal:2.60,similar to AA sequence:RefSeq:YP_001349879.1,protein motif:Cdd:COG3481,protein motif:TIGRFAMs:TIGR03760,protein motif:Pfam:PF07514.5
 </code></pre></div>
-
 <h3 id="26-2">2.6 2个临床株的耐药变迁<a class="headerlink" href="#26-2" title="Permanent link">&para;</a></h3>
 <p>了解2个临床株的SNPs差异，并查看这些SNPs所影响的gene</p>
 <div class="highlight"><pre><span></span><code>$ freebayes --ploidy <span class="m">1</span> -C <span class="m">5</span> -f ST17.fasta PATIENT1.sorted.bam PATIENT2.sorted.bam &gt; compare_patient.vcf
 ~$ vcfsamplediff SAME PATIENT1 TAP1 compare_patient.vcf  <span class="p">|</span> vcffilter -f <span class="s2">&quot;QUAL / AO &gt; 10&quot;</span> <span class="p">|</span> vcffilter -f <span class="s2">&quot;NS = 2&quot;</span> <span class="p">|</span> vcffilter -f <span class="s2">&quot;! ( SAME = germline ) &quot;</span> &gt; patient_differences.vcf
 $ bedtools intersect -a ST17.gff -b patient_differences.vcf <span class="p">|</span> awk -F<span class="s2">&quot;;&quot;</span> <span class="s1">&#39;{print $2}&#39;</span>
 </code></pre></div>
-
 <hr />
 <h2 id="3-snippy">3. 用 Snippy 来实现<a class="headerlink" href="#3-snippy" title="Permanent link">&para;</a></h2>
 <p>大量的日常工作或者不熟悉各种命令行工具使用的话，就需要更简便的软件或者pipelines来帮助完成整个分析工作。因此这里我们使用<a href="https://github.com/tseemann/snippy/blob/master/bin/snippy">snippy</a>来实现分析SNPs，并绘制基于snps的进化树。</p>
@@ -2884,7 +2874,6 @@ $ <span class="nb">source</span> ~/.bashrc
 <span class="c1"># update all perl module</span>
 $ sudo cpan -u
 </code></pre></div>
-
 <h3 id="32-snippy">3.2 使用 Snippy<a class="headerlink" href="#32-snippy" title="Permanent link">&para;</a></h3>
 <p>Snippy 不仅可以获得SNP(包括MultiSNP)，也可以获得insertion, indeletion以及Comibination。文本格式的结果记录文件中的snps.tab中，也可以用浏览器打开snps.html查看。</p>
 <div class="highlight"><pre><span></span><code>$ snippy --cpus <span class="m">4</span> --outdir output1 --ref ST17.fasta <span class="se">\</span>
@@ -2907,7 +2896,6 @@ VariantTotal    <span class="m">4767</span>
 <span class="c1"># 了解不同碱基的SNP变化数量，如T-&gt;C的SNP数量</span>
 $ awk <span class="s1">&#39;$10==&quot;T=&gt;C&quot; {n++} END{print n}&#39;</span> output1/snps.gff
 </code></pre></div>
-
 <p>Snippy还可以生成多个基因组的共有SNPs的比对文件。用snippy分别生成3个TAP的snp列表数据到ouput*目录中，然后统计共有snps数量并生成snp序列文件aln。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># for old ubuntu system you need update outdated perl module List::Util</span>
 $ sudo cpan -u List::Util
@@ -2918,13 +2906,11 @@ Saved SNP table: core.tab
 Constructing alignment object <span class="k">for</span> core.aln
 ...
 </code></pre></div>
-
 <p>如果要用raxml构建进化树，那获得的.aln文件还需要转换成.phy才可以使用。很多工具可以实现转换，这里使用网络服务来实现：<a href="http://sing.ei.uvigo.es/ALTER/">http://sing.ei.uvigo.es/ALTER/</a></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># RAxML 构建进化树</span>
 $ raxmlHPC -f a -x <span class="m">12345</span> -p <span class="m">12345</span> -# <span class="m">100</span> -m GTRGAMMA -s core.phy -n pae -T <span class="m">40</span>
 $ figtree RAxML_bestTree.pae
 </code></pre></div>
-
 <p>生成的进化树图类似下图</p>
 <p><img alt="Alt text" src="./RAxML_bestTree.ex.png" /></p>
 <blockquote>

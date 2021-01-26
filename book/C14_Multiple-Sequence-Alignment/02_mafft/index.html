@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C14_Multiple-Sequence-Alignment/02_mafft/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2424,15 +2424,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1.软件安装
+  <a href="#_1" class="md-nav__link">
+    安装
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2.软件使用
+  <a href="#_2" class="md-nav__link">
+    使用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
   </a>
   
 </li>
@@ -2455,17 +2462,178 @@
                 
                 
                 <h1 id="mafft">Mafft 使用<a class="headerlink" href="#mafft" title="Permanent link">&para;</a></h1>
-<p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2020-09-14</p>
+<p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2021-01-26</p>
 <hr />
-<h2 id="1">1.软件安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
+<p>Mafft 是常用的大规模序列比对的工具，在速度和准确度上有很好的平衡。</p>
+</div>
+<h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># conda 安装</span>
 <span class="o">(</span>msa<span class="o">)</span>$ conda install mafft
 </code></pre></div>
-
-<h2 id="2">2.软件使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">使用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># 最基本的序列比对用法</span>
 <span class="o">(</span>msa<span class="o">)</span>$ mafft seq.fas &gt; seq.maf
 </code></pre></div>
+<p>PubMLST 现有物种数据库：</p>
+<ul>
+<li>Achromobacter spp.</li>
+<li>Acinetobacter baumannii#1</li>
+<li>Acinetobacter baumannii#2</li>
+<li>Aeromonas spp.</li>
+<li>Aggregatibacter actinomycetemcomitans</li>
+<li>Anaplasma phagocytophilum</li>
+<li>Arcobacter spp.</li>
+<li>Aspergillus fumigatus</li>
+<li>Bacillus cereus</li>
+<li>Bacillus licheniformis</li>
+<li>Bacillus subtilis</li>
+<li>Bartonella bacilliformis</li>
+<li>Bartonella henselae</li>
+<li>Bartonella washoensis</li>
+<li>Bordetella spp.</li>
+<li>Borrelia spp.</li>
+<li>Brachyspira hampsonii</li>
+<li>Brachyspira hyodysenteriae</li>
+<li>Brachyspira intermedia</li>
+<li>Brachyspira pilosicoli</li>
+<li>Brachyspira spp.</li>
+<li>Brucella spp.</li>
+<li>Burkholderia cepacia complex</li>
+<li>Burkholderia pseudomallei</li>
+<li>Campylobacter concisus/curvus</li>
+<li>Campylobacter fetus</li>
+<li>Campylobacter helveticus</li>
+<li>Campylobacter hyointestinalis</li>
+<li>Campylobacter insulaenigrae</li>
+<li>Campylobacter jejuni</li>
+<li>Campylobacter lanienae</li>
+<li>Campylobacter lari</li>
+<li>Campylobacter sputorum</li>
+<li>Campylobacter upsaliensis</li>
+<li>Candida albicans</li>
+<li>Candida glabrata</li>
+<li>Candida krusei</li>
+<li>Candida tropicalis</li>
+<li>Candidatus Liberibacter solanacearum</li>
+<li>Carnobacterium maltaromaticum</li>
+<li>Chlamydiales spp.</li>
+<li>Citrobacter freundii</li>
+<li>Clonorchis sinensis</li>
+<li>Clostridioides difficile</li>
+<li>Clostridium botulinum</li>
+<li>Clostridium perfringens</li>
+<li>Clostridium septicum</li>
+<li>Corynebacterium diphtheriae</li>
+<li>Cronobacter spp.</li>
+<li>Dichelobacter nodosus</li>
+<li>Edwardsiella spp.</li>
+<li>Enterobacter cloacae</li>
+<li>Enterococcus faecalis</li>
+<li>Enterococcus faecium</li>
+<li>Escherichia coli#1</li>
+<li>Escherichia coli#2</li>
+<li>Flavobacterium psychrophilum</li>
+<li>Gallibacterium anatis</li>
+<li>Geotrichum spp.</li>
+<li>Glaesserella parasuis</li>
+<li>Haemophilus influenzae</li>
+<li>Helicobacter cinaedi</li>
+<li>Helicobacter pylori</li>
+<li>Helicobacter suis</li>
+<li>Kingella kingae</li>
+<li>Klebsiella aerogenes</li>
+<li>Klebsiella oxytoca</li>
+<li>Klebsiella pneumoniae</li>
+<li>Kudoa septempunctata</li>
+<li>Lactobacillus salivarius</li>
+<li>Leptospira spp.</li>
+<li>Leptospira spp.#2</li>
+<li>Leptospira spp.#3</li>
+<li>Listeria monocytogenes</li>
+<li>Macrococcus canis</li>
+<li>Macrococcus caseolyticus</li>
+<li>Mannheimia haemolytica</li>
+<li>Melissococcus plutonius</li>
+<li>Moraxella catarrhalis</li>
+<li>Mycobacteria spp.</li>
+<li>Mycobacterium abscessus</li>
+<li>Mycobacterium massiliense</li>
+<li>Mycoplasma agalactiae</li>
+<li>Mycoplasma anserisalpingitidis</li>
+<li>Mycoplasma bovis</li>
+<li>Mycoplasma flocculare</li>
+<li>Mycoplasma gallisepticum#1</li>
+<li>Mycoplasma gallisepticum#2</li>
+<li>Mycoplasma hominis</li>
+<li>Mycoplasma hyopneumoniae</li>
+<li>Mycoplasma hyorhinis</li>
+<li>Mycoplasma iowae</li>
+<li>Mycoplasma pneumoniae</li>
+<li>Mycoplasma synoviae</li>
+<li>Neisseria spp.</li>
+<li>Orientia tsutsugamushi</li>
+<li>Ornithobacterium rhinotracheale</li>
+<li>Paenibacillus larvae</li>
+<li>Pasteurella multocida#1</li>
+<li>Pasteurella multocida#2</li>
+<li>Pediococcus pentosaceus</li>
+<li>Photobacterium damselae</li>
+<li>Piscirickettsia salmonis</li>
+<li>Porphyromonas gingivalis</li>
+<li>Propionibacterium acnes</li>
+<li>Pseudomonas aeruginosa</li>
+<li>Pseudomonas fluorescens</li>
+<li>Pseudomonas putida</li>
+<li>Rhodococcus spp.</li>
+<li>Riemerella anatipestifer</li>
+<li>Salmonella enterica</li>
+<li>Saprolegnia parasitica</li>
+<li>Shewanella spp.</li>
+<li>Sinorhizobium spp.</li>
+<li>Staphylococcus aureus</li>
+<li>Staphylococcus chromogenes</li>
+<li>Staphylococcus epidermidis</li>
+<li>Staphylococcus haemolyticus</li>
+<li>Staphylococcus hominis</li>
+<li>Staphylococcus lugdunensis</li>
+<li>Staphylococcus pseudintermedius</li>
+<li>Stenotrophomonas maltophilia</li>
+<li>Streptococcus agalactiae</li>
+<li>Streptococcus bovis/equinus complex (SBSEC)</li>
+<li>Streptococcus canis</li>
+<li>Streptococcus dysgalactiae equisimilis</li>
+<li>Streptococcus gallolyticus</li>
+<li>Streptococcus oralis</li>
+<li>Streptococcus pneumoniae</li>
+<li>Streptococcus pyogenes</li>
+<li>Streptococcus suis</li>
+<li>Streptococcus thermophilus</li>
+<li>Streptococcus thermophilus#2</li>
+<li>Streptococcus uberis</li>
+<li>Streptococcus zooepidemicus</li>
+<li>Streptomyces spp</li>
+<li>Taylorella spp.</li>
+<li>Tenacibaculum spp.</li>
+<li>Treponema pallidum</li>
+<li>Trichomonas vaginalis</li>
+<li>Ureaplasma spp.</li>
+<li>Vibrio cholerae</li>
+<li>Vibrio cholerae#2</li>
+<li>Vibrio parahaemolyticus</li>
+<li>Vibrio spp.</li>
+<li>Vibrio tapetis</li>
+<li>Vibrio vulnificus</li>
+<li>Wolbachia</li>
+<li>Xylella fastidiosa</li>
+<li>Yersinia pseudotuberculosis</li>
+<li>Yersinia ruckeri</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>ariba<span class="o">)</span>$ ariba pubmlstget <span class="s2">&quot;Salmonella enterica&quot;</span> salmonella
+<span class="o">(</span>ariba<span class="o">)</span>$ ariba run salmonella/ref_db S1_1.fastq.gz S1_2.fastq.gz output
+</code></pre></div>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
                 
                   
                     
@@ -2474,7 +2642,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2020-09-14
+      Last update: 2021-01-26
     
   </small>
 </div>

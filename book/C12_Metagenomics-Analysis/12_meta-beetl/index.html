@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C12_Metagenomics-Analysis/12_meta-beetl/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2600,7 +2600,6 @@
 $ <span class="k">for</span> i in <span class="sb">`</span>curl https://s3.amazonaws.com/metaBEETL <span class="p">|</span> grep -oP <span class="s2">&quot;[^&gt;]*bz2&quot;</span><span class="sb">`</span> <span class="p">;</span> <span class="se">\</span>
     &gt; <span class="k">do</span> wget https://s3.amazonaws.com/metaBEETL/<span class="nv">$i</span> <span class="p">&amp;</span> <span class="k">done</span>
 </code></pre></div>
-
 <p>静态文件的 URL 地址，也可以直接下载。</p>
 <ul>
 <li><a href="https://s3.amazonaws.com/metaBEETL/filecounter.csv.bz2">https://s3.amazonaws.com/metaBEETL/filecounter.csv.bz2</a></li>
@@ -2626,7 +2625,6 @@ $ <span class="k">for</span> i in <span class="sb">`</span>curl https://s3.amazo
 <div class="highlight"><pre><span></span><code>$ bunzip2 *.bz2
 $ <span class="nb">export</span> <span class="nv">METAGENOME_DATABASE_PATH</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
 </code></pre></div>
-
 <h4 id="2">2. 自己建立数据库<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
 <p>处于实际目的，有时候我们不需要这么大的数据库，或者需要更多其他的数据加入到数据库，那就需要自行建立数据库。</p>
 <p><strong>2.1 安装 SeqAn</strong></p>
@@ -2639,19 +2637,16 @@ $ <span class="nb">cd</span> ~/apps
 $ git clone https://github.com/seqan/seqan.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> seqan
 $ git checkout -b develop origin/develop
 </code></pre></div>
-
 <p><strong>2.2 下载目标序列</strong></p>
 <p>下载需要的序列，比如NCBI上细菌的基因组 ref 数据。</p>
 <div class="highlight"><pre><span></span><code>$ wget ftp://ftp.ncbi.nlm.nih.gov/genomes/Bacteria/all.fna.tar.gz -P downloads
 $ mkdir all.fna
 $ tar xzf downloads/all.fna.tar.gz -C all.fna/
 </code></pre></div>
-
 <p><strong>2.3 创建去除质粒序列的单基因组序列</strong></p>
 <div class="highlight"><pre><span></span><code>$ metabeetl-db-genomesToSingleSeq -f all.fna/*/*.fna -s singleSeqGenomes
 $ <span class="nb">cd</span> singleSeqGenomes
 </code></pre></div>
-
 <p><strong>2.4 创建BWT</strong></p>
 <p>修改 <code>metabeetl-db-arrayBWT.sh</code> 文件里数据库路径，创建G_* 和
 G_*_rev 文件的BWTs，用qsub来向系统提交任务。也可以运行 <code>metabeetl-db-makeBWTSkew</code> 来一个个创建。</p>
@@ -2664,12 +2659,10 @@ $ <span class="o">(</span><span class="nb">echo</span> -n <span class="s2">&quot
 &gt; <span class="k">for</span> i in G_*<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&quot;bwt_</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">-B00: </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="nb">echo</span> -e <span class="s2">&quot;\tmetabeetl-db-makeBWTSkew </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">\n&quot;</span> <span class="p">;</span> <span class="k">done</span> <span class="o">)</span> &gt; Makefile
 $ make -j
 </code></pre></div>
-
 <p><strong>2.5 合并序列</strong></p>
 <p>在一台内存&gt;60G的机器上将序列加载到内存中，并吧所有文件合并。</p>
 <div class="highlight"><pre><span></span><code>$ <span class="k">for</span> pileNum in <span class="sb">`</span>seq <span class="m">0</span> <span class="m">5</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span> metabeetl-db-mergeBacteria <span class="nv">$pileNum</span> ncbiMicros &lt;<span class="o">(</span> ls G_* <span class="o">)</span> <span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
-
 <p>生成的文件名称类似：ncbiMicros-A0*, -B0* and -C0*</p>
 <ul>
 <li>A0* 包含每个BWT的位置</li>
@@ -2688,14 +2681,12 @@ $ make -j
 &gt; -o ncbiMicros-B0<span class="si">${</span><span class="nv">pileNum</span><span class="si">}</span> <span class="p">;</span> <span class="se">\ </span> 
 &gt; <span class="k">done</span>
 </code></pre></div>
-
 <p><strong>2.7 下载NCBI Taxoonmy</strong></p>
 <div class="highlight"><pre><span></span><code>$ wget ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz
 $ wget ftp://ftp.ncbi.nih.gov/pub/taxonomy/gi_taxid_nucl.dmp.gz
 $ tar xzf taxdump.tar.gz names.dmp nodes.dmp
 $ gunzip gi_taxid_nucl.dmp.gz
 </code></pre></div>
-
 <div class="admonition infomation">
 <p class="admonition-title">Infomation</p>
 <p>用<code>metabeetl-db-findTaxa</code>脚本查找数据库中的taxonomic树。
@@ -2713,14 +2704,12 @@ You will need the headerFile produced by running "metabeetl-db-genomesToSingleSe
 
 $ <span class="o">(</span> grep scientific downloads/names.dmp <span class="p">;</span> cat <span class="si">${</span><span class="nv">BEETL_INSTALL_DIR</span><span class="si">}</span>/share/beetl/metaBeetlExtraNames.dmp <span class="o">)</span> &gt; metaBeetlTaxonomyNames.dmp
 </code></pre></div>
-
 <p><strong>2.8 计算 normalisation 因子</strong></p>
 <div class="highlight"><pre><span></span><code>$ mkdir normalisation
 $ <span class="nb">cd</span> normalisation
 $ touch normalize.sh
 $ vim normalize.sh
 </code></pre></div>
-
 <p>编辑脚本内容如下</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># normalize.sh</span>
 <span class="k">for</span> genome in ../singleSeqGenomes/G_*<span class="p">;</span> <span class="k">do</span>
@@ -2742,7 +2731,6 @@ $ vim normalize.sh
 
 grep FINAL r2977 &gt; ../normalisation.txt
 </code></pre></div>
-
 <p><strong>2.9 创建数据库文件夹</strong></p>
 <div class="highlight"><pre><span></span><code>$ mkdir metaBeetlNcbiDb
 $ <span class="nb">cd</span> ~/metaBeetlNcbiDb
@@ -2753,7 +2741,6 @@ $ ln -s ../singleSeqGenomes/filecounter.csv
 $ ln -s ../singleSeqGenomes/headerFile.csv
 $ <span class="k">for</span> i in ../singleSeqGenomes/ncbiMicros-<span class="o">[</span>BC<span class="o">]</span><span class="m">0</span><span class="o">[</span><span class="m">0</span>-5<span class="o">]</span><span class="p">;</span> <span class="k">do</span> ln -s <span class="nv">$i</span> <span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
-
 <h4 id="3">3. 分析数据<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
 <p><strong>3.1 获取数据</strong></p>
 <p>用 SRS013948 这个人类肠道细菌组研究项目的数据作为例子。首先下载数据:</p>
@@ -2767,7 +2754,6 @@ $ wget ftp://public-ftp.hmpdacc.org/Illumina/throat/SRS013948.tar.bz2
 $ tar xjf SRS013948.tar.bz2
 $ ls -l
 </code></pre></div>
-
 <p>解压缩后可以看到下面3个文件：</p>
 <ul>
 <li>SRS013948.denovo_duplicates_marked.trimmed.1.fastq</li>
@@ -2792,7 +2778,6 @@ $ beetl-convert <span class="se">\</span>
 
 $ cat paddedSeq1.seq paddedSeq2.seq paddedSeqSingleton.seq &gt; SRS013948.seq
 </code></pre></div>
-
 <p><strong>3.3 以 metagenomic 模式运行 BEETL</strong></p>
 <p>创建 BWT 变换，然后运行 metagenomic 模式的 BEETL</p>
 <div class="highlight"><pre><span></span><code>$ beetl-bwt -i SRS013948.seq -o bwt_SRS013948
@@ -2806,7 +2791,6 @@ $ beetl-compare <span class="se">\</span>
 &gt; -k <span class="m">50</span> <span class="se">\</span>
 &gt; --no-comparison-skip
 </code></pre></div>
-
 <p><code>beetl-compare</code> 命令会在文件夹 <code>BeetlCompareOutput</code>里生成许多文件。k值设置越大，可以获得越多的信息数据，但是输出文件也会变得越大。</p>
 <p><strong>3.4 图形化显示结果</strong></p>
 <p><code>metabeetl-convertMetagenomicRangesToTaxa</code>: 工具根据kmer匹配，从而获得基因组以及上一级分类的ID号，并生成文字与图形结果（采用Krona js可视化库来形成网页格式的报告文件）。由于算法原因需要频繁读取BWT位置，因此数据库文件 <code>ncbiMicros-C0*</code>最好放在读取速度比较块的磁盘扇区或者磁盘里如SSD硬盘。另外如果内存足够，可以用<code>metabeetl-convertMetagenomicRangesToTaxa_withMmap</code>工具，将这些比对文件读入内存中加快速度。</p>
@@ -2818,7 +2802,6 @@ $ beetl-compare <span class="se">\</span>
 &gt; <span class="si">${</span><span class="nv">METAGENOME_DATABASE_PATH</span><span class="si">}</span>/normalisation.txt <span class="se">\</span>
 &gt; <span class="m">20</span> <span class="m">50</span> - &gt; metaBeetl.log
 </code></pre></div>
-
 <p><strong>生成的TSV（制表符分隔）文件各列含义：</strong></p>
 <table>
 <thead>

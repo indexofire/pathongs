@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C01_Common-Utility/05_blast/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2643,13 +2643,11 @@ $ sudo ln -s ~/app/blast-2.2.26-x64/blastall /usr/local/sbin
 <span class="c1"># 通过 conda 安装 blast</span>
 <span class="o">(</span>blast<span class="o">)</span>$ conda install blast-legacy
 </code></pre></div>
-
 <p><strong>运行 Blast</strong></p>
 <p><code>Blast</code>通过调用 blastall 程序来调用不同子程序实现不同类型序列比对。在命令行中输入<code>blastall</code>，会打印出一份参数列表。你也可以使用<code>man blast</code>来查看<code>Blast</code>工具的用户手册。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 运行主命令</span>
 $ blastall
 </code></pre></div>
-
 <p><strong>参数说明：</strong></p>
 <div class="highlight"><pre><span></span><code>-p: 指定要运行的 blast 程序。可以调用的有:
     <span class="sb">`</span>blastp<span class="sb">`</span>             将氨基酸序列与蛋白质数据库比对
@@ -2668,7 +2666,6 @@ $ blastall
 -b: 数据库中的比对结果显示条目数，默认是250条记录。
 -m: 比对结果的输出显示方式，值为0~11，默认是0。各个数字含义见下表。
 </code></pre></div>
-
 <table>
 <thead>
 <tr>
@@ -2736,7 +2733,6 @@ $ formatdb -i custom_genome.fasta -o T -p F
 <span class="c1"># 使用 blastn 对 myseq.fasta 序列进行比对</span>
 $ blastall -i myseq.fasta -d custom_genome.fasta -p blastn
 </code></pre></div>
-
 <h3 id="32-blast">3.2 Blast+<a class="headerlink" href="#32-blast" title="Permanent link">&para;</a></h3>
 <p><strong>下载安装 NCBI Blast+</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Ubuntu 系统中安装 ncbi blast</span>
@@ -2745,20 +2741,17 @@ $ sudo apt install ncbi-blast+
 <span class="c1"># Archlinux 系统中安装 ncbi blast</span>
 $ sudo pacman -S
 </code></pre></div>
-
 <p><strong>构建数据库</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 将序列文件 data/database.fasta 格式化成数据库</span>
 <span class="c1"># 数据类型为核酸，则参数为 -dbtype nucl</span>
 $ makeblastdb -in data/database.fasta -dbtype nucl -parse_seqids
 </code></pre></div>
-
 <p><strong>运行 blast</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 使用 blastn 程序比对 myseq.fasta 序列。</span>
 $ blastn -query myseq.fasta -db data/database.fasta -out result.txt
 <span class="c1"># 常用简单输出方式</span>
 $ blastn -query myseq.fasta -db data/database.fasta -outfmt <span class="m">6</span> -out result.txt
 </code></pre></div>
-
 <p><a href="http://www.personal.psu.edu/iua1/courses/files/2014/lecture-12.pdf">http://www.personal.psu.edu/iua1/courses/files/2014/lecture-12.pdf</a></p>
 <h2 id="4-blast-web">4. 构建本地的 blast web 服务<a class="headerlink" href="#4-blast-web" title="Permanent link">&para;</a></h2>
 <h3 id="41-blastkit">4.1 blastkit<a class="headerlink" href="#41-blastkit" title="Permanent link">&para;</a></h3>
@@ -2773,7 +2766,6 @@ $ conda activate blastkit
 <span class="o">(</span>blastkit<span class="o">)</span>$ conda install lighttpd
 <span class="o">(</span>blastkit<span class="o">)</span>$ conda install blast-legacy
 </code></pre></div>
-
 <p><strong>对lighttpd webserver进行配置</strong></p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> /etc/lighttpd/conf-enabled
 $ sudo ln -fs ../conf-available/10-cgi.conf ./
@@ -2781,7 +2773,6 @@ $ sudo <span class="nb">echo</span> <span class="s1">&#39;cgi.assign = ( &quot;.
 $ sudo <span class="nb">echo</span> <span class="s1">&#39;index-file.names += ( &quot;index.cgi&quot; ) &#39;</span> &gt;&gt; <span class="m">10</span>-cgi.conf
 $ sudo /etc/init.d/lighttpd restart
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="o">(</span>prokka<span class="o">)</span>$ conda install lighttpd
 <span class="o">(</span>prokka<span class="o">)</span>$ <span class="nb">cd</span> <span class="nv">$HOME</span>/.conda/etc/lighttpd/conf-enabled
 $ sudo ln -fs ../conf-available/10-cgi.conf ./
@@ -2789,7 +2780,6 @@ $ sudo <span class="nb">echo</span> <span class="s1">&#39;cgi.assign = ( &quot;.
 $ sudo <span class="nb">echo</span> <span class="s1">&#39;index-file.names += ( &quot;index.cgi&quot; ) &#39;</span> &gt;&gt; <span class="m">10</span>-cgi.conf
 $ lighttpd restart
 </code></pre></div>
-
 <p><strong>安装 blastkit</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 克隆软件仓库 blastkit</span>
 $ git clone https://github.com/ctb/blastkit.git -b ec2
@@ -2813,7 +2803,6 @@ $ formatdb -i db/db.fa -o T -p F
 <span class="c1"># 建立索引</span>
 $ python index-db.py db/db.fa
 </code></pre></div>
-
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/ctb/blastkit.git">Blastkit</a></li>

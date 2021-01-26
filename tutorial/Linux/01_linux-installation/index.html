@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/tutorial/Linux/01_linux-installation/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -3037,7 +3037,6 @@ nvme0n1
 -nvme0n1p3  ntfs        Windows         3ACC7A8CCC7A4265
 -nvme0n1p4  ntfs        Recovery image  C2DE7AF4DE7ADFD9
 </code></pre></div>
-
 <p>当前版本的linux内核已经包含了驱动，不会出现nvme ssd硬盘找不到的情况。小米pro 256G SSD硬盘上有4个分区，分别时系统引导EFI分区，保留分区，win10分区和系统恢复分区。我想保留win10的recovery区，找一个U盘来备份分区到文件。</p>
 <div class="highlight"><pre><span></span><code>root@archiso~ <span class="c1"># mkdir -p /backup</span>
 root@archiso~ <span class="c1"># mount /dev/sda1 /backup</span>
@@ -3046,7 +3045,6 @@ root@archiso~ <span class="c1"># dd if=/dev/nvme0n4 of=/backup/mmipro_recovery.b
 <span class="m">15680</span>+0 records out
 <span class="m">10276604480</span> bytes <span class="o">(</span><span class="m">1</span>.0 GB, <span class="m">908</span> MiB<span class="o">)</span> copied, <span class="m">0</span>.697636 s, <span class="m">1</span>.5 GB/s
 </code></pre></div>
-
 <p>连接wifi网络，可以直接用wifi-menu，也可以用wpa_supplicant命令连接。连接成功后运行dhcpcd，就可以访问互联网络了。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 用wifi-menu</span>
 root@archiso~ <span class="c1"># wifi-menu</span>
@@ -3056,7 +3054,6 @@ root@archiso~ <span class="c1"># wpa_supplicant -i wlp2s0 -c &lt;(wpa_passphrase
 root@archiso~ <span class="c1"># dhcpcd</span>
 root@archiso~ <span class="c1"># ping -c 3 www.archlinux.org</span>
 </code></pre></div>
-
 <p>考虑了很久要不要加密安装，由于是和孩子一起使用的，有加密狗的话可以限制小孩。但是考虑到可能存在的一些意外情况，安装就采用普通模式吧。对小孩的使用限制就从其他方面着手了。</p>
 <p>运行 blkdiscard 清除硬盘，SSD上所有数据都会被清楚，请确认准备完成再执行。分区很简单，用fdisk或者parted都可以，喜欢图形化界面的可以用cgdisk。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 擦除SSD数据</span>
@@ -3075,7 +3072,6 @@ Last sector, +sector or +size<span class="o">{</span>K,M,G,T,P<span class="o">}<
 <span class="c1"># parted 分区</span>
 root@archiso~ <span class="c1"># parted /dev/nvme0n1</span>
 </code></pre></div>
-
 <p>挂载<code>/</code>和<code>/boot</code>分区到/mnt</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 添加挂载boot的路径</span>
 root@archiso~ <span class="c1"># mkdir /mnt/boot</span>
@@ -3088,23 +3084,19 @@ root@archiso~ <span class="c1"># genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span>
 <span class="c1"># chroot到新安装的系统中进行操作</span>
 root@archiso~ <span class="c1"># arch-chroot /mnt /bin/bash</span>
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="c1"># 安装心系统所必须的无线网络相关软件</span>
 <span class="o">[</span>root@archiso /<span class="o">]</span><span class="c1"># pacman -S vim wpa_supplicant networkmanager</span>
 </code></pre></div>
-
 <p>创建管理员密码，新建用户mark，并建立主用户目录和密码。将用户mark设置为wheel组，获得管理员权限。</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>root@archiso /<span class="o">]</span><span class="c1"># passwd root</span>
 <span class="o">[</span>root@archiso /<span class="o">]</span><span class="c1"># useradd -G -m mark</span>
 </code></pre></div>
-
 <p>以前版本的grub不支持nvme，不确定新版本或者grub-git是否可以完美支持，这里我们就不用grub引导了，直接用systemd-boot来引导系统。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 安装efi</span>
 <span class="o">[</span>root@archiso /<span class="o">]</span><span class="c1"># bootctl install</span>
 <span class="o">[</span>root@archiso /<span class="o">]</span><span class="c1"># vim /boot/efi/entities/arch.conf</span>
 <span class="o">[</span>root@archiso /<span class="o">]</span><span class="c1"># vim /boot/efi/load.conf</span>
 </code></pre></div>
-
 <p>分区时我们没有建立swap分区，因为在SSD中，更喜欢用文件方式使用swap，更为灵活。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># mkdir /swap</span>
 <span class="c1"># fallocate -l 2G /swap/swapfile</span>
@@ -3113,7 +3105,6 @@ root@archiso~ <span class="c1"># arch-chroot /mnt /bin/bash</span>
 <span class="c1"># swapon /swap/swapfile</span>
 <span class="c1"># echo &quot;/swap/swapfile none swap defaults 0 0&quot; &gt;&gt; /etc/fstab</span>
 </code></pre></div>
-
 <h3 id="teminal-urxvt">安装 teminal 工具 urxvt<a class="headerlink" href="#teminal-urxvt" title="Permanent link">&para;</a></h3>
 <p>从剪贴板中粘贴内容到urxvt中，可以用 shift+insert，或者鼠标中键。从urxvt中复制，直接用鼠标选中即可。复制到其他程序时，只要使用鼠标中键即可。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># pacman -S xorg xorg-xinit libgl</span>
@@ -3123,21 +3114,18 @@ root@archiso~ <span class="c1"># arch-chroot /mnt /bin/bash</span>
 <span class="c1"># EDITOR=vim visudo</span>
 %wheel <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> ALL
 </code></pre></div>
-
 <p>添加当前用户，并赋予管理员权限。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># useradd mark -g wheel -m</span>
 <span class="c1"># passwd mark</span>
 New password:
 Retype new password:
 </code></pre></div>
-
 <h3 id="_2">字体设置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 安装文泉驿、noto等中文字体</span>
 $ sudo pacman -S ttf-inconsolata wqy-microhei wqy-microhei-lite wqy-zenhei wqy-bitmapfont ttf-font-awesome ttf-arphic-ukai ttf-arphic-uming noto-fonts
 $ sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 $ sudo unlink /etc/fonts/conf.d/10-scal-bitmap-fonts.conf
 </code></pre></div>
-
 <h3 id="_3">设置无线网络<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>安装 ArchLinux 过程中，我们用过 wifi-menu 工具连接了无线网络。进入安装完毕的系统，也可以以管理员运行 wifi-menu 连接，再运行 dhcpcd，即可上网。如果要启用网络服务，开机自动运行和连接，需要安装 NetworkManager</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 安装 NetworkManager</span>
@@ -3150,7 +3138,6 @@ $ nmcli dev wifi connect <span class="s2">&quot;your-wifi-ssid&quot;</span> pass
 <span class="c1"># 通过终端图形界面设置</span>
 $ nmtui
 </code></pre></div>
-
 <h3 id="_4">设置音频输入输出<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>ArchLinux 的内核模块已经包含 ALSA，没有声音是因为默认设置成静音状态。控制声音，要安装相应的工具。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># alsa 工具</span>
@@ -3166,7 +3153,6 @@ $ amixer sset Master unmute
 <span class="c1"># 查看所有 mixer</span>
 $ amixer scontrols
 </code></pre></div>
-
 <p>声音配置文件，系统级的在<code>/etc/asound.conf</code>，用户级的在<code>~/.asound.rc</code></p>
 <h3 id="_5">屏幕色彩矫正<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>ICC是1993年由包括Adobe、Apple、Kodak、Microsoft在内的数十家公司发起并成立的，全称是国际色彩联盟（International Color Consortium），简称ICC。这个组织的主要目标，就是要在各个设备、软件之间形成统一的色彩标准，即ICC标准。最终的目标就是让输入设备（如数码相机）、显示设备（如显示器）、输出设备（如打印机）能够自始至终得保证色彩被准确重现。</p>
@@ -3227,7 +3213,6 @@ EDID block does NOT conform to EDID <span class="m">1</span>.4!
     Missing name descriptor
     Missing monitor ranges
 </code></pre></div>
-
 <p>没有备份icc文件的话，可以在<a href="https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NV156FHM_N61.icm">这里</a>下载。通过.xinitrc用户级方式在进入桌面系统并加载。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 备份icm文件，安装xcalib</span>
 $ wget https://www.notebookcheck.net/uploads/tx_nbc2/BOE_CQ_______NV156FHM_N61.icm
@@ -3237,14 +3222,12 @@ $ <span class="nb">cd</span> xcalib
 $ makepkg -si
 $ <span class="nb">echo</span> <span class="s2">&quot;/usr/bin/xcalib -d :0 /usr/local/share/color/icc/BOE_CQ_NV156FHM_N61.icm&quot;</span> &gt;&gt; ~/.xinitrc
 </code></pre></div>
-
 <h3 id="_6">键盘按键设置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>安装完成后，会发现键盘功能键没有启用。用<code>xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'</code>测试发现实际上是Fn+F1<sub>12默认设置成了F1～12功能。这在一些笔记本中BIOS可以改。小米笔记本如果要在F1～12和Fn+F1</sub>F12之间切换，只要按下Fn+Esc即可。</p>
 <div class="highlight"><pre><span></span><code><span class="c1">## 查看键盘按键对应功能</span>
 $ xmodmap -pke <span class="p">|</span> less
 ...
 </code></pre></div>
-
 <p>F1-F12对应按键：</p>
 <ul>
 <li>F1 121</li>
@@ -3270,14 +3253,12 @@ bindsym XF86MonBrightnessDown <span class="nb">exec</span> light -U <span class=
 <span class="c1">## 如果想查看当前亮度</span>
 $ light -G
 </code></pre></div>
-
 <p>控制声音，这里使用amixer（pactl for pulseAudio）</p>
 <div class="highlight"><pre><span></span><code><span class="c1">## edit in .config/.i3/config</span>
 bindsym XF86AudioRaiseVolume <span class="nb">exec</span> amixer <span class="nb">set</span> Master <span class="m">10</span>%+
 bindsym XF86AudioLowerVolume <span class="nb">exec</span> amixer <span class="nb">set</span> Master <span class="m">10</span>%-
 bindsym XF86AudioMute <span class="nb">exec</span> amixer <span class="nb">set</span> Master toggle
 </code></pre></div>
-
 <p>避免电源按钮误触，进行以下设置。</p>
 <div class="highlight"><pre><span></span><code>$ sudo <span class="nb">echo</span> <span class="s2">&quot;HandlePowerKey=ignore&quot;</span> &gt;&gt; /etc/systemd/logind.conf
 
@@ -3292,7 +3273,6 @@ mode <span class="s2">&quot;</span><span class="nv">$power</span><span class="s2
     bindsym Escape mode <span class="s2">&quot;default&quot;</span>
 <span class="o">}</span>
 </code></pre></div>
-
 <h3 id="_7">设置触摸板<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ sudo pacman -S xf86-input-libinput
 $ sudo vim /etc/X11/xorg.conf.d/20-touchpad.conf
@@ -3306,12 +3286,10 @@ Section <span class="s2">&quot;InputClass&quot;</span>
         Option <span class="s2">&quot;NaturalScrolling&quot;</span> <span class="s2">&quot;true&quot;</span>
 EndSection
 </code></pre></div>
-
 <h3 id="i3-gaps">安装 i3-gaps<a class="headerlink" href="#i3-gaps" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 将启动脚本添加到 .xinitrc</span>
 $ <span class="nb">echo</span> <span class="s2">&quot;exec i3&quot;</span> &gt;&gt; ~/.xinitrc
 </code></pre></div>
-
 <h3 id="polybar">安装polybar<a class="headerlink" href="#polybar" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 安装无线 wifi 支持</span>
 $ sudo pacman -S wireless_tools
@@ -3321,7 +3299,6 @@ $ sudo pacman -S libmpdclient mpd
 $ git clone https://
 $ makepkg -si
 </code></pre></div>
-
 <h3 id="_8">安装常用软件<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 安装浏览器</span>
 $ sudo pacman -S chromium firefox pepper-flash ttf-liberation
@@ -3332,12 +3309,10 @@ $ sudo pacman -S git-core
 <span class="c1"># 安装 python3 以及 python 虚拟环境</span>
 $ sudo pacman -S python python-pipenv
 </code></pre></div>
-
 <h3 id="_9">安装文件管理器<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>我们用 ranger 来做为文件管理器。</p>
 <div class="highlight"><pre><span></span><code>$ pacman -S ranger
 </code></pre></div>
-
 <h3 id="_10">中文输入<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 安装 fcitx</span>
 $ sudo pacman -S fcitx
@@ -3352,14 +3327,12 @@ $ sudo pacman -S fcitx-googlepinyin
 
 <span class="c1"># 个别版本的 wps 需要在启动脚本中加入 export QT_IM_MODULE=fcitx 才能使用输入法。</span>
 </code></pre></div>
-
 <h3 id="_11">科学上网<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>修复 sslocal 与 openssl 1.1 冲突，修复方式参见<a href="http://www.54it.top/archives/6224.html">这里</a></p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> /usr/lib/python3.6/site-packages/shadowsocks/crypto/
 $ sudo cp openssl.py openssl.py.bak
 $ sudo sed <span class="s1">&#39;s/EVP_CIPHER_CTX_cleanup/EVP_CIPHER_CTX_reset/g&#39;</span> openssl.py &gt; openssl.py
 </code></pre></div>
-
 <p>使用shadowsocks，设置开机自动运行</p>
 <div class="highlight"><pre><span></span><code><span class="c1">## 用户级 shadowsocks</span>
 $ sudo sslocal -c ~/.config/shadowsocks/server.json -d start --user mark
@@ -3383,7 +3356,6 @@ $ sudo systemctl <span class="nb">enable</span> sslocal.service
 $ sudo systemctl start sslocal.service
 $ sudo systemctl stop sslocal.service
 </code></pre></div>
-
 <p>设置浏览器插件</p>
 <div class="highlight"><pre><span></span><code><span class="c1">## SwitchyOmega for Chromium</span>
 $ wget https://www.switchyomega.com/static/file/v2.5.6/SwitchyOmega_Chromium.crx
@@ -3397,7 +3369,6 @@ $ wget https://www.switchyomega.com/static/file/v2.5.6/SwitchyOmega_Firefox.fx.x
 about:addons
 Install Add-ons From File
 </code></pre></div>
-
 <p>本地开启bbr，上传数据（如视频）防阻塞。</p>
 <div class="highlight"><pre><span></span><code><span class="c1">## 开启 bbr</span>
 $ sudo <span class="nb">echo</span> <span class="s2">&quot;net.core.default_qdisc=fq&quot;</span> &gt;&gt; /etc/sysctl.d/233-bbr.conf
@@ -3405,7 +3376,6 @@ $ sudo <span class="nb">echo</span> <span class="s2">&quot;net.ipv4.tcp_congesti
 $ lsmod <span class="p">|</span> grep bbr
 tcp_bbr         <span class="m">20480</span>   <span class="m">1</span>
 </code></pre></div>
-
 <h3 id="_12">双显卡设置与游戏<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>小米pro15.6双显卡分别是HD620和MX150。后者有2G显存。电脑还是以工作为主，偶尔和儿子玩一玩游戏。小米pro 15.6的BIOS里没有可以选择的显卡，因此无法单独禁用某个显卡。我们采用双显卡用optimus交火来在应用和能耗中寻找平衡。</p>
 <div class="highlight"><pre><span></span><code>$ sudo pacman -S bumblebee
@@ -3424,12 +3394,10 @@ $ vim /etc/pacman.conf
 $ sudo pacman -Syu
 $ sudo pacman -S steam
 </code></pre></div>
-
 <p>右键点击游戏-&gt; Properties，添加参数 primusrun</p>
 <h3 id="_13">电源管理<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ sudo pacman -S tlp
 </code></pre></div>
-
 <h3 id="_14">设置用户目录路径<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 路径可以设置成自己喜爱的方式</span>
 $ sudo pacman -S xdg-user-dirs
@@ -3447,7 +3415,6 @@ $ vim ~/.config/user-dirs.dirs
 <span class="c1"># 更新路径目录</span>
 $ xdg-user-dirs-update
 </code></pre></div>
-
 <h3 id="wps">办公软件 wps<a class="headerlink" href="#wps" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 添加 archlinux cn 源</span>
 $ sudo <span class="nb">echo</span> <span class="s2">&quot;[archlinuxcn]&quot;</span> &gt;&gt; /etc/pacman.conf
@@ -3459,7 +3426,6 @@ $ sudo pacman -S wps-office ttf-wps-fonts
 <span class="c1"># $ git clone https://aur.archlinux.org/ttf-ms-fonts.git</span>
 <span class="c1"># $ cd ttf-ms-fonts &amp;&amp; makepkg -si</span>
 </code></pre></div>
-
 <h3 id="_15">蓝牙<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
 <p>通过配置，大约在中断蓝牙连接30秒后才能自动链接上。</p>
 <div class="highlight"><pre><span></span><code>$ sudo pacman -S bluez bluez-utils
@@ -3490,7 +3456,6 @@ $ sudo vim /etc/bluetooth/main.conf
 <span class="nv">ReconnectIntervals</span><span class="o">=</span><span class="m">1</span>,2,4,8,16,32,64
 <span class="nv">AutoEnable</span><span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
-
 <h3 id="conda-and-bioconda">Conda and Bioconda<a class="headerlink" href="#conda-and-bioconda" title="Permanent link">&para;</a></h3>
 <p>采用 conda 管理生物软件</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 下载安装 conda</span>
@@ -3504,12 +3469,10 @@ $ conda config --add channels defaults
 $ conda config --add channels conda-forge
 $ conda config --add channels bioconda
 </code></pre></div>
-
 <h3 id="music">Music 播放<a class="headerlink" href="#music" title="Permanent link">&para;</a></h3>
 <p>命令行下的音乐播放器众多，比较符合个人喜欢的是cmus/nm</p>
 <div class="highlight"><pre><span></span><code>$ sudo pacman -S cmus
 </code></pre></div>
-
 <h3 id="_16">指纹识别<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
 <p>用<code>fprintd</code>验证时，需要将右手食指划第一节慢慢滑过sensor（2秒左右）5次。实际使用下来，小米的Linux指纹识别效果不如Win10，可能需要新版本的fprint，目前不建议开启。</p>
 <div class="highlight"><pre><span></span><code><span class="c1">## Archlinux 源里的版本还不支持 Elan。github下载最新源代码</span>
@@ -3564,7 +3527,6 @@ auth include login
 <span class="c1">## 另外感觉指纹识别速度不是特别敏锐，扫完指纹需要0.5s左右才能解锁。</span>
 <span class="c1">## 总体上来说，可用性不是太高。个人感觉不如摄像头人脸识别可用性更高...</span>
 </code></pre></div>
-
 <p>i3lock 参见<a href="https://www.reddit.com/r/i3wm/comments/7p07nx/not_working_i3lock_with_a_fingerprint_scanner/">这里</a></p>
 <h3 id="_17">摄像头<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <p>摄像头默认配置好可以直接使用</p>
@@ -3572,20 +3534,17 @@ auth include login
 $ ffmpeg -f v4l2 -video_size 640x480 -i /dev/video0 output.mkv
 $ mpv output.mkv
 </code></pre></div>
-
 <h3 id="wine">Wine<a class="headerlink" href="#wine" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ sudo pacman -S wine wine-mono wine-tricks wine_gecko
 $ <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="nv">$HOME</span>/.wine wineboot -u
 $ <span class="nv">WINEARCH</span><span class="o">=</span>win64 <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="nv">$HOME</span>/.wine64 winetricks <span class="nv">fontsmooth</span><span class="o">=</span>rgb gdiplus vcrun2008 vcrun2010 vcrun2012 vcrun2013 vcrun2015 atmlib msxml3 msxml6 gdiplus corefonts
 </code></pre></div>
-
 <h3 id="photoshop">Photoshop<a class="headerlink" href="#photoshop" title="Permanent link">&para;</a></h3>
 <p>安装的版本是：Adobe Photoshop CC 2018 v19.1.3.49649，基本能正常使用，个别菜单显示不正常。</p>
 <div class="highlight"><pre><span></span><code>$ wget http://209.126.105.33/DownloadBull/Portable_Adobe_Photoshop_CC_2018_v19.0.0.165_x64.zip
 $ 7z e Portable_Adobe_Photoshop_CC_2018_v19.0.0.165_x64.zip
 $ wine64 PhotoshopPortable.exe
 </code></pre></div>
-
 <h3 id="_18">美化字体设置<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <p>!!! warning: "本节内容更新"
     随着更新，不建议使用infinality来渲染字体。</p>
@@ -3603,12 +3562,10 @@ $ sudo pacman -R fontconfig
 $ git clone https://aur.archlinux.org/fontconfig-infinality-ultimate.git
 $ <span class="nb">cd</span> fontconfig-infinality-ultimate <span class="o">&amp;&amp;</span> makepkg -si
 </code></pre></div>
-
 <h3 id="_19">屏幕保护和锁屏<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
 <p>如果用 xscreensaver 构建</p>
 <div class="highlight"><pre><span></span><code>bindsym <span class="nv">$mod</span>+F12 <span class="nb">exec</span> i3lock
 </code></pre></div>
-
 <h3 id="_20">网络工具<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
 <p>ArchLinux 的 net-tools 已经默认 deprecated，原来常用 netstat 命令有<a href="http://inai.de/2008/02/19">新代替工具</a>。</p>
 <h3 id="vim-python-ide">vim &amp;&amp; Python IDE<a class="headerlink" href="#vim-python-ide" title="Permanent link">&para;</a></h3>
@@ -3624,7 +3581,6 @@ $ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-sh
 $ <span class="nb">echo</span> <span class="s1">&#39;BASE16_SHELL=$HOME/.config/base16-shell/&#39;</span> &gt;&gt; ~/.bashrc
 $ <span class="nb">echo</span> <span class="s1">&#39;[ -n &quot;$PS1&quot; ] &amp;&amp; [ -s $BASE16_SHELL/profile_helper.sh ] &amp;&amp; eval &quot;$($BASE16_SHELL/profile_helper.sh)&quot;&#39;</span> &gt;&gt; ~/.bashrc
 </code></pre></div>
-
 <p>设置</p>
 <div class="highlight"><pre><span></span><code># add these line into .vimrc
 if filereadable(expand(&quot;~/.vimrc_background&quot;))
@@ -3632,16 +3588,13 @@ if filereadable(expand(&quot;~/.vimrc_background&quot;))
   source ~/.vimrc_background
 endif
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="c1"># 安装 python git module</span>
 $ sudo pacman -S python-gitpython
 </code></pre></div>
-
 <h3 id="_21">图标美化<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 使用 numix 套件，也可以选择自己喜欢的theme</span>
 $ sudo pacman -S numix-icon-theme-git numix-circle-icon-theme-git numix-gtk-theme
 </code></pre></div>
-
 <h3 id="_22">动态壁纸<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
 <p>Linux 下可以用 xwinwraper 之类的工具将视频或 Gif 动态图片作为壁纸，达到动态桌面的效果。当然代价是牺牲一些CPU和内存。</p>
 <ol>
@@ -3653,29 +3606,23 @@ $ sudo pacman -S numix-icon-theme-git numix-circle-icon-theme-git numix-gtk-them
 $ youtube-dl --proxy <span class="sb">`</span>socks server<span class="sb">`</span> -F <span class="sb">`</span>URL<span class="sb">`</span>
 $ youtube-dl --porxy <span class="sb">`</span>socks server<span class="sb">`</span> -f <span class="m">137</span> <span class="sb">`</span>URL<span class="sb">`</span>
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code>$ touch run_wallpaper.sh
 </code></pre></div>
-
 <p>run_wallpaper.sh 脚本内容</p>
 <div class="highlight"><pre><span></span><code>#!/bin/sh
 mpv $1 --wid=&quot;$2&quot; --loop
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code>$ xwinwrap -fs -argb -ni -un -s -b -st -sp -nf -ov -- run_wallpaper.sh video.mp4 WID
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code>$ cmatrix
 $ ffmpeg -f x11grab -s 1920x1080 -i <span class="nv">$DISPLAY</span> output.mp4
 </code></pre></div>
-
 <h3 id="_23">打印机<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
 <p>使用CUPS管理打印机。</p>
 <div class="highlight"><pre><span></span><code>$ lp my.doc
 </code></pre></div>
-
 <ol>
-<li>[Infinality]: <a href="http://www.infinality.net/">http://www.infinality.net/</a></li>
+<li></li>
 </ol>
                 
                   

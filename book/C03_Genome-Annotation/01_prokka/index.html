@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C03_Genome-Annotation/01_prokka/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2609,7 +2609,6 @@ $ <span class="nb">echo</span> <span class="s2">&quot;export PATH=</span><span c
 $ <span class="nb">source</span> ~/.bashrc
 $ prokka --setupdb
 </code></pre></div>
-
 <div class="admonition note">
 <p class="admonition-title">注意事项</p>
 <p>如果要使用 --gram 功能，需要安装 <a href="http://www.cbs.dtu.dk/services/SignalP/">signalp</a>。<a href="http://www.cbs.dtu.dk/services/SignalP/">signalp</a> 是 <a href="http://www.cbs.dtu.dk/index.html">DTU 大学生物及卫生信息学系</a>开发，支持web界面的工具。命令行版本需要提供非商业ISP提供的邮箱帐号注册以后才能下载（比如政府或大学）。点击<a href="http://www.cbs.dtu.dk/cgi-bin/nph-sw_request?signalp">这里</a>。</p>
@@ -2620,7 +2619,6 @@ $ conda create -n prokka
 $ conda activate prokka
 <span class="o">(</span>prokka<span class="o">)</span>$ conda install <span class="nv">prokka</span><span class="o">=</span><span class="m">1</span>.14
 </code></pre></div>
-
 <h2 id="prokka_2">使用 Prokka<a class="headerlink" href="#prokka_2" title="Permanent link">&para;</a></h2>
 <p>Prokka 的使用非常简单，准备好需要注释的核酸序列fasta格式文件即可。这里用*Listeria monocytogenes*的参考基因组egd为例。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 下载基因组数据</span>
@@ -2629,7 +2627,6 @@ $ esearch -db nuccore -query <span class="s2">&quot;1639[txid] AND egd&quot;</sp
 <span class="c1"># 注释基因组序列</span>
 $ prokka egd.fasta
 </code></pre></div>
-
 <p><code>--listdb</code> 参数可以查看 prokka 数据库信息。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 查看可以使用的数据库</span>
 $ prokka --listdb
@@ -2640,13 +2637,11 @@ Looking <span class="k">for</span> databases in: ...
 * HMMs: HAMAP
 * CMs: Bacteria Viruses
 </code></pre></div>
-
 <p>如果需要比较完整的进行序列注释，结果可以比较方便的用来提交的话，可以添加相应的参数来规范注释以及调用不同的工具扫描ncRNA等。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 注释 Listeria monocytogenes 标准株 egd</span>
 $ prokka --outdir egd --prefix egd --addgenes --addmrna --compliant --centre CDC --genus Listeria --species <span class="s2">&quot;Listeria monocytogenes&quot;</span> --strain egd
 --kingdom Bacteria --usegenus --cpus <span class="m">4</span> --rfam --rnammer --force egd.fasta
 </code></pre></div>
-
 <p><strong>生成结果注释文件</strong></p>
 <p>|----|----|
 | egd.err | prokka 对注释结果存在的一些疑问进行报告的信息 |
@@ -2672,7 +2667,6 @@ $ prokka --outdir egd --prefix egd --addgenes --addmrna --compliant --centre CDC
 <p>如果要注释病毒基因组，除了添加<code>--kingdom</code>外</p>
 <div class="highlight"><pre><span></span><code>$ prokka --kingdom Viruses contigs.fasta
 </code></pre></div>
-
 <p><strong>.err 文件</strong></p>
 <p>err 文件记录了注释过程中的反馈日志。</p>
 <p><strong>.tsv 文件</strong></p>
@@ -2691,7 +2685,6 @@ DJECODEN_00003  CDS     <span class="m">1344</span>    yeeO_1          COG0534 p
 DJECODEN_00003  gene    <span class="m">1344</span>    yeeO_1
 DJECODEN_00003  mRNA    <span class="m">1344</span>    yeeO_1
 </code></pre></div>
-
 <ul>
 <li>locus_tag: 注释基因的 locus 名称</li>
 <li>ftype: 类型，默认为CDS，如果打开--addgenes和--addmrna参数，则会区别是RNA还是编码基因</li>
@@ -2720,7 +2713,6 @@ $ awk <span class="s1">&#39;!a[$1]++{print}&#39;</span> egd.tsv
 <span class="c1"># 显示所有COG注释</span>
 $ awk <span class="s1">&#39;/COG/&#39;</span> egd.tsv
 </code></pre></div>
-
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
                 
                   

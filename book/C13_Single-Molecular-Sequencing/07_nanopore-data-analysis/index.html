@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C13_Single-Molecular-Sequencing/07_nanopore-data-analysis/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2553,29 +2553,24 @@ fastq_pass
 ├── ...
 └── barcode24
 </code></pre></div>
-
 <h3 id="1_1">1.测序结果扫描<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
 <p>非必须，初步了解目标扩增子在测序结果中的分布，如果有大量人源reads，可能扩增效率不佳，需要改换引物重新扩增。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># cenrifuge 对 reads 进行扫描</span>
 <span class="o">(</span>centrifuge<span class="o">)</span>$ <span class="nb">export</span> <span class="nv">DB</span><span class="o">=</span><span class="nv">$HOME</span>/dbs/centrifuge/b_compressed+h+v
 <span class="o">(</span>centrifuge<span class="o">)</span>$ ls 00_raw/*.fastq <span class="p">|</span> parallel --max-args<span class="o">=</span><span class="m">1</span> centrifuge -x <span class="nv">$DB</span> -U <span class="o">{</span><span class="m">1</span><span class="o">}</span> -S 01_centrifuge/<span class="o">{</span><span class="m">1</span><span class="o">}</span>.result --report-file <span class="m">01</span>+centrifuge/<span class="o">{</span><span class="m">1</span><span class="o">}</span>.reprot
 </code></pre></div>
-
 <h3 id="2">2.去除接头<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>使用 guppy 做 demultiplex 和 basecalling 时没有做trim barcodes，需要使用 porechop 等软件去除 barcodes 序列。</p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>nanopore<span class="o">)</span>$ ls 00_raw/*.fastq <span class="p">|</span> parallel --max-args<span class="o">=</span><span class="m">1</span> porechop -i <span class="o">{</span><span class="m">1</span><span class="o">}</span> -o 02_porechop/<span class="o">{</span><span class="m">1</span><span class="o">}</span>
 </code></pre></div>
-
 <h3 id="3">3.去除低质量序列和短片段<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <p>对于 Nanopore 生成的碱基质量做一便过滤，这里使用reads Q值为9作为cut-off，reads 长度超过1200的保留。</p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>nanopore<span class="o">)</span>$ ls 02_porechop/*.fastq <span class="p">|</span> parallel --max-args<span class="o">=</span><span class="m">1</span> NanoFilt -q <span class="m">9</span> -l <span class="m">1200</span> <span class="o">{</span><span class="m">1</span><span class="o">}</span> <span class="p">|</span> gzip &gt; 03_nanofilt/trimed.fastq.gz
 </code></pre></div>
-
 <h3 id="4">4.去除引物区域<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <p>去除5'和3'端的引物区域。如果reads比对时起始比对的位置落在引物扩增区，则去除。</p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-
 <h2 id="2_1">2.细菌组装获得基因组<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h2>
 <p>案例使用霍乱弧菌gDNA做为起始样本，进行de novo测序。获得 Nanopore reads 后直接使用组装软件对nanopore数据进行组装获得基因组。</p>
 <p>常用的组装软件：</p>
@@ -2590,27 +2585,22 @@ fastq_pass
 <span class="o">(</span>nanopore<span class="o">)</span>$ ls 04_flye
 assembly.fasta    <span class="c1"># 组装结果，含contigs的fasta格式文件</span>
 </code></pre></div>
-
 <p><strong>使用 canu</strong></p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>nanopore<span class="o">)</span>$ canu
 </code></pre></div>
-
 <p><strong>使用 miniasm</strong></p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>nanopore<span class="o">)</span>$
 </code></pre></div>
-
 <h2 id="_1">比对到参考基因组获得基因组<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>采用 minimap2</p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>nanopore<span class="o">)</span>$ minimap2
 </code></pre></div>
-
 <p>采用 bwa mem</p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>nanopore<span class="o">)</span>$ bwa index ref.fa
 <span class="o">(</span>nanopore<span class="o">)</span>$ bwa mem -t <span class="m">4</span> -R <span class="s2">&quot;@RG:S1\tSM:S1&quot;</span> ref.fa 03_nanofilt/trimed.fastq.gz <span class="p">|</span> <span class="se">\</span>
 &gt; samtools view -bS - <span class="p">|</span> samtools sort -@4 -O bam -o sorted.fastq.gz
 <span class="o">(</span>nanopore<span class="o">)</span>$ bwa index sorted.fastq.gz
 </code></pre></div>
-
 <h2 id="_2">获得基因组及突变位点<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">构建流程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p><strong>采用shell脚本</strong></p>
@@ -2627,11 +2617,9 @@ assembly.fasta    <span class="c1"># 组装结果，含contigs的fasta格式文�
 <span class="c1"># 组装成contigs</span>
 ls barcode*/03_nanofilt/*.fq.gz <span class="p">|</span> parallel --max-args<span class="o">=</span><span class="m">1</span> flye --nano-raw <span class="o">{</span><span class="m">1</span><span class="o">}</span> -g 4m -o <span class="o">{</span>//<span class="o">}</span>/../04_flye
 </code></pre></div>
-
 <p><strong>采用snakemake</strong></p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
 
@@ -2652,7 +2640,6 @@ ls barcode*/03_nanofilt/*.fq.gz <span class="p">|</span> parallel --max-args<spa
     bwa index <span class="si">${</span><span class="nv">i</span><span class="si">}</span>/04_mapping/<span class="si">${</span><span class="nv">i</span><span class="si">}</span>_sorted.fastq.gz
 <span class="k">done</span>
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code>mkdir <span class="nv">$1</span>/00_raw <span class="nv">$1</span>/01_centrifuge <span class="nv">$1</span>/02_porechop <span class="nv">$1</span>/03_nanofilt <span class="nv">$1</span>/04_mapping
 mv <span class="nv">$1</span>/*.fastq <span class="nv">$1</span>/00_raw
 centrifuge -x <span class="nv">$DB</span> -U $ -S <span class="si">${</span><span class="nv">i</span><span class="si">}</span>/01_centrifuge/<span class="o">{</span><span class="m">1</span><span class="o">}</span>.result --report-file <span class="si">${</span><span class="nv">i</span><span class="si">}</span>/01_centrifuge/<span class="o">{</span><span class="m">1</span><span class="o">}</span>.reprot
@@ -2664,7 +2651,6 @@ bwa index ref.fa
 bwa mem -t <span class="nv">$CPU</span> -R <span class="k">$(</span><span class="nb">echo</span> <span class="s2">&quot;@RG\tID:</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">\tSM:</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span> ref.fa <span class="si">${</span><span class="nv">i</span><span class="si">}</span>/03_nanofilt/<span class="si">${</span><span class="nv">i</span><span class="si">}</span>_trimed.fastq.gz <span class="p">|</span> samtools view -bS - <span class="p">|</span> samtools sort -@<span class="nv">$CPU</span> -O bam -o <span class="si">${</span><span class="nv">i</span><span class="si">}</span>/04_mapping/<span class="si">${</span><span class="nv">i</span><span class="si">}</span>_sorted.fastq.gz
 bwa index <span class="si">${</span><span class="nv">i</span><span class="si">}</span>/04_mapping/<span class="si">${</span><span class="nv">i</span><span class="si">}</span>_sorted.fastq.gz
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
 <span class="nv">CPU</span><span class="o">=</span><span class="m">160</span>
 <span class="nv">HEADER</span><span class="o">=</span><span class="k">$(</span>zcat <span class="nv">$1</span> <span class="p">|</span> head -n <span class="m">1</span><span class="k">)</span>
@@ -2675,10 +2661,8 @@ bwa index <span class="si">${</span><span class="nv">i</span><span class="si">}<
 bwa mem -M -t <span class="nv">$CPU</span> -v <span class="m">3</span> -R <span class="k">$(</span><span class="nb">echo</span> <span class="s2">&quot;@RG\tID:</span><span class="nv">$ID</span><span class="s2">\tSM:</span><span class="nv">$ID</span><span class="s2">&quot;</span>_<span class="s2">&quot;</span><span class="nv">$SM</span><span class="s2">\tLB:</span><span class="nv">$ID</span><span class="s2">&quot;</span>_<span class="s2">&quot;</span><span class="nv">$SM</span><span class="s2">\tPL:ILLUMINA&quot;</span><span class="k">)</span> <span class="se">\</span>
 ref.fa <span class="nv">$1</span> <span class="nv">$2</span> <span class="p">|</span> samtools view -bS - <span class="p">|</span> samtools sort -@<span class="nv">$CPU</span> -O bam -o <span class="nv">$ID_$SM_mapped</span>.bam
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="c1"># snakemake</span>
 </code></pre></div>
-
 <h2 id="nanopore_1">Nanopore 数据直接组装的应用<a class="headerlink" href="#nanopore_1" title="Permanent link">&para;</a></h2>
 <p>虽然目前如 flye 等组装软件对于细菌基因组的组装准确度已经很高了，但是由于 Nanopore 本身技术特点原因，还是不可能像2代测序一样获得精准的基因组序列的。</p>
 <ul>

@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C14_Multiple-Sequence-Alignment/04_muscle/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
-        <title>04 muscle - 杭州疾控中心测序实验室</title>
+        <title>Muscle - 杭州疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#muscle" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -101,7 +106,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              04 muscle
+              Muscle
             
           </span>
         </div>
@@ -2401,6 +2406,51 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    使用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -2411,9 +2461,34 @@
                   </a>
                 
                 
-                  <h1>04 muscle</h1>
-                
-                
+                <h1 id="muscle">Muscle<a class="headerlink" href="#muscle" title="Permanent link">&para;</a></h1>
+<p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2021-01-26</p>
+<hr />
+<div class="admonition abtract">
+<p class="admonition-title">内容简介</p>
+<p>Muscle 是一个老牌的多重序列比对工具，它是一个progressive alignment工具，精度与mafft相似，但速度更快。<a href="https://academic.oup.com/nar/article/32/5/1792/2380623">参考文献</a></p>
+</div>
+<p>Muscle 构建多重序列比对基本步骤是3部分：草图Progressive式比对（利用kmer进行距离比较）；精细Progressive比对（Kimura distance重评估）；精细修正</p>
+<h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>使用版本：</p>
+<ul>
+<li>muscle: v3.8.1151</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># muscle 没有需要其他依赖，可以直接安装在默认的环境中</span>
+$ conda activate seqs
+<span class="o">(</span>msa<span class="o">)</span>$ conda install muscle
+</code></pre></div>
+<h2 id="_2">使用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># seqs.fas 是 multifasta 文件，seqs.aln 是多重序列比对结果</span>
+<span class="o">(</span>msa<span class="o">)</span>$ muscle -in seqs.fas -out seqs.aln
+
+<span class="c1"># 对于近源序列，可以添加 -diags 参数，并减少回调次数加快运行</span>
+<span class="o">(</span>msa<span class="o">)</span>$ muscle -in seqs.fas -out seqs.aln -diags -maxiters <span class="m">2</span>
+</code></pre></div>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="http://www.drive5.com/muscle/muscle_userguide3.8.html">User Guide</a></li>
+</ol>
                 
                   
                     
@@ -2422,7 +2497,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2020-09-05
+      Last update: 2021-01-26
     
   </small>
 </div>

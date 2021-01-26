@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C08_Genome-Visualization/01_igv/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2547,7 +2547,6 @@ $ esearch -db nuccore -query <span class="s1">&#39;NC_012967&#39;</span> <span c
 <span class="c1"># 下载比对序列sra</span>
 $ prefetch -v SRR030257
 </code></pre></div>
-
 <h2 id="2">2. 安装<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>$ wget -O http://iubio.bio.indiana.edu/soft/molbio/readseq/java/readseq.jar
 $ java -cp ~/app/readseq/readseq.jar run NC_012967.1.gbk -f GFF -o NC_012967.1.gff
@@ -2556,7 +2555,6 @@ $ unzip v2.3.37.zip
 $ <span class="nb">cd</span> v2.3.37
 $ java -Xmx2g -jar igv.jar
 </code></pre></div>
-
 <div class="admonition infomation">
 <p class="admonition-title">Infomation</p>
 <p>Linux下使用igv建议采用java8，其他版本可能会出错。因此通过conda安装也是一个不错的方式。</p>
@@ -2569,7 +2567,6 @@ $ samtools view -b -S -o bowtie/SRR030257.bam bowtie/SRR030257.sam
 $ samtools sort bowtie/SRR030257.bam bowtie/SRR030257.sorted
 $ samtools index bowtie/SRR030257.sorted.bam
 </code></pre></div>
-
 <p><strong>分析结果</strong></p>
 <p>弹出的IGV图形界面，下拉菜单选择<code>Genomes</code>/<code>Create .genome File...</code>,在弹出的窗口中<code>FASTA file</code>选项选择基因组fasta文件，在<code>Gene File</code>选项选择转换的文件。</p>
 <h2 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>

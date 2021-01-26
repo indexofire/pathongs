@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C12_Metagenomics-Analysis/01_kraken/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2527,7 +2527,6 @@ $ conda activate kraken
 <span class="c1"># 将数据库解压缩至指定目录，这里放在$HOME/dbs/minikraken2</span>
 <span class="o">(</span>kraken<span class="o">)</span>$ tar -zxf minikraken2_v2_8GB.tgz -C <span class="nv">$HOME</span>/dbs/minikraken2
 </code></pre></div>
-
 <h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>使用kraken2需要用<code>--db</code>指向其数据库，比如微生物鉴定常用 minikraken2 数据库。用<code>--report</code>参数生成结果报告。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 对宏基因组组装结果 assembly.fna 序列进行扫描</span>
@@ -2535,7 +2534,6 @@ $ conda activate kraken
 <span class="c1"># 对测序reads数据进行扫描</span>
 <span class="o">(</span>kraken<span class="o">)</span>$ kraken2 --use-names --threads <span class="m">4</span> --db <span class="nv">$HOME</span>/dbs/minikraken2 --report report2.txt --fastq-input --paired S1_R1.fq.gz S1_R2.fq.gz &gt; result2.kraken
 </code></pre></div>
-
 <p>bracken 是采用贝叶斯算法的 kraken 丰度评估软件。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 采用kmer方式对已建立kmer索引的物种数据库进行比对，获得序列对应物种</span>
 <span class="o">(</span>kraken<span class="o">)</span>$ wget https://ccb.jhu.edu/software/bracken/dl/minikraken2_v2/database200mers.kmer_distrib

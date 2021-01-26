@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/tutorial/Linux/03_linux-software/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2560,7 +2560,6 @@ $ sudo pacman -R pkg-name
 <span class="c1"># 软件搜索</span>
 $ sudo pacman -Ss pkg-name
 </code></pre></div>
-
 <p>安装系统级或者用户级软件</p>
 <h2 id="2-conda">2. conda 虚拟环境<a class="headerlink" href="#2-conda" title="Permanent link">&para;</a></h2>
 <p>由于很多开发者需要在不同环境下调用不同版本，或者使用不同版本的 java, python进行开发和运行程序。而各种版本的依赖库由于对版本的支持度，会造成错综复杂的结果。因此我们常常将一个应用放在与系统级程序隔离的虚拟环境中。目前最流行的就是使用 conda 工具。 conda 包含 anaconda 和 miniconda 2个版本。前者自带了很多数据分析相关的应用程序和包，后者则是最小化了第三方程序，只提供了一个mini的conda支持。</p>
@@ -2575,7 +2574,6 @@ $ conda config --add channels defaults
 $ conda config --add channels conda-forge
 $ conda config --add channels bioconda
 </code></pre></div>
-
 <p>建立 conda 虚拟环境</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 创建虚拟环境 myenv</span>
 $ conda create -n myenv
@@ -2583,7 +2581,6 @@ $ conda activate myenv
 <span class="c1"># 在 myenv 环境中安装软件</span>
 <span class="o">(</span>myenv<span class="o">)</span>$ conda install mysoftware
 </code></pre></div>
-
 <h2 id="3-git">3. Git 代码管理工具<a class="headerlink" href="#3-git" title="Permanent link">&para;</a></h2>
 <p>git 是 Linux 内核之父 Linus 开发的代码管理工具。目前社区中比较活跃的 git 在线社群服务有 github, gitlab, bitbucket(过去是hg,现在也转为git)，国内的例如coding.net,oschina。github是最早最成功的 git 在线管理社区，极好的粘合了广大“码农”，众多主流的开源软件都驻扎在 github 中。</p>
 <p>许多生物学软件的源代码也选择托管在 github 中（老牌的可能在 sourceforge.net），如果我们要研究代码，或者使用脚本程序，或者通过源代码安装编译安装软件等，就要学会最基本的 git 命令。而且 github 上还有许多基于 markdown, rst, jupyter, pdf 等格式的教学资料，是学习的最好场所之一。</p>
@@ -2604,7 +2601,6 @@ $ sudo cp bwa /usr/local/sbin
 <span class="c1"># 使用 bwa</span>
 $ bwa mem ...
 </code></pre></div>
-
 <h2 id="4-docker">4. docker方式<a class="headerlink" href="#4-docker" title="Permanent link">&para;</a></h2>
 <p>docker 是一种虚拟机，但是其与 virtualbox, vm 等的区别是其启动和调用都是毫秒级的，几乎感觉不到其的加载时间，但又与系统有沙盒模式隔离，保证了安全。docker 最大的好处是直接调用他人写的 DOCKERFILE 就可以下载 image，运行生成 container， DOCKERFILE 解决的安装的过程，除了下载安装速度可能略慢，其他几乎不需要更多的学习曲线。安装完成运行 container 即可使用。</p>
 <p><strong>Ubuntu 18.04 Server安装docker</strong></p>
@@ -2628,7 +2624,6 @@ $ su - <span class="si">${</span><span class="nv">USER</span><span class="si">}<
 <span class="c1"># 确认当前用户已经加入 docker 组</span>
 $ id -nG
 </code></pre></div>
-
 <p><strong>docker镜像下载</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 运行软件自带的 hello-world 镜像</span>
 $ docker run hello-world
@@ -2639,7 +2634,6 @@ $ docker pull ubuntu
 <span class="c1"># 查看当前已有的镜像</span>
 $ docker images
 </code></pre></div>
-
 <p><strong>docker容器运行</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 以交互方式运行容器 ubuntu</span>
 $ docker run -it ubuntu

@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C15_Phylogeny-Analysis/04_beast2/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
-        <title>04 beast2 - 杭州疾控中心测序实验室</title>
+        <title>Beast2 使用 - 杭州疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#beast2" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -101,7 +106,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              04 beast2
+              Beast2 使用
             
           </span>
         </div>
@@ -2401,6 +2406,37 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -2411,9 +2447,17 @@
                   </a>
                 
                 
-                  <h1>04 beast2</h1>
-                
-                
+                <h1 id="beast2">Beast2 使用<a class="headerlink" href="#beast2" title="Permanent link">&para;</a></h1>
+<h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># 创建 beast2 虚拟环境，安装 beast2</span>
+$ conda create -n beast2
+$ conda activate beast2
+<span class="o">(</span>beast2<span class="o">)</span>$ conda install beast2
+
+<span class="c1"># 向conda环境添加变量，优化 java 对 beauti 程序字体渲染</span>
+<span class="o">(</span>beast2<span class="o">)</span>$ <span class="nb">echo</span> <span class="s2">&quot;export _JAVA_OPTIONS=&#39;-Dawt.useSystemAAFontSettings=lcd&#39;&quot;</span> &gt;&gt; <span class="nv">$CONDA_PREFIX</span>/etc/conda/activate.d/java_home.sh
+<span class="o">(</span>beast2<span class="o">)</span>$ <span class="nb">echo</span> <span class="s2">&quot;unset _JAVA_OPTIONS&quot;</span> &gt;&gt; <span class="nv">$CONDA_PREFIX</span>/etc/conda/deactivate.d/java_home.sh
+</code></pre></div>
                 
                   
                     
@@ -2422,7 +2466,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2020-09-05
+      Last update: 2021-01-22
     
   </small>
 </div>

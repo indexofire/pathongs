@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C03_Genome-Annotation/07_eggnog/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2478,7 +2478,6 @@ $ conda activate eggnog
 <span class="o">(</span>eggnog<span class="o">)</span>$ <span class="nb">cd</span> PATH/TO/DATA
 <span class="o">(</span>eggnog<span class="o">)</span>$ download_eggnog_data.py -yq --data_dir <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span> bact
 </code></pre></div>
-
 <h2 id="_1">使用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>emapper 的默认算法是hmm，如果想用diamond来做cluster，需要添加<code>-m diamond</code>参数</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># HMM 注释</span>
@@ -2490,7 +2489,6 @@ $ conda activate eggnog
 <span class="c1"># Diamond 注释</span>
 <span class="o">(</span>eggnog<span class="o">)</span>$ emapper.py -i mygenome.fa -d bact -m diamond --data_dir PATH/TO/DATA -o mygenome_bact_result
 </code></pre></div>
-
 <h2 id="_2">结果<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>生成的数据文件有：</p>
 <ul>

@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C13_Single-Molecular-Sequencing/05_nanopore-assembly/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2495,7 +2495,6 @@
 $ conda activate minasm
 <span class="o">(</span>minasm<span class="o">)</span>$ conda install minimap2 miniasm Minion_QC
 </code></pre></div>
-
 <h3 id="_2">组装流程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># QC</span>
 <span class="o">(</span>minasm<span class="o">)</span>$ Rscript MinIONQC.R -i data/reads.fastq -o qc/result
@@ -2515,7 +2514,6 @@ $ conda activate minasm
 <span class="o">(</span>mummer<span class="o">)</span>$ dnadiff -p result ref.fasta miniasm.fasta
 <span class="c1"># 访问 www.assemblytics.com，用可视化工具查看比较接俄国</span>
 </code></pre></div>
-
 <h2 id="flye">Flye 组装<a class="headerlink" href="#flye" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># 组装</span>
 <span class="o">(</span>flye<span class="o">)</span>$ flye --nano-raw reads_trimmed.fastq --genome-size 5m --out-dir flye_result
@@ -2523,7 +2521,6 @@ $ conda activate minasm
 <span class="c1"># mummer 比较2个基因组</span>
 <span class="o">(</span>mummer<span class="o">)</span>$ dnadiff -p result ref.fasta flye_result/assembly.fasta
 </code></pre></div>
-
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ol>
 <li><a href="https://timkahlke.github.io/LongRead_tutorials">https://timkahlke.github.io/LongRead_tutorials</a></li>

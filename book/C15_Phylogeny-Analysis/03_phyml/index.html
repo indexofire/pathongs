@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C15_Phylogeny-Analysis/03_phyml/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2494,19 +2494,16 @@ $ ./configure --enable-phyml
 $ make
 $ sudo make install
 </code></pre></div>
-
 <h3 id="12">1.2 预编译包安装<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ conda activate phylo
 <span class="o">(</span>phylo<span class="o">)</span>$ conda install phyml
 </code></pre></div>
-
 <h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># 对碱基序列构建GTR进化树</span>
 $ phyml -i nucl.maf -d nt -b <span class="m">1000</span> -m GTR -f m -v e -a e -o tlr
 <span class="c1"># 对氨基酸序列构建JTT进化树</span>
 $ phyml -i prot.maf -d aa -m JTT -a e
 </code></pre></div>
-
 <div class="admonition note">
 <p class="admonition-title">软件参数</p>
 <ul>

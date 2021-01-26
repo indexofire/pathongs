@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/tutorial/Linux/07_vim/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2043,9 +2043,38 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        07. vim
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="./" class="md-nav__link md-nav__link--active">
       07. vim
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    修改
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -2432,6 +2461,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    修改
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2448,7 +2492,7 @@
                 
                 
                 <h1 id="vim">Vim 使用<a class="headerlink" href="#vim" title="Permanent link">&para;</a></h1>
-<p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2020-09-14</p>
+<p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2021-01-19</p>
 <hr />
 <p>vim 工具的基本使用</p>
 <p>3种模式：</p>
@@ -2478,15 +2522,52 @@
 <td>进入insert模式，但与i不同，是从光标的下一位进行编辑，相当与add</td>
 </tr>
 <tr>
-<td>CTRL+f</td>
+<td>v</td>
+<td>进入visual模式</td>
+</tr>
+<tr>
+<td>CTRL+f, CTRL+d</td>
 <td>向下翻页</td>
 </tr>
 <tr>
-<td>CTRL+n</td>
+<td>CTRL+n, CTRL+u</td>
 <td>向上翻页</td>
 </tr>
 </tbody>
 </table>
+<h2 id="_1">修改<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>最基本的<code>i</code>进入编辑模式后可以像常规文本编辑器进行修改。其他常见的修改操作：</p>
+<ul>
+<li>x 删除当前光标下的字符</li>
+<li>X 删除当前光标下前一个字符</li>
+<li>s 删除当前光标下的字符，并且进入insert模式</li>
+<li>r 按下后，再按下下一个字符时会将该字符取代当前光标位置的字符，相当与替换replace</li>
+<li>d 删除命令</li>
+<li>D 删除当前光标下后一个字符直到该行结尾，新的</li>
+</ul>
+<p><code>y</code>是复制行为，常见用法是:</p>
+<ul>
+<li><code>yy</code>复制当前行</li>
+<li><code>y5y</code>是从当前光标行开始复制5行，数字是几就复制几行</li>
+<li><code>yw</code>是从当前光标开始复制到该单词结束，如果是中文则复制到空格或标点处</li>
+<li><code>yiw</code>表示复制光标所在的单词，如果是中文则复制到空格或标点处。</li>
+<li><code>yt,</code></li>
+</ul>
+<p><code>d</code>是删除行为，常见的用法是：</p>
+<ul>
+<li><code>dd</code>删除当前行，实际效果与剪切一致，可以用<code>pp</code>将删除行粘贴</li>
+<li><code>d5d</code>是从当前光标行开始删除5行，数字是几就删除几行</li>
+<li><code>dw</code>删除</li>
+<li><code>daw</code>删除当前光标所在单词,会一直删除到空格</li>
+<li><code>diw</code>删除当前光标所在单词,不会一直删除到空格</li>
+<li><code>dt,</code>往后删除，一直搜索到逗号停止。可以用其他字母或者符号代替，表示一直删除到搜索到的所在符号前</li>
+<li><code>de</code>删除到该单词结尾，<code>D</code>elete to the <code>E</code>nd</li>
+</ul>
+<p>:g/pattern/d</p>
+<p><code>:Sex</code>垂直分屏打开新窗口显示文件
+<code>:Tex</code>以tab方式打开新窗口显示文件</p>
+<p><code>gt</code>向前切换tab
+<code>gT</code>向后切换tab</p>
 <p>~/.vimrc</p>
 <p>.vimrc 是 vim 的配置文件。</p>
                 
@@ -2497,7 +2578,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2020-09-14
+      Last update: 2021-01-19
     
   </small>
 </div>

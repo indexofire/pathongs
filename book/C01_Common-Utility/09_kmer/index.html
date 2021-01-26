@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C01_Common-Utility/09_kmer/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2600,25 +2600,21 @@
 <div class="highlight"><pre><span></span><code><span class="c1"># 安装 khmer 工具</span>
 $ pip install khmer
 </code></pre></div>
-
 <h3 id="conda">通过 conda 安装<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h3>
 <p>用 conda 新建一个虚拟环境安装 <a href="https://github.com/dib-lab/khmer/" title="Khmer">khmer</a>。当前版本为 [2.12][<a href="http://khmer.readthedocs.io/en/v2.1.2/">http://khmer.readthedocs.io/en/v2.1.2/</a>]，安装过程还会自动安装依赖工具 [screed][<a href="https://github.com/dib-lab/screed">https://github.com/dib-lab/screed</a>]（一个轻量级 python 序列数据库工具）。</p>
 <div class="highlight"><pre><span></span><code>$ conda create -n khmer
 $ conda activate khmer
 <span class="o">(</span>khmer<span class="o">)</span>$ conda install khmer
 </code></pre></div>
-
 <h2 id="_2">使用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/dib-lab/khmer/" title="Khmer">khmer</a> 有一套命令行工具，可以非常方便的运行使用。另外也可以使用 <a href="https://github.com/dib-lab/khmer/" title="Khmer">khmer</a> 的 API，编写 python 代码调用。</p>
 <p><strong>load-into-counting.py</strong></p>
 <div class="highlight"><pre><span></span><code>$ load-into-counting.py -T <span class="m">4</span> -k <span class="m">32</span> -x 1e8 -N <span class="m">4</span> counts R1.fastq.gz
 </code></pre></div>
-
 <p><strong>normalize-by-median.py</strong></p>
 <p>去除冗余序列。脚本程序将 Fast[A/Q] 格式数据文件列表化，脚本输出的序列可以被组装软件比如 SPAdes 等进行序列组装。</p>
 <div class="highlight"><pre><span></span><code>$ normalize-by-median.py -p -k <span class="m">21</span> -o - read.fq output.fq
 </code></pre></div>
-
 <p><strong>readstats.py</strong></p>
 <p>统计 FASTA/Q 序列信息。</p>
 <div class="highlight"><pre><span></span><code>$ readstats.py -o R1.output R1.fastq.gz
@@ -2630,7 +2626,6 @@ found <span class="m">449472737</span> bps / <span class="m">1879073</span> seqs
 ---------------
 <span class="m">449472737</span> bp / <span class="m">1879073</span> seqs<span class="p">;</span> <span class="m">239</span>.2 average length -- total
 </code></pre></div>
-
 <h2 id="khmer">khmer 用途<a class="headerlink" href="#khmer" title="Permanent link">&para;</a></h2>
 <p>对 de novo assembly 进行数字均一化进行预处理</p>
 <h2 id="python-api">Python API<a class="headerlink" href="#python-api" title="Permanent link">&para;</a></h2>
@@ -2646,7 +2641,6 @@ In <span class="o">[</span><span class="m">3</span><span class="o">]</span>: cou
 In <span class="o">[</span><span class="m">4</span><span class="o">]</span>: counts.get<span class="o">(</span><span class="s1">&#39;TGACTTTCTTCGCTTCCTGACGGCTTATGCC&#39;</span><span class="o">)</span>
 <span class="m">105</span>
 </code></pre></div>
-
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ol>
 <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4608353/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4608353/</a></li>

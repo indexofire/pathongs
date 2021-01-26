@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C02_Raw-Data-to-Genome/11_long-noisy-reads-assembly/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2587,19 +2587,16 @@
 <div class="highlight"><pre><span></span><code><span class="c1"># 在之前建立的 nanopore 虚拟环境中安装</span>
 $ conda create -n nanopore minimap miniasm
 </code></pre></div>
-
 <p>下载实验室数据</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># SRR8494940 是一个使用 minION 测序的大肠埃希菌 ST131-H22 菌株</span>
 <span class="o">(</span>seqs<span class="o">)</span>$ prefetch -v SRR8285369
 <span class="o">(</span>seqs<span class="o">)</span>$ fastq-dump --gzip SRR8285369.sra
 </code></pre></div>
-
 <p>开始分析之前的数据文件</p>
 <div class="highlight"><pre><span></span><code>.
 ├── SRR8285369.fastq.gz
 └── SRR8285369.sra
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="c1"># 使用 minimap 进行 all vs all 自我比对</span>
 <span class="o">(</span>nanopore<span class="o">)</span>$ minimap -Sw5 -L100 -m0 -t <span class="m">4</span> SRR8285369.fastq.gz SRR8285369.fastq.gz <span class="p">|</span> gzip -1 &gt; SRR8285369.paf.gz
 <span class="c1"># 使用 minimap2 进行 all vs all 自我比对</span>
@@ -2621,7 +2618,6 @@ $ conda create -n nanopore minimap miniasm
 <span class="o">(</span>nanopore<span class="o">)</span>$ mv racon2.fasta SRR8285369_corr.fasta
 <span class="o">(</span>nanopore<span class="o">)</span>$ mash SRR8285369.fasta SRR8285369_corr.fasta
 </code></pre></div>
-
 <p>组装完成后的数据文件</p>
 <div class="highlight"><pre><span></span><code>.
 ├── correct1.gfa.paf
@@ -2635,7 +2631,6 @@ $ conda create -n nanopore minimap miniasm
 ├── SRR8285369.paf.gz
 └── SRR8285369.sra
 </code></pre></div>
-
 <p><code>long-noisy-assembly.sh</code> 创建一个 shell 脚本，便于组装操作:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="nb">source</span> activate nanopore
@@ -2653,7 +2648,6 @@ minimap2 -t <span class="nv">$cpus</span> <span class="si">${</span><span class=
 racon -t <span class="nv">$cpus</span> <span class="nv">$2</span> <span class="si">${</span><span class="nv">name</span><span class="si">}</span>_corr2.gfa.paf <span class="si">${</span><span class="nv">name</span><span class="si">}</span>_corr2.gtf.paf &gt; <span class="si">${</span><span class="nv">name</span><span class="si">}</span>_racon2.fasta
 cp <span class="si">${</span><span class="nv">name</span><span class="si">}</span>_racon2.fasta <span class="si">${</span><span class="nv">name</span><span class="si">}</span>_corr.fasta
 </code></pre></div>
-
 <h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h3 id="21-miniasm">2.1 miniasm 使用<a class="headerlink" href="#21-miniasm" title="Permanent link">&para;</a></h3>
 <p>miniasm: <a href="https://github.com/lh3/miniasm">https://github.com/lh3/miniasm</a></p>
@@ -2664,7 +2658,6 @@ cp <span class="si">${</span><span class="nv">name</span><span class="si">}</spa
 <span class="c1"># 组装 nanopore 数据</span>
 <span class="o">(</span>nanopore<span class="o">)</span>$ miniasm -x ava-ont -t <span class="m">4</span>
 </code></pre></div>
-
 <p>miniasm 主要参数</p>
 <ul>
 <li><code>R</code></li>
@@ -2684,7 +2677,6 @@ cp <span class="si">${</span><span class="nv">name</span><span class="si">}</spa
 <span class="c1"># 拼接结果的 contigs 数</span>
 <span class="o">(</span>nanopore<span class="o">)</span>$ grep <span class="s2">&quot;&gt;&quot;</span> reads.fa <span class="p">|</span> wc -l
 </code></pre></div>
-
 <h2 id="3">3. 实例<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># 使用 edirect 获取 NCBI sra 数据库中的 nanopore 测序的沙门菌</span>
 <span class="o">(</span>seq<span class="o">)</span>$ edirect -db <span class="s1">&#39;sra&#39;</span> -query <span class="s1">&#39;nanopore salmonella&#39;</span> <span class="p">|</span> efetch -db
@@ -2699,7 +2691,6 @@ cp <span class="si">${</span><span class="nv">name</span><span class="si">}</spa
 <span class="o">(</span>nanopore<span class="o">)</span>$ minimap -Sw5 -L100 -m0 -t40
 <span class="o">(</span>nanopore<span class="o">)</span>$ miniasm -f reads.fq
 </code></pre></div>
-
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <p><a href="https://yiweiniu.github.io/blog/2018/03/Genome-assembly-pipeline-miniasm-Racon/">https://yiweiniu.github.io/blog/2018/03/Genome-assembly-pipeline-miniasm-Racon/</a>
 <a href="https://github.com/arvindsundaram/IN-BIOSx000/blob/2018/Assembly/practicals/07_Assembly_using_minasm+racon.md">https://github.com/arvindsundaram/IN-BIOSx000/blob/2018/Assembly/practicals/07_Assembly_using_minasm+racon.md</a></p>

@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C09_Analysis-Platform/02_galaxy/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2801,31 +2801,26 @@ $ sudo systemctl status docker
 <span class="c1"># 需要将用户加入 docker 组，比如将当前用户加入，即可不需要sudu即可执行docker命令</span>
 $ sudo usermod -aG docker <span class="nv">$USER</span>
 </code></pre></div>
-
 <h3 id="12-docker">1.2 Docker入门<a class="headerlink" href="#12-docker" title="Permanent link">&para;</a></h3>
 <p>首先要对 docker 镜像和容器的概念有所了解。细节可以参阅 <a href="https://yeasy.gitbooks.io/docker_practice/content">Docker 从入门到实践</a></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 测试 docker 是否运行正常</span>
 $ docker container run hello-world
 </code></pre></div>
-
 <h3 id="13-galaxy-docker">1.3 安装 galaxy docker 镜像<a class="headerlink" href="#13-galaxy-docker" title="Permanent link">&para;</a></h3>
 <p>使用<code>docker-galaxy-stable</code>作为镜像，源代码可以在 <a href="https://github.com/bgruening/docker-galaxy-stable">Github</a> 下载。也可以直接到官方 Hub Registry 里下载<code>galaxy-stable</code>镜像。</p>
 <div class="highlight"><pre><span></span><code>$ sudo docker pull bgruening/galaxy-stable
 </code></pre></div>
-
 <p>官方 Registry 非常慢，可以通过国内 daocloud 服务商的加速器来加快<code>docker pull</code>过程：首先注册一个 <a href="daocloud.io">daocloud</a> 用户，然后在命令行中添加 registry mirror。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># ****** 为daocloud分配给你的ID</span>
 $ <span class="nb">echo</span> <span class="s2">&quot;DOCKER_OPTS=\&quot;\$DOCKER_OPTS --registry-mirror=http://******.m.daocloud.io\&quot;&quot;</span> <span class="p">|</span> sudo tee -a /etc/default/docker
 $ sudo service docker restart
 $ sudo docker pull bgruening/galaxy-stable
 </code></pre></div>
-
 <p>该脚本可以将<code>--registry-mirror</code>加入到你的Docker配置文件<code>/etc/default/docker</code>中。适用于Ubuntu14.04，其他版本根据docker配置文件和环境变量，可能有细微不同。</p>
 <div class="highlight"><pre><span></span><code>$ wget https://github.com/bgruening/docker-galaxy-stable/archive/15.10.tar.gz
 $ tar zxf <span class="m">15</span>.10.tar.gz
 $ <span class="nb">cd</span> docker-galaxy-stable-15.10
 </code></pre></div>
-
 <h3 id="14-galax-stable">1.4 启动 galax-stable 容器<a class="headerlink" href="#14-galax-stable" title="Permanent link">&para;</a></h3>
 <p><code>docker run -d</code>表示以daemon方式运行docker，执行该命令后，docker完成galaxy初始化需要花几分钟时间才能访问。如果是本地运行，用浏览器访问<code>127.0.0.1:8080</code>可以看到galaxy首页，如果是服务器上用ssh连接执行命令，要访问服务器IP加上8080端口。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 后台运行 galaxy 容器</span>
@@ -2835,13 +2830,11 @@ $ sudo docker run -d -p <span class="m">8080</span>:80 -p <span class="m">8021</
 $ sudo docker run -i -t -p <span class="m">8080</span>:80 bgruening/galaxy-stable /bin/bash
 root$ sh run.sh
 </code></pre></div>
-
 <p>有时候需要进入docker容器中进行操作，就可以以<code>docker run -i</code>交互模式进行访问。进入容器后运行<code>sh run.sh</code>可以DEBUG方式运行galaxy，适合本地测试使用。</p>
 <h3 id="15">1.5 复制容器内文件<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># fc3e62e0471d 是想要获取文件的所在容器。foo.txt是想要获得的文件。</span>
 $ sudo docker cp fc3ea62e471d:/home/foo.txt .
 </code></pre></div>
-
 <h3 id="16">1.6 加载数据卷<a class="headerlink" href="#16" title="Permanent link">&para;</a></h3>
 <p>需要分析的数据通过添加外部数据卷来实现。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 添加服务器上的 /mydata 卷到容器中</span>
@@ -2850,17 +2843,14 @@ $ sudo docker create -v /mydata --name my_data_vol bgruening/galaxy-stable /bin/
 <span class="c1"># 或者在运行时将本地卷`/mydata`加入到容器中`/container_data`位置</span>
 $ sudo docker run -d -p <span class="m">8080</span>:80 -v /mydata:/container_data/ bgruening/galaxy-stable
 </code></pre></div>
-
 <p>镜像是只读的，当<code>Ctrl+D</code>方式退出容器后，再次进入容器时你上次以添加的内容是看不到的。如果想要从上一次运行的容易中获得文件可以用<code>docker cp</code>的方法，不过你得记住上一次运行的container id号。</p>
 <h3 id="17">1.7 删除所有不运行的容器<a class="headerlink" href="#17" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ sudo docker ps -a <span class="p">|</span> cut -d <span class="s1">&#39; &#39;</span> -f <span class="m">1</span> <span class="p">|</span> sudo xargs docker rm
 </code></pre></div>
-
 <h3 id="18">1.8 删除镜像<a class="headerlink" href="#18" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># IMAGE ID 是该镜像的ID，如果镜像还有容器运行，或有其他镜像的依赖关系，则无法删除要先删除容器或其他镜像。</span>
 $ sudo docker rmi IMAGE_ID
 </code></pre></div>
-
 <hr />
 <h2 id="2">2. 本地安装与基本配置<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>本节介绍 Galaxy 下载安装与使用。最适合的场景为个人电脑，单用户使用的情况。</p>
@@ -2869,12 +2859,10 @@ $ sudo docker rmi IMAGE_ID
 <div class="highlight"><pre><span></span><code>$ git clone https://github.com/galaxyproject/galaxy
 $ <span class="nb">cd</span> galaxy
 </code></pre></div>
-
 <h3 id="22">2.2 配置与运行<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
 <p>克隆到本地的 stable 代码，一般Linux系统自带Python就可以直接运行了。</p>
 <div class="highlight"><pre><span></span><code>$ sh run.sh
 </code></pre></div>
-
 <p>运行 <code>run.sh</code>，这个shell脚本程序会自动完成初始化数据，依赖库下载，数据库迁移等一系列操作，当看到终端显示<code>serving on http://127.0.0.1:8080</code>时，可以打开浏览器，访问 <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a> 即可看到galaxy的界面。</p>
 <h3 id="23-toolshed">2.3 添加官方 toolshed 中的工具<a class="headerlink" href="#23-toolshed" title="Permanent link">&para;</a></h3>
 <p>默认的galaxy只带有基本的工具，对于实际工作中需要的各种分析软件，需要添加到自己建立的 galaxy 实例中。</p>
@@ -2884,11 +2872,9 @@ $ <span class="nb">cd</span> galaxy
 <p>首先修改配置文件 <code>tool_sheds_conf.xml</code></p>
 <div class="highlight"><pre><span></span><code>$ cp config/tool_sheds_conf.xml.sample config/tool_sheds_conf.xml
 </code></pre></div>
-
 <p>其次在galaxy.ini中配置依赖包的安装目录（上一部分已经添加了这个参数，将依赖包安装在<code>tool_dep</code>），然后添加管理员帐号，比如你之前用admin@localhost.com注册的galaxy实例，就将galaxy.ini中<code>admin_users</code>设置为：</p>
 <div class="highlight"><pre><span></span><code><span class="nv">admin_users</span> <span class="o">=</span> admin@localhost.com
 </code></pre></div>
-
 <p>重启你的galaxy实例，用admin@localhost.com用户登陆，你就有权限访问<code>http://127.0.0.1:8080/admin</code>，在admin界面可以看到<code>Tool sheds</code>下有<code>Search and browse tool sheds</code>链接，点击后可以看到默认的2个toolsheds源。</p>
 <p>进入<code>Galaxy main tool shed</code>，工具列表上访有搜索框，在这里输入你要安装的工具名称比如<code>spades</code>后，回车进行检索。</p>
 <p><img alt="Instance" src="../assets/img/appendix_a5_1.png" /></p>
@@ -2902,17 +2888,14 @@ $ <span class="nb">cd</span> galaxy
 <p>首先在ubuntu下新建一个用户galaxy。</p>
 <div class="highlight"><pre><span></span><code>$ sudo adduser galaxy
 </code></pre></div>
-
 <p>按照提示，在弹出提示符输入相应内容，主要填好密码即可，其他可以留空。然后切换到galaxy用户：</p>
 <div class="highlight"><pre><span></span><code>$ su galaxy
 $ <span class="nb">cd</span>
 </code></pre></div>
-
 <p>重复<code>Galaxy 本地安装与配置</code>的第一步<code>下载与安装</code>步骤,建立配置文件：</p>
 <div class="highlight"><pre><span></span><code>$ cp config/galaxy.ini.sample config/galaxy.ini
 $ vim config/galaxy.ini
 </code></pre></div>
-
 <p>将配置文件galaxy.ini设置如下，你也可以将内容直接保存成galaxy.ini</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span>server:main<span class="o">]</span>
 <span class="nv">use</span> <span class="o">=</span> egg:Paste#http
@@ -2937,7 +2920,6 @@ paste.app_factory <span class="o">=</span> galaxy.web.buildapp:app_factory
 <span class="nv">use_interactive</span> <span class="o">=</span> False
 <span class="nv">admin_users</span> <span class="o">=</span> admin@localhost.com
 </code></pre></div>
-
 <h3 id="32-postgresql">3.2 安装 postgresql<a class="headerlink" href="#32-postgresql" title="Permanent link">&para;</a></h3>
 <p>安装postgresql并建立galaxy数据库，这里用户名和密码都设置为<code>galaxy</code>，要与 galaxy.ini 中<code>database_connection</code>参数对应的值一致。</p>
 <div class="highlight"><pre><span></span><code>$ sudo apt-get install postgresql-9.3
@@ -2949,12 +2931,10 @@ $ psql template1
 &gt; GRANT ALL PRIVILEGES ON DATABASE galaxyserver to galaxy<span class="p">;</span>
 &gt; <span class="se">\q</span>
 </code></pre></div>
-
 <h3 id="33-nginx">3.3 安装 nginx<a class="headerlink" href="#33-nginx" title="Permanent link">&para;</a></h3>
 <p>用nginx做反向代理，处理请求。</p>
 <div class="highlight"><pre><span></span><code>$ sudo apt-get install nginx
 </code></pre></div>
-
 <p>设置nginx.conf</p>
 <div class="highlight"><pre><span></span><code>http <span class="o">{</span>
     upstream galaxy_app <span class="o">{</span>
@@ -2971,7 +2951,6 @@ $ psql template1
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
-
 <h2 id="docker">docker 安装<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
 <p>Galaxy 由于依赖众多，安装比较复杂，推荐用 docker 镜像安装，比较简单。</p>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># 下载镜像</span>

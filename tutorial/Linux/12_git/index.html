@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/tutorial/Linux/12_git/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2484,7 +2484,6 @@ $ git config --global core.editor <span class="s2">&quot;vim&quot;</span>
 <span class="c1"># 列举所有配置</span>
 $ git config -l
 </code></pre></div>
-
 <h3 id="_2">比较版本差异<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 工作区与缓存区的差异</span>
 $ git diff
@@ -2493,7 +2492,6 @@ $ git diff -–cached
 $ git diff HEAD <span class="c1"># 工作区与最新 commit 之间的差异</span>
 $ git diff @ <span class="c1"># 同上</span>
 </code></pre></div>
-
 <h3 id="_3">比较当前版本和之前版本，以下三者皆可<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ git diff @~..@
 $ git diff HEAD^ HEAD
@@ -2501,7 +2499,6 @@ $ git show @
 $ diff -c file1 file2 <span class="c1"># 比较两个文件，上下文模式</span>
 $ diff -u file1 file2 <span class="c1"># 比较两个文件，统一模式</span>
 </code></pre></div>
-
 <h3 id="_4">撤销修改<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 撤销工作区编辑</span>
 $ git config --global alias.co checkout <span class="c1"># git checkout 比较常用，设个别名</span>

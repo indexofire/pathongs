@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C17_Pathogen-Geospatial-Analysis/04_cartodb/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2581,7 +2581,6 @@ $ grep <span class="s1">&#39;docker&#39;</span> /etc/group <span class="p">|</sp
 <span class="c1"># 如果没有输出，则可以把当前用户添加到 docker 组，以免运行 docker 时需要 root 权限。</span>
 $ sudo usermod -aG docker <span class="nv">$USER</span>
 </code></pre></div>
-
 <h3 id="12-cartodb">1.2 安装 cartodb<a class="headerlink" href="#12-cartodb" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 克隆 docker-cartodb 到本地仓库，构建镜像</span>
 $ git clone https://github.com/sverhoeven/docker-cartodb.git
@@ -2591,7 +2590,6 @@ $ docker build -t<span class="o">=</span>sverhoeven/cartodb docker-cartodb/
 <span class="c1"># 运行镜像，ip_address输入服务器ip地址，让docker container绑定到服务器80端口上，用浏览器访问服务器ip即可看到carto web界面</span>
 $ docker run -d -p <span class="m">80</span>:80 -h ip_address sverhoeven/cartodb
 </code></pre></div>
-
 <h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># docker数据层是独立的，所以可以建立单独的PostgreSQL persistant</span>
 $ docker create --name cartodb_pgdata sverhoeven/cartodb

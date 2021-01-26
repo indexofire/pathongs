@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C07_PanGenome-and-CoreGenome/04_roary/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2515,7 +2515,6 @@ $ sudo apt install roary
 <span class="c1"># conda 中安装</span>
 $ conda create -n roary roary
 </code></pre></div>
-
 <h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p><strong>输入数据</strong></p>
 <p>Roary 的输入端需要 gff 格式的数据文件。由于 NCBI 下载的 gff 是不含核酸序列的 gff 格式文件，无法直接用来分析。Prokka 生成的 gff 格式文件包含核酸序列，所以可以下载 NCBI 上的 fna 文件然后用 prokka 注释后再用 roary 分析。</p>
@@ -2533,13 +2532,11 @@ $ <span class="k">for</span> i in *.fna<span class="p">;</span> <span class="k">
 <span class="c1"># 复制出 gff 文件到 gff_folder 中，由 roary 进行分析</span>
 $ cp */*.gff gff_folder/<span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
-
 <p><strong>使用方法</strong></p>
 <p>roary 用 blastp 对 gff 文件中的序列进行 orthologs 分析，获得 pangenome 和 coregenome 结果，还可以使用 mafft 对核心基因组进行序列比对，生成系统发生树。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 构建pangenome方法，用mafft将核心基因构建多序列比对</span>
 $ roary -e --mafft -p <span class="m">40</span> gff_folder/*.gff -f roary
 </code></pre></div>
-
 <p><strong>结果文件</strong></p>
 <p>roary生成的结果文件：</p>
 <table>

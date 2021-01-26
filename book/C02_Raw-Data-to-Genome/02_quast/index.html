@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C02_Raw-Data-to-Genome/02_quast/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2514,14 +2514,12 @@ $ conda create -n quast
 $ conda activate quast
 <span class="o">(</span>quast<span class="o">)</span>$ conda install quast
 </code></pre></div>
-
 <h2 id="_2">使用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># -o 制定输出目录 contig.fa 为拼接结果序列</span>
 $ quast -o outdir assembly/contig.fa
 <span class="c1"># 浏览器打开报告</span>
 $ chromium outdir/report.html
 </code></pre></div>
-
 <ul>
 <li>N50: Reads拼接后会获得一些不同长度的Contigs。将所有的Contig长度相加，能获得一个Contig总长度。然后将所有的Contigs按照从长到短进行排序，将Contig按照这个顺序依次相加，当相加的长度达到Contig总长度的一半时，最后一个加上的Contig长度即为Contig N50。举例：Contig 1+Contig 2+ Contig 3 +Contig 4=Contig总长度*&frac12;时，Contig 4的长度即为Contig N50。Contig N50可以作为基因组拼接的结果好坏的一个判断标准。</li>
 <li>N75: 与N50方法一致，不过长度为超过Contigs总长度75%时的contig序列长度。</li>

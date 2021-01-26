@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C11_Insilico-Scanning/03_ariba/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -1303,6 +1303,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2488,6 +2495,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2506,17 +2520,66 @@
                 
                 
                 <h1 id="ariba">ARIBA<a class="headerlink" href="#ariba" title="Permanent link">&para;</a></h1>
-<p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2020-09-14</p>
+<p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2021-01-26</p>
 <hr />
-<p><a href="https://github.com/sanger-pathogens/ariba">Ariba</a> 工具是由 Sanger 测序中心病原微生物开发组开发的用于Assembly数据扫描的工具。主要用于耐药基因的扫描，也可以用来对特定基因扫描（如MLST管家基因）。</p>
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
+<p><a href="https://github.com/sanger-pathogens/ariba">Ariba</a> 工具是由 Sanger 测序中心病原微生物开发组开发的用于基因组数据扫描的工具。主要用于耐药基因的扫描，也可以用来对特定基因扫描（如MLST管家基因）。</p>
+</div>
 <h2 id="1">1. 安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># bioconda 安装包版本较最新版落后较多，通过 pip 从pypi获取最新版。通过 pip 安装就要手动安装依赖软件，这里还是以 conda 安装为例。</span>
-$ conda create -n ariba <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.6
-<span class="o">(</span>ariba<span class="o">)</span>$ conda install bowtie2 cd-hit mummer
-<span class="o">(</span>ariba<span class="o">)</span>$ pip install ariba
-</code></pre></div>
+<p>版本：</p>
+<ul>
+<li>python: 3.6.12</li>
+<li>ariba: 2.14.6</li>
+<li>bowtie2: 2.3.5</li>
+<li>cd-hit: 4.8.1</li>
+<li>mummer: 3.23</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># 新建虚拟环境</span>
+$ conda create -n ariba
+$ conda activate ariba
 
+<span class="c1"># 安装ariba及其依赖包</span>
+<span class="o">(</span>ariba<span class="o">)</span>$ conda install ariba
+</code></pre></div>
 <h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p><strong>获得数据库</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 定义数据库路径</span>
+$ <span class="nb">export</span> <span class="nv">DBS</span><span class="o">=</span>your-database-path
+
+<span class="c1"># 下载耐药和毒力基因数据库</span>
+<span class="o">(</span>ariba<span class="o">)</span>$ mkdir <span class="nv">$DBS</span>/ariba
+<span class="o">(</span>ariba<span class="o">)</span>$ <span class="k">for</span> i in argannot card megares plasmidfinder resfinder srst2_argannot vfdb_core vfdb_full virulencefinder
+&gt; <span class="k">do</span> ariba getref <span class="nv">$i</span> <span class="nv">$DBS</span>/ariba/<span class="nv">$i</span>
+&gt; <span class="k">done</span>
+
+<span class="c1"># 下载PubMLST数据库</span>
+<span class="o">(</span>ariba<span class="o">)</span>$ mkdir <span class="nv">$DBS</span>/ariba/pubmlst
+<span class="o">(</span>ariba<span class="o">)</span>$ ariba pubmlstspecies &gt; <span class="nv">$DBS</span>/ariba/pubmlst/species.txt
+<span class="c1"># 批量下载所有物种pubmlst数据信息</span>
+<span class="o">(</span>ariba<span class="o">)</span>$ <span class="nv">IFS</span><span class="o">=</span><span class="s1">$&#39;\n&#39;</span><span class="p">;</span> <span class="k">for</span> i in <span class="sb">`</span>cat <span class="nv">$DBS</span>/ariba/pubmlst/species.txt<span class="sb">`</span><span class="p">;</span> <span class="k">do</span> ariba pubmlstget <span class="nv">$i</span> <span class="nv">$DBS</span>/ariba/pubmlst/<span class="nv">$i</span><span class="p">;</span> <span class="k">done</span>
+</code></pre></div>
+<p><strong>分析数据</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 分析 reads mlst</span>
+<span class="o">(</span>ariba<span class="o">)</span>$ ariba run <span class="s2">&quot;</span><span class="nv">$DBS</span><span class="s2">/ariba/pubmlst/Salmonella enterica/ref_db&quot;</span> S1_1.fastq.gz S1_2.fastq.gz S1_output
+
+<span class="c1"># 分析耐药数据</span>
+<span class="o">(</span>ariba<span class="o">)</span>$ ariba run <span class="s2">&quot;</span><span class="nv">$DBS</span><span class="s2">/ariba/vfdb_full.tsv&quot;</span> S1_1.fastq.gz S1_2.fastq.gz S1_output
+</code></pre></div>
+<p><strong>生成多个样本报告</strong></p>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>ariba<span class="o">)</span>$ <span class="k">for</span> i in <span class="sb">`</span>ls *_1.fastq.gz<span class="sb">`</span><span class="p">;</span> <span class="k">do</span> ariba run ... <span class="si">${</span><span class="nv">i</span><span class="p">%_1.fastq.gz</span><span class="si">}</span>_output<span class="p">;</span> <span class="k">done</span>
+<span class="o">(</span>ariba<span class="o">)</span>$ ariba summary result *_output/report*.tsv
+</code></pre></div>
+<p><strong>构建自定义数据库</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 准备数据库序列文件</span>
+<span class="o">(</span>ariba<span class="o">)</span>$ 
+<span class="c1"># 生成数据库</span>
+<span class="o">(</span>ariba<span class="o">)</span>$
+</code></pre></div>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<ol>
+<li></li>
+</ol>
                 
                   
                     
@@ -2525,7 +2588,7 @@ $ conda create -n ariba <span class="nv">python</span><span class="o">=</span><s
 <div class="md-source-date">
   <small>
     
-      Last update: 2020-09-14
+      Last update: 2021-01-26
     
   </small>
 </div>

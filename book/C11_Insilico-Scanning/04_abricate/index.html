@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C11_Insilico-Scanning/04_abricate/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -1316,6 +1316,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    自定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2488,6 +2502,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    自定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2506,29 +2534,73 @@
                 
                 
                 <h1 id="abricate">Abricate<a class="headerlink" href="#abricate" title="Permanent link">&para;</a></h1>
-<p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2020-09-14</p>
+<p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2021-01-26</p>
 <hr />
+<div class="admonition abstract">
+<p class="admonition-title">内容介绍</p>
+<p>本节介绍一个非常好用的细菌基因扫描工具: abricate，这是由澳大利亚著名生物信息学家<a href="https://twitter.com/torstenseemann">@Torsten Seemann</a> 开发的细菌毒力基因和耐药基因扫描工具。</p>
+</div>
+<p>abricate 是一个很方便的工具，可以对细菌基因组 fasta 数据进行 blast 扫描，获得其基因组携带那些毒力基因和耐药基因结果。软件包含数据库，不需要自己再额外下载构建，数据库包括：</p>
+<ul>
+<li>vfdb: 基于vfdb毒力基因数据库</li>
+<li>argannot: 基于argannot耐药数据库</li>
+<li>plasmidfinder: 基于plasmidfinder用于质粒扫描</li>
+<li>ecoli_vf: 基于大肠杆菌毒力基因</li>
+<li>megares: 基于megares耐药数据库</li>
+<li>resfinder: 基于resfinder耐药数据库</li>
+<li>ecoh: 用于大肠杆菌O/H抗原分析</li>
+<li>ncbi: 基于NCBI的耐药数据库</li>
+<li>card: 基于加拿大CARD耐药数据库</li>
+</ul>
 <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>$ conda create -n abricate
+<p>使用版本：</p>
+<ul>
+<li>abricate: 1.0.1</li>
+</ul>
+<p>通过 conda 安装 abricate，无需安装其他依赖。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 新建一个虚拟环境运行 abricate</span>
+$ conda create -n abricate
 $ conda activate abricate
+<span class="c1"># 安装 abricate</span>
 <span class="o">(</span>abricate<span class="o">)</span>$ conda install abricate
 </code></pre></div>
-
 <h2 id="_2">使用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>abricate 内建多个数据库，可以用<code>--list</code>查看，要使用哪个数据库，则采用<code>-db</code>参数加上具体数据库名称即可。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 查看支持的数据库，默认采用resfinder</span>
 <span class="o">(</span>abricate<span class="o">)</span>$ abricate --list
+DATABASE        SEQUENCES       DBTYPE  DATE
+plasmidfinder   <span class="m">460</span>     nucl    <span class="m">2020</span>-Apr-19
+vfdb    <span class="m">2597</span>    nucl    <span class="m">2020</span>-Apr-19
+argannot        <span class="m">2223</span>    nucl    <span class="m">2020</span>-Apr-19
+ecoli_vf        <span class="m">2701</span>    nucl    <span class="m">2020</span>-Apr-19
+megares <span class="m">6635</span>    nucl    <span class="m">2020</span>-Apr-19
+resfinder       <span class="m">3077</span>    nucl    <span class="m">2020</span>-Apr-19
+ecoh    <span class="m">597</span>     nucl    <span class="m">2020</span>-Apr-19
+ncbi    <span class="m">5386</span>    nucl    <span class="m">2020</span>-Apr-19
+card    <span class="m">2631</span>    nucl    <span class="m">2020</span>-Apr-19
+
 <span class="c1"># 扫描 fasta</span>
 <span class="o">(</span>abricate<span class="o">)</span>$ abricate genome.fasta
 
 <span class="c1"># 选择其他数据库 vfdb</span>
-<span class="o">(</span>abricate<span class="o">)</span>$ abricate -db vcdb genome.fasta
+<span class="o">(</span>abricate<span class="o">)</span>$ abricate -db vfdb genome.fasta
 
 <span class="c1"># 批量扫描生成结果</span>
 <span class="o">(</span>abricate<span class="o">)</span>$ <span class="k">for</span> i in *.fa<span class="p">;</span> <span class="k">do</span> abricate --db card --quiet <span class="nv">$i</span> &gt; <span class="si">${</span><span class="nv">i</span><span class="p">%.fa</span><span class="si">}</span>.result<span class="p">;</span> <span class="k">done</span>
 <span class="o">(</span>abricate<span class="o">)</span>$ abricate --summary *.result &gt; result
 <span class="o">(</span>abricate<span class="o">)</span>$ cat result
-</code></pre></div>
 
+<span class="c1"># 用parallel 加速并行结果</span>
+<span class="o">(</span>abricate<span class="o">)</span>$ ls *.fa <span class="p">|</span> parallel --max-args<span class="o">=</span><span class="m">1</span> abricate --db vfdb -q <span class="o">{</span><span class="m">1</span><span class="o">}</span> &gt; vfdb.result
+<span class="o">(</span>baricate<span class="o">)</span>$ less vfdb.result
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">注意事项</p>
+<p>abricate 过滤条件中对 DNA identity 和 coverage 默认设置都是 80%。</p>
+</div>
+<h2 id="_3">自定义<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>可以用abricate扫描自行构建的基因数据库。</p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Abricate: <a href="https://github.com/tseemann/abricate">https://github.com/tseemann/abricate</a></li>
 </ol>
@@ -2540,7 +2612,7 @@ $ conda activate abricate
 <div class="md-source-date">
   <small>
     
-      Last update: 2020-09-14
+      Last update: 2021-01-26
     
   </small>
 </div>

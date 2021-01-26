@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C06_Genome-Compare/10_bigsi/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2618,7 +2618,6 @@ $ conda activate bigsi
 <span class="o">(</span>bigsi<span class="o">)</span>$ conda install mykrobe
 <span class="c1"># mykrobe 安装脚本下载数据库，需要翻墙，因此可以用 proxychains 工具代理下载</span>
 </code></pre></div>
-
 <h2 id="3-bigsi">3. 使用bigsi<a class="headerlink" href="#3-bigsi" title="Permanent link">&para;</a></h2>
 <h3 id="31">3.1 从自己的数据开始<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
 <p>首先使用 kmer 工具构建索引，这里使用 mccortex。然后配置数据库，这里使用 berkeleydb。bigsi目前还支持rocksdb 和 redis 等。</p>
@@ -2635,7 +2634,6 @@ $ conda activate bigsi
 <span class="c1"># seq 长度要超过 kmer 长度</span>
 <span class="o">(</span>bigsi<span class="o">)</span>$ bigsi search CGGCGAGGAAGCGTTAAATCTCTTTCTGACGGGACC
 </code></pre></div>
-
 <h3 id="32">3.2 构建公共数据库<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
 <p>如果不仅仅想在自己的测序数据集中搜索，而是想到公共数据库中去查询，可以用目前开放的 bigsi server 服务。如果想自己建立服务器，那么可以直接下载已经建立好的细菌索引文件。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 下载官方建立的2018年细菌基因组数据</span>
@@ -2653,7 +2651,6 @@ storage-config:
   filename: combined-index
   flag: <span class="s2">&quot;c&quot;</span>
 </code></pre></div>
-
 <h2 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/Phelimb/BIGSI">https://github.com/Phelimb/BIGSI</a></li>

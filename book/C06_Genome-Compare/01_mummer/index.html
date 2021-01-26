@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C06_Genome-Compare/01_mummer/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2634,7 +2634,6 @@ $ conda activate mummer
 <span class="c1"># 安装gnuplot，v3版本的mummer只支持老版本的gnuplot</span>
 <span class="o">(</span>mummer<span class="o">)</span>$ conda install <span class="nv">gnuplot</span><span class="o">=</span><span class="m">4</span>.6.0
 </code></pre></div>
-
 <p><strong>源代码安装</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 下载源代码</span>
 $ wget http://nchc.dl.sourceforge.net/project/mummer/mummer/3.23/MUMmer3.23.tar.gz
@@ -2645,7 +2644,6 @@ $ <span class="nb">cd</span> MUMmer3.23
 $ make install
 $ sudo ln -s <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/bin/* /usr/local/sbin/
 </code></pre></div>
-
 <p>注意，编译需要的工具及版本。如果编译失败可能是缺乏依赖包或者版本太新：</p>
 <ul>
 <li>make (GNU make 3.79.1)</li>
@@ -2708,11 +2706,9 @@ $ sudo ln -s <span class="sb">`</span><span class="nb">pwd</span><span class="sb
 <div class="highlight"><pre><span></span><code><span class="c1"># 将query.fna比对到参考序列ref.fna</span>
 <span class="o">(</span>mummer<span class="o">)</span>$ mummer ref.fna query.fna
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="c1"># 比较2个完成基因组</span>
 <span class="o">(</span>mummer<span class="o">)</span>$ nucmer
 </code></pre></div>
-
 <h2 id="mummer4">Mummer4<a class="headerlink" href="#mummer4" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">注意事项</p>
@@ -2725,7 +2721,6 @@ $ conda activate mummer4
 <span class="o">(</span>mummer4<span class="o">)</span>$ conda install mummer4
 <span class="o">(</span>mummer4<span class="o">)</span>$ conda install <span class="nv">gnuplot</span><span class="o">=</span><span class="m">4</span>.6.0
 </code></pre></div>
-
 <p><strong>源代码安装</strong></p>
 <div class="highlight"><pre><span></span><code>$ wget https://github.com/gmarcais/mummer/releases/download/v4.0.0beta/mummer-4.0.0beta2.tar.gz
 $ tar zxf mummer-4.0.0beta2.tar.gz <span class="o">&amp;&amp;</span> <span class="nb">cd</span> mummer-4.0.0beta2
@@ -2735,13 +2730,11 @@ $ sudo cp .libs/libumdmummer.so.0.0.0 /lib/x86_64-linux-gnu/
 $ sudo chmod <span class="m">644</span> /lib/x86_64-linux-gnu/libumdmummer.so.0.0.0
 $ sudo ln -s /lib/x86_64-linux-gnu/libumdmummer.so.0.0.0 /lib/x86_64-linux-gnu/libumdmummer.so.0
 </code></pre></div>
-
 <h3 id="mummer4_1">使用Mummer4<a class="headerlink" href="#mummer4_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 新增参数 -t 表示多线程计算</span>
 <span class="o">(</span>mummer4<span class="o">)</span>$ nucmer --maxmatch -t <span class="m">40</span> -p <span class="nb">test</span> ref.fa query.fa
 <span class="o">(</span>mummer4<span class="o">)</span>$ mummerplot -f --postscript --large test.delta
 </code></pre></div>
-
 <h3 id="dot">Dot 工具做交互可视化<a class="headerlink" href="#dot" title="Permanent link">&para;</a></h3>
 <p>用 mummerplot 绘图是使用gnuplot绘制成共线性可视化图。mummer3 比较老，因此一些版本支持上会比较落后。这里推荐 <a href="https://github.com/dnanexus/dot">Dot</a> 工具做交互式的可视化。<a href="https://github.com/dnanexus/dot">Dot</a> 工具是 dnanexus 开发的一个在线可视化 nucmer 进行基因组共线性比较的工具，可以在线分析，也可以用浏览器在本地运行。</p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>mummer<span class="o">)</span>$ git clone https://github.com/dnanexus/dot
@@ -2749,7 +2742,6 @@ $ sudo ln -s /lib/x86_64-linux-gnu/libumdmummer.so.0.0.0 /lib/x86_64-linux-gnu/l
 <span class="o">(</span>mummer<span class="o">)</span>$ python DotPrep.py --delta compare.delta --out compare
 <span class="o">(</span>mummer<span class="o">)</span>$ chromium index.html
 </code></pre></div>
-
 <p>上传 DotPrep.py 生成的 compare.coords 和 compare.coords.idx 文件到 <a href="https://dnanexus.github.io/dot">https://dnanexus.github.io/dot</a> 或者本地浏览器打开 index.html 页面，点击提交，获得可视化结果。</p>
 <h2 id="_3">参考<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>

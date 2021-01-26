@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C01_Common-Utility/03_entrez/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2737,7 +2737,6 @@ $ bash ./setup.sh
 $ <span class="nb">echo</span> <span class="s2">&quot;export PATH=&#39;\$PATH:\$HOME/apps/edirect/&#39;&quot;</span> &gt;&gt; ~/.bashrc
 $ <span class="nb">source</span> ~/.bashrc
 </code></pre></div>
-
 <div class="admonition note">
 <p class="admonition-title">安装说明</p>
 <p>耐心等待一会，当看到下面字符时，表示安装成功。
@@ -2755,12 +2754,10 @@ $ which uname
 <span class="c1"># 如果是位于 /bin/ 下，将其链接到 /usr/bin/ 下即可。</span>
 $ sudo ln -s /bin/uname /usr/bin/uname
 </code></pre></div>
-
 <h4 id="12-conda">1.2 conda 中安装<a class="headerlink" href="#12-conda" title="Permanent link">&para;</a></h4>
 <p>如果系统通过 conda 进行软件管理，可以通过如下方式安装。</p>
 <div class="highlight"><pre><span></span><code>$ conda install entrez-direct
 </code></pre></div>
-
 <p>不过 conda 安装的还是 perl 版本的 xtract，而不是 go 版本的，需要到 conda/pkgs 包根目录中的 edirect 相应目录，用 <code>setup.sh</code> 自行编译后生成 xtract.Linux(Linux 操作系统)，将其复制到 conda 的 bin 路径即可。go 版本的 xtract 可以用 -help 参数查看帮助。</p>
 <h3 id="2">2. 基本用法<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>表. 最常用的工具参见下表</p>
@@ -2824,7 +2821,6 @@ $ sudo ln -s /bin/uname /usr/bin/uname
 <p><strong>esearch</strong> 负责检索并返回 xml 格式的命中情况。使用 esearch 命令，相当于平时你通过浏览器访问 NCBI，在 <a href="https://www.ncbi.nlm.nih.gov/gquery/">GQuery</a> 的 <a href="https://www.ncbi.nlm.nih.gov/nuccore/">nucletide</a> 数据库搜索见面搜素关键字 <code>salmonella</code>，返回命中结果。</p>
 <div class="highlight"><pre><span></span><code>$ esearch -db nuccore -query <span class="s2">&quot;salmonella&quot;</span>
 </code></pre></div>
-
 <p>终端里会返回命中结果：</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;ENTREZ_DIRECT&gt;</span>
   <span class="nt">&lt;Db&gt;</span>nuccore<span class="nt">&lt;/Db&gt;</span>
@@ -2834,7 +2830,6 @@ $ sudo ln -s /bin/uname /usr/bin/uname
   <span class="nt">&lt;Step&gt;</span>1<span class="nt">&lt;/Step&gt;</span>
 <span class="nt">&lt;/ENTREZ_DIRECT&gt;</span>
 </code></pre></div>
-
 <p><strong>esearch</strong> 需要设置的参数有 <strong>-db</strong>（所要搜索的目标数据库）和 <strong>-query</strong>（所要搜索的关键词）。</p>
 <p>结果默认返回 xml 格式的数据（参见 <code>&lt;ENTREZ_DIRECT&gt;...&lt;/ENTREZ_DIRECT&gt;</code>），其中 <strong><Count></strong> 中的数值表示检索命中的记录数，这与 <a href="https://www.ncbi.nlm.nih.gov/">NCBI</a> 的 <a href="https://www.ncbi.nlm.nih.gov/gquery/">Entrez</a> 网页界面里进行检索操作的结果是一致的。</p>
 <p><strong>esearch</strong> 还有一个参数 -sort 可以根据数据库类型返回不同的排序方式。默认的排序方式是按照时间逆序排列的。想要得到准确的查询结果，优化 query 很重，可以参见 <a href="#3-filtering-queries">Filter</a> 相关内容。</p>
@@ -2846,7 +2841,6 @@ $ sudo ln -s /bin/uname /usr/bin/uname
 <div class="highlight"><pre><span></span><code>$ esearch -db nuccore -query <span class="s2">&quot;salmonella&quot;</span> -days <span class="m">10</span> <span class="p">|</span> <span class="se">\</span>
 &gt; efetch -format fasta -db nuccore &gt; result.fasta
 </code></pre></div>
-
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>一定要注意搜索命中值的数量，关键词命中太多，数据量会太大，全部下载可能直接进入假死状态。应该通过设置参数来限定搜索结果。当不确定时，先用esearch工具看返回的命中值<Count></Count>有多少再决定是否进一步限定。</p>
@@ -2856,30 +2850,25 @@ $ sudo ln -s /bin/uname /usr/bin/uname
 </ol>
 <div class="highlight"><pre><span></span><code>$ efetch -db pubmed -id <span class="m">2142131</span> -format txt
 </code></pre></div>
-
 <p><strong>efetch</strong> 设置的参数是 <strong>-db</strong>，将搜索命中的记录从该数据库进行。如果 <strong>esearch</strong> 检索的结果和需要下载的结果来自同一数据库，可以不添加 <strong>-db</strong> 参数，系统会默认使用esearch的数据库。</p>
 <p><strong>efetch</strong> 还要设置的参数是 <strong>-format</strong>，即下载数据的格式。常用的有 <strong>xml</strong> 格式，后续可以通过 <strong>xtract</strong> 和 <strong>linux</strong> 一些命令行工具来做处理。你也可以直接添加 <strong>-id</strong> 参数直接进行下载而不通过 <strong>esearch</strong> 检索后下载。如下面例子中将 <strong>pubmed id 2137412</strong> 的文献输出，格式为 Medline<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">3</a></sup></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 搜索 pubmed 数据库编号 2137412 的文献，以 medline 格式输出</span>
 $ efetch -db pubmed -id <span class="m">2137412</span> -format medline
 </code></pre></div>
-
 <p>对于 efetch 可以下载那些数据库，对于各个数据库名称和数据格式，可以用<code>-h</code>来查看</p>
 <div class="highlight"><pre><span></span><code>$ efetch -h
 </code></pre></div>
-
 <h4 id="23-xtract">2.3 xtract<a class="headerlink" href="#23-xtract" title="Permanent link">&para;</a></h4>
 <p>edirect 的核心命令，由于 <strong>esearch</strong> 查询和下载的数据常常是 xml 格式的，对于 XML<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">4</a></sup> 格式的数据，可以用 <strong>xtract</strong> 工具将其转换成纯文本格式的内容。xtract 不仅可以转换 <a href="https://www.ncbi.nlm.nih.gov/">NCBI</a> 的 XML 格式文件，对于任何通用的 XML 格式文件都可以进行转换。</p>
 <p>xtract 基本用法：</p>
 <div class="highlight"><pre><span></span><code># 读取 XML 文件方式
 $ xtract -input XML-file.xml
 </code></pre></div>
-
 <p>一般我们都是通过管道工具 Pipeline 组合 esearch 和 efetch 等工具获得 XML 格式的 NCBI 数据库命中记录后，再用 xtract 进行处理。</p>
 <div class="highlight"><pre><span></span><code>$ esearch -db pubmed -query <span class="s1">&#39;E. coli AND (2016/12/30[pdat]:2016/12/31[pdat])&#39;</span> <span class="p">|</span> <span class="se">\</span>
 &gt; efetch -format xml <span class="p">|</span> xtract -pattern PubmedArticle -element <span class="se">\</span>
 &gt; MedlineCitation/PMID Journal/ISOAbbreviation ArticleTitle
 </code></pre></div>
-
 <p>这条命令将检索到的文献记录转换成行，再以 PMID，杂志名缩写和文章题目为列展开。命令打印的结果如下：</p>
 <div class="highlight"><pre><span></span><code>28239441J Public Health AfrQuality and labeling information of Mo       ringa oleifera products marketed for HIV-infected people in Zimbabwe.
 28115890Korean J Food Sci Anim ResourAntimicrobial Activity of Kefir against Variou     s Food Pathogens and Spoilage Bacteria.
@@ -2887,11 +2876,9 @@ $ xtract -input XML-file.xml
 ...
 27030192J.   Vet. Sci.Development and evaluation of an immunochromatographic assay   using a gp51 monoclonal antibody for the detection of antibodies against the bovine leukemia virus.
 </code></pre></div>
-
 <p>当我们不清楚XML元素结构时，可以用以下命令打印出树形结构。</p>
 <div class="highlight"><pre><span></span><code>$ xtract -input my.xml -outline
 </code></pre></div>
-
 <p>xtract 可以灵活的改变数据的格式，所以涉及的参数也比较多。要想获得自己需要的数据格式，要想用好 edirect，掌握好 xtract 的用法是必不可少的。</p>
 <p><strong>-pattern 参数</strong>: 将 xml 格式数据，将<xml element>转换成行格式数据。每一个element包含的数据做为一行。</p>
 <p>xtract 命令首先要通过 -pattern 定义所要分析的数据级别。比如对于 pubmed 数据库，efetch 输出 -format 格式为 docsum，那么我们一般要抓取的是每一个命中的文献记录，-pattern 就可以用 DocumentSummary 元素。如果你只想知道所有命中文献的作者（比如按照次数排序），那么就可以直接将 -pattern 定义为 Author。</p>
@@ -2901,7 +2888,6 @@ $ xtract -input XML-file.xml
 <div class="highlight"><pre><span></span><code>$ esearch -db pubmed -query <span class="s2">&quot;Salmonella[ORGN]&quot;</span> -days <span class="m">5</span> <span class="p">|</span> efetch -format xml <span class="p">|</span> <span class="se">\</span>
 &gt; xtract -pattern PubmedArticle -block Author -sep <span class="s2">&quot; &quot;</span> -element LastName,Initials
 </code></pre></div>
-
 <p><strong>-tab、-sep 参数</strong>: 将多条 element 记录分割。</p>
 <p><strong>/</strong>: 主要用在定义连续多层标签的定义上。比如PMID标签即可以在 MedlineCitation 标签下，有时也会在 RefSource 标签下。所以要明确检索文献的 PMID，就应该用 <strong>MedlineCitation/PMID</strong></p>
 <p><strong>@</strong>: 指定 XML 元素 element 的 attribute 值</p>
@@ -2911,7 +2897,6 @@ $ xtract -input XML-file.xml
 <p>当我们要检索一个数据库数据所关联到其他数据库时，就要用到elink工具了。比如我们先在SRA数据库中搜索到所有鼠伤寒沙门菌的SRA实验数据，然后链接到biosample数据库，获得这些菌株的生物样本信息。</p>
 <div class="highlight"><pre><span></span><code>$ esearch -db sra -query <span class="s2">&quot;salmonella typhimurium&quot;</span> <span class="p">|</span> elink -target biosample <span class="p">|</span> efetch -format docsum &gt; result.xml
 </code></pre></div>
-
 <h4 id="24-einfo">2.4 einfo<a class="headerlink" href="#24-einfo" title="Permanent link">&para;</a></h4>
 <p>对于 NCBI 数据库的各项复杂参数，字段等要完全了解和掌握比较困难。edirect 里提供了 einfo 工具，这样其他工具所能访问的具体数据库、字段和可链接数据库等信息都可以用 einfo 了解。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 查询 `esearch -db` 参数所能访问的所有数据库名称</span>
@@ -2923,7 +2908,6 @@ $ einfo -db sra -fields
 <span class="c1"># 查询数据库所有可链接的其他数据库</span>
 $ einfo -db sra -links
 </code></pre></div>
-
 <h3 id="3">3. 高级检索<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <p>工具 esearch 和 efilter 在做检索时如果做好筛选，能有助于获得准确的结果。筛选有2种方式，一种是通过添加参数来筛选。另一种是对 query 参数添加字段定义来筛选。</p>
 <p><strong>参数过滤</strong>：</p>
@@ -2942,7 +2926,6 @@ $ einfo -db sra -fields
 <span class="c1"># 查看sra数据库field，用xtract格式化输出</span>
 $ einfo -db sra <span class="p">|</span> xtract -pattern Field -element Name Description
 </code></pre></div>
-
 <p>-query 检索词可以用逻辑关键词构建逻辑关系：</p>
 <ul>
 <li>AND：和</li>
@@ -2969,7 +2952,6 @@ $ esearch -db pubmed -mindate <span class="m">2014</span> -maxdate <span class="
 $ esearch -db pubmed -query <span class="s2">&quot;vibrio cholerae CTX AND \</span>
 <span class="s2">&gt; (2014[pdat]:2016[pdat])&quot;</span> <span class="p">|</span> efetch -format abstract &gt; abstract.txt
 </code></pre></div>
-
 <p><strong>查看文章作者</strong></p>
 <p>常常会对某一类文章，或者某一个期刊的文章作者进行关注，这里根据检索关键词，格式化输出文章的ID和作者列表。这也是 xtract 最常见的应用之一。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 检索关键词，以最近300天为范围</span>
@@ -2978,34 +2960,29 @@ $ esearch -db pubmed -query <span class="s2">&quot;listeria monocytogenes AND pr
 &gt; -element MedlineCitation/PMID -block Author -sep <span class="s2">&quot; &quot;</span> <span class="se">\</span>
 &gt; -element LastName,Initials
 </code></pre></div>
-
 <p><strong>查看近300天以来发表的文章中，作者中有叫Jim的所有文章题目</strong></p>
 <p>利用 pubmed 数据库的 filter [FULL], 查询所有作者列表里有叫Jim的文章标题，这里采用 medline 格式输出，如果要进一步做格式化可以用xml格式再用xtract重新排版打印。</p>
 <div class="highlight"><pre><span></span><code>$ esearch -db pubmed -days <span class="m">300</span> -query <span class="s2">&quot;Jim[FULL]&quot;</span> <span class="p">|</span> efetch -format medline <span class="p">|</span> <span class="se">\</span>
 &gt; grep TI <span class="p">|</span> awk -F<span class="s1">&#39;- &#39;</span> <span class="s1">&#39;{print $2}&#39;</span>
 </code></pre></div>
-
 <p><strong>查看2016年CDC发布的所有用miseq测序的沙门菌文库制备方法</strong></p>
 <p>想要了解 CDC 开展的 miseq 沙门菌测序时采用的文库构建方法，可以利用 sra 数据库的 runinfo信息输出获得。</p>
 <div class="highlight"><pre><span></span><code>$ esearch -db sra -query <span class="s2">&quot;salmonella[OGRN] miseq[PLAT] EDBL-CDC&quot;</span> <span class="se">\</span>
 &gt; -mindate <span class="m">2016</span>/01/01 -maxdate <span class="m">2016</span>/12/31 -datetype PDAT <span class="p">|</span> <span class="se">\</span>
 &gt; efetch -format runinfo <span class="p">|</span> cut -d <span class="s1">&#39;,&#39;</span> -f <span class="m">12</span> &gt; library.txt
 </code></pre></div>
-
 <p><strong>绘制单增李斯特菌hlyA蛋白质进化树图</strong></p>
 <div class="highlight"><pre><span></span><code>$ esearch -db protein -query <span class="s2">&quot;listeriolysin hlyA NOT partial&quot;</span> <span class="p">|</span>
 &gt; efetch -format fasta &gt; hlyA.fasta
 $ mafft hlyA.fasta &gt; hlyA.mafft.fasta
 $ raxml -m GTRGAMMA -p <span class="m">12345</span> -s hlyA.mafft.fasta -f a -x <span class="m">12345</span> -N <span class="m">100</span> -T <span class="m">40</span> -n hlyA
 </code></pre></div>
-
 <p><strong>对10年内发表的检索文献的作者排序</strong></p>
 <div class="highlight"><pre><span></span><code>$ esearch -db pubmed -days <span class="m">3650</span> -datetype PDAT -query <span class="s2">&quot;hlyA&quot;</span> <span class="p">|</span> <span class="se">\</span>
 &gt; efetch -format xml <span class="p">|</span> <span class="se">\</span>
 &gt; xtract -pattern Author -element LastName <span class="p">|</span> <span class="se">\</span>
 &gt; sort-uniq-count-rank
 </code></pre></div>
-
 <p><strong>查看 taxonomy</strong></p>
 <p>taxonomy 数据库的 filter [NXLV] 可以直接输出species级别</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 获得 taxonomy 数据库里 lis 或 sal 开头的分类名</span>
@@ -3014,46 +2991,39 @@ $ esearch -db taxonomy -query <span class="s2">&quot;lis* OR sal*&quot;</span> <
 <span class="c1"># 获得 species 级的所有沙门菌</span>
 $ esearch -db taxonomy -query <span class="s2">&quot;Salmonella[NXLV]&quot;</span> <span class="p">|</span> efetch -db taxonomy -format txt
 </code></pre></div>
-
 <p><strong>下载所有甲型副伤寒沙门菌基因组序列</strong></p>
 <div class="highlight"><pre><span></span><code>$ esearch -db nuccore -query <span class="s2">&quot;Salmonella[porgn:__txid54388] complete genome&quot;</span> <span class="p">|</span> <span class="se">\</span>
 &gt; efetch -db nuccore -format fasta &gt; SPA.fasta
 </code></pre></div>
-
 <p><strong>获取SRA数据库中目的数据的测序样本地理信息</strong></p>
 <div class="highlight"><pre><span></span><code>$ esearch -db sra -query <span class="s2">&quot;China&quot;</span> -days <span class="m">1</span> <span class="p">|</span> elink -target biosample <span class="p">|</span> <span class="se">\</span>
 &gt; efetch -format docsum <span class="p">|</span> xtract -pattern DocumentSummary -element Accession <span class="se">\</span>
 &gt; -block Attribute -if Attribute@attribute_nam <span class="se">\</span>
 &gt; -equals lat_lon -element Attribute
 </code></pre></div>
-
 <p><strong>获得某个bioproject下的所有sra run的信息</strong></p>
 <div class="highlight"><pre><span></span><code>$ eserach -db bioproject -query <span class="s2">&quot;PRJNA209644&quot;</span> <span class="p">|</span> elink -target sra <span class="p">|</span> <span class="se">\</span>
 &gt; efetch -format docsum <span class="p">|</span> xtract -pattern DocumentSummary -ACC @acc <span class="se">\</span>
 &gt; -block DocumentSummary -element <span class="s2">&quot;&amp;ACC&quot;</span>
 </code></pre></div>
-
 <p><strong>下载assembly数据库的refseq序列</strong></p>
 <div class="highlight"><pre><span></span><code>$ esearch -db assembly -query <span class="s2">&quot;Salmonella enterica[ORGN] AND 2010[GRLS]&quot;</span> <span class="p">|</span> <span class="se">\</span>
 &gt; efetch -format docsum <span class="p">|</span> xtract -pattern DocumentSummary <span class="se">\</span>
 &gt; -element FtpPath_RefSeq <span class="p">|</span> awk -F<span class="s2">&quot;/&quot;</span> <span class="s1">&#39;{print $0&quot;/&quot;$NF&quot;_genomic.fna.gz&quot;}&#39;</span> <span class="p">|</span> <span class="se">\</span>
 &gt; xargs wget
 </code></pre></div>
-
 <p><strong>查看assembly meta信息</strong></p>
 <p>NCBI 的 Assembly 数据库包含了 RefSeq 数据库的基因组数据，选择相应的物种可以获得该物种的基因组拼接序列，有完成图也有非完成图。</p>
 <div class="highlight"><pre><span></span><code>$ esearch -db assembly -query <span class="s1">&#39;&quot;salmonella paratyphi A&quot;[ORGN] AND latest[FILT]&#39;</span> <span class="p">|</span> <span class="se">\</span>
 &gt; efetch -format docsum <span class="p">|</span> xtract -pattern Meta -block Stats <span class="se">\</span>
 &gt; -tab <span class="s1">&#39;\n&#39;</span> -sep <span class="s1">&#39;\t&#39;</span> -element Stat@category Stat <span class="p">|</span> sort -ur &gt; meta.txt
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s2">&quot;meta.txt&quot;</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;contig_count&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;scaffold_n50&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div>
-
 <p><img alt="plot" src="../../assets/images/C02/03/plot.png" /></p>
 <p><strong>获取SRA菌株信息</strong></p>
 <p>对某个物种开展进化研究时，我们往往会竟可能收集公共数据库中的菌株背景信息。下面这个例子搜索某个 bioproject，然后获得该研究的所有测序数据的 sra 背景信息。通过 \&lt;SAMPLE_ATTRIBUTE> 元素下的各个 TAG 和 VALUE 来提取所需信息。</p>
@@ -3062,17 +3032,14 @@ $ esearch -db taxonomy -query <span class="s2">&quot;Salmonella[NXLV]&quot;</spa
 &gt; -element RUN@accession -block SAMPLE_ATTRIBUTE -tab <span class="s2">&quot;\t&quot;</span> -sep <span class="s2">&quot;:&quot;</span> <span class="se">\</span>
 &gt; -element TAG,VALUE &gt; sample.txt
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code>$ head sample.txt
 </code></pre></div>
-
 <p>这样输出的问题在于各个测序数据的 SAMPLE_ATTRIBUTE 的 TAG 顺序是乱序的，每个 SRR 输出的顺序不同导致各个字段要重新排序，比较麻烦。如果我们只需要其中一个字段，可以用 -if *** -eqauls *** 来过滤。比如下面代码我们输出菌株名称：</p>
 <div class="highlight"><pre><span></span><code>$ esearch -db bioproject -query <span class="m">273159</span> <span class="p">|</span> elink -target sra <span class="p">|</span> <span class="se">\</span>
 &gt; efetch -format xml <span class="p">|</span> xtract -pattern EXPERIMENT_PACKAGE -tab <span class="s2">&quot;,&quot;</span> <span class="se">\</span>
 &gt; -element RUN@accession -block SAMPLE_ATTRIBUTE -if TAG -equals <span class="s2">&quot;strain&quot;</span> <span class="se">\</span>
 &gt; -element VALUE <span class="p">|</span> sort &gt; strain-name.csv
 </code></pre></div>
-
 <p><code>-if</code>在一行输出中不能反复使用，如果要同时对多个样品信息字段分别输出，我们采用变通的方法，先把 xml 数据保存到本地，然后循环分别输出各个所需内容，用 sort 排序，再用 paste 合并。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 分别输出 csv 格式的数据</span>
 $ <span class="k">for</span> i in serovar strain isolate_name_alias collection_date isolation_source<span class="p">;</span> <span class="se">\</span>
@@ -3082,7 +3049,6 @@ $ <span class="k">for</span> i in serovar strain isolate_name_alias collection_d
 <span class="c1"># 合并 csv</span>
 $ paste -d , strain serovar isolate_name_alias collection_date &gt; sample.csv
 </code></pre></div>
-
 <h3 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h3>
 <div class="footnote">
 <hr />

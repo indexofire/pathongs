@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C01_Common-Utility/01_database/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2836,12 +2836,10 @@ $ ./aspera-connect-3.6.1.110647-linux-64.sh
 <span class="c1"># 添加用户执行路径</span>
 $ <span class="nb">echo</span> <span class="s1">&#39;PATH=&quot;$PATH:$HOME/.aspera/connect/bin/&quot;&#39;</span> &gt;&gt; ~/.bashrc
 </code></pre></div>
-
 <p>对于喜欢使用客户端的桌面用户，也可以使用 <a href="http://downloads.asperasoft.com/en/downloads/2">Aspera Desktop Client</a> 客户端程序来下载数据。</p>
 <div class="highlight"><pre><span></span><code>$ sed <span class="s1">&#39;s/^INSTALL_DIR/INSTALL_DIR=~/envs/srst2/src/ascp/connect/&#39;</span> aspera-connect-3.6.1.110647-linux-64.sh &gt; install.sh
 $ ./install.sh
 </code></pre></div>
-
 <p><strong>下载 SRA 数据</strong></p>
 <div class="admonition warning">
 <p class="admonition-title">注意</p>
@@ -2859,7 +2857,6 @@ $ <span class="nb">source</span> ~/.bashrc
 <span class="c1"># 测试下载</span>
 $ ascp /data/sracloud/srapub/ERR579922 ./ERR578822.sra
 </code></pre></div>
-
 <h4 id="122-ftp">1.2.2 ftp 下载<a class="headerlink" href="#122-ftp" title="Permanent link">&para;</a></h4>
 <p>从国内公网访问 NCBI FTP 服务器往往是非常缓慢的，而 <a href="http://www.ebi.ac.uk">EBI</a> 就不同了，有些地方的速度很快，下载甚至可以超过 <a href="http://asperasoft.com">Aspera</a>。由于 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 和 <a href="http://www.ebi.ac.uk">EBI</a> 共享数据库，因此对于国内 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 下载缓慢或者无法用 ascp 的用户，可以考虑在 <a href="http://www.ebi.ac.uk">EBI</a> 下载数据。</p>
 <h3 id="22-sratoolkit">2.2 sratoolkit<a class="headerlink" href="#22-sratoolkit" title="Permanent link">&para;</a></h3>
@@ -2871,7 +2868,6 @@ $ <span class="nb">cd</span> /tmp
 $ wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.5.6/sratoolkit.2.5.6-ubuntu64.tar.gz
 $ tar zxf sratoolkit.2.5.6-ubuntu64.tar.gz -C ~/app
 </code></pre></div>
-
 <h4 id="222-sra">2.2.2 下载 SRA 格式文件<a class="headerlink" href="#222-sra" title="Permanent link">&para;</a></h4>
 <p>如果你安装并设置了 <a href="http://download.asperasoft.com/download/docs/connect/3.6.1/user_linux/webhelp/index.html#dita/introduction.html">Aspera Connect</a>，那么<code>prefetch</code>会优先使用<code>ascp</code>方式来下载，如果没有安装或则<code>ascp</code>下载失败，则切换成 HTTP 方式下载 sra 数据。另外<code>fastq-dump</code>命令也能从远端直接下载数据，加上<code>-X 1</code>参数，会预先下载最前的5个 reads，加上<code>-Z</code>参数，则会将这些 reads 打印到终端输出。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 下载 SRR955386.sra 到 你安装 sratoolkit 时配置的 public 目录中，默认是 ~/ncbi/public/sra</span>
@@ -2879,7 +2875,6 @@ $ prefetch -v SRR955386
 <span class="c1"># 下载 SRR955386.sra 到 你安装 sratoolkit 时配置的 public 目录中，默认是 ~/ncbi/public/sra，并且在终端输出5行 reads 数据。</span>
 $ fastq-dump -X <span class="m">5</span> -Z SRR955386
 </code></pre></div>
-
 <h4 id="223-fastq">2.2.3 并转换成 .fastq 格式<a class="headerlink" href="#223-fastq" title="Permanent link">&para;</a></h4>
 <p>获得了 .sra 文件后，需要将其转换成 .fastq 格式的文件，用<code>fastq-dump</code>可以很方便的实现。转换之前要注意的是该 run 的 metadata 里，测序类型是 SE 还是 PE 的。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 将 sra 文件移动到 ~/data 目录中</span>
@@ -2889,7 +2884,6 @@ $ fastq-dump SRR955386.sra
 <span class="c1"># 如果是 PE 测序数据，则要添加参数：--split-files</span>
 $ fastq-dump --split-files SRR955386.sra
 </code></pre></div>
-
 <h4 id="224-sepe">2.2.4 SE/PE 文件判断<a class="headerlink" href="#224-sepe" title="Permanent link">&para;</a></h4>
 <p>正常的 sra 文件的 metadata 应该包含测序采用的是 SE 还是 PE 的方式。但如果你不知道所下载的到底是 SE 还是 PE 格式的文件可以用<code>fastq-dump -X 1 --split-spot</code>的方法来判断。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># it&#39;s SE if nreads=1, and PE when nreads=2，统计整个文件，因此速度比较慢</span>
@@ -2903,7 +2897,6 @@ $ fastq-dump -X <span class="m">1</span> --split-spot -Z SRR955386.sra <span cla
 $ fastq-dump --split-files ERR493452.sra
 $ mv ERR493452_1.fastq ERR493452.fastq
 </code></pre></div>
-
 <p>当需要判断批量下载的 sra 文件时，区分那些是 PE 的那些是 SE 的文件，可以用以下脚本：</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
@@ -2923,7 +2916,6 @@ $ mv ERR493452_1.fastq ERR493452.fastq
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Unexpected output from fastq-dump on &quot;</span><span class="p">,</span> <span class="n">filename</span><span class="p">);</span>
 </code></pre></div>
-
 <h4 id="225-entrez">2.2.5 利用entrez批量下载<a class="headerlink" href="#225-entrez" title="Permanent link">&para;</a></h4>
 <p>如果想下载一个完整的 project 数据，可以利用 entrezdirect 工具。</p>
 <div class="highlight"><pre><span></span><code>~/tmp$ wget ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/edirect.tar.gz
@@ -2931,7 +2923,6 @@ $ mv ERR493452_1.fastq ERR493452.fastq
 ~/tmp$ sudo ln -s ~/app/edirect/* /usr/local/sbin/
 ~/data$ esearch -db sra -query PRJNA40075  <span class="p">|</span> efetch --format runinfo <span class="p">|</span> cut -d <span class="s1">&#39;,&#39;</span> -f <span class="m">1</span> <span class="p">|</span> grep SRR <span class="p">|</span> xargs fastq-dump --split-files
 </code></pre></div>
-
 <p>如果想下载不同 research 的数据，可以自己建立一个 accession number list 的文件，比如利用 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 的 entrez 网页界面，导出所需要的数据 accession number，然后利用 <code>ascp</code> 下载。不过建议<code>ascp</code>下载不要太狠心，否则容易被 <a href="http://www.ncbi.nlm.nih.gov">NCBI</a> 给封掉。</p>
 <h2 id="3-assembly">3. Assembly 数据库<a class="headerlink" href="#3-assembly" title="Permanent link">&para;</a></h2>
 <p>如果不需要研究 reads 数据，而是只想研究拼接的基因组数据，可以从 NCBI assembly 数据库去寻找数据，并通过 ascp/ftp 等工具下载。</p>

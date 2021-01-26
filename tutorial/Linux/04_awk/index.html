@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/tutorial/Linux/04_awk/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -3033,7 +3033,6 @@ $ awk <span class="s1">&#39;/&gt;/&#39;</span> contigs.fasta
 $ awk <span class="s1">&#39;/^ATG/&#39;</span> contigs.fasta
 ATGGGGTCCGATTACCG
 </code></pre></div>
-
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>awk 用模式匹配时，与 grep 类似。使用这个命令很简单，就是将 fasta 文件中包含 '&gt;' 字符的行输出，实际上就是将所有的序列头内容输出。作用类似<code>grep "&gt;"</code>。</p>
@@ -3058,7 +3057,6 @@ description gene1 <span class="m">100</span>-300
 description gene2 <span class="m">1000</span>-1500
 ...
 </code></pre></div>
-
 <hr />
 <h2 id="1-awk">1. awk 命令构成<a class="headerlink" href="#1-awk" title="Permanent link">&para;</a></h2>
 <p>awk 程序主体主要包括 pattern，action和input file：</p>
@@ -3072,12 +3070,10 @@ description gene2 <span class="m">1000</span>-1500
 <p>awk可以在shell里直接运行：</p>
 <div class="highlight"><pre><span></span><code>$ awk <span class="s1">&#39;pattern { action }&#39;</span> input_file
 </code></pre></div>
-
 <p>也可以写成awk程序来运行。一个 awk 程序往往如下所示：</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#!/usr/bin/awk -f</span>
 <span class="nx">pattern</span> <span class="p">{</span> <span class="nx">action</span> <span class="p">}</span>
 </code></pre></div>
-
 </div>
 <p>awk 可以不需要输入文件；对于pattern和action来说，2者至少要有一个才能运行。如果没有pattern，则默认匹配任何输入，按行输出并执行action。如果没有action，则匹配pattern并按行输出不做额外操作。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 尝试以下语句，在终端打印`hello world`。</span>
@@ -3088,19 +3084,16 @@ $ awk <span class="s1">&#39;BEGIN { print &quot;hello world&quot; }&#39;</span>
 $ awk <span class="s1">&#39;{ print }&#39;</span>
 <span class="c1"># 这里省略了pattern，只有{print}做为action</span>
 </code></pre></div>
-
 <p>上面这个例子可以保存成文件（如<code>hello_world.awk</code>）来运行，文件内容如下：</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#!/usr/bin/awk -f</span>
 <span class="c1"># 注意不同发行版的linux，awk路径有所区别</span>
 
 <span class="nb">BEGIN</span> <span class="p">{</span> <span class="kr">print</span> <span class="s2">&quot;hello world&quot;</span> <span class="p">}</span>
 </code></pre></div>
-
 <p>运行这个程序：</p>
 <div class="highlight"><pre><span></span><code>$ chmod +x hello_world.awk
 $ ./hello_world.awk
 </code></pre></div>
-
 <h2 id="2-awk">2. awk 基本语法<a class="headerlink" href="#2-awk" title="Permanent link">&para;</a></h2>
 <h3 id="21-pattern">2.1 Pattern<a class="headerlink" href="#21-pattern" title="Permanent link">&para;</a></h3>
 <h4 id="211">2.1.1 正则表达式<a class="headerlink" href="#211" title="Permanent link">&para;</a></h4>
@@ -3116,7 +3109,6 @@ $ ./hello_world.awk
 <div class="highlight"><pre><span></span><code><span class="c1"># 当第一列内容是gene时，输出第二列内容。可用于注释文件</span>
 $ awk <span class="s1">&#39;$1 == &quot;gene&quot; { print $2 }&#39;</span> genes.list
 </code></pre></div>
-
 <h3 id="22-action">2.2 Action<a class="headerlink" href="#22-action" title="Permanent link">&para;</a></h3>
 <h4 id="221-ifelse">2.2.1 if...else<a class="headerlink" href="#221-ifelse" title="Permanent link">&para;</a></h4>
 <p>awk的action支持条件判断语句<code>if else</code></p>
@@ -3126,13 +3118,11 @@ $ awk <span class="s1">&#39;{if(condition) print $1}&#39;</span> input
 <span class="c1"># if else block</span>
 $ awk <span class="s1">&#39;{if(condition)print $1;else print $2}&#39;</span> input
 </code></pre></div>
-
 <h4 id="222-while">2.2.2 while<a class="headerlink" href="#222-while" title="Permanent link">&para;</a></h4>
 <p>awk的action支持循环语句，可以用while控制。while 控制语句要换行，用4个空格划分控制块。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 将会将列内容块只输出前3列内容，且没一个数据占据一行</span>
 $ awk <span class="s1">&#39;{i=1;while(i&lt;=3){print $i;i++}}&#39;</span> input
 </code></pre></div>
-
 <h3 id="23">2.3. 内建变量<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
 <h4 id="231-awk">2.3.1 控制 awk 的变量<a class="headerlink" href="#231-awk" title="Permanent link">&para;</a></h4>
 <ul>
@@ -3223,7 +3213,6 @@ $ awk <span class="s1">&#39;{i=1;while(i&lt;=3){print $i;i++}}&#39;</span> input
 <strong>插入列</strong>：有时候要插入一列数据，用awk可以很方便的实现：</p>
 <div class="highlight"><pre><span></span><code>$ awk <span class="s1">&#39;{ print $1, $2 &quot;gene expression&quot;, $3}&#39;</span> infile.txt &gt; outfile.txt
 </code></pre></div>
-
 <h3 id="32">3.2 对行的操作<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 有时候数据里含有重复的行，而当你只需要唯一性数据时，就可以用这行程序，只保留具有唯一性的数据行。</span>
 $ awk <span class="s1">&#39;!x[$0]++&#39;</span> infile.txt &gt; outfile.txt
@@ -3233,17 +3222,14 @@ $ awk <span class="s1">&#39;_[$0]++&#39;</span> infile.txt
 <span class="c1"># 当字段1重复时，打印整行</span>
 $ awk <span class="s1">&#39;_[$0]++{print $2}&#39;</span> infile.txt
 </code></pre></div>
-
 <h3 id="33">3.3 格式化输出<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 格式化输出/etc/password内容，输出第1行到20行内容</span>
 $ awk -F: <span class="s1">&#39;BEGIN{printf &quot;%-8s %-3s&quot;, &quot;User&quot;, &quot;UID&quot;}NR==1,NR==20{printf &quot;%-8s %-3d&quot;, $1, $3}&#39;</span> /etc/passwd
 </code></pre></div>
-
 <h3 id="34">3.4 合并文件<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 搜索当前目录下所有包含序列ATCCGGA的fasta文件，并输出文件名和行号以及序列</span>
 $ find . -type f -name <span class="s2">&quot;*.fasta&quot;</span> -exec awk <span class="s1">&#39;/ATCCCGGA/ {print FILENAME, NR, $0}&#39;</span> <span class="o">{}</span> <span class="se">\+</span>
 </code></pre></div>
-
 <hr />
 <h2 id="bioawk">bioawk<a class="headerlink" href="#bioawk" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/lh3/bioawk">bioawk</a> 是 Heng Li 开发的 awk 扩展工具，增加了对压缩的 BED, GFF, SAM, VCF, FASTA/Q 等文件格式的支持，并内建一些函数，适用于NGS数据的快速输入输出。因为其是 awk 的功能扩展，所以既可以独立以 bioawk 命令，也可以将其 link 到 awk/gawk ，直接代替 awk。</p>
@@ -3284,12 +3270,10 @@ $ makepkg -si
 <span class="c1"># conda 安装</span>
 <span class="o">(</span>base<span class="o">)</span>$ conda install bioawk
 </code></pre></div>
-
 <p>查看说明文档</p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> bioawk
 $ man ./awk.1
 </code></pre></div>
-
 <h3 id="2">2. 使用示例<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>使用示例部分使用 NCBI SRA 数据库的 illumina 测序数据 SRR1175124 为例</p>
 <ul>
@@ -3344,10 +3328,8 @@ $ <span class="k">for</span> i in <span class="k">$(</span>bioawk -c fastx <span
 &gt; <span class="s1">&#39;{if($name==i &amp;&amp; $seq ~ /^ATG/) print $name&quot;\n&quot;$seq&quot;\n&quot;$qual&quot;\n&quot;}&#39;</span> <span class="se">\</span>
 &gt; SRR1175124_1.fastq.gz SRR1175124_2.fastq.gz<span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
-
 <div class="highlight"><pre><span></span><code>$ bioawk -c bed <span class="s1">&#39;{ print $end - $start }&#39;</span> .bed
 </code></pre></div>
-
 <h4 id="bam">处理 bam<a class="headerlink" href="#bam" title="Permanent link">&para;</a></h4>
 <h4 id="vcf">处理 vcf<a class="headerlink" href="#vcf" title="Permanent link">&para;</a></h4>
 <h4 id="bed">处理 bed<a class="headerlink" href="#bed" title="Permanent link">&para;</a></h4>

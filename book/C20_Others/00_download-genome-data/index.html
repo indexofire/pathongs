@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C20_Others/00_download-genome-data/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
-        <title>下载公共数据库中基因组数据 - 杭州疾控中心测序实验室</title>
+        <title>命令行下载公共数据库中基因组数据 - 杭州疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -106,7 +106,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              下载公共数据库中基因组数据
+              命令行下载公共数据库中基因组数据
             
           </span>
         </div>
@@ -2424,15 +2424,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#assembly" class="md-nav__link">
-    下载 Assembly 数据
+  <a href="#1-assembly" class="md-nav__link">
+    1.下载 Assembly 数据
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ncbi-sra" class="md-nav__link">
-    从 NCBI 下载 sra 数据
+  <a href="#2-sra" class="md-nav__link">
+    2.下载 SRA 数据
   </a>
   
 </li>
@@ -2461,45 +2461,49 @@
                   </a>
                 
                 
-                <h1 id="_1">下载公共数据库中基因组数据<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+                <h1 id="_1">命令行下载公共数据库中基因组数据<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2021-01-19</p>
 <hr />
-<p>@indexofire update: 2020.4.21</p>
+<div class="admonition abstract">
+<p class="admonition-title">本节简介</p>
+<p>简介使用命令行工具从公共数据库中下载各种基因组数据。</p>
+</div>
+<p>共公共数据库中下载微生物基因组数据，最常用的从 NCBI 的 Assembly, Genbank 等数据库下载 fasta/genbank 格式的数据，或者从 SRA 下载测序原始数据。</p>
+<div class="admonition warning">
+<p class="admonition-title">SRA数据下载方式更新</p>
+<p>目前 NCBI 已将新提交的 SRA 数据放到 AWS 和 GCP 云服务器端，NCBI服务器只保留了部分老的 SRA 数据。过去用 aspera 快速下载新数据的方式已经无法使用，如果调用 prefetch 只能用 https 模式下载，国内速度会比较慢。如果你在国外，或者有快速的代理服务器，还可以获得比较优秀的下载速度。如果安装了 AWS 和 GCP 的命令行工具下载，国内访问 GCP 需要代理，而 AWS 的 S3 服务器也不定时抽风，基本上也要靠代理。</p>
+</div>
+<p>首先创建一个虚拟环境，安装所需的下载工具。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 构建环境</span>
 $ conda create -n dlngs
 $ conda activate dlngs
 </code></pre></div>
-
-<h2 id="assembly">下载 Assembly 数据<a class="headerlink" href="#assembly" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>dlngs<span class="o">)</span>$ conda install entrez-direct
+<h2 id="1-assembly">1.下载 Assembly 数据<a class="headerlink" href="#1-assembly" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># 下载 NCBI entrez-direct 工具</span>
+<span class="o">(</span>dlngs<span class="o">)</span>$ conda install entrez-direct
+<span class="c1">#</span>
+<span class="o">(</span>dlngs<span class="o">)</span>$ esearch -query <span class="p">|</span> efetch
 </code></pre></div>
-
-<h2 id="ncbi-sra">从 NCBI 下载 sra 数据<a class="headerlink" href="#ncbi-sra" title="Permanent link">&para;</a></h2>
+<h2 id="2-sra">2.下载 SRA 数据<a class="headerlink" href="#2-sra" title="Permanent link">&para;</a></h2>
 <p>首先要安装 sra-tools 工具</p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>dlngs<span class="o">)</span>$ conda install sra-tools
 </code></pre></div>
-
 <ul>
 <li>prefetch 下载</li>
 <li>fastq-dump</li>
 <li>fasterq-dump</li>
 <li>vdb-config 设置 sra-tools 工具的参数</li>
 </ul>
-<p>::: Note</p>
-<p>目前 NCBI 已将 sra 数据放到 AWS 和 GCP 云服务器端，过去用 aspera 快速下载的方式已经无法使用，只能用 https 模式下载。如果你在国外，或者有快速的代理服务器，还可以获得比较优秀的下载速度。</p>
-<p>从 AWS 或 GCP 下载。国内访问 GCP 需要代理，而AWS的S3服务器也不定时抽风。</p>
 <h2 id="ebi-fastq">从 EBI 下载 FastQ 数据<a class="headerlink" href="#ebi-fastq" title="Permanent link">&para;</a></h2>
 <p>EBI ENA 支持直接下载 fastq 格式的基因组数据，可以用 aspera 加速下载。</p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>dlngs<span class="o">)</span>$ conda install aspera-cli
+<div class="highlight"><pre><span></span><code><span class="o">(</span>dlngs<span class="o">)</span>$ conda install -c hcc aspera-cli
 </code></pre></div>
-
 <p><strong>使用 ascp 下载 fastq 数据示例</strong></p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>dlngs<span class="o">)</span>$ ascp -QT -l 100m -P33001 -i <span class="nv">$CONDA_PREFIX</span>/etc/asperaweb_id_dsa.openssh era-fasp@fasp.sra.ebi.ac.uk:vol1/fastq/SRR100/000/SRR1001720/SRR1001720_1.fastq.gz .
 </code></pre></div>
-
 <p><strong>使用 ftp 模式下载</strong></p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>dlngs<span class="o">)</span>$ aria2c ftp://ftp.ebi.ac.uk/vol1/fastq/SRR100/000/SRR1001720/SRR1001720_1.fastq.gz
 </code></pre></div>
-
 <p>如果我们希望批量下载，可以用下面的脚本。现将要下载的SRA数据的Accession保存成list.txt文件，然后用<code>ena-dl.sh list.txt output</code>下载到output目录</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
 <span class="c1"># ena-dl.sh list.txt</span>
@@ -2510,7 +2514,6 @@ $ conda activate dlngs
   ascp -QT -l 100m -P33001 -i <span class="nv">$CONDA_PREFIX</span>/etc/asperaweb_id_dsa.openssh era-fasp@fasp.sra.ebi.ac.uk:vol1/fastq/<span class="si">${</span><span class="nv">i</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">6</span><span class="si">}</span>/00<span class="si">${</span><span class="nv">i</span><span class="p">:</span><span class="nv">0</span><span class="p">-1:</span><span class="nv">1</span><span class="si">}</span>/<span class="nv">$i</span>/<span class="si">${</span><span class="nv">i</span><span class="si">}</span>_2.fastq.gz <span class="nv">$2</span>/<span class="si">${</span><span class="nv">i</span><span class="si">}</span>_2.fastq.gz<span class="p">;</span>
 <span class="k">done</span>
 </code></pre></div>
-
 <p>如果是SE测序，那么只有_1.fastq.gz文件可以被下载。如果是6位长度的SRA文件，则不需要000的末尾编号。</p>
                 
                   
@@ -2520,7 +2523,7 @@ $ conda activate dlngs
 <div class="md-source-date">
   <small>
     
-      Last update: 2020-09-05
+      Last update: 2021-01-19
     
   </small>
 </div>

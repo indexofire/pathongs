@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/tutorial/Linux/02_basic-cml/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -2007,41 +2007,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    系统查看
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    显示文本文件内容
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    压缩/解压缩文件
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    客户端与服务器端交互
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2509,41 +2474,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    系统查看
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    显示文本文件内容
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    压缩/解压缩文件
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    客户端与服务器端交互
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2592,125 +2522,118 @@
 <li><code>which</code>: 查找可执行文件的系统路径</li>
 <li><code>wc</code>: 统计一个文件的行，字符和字节数</li>
 </ul>
-<div class="tabbed-set" data-tabs="1:9">
-<input name="__tabbed_1" type="radio" id="__tabbed_1_1" checked="checked" /><label for="__tabbed_1_1">ls</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 显示 &#39;~/data&#39; 目录里的文件</span>
-$ ls ~/data
+<p>```bash tab="ls"</p>
+<h1 id="data">显示 '~/data' 目录里的文件<a class="headerlink" href="#data" title="Permanent link">&para;</a></h1>
+<p>$ ls ~/data</p>
+<h1 id="data_1">列表方式显示包括隐含文件的 '~/data' 目录里的所有文件<a class="headerlink" href="#data_1" title="Permanent link">&para;</a></h1>
+<p>$ ls -la ~/data</p>
+<h1 id="_2">文件按照时间排序<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<p>$ ls -t ~/data</p>
+<h1 id="fastq">查看所有后缀为 fastq 的文件<a class="headerlink" href="#fastq" title="Permanent link">&para;</a></h1>
+<p>$ ls ~/data/*.fastq
+<div class="highlight"><pre><span></span><code>```bash tab=&quot;cd&quot;
+# 从当前目录切换到 &#39;~/app&#39; 目录
+$ cd ~/app
 
-<span class="c1"># 列表方式显示包括隐含文件的 &#39;~/data&#39; 目录里的所有文件</span>
-$ ls -la ~/data
+# 从任何位置切换回用户主目录 &#39;/home/User&#39;
+$ cd
 
-<span class="c1"># 文件按照时间排序</span>
-$ ls -t ~/data
+# 回退上一个访问目录
+$ cd -
 
-<span class="c1"># 查看所有后缀为 fastq 的文件</span>
-$ ls ~/data/*.fastq
-</code></pre></div></div>
-<input name="__tabbed_1" type="radio" id="__tabbed_1_2" /><label for="__tabbed_1_2">cd</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 从当前目录切换到 &#39;~/app&#39; 目录</span>
-$ <span class="nb">cd</span> ~/app
+# 返回上一级目录
+$ cd ..
 
-<span class="c1"># 从任何位置切换回用户主目录 &#39;/home/User&#39;</span>
-$ <span class="nb">cd</span>
-
-<span class="c1"># 回退上一个访问目录</span>
-$ <span class="nb">cd</span> -
-
-<span class="c1"># 返回上一级目录</span>
-$ <span class="nb">cd</span> ..
-
-<span class="c1"># 使用相对路径，进入另一个目录&quot;new directory&quot;，这里 &#39;\&#39; 是转义符，将空格键正确转义</span>
-$ <span class="nb">cd</span> ../../../new<span class="se">\ </span>directory
-</code></pre></div></div>
-<input name="__tabbed_1" type="radio" id="__tabbed_1_3" /><label for="__tabbed_1_3">pwd</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 当不知道当前处于什么路径时，可以用这个命令显示</span>
-$ <span class="nb">pwd</span>
-
-<span class="c1"># 需要使用当前路径到命令中，如建立links</span>
-$ ln -s <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/mylib.so /usr/lib/
-</code></pre></div></div>
-<input name="__tabbed_1" type="radio" id="__tabbed_1_4" /><label for="__tabbed_1_4">mkdir</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 当前路径下新建一个名叫 &#39;new&#39; 的目录</span>
+# 使用相对路径，进入另一个目录&quot;new directory&quot;，这里 &#39;\&#39; 是转义符，将空格键正确转义
+$ cd ../../../new\ directory
+</code></pre></div></p>
+<p>```bash tab="pwd"</p>
+<h1 id="_3">当不知道当前处于什么路径时，可以用这个命令显示<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
+<p>$ pwd</p>
+<h1 id="links">需要使用当前路径到命令中，如建立links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h1>
+<p>$ ln -s <code>pwd</code>/mylib.so /usr/lib/
+<div class="highlight"><pre><span></span><code>```bash tab=&quot;mkdir&quot;
+# 当前路径下新建一个名叫 &#39;new&#39; 的目录
 $ mkdir new
-</code></pre></div></div>
-<input name="__tabbed_1" type="radio" id="__tabbed_1_5" /><label for="__tabbed_1_5">rmdir</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 删除当前路径的目录 &#39;new&#39;</span>
-$ rmdir new
-</code></pre></div></div>
-<input name="__tabbed_1" type="radio" id="__tabbed_1_6" /><label for="__tabbed_1_6">rm</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 删除当前目录的所有后缀是 &#39;.sra&#39; 的文件</span>
+</code></pre></div></p>
+<p>```bash tab="rmdir"</p>
+<h1 id="new">删除当前路径的目录 'new'<a class="headerlink" href="#new" title="Permanent link">&para;</a></h1>
+<p>$ rmdir new
+<div class="highlight"><pre><span></span><code>```bash tab=&quot;rm&quot;
+# 删除当前目录的所有后缀是 &#39;.sra&#39; 的文件
 $ rm *.sra
 
-<span class="c1"># -R 参数删除目录</span>
-<span class="c1"># 删除目录 &#39;new&#39; 以及 &#39;new&#39; 下的所有子文件与子目录</span>
+# -R 参数删除目录
+# 删除目录 &#39;new&#39; 以及 &#39;new&#39; 下的所有子文件与子目录
 $ rm -R new
 
-<span class="c1"># 不弹出删除确认提示，删除所有 &#39;.tmp&#39; 文件</span>
+# 不弹出删除确认提示，删除所有 &#39;.tmp&#39; 文件
 $ rm -f *.tmp
 
-<span class="c1"># 千万不能做的事情！也是linux频道里经常能看到的笑话</span>
+# 千万不能做的事情！也是linux频道里经常能看到的笑话
 $ sudo rm -rf /*
-</code></pre></div></div>
-<input name="__tabbed_1" type="radio" id="__tabbed_1_7" /><label for="__tabbed_1_7">cp</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 复制 &#39;test.txt&#39; 文件到目录 &#39;~/abc&#39; 中</span>
-$ cp test.txt ~/abc
-
-<span class="c1"># -R 复制目录</span>
-<span class="c1"># 复制 mydir 到用户目录下</span>
-$ cp -R mydir/ ~
-</code></pre></div></div>
-<input name="__tabbed_1" type="radio" id="__tabbed_1_8" /><label for="__tabbed_1_8">mv</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 移动 &#39;test.txt&#39; 文件到目录 &#39;~/abc&#39; 中并改名叫 &#39;test1.txt&#39;</span>
+</code></pre></div></p>
+<p>```bash tab="cp"</p>
+<h1 id="testtxt-abc">复制 'test.txt' 文件到目录 '~/abc' 中<a class="headerlink" href="#testtxt-abc" title="Permanent link">&para;</a></h1>
+<p>$ cp test.txt ~/abc</p>
+<h1 id="-r">-R 复制目录<a class="headerlink" href="#-r" title="Permanent link">&para;</a></h1>
+<h1 id="mydir">复制 mydir 到用户目录下<a class="headerlink" href="#mydir" title="Permanent link">&para;</a></h1>
+<p>$ cp -R mydir/ ~
+<div class="highlight"><pre><span></span><code>```bash tab=&quot;mv&quot;
+# 移动 &#39;test.txt&#39; 文件到目录 &#39;~/abc&#39; 中并改名叫 &#39;test1.txt&#39;
 $ mv test.txt ~/abc/test1.txt
-</code></pre></div></div>
-<input name="__tabbed_1" type="radio" id="__tabbed_1_9" /><label for="__tabbed_1_9">which</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 打印出系统带的 python 程序的路径</span>
-$ which python
-</code></pre></div></div>
-</div>
-<h2 id="_2">系统查看<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>find</code>: 查找文件</li>
-<li><code>ps</code>: 查看系统进程</li>
-<li><code>top</code>: 查看当前系统状态和进程</li>
-</ul>
-<div class="tabbed-set" data-tabs="2:3">
-<input name="__tabbed_2" type="radio" id="__tabbed_2_1" checked="checked" /><label for="__tabbed_2_1">find</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 查找一个文件，比如 .bashrc, /etc路径下的hosts文件</span>
+</code></pre></div></p>
+<p>```bash tab="which"</p>
+<h1 id="python">打印出系统带的 python 程序的路径<a class="headerlink" href="#python" title="Permanent link">&para;</a></h1>
+<p>$ which python
+<div class="highlight"><pre><span></span><code>## 系统查看
+
+- `find`: 查找文件
+- `ps`: 查看系统进程
+- `top`: 查看当前系统状态和进程
+
+
+```bash tab=&quot;find&quot;
+# 查找一个文件，比如 .bashrc, /etc路径下的hosts文件
 $ find .bashrc
 $ find /etc/hosts
 
-<span class="c1"># 查找当前目录及子目录后缀为gz的文件</span>
-$ find . -type f -name <span class="s2">&quot;*.gz&quot;</span>
-<span class="c1"># 查找所有的 html 网页文件</span>
-$ find . -type f -regex <span class="s2">&quot;.*html</span>$<span class="s2">&quot;</span>
-<span class="c1"># 将所有 fasta 文件中序列名字包含node的改成seq</span>
-$ find . -type f -regex <span class="s2">&quot;.*fasta</span>$<span class="s2">&quot;</span> <span class="p">|</span> xargs sed <span class="s1">&#39;s/NODE/Seq/g&#39;</span>
+# 查找当前目录及子目录后缀为gz的文件
+$ find . -type f -name &quot;*.gz&quot;
+# 查找所有的 html 网页文件
+$ find . -type f -regex &quot;.*html$&quot;
+# 将所有 fasta 文件中序列名字包含node的改成seq
+$ find . -type f -regex &quot;.*fasta$&quot; | xargs sed &#39;s/NODE/Seq/g&#39;
 
-<span class="c1"># 查找子目录深度为4层目录的fasta文件</span>
-$ find . -type f -maxdepth <span class="m">4</span> -name <span class="s2">&quot;*.fasta&quot;</span>
+# 查找子目录深度为4层目录的fasta文件
+$ find . -type f -maxdepth 4 -name &quot;*.fasta&quot;
 
-<span class="c1"># 查找/var/log路径下权限为755的目录</span>
-$ find /var/log -type d -perm <span class="m">755</span>
+# 查找/var/log路径下权限为755的目录
+$ find /var/log -type d -perm 755
 
-<span class="c1"># 按照用户查找用户，在tmp路径下查找属于用户 nginx 的文件</span>
+# 按照用户查找用户，在tmp路径下查找属于用户 nginx 的文件
 $ find /tmp -user nginx
-<span class="c1"># 用户主home路径下查找属于 root 权限，属性为644的文件</span>
-$ find . -user root -perm <span class="m">644</span>
-</code></pre></div></div>
-<input name="__tabbed_2" type="radio" id="__tabbed_2_2" /><label for="__tabbed_2_2">ps</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 显示详细的进程信息</span>
-$ ps -waux
-
-<span class="c1"># 过滤用户root的进程</span>
-$ ps -u root
-
-<span class="c1"># 根据不同参数使用来排序进程，并只现实排名前10的进程</span>
-$ ps -aux --sort -pcpu <span class="p">|</span> head -n <span class="m">11</span>
-$ ps -aux --sort -pmem <span class="p">|</span> head -n <span class="m">11</span>
-$ ps -aux --sort -pcpu,+pmem <span class="p">|</span> head -n <span class="m">11</span>
-
-<span class="c1"># 过滤进程名</span>
-$ ps -f -C chrome
-
-<span class="c1"># 根据PID过滤</span>
-$ ps -L <span class="m">1000</span>
-
-<span class="c1"># 树形现实进程</span>
-$ ps -axjf
-</code></pre></div></div>
-<input name="__tabbed_2" type="radio" id="__tabbed_2_3" /><label for="__tabbed_2_3">top</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code>$ top
-</code></pre></div></div>
-</div>
+# 用户主home路径下查找属于 root 权限，属性为644的文件
+$ find . -user root -perm 644
+</code></pre></div></p>
+<p>```bash tab="ps"</p>
+<h1 id="_4">显示详细的进程信息<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
+<p>$ ps -waux</p>
+<h1 id="root">过滤用户root的进程<a class="headerlink" href="#root" title="Permanent link">&para;</a></h1>
+<p>$ ps -u root</p>
+<h1 id="10">根据不同参数使用来排序进程，并只现实排名前10的进程<a class="headerlink" href="#10" title="Permanent link">&para;</a></h1>
+<p>$ ps -aux --sort -pcpu | head -n 11
+$ ps -aux --sort -pmem | head -n 11
+$ ps -aux --sort -pcpu,+pmem | head -n 11</p>
+<h1 id="_5">过滤进程名<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
+<p>$ ps -f -C chrome</p>
+<h1 id="pid">根据PID过滤<a class="headerlink" href="#pid" title="Permanent link">&para;</a></h1>
+<p>$ ps -L 1000</p>
+<h1 id="_6">树形现实进程<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h1>
+<p>$ ps -axjf
+<div class="highlight"><pre><span></span><code>```bash tab=&quot;top&quot;
+$ top
+</code></pre></div></p>
 <div class="admonition info">
 <p class="admonition-title">进程列表</p>
 <p>ps会在终端打印系统进程，各列的含义是:</p>
@@ -2727,7 +2650,7 @@ $ ps -axjf
 <li>COMMAND: 该进程所运行的命令</li>
 </ul>
 </div>
-<h2 id="_3">显示文本文件内容<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_7">显示文本文件内容<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>操作大文件如fastq测序原始数据，常常不需要将几百M甚至上G的数据全部写入到内存打开文件，只需要了解头部数据即可。用head就非常轻便。head默认输出前10行内容。</p>
 <ul>
 <li><code>head</code></li>
@@ -2739,38 +2662,40 @@ $ ps -axjf
 <li><code>nl</code>:</li>
 <li><code>grep</code>: 截取输入字符的选定 pattern 并输出所在的行</li>
 </ul>
-<div class="tabbed-set" data-tabs="3:8">
-<input name="__tabbed_3" type="radio" id="__tabbed_3_1" checked="checked" /><label for="__tabbed_3_1">head</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 输出文件前5行内容</span>
-$ head -5 text.txt
-</code></pre></div></div>
-<input name="__tabbed_3" type="radio" id="__tabbed_3_2" /><label for="__tabbed_3_2">tail</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 输出文件的最后5行内容</span>
+<p>```bash tab="head"</p>
+<h1 id="5">输出文件前5行内容<a class="headerlink" href="#5" title="Permanent link">&para;</a></h1>
+<p>$ head -5 text.txt
+<div class="highlight"><pre><span></span><code>```bash tab=&quot;tail&quot;
+# 输出文件的最后5行内容
 $ tail -5 text.txt
-</code></pre></div></div>
-<input name="__tabbed_3" type="radio" id="__tabbed_3_3" /><label for="__tabbed_3_3">cat</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 显示文件 &#39;text.txt&#39; 内容</span>
-$ cat text.txt
-</code></pre></div></div>
-<input name="__tabbed_3" type="radio" id="__tabbed_3_4" /><label for="__tabbed_3_4">less</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 显示文件 &#39;text.txt&#39; 内容，支持分页</span>
+</code></pre></div></p>
+<p>```bash tab="cat"</p>
+<h1 id="texttxt">显示文件 'text.txt' 内容<a class="headerlink" href="#texttxt" title="Permanent link">&para;</a></h1>
+<p>$ cat text.txt
+<div class="highlight"><pre><span></span><code>```bash tab=&quot;less&quot;
+# 显示文件 &#39;text.txt&#39; 内容，支持分页
 $ less text.txt
-</code></pre></div></div>
-<input name="__tabbed_3" type="radio" id="__tabbed_3_5" /><label for="__tabbed_3_5">more</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code>$ more text.txt
-</code></pre></div></div>
-<input name="__tabbed_3" type="radio" id="__tabbed_3_6" /><label for="__tabbed_3_6">wc</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 输出文件 &#39;text.txt&#39; 的行数，字符数和字节数。</span>
+</code></pre></div></p>
+<p>```bash tab="more"
+$ more text.txt
+<div class="highlight"><pre><span></span><code>```bash tab=&quot;wc&quot;
+# 输出文件 &#39;text.txt&#39; 的行数，字符数和字节数。
 $ wc text.txt
 
-<span class="c1"># 输出行数</span>
+# 输出行数
 $ wc -l text.txt
-</code></pre></div></div>
-<input name="__tabbed_3" type="radio" id="__tabbed_3_7" /><label for="__tabbed_3_7">nl</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 输出行号</span>
-$ cat text.txt <span class="p">|</span> nl
-</code></pre></div></div>
-<input name="__tabbed_3" type="radio" id="__tabbed_3_8" /><label for="__tabbed_3_8">grep</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 显示文件 &#39;text.txt&#39; 中含有字符 &#39;abc&#39; 的行</span>
-$ cat text.txt <span class="p">|</span> grep <span class="s1">&#39;abc&#39;</span>
+</code></pre></div></p>
+<p>```bash tab="nl"</p>
+<h1 id="_8">输出行号<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
+<p>$ cat text.txt | nl
+<div class="highlight"><pre><span></span><code>```bash tab=&quot;grep&quot;
+# 显示文件 &#39;text.txt&#39; 中含有字符 &#39;abc&#39; 的行
+$ cat text.txt | grep &#39;abc&#39;
 
-<span class="c1"># 输出文件中行以&gt;开头的行</span>
-$ grep <span class="s1">&#39;^&gt;&#39;</span> myseq.fasta
-</code></pre></div></div>
-</div>
-<h2 id="_4">压缩/解压缩文件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+# 输出文件中行以&gt;开头的行
+$ grep &#39;^&gt;&#39; myseq.fasta
+</code></pre></div></p>
+<h2 id="_9">压缩/解压缩文件<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>对序列数据常需要进行压缩处理，可以使用 gzip/tar， 特殊格式压缩可以使用第三方软件，个人常用7z来进行。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># gzip 压缩文件 1 为 1.gz</span>
 $ gzip <span class="m">1</span>
@@ -2782,8 +2707,7 @@ $ tar -zcf foo.tar.gz foo
 <span class="c1"># 解压缩文件 foo.tar.gz</span>
 $ tar -zxf foo.tar.gz
 </code></pre></div>
-
-<h2 id="_5">客户端与服务器端交互<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_10">客户端与服务器端交互<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p>Linux 服务器上计算获得的结果，可以通过以下常用方式方便的下载和上传。</p>
 <ol>
 <li>ssh 登录服务器</li>
@@ -2792,7 +2716,6 @@ $ tar -zxf foo.tar.gz
 <div class="highlight"><pre><span></span><code><span class="c1"># server_ip为所要登录服务器ip</span>
 $ ssh user@server_ip
 </code></pre></div>
-
 <ol>
 <li>客户端与服务器端拷贝文件</li>
 </ol>
@@ -2802,21 +2725,18 @@ $ scp mark@10.44.35.122:/data/1.fasta .
 <span class="c1"># 从本地上传文件 2.fasta 到服务器/data</span>
 $ scp <span class="m">2</span>.fasta mark@10.44.35.122:/data/2.fasta
 </code></pre></div>
-
 <p>rsync命令是一个远程数据同步工具，可快速同步多台主机间的文件。rsync使用所谓的“rsync算法”来使本地和远程两个主机之间的文件达到同步，这个算法只传送两个文件的不同部分，而不是每次都整份传送，因此速度相当快。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 传送 server_ip 服务器上的文件到本地 Linux 系统 /data 路径中</span>
 $ rsync -avz user@server_ip:/data/* /data
 <span class="c1"># 传送本地 test.py 文件到服务器 server_ip 用户目录中</span>
 $ rsync -av ~/test.py user@server_ip::/home/user
 </code></pre></div>
-
 <ol>
 <li>简单的传输单个文件用scp还算方便，但如果频繁交互，或者需要可视化界面来操作，我们需要更方便的工具，对于win平台用户，简单的ssh登录工具常用的如putty，如果要上下传文件，也可以搭建ftp服务来实现。这里推荐 sshfs。</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="c1"># 挂载服务器 /data 到本地linux机器的 ~/server 目录。</span>
 $ sshfs mark@10.44.35.122:/data ~/server -o <span class="nv">idmap</span><span class="o">=</span>user -o allow_other
 </code></pre></div>
-
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ol>
 <li><a href="http://linoxide.com/how-tos/linux-ps-command-examples/">http://linoxide.com/how-tos/linux-ps-command-examples/</a></li>
