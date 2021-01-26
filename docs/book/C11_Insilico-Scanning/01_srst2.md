@@ -22,7 +22,7 @@ $ conda activate srst2
 
 ## 2. 使用
 
-!!! warning
+!!! warning "注意"
     需要注意的是fastq文件名称要符合Miseq命名规范。
 
 ```bash
@@ -48,8 +48,6 @@ MLST扫描结果字段：
 - uncertainty：由于序列深度或者覆盖度不够造成的不确定情况
 - depth：基因比对的覆盖度
 - maxMAF：扫描的7个管家基因中最高的minor等位基因频率
-
-
 
 根据测序reads获得耐药基因，conda 版本的srst2没有默认的数据库，需要自行下载。srst2 自带的数据库，参见: https://github.com/katholt/srst2/tree/master/data
 
