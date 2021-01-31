@@ -133,3 +133,8 @@ lazygit用户界面分为左侧5个功能窗口和右侧一个内容窗口。当
 3. Local Branches
 4. Commits
 5. Stash
+
+**快捷命令
+
+`p`: git pull
+`P`: git push
