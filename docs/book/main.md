@@ -69,7 +69,7 @@ $ git push origin master
     大部分示例都是在 Ubuntu/Archlinux 环境下实现的。对于软件的安装和运行：
 
     1. 如果你使用的是 Windows10 bash环境或Windows虚拟机，可能会有一定出入，或无法运行的情况，具体问题自己动手解决。
-    2. 如果你使用的是 Macintosh OS X 系统，除了一些软件安装和参数和路径设置外，大部分例子不需要修改即可运行。
+     如果你使用的是 Macintosh OS X 系统，除了一些软件安装和参数和路径设置外，大部分例子不需要修改即可运行。
     3. 如果你使用的是其他发行版，特别是不属于 Debian/Archlinux 体系的发行办，如红帽子系的 CentOS 等，则根据操作系统管理命令来运行或安装，与发行版无关的大部分 Linux 操作不存在区别。
 
 ### Linux 与生物信息
@@ -93,7 +93,9 @@ Linux 与生物信息学紧密相关，许多软件运行和数据分析都适�
 - CentOS
 - ArchLinux
 
-无论是在服务器上安装，或者是个人桌面使用Linux，都需要考虑一个问题，那就是使用哪一个发行版。服务器常用的Linux发行版有CentOS, Debian, Ubuntu等，桌面发行版非常多，主要有基于Ubuntu，基于Archlinux等发行版。不同的发行版相当于使用不同的包管理软件，以及系统控制方式等方面存在区别。
+其他值得推荐的个人发行版如Deepin（国产优秀的发行版）, Debian, Manjaro, LinuxMint等等。大多数发行版就是基于debian, archlinux, redhat, openSUSE, gentoo等发行版，掌握了这些发行版的管理方式，其他各个类似的衍生版本用起来也就大同小异了。
+
+对于眼花缭乱的各个发行版之间特点和软件区别，以及流行趋势，可以在 [Distrowatch](httpz://distrowatch.org) 网站了解。无论是在服务器上安装，或者是个人桌面使用Linux，都需要考虑一个问题，那就是使用哪一个发行版。服务器常用的Linux发行版有CentOS, Debian, Ubuntu等，桌面发行版非常多，主要有基于Ubuntu，基于Archlinux等发行版。不同的发行版相当于使用不同的包管理软件，以及系统控制方式等方面存在区别。
 
 比如包管理和安装的差别：
 

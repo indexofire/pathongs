@@ -1,5 +1,5 @@
-site_name: 杭州疾控中心测序实验室
-site_description: '杭州疾控中心测序实验室'
+site_name: 杭州市疾控中心测序实验室
+site_description: '杭州市疾控中心测序实验室'
 site_author: 'indexofire'
 site_url: 'https://indexofire.github.io/pathongs/'
 theme:
@@ -11,7 +11,7 @@ theme:
     - navigation.tabs
     - navigation.sections
   custom_dir: overrides
-copyright: 'Copyright &copy; 2016 - 2020 HZCDC@Lab'
+copyright: 'Copyright &copy; 2016 - 2021 HZCDC@Lab'
 repo_url: https://github.com/indexofire/pathongs/
 
 extra:
@@ -19,7 +19,7 @@ extra:
     primary: 'blue'
 
 extra_css:
-  - stylesheets/extra.css
+  - assets/stylesheets/extra.css
 
 nav:
   - '首页': index.md
@@ -31,6 +31,8 @@ nav:
       - '03. Entrez 工具': book/C01_Common-Utility/03_entrez.md
       - '04. EMBOSS 工具集': book/C01_Common-Utility/04_emboss.md
       - '05. Blast 比对': book/C01_Common-Utility/05_blast.md
+      - '06. FastQC': book/C01_Common-Utility/06_fastqc.md
+      - '07. Multiqc': book/C01_Common-Utility/07_multiqc.md
       - '08. SeqKit 工具': book/C01_Common-Utility/08_seqkit.md
       - '09. Kmer 工具': book/C01_Common-Utility/09_kmer.md
     - '第二章 组装与比对':
@@ -143,7 +145,7 @@ nav:
       - '03. fastq': tutorial/Format/05_fastq.md
       - '04. gcg': tutorial/Format/04_gcg.md
       - '05. sam': tutorial/Format/05_sam.md
-      - ‘06. bam’: tutorial/Format/06_bam.md
+      - '06. bam': tutorial/Format/06_bam.md
       - '07. bed': tutorial/Format/07_bed.md
       - '08. vcf': tutorial/Format/08_vcf.md
       - '09. gff': tutorial/Format/09_gff.md
