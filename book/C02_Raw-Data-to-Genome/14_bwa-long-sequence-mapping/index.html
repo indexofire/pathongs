@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="杭州疾控中心测序实验室">
+        <meta name="description" content="杭州市疾控中心测序实验室">
       
       
       
@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C02_Raw-Data-to-Genome/14_bwa-long-sequence-mapping/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
-        <title>14. bwa 长序列比对 - 杭州疾控中心测序实验室</title>
+        <title>14. bwa 长序列比对 - 杭州市疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -46,7 +46,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
     
       
@@ -87,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header-nav__ellipsis">
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
-            杭州疾控中心测序实验室
+            杭州市疾控中心测序实验室
           </span>
         </div>
         <div class="md-header-nav__topic">
@@ -276,13 +276,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    杭州疾控中心测序实验室
+    杭州市疾控中心测序实验室
   </label>
   
     <div class="md-nav__source">
@@ -439,6 +439,32 @@
   <li class="md-nav__item">
     <a href="../../C01_Common-Utility/05_blast/" class="md-nav__link">
       05. Blast 比对
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/06_fastqc/" class="md-nav__link">
+      06. FastQC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/07_multiqc/" class="md-nav__link">
+      07. Multiqc
     </a>
   </li>
 
@@ -2282,7 +2308,7 @@
 
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/06_bam/" class="md-nav__link">
-      ‘06. bam’
+      06. bam
     </a>
   </li>
 
@@ -2502,10 +2528,13 @@
                   <h1>14. bwa 长序列比对</h1>
                 
                 <h2 id="bwa">bwa 长片段比对<a class="headerlink" href="#bwa" title="Permanent link">&para;</a></h2>
-<p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2020-09-14</p>
+<p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2021-02-01</p>
 <hr />
-<p><a href="http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.3103.html">Phil Ashton</a>等人最近发表的一篇论文引发了一些讨论，即如何采用 bwa-mem 应用到长片段测序如牛津纳米孔（ONT）。</p>
-<p>尽管bwa-mem的第一个版本与PacBio一起工作，但它产生的对齐过于分散而无法使用。我最初认为bwa-mem使用的长精确种子对PacBio读数的~15％错误率不够敏感，但 Homolog.us 指出BLASR也使用长精确种子。然后我意识到bwa-mem算法也可以使用PacBio数据。随着越来越多有趣的PacBio数据集的出现，我决定尝试一下。</p>
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
+<p>本节介绍<a href="">Phil Ashton</a>等人最近发表的一篇<a href="http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.3103.html">论文</a>如何采用 bwa-mem 应用到长片段测序如牛津纳米孔（ONT）。</p>
+</div>
+<p>尽管bwa-mem的第一个版本与PacBio一起工作，但它产生的对齐过于分散而无法使用。我最初认为bwa-mem使用的长精确种子对PacBio读数的~15％错误率不够敏感，但 <a href="http://homolog.us">Homolog.us</a> 指出BLASR也使用长精确种子。然后我意识到bwa-mem算法也可以使用PacBio数据。随着越来越多有趣的PacBio数据集的出现，我决定尝试一下。</p>
 <p>BWA-MEM 算法有两个主要变化，可以更好地支持PacBio数据。首先，我们必须使用放松的评分矩阵，以便Smith-Waterman（SW）可以在有效匹配上给出正分数。在0.7.9和0.7.10中，评分方案是：match = 2，mismatch = -5，gapOpen = -2和gapExt = -1。其次，我添加了一个启发式来过滤初始种子，以减少不成功的种子扩展。对于PacBio读数，bwa-mem在每个种子周围的小窗口中执行SSE2-SW，然后如果SW得分太小（阈值与选项-W成比例）则拒绝种子。这类似于BLAST的X-dropoff启发式算法。除此之外，bwa-mem还实现了间隙修补启发式算法，即使结果对齐不是最优的，它也会尝试将两个共线局部命中与全局对齐连接起来。这种启发式方法有助于让对齐遍历低质量区域，从而减少碎片。通过这些更改，bwa-mem适用于PacBio数据。</p>
 <p>由于其较高的错误率，ONT读取带来了新的挑战。单向（1D）读数的初始释放具有高于30％的错误率。 2D读取要好一些，但现在仍然比PacBio有更多错误。 PacBio模式不太合适，需要进一步改进bwa-mem。</p>
 <p>ONT特定的更改相对简单。首先，我们使用较短的种子长度和更宽松的阈值-W作为更高错误率的结果。其次，我们根据最近的论文修改得分矩阵匹配= 1，mismatch = -1，gapOpen = -1和gapExt = -1。对于PacBio来说，这个设置也更好。</p>
@@ -2514,6 +2543,7 @@
 <div class="highlight"><pre><span></span><code><span class="c1"># bwa version &gt; 0.7.10 支持</span>
 $ bwa mem -x ont2d ref.fa reads.fq
 </code></pre></div>
+
 <h2 id="minimap2">minimap2<a class="headerlink" href="#minimap2" title="Permanent link">&para;</a></h2>
                 
                   
@@ -2523,7 +2553,7 @@ $ bwa mem -x ont2d ref.fa reads.fq
 <div class="md-source-date">
   <small>
     
-      Last update: 2020-09-14
+      Last update: 2021-02-01
     
   </small>
 </div>
@@ -2583,7 +2613,7 @@ $ bwa mem -x ont2d ref.fa reads.fq
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016 - 2020 HZCDC@Lab
+            Copyright &copy; 2016 - 2021 HZCDC@Lab
           </div>
         
         Made with

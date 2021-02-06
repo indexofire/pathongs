@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="杭州疾控中心测序实验室">
+        <meta name="description" content="杭州市疾控中心测序实验室">
       
       
       
@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C18_Analysis-Examples/02_comparative-analysis-Ban-genomes/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
-        <title>02. 细菌比较基因组学研究 - 杭州疾控中心测序实验室</title>
+        <title>02. 细菌比较基因组学研究 - 杭州市疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -46,7 +46,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
     
       
@@ -87,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header-nav__ellipsis">
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
-            杭州疾控中心测序实验室
+            杭州市疾控中心测序实验室
           </span>
         </div>
         <div class="md-header-nav__topic">
@@ -276,13 +276,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    杭州疾控中心测序实验室
+    杭州市疾控中心测序实验室
   </label>
   
     <div class="md-nav__source">
@@ -439,6 +439,32 @@
   <li class="md-nav__item">
     <a href="../../C01_Common-Utility/05_blast/" class="md-nav__link">
       05. Blast 比对
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/06_fastqc/" class="md-nav__link">
+      06. FastQC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/07_multiqc/" class="md-nav__link">
+      07. Multiqc
     </a>
   </li>
 
@@ -2441,7 +2467,7 @@
 
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/06_bam/" class="md-nav__link">
-      ‘06. bam’
+      06. bam
     </a>
   </li>
 
@@ -2843,6 +2869,7 @@ $ esearch -db sra -query <span class="s1">&#39;&quot;Bacillus anthracis&quot;[Or
 &gt; awk -F<span class="s1">&#39;,&#39;</span> <span class="s1">&#39;{if($5&gt;100000000) print $1}&#39;</span> <span class="p">|</span> sort -n <span class="p">|</span> <span class="se">\</span>
 &gt; xargs fastq-dump --split-files --gzip --outdir bacillus_anthracis
 </code></pre></div>
+
 <p>上面的命令会直接调用 <code>fastq-dump</code> 下载数据到 <code>--outdir</code> 中。虽然我们用了 <code>grep PAIRED</code> 来区分不同的测序方式，但是由于信息是提交者上传的，可能信息不一定是正确的。由于后面的流程中牵涉到组装和比对等操作，PE/SE的方式会有区别，最好还是进行验证后再下载，或者将PE/SE的数据区分存放。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 先生成数据记录</span>
 $ esearch -db sra -query <span class="s1">&#39;&quot;Bacillus anthracis&quot;[Organism] AND \</span>
@@ -2853,6 +2880,7 @@ $ esearch -db sra -query <span class="s1">&#39;&quot;Bacillus anthracis&quot;[Or
 <span class="c1"># 下载 sra</span>
 $ cat ban-sra.txt <span class="p">|</span> xargs prefetch
 </code></pre></div>
+
 <p>这样会下载 sra 文件到默认目录(~/.ncbi/public/sra)，然后用下面的方法来区分下载的数据到底是PE还是SE测序。</p>
 <h3 id="12-pese">1.2 区分 PE/SE 数据<a class="headerlink" href="#12-pese" title="Permanent link">&para;</a></h3>
 <p>虽然我们检索时限定了 PE 测序数据，但是很多时候数据库里的信息不准确，还是会有很多 SE 的数据会被下载。确定 PE 或者 SE 的方法很多。</p>
@@ -2863,6 +2891,7 @@ $ <span class="k">for</span> i in *.sra<span class="p">;</span> <span class="k">
 $ parallel <span class="s1">&#39;sra-stat -xs -e 2&#39;</span> ::: *.sra <span class="p">|</span> xtract -Pattern Run -element Run@accession <span class="se">\</span>
 &gt; Statistics@nreads <span class="p">|</span> awk <span class="s1">&#39;{if($2==1) print $1}&#39;</span> <span class="p">|</span> xargs rm
 </code></pre></div>
+
 <p><code>sra-stat</code> 工具可以提取 sra 文件的测序相关信息。<code>-xs</code> 参数生成 xml 格式的统计信息。里面属性值 nreads 可以表示采用的是哪一种测序方式。如果 spot-id 是规则排列，那么可以添加 <code>-e 2</code> 最快时间获得结果。</p>
 <p><code>parallel</code> 工具来并行化处理 <code>sra-stat</code>，如果计算量大是很好的利用多核CPU处理终端命令的方法。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># fastq-dump 输出一个 reads，计算行数如果是4，那么就是 SE，如果是8,则是 PE</span>
@@ -2877,6 +2906,7 @@ $ fastq-dump --split-files ERR493452.sra
 <span class="c1"># fastq-dump 只能调用单核转换，可以使用 parallel 工具并行处理加快速度。</span>
 $ parallel <span class="s2">&quot;fastq-dump --split-files --gzip --outdir bacillus_anthracis&quot;</span> ::: *.sra
 </code></pre></div>
+
 <p>另外一种获得是 PE/SE 的方法是用 <code>fastq-dump</code> 来读取出相同 spot-id 的 reads 再计算行数。<code>-X</code> 表示最多读取的 spot-id 数量；<code>--split-spot</code> 区分spot到reads然后用<code>-Z</code>输出，再<code>wc -l</code>统计行数。</p>
 <p>有时候有些sra文件在 dump 时会出错，不能生成对应的 PE fastq 文件，这就需要比较后删除了。如果是 mate pair 的数据，会生成 <code>*_3.fastq.gz</code>，如果不需要则可手工删除。</p>
 <h3 id="13-fastqgz">1.3 验证 fastq.gz 文件名的一致性<a class="headerlink" href="#13-fastqgz" title="Permanent link">&para;</a></h3>
@@ -2886,6 +2916,7 @@ $ ls -l *_1.fastq.gz <span class="p">|</span> awk <span class="s1">&#39;{print $
 $ ls -l *_2.fastq.gz <span class="p">|</span> awk <span class="s1">&#39;{print $9}&#39;</span> <span class="p">|</span> awk -F<span class="s1">&#39;_&#39;</span> <span class="s1">&#39;{print $1}&#39;</span> &gt; R2.txt
 $ diff R1.txt R2.txt
 </code></pre></div>
+
 <p>通过 <code>diff</code> 工具比较，如果2个文件内容一致，则终端不会有输出。否则就要删除差异的那个文件了。</p>
 <h2 id="2">2. 数据的前期处理<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>由于是公共数据库下载的数据，并不能保证测序实验质量或者数据提交者是否提交的是质控后的数据。因此建议要对数据做一些前期的质控处理。</p>
@@ -2900,11 +2931,13 @@ $ parallel <span class="s2">&quot;bioawk -c fastx &#39;BEGIN{n=0;q=0}{n+=gc(\$se
 <span class="c1"># 按照 GC 含量排序</span>
 $ cat result.txt <span class="p">|</span> sort -n -k3
 </code></pre></div>
+
 <p>R 绘制 gc 分布图，如果 gc 含量偏差超过 10% 时就剔除该基因组数据。</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="n">data</span><span class="o">&lt;-</span><span class="nf">read.table</span><span class="p">(</span><span class="s">&quot;result.txt&quot;</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="nf">qplot</span><span class="p">(</span><span class="n">v2</span><span class="p">,</span> <span class="n">v3</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div>
+
 <p>结果显示有一个黑点的GC含量特别低，且Q值特别高。结果显示测序实验 SRR2155551 和 SRR2164197 的 GC 含量仅为22%，而其他样本 GC 含量范围在34%～41%。且这2个实验的样本均为同一个，是1个样本的2此测序（或者数据上传了2次），因此将其剔除。</p>
 <h3 id="22">2.2 去除接头<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
 <p>其次要去除接头的污染。因为分析流程中不仅包括 mapping 的方式，还包含 de novo assembly，为了避免接头序列对基因组拼接的影响，这里最好进行。这里使用的工具是 <code>FastQC</code> 和 <code>fadapa</code></p>
@@ -2912,6 +2945,7 @@ $ cat result.txt <span class="p">|</span> sort -n -k3
 $ fastqc -t <span class="m">40</span> -q --extract *.fastq.gz
 $ python scan_fastqc_report.py -d qc
 </code></pre></div>
+
 <p>接头去除软件很多，但是要自动判断并且批量处理最好自己写脚本比较方便。这里用 python 写一个批量移除的脚本。</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
@@ -2947,6 +2981,7 @@ $ python scan_fastqc_report.py -d qc
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span> <span class="s2">&quot;No Overrepresented sequences&quot;</span>
 </code></pre></div>
+
 <h2 id="3-pangenome">3. Pangenome 分析<a class="headerlink" href="#3-pangenome" title="Permanent link">&para;</a></h2>
 <p>常用的 Pangenome 分析包括基因组组装注释后对基因</p>
 <h3 id="31">3.1 基因组组装<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
@@ -2955,24 +2990,30 @@ $ python scan_fastqc_report.py -d qc
 $ <span class="k">for</span> i in <span class="k">$(</span>awk -F<span class="s1">&#39;_&#39;</span> <span class="s1">&#39;!a[$1]++{print}&#39;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> spades.py --careful <span class="se">\</span>
 &gt; -k <span class="m">21</span>,33,55,77,99,121 -1 <span class="nv">$i_1</span>.fastq.gz -2 <span class="nv">$i_2</span>.fastq.gz -T <span class="m">40</span> -o <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
+
 <p>但是由于下载的批量数据采用不同平台，在不同时间进行的测序，读长彼此差异还是比较大的。比如10K病原基因组计划里，很多样本适用 miseq 进行测序的，读长可达250以上，而很多商业公司或者科研院校则用 hiseq 测序，读长一般在100～150。用同一个参数来组装可能不会获得较好的结果。<code>shovill</code>工具可以帮我们自动化最佳kmer选择，去除低覆盖contigs等操作，一步达到较好的组装序列。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># shovill 组装</span>
 $ <span class="k">for</span> i in <span class="k">$(</span>awk -F<span class="s1">&#39;_&#39;</span> <span class="s1">&#39;!a[$1]++{print}&#39;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> shovill -R1 <span class="nv">$i_1</span>.fastq.gz -R2 <span class="nv">$i_2</span>.fastq.gz -o <span class="nv">$i</span><span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
+
 <h3 id="32">3.2 基因组注释<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ <span class="k">for</span> i in <span class="k">$(</span>awk -F<span class="s1">&#39;_&#39;</span> <span class="s1">&#39;!a[$1]++{print}&#39;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> prokka --prefix prokka_<span class="nv">$i</span> <span class="nv">$i</span>/contigs.fa<span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
+
 <h3 id="33-roary">3.3 用 Roary 进行分析<a class="headerlink" href="#33-roary" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ cp prokka_*/<span class="nv">$i</span>.gff gff/ <span class="o">&amp;&amp;</span> <span class="nb">cd</span> gff
 $ roary -p -e mafft *.gff
 </code></pre></div>
+
 <h3 id="34-harvest">3.4 Harvest<a class="headerlink" href="#34-harvest" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ parsnp -g ref.gbk -d data -c -p <span class="m">40</span> -o output
 $ harvesttools -i outut/*.ggr -S snp
 </code></pre></div>
+
 <h2 id="4-snps">4. SNPs 构建进化树<a class="headerlink" href="#4-snps" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>$ raxml -f a -x <span class="m">12345</span> -p <span class="m">12345</span> -#100 -n ban -T <span class="m">40</span> -s snp -m GTRGAMMA
 </code></pre></div>
+
 <h3 id="41-mapping">4.1 基于参考基因组 Mapping 的方法<a class="headerlink" href="#41-mapping" title="Permanent link">&para;</a></h3>
 <h4 id="1-snippy">1. Snippy*<a class="headerlink" href="#1-snippy" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="c1"># snippy mapping</span>
@@ -2990,6 +3031,7 @@ $ raxml -f a -x <span class="m">12345</span> -p <span class="m">12345</span> -# 
 $ scp user@server-ip:/path/RAxML_bestTree.ex .
 $ figtree RAxML_bestTree.ex <span class="p">&amp;</span>
 </code></pre></div>
+
 <h2 id="5">5. 核心基因分析<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <h3 id="51-get_homologues">5.1 get_homologues<a class="headerlink" href="#51-get_homologues" title="Permanent link">&para;</a></h3>
 <h2 id="6">6. 相关软件安装<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
@@ -3000,40 +3042,48 @@ $ sudo chown -R root:root /opt/edirect
 $ <span class="nb">cd</span> /opt/edirect <span class="o">&amp;&amp;</span> sudo ./setup.sh
 $ sudo ln -s /opt/edirect/* /usr/local/sbin/
 </code></pre></div>
+
 <p><strong>sra-tools</strong></p>
 <div class="highlight"><pre><span></span><code>$ wget http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.7.0/sratoolkit.2.7.0-ubuntu64.tar.gz
 $ sudo tar zxf sratoolkit.2.7.0-ubuntu64.tar.gz -C /opt/sratoolkit
 $ sudo chown -R root:root /opt/sratoolkit <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /opt/sratoolkit
 $ sudo ln -s <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/bin/* /usr/local/sbin/
 </code></pre></div>
+
 <p><strong>bio-awk</strong></p>
 <div class="highlight"><pre><span></span><code>$ sudo apt-get install bison
 $ git clone https://github.com/lh3/bioawk
 $ <span class="nb">cd</span> bioawk <span class="o">&amp;&amp;</span> make
 $ sudo cp bioawk /usr/local/sbin
 </code></pre></div>
+
 <p><strong>parallel</strong></p>
 <div class="highlight"><pre><span></span><code>$ sudo apt install parallel
 </code></pre></div>
+
 <p><strong>gplot</strong></p>
 <div class="highlight"><pre><span></span><code>$ sudo apt install gnuplot
 $ git clone https://github.com/RhysU/gplot
 $ sudo cp gplot/gplot /usr/local/sbin
 </code></pre></div>
+
 <p><strong>FastQC</strong></p>
 <div class="highlight"><pre><span></span><code>$ wget http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.5.zip
 $ sudo unzip fastqc_v0.11.5.zip
 $ sudo mv fastqc_v0.11.5 /opt/fastqc <span class="o">&amp;&amp;</span> sudo chown -R root:root /opt/fastqc
 $ sudo cp /opt/fastqc/fastqc /usr/local/sbin
 </code></pre></div>
+
 <p><strong>Fadapa</strong></p>
 <div class="highlight"><pre><span></span><code>$ sudo pip install fadapa
 </code></pre></div>
+
 <p><strong>snippy</strong></p>
 <div class="highlight"><pre><span></span><code>$ git clone https://github.com/tseemann/snippy
 $ sudo cp snippy/bin/* /usr/local/sbin
 $ sudo cp snippy/binaries/linux/* /usr/local/sbin
 </code></pre></div>
+
 <p><strong>RAxML</strong></p>
 <div class="highlight"><pre><span></span><code>$ wget https://github.com/stamatak/standard-RAxML/archive/v8.1.17.tar.gz
 $ sudo tar zxf v8.1.17.tar.gz -C /opt/raxml
@@ -3041,6 +3091,7 @@ $ sudo chown -R root:root /opt/raxml <span class="o">&amp;&amp;</span> <span cla
 $ sudo make -f Makefile.SSE3.PTHREADS.gcc
 $ sudo ln -s <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/raxmlHPC-PTHREADS-SSE3 /usr/local/raxml
 </code></pre></div>
+
 <h2 id="7-reference">7. Reference<a class="headerlink" href="#7-reference" title="Permanent link">&para;</a></h2>
 <ol>
 <li>edirect help book: <a href="http://www.ncbi.nlm.nih.gov/books/NBK179288/">http://www.ncbi.nlm.nih.gov/books/NBK179288/</a></li>
@@ -3117,7 +3168,7 @@ $ sudo ln -s <span class="sb">`</span><span class="nb">pwd</span><span class="sb
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016 - 2020 HZCDC@Lab
+            Copyright &copy; 2016 - 2021 HZCDC@Lab
           </div>
         
         Made with

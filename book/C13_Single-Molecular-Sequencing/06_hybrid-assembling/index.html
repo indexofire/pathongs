@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="杭州疾控中心测序实验室">
+        <meta name="description" content="杭州市疾控中心测序实验室">
       
       
       
@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C13_Single-Molecular-Sequencing/06_hybrid-assembling/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
-        <title>06. hybrid - 杭州疾控中心测序实验室</title>
+        <title>06. hybrid - 杭州市疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -46,7 +46,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
     
       
@@ -87,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header-nav__ellipsis">
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
-            杭州疾控中心测序实验室
+            杭州市疾控中心测序实验室
           </span>
         </div>
         <div class="md-header-nav__topic">
@@ -276,13 +276,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    杭州疾控中心测序实验室
+    杭州市疾控中心测序实验室
   </label>
   
     <div class="md-nav__source">
@@ -439,6 +439,32 @@
   <li class="md-nav__item">
     <a href="../../C01_Common-Utility/05_blast/" class="md-nav__link">
       05. Blast 比对
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/06_fastqc/" class="md-nav__link">
+      06. FastQC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/07_multiqc/" class="md-nav__link">
+      07. Multiqc
     </a>
   </li>
 
@@ -2306,7 +2332,7 @@
 
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/06_bam/" class="md-nav__link">
-      ‘06. bam’
+      06. bam
     </a>
   </li>
 
@@ -2557,6 +2583,7 @@
 <div class="highlight"><pre><span></span><code><span class="c1"># Spades 混合拼接同一个样本 miseq 和 nanopore 测序数据</span>
 <span class="o">(</span>spades<span class="o">)</span>$ spades.py -m -k <span class="m">33</span>,55,77,99,121 --only_assembler -1 S1_R1.fastq.gz -2 S1_R2.fastq.gz --nanopore minion.fastq.gz -o hybrid -t <span class="m">40</span>
 </code></pre></div>
+
 <h3 id="2unicycle">2.Unicycle<a class="headerlink" href="#2unicycle" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 去除接头，将fastq文件压缩</span>
 <span class="o">(</span>nanopore<span class="o">)</span>$ <span class="k">for</span> fq in <span class="o">{</span><span class="m">0</span>..11<span class="o">}</span><span class="p">;</span> <span class="k">do</span> porechop -i *_<span class="si">${</span><span class="nv">fq</span><span class="si">}</span>.fastq -o ../clean/<span class="si">${</span><span class="nv">fq</span><span class="si">}</span>.fq<span class="p">;</span> <span class="k">done</span>
@@ -2569,6 +2596,7 @@
 <span class="c1"># unicycler 混合组装illumina和nanopore数据</span>
 <span class="o">(</span>nanopore<span class="o">)</span>$ unicycler -1 R1.fastq.gz -2 R2.fastq.gz -l trimmed.fastq -o hybrid
 </code></pre></div>
+
 <h2 id="_2">参考资料<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
                 
                   
@@ -2638,7 +2666,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016 - 2020 HZCDC@Lab
+            Copyright &copy; 2016 - 2021 HZCDC@Lab
           </div>
         
         Made with

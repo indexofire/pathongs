@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="杭州疾控中心测序实验室">
+        <meta name="description" content="杭州市疾控中心测序实验室">
       
       
       
@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C12_Metagenomics-Analysis/09_shotgun/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
-        <title>09. shotgun 分析 - 杭州疾控中心测序实验室</title>
+        <title>09. shotgun 分析 - 杭州市疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -46,7 +46,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
     
       
@@ -87,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header-nav__ellipsis">
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
-            杭州疾控中心测序实验室
+            杭州市疾控中心测序实验室
           </span>
         </div>
         <div class="md-header-nav__topic">
@@ -276,13 +276,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    杭州疾控中心测序实验室
+    杭州市疾控中心测序实验室
   </label>
   
     <div class="md-nav__source">
@@ -439,6 +439,32 @@
   <li class="md-nav__item">
     <a href="../../C01_Common-Utility/05_blast/" class="md-nav__link">
       05. Blast 比对
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/06_fastqc/" class="md-nav__link">
+      06. FastQC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/07_multiqc/" class="md-nav__link">
+      07. Multiqc
     </a>
   </li>
 
@@ -2478,7 +2504,7 @@
 
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/06_bam/" class="md-nav__link">
-      ‘06. bam’
+      06. bam
     </a>
   </li>
 
@@ -2916,6 +2942,7 @@
 ~/BeetlMetagenomDatabase$ <span class="k">for</span> i in <span class="sb">`</span>curl https://s3.amazonaws.com/metaBEETL <span class="p">|</span> grep -oP <span class="s2">&quot;[^&gt;]*bz2&quot;</span><span class="sb">`</span> <span class="p">;</span> <span class="se">\</span>
 &gt; <span class="k">do</span> wget https://s3.amazonaws.com/metaBEETL/<span class="nv">$i</span> <span class="p">&amp;</span> <span class="k">done</span>
 </code></pre></div>
+
 <p>静态文件的 URL 地址，也可以直接下载。</p>
 <p><div class="highlight"><pre><span></span><code>https://s3.amazonaws.com/metaBEETL/filecounter.csv.bz2
 https://s3.amazonaws.com/metaBEETL/headerFile.csv.bz2
@@ -2940,6 +2967,7 @@ https://s3.amazonaws.com/metaBEETL/ncbiMicros-C06.bz2
 <div class="highlight"><pre><span></span><code>~/BeetlMetagenomDatabase$ bunzip2 *.bz2
 ~/BeetlMetagenomDatabase$ export METAGENOME_DATABASE_PATH=`pwd`
 </code></pre></div>
+
 <h3 id="2">2. 自己建立数据库<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <p>处于实际目的，有时候我们不需要这么大的数据库，或者需要更多其他的数据加入到数据库，那就需要自行建立数据库。</p>
 <h4 id="21-seqan">2.1 安装 SeqAn<a class="headerlink" href="#21-seqan" title="Permanent link">&para;</a></h4>
@@ -2950,16 +2978,19 @@ https://s3.amazonaws.com/metaBEETL/ncbiMicros-C06.bz2
 ~/apps$ git clone https://github.com/seqan/seqan.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> seqan
 ~/apps/seqan$ git checkout -b develop origin/develop
 </code></pre></div>
+
 <h4 id="22">2.2 下载目标序列<a class="headerlink" href="#22" title="Permanent link">&para;</a></h4>
 <p>下载需要的序列，比如NCBI上细菌的基因组 ref 数据。</p>
 <div class="highlight"><pre><span></span><code>~/BeetlMetagenomDatabase$ wget ftp://ftp.ncbi.nlm.nih.gov/genomes/Bacteria/all.fna.tar.gz -P downloads
 ~/BeetlMetagenomDatabase$ mkdir all.fna
 ~/BeetlMetagenomDatabase$ tar xzf downloads/all.fna.tar.gz -C all.fna/
 </code></pre></div>
+
 <h4 id="23">2.3 创建去除质粒序列的单基因组序列<a class="headerlink" href="#23" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>~/BeetlMetagenomDatabase$ metabeetl-db-genomesToSingleSeq -f all.fna/*/*.fna -s singleSeqGenomes
 ~/BeetlMetagenomDatabase$ <span class="nb">cd</span> singleSeqGenomes
 </code></pre></div>
+
 <h4 id="24-bwt">2.4 创建BWT<a class="headerlink" href="#24-bwt" title="Permanent link">&para;</a></h4>
 <p>修改<code>metabeetl-db-arrayBWT.sh</code>文件里数据库路径，创建G_* 和 G_*_rev 文件的BWTs，用qsub来向系统提交任务。也可以运行<code>metabeetl-db-makeBWTSkew</code>来一个个创建。</p>
 <div class="highlight"><pre><span></span><code>~/BeetlMetagenomDatabase$ cp <span class="sb">`</span>which metabeetl-db-arrayBWT.sh<span class="sb">`</span> .
@@ -2972,6 +3003,7 @@ https://s3.amazonaws.com/metaBEETL/ncbiMicros-C06.bz2
 &gt; <span class="k">for</span> i in G_*<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&quot;bwt_</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">-B00: </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span> <span class="nb">echo</span> -e <span class="s2">&quot;\tmetabeetl-db-makeBWTSkew </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">\n&quot;</span> <span class="p">;</span> <span class="k">done</span> <span class="o">)</span> &gt; Makefile
 ~$ make -j
 </code></pre></div>
+
 <h4 id="25">2.5 合并序列<a class="headerlink" href="#25" title="Permanent link">&para;</a></h4>
 <p>在一台内存&gt;60G的机器上将序列加载到内存中，并吧所有文件合并。</p>
 <p><div class="highlight"><pre><span></span><code>~/BeetlMetagenomDatabase$ <span class="k">for</span> pileNum in <span class="sb">`</span>seq <span class="m">0</span> <span class="m">5</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span> metabeetl-db-mergeBacteria <span class="nv">$pileNum</span> ncbiMicros &lt;<span class="o">(</span> ls G_* <span class="o">)</span> <span class="p">;</span> <span class="k">done</span>
@@ -2994,6 +3026,7 @@ https://s3.amazonaws.com/metaBEETL/ncbiMicros-C06.bz2
 &gt; -o ncbiMicros-B0<span class="si">${</span><span class="nv">pileNum</span><span class="si">}</span> <span class="p">;</span> <span class="se">\ </span> 
 &gt; <span class="k">done</span>
 </code></pre></div>
+
 <h4 id="27-ncbi-taxoonmy">2.7 下载NCBI Taxoonmy<a class="headerlink" href="#27-ncbi-taxoonmy" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>~$ <span class="nb">cd</span> tmp
 ~/tmp$ wget ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz
@@ -3001,6 +3034,7 @@ https://s3.amazonaws.com/metaBEETL/ncbiMicros-C06.bz2
 ~/tmp$ tar xzf taxdump.tar.gz names.dmp nodes.dmp
 ~/tmp$ gunzip gi_taxid_nucl.dmp.gz
 </code></pre></div>
+
 <p>用<code>metabeetl-db-findTaxa</code>脚本查找数据库中的taxonomic树。
    Use the metabeetl-db-findTaxa script to find the taxonomic tree corresponding to the file numbers in the database.<br />
    You will need the headerFile produced by running "metabeetl-db-genomesToSingleSeq" and
@@ -3018,11 +3052,13 @@ https://s3.amazonaws.com/metaBEETL/ncbiMicros-C06.bz2
 
 ~/BeetlMEtagenomDatabase$ <span class="o">(</span> grep scientific downloads/names.dmp <span class="p">;</span> cat <span class="si">${</span><span class="nv">BEETL_INSTALL_DIR</span><span class="si">}</span>/share/beetl/metaBeetlExtraNames.dmp <span class="o">)</span> &gt; metaBeetlTaxonomyNames.dmp
 </code></pre></div>
+
 <h4 id="28-normalisation">2.8 计算 normalisation 因子<a class="headerlink" href="#28-normalisation" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>~/BeetlMetagenomDatabase$ mkdir normalisation
 ~/BeetlMetagenomDatabase$ <span class="nb">cd</span> normalisation
 ~/BeetlMetagenomDatabase/normalisation$ touch normalize.sh
 </code></pre></div>
+
 <div class="highlight"><pre><span></span><code><span class="c1"># normalize.sh</span>
 <span class="k">for</span> genome in ../singleSeqGenomes/G_*<span class="p">;</span> <span class="k">do</span>
 <span class="o">(</span>
@@ -3043,6 +3079,7 @@ https://s3.amazonaws.com/metaBEETL/ncbiMicros-C06.bz2
 
 grep FINAL r2977 &gt; ../normalisation.txt
 </code></pre></div>
+
 <h4 id="29">2.9 创建数据库文件夹<a class="headerlink" href="#29" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>~$ mkdir metaBeetlNcbiDb
 ~$ <span class="nb">cd</span> ~/metaBeetlNcbiDb
@@ -3053,6 +3090,7 @@ grep FINAL r2977 &gt; ../normalisation.txt
 ~$ ln -s ../singleSeqGenomes/headerFile.csv
 ~$ <span class="k">for</span> i in ../singleSeqGenomes/ncbiMicros-<span class="o">[</span>BC<span class="o">]</span><span class="m">0</span><span class="o">[</span><span class="m">0</span>-5<span class="o">]</span><span class="p">;</span> <span class="k">do</span> ln -s <span class="nv">$i</span> <span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
+
 <h3 id="3">3. 分析数据<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <h4 id="31">3.1 获取数据<a class="headerlink" href="#31" title="Permanent link">&para;</a></h4>
 <p>用 SRS013948 这个人类肠道细菌组研究项目的数据作为例子。首先下载数据:</p>
@@ -3066,11 +3104,13 @@ grep FINAL r2977 &gt; ../normalisation.txt
 ~/data$ tar xjf SRS013948.tar.bz2
 ~/data$ ls -l
 </code></pre></div>
+
 <p>解压缩后可以看到下面3个文件：</p>
 <div class="highlight"><pre><span></span><code>SRS013948.denovo_duplicates_marked.trimmed.1.fastq
 SRS013948.denovo_duplicates_marked.trimmed.2.fastq
 SRS013948.denovo_duplicates_marked.trimmed.singleton.fastq
 </code></pre></div>
+
 <h4 id="32">3.2 转换数据和合并数据<a class="headerlink" href="#32" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>~/data$ beetl-convert <span class="se">\</span>
 &gt; -i SRS013948.denovo_duplicates_marked.trimmed.1.fastq <span class="se">\</span>
@@ -3086,6 +3126,7 @@ SRS013948.denovo_duplicates_marked.trimmed.singleton.fastq
 &gt; --sequence-length<span class="o">=</span><span class="m">100</span>
 ~/data$ cat paddedSeq1.seq paddedSeq2.seq paddedSeqSingleton.seq &gt; SRS013948.seq
 </code></pre></div>
+
 <h4 id="33-metagenomic-beetl">3.3 以 metagenomic 模式运行 BEETL<a class="headerlink" href="#33-metagenomic-beetl" title="Permanent link">&para;</a></h4>
 <p>创建 BWT 变换，然后运行 metagenomic 模式的 BEETL</p>
 <div class="highlight"><pre><span></span><code>~/data$ beetl-bwt -i SRS013948.seq -o bwt_SRS013948
@@ -3099,6 +3140,7 @@ SRS013948.denovo_duplicates_marked.trimmed.singleton.fastq
 &gt; -k <span class="m">50</span> <span class="se">\</span>
 &gt; --no-comparison-skip
 </code></pre></div>
+
 <p><code>beetl-compare</code> 命令会在文件夹 <code>BeetlCompareOutput</code> 里生成许多文件。k值设置越大，可以获得越多的信息数据，但是输出文件也会变得越大。</p>
 <h4 id="34">3.4 图形化显示结果<a class="headerlink" href="#34" title="Permanent link">&para;</a></h4>
 <p><code>metabeetl-convertMetagenomicRangesToTaxa</code> 工具根据kmer匹配，从而获得基因组以及上一级分类的ID号，并生成文字与图形结果（采用Krona js可视化库来形成网页格式的报告文件）。</p>
@@ -3111,6 +3153,7 @@ SRS013948.denovo_duplicates_marked.trimmed.singleton.fastq
 &gt; <span class="si">${</span><span class="nv">METAGENOME_DATABASE_PATH</span><span class="si">}</span>/normalisation.txt <span class="se">\</span>
 &gt; <span class="m">20</span> <span class="m">50</span> - &gt; metaBeetl.log
 </code></pre></div>
+
 <p><strong>生成的TSV（制表符分隔）文件各列含义：</strong></p>
 <table>
 <thead>
@@ -3175,14 +3218,17 @@ SRS013948.denovo_duplicates_marked.trimmed.singleton.fastq
 <div class="highlight"><pre><span></span><code>$ wget https://github.com/chiulab/surpi/releases/download/v1.0.18/surpi-1.0.18.tar.gz
 $ tar zxf surpi-1.0.18.tar.gz -C surpi
 </code></pre></div>
+
 <h3 id="_2">建立数据库<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ mkdir -p SNAP_db
 $ ~/apps/surpi/create_taxonomy_db.sh
 </code></pre></div>
+
 <h3 id="surpi">运行SURPI<a class="headerlink" href="#surpi" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ ~/apps/surpi/SURPI.sh -z input.fastq
 $ ~/apps/surpi/go_input <span class="p">&amp;</span>
 </code></pre></div>
+
 <h3 id="_3">输出结果<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>当以 Comprehensive mode 运行后，会产生以下文件夹：</p>
 <div class="highlight"><pre><span></span><code>DATASETS_input
@@ -3191,6 +3237,7 @@ LOG_input
 OUTPUT_input
 TRASH_input
 </code></pre></div>
+
 <p>结果文件在<code>OUTPUT_input</code>文件夹里，“.annotated” 文件是 SAM 格式或者 -m8 格式的比对结果, taxonomic 信息也在文件中的最后一行中。 “.counttable” 文件是 tab 分割的总结文件。每一行表示不同层面的 taxonomic 注释信息。</p>
 <h2 id="reference_1">Reference<a class="headerlink" href="#reference_1" title="Permanent link">&para;</a></h2>
 <ol>
@@ -3268,7 +3315,7 @@ TRASH_input
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016 - 2020 HZCDC@Lab
+            Copyright &copy; 2016 - 2021 HZCDC@Lab
           </div>
         
         Made with

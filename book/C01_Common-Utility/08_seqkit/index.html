@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="杭州疾控中心测序实验室">
+        <meta name="description" content="杭州市疾控中心测序实验室">
       
       
       
@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C01_Common-Utility/08_seqkit/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
-        <title>08. SeqKit 工具 - 杭州疾控中心测序实验室</title>
+        <title>08. SeqKit 工具 - 杭州市疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -46,7 +46,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
     
       
@@ -87,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header-nav__ellipsis">
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
-            杭州疾控中心测序实验室
+            杭州市疾控中心测序实验室
           </span>
         </div>
         <div class="md-header-nav__topic">
@@ -276,13 +276,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    杭州疾控中心测序实验室
+    杭州市疾控中心测序实验室
   </label>
   
     <div class="md-nav__source">
@@ -450,6 +450,32 @@
           
 
 
+
+  <li class="md-nav__item">
+    <a href="../06_fastqc/" class="md-nav__link">
+      06. FastQC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../07_multiqc/" class="md-nav__link">
+      07. Multiqc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   
 
 
@@ -506,6 +532,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    使用案例
+  </a>
   
 </li>
       
@@ -2299,7 +2332,7 @@
 
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/06_bam/" class="md-nav__link">
-      ‘06. bam’
+      06. bam
     </a>
   </li>
 
@@ -2514,6 +2547,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    使用案例
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2670,39 +2710,45 @@
 <p>spades 组装完毕的序列，提取其中某个 node 或者某些 nodes 序列：</p>
 <div class="highlight"><pre><span></span><code>$ seqkit grep -r -p ^node_1$ scaffolds.fasta &gt; node_1.fasta
 </code></pre></div>
+
 <p>将 scaffolds 中所有 nodes 提取到单独的 fasta 文件中：</p>
 <div class="highlight"><pre><span></span><code>$ <span class="k">for</span> i in <span class="k">$(</span>awk <span class="s1">&#39;/&gt;/&#39;</span> scaffolds.fasta <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span><span class="p">;</span> <span class="se">\</span>
 &gt; <span class="k">do</span> seqkit grep -p <span class="si">${</span><span class="nv">i</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span> scaffolds.fasta &gt; <span class="si">${</span><span class="nv">i</span><span class="p">:</span><span class="nv">1</span><span class="si">}</span>.fasta<span class="p">;</span> <span class="se">\</span>
 &gt; <span class="k">done</span>
 </code></pre></div>
+
 <h3 id="seq">seq 命令<a class="headerlink" href="#seq" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ seqkit seq -h
 </code></pre></div>
-<p>```bash tab="-n和-i"</p>
-<h1 id="reads-bioawk-name-i">将 reads 的名称信息输出，如果要和 bioawk $name 相同，使用 -i 参数<a class="headerlink" href="#reads-bioawk-name-i" title="Permanent link">&para;</a></h1>
-<p>$ seqkit seq -n SRR1175124_1.fastq.gz SRR1175124_2.fastq.gz
-SRR1175124.102354 102354 length=150
+
+<div class="tabbed-set" data-tabs="1:2">
+<input name="__tabbed_1" type="radio" id="__tabbed_1_1" checked="checked" /><label for="__tabbed_1_1">-n和-i</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 将 reads 的名称信息输出，如果要和 bioawk $name 相同，使用 -i 参数</span>
+$ seqkit seq -n SRR1175124_1.fastq.gz SRR1175124_2.fastq.gz
+SRR1175124.102354 <span class="m">102354</span> <span class="nv">length</span><span class="o">=</span><span class="m">150</span>
 ...
-$ bioawk -c fastx '{print $name}' SRR1175124_1.fastq.gz SRR1175124_2.fastq.gz
+$ bioawk -c fastx <span class="s1">&#39;{print $name}&#39;</span> SRR1175124_1.fastq.gz SRR1175124_2.fastq.gz
 SRR1175124.102354
 ...
 $ seqkit seq -in SRR1175124_1.fastq.gz SRR1175124_2.fastq.gz
 SRR1175124.102354
-...</p>
-<h1 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
-<div class="highlight"><pre><span></span><code>```bash tab=&quot;-l和-u&quot;
-# 输出小写碱基
+...
+
+<span class="c1">#</span>
+</code></pre></div></div>
+<input name="__tabbed_1" type="radio" id="__tabbed_1_2" /><label for="__tabbed_1_2">-l和-u</label><div class="tabbed-content"><div class="highlight"><pre><span></span><code><span class="c1"># 输出小写碱基</span>
 $ seqkit seq -sl SRR1175124_1.fastq.gz
-# 输出大写碱基
+<span class="c1"># 输出大写碱基</span>
 $ seqkit seq -su SRR1175124_1.fastq.gz
-</code></pre></div>
-<h2 id="_3">使用案例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+</code></pre></div></div>
+</div>
+<h2 id="_2">使用案例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># 下载 NC_001477</span>
 $ efetch -db nuccore -id NC_001477 -format fasta &gt; NC_001477.fasta
 <span class="c1"># 翻译 DNA 序列为氨基酸序列</span>
 $ seqkit translate -j <span class="m">4</span> -o NC_001477.pep NC_001477.fasta
 <span class="c1">#</span>
 </code></pre></div>
+
 <div class="admonition note">
 <p class="admonition-title">对注释的多拷贝基因提取序列后进行序列比对</p>
 </div>
@@ -2746,7 +2792,7 @@ $ raxmlHPC -f a -p <span class="m">12345</span> -x <span class="m">12345</span> 
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../05_blast/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../07_multiqc/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -2755,7 +2801,7 @@ $ raxmlHPC -f a -p <span class="m">12345</span> -x <span class="m">12345</span> 
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                05. Blast 比对
+                07. Multiqc
               </div>
             </div>
           </a>
@@ -2783,7 +2829,7 @@ $ raxmlHPC -f a -p <span class="m">12345</span> -x <span class="m">12345</span> 
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016 - 2020 HZCDC@Lab
+            Copyright &copy; 2016 - 2021 HZCDC@Lab
           </div>
         
         Made with

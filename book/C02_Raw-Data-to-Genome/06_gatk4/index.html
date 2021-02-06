@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="杭州疾控中心测序实验室">
+        <meta name="description" content="杭州市疾控中心测序实验室">
       
       
       
@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C02_Raw-Data-to-Genome/06_gatk4/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
-        <title>06. GATK4 - 杭州疾控中心测序实验室</title>
+        <title>06. GATK4 - 杭州市疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -46,7 +46,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
     
       
@@ -87,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header-nav__ellipsis">
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
-            杭州疾控中心测序实验室
+            杭州市疾控中心测序实验室
           </span>
         </div>
         <div class="md-header-nav__topic">
@@ -276,13 +276,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    杭州疾控中心测序实验室
+    杭州市疾控中心测序实验室
   </label>
   
     <div class="md-nav__source">
@@ -439,6 +439,32 @@
   <li class="md-nav__item">
     <a href="../../C01_Common-Utility/05_blast/" class="md-nav__link">
       05. Blast 比对
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/06_fastqc/" class="md-nav__link">
+      06. FastQC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/07_multiqc/" class="md-nav__link">
+      07. Multiqc
     </a>
   </li>
 
@@ -2326,7 +2352,7 @@
 
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/06_bam/" class="md-nav__link">
-      ‘06. bam’
+      06. bam
     </a>
   </li>
 
@@ -2603,6 +2629,7 @@ $ conda activate gatk4
 <span class="c1"># 查看二级命令的帮助内容，这里 TOOLS 为各个二级命令名称</span>
 <span class="o">(</span>gatk4<span class="o">)</span>$ gatk TOOLS --help
 </code></pre></div>
+
 <h3 id="2-docker">2.采用 docker 安装<a class="headerlink" href="#2-docker" title="Permanent link">&para;</a></h3>
 <p>这里使用官方镜像地址: <a href="https://hub.docker.com/r/broadinstitute/gatk/">https://hub.docker.com/r/broadinstitute/gatk/</a> 。</p>
 <ol>
@@ -2626,17 +2653,20 @@ root@bb3d14c7da19:/gatk#
 <span class="c1"># 查看二级命令的帮助内容，这里 TOOLS 为各个二级命令名称</span>
 root@bb3d14c7da19:/gatk# gatk TOOLS --help
 </code></pre></div>
+
 <div class="highlight"><pre><span></span><code><span class="c1"># 如果你的docker没有启动，在Archlinux下可以systemctl启动</span>
 $ sudo systemctl start docker.service
 
 <span class="c1"># 如果出现该错误，因为使用了新的内核，重新启动即可</span>
 <span class="c1"># failed to create endpoint on network bridge: failed to add the host sandbox pair interfaces operation not supported.</span>
 </code></pre></div>
+
 <h2 id="_2">使用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="1gatk">1.GATK 工具<a class="headerlink" href="#1gatk" title="Permanent link">&para;</a></h3>
 <p>查看工具列表</p>
 <div class="highlight"><pre><span></span><code>$ gatk --list
 </code></pre></div>
+
 <p>GATK4的工具列表分类为：</p>
 <ul>
 <li>Base Calling<ul>
@@ -2717,6 +2747,7 @@ $ gatk GenotypeGVCFs -R NC_004603.fna <span class="se">\</span>
 &gt; -V SRR8535443_chr1.gvcf
 &gt; -O SRR8535443_chr1.vcf
 </code></pre></div>
+
 <div class="admonition note">
 <p class="admonition-title">注意事项</p>
 <p>gatk4 默认流程call的 SNP 数量比<code>freebayes</code>、<code>snippy</code>要更多。主要原因是freebayes把许多4个长度碱基&frac14;位置变化的序列作为重组complex而不是snp，而gatk则作为snp处理。另外gatk使用的reads数跟多，可以call出头尾和一些低覆盖度的区域。但是gatk会有一些无覆盖区域的snps出现，需要进一步研究是什么原因造成的。如果无法消除，则gatk可能不适合作为微生物的snp calling工具。</p>
@@ -2789,7 +2820,7 @@ $ gatk GenotypeGVCFs -R NC_004603.fna <span class="se">\</span>
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016 - 2020 HZCDC@Lab
+            Copyright &copy; 2016 - 2021 HZCDC@Lab
           </div>
         
         Made with

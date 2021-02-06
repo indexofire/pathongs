@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="杭州疾控中心测序实验室">
+        <meta name="description" content="杭州市疾控中心测序实验室">
       
       
       
@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/tutorial/Programming/01_shell/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
-        <title>01. Shell 脚本 - 杭州疾控中心测序实验室</title>
+        <title>01. Shell 脚本 - 杭州市疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -46,7 +46,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
     
       
@@ -87,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header-nav__ellipsis">
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
-            杭州疾控中心测序实验室
+            杭州市疾控中心测序实验室
           </span>
         </div>
         <div class="md-header-nav__topic">
@@ -276,13 +276,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    杭州疾控中心测序实验室
+    杭州市疾控中心测序实验室
   </label>
   
     <div class="md-nav__source">
@@ -437,6 +437,32 @@
   <li class="md-nav__item">
     <a href="../../../book/C01_Common-Utility/05_blast/" class="md-nav__link">
       05. Blast 比对
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../../book/C01_Common-Utility/06_fastqc/" class="md-nav__link">
+      06. FastQC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../../book/C01_Common-Utility/07_multiqc/" class="md-nav__link">
+      07. Multiqc
     </a>
   </li>
 
@@ -2320,7 +2346,7 @@
 
   <li class="md-nav__item">
     <a href="../../Format/06_bam/" class="md-nav__link">
-      ‘06. bam’
+      06. bam
     </a>
   </li>
 
@@ -2609,6 +2635,7 @@ $ <span class="nb">echo</span> <span class="si">${</span><span class="nv">a</spa
 $ <span class="nb">echo</span> <span class="si">${</span><span class="nv">a</span><span class="p">//R1/1_1</span><span class="si">}</span> <span class="c1"># 字符串R1替换成1_1, 替换所有</span>
 1_1.fastq.gz
 </code></pre></div>
+
 <div class="highlight"><pre><span></span><code><span class="c1"># *星号做为通配符，可表示变量名</span>
 $ <span class="nv">a1</span><span class="o">=</span><span class="m">100</span>
 $ <span class="nv">a2</span><span class="o">=</span><span class="m">10</span>
@@ -2620,6 +2647,7 @@ $ <span class="k">for</span> i in <span class="sb">`</span><span class="nb">echo
 a1
 a2
 </code></pre></div>
+
 <div class="highlight"><pre><span></span><code><span class="c1"># 字符串比较</span>
 $ <span class="nv">s</span><span class="o">=</span>ATCCGAC
 $ <span class="k">if</span> <span class="o">[</span> <span class="nv">$s</span> <span class="o">==</span> <span class="s1">&#39;ATCCGAC&#39;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&quot;yes!&quot;</span><span class="p">;</span> <span class="k">fi</span>
@@ -2629,12 +2657,14 @@ $ <span class="nv">s1</span><span class="o">=</span>TTCCGAC
 $ <span class="k">if</span> <span class="o">[</span> <span class="nv">$t</span> <span class="o">==</span> <span class="s1">&#39;ATCCGAC&#39;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="nb">echo</span> <span class="s2">&quot;yes!&quot;</span><span class="p">;</span> <span class="k">else</span> <span class="nb">echo</span> <span class="s2">&quot;no!&quot;</span><span class="p">;</span> <span class="k">fi</span>
 no!
 </code></pre></div>
+
 <h2 id="_2">循环<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="for">for 循环<a class="headerlink" href="#for" title="Permanent link">&para;</a></h3>
 <p>循环是常用的功能，往往被用来批量处理数据。循环在终端下直接运行 oneline shell 脚本或者写 shell 程序常会用到。最常用的循环 loop 方式是用 for 来执行。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 示例</span>
 $ <span class="k">for</span> i in *.fastq.gz<span class="p">;</span> <span class="k">do</span> bwa aln ref.fasta <span class="nv">$i</span> &gt; <span class="nv">$i</span>.sai<span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
+
 <p>测序时常用流水号做为样品名称，比如 miseq 测序结果数据常常如下：</p>
 <div class="highlight"><pre><span></span><code>1_S1_R1_L001.fastq.gz   1_S1_R2_L001.fastq.gz
 2_S2_R1_L001.fastq.gz   2_S2_R2_L001.fastq.gz
@@ -2642,6 +2672,7 @@ $ <span class="k">for</span> i in *.fastq.gz<span class="p">;</span> <span class
 ...
 12_S12_R1_L001.fastq.gz 12_S12_R2_L001.fastq.gz
 </code></pre></div>
+
 <div class="highlight"><pre><span></span><code><span class="c1"># 用 for 循环遍历的写法1-12</span>
 $ <span class="k">for</span> i in <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">10</span> <span class="m">11</span> <span class="m">12</span><span class="p">;</span> <span class="k">do</span> COMMAND<span class="p">;</span> <span class="k">done</span>
 $ <span class="k">for</span> i in <span class="o">{</span><span class="m">1</span>..12<span class="o">}</span><span class="p">;</span> <span class="k">do</span> COMMAND<span class="p">;</span> <span class="k">done</span>
@@ -2659,6 +2690,7 @@ $ <span class="k">for</span> i in <span class="k">$(</span>COMMAND<span class="k
 <span class="c1"># shell 还可以写成类似C语言的循环方式</span>
 $ <span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">1</span><span class="p">;</span>i&lt;<span class="o">=</span><span class="m">10</span><span class="p">;</span>i++<span class="o">))</span><span class="p">;</span> <span class="k">do</span> COMMAND<span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
+
 <h3 id="while">while 循环<a class="headerlink" href="#while" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># while 语法</span>
 <span class="k">while</span> <span class="nb">command</span>
@@ -2666,6 +2698,7 @@ $ <span class="k">for</span> <span class="o">((</span><span class="nv">i</span><
     statement
 <span class="k">done</span>
 </code></pre></div>
+
 <p>具体例子：</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="nv">x</span><span class="o">=</span><span class="m">1</span>
@@ -2675,12 +2708,14 @@ $ <span class="k">for</span> <span class="o">((</span><span class="nv">i</span><
     <span class="nv">x</span><span class="o">=</span><span class="k">$((</span><span class="nv">$x</span><span class="o">+</span><span class="m">1</span><span class="k">))</span>
 <span class="k">done</span>
 </code></pre></div>
+
 <h3 id="until">until 循环<a class="headerlink" href="#until" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">until</span> <span class="nb">command</span>
 <span class="k">do</span>
     statement
 <span class="k">done</span>
 </code></pre></div>
+
 <p>具体例子：</p>
 <div class="highlight"><pre><span></span><code><span class="nb">declare</span> -i <span class="nv">i</span><span class="o">=</span><span class="m">10</span>
 <span class="nb">declare</span> -i <span class="nv">sum</span><span class="o">=</span><span class="m">0</span>
@@ -2691,11 +2726,13 @@ $ <span class="k">for</span> <span class="o">((</span><span class="nv">i</span><
 <span class="k">done</span>
 <span class="nb">echo</span> <span class="nv">$sum</span>
 </code></pre></div>
+
 <h2 id="_3">无聊的脚本练习<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><strong>生成一段特定长度的随机DNA序列</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 生成1000bp的DNA序列文件</span>
 $ <span class="k">for</span> i in <span class="o">{</span><span class="m">1</span>..1000<span class="o">}</span><span class="p">;</span> <span class="k">do</span> <span class="nv">c</span><span class="o">=(</span>A T C G<span class="o">)</span><span class="p">;</span> <span class="nb">echo</span> <span class="si">${</span><span class="nv">c</span><span class="p">[</span><span class="sb">`</span>expr <span class="nv">$RANDOM</span> % <span class="m">4</span><span class="sb">`</span><span class="p">]</span><span class="si">}</span> &gt;&gt; <span class="m">1</span>.fa<span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
+
 <p><strong>删除换行符\n</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 去除文件的换行符号是常用的命令，比如把一个60字符长度的多行序列变为一行序列。</span>
 <span class="c1"># sed 流处理的特殊机制，将一行储存在模式空间时会去除\n，返回时再加上\n</span>
@@ -2704,6 +2741,7 @@ $ <span class="k">for</span> i in <span class="o">{</span><span class="m">1</spa
 <span class="c1"># :a 定义一个label，用来处理跳转</span>
 $ sed -i <span class="s1">&#39;:a;N;$!ba;s/\n//g&#39;</span> <span class="m">1</span>.fa
 </code></pre></div>
+
 <p><strong>给fasta序列取名</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 利用 sed 添加到第一行，比如给序列命名</span>
 $ sed -i <span class="s1">&#39;1i\&gt;seq&#39;</span> <span class="m">1</span>.fa
@@ -2776,7 +2814,7 @@ $ sed -i <span class="s1">&#39;1i\&gt;seq&#39;</span> <span class="m">1</span>.f
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016 - 2020 HZCDC@Lab
+            Copyright &copy; 2016 - 2021 HZCDC@Lab
           </div>
         
         Made with

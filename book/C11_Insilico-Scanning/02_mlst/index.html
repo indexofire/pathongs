@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="杭州疾控中心测序实验室">
+        <meta name="description" content="杭州市疾控中心测序实验室">
       
       
       
@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C11_Insilico-Scanning/02_mlst/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
-        <title>02. MLST 扫描工具 - 杭州疾控中心测序实验室</title>
+        <title>02. MLST 扫描工具 - 杭州市疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -46,7 +46,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
     
       
@@ -87,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header-nav__ellipsis">
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
-            杭州疾控中心测序实验室
+            杭州市疾控中心测序实验室
           </span>
         </div>
         <div class="md-header-nav__topic">
@@ -276,13 +276,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    杭州疾控中心测序实验室
+    杭州市疾控中心测序实验室
   </label>
   
     <div class="md-nav__source">
@@ -439,6 +439,32 @@
   <li class="md-nav__item">
     <a href="../../C01_Common-Utility/05_blast/" class="md-nav__link">
       05. Blast 比对
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/06_fastqc/" class="md-nav__link">
+      06. FastQC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/07_multiqc/" class="md-nav__link">
+      07. Multiqc
     </a>
   </li>
 
@@ -2300,7 +2326,7 @@
 
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/06_bam/" class="md-nav__link">
-      ‘06. bam’
+      06. bam
     </a>
   </li>
 
@@ -2545,6 +2571,7 @@ $ conda create -n mlst
 $ conda activate mlst
 <span class="o">(</span>mlst<span class="o">)</span>$ conda install mlst
 </code></pre></div>
+
 <h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p>MLST 支持 <code>.fa</code>,<code>.fasta</code>,<code>.gb</code>,<code>.gbk</code>,<code>.fna</code>以及这些格式的gz压缩包格式的文件。不加参数可以对所有物种数据库进行扫描，加上参数<code>--scheme</code>可以对指定物种进行扫描。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 直接扫描 fasta 数据，软件会对序列位点进行判断，选择合适的物种数据库</span>
@@ -2565,6 +2592,7 @@ $ conda activate mlst
 <span class="c1"># 将结果保存</span>
 <span class="o">(</span>mlst<span class="o">)</span>$ mlst --scheme senterica fna/*.fna &gt; mlst.result
 </code></pre></div>
+
 <p>更新数据库：MLST数据库随着新添加的数据而不断更新，使用bigsdb建立的MLST数据库可以很方便的更新allele序列和菌株数据。mlst工具也提供了自动化脚本工具更新数据库。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 更新pubmlst数据库</span>
 <span class="o">(</span>mlst<span class="o">)</span>$ <span class="nb">cd</span> <span class="nv">$CONDA_PREFIX</span>/scripts
@@ -2574,6 +2602,7 @@ $ conda activate mlst
 <span class="c1"># 更新blast数据库</span>
 <span class="o">(</span>mlst<span class="o">)</span>$ ./mlst-make_blast_db
 </code></pre></div>
+
 <h2 id="3">3. 应用举例<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>对 NCBI genome 数据库中 bacillus cereus 的 Assembly 进行扫描获取 MLST 数据。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># edirect 抓取 FTP 链接，awk补全下载路径，用 wget 工具批量下载（设置相应参数避免进入下载假死状态）</span>
@@ -2587,6 +2616,7 @@ $ esearch -db assembly -query <span class="s2">&quot;Bacillus cereus[ORGN] AND l
 <span class="o">(</span>mlst<span class="o">)</span>$ mlst --scheme bcereus *.fna.gz &gt; ../bcereus-mlst-result.txt
 <span class="o">(</span>mlst<span class="o">)</span>$ cat ../bcereus-mlst-result.txt
 </code></pre></div>
+
 <h2 id="4">4. 其他<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>与MLST分析的相关操作</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 对沙门菌某个序列位点进行多重序列比对并构建进化树</span>
@@ -2688,7 +2718,7 @@ $ raxmlHPC-PTHREADS-AVX2 -f a -x <span class="m">12345</span> -p <span class="m"
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016 - 2020 HZCDC@Lab
+            Copyright &copy; 2016 - 2021 HZCDC@Lab
           </div>
         
         Made with

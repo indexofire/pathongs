@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="杭州疾控中心测序实验室">
+        <meta name="description" content="杭州市疾控中心测序实验室">
       
       
       
@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/protocol/artic-network-covid19/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
-        <title>ArticNetwork Covid-19测序 - 杭州疾控中心测序实验室</title>
+        <title>ArticNetwork Covid-19测序 - 杭州市疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.73f7c429.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3b61ea93.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -46,7 +46,7 @@
     
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
     
       
@@ -87,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header-nav__ellipsis">
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
-            杭州疾控中心测序实验室
+            杭州市疾控中心测序实验室
           </span>
         </div>
         <div class="md-header-nav__topic">
@@ -276,13 +276,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    杭州疾控中心测序实验室
+    杭州市疾控中心测序实验室
   </label>
   
     <div class="md-nav__source">
@@ -437,6 +437,32 @@
   <li class="md-nav__item">
     <a href="../../book/C01_Common-Utility/05_blast/" class="md-nav__link">
       05. Blast 比对
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../book/C01_Common-Utility/06_fastqc/" class="md-nav__link">
+      06. FastQC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../book/C01_Common-Utility/07_multiqc/" class="md-nav__link">
+      07. Multiqc
     </a>
   </li>
 
@@ -2237,7 +2263,7 @@
 
   <li class="md-nav__item">
     <a href="../../tutorial/Format/06_bam/" class="md-nav__link">
-      ‘06. bam’
+      06. bam
     </a>
   </li>
 
@@ -3250,6 +3276,7 @@ $ conda env create -n ncov -f artic-ncov2019/environment.yml
 $ conda activate ncov
 <span class="o">(</span>ncov<span class="o">)</span>$ conda list
 </code></pre></div>
+
 <p>如果使用docker images来运行guppy</p>
 <div class="highlight"><pre><span></span><code>$ docker pull genomicpariscentre/guppy
 <span class="c1"># 如果服务器有GPU支持，可以选择guppy-gpu</span>
@@ -3263,6 +3290,7 @@ $ guppy_basecaller -i <span class="nv">$HOME</span>/data/fast5 -s output_folder 
 &gt; -c dna_r9.4.1_450bps_hac.cfg --barcode_kits EXP-NBD104 <span class="se">\</span>
 &gt; --num_callers <span class="m">40</span> --trim_barcodes
 </code></pre></div>
+
 <h4 id="512">5.1.2 分析流程<a class="headerlink" href="#512" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>与illumina原始数据是图像文件不同，Nanopore的原始数据以HDF5格式保存。HDF是"Hierarchical Data Format"首字母缩写，HDF5是一种纯文本，类似json的数据格式记录电信号。查看HDF5原始数据可以用 <a href="https://support.hdfgroup.org/products/hdf5_tools/">hdf5_tools</a> 工具。数据文件后缀一般用.fast5表示。</p>
@@ -3276,16 +3304,19 @@ $ guppy_basecaller -i <span class="nv">$HOME</span>/data/fast5 -s output_folder 
 <span class="c1"># 或者在工作站上同步数据到服务器端</span>
 $ rsync -avz /var/lib/minknown/path/to/fast5 username@server_ip:~/data/fast5
 </code></pre></div>
+
 <p>这里设置服务器端 fast5 数据目录存放于：$HOME/data/fast5；采用的是R9.4的测序芯片，各个不同测序芯片basecalling设置参数可以参见<a href="https://denbi-nanopore-training-course.readthedocs.io/en/latest/basecalling/basecalling.html">这里</a></p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>ncov<span class="o">)</span>$ guppy_basecaller -c dna_r9.4.1_450bps_fast.cfg <span class="se">\</span>
 &gt; -i <span class="nv">$HOME</span>/data/fast5 -s run_name -x auto -r
 </code></pre></div>
+
 <blockquote>
 <p>我们的MinION测序仪连接的是一台Ubuntu 16.04的Workstation，测序仪最大测序状态时，跑默认的basecalling基本上可以实时达到80%的状态。如果需要用guppy做更准确的basecalling，我们会用inotify-tools之类的工具加上 rsync 实时同步到服务器，在服务器上进行。</p>
 </blockquote>
 <p>artic 的 demultiplex 命令是</p>
 <div class="highlight"><pre><span></span><code>$ porechop --verbosity <span class="m">2</span> --untrimmed -i <span class="s2">&quot;re_all.fastq&quot;</span> -b ./tmp5vx2iwn0 --native_barcodes --discard_middle --require_two_barcodes --barcode_threshold <span class="m">80</span> --threads <span class="m">8</span> --check_reads <span class="m">10000</span> --barcode_diff <span class="m">5</span> &gt; re_all.fastq.demultiplexreport.txt
 </code></pre></div>
+
 <h3 id="52-illumina">5.2 Illumina 测序数据<a class="headerlink" href="#52-illumina" title="Permanent link">&para;</a></h3>
 <h4 id="521">5.2.1 软件安装<a class="headerlink" href="#521" title="Permanent link">&para;</a></h4>
 <blockquote>
@@ -3295,6 +3326,7 @@ $ rsync -avz /var/lib/minknown/path/to/fast5 username@server_ip:~/data/fast5
 $ conda activate mapping
 <span class="o">(</span>mapping<span class="o">)</span>$ conda install bwa samtools igv
 </code></pre></div>
+
 <h4 id="522">5.2.2 分析流程<a class="headerlink" href="#522" title="Permanent link">&para;</a></h4>
 <ul>
 <li>使用Miseq自带的SAV软件进行basecalling，生成fastq数据复制到服务器端</li>
@@ -3334,6 +3366,7 @@ $ shovill --trim --outdir <span class="nb">test</span> --R1 HZ-1.mapped_R1.fastq
 $ bwa mem -t <span class="m">40</span> -x ont2d MN908947.3.fasta test/contigs.fa <span class="p">|</span> samtools view -bS - <span class="p">|</span> samtools sort -o test.sorted.bam -
 $ samtools index test.sorted.bam
 </code></pre></div>
+
 <h2 id="_2">自定义分析流程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>针对MinKnow生成的数据</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 生成样本的 fastq</span>
@@ -3360,6 +3393,7 @@ $ bcftools consensus -f MN908947.3.fasta -H <span class="m">1</span> s1.vcf.gz -
 
 <span class="c1"># 或者使用minimap工具进行比对</span>
 </code></pre></div>
+
 <h2 id="_3">参考资料<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.protocols.io/view/ncov-2019-sequencing-protocol-bbmuik6w">https://www.protocols.io/view/ncov-2019-sequencing-protocol-bbmuik6w</a></li>
@@ -3434,7 +3468,7 @@ $ bcftools consensus -f MN908947.3.fasta -H <span class="m">1</span> s1.vcf.gz -
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016 - 2020 HZCDC@Lab
+            Copyright &copy; 2016 - 2021 HZCDC@Lab
           </div>
         
         Made with

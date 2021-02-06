@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="杭州疾控中心测序实验室">
+        <meta name="description" content="杭州市疾控中心测序实验室">
       
       
       
@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C02_Raw-Data-to-Genome/03_bacteria-assembly/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
-        <title>03. 细菌基因组组装 - 杭州疾控中心测序实验室</title>
+        <title>03. 细菌基因组组装 - 杭州市疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -46,7 +46,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
     
       
@@ -87,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header-nav__ellipsis">
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
-            杭州疾控中心测序实验室
+            杭州市疾控中心测序实验室
           </span>
         </div>
         <div class="md-header-nav__topic">
@@ -276,13 +276,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    杭州疾控中心测序实验室
+    杭州市疾控中心测序实验室
   </label>
   
     <div class="md-nav__source">
@@ -439,6 +439,32 @@
   <li class="md-nav__item">
     <a href="../../C01_Common-Utility/05_blast/" class="md-nav__link">
       05. Blast 比对
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/06_fastqc/" class="md-nav__link">
+      06. FastQC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/07_multiqc/" class="md-nav__link">
+      07. Multiqc
     </a>
   </li>
 
@@ -2441,7 +2467,7 @@
 
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/06_bam/" class="md-nav__link">
-      ‘06. bam’
+      06. bam
     </a>
   </li>
 
@@ -2835,9 +2861,11 @@
 $ conda activate spades
 <span class="o">(</span>assembly<span class="o">)</span>$ conda install spades
 </code></pre></div>
+
 <p><strong>Docker方式安装</strong></p>
 <div class="highlight"><pre><span></span><code>$
 </code></pre></div>
+
 <h3 id="12-spades">1.2 使用 spades 拼接二代细菌基因组测序数据<a class="headerlink" href="#12-spades" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 以SRR95386 为例</span>
 $ prefetch SRR956386
@@ -2846,22 +2874,26 @@ $ fastq-dump --split-e --gzip SRR956386.sra
 $ spades.py --careful -k <span class="m">21</span>,33,55,77,99,121 -1 SRR95386_1.fastq -2 SRR955386_2.fastq <span class="se">\</span>
 &gt; -o spades_output -t <span class="m">40</span>
 </code></pre></div>
+
 <p>SPAdes会根据 <code>-k</code> 参数选择不同的 Kmer 进行 de novo 组装。对于常见的 Miseq v2/v3 试剂盒，采用 PE150/PE250/PE300 的读长测序，常用的拼接命令是：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># PE150 读长测序数据</span>
 $ spades.py -k <span class="m">21</span>,33,55,77 --careful -1 SRR95386_1.fastq -2 SRR955386_2.fastq -o SRR95386_output -t <span class="m">40</span>
 <span class="c1"># PE250/300 读长测序数据</span>
 $ spades.py -k <span class="m">21</span>,33,55,77,99,127 --careful -1 SRR95386_1.fastq -2 SRR955386_2.fastq -o SRR95386_output -t <span class="m">40</span>
 </code></pre></div>
+
 <h2 id="2-macursa">2. Macursa<a class="headerlink" href="#2-macursa" title="Permanent link">&para;</a></h2>
 <h3 id="21-masurca">2.1 安装 MaSuRCA<a class="headerlink" href="#21-masurca" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ conda create -n masurca
 $ conda activate masurca
 <span class="o">(</span>masurac<span class="o">)</span>$ conda install masurca
 </code></pre></div>
+
 <h2 id="22">2.2 建立拼装配置文件<a class="headerlink" href="#22" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>$ touch SRR955386_masurca.config
 $ vim SRR955386_masurca.config
 </code></pre></div>
+
 <p>文件内容修改如下：</p>
 <div class="highlight"><pre><span></span><code>DATA
 PE= p1 500 50 SRR955386_1.fastq SRR955386_2.fastq
@@ -2877,6 +2909,7 @@ JF_SIZE=100000000
 DO_HOMOPOLYMER_TRIM=0
 END
 </code></pre></div>
+
 <p>设置 <strong>GRAPH_KMER_SIZE=auto</strong>，软件会调用Kmer=31来进行拼装。对于MiSeq PE250以上的插片，可以考虑手动设置使用更大的Kmer。</p>
 <h3 id="23">2.3 开始拼装<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 运行 masurca</span>
@@ -2884,6 +2917,7 @@ $ masurca SRR955386_masurca.config
 <span class="c1"># 生成组装脚本，运行</span>
 $ ./assemble.sh
 </code></pre></div>
+
 <h2 id="3-velvet">3. Velvet<a class="headerlink" href="#3-velvet" title="Permanent link">&para;</a></h2>
 <h3 id="31">3.1 下载并安装<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
 <p>Velvet 是一个老牌的基因组测序数据拼接软件。Velvet最新版本是1.2.10，可以访问 <code>官方网站 &lt;https://www.ebi.ac.uk/~zerbino/velvet/&gt;</code>_ 下载源代码包，也可以通过克隆 <code>软件仓库 &lt;https://github.com/dzerbino/velvet.git&gt;</code>_ 的方式获得最新的源代码。</p>
@@ -2893,11 +2927,13 @@ $ ./assemble.sh
 $ wget https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz
 $ tar xvf velvet_1.2.10.tgz -C ~/app/velvet
 </code></pre></div>
+
 <p><strong>克隆代码仓库</strong></p>
 <p>如果在软件运行中遇到问题，想试用最新版代码，或是有能力提交issues，或者想改进软件参与开源代码编写的可以选择克隆代码库的方式。</p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> ~/tmp
 $ git clone https://github.com/dzerbino/velvet.git
 </code></pre></div>
+
 <p><strong>编译安装</strong></p>
 <p>make可以进行编译，有几个编译参数可以选择，分别是MAXKMERLENGTH, DIRECTORY</p>
 <p>.. code-block:: bash</p>
@@ -2908,6 +2944,7 @@ $ git clone https://github.com/dzerbino/velvet.git
 <p>velvet软件由2个可执行文件 <code>velveth</code> 和 <code>velvetg</code> 组成。</p>
 <div class="highlight"><pre><span></span><code>$ velvet
 </code></pre></div>
+
 <h2 id="4-a5-miseq">4. A5-miseq<a class="headerlink" href="#4-a5-miseq" title="Permanent link">&para;</a></h2>
 <p><code>A5-miseq &lt;https://sourceforge.net/projects/ngopt/&gt;</code>__ 是一个用 perl
 开发的针对细菌基因组 de novo assembly 的 pipeline
@@ -2930,6 +2967,7 @@ samtools，bowtie 对结果产生的差异，建议采用虚拟环境如 docker
 $ tar zxvf a5_miseq_linux_20150522.tar.gz -C ~/app
 $ sudo ln -s ~/app/a5_miseq_linux_20150522/bin/a5_pipeline.pl /usr/local/sbin
 </code></pre></div>
+
 <h3 id="docker">建立 Docker 容器安装<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>FROM ubuntu:latest
 MAINTAINER Mark Renton &lt;indexofire@gmail.com&gt;
@@ -2943,14 +2981,17 @@ ADD run /usr/local/bin/
 ADD Procfile /
 ENTRYPOINT <span class="o">[</span><span class="s2">&quot;/usr/local/bin/run&quot;</span><span class="o">]</span>
 </code></pre></div>
+
 <h3 id="42-a5-miseq">4.2 使用 A5-miseq<a class="headerlink" href="#42-a5-miseq" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ perl a5_pipeline.pl SRR955386_1.fastq SRR955386_2.fastq ~/data/a5_output
 </code></pre></div>
+
 <h3 id="43-a5-miseq">4.3 A5-miseq 文档<a class="headerlink" href="#43-a5-miseq" title="Permanent link">&para;</a></h3>
 <p>查看 A5-miseq 工具的使用文档可以用 a5_pipeline.pl 工具查看。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Usage:</span>
 $ a5_pipeline.pl <span class="o">[</span>--begin<span class="o">=</span><span class="m">1</span>-5<span class="o">]</span> <span class="o">[</span>--end<span class="o">=</span><span class="m">1</span>-5<span class="o">]</span> <span class="o">[</span>--preprocessed<span class="o">]</span> &lt;lib_file&gt; &lt;out_base&gt;
 </code></pre></div>
+
 <h2 id="5shovill">5.Shovill<a class="headerlink" href="#5shovill" title="Permanent link">&para;</a></h2>
 <p>Shovill 是一个第三方组装流程，它调用spades或velvet等软件进行拼接，生成适用于细菌基因组组装的结果。</p>
 <h3 id="51">5.1 安装<a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
@@ -2958,9 +2999,11 @@ $ a5_pipeline.pl <span class="o">[</span>--begin<span class="o">=</span><span cl
 $ conda activate shovill
 <span class="o">(</span>shovill<span class="o">)</span>$ conda install shovill
 </code></pre></div>
+
 <h3 id="52">5.2 使用<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>shovill<span class="o">)</span>$ shovill --R1 --R2
 </code></pre></div>
+
 <h2 id="reference">Reference:<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="http://www.chenlianfu.com/?p=1635">http://www.chenlianfu.com/?p=1635</a></li>
@@ -3036,7 +3079,7 @@ $ conda activate shovill
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016 - 2020 HZCDC@Lab
+            Copyright &copy; 2016 - 2021 HZCDC@Lab
           </div>
         
         Made with

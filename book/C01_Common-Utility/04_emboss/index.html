@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="杭州疾控中心测序实验室">
+        <meta name="description" content="杭州市疾控中心测序实验室">
       
       
       
@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C01_Common-Utility/04_emboss/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
-        <title>04. EMBOSS 工具集 - 杭州疾控中心测序实验室</title>
+        <title>04. EMBOSS 工具集 - 杭州市疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -46,7 +46,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
     
       
@@ -87,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header-nav__ellipsis">
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
-            杭州疾控中心测序实验室
+            杭州市疾控中心测序实验室
           </span>
         </div>
         <div class="md-header-nav__topic">
@@ -276,13 +276,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    杭州疾控中心测序实验室
+    杭州市疾控中心测序实验室
   </label>
   
     <div class="md-nav__source">
@@ -548,6 +548,32 @@
   <li class="md-nav__item">
     <a href="../05_blast/" class="md-nav__link">
       05. Blast 比对
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../06_fastqc/" class="md-nav__link">
+      06. FastQC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../07_multiqc/" class="md-nav__link">
+      07. Multiqc
     </a>
   </li>
 
@@ -2348,7 +2374,7 @@
 
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/06_bam/" class="md-nav__link">
-      ‘06. bam’
+      06. bam
     </a>
   </li>
 
@@ -2630,27 +2656,23 @@
                 
                 
                 <h1 id="emboss">EMBOSS<a class="headerlink" href="#emboss" title="Permanent link">&para;</a></h1>
-<p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2020-09-14</p>
+<p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2021-02-01</p>
 <hr />
 <p><img alt="emboss" src="http://emboss.sourceforge.net/images/emboss.jpg" /></p>
-<div class="admonition note">
-<p class="admonition-title">本节介绍</p>
+<div class="admonition abstract">
+<p class="admonition-title">内容简介</p>
 <p>EMBOSS 是欧洲分子生物学组织开发的 Unix/Linux 下的生物学分析工具。EMBOSS 包含工具众多，这里只介绍与微生物基因组分析可能会用到的一些工具，所有的软件和其文档参考官方文档。</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>EMBOSS 是欧洲分子生物学组织开发的 Unix/Linux 下的生物学分析工具。EMBOSS 包含工具众多，可以帮助我们在命令行下实现许多简单的生物学操作。但是由于 EMBOSS 的命令行方式比较传统，类似phylip的交互模式，和当前许多新工具的参数设置等不一致，加上许多新的工具代替，因此使用的机会不是很多。这里介绍部分与微生物基因组分析可能会用到的一些工具，所有的软件和其文档参考<a href="http://emboss.sourceforge.net/docs/">官方文档</a>。</p>
-</div>
+<p>由于 EMBOSS 的命令行方式比较传统，类似phylip的交互模式，和当前许多高通量测序工具的参数设置等不一致，加上许多新的工具代替，因此使用的机会不是很多。这里介绍部分与微生物基因组分析可能会用到的一些工具，所有的软件和其文档参考<a href="http://emboss.sourceforge.net/docs/">官方文档</a>。</p>
 <h2 id="1-emboss">1. 安装 EMBOSS<a class="headerlink" href="#1-emboss" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># ubuntu 包含 emboss 发行版</span>
 $ sudo apt install emboss
-
-<span class="c1"># 通过下载安装包</span>
 
 <span class="c1"># 通过 conda 安装</span>
 $ conda create -n emboss emboss
 $ conda activate emboss
 </code></pre></div>
+
 <p>EMBOSS 工具集包含众多基于命令行的工具，可以集成到分析工具流中。EMBOSS 中的许多可以直接访问远程数据库，但这需要默认配置。如果是通过 conda 安装，则要将所在conda虚拟环境路径中的<code>share/EMBOSS/emboss.default.template</code>复制为<code>emboss.default</code>。如果是通过系统级安装，要在当前用户环境中配置数据库，则可以将<code>emboss.default.template</code>复制为<code>~/.embossrc</code>。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 建立配置文件</span>
 <span class="o">(</span>emboss<span class="o">)</span>$ <span class="nb">cd</span> <span class="nv">$CONDA_PREFIX</span>/EMBOSS
@@ -2661,6 +2683,7 @@ $ conda activate emboss
 <span class="c1"># 查看可以使用的数据库</span>
 <span class="o">(</span>emboss<span class="o">)</span>$ showdb
 </code></pre></div>
+
 <h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h3 id="_1">查看各个程序<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p><strong>wossname</strong>: EMBOSS 包含众多应用程序，为方便查询，有一个专门的程序<code>wossname</code>可以查看所有程序及功能。</p>
@@ -2676,6 +2699,7 @@ $ conda activate emboss
 <span class="c1"># 按字母顺序显示应用</span>
 <span class="o">(</span>emboss<span class="o">)</span>$ wossname -search <span class="s2">&quot;&quot;</span> -alphabetic <span class="p">|</span> less
 </code></pre></div>
+
 <h3 id="_2">数据库相关<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p><strong>showdb</strong>: 显示可用的数据库
 <strong>dbtell</strong>: 显示数据库相关信息</p>
@@ -2685,6 +2709,7 @@ $ conda activate emboss
 <span class="c1"># 显示embl数据库信息</span>
 <span class="o">(</span>emboss<span class="o">)</span>$ dbtell embl
 </code></pre></div>
+
 <h3 id="_3">序列处理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p><strong><a href="http://structure.usc.edu/emboss/seqret.html">seqret</a></strong>: 生成序列或格式化序列</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 读入序列，以60字符为长度将其格式化为规范的fasta格式数据</span>
@@ -2702,11 +2727,13 @@ Read and write <span class="o">(</span><span class="k">return</span><span class=
 Input <span class="o">(</span>gapped<span class="o">)</span> sequence<span class="o">(</span>s<span class="o">)</span>:         &lt;--- 输入序列文件名称
 output sequence<span class="o">(</span>s<span class="o">)</span> <span class="o">[</span>...<span class="o">]</span>:           &lt;--- 输入序列保存的文件名称
 </code></pre></div>
+
 <p><strong><a href="http://structure.usc.edu/emboss/showfeat.html">showfeat</a></strong>: 显示序列信息</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 显示组装子各个 contigs 长度</span>
 <span class="o">(</span>emboss<span class="o">)</span>$ showfeat assembly.fasta result.showfeat
 <span class="o">(</span>emboss<span class="o">)</span>$ less result.showfeat
 </code></pre></div>
+
 <p><strong><a href="http://structure.usc.edu/emboss/transeq.html">transeq</a></strong>: DNA/RNA序列翻译成氨基酸序列，文件以 <code>.pep</code> 后缀保存<br />
 <strong><a href="http://structure.usc.edu/emboss/backtranseq.html">backtranseq</a></strong>: 氨基酸序列转换成DNA序列。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># fasta个是的DNA序列转换成氨基酸序列</span>
@@ -2714,6 +2741,7 @@ output sequence<span class="o">(</span>s<span class="o">)</span> <span class="o"
 <span class="c1"># 将 input.pep 氨基酸序列转换成碱基格式保存成 output.fas DNA序列</span>
 <span class="o">(</span>emboss<span class="o">)</span>$ backtranseq input.pep output.fas
 </code></pre></div>
+
 <h3 id="_4">引物设计<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p><strong>eprimer3</strong>:
 <strong>primersearch</strong>:</p>
@@ -2725,6 +2753,7 @@ output sequence<span class="o">(</span>s<span class="o">)</span> <span class="o"
 <span class="o">(</span>emboss<span class="o">)</span>$ water seq1.fas seq2.fas seq1v2.sw
 <span class="o">(</span>emboss<span class="o">)</span>$ needle seq1.fas seq2.fas seq1v2.nl
 </code></pre></div>
+
 <p><strong>needleall</strong></p>
 <h3 id="_6">多序列比对<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p><strong>emma</strong>: 基于 clustalW 的多序列比对程序
@@ -2732,11 +2761,13 @@ output sequence<span class="o">(</span>s<span class="o">)</span> <span class="o"
 <div class="highlight"><pre><span></span><code><span class="o">(</span>emboss<span class="o">)</span>$ emma msa1.fas msa1.phy
 <span class="o">(</span>emboss<span class="o">)</span>$ edialign
 </code></pre></div>
+
 <h3 id="_7">数据可视化<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p><strong>density</strong>: 绘制核酸密度图。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 生成序列密度图</span>
 <span class="o">(</span>emboss<span class="o">)</span>$ density -seqall input.fasta -display D -gragh ps
 </code></pre></div>
+
 <h2 id="_8">工具列表<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>具体信息参见：<a href="http://emboss.sourceforge.net/apps/release/6.6/emboss/apps/">工具列表</a></p>
 <table>
@@ -3277,11 +3308,11 @@ output sequence<span class="o">(</span>s<span class="o">)</span> <span class="o"
 </tr>
 <tr>
 <td>needle</td>
-<td>Needleman-Wunsch global alignment of two sequences</td>
+<td>Needleman-Wunsch 全局比对</td>
 </tr>
 <tr>
 <td>needleall</td>
-<td>Many-to-many pairwise alignments of two sequence sets</td>
+<td>两两双序列比对</td>
 </tr>
 <tr>
 <td>newcpgreport</td>
@@ -3781,7 +3812,7 @@ output sequence<span class="o">(</span>s<span class="o">)</span> <span class="o"
 <div class="md-source-date">
   <small>
     
-      Last update: 2020-09-14
+      Last update: 2021-02-01
     
   </small>
 </div>
@@ -3841,7 +3872,7 @@ output sequence<span class="o">(</span>s<span class="o">)</span> <span class="o"
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016 - 2020 HZCDC@Lab
+            Copyright &copy; 2016 - 2021 HZCDC@Lab
           </div>
         
         Made with

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="杭州疾控中心测序实验室">
+        <meta name="description" content="杭州市疾控中心测序实验室">
       
       
       
@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C08_Genome-Visualization/03_circos/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
-        <title>03. circos 工具使用 - 杭州疾控中心测序实验室</title>
+        <title>03. circos 工具使用 - 杭州市疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -46,7 +46,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
     
       
@@ -87,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header-nav__ellipsis">
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
-            杭州疾控中心测序实验室
+            杭州市疾控中心测序实验室
           </span>
         </div>
         <div class="md-header-nav__topic">
@@ -276,13 +276,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    杭州疾控中心测序实验室
+    杭州市疾控中心测序实验室
   </label>
   
     <div class="md-nav__source">
@@ -439,6 +439,32 @@
   <li class="md-nav__item">
     <a href="../../C01_Common-Utility/05_blast/" class="md-nav__link">
       05. Blast 比对
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/06_fastqc/" class="md-nav__link">
+      06. FastQC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/07_multiqc/" class="md-nav__link">
+      07. Multiqc
     </a>
   </li>
 
@@ -2449,7 +2475,7 @@
 
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/06_bam/" class="md-nav__link">
-      ‘06. bam’
+      06. bam
     </a>
   </li>
 
@@ -2877,15 +2903,18 @@ $ circos -v
 <span class="c1"># 如果屏幕打印出以下信息，说明你可以正常使用circos了。</span>
 circos <span class="p">|</span> v <span class="m">0</span>.69 <span class="p">|</span> <span class="m">6</span> Dec <span class="m">2015</span> <span class="p">|</span> Perl <span class="m">5</span>.018002
 </code></pre></div>
+
 <p>如果 cpan 下载很慢或者无法连接，可以修改 mirror 来改善。如果你的 CPAN 是安装在个人用户环境里，将 <code>~/.cpan/CPAN/MyConfig.pm</code> 文件里的 urllist 行后面的内容修改成离自己最近的镜像站点，比如：</p>
 <div class="highlight"><pre><span></span><code>&#39;urllist&#39; =&gt; [q[http://mirrors.sohu.com/CPAN/]],
 </code></pre></div>
+
 <p><strong>使用 conda 安装</strong></p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 创建一个虚拟环境安装 circos</span>
 $ conda create env circos
 $ <span class="nb">source</span> activate circos
 <span class="o">(</span>circos<span class="o">)</span>$ conda install circos
 </code></pre></div>
+
 <h2 id="2">2. 输入文件类型<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p><a href="http://circos.ca/">circos</a> 主要需要2类文件，一类是可视化结果的数据文件，一类是用于告诉 <a href="http://circos.ca/">circos</a> 如何展示的配置文件。</p>
 <h3 id="21">2.1 数据文件<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
@@ -2893,6 +2922,7 @@ $ <span class="nb">source</span> activate circos
 <div class="highlight"><pre><span></span><code>染色体 开始位置 结束位置 颜色值 其他选项[可选]
 chr1  1000    2000  red
 </code></pre></div>
+
 <h3 id="22">2.2 配置文件<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
 <p>一般绘图需要以下配置文件：</p>
 <ul>
@@ -2908,6 +2938,7 @@ chr1  1000    2000  red
 <p>这是circos主配置文件，其他的配置文件可以通过include的方式来导入。</p>
 <div class="highlight"><pre><span></span><code>&lt;&lt;include your_other_configure.conf&gt;&gt;
 </code></pre></div>
+
 <h4 id="222-ideogramconf">2.2.2 ideogram.conf<a class="headerlink" href="#222-ideogramconf" title="Permanent link">&para;</a></h4>
 <h4 id="223-imageconf">2.2.3 image.conf<a class="headerlink" href="#223-imageconf" title="Permanent link">&para;</a></h4>
 <h4 id="224-highlightconf">2.2.4 highlight.conf<a class="headerlink" href="#224-highlightconf" title="Permanent link">&para;</a></h4>
@@ -2927,6 +2958,7 @@ type = text
 r0 = 0.95r
 r1 = 0.85r
 </code></pre></div>
+
 <ol>
 <li>ideogram</li>
 <li>highlight</li>
@@ -2944,6 +2976,7 @@ chromosomes_units = 1000
 # 如果设置成yes，所有ideogram上都会现实ticks
 chromosomes_display_default = yes
 </code></pre></div>
+
 <h2 id="3-circos">3. 用circos来绘图<a class="headerlink" href="#3-circos" title="Permanent link">&para;</a></h2>
 <p>绘制环状 Salmonella LT2 基因组</p>
 <p>之前的教程里介绍了用DNAPlotter绘制一个基因组完成图的圈图，圆圈内容strand，GC content和GC skew。从某个角度上看，DNAplotter的配置文件与circos有一定的类似，2个软件的区别在于前者专注于绘制单个细菌基因组，后者可以完成更多的功能。第一个例子我们通过用circos来绘制类似DNAplotter生成的基因组圈图，从而学习circos的基本用法，</p>
@@ -2951,6 +2984,7 @@ chromosomes_display_default = yes
 <div class="highlight"><pre><span></span><code>$ esearch -db nuccore -query &quot;NC_003197.1[accn]&quot; | efetch -db nuccore -format fasta &gt; LT2.fasta
 $ esearch -db nuccore -query &quot;NC_003197.1[accn]&quot; | efetch -db nuccore -format gb &gt; LT2.gb
 </code></pre></div>
+
 <p>绘制circos所需要的ideogram所需要的几类数据，我们通过一个python脚本get_circos_data.py来获得。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># -*- utf-8 -*-</span>
 <span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">SeqIO</span>
@@ -3025,19 +3059,23 @@ $ esearch -db nuccore -query &quot;NC_003197.1[accn]&quot; | efetch -db nuccore 
 <span class="n">get_forward_strand</span><span class="p">(</span><span class="n">forward</span><span class="p">)</span>
 <span class="n">get_reverse_strand</span><span class="p">(</span><span class="n">reverse</span><span class="p">)</span>
 </code></pre></div>
+
 <p>运行脚本：</p>
 <div class="highlight"><pre><span></span><code>$ python get_circos_data.py
 </code></pre></div>
+
 <h3 id="31">3.1 配置文件<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>$ cd circos_data
 $ touch circos.conf
 </code></pre></div>
+
 <p>大部分细菌的基因组都是单染色体的，因此一个细菌基因完成图可以用1个完整的圈来表示。通过设置spacing来去除间断。</p>
 <div class="highlight"><pre><span></span><code>&lt;spacing&gt;
   default = u
   break = u
 &lt;/spacing&gt;
 </code></pre></div>
+
 <p>circos.conf 文件添加以下内容</p>
 <div class="highlight"><pre><span></span><code>&lt;&lt;include colors_fonts_patterns.conf&gt;&gt;
 &lt;ideogram&gt;
@@ -3236,6 +3274,7 @@ grid_thickness  = 1p
 
 &lt;&lt;include housekeeping.conf&gt;&gt;
 </code></pre></div>
+
 <h3 id="32">3.2 绘制测序拼接结果信息<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
 <h4 id="321">3.2.1 数据准备<a class="headerlink" href="#321" title="Permanent link">&para;</a></h4>
 <h4 id="322">3.2.2 配置文件<a class="headerlink" href="#322" title="Permanent link">&para;</a></h4>
@@ -3341,6 +3380,7 @@ grid_thickness  = 1p
   &lt;/link&gt;
 &lt;/links&gt;
 </code></pre></div>
+
 <div class="admonition note">
 <p class="admonition-title">circos配置的单位概念</p>
 </div>
@@ -3427,7 +3467,7 @@ grid_thickness  = 1p
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016 - 2020 HZCDC@Lab
+            Copyright &copy; 2016 - 2021 HZCDC@Lab
           </div>
         
         Made with

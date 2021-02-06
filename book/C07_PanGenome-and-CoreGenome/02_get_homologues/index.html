@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="杭州疾控中心测序实验室">
+        <meta name="description" content="杭州市疾控中心测序实验室">
       
       
       
@@ -16,15 +16,15 @@
         <link rel="canonical" href="https://indexofire.github.io/pathongs/book/C07_PanGenome-and-CoreGenome/02_get_homologues/">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
-        <title>02. Get_Homologues 分析 - 杭州疾控中心测序实验室</title>
+        <title>02. Get_Homologues 分析 - 杭州市疾控中心测序实验室</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.73f7c429.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -46,7 +46,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
     
       
@@ -87,7 +87,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header-nav__ellipsis">
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
-            杭州疾控中心测序实验室
+            杭州市疾控中心测序实验室
           </span>
         </div>
         <div class="md-header-nav__topic">
@@ -276,13 +276,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州疾控中心测序实验室">
+    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    杭州疾控中心测序实验室
+    杭州市疾控中心测序实验室
   </label>
   
     <div class="md-nav__source">
@@ -439,6 +439,32 @@
   <li class="md-nav__item">
     <a href="../../C01_Common-Utility/05_blast/" class="md-nav__link">
       05. Blast 比对
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/06_fastqc/" class="md-nav__link">
+      06. FastQC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../C01_Common-Utility/07_multiqc/" class="md-nav__link">
+      07. Multiqc
     </a>
   </li>
 
@@ -2320,7 +2346,7 @@
 
   <li class="md-nav__item">
     <a href="../../../tutorial/Format/06_bam/" class="md-nav__link">
-      ‘06. bam’
+      06. bam
     </a>
   </li>
 
@@ -2639,6 +2665,7 @@ $ conda activate get_homologues
 &gt; install.packages<span class="o">(</span><span class="s2">&quot;factoextra&quot;</span><span class="o">)</span>
 &gt; install.packages<span class="o">(</span><span class="s2">&quot;ape&quot;</span><span class="o">)</span>
 </code></pre></div>
+
 <h2 id="2">2. 使用<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h3 id="_1">绘制核心基因和泛基因图<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <h2 id="3">3. 算法<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
@@ -2662,6 +2689,7 @@ ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/216/125/GCF_002216125.1_ASM221612
 ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/002/215/175/GCF_002215175.1_ASM221517v1/GCF_002215175.1_ASM221517v1_genomic.gbff.gz
 ...
 </code></pre></div>
+
 <p>接下来用 wget 工具的<code>-i</code>参数下载带路径的文件 bcereus.path。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 用 wget 工具下载，并移动数据到文件夹gbk</span>
 $ wget --limit-rate 300k --no-passive-ftp -i bcereus.path
@@ -2671,6 +2699,7 @@ $ mkdir gbk <span class="o">&amp;&amp;</span> gunzip *.gz <span class="o">&amp;&
 03BB87.gbk  A1.gbk     CMCC-P0011.gbk  D12_2.gbk  FORC_005.gbk  FORC021.gbk   FORC_047.gbk  FT9.gbk    ISSFR-3F.gbk  JEM-2.gbk  M13.gbk  NJ-W.gbk
 3a.gbk      AR156.gbk  CMCC-P0021.gbk  FM1.gbk    FORC_013.gbk  FORC_024.gbk  FORC_048.gbk  HN001.gbk  ISSFR-9F.gbk  K8.gbk     M3.gbk   S2-8.gbk
 </code></pre></div>
+
 <p>get_homologues 默认使用 blast 进行序列相似性搜索，为了加快速度，也可以使用 <code>-X</code> 参数，调用diamond加快相似性比对。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># get_homologues 分析</span>
 $ get_homologues.pl -d gbk -n <span class="m">40</span>
@@ -2704,6 +2733,7 @@ M3.gbk <span class="m">5406</span>
 NJ-W.gbk <span class="m">5355</span>
 S2-8.gbk <span class="m">5797</span>
 </code></pre></div>
+
 <p>当<code>get_homologues.pl</code>分析完成后，默认输出路径是 -d 对应目录名称加上 <code>_homologues</code>，那么本例就是 <code>gbk_homologues</code>，默认的算法是<code>BDBH</code>，也可以修改参数来使用<code>MCL</code>或<code>COG</code>来分析。</p>
 <p>get_homologues.pl 会默认选择基因数最少的序列做为参考序列，数据在该序列名开头的文件夹中。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 生成基因分布热图</span>
@@ -2716,9 +2746,11 @@ $ plot_matrix_heatmap.sh -i compare/pangenome_matrix_t0.tab -o pdf -r -H <span c
 -r 删除字段行
 -H -W 高度和宽度
 </code></pre></div>
+
 <div class="highlight"><pre><span></span><code><span class="c1"># 构建</span>
 $ parse_pangenome_matrix.pl -m compare/pangenome_matrix_t0.tab -s
 </code></pre></div>
+
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Bacterial Pangenomics, Methods and Protocols, Chapter14</li>
@@ -2792,7 +2824,7 @@ $ parse_pangenome_matrix.pl -m compare/pangenome_matrix_t0.tab -s
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016 - 2020 HZCDC@Lab
+            Copyright &copy; 2016 - 2021 HZCDC@Lab
           </div>
         
         Made with
