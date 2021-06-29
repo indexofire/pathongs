@@ -1,431 +1,435 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://xanadu314.github.io/pathongs/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/main/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C01_Common-Utility/01_database/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C01_Common-Utility/02_get-data/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C01_Common-Utility/03_entrez/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C01_Common-Utility/04_emboss/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C01_Common-Utility/05_blast/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C01_Common-Utility/06_fastqc/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C01_Common-Utility/07_multiqc/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C01_Common-Utility/08_seqkit/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C01_Common-Utility/09_kmer/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C02_Raw-Data-to-Genome/02_quast/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C02_Raw-Data-to-Genome/03_bacteria-assembly/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C02_Raw-Data-to-Genome/04_virus-assembly/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C02_Raw-Data-to-Genome/05_gatk3/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C02_Raw-Data-to-Genome/06_gatk4/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C02_Raw-Data-to-Genome/11_long-noisy-reads-assembly/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C02_Raw-Data-to-Genome/12_hybrid-assembly/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C02_Raw-Data-to-Genome/14_bwa-long-sequence-mapping/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C03_Genome-Annotation/01_prokka/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C03_Genome-Annotation/02_rast/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C03_Genome-Annotation/03_pgaap/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C03_Genome-Annotation/04_snpeff/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C03_Genome-Annotation/05_cog/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C06_Genome-Compare/01_mummer/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C06_Genome-Compare/02_nucdiff/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C06_Genome-Compare/03_mauve/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C06_Genome-Compare/04_sibelia/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C06_Genome-Compare/05_ani/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C06_Genome-Compare/10_bigsi/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C07_PanGenome-and-CoreGenome/01_pangenome/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C07_PanGenome-and-CoreGenome/02_get_homologues/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C07_PanGenome-and-CoreGenome/03_bpga/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C07_PanGenome-and-CoreGenome/04_roary/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C07_PanGenome-and-CoreGenome/05_panseq/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C07_PanGenome-and-CoreGenome/07_orthmcl/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C07_PanGenome-and-CoreGenome/08_itep/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C08_Genome-Visualization/01_igv/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C08_Genome-Visualization/02_brig/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C08_Genome-Visualization/03_circos/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C09_Analysis-Platform/01_docker/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C09_Analysis-Platform/02_galaxy/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C09_Analysis-Platform/03_amazon/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C09_Analysis-Platform/04_others/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C16_Standalone-Platform/01_anvio/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C16_Standalone-Platform/02_galaxy/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C10_Recombination-and-Population-Structure/01_virus-recombination/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C10_Recombination-and-Population-Structure/02_gubbins/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C10_Recombination-and-Population-Structure/03_baps/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C11_Insilico-Scanning/01_srst2/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C11_Insilico-Scanning/02_mlst/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C11_Insilico-Scanning/03_ariba/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C11_Insilico-Scanning/04_abricate/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C12_Metagenomics-Analysis/01_kraken/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C12_Metagenomics-Analysis/02_centrifuge/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C12_Metagenomics-Analysis/03_bracken/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C12_Metagenomics-Analysis/04_sourmash/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C12_Metagenomics-Analysis/05_clark/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C12_Metagenomics-Analysis/06_krona/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C12_Metagenomics-Analysis/07_pavian/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C12_Metagenomics-Analysis/08_supri/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C12_Metagenomics-Analysis/09_shotgun/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C12_Metagenomics-Analysis/10_16s/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C12_Metagenomics-Analysis/11_kmerfinder/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C12_Metagenomics-Analysis/12_meta-beetl/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C13_Single-Molecular-Sequencing/01_nanopore/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C13_Single-Molecular-Sequencing/02_pacbio/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C13_Single-Molecular-Sequencing/03_canu/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C13_Single-Molecular-Sequencing/04_seqs-polish/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C13_Single-Molecular-Sequencing/06_hybrid-assembling/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C14_Multiple-Sequence-Alignment/01_msa/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C15_Phylogeny-Analysis/00_all-about-phylogeny/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C17_Pathogen-Geospatial-Analysis/04_cartodb/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C17_Pathogen-Geospatial-Analysis/05_leaflet/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C18_Analysis-Examples/01_trace-Pae-from-different-source-by-SNP/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C18_Analysis-Examples/02_comparative-analysis-Ban-genomes/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C19_Pipelines-and-Workflows/05_workflow-software/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/book/C20_Others/02_gi-to-accession/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Linux/01_linux-installation/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Linux/02_basic-cml/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Linux/03_linux-software/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Linux/04_awk/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Linux/05_sed/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Linux/06_tools/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Linux/07_vim/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Programming/01_shell/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Programming/02_perl/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Programming/03_python/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Programming/04_biopython/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Programming/05_r/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Format/01_fasta/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Format/02_embl/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Format/04_gcg/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Format/05_sam/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Format/06_bam/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Format/07_bed/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Format/08_vcf/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Format/09_gff/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/tutorial/Format/10_cram/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/protocol/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/protocol/artic-network-covid19/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/blog/my-vim-ide/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/blog/blast2sra/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/blog/tes/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/blog/test0316/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://xanadu314.github.io/pathongs/blog/KEGG/</loc>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://xanadu314.github.io/pathongs/about/</loc>
-     <lastmod>2021-03-22</lastmod>
+     <lastmod>2021-06-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

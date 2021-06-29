@@ -2355,6 +2355,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KEGG/" class="md-nav__link">
+        05 KEGG注释
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -2525,6 +2537,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3 第三轮注释
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4 迭代和整理结果
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2609,8 +2635,8 @@
 <ol>
 <li>组装好的基因组文件 ：genome.fasta</li>
 <li>组装好的转录本文件：trinity.fasta</li>
-<li>同源的蛋白质序列：protein.fasta(from <a href="https://www.ncbi.nlm.nih.gov/genome">NCB</a> or <a href="www.uniprot.org">uniport</a> or <a href="https://genome.jgi.doe.gov/portal">JGI</a></li>
-<li>repeat library </li>
+<li>同源的蛋白质序列：protein.fasta (from <a href="https://www.ncbi.nlm.nih.gov/genome">NCB</a> or <a href="www.uniprot.org">uniport</a> or <a href="https://genome.jgi.doe.gov/portal">JGI</a> )</li>
+<li>repeat library (手动注释或者同源物种)</li>
 </ol>
 <h3 id="23">2.3 注释重复序列<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
 <ol>
@@ -2674,11 +2700,11 @@ vim round1_maker_opt.ctl
 <span class="nv">organism_type</span><span class="o">=</span>eukaryotic <span class="c1">#eukaryotic or prokaryotic. Default is eukaryotic默认是真核</span>
 
 <span class="c1">#-----Re-annotation Using MAKER Derived GFF3</span>
-<span class="nv">maker_gff</span><span class="o">=</span> <span class="c1">#MAKER derived GFF3 file第一轮注释通常没有gff3文件</span>
+<span class="nv">maker_gff</span><span class="o">=</span>test.full_mask.complex.reformat.gff3 <span class="c1">#MAKER derived GFF3 file第一轮注释通常没有gff3文件</span>
 <span class="nv">est_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#use ESTs in maker_gff: 1 = yes, 0 = no</span>
 <span class="nv">altest_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#use alternate organism ESTs in maker_gff: 1 = yes, 0 = no</span>
 <span class="nv">protein_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#use protein alignments in maker_gff: 1 = yes, 0 = no</span>
-<span class="nv">rm_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#use repeats in maker_gff: 1 = yes, 0 = no</span>
+<span class="nv">rm_pass</span><span class="o">=</span><span class="m">1</span> <span class="c1">#use repeats in maker_gff: 1 = yes, 0 = no</span>
 <span class="nv">model_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#use gene models in maker_gff: 1 = yes, 0 = no</span>
 <span class="nv">pred_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#use ab-initio predictions in maker_gff: 1 = yes, 0 = no</span>
 <span class="nv">other_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#passthrough anyything else in maker_gff: 1 = yes, 0 = no</span>
@@ -2766,10 +2792,184 @@ maker2zff test_rnd1.all.maker.noseq.gff
 <li>genome.dna</li>
 </ul>
 <p>参考<a href="https://github.com/KorfLab/SNAP">SNAP</a>的官方文档，可以对其进行训练</p>
+<p>安装SNAP</p>
 <div class="highlight"><pre><span></span><code>fathom genome.ann genome.dna -gene-stats &gt; test.gene.stats.txt
 fathom genome.ann genome.dna -validate &gt; test.validation.txt
 fathom genome.ann genome.dna -categorize <span class="m">1000</span> <span class="c1">#将序列分类，这里的1000推荐用基因平均长度的一半，根据基因密度适当调整</span>
 fathom uni.ann uni.dna -export <span class="m">1000</span> -plus# 只输出unigene中正链基因
+</code></pre></div>
+<p>test.gene.stats.txt用于了解基因的一些基本信息，例如正链和负链的分布，外显子的数量。</p>
+<p>test.validation.txt用于检查基因结构的完整性。</p>
+<p>最终会生成一下这些文件</p>
+<ul>
+<li>alt.ann, alt.dna (genes with alternative splicing)</li>
+<li>err.ann, err.dna (genes that have errors)</li>
+<li>olp.ann, olp.dna (genes that overlap other genes)</li>
+<li>wrn.ann, wrn.dna (genes with warnings)</li>
+<li>uni.ann, uni.dna (single gene per sequence)</li>
+</ul>
+<p>这里只用第四类的基因，也就是每个序列上只有一个基因。</p>
+<p>用fathom uni.ann uni.dna -export 1000 -plus只输出unigene中正链基因，这一步同样会生成四个文件</p>
+<ul>
+<li>export.aa 每个基因的蛋白序列</li>
+<li>export.ann 正链的基因结构</li>
+<li>export.dna 正链的DNA</li>
+<li>export.tx 每个基因的转录本</li>
+</ul>
+<p>接着让forge负责预测参数， 由于输出会很多，所以建议创建个文件夹</p>
+<div class="highlight"><pre><span></span><code>mkdir params
+<span class="nb">cd</span> params
+forge ../export.ann ../export.dna
+<span class="nb">cd</span> ..
+</code></pre></div>
+<p>最后是hmm-assembler.pl构建HMM，即基因模型文件, </p>
+<div class="highlight"><pre><span></span><code>hmm-assembler.py <span class="nb">test</span> params/ &gt; test.hmm
+</code></pre></div>
+<p>完成SNAP的模型构建后，修改”maker_opts.ctl”用以增加该文件，并不再用est和protein直接推测基因结构。</p>
+<p>重点是调整基因模型和snaphmm=test.hmm est2genome=0 protein2genome=0</p>
+<div class="highlight"><pre><span></span><code>vim maker_opt.ctl
+<span class="c1">#-----Re-annotation Using MAKER Derived GFF3</span>
+<span class="nv">maker_gff</span><span class="o">=</span>round1.gff <span class="c1">#MAKER derived GFF3 file</span>
+<span class="nv">est_pass</span><span class="o">=</span><span class="m">1</span> <span class="c1">#use ESTs in maker_gff: 1 = yes, 0 = no</span>
+<span class="nv">altest_pass</span><span class="o">=</span><span class="m">1</span> <span class="c1">#use alternate organism ESTs in maker_gff: 1 = yes, 0 = no</span>
+<span class="nv">protein_pass</span><span class="o">=</span><span class="m">1</span> <span class="c1">#use protein alignments in maker_gff: 1 = yes, 0 = no</span>
+<span class="nv">rm_pass</span><span class="o">=</span><span class="m">1</span> <span class="c1">#use repeats in maker_gff: 1 = yes, 0 = no</span>
+<span class="nv">model_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#use gene models in maker_gff: 1 = yes, 0 = no</span>
+<span class="nv">pred_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#use ab-initio predictions in maker_gff: 1 = yes, 0 = no</span>
+<span class="nv">other_pass</span><span class="o">=</span><span class="m">1</span> <span class="c1">#passthrough anyything else in maker_gff: 1 = yes, 0 = no</span>
+
+<span class="c1">#-----EST Evidence (for best results provide a file for at least one)</span>
+<span class="nv">est</span><span class="o">=</span> <span class="c1">#set of ESTs or assembled mRNA-seq in fasta format</span>
+<span class="nv">altest</span><span class="o">=</span> <span class="c1">#EST/cDNA sequence file in fasta format from an alternate organismest_gff= #aligned ESTs or mRNA-seq from an external GFF3 file</span>
+<span class="nv">altest_gff</span><span class="o">=</span> <span class="c1">#aligned ESTs from a closly relate species in GFF3 format</span>
+
+<span class="c1">#-----Protein Homology Evidence (for best results provide a file for at least one)</span>
+<span class="nv">protein</span><span class="o">=</span>  <span class="c1">#protein sequence file in fasta format (i.e. from mutiple organisms)</span>
+<span class="nv">protein_gff</span><span class="o">=</span>  <span class="c1">#aligned protein homology evidence from an external GFF3 file</span>
+
+<span class="c1">#-----Repeat Masking (leave values blank to skip repeat masking)</span>
+<span class="nv">model_org</span><span class="o">=</span> <span class="c1">#select a model organism for RepBase masking in RepeatMasker</span>
+<span class="nv">rmlib</span><span class="o">=</span> <span class="c1">#provide an organism specific repeat library in fasta format for RepeatMasker</span>
+<span class="nv">repeat_protein</span><span class="o">=</span> <span class="c1">#provide a fasta file of transposable element proteins for RepeatRunner</span>
+<span class="nv">rm_gff</span><span class="o">=</span> <span class="c1">#pre-identified repeat elements from an external GFF3 file</span>
+<span class="nv">prok_rm</span><span class="o">=</span><span class="m">0</span> <span class="c1">#forces MAKER to repeatmask prokaryotes (no reason to change this), 1 = yes, 0 = no</span>
+<span class="nv">softmask</span><span class="o">=</span><span class="m">1</span> <span class="c1">#use soft-masking rather than hard-masking in BLAST (i.e. seg and dust filtering)</span>
+
+<span class="c1">#-----Gene Prediction</span>
+<span class="nv">snaphmm</span><span class="o">=</span>test.hmm <span class="c1">#SNAP HMM file</span>
+<span class="nv">gmhmm</span><span class="o">=</span> <span class="c1">#GeneMark HMM file</span>
+<span class="nv">augustus_species</span><span class="o">=</span> <span class="c1">#Augustus gene prediction species model</span>
+<span class="c1"># 略过其他参数</span>
+<span class="nv">est2genome</span><span class="o">=</span><span class="m">0</span> <span class="c1">#infer gene predictions directly from ESTs, 1 = yes, 0 = no</span>
+<span class="nv">protein2genome</span><span class="o">=</span><span class="m">0</span> <span class="c1">#infer predictions from protein homology, 1 = yes, 0 = no</span>
+<span class="c1"># 略过其他参数</span>
+</code></pre></div>
+<h3 id="33">3.3 第三轮注释<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<p>第三轮注释依赖于Augusts</p>
+<p>提取第二轮注释结果中基因及其前后1000bp作为训练数据。</p>
+<div class="highlight"><pre><span></span><code>awk -v <span class="nv">OFS</span><span class="o">=</span><span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{ if ($3 == &quot;mRNA&quot;) print $1, $4, $5 }&#39;</span> ../../round1.gff <span class="p">|</span>awk -v <span class="nv">OFS</span><span class="o">=</span><span class="s2">&quot;\t&quot;</span> <span class="s1">&#39;{ if ($2 &lt; 1000) print $1, &quot;0&quot;, $3+1000; else print $1, $2-1000, $3+1000 }&#39;</span> <span class="p">|</span> bedtools getfasta -fi ../../genome.fasta -bed - -fo round1.all.maker.transcripts1000.fasta
+</code></pre></div>
+<p>用BUSCO可以较为方便的完成对Augusts的训练，需要注意的是，不同版本的BUSCO和Augusts需要搭配使用，且参数有很大不同。为了优化BUSCO的注释，让其结果更适合给Augusts训练，需要添加--long参数</p>
+<p>对于非模式物种，后面需要手动修改AUGUSTS的config文件夹，所以要保证有BUSCO和AUGUSTS安装路径的读写权限。</p>
+<div class="highlight"><pre><span></span><code>BUSCO.py -i round1.all.maker.transcripts1000.fasta  -o test_rnd1_maker -l fungi_odb10/ -m genome -c <span class="m">8</span> --long -sp aspergillus_nidulans -z --augustus_parameters<span class="o">=</span><span class="s1">&#39;--progress=true&#39;</span> <span class="c1">#-sp物种需要从BUSCO官方列表里面查,这一步用8个线程需要耗费数个小时</span>
+</code></pre></div>
+<p>完成后可以在retraining_parameters文件夹下找到对应的模型文件。这里不建议改文件名，如果需要更改文件名，同时也要改文件里面对应的名字。</p>
+<p>文件名通常为BUSCO_XXXX_123456,在AUGUST的config/species文件夹里面新建对应的文件夹</p>
+<div class="highlight"><pre><span></span><code>mkdir <span class="nv">$AUGUSTUS_CONFIG_PATH</span>/species/BUSCO_XXXX_123456
+cp BUSCO_XXXX_123456* <span class="nv">$AUGUSTUS_CONFIG_PATH</span>/species/BUSCO_XXXX_123456/
+</code></pre></div>
+<p>类似的，我们整理第二轮的gff文件为第三轮注释做准备。注意Augusts的参数需要更改物种为物种文件夹名称</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># transcript alignments</span>
+awk <span class="s1">&#39;{ if ($2 == &quot;est2genome&quot;) print $0 }&#39;</span> test_rnd1.all.maker.noseq.gff &gt; test_rnd1.all.maker.est2genome.gff
+<span class="c1"># protein alignments</span>
+awk <span class="s1">&#39;{ if ($2 == &quot;protein2genome&quot;) print $0 }&#39;</span> test_rnd1.all.maker.noseq.gff &gt; test_rnd1.all.maker.protein2genome.gff
+<span class="c1"># repeat alignments</span>
+awk <span class="s1">&#39;{ if ($2 ~ &quot;repeat&quot;) print $0 }&#39;</span> test_rnd1.all.maker.noseq.gff &gt; test_rnd1.all.maker.repeats.gff
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>vim round3_maker_opts.ctl
+<span class="c1">#-----Genome (these are always required)</span>
+<span class="nv">genome</span><span class="o">=</span>genome.fasta <span class="c1">#genome sequence (fasta file or fasta embeded in GFF3 file)</span>
+<span class="nv">organism_type</span><span class="o">=</span>eukaryotic <span class="c1">#eukaryotic or prokaryotic. Default is eukaryotic</span>
+
+<span class="c1">#-----Re-annotation Using MAKER Derived GFF3</span>
+<span class="nv">maker_gff</span><span class="o">=</span> <span class="c1">#MAKER derived GFF3 file</span>
+<span class="nv">est_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#use ESTs in maker_gff: 1 = yes, 0 = no</span>
+<span class="nv">altest_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#use alternate organism ESTs in maker_gff: 1 = yes, 0 = no</span>
+<span class="nv">protein_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#use protein alignments in maker_gff: 1 = yes, 0 = no</span>
+<span class="nv">rm_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#use repeats in maker_gff: 1 = yes, 0 = no</span>
+<span class="nv">model_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#use gene models in maker_gff: 1 = yes, 0 = no</span>
+<span class="nv">pred_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#use ab-initio predictions in maker_gff: 1 = yes, 0 = no</span>
+<span class="nv">other_pass</span><span class="o">=</span><span class="m">0</span> <span class="c1">#passthrough anyything else in maker_gff: 1 = yes, 0 = no</span>
+
+<span class="c1">#-----EST Evidence (for best results provide a file for at least one)</span>
+<span class="nv">est</span><span class="o">=</span> <span class="c1">#set of ESTs or assembled mRNA-seq in fasta format</span>
+<span class="nv">altest</span><span class="o">=</span> <span class="c1">#EST/cDNA sequence file in fasta format from an alternate organism</span>
+<span class="nv">est_gff</span><span class="o">=</span>test_rnd1.all.maker.est2genome.gff <span class="c1">#aligned ESTs or mRNA-seq from an external GFF3 file</span>
+<span class="nv">altest_gff</span><span class="o">=</span> <span class="c1">#aligned ESTs from a closly relate species in GFF3 format</span>
+
+<span class="c1">#-----Protein Homology Evidence (for best results provide a file for at least one)</span>
+<span class="nv">protein</span><span class="o">=</span> <span class="c1">#protein sequence file in fasta format (i.e. from mutiple organisms)</span>
+<span class="nv">protein_gff</span><span class="o">=</span>test_rnd1.all.maker.protein2genome.gff  <span class="c1">#aligned protein homology evidence from an external GFF3 file</span>
+
+
+<span class="c1">#-----Repeat Masking (leave values blank to skip repeat masking)</span>
+<span class="nv">model_org</span><span class="o">=</span> <span class="c1">#select a model organism for RepBase masking in RepeatMasker</span>
+<span class="nv">rmlib</span><span class="o">=</span> <span class="c1">#provide an organism specific repeat library in fasta format for RepeatMasker</span>
+<span class="nv">repeat_protein</span><span class="o">=</span> <span class="c1">#o /public/home/software/opt/bio/software/maker/3.01.02-beta/data/te_proteins.fasta #provide a fasta file of transposable element proteins for RepeatRunner</span>
+<span class="nv">rm_gff</span><span class="o">=</span>test_rnd1.all.maker.repeats.gff <span class="c1">#pre-identified repeat elements from an external GFF3 file</span>
+<span class="nv">prok_rm</span><span class="o">=</span><span class="m">0</span> <span class="c1">#forces MAKER to repeatmask prokaryotes (no reason to change this), 1 = yes, 0 = no</span>
+<span class="nv">softmask</span><span class="o">=</span><span class="m">1</span> <span class="c1">#use soft-masking rather than hard-masking in BLAST (i.e. seg and dust filtering)</span>
+
+<span class="c1">#-----Gene Prediction</span>
+<span class="nv">snaphmm</span><span class="o">=</span>test.hmm <span class="c1">#SNAP HMM file</span>
+<span class="nv">gmhmm</span><span class="o">=</span> <span class="c1">#GeneMark HMM file</span>
+<span class="nv">augustus_species</span><span class="o">=</span>BUSCO_xxxxx_123456 <span class="c1">#Augustus gene prediction species model</span>
+<span class="nv">fgenesh_par_file</span><span class="o">=</span> <span class="c1">#FGENESH parameter file</span>
+<span class="nv">pred_gff</span><span class="o">=</span> <span class="c1">#ab-initio predictions from an external GFF3 file</span>
+<span class="nv">model_gff</span><span class="o">=</span> <span class="c1">#annotated gene models from an external GFF3 file (annotation pass-through)</span>
+<span class="nv">run_evm</span><span class="o">=</span><span class="m">0</span> <span class="c1">#run EvidencModeler, 1 = yes, 0 = no</span>
+<span class="nv">est2genome</span><span class="o">=</span><span class="m">0</span> <span class="c1">#infer gene predictions directly from ESTs, 1 = yes, 0 = no</span>
+<span class="nv">protein2genome</span><span class="o">=</span><span class="m">0</span> <span class="c1">#infer predictions from protein homology, 1 = yes, 0 = no</span>
+<span class="nv">trna</span><span class="o">=</span><span class="m">0</span> <span class="c1">#find tRNAs with tRNAscan, 1 = yes, 0 = no</span>
+<span class="nv">snoscan_rrna</span><span class="o">=</span> <span class="c1">#rRNA file to have Snoscan find snoRNAs</span>
+<span class="nv">snoscan_meth</span><span class="o">=</span> <span class="c1">#-O-methylation site fileto have Snoscan find snoRNAs</span>
+<span class="nv">unmask</span><span class="o">=</span><span class="m">0</span> <span class="c1">#also run ab-initio prediction programs on unmasked sequence, 1 = yes, 0 = no</span>
+<span class="nv">allow_overlap</span><span class="o">=</span><span class="m">0</span> <span class="c1">#allowed gene overlap fraction (value from 0 to 1, blank for default)</span>
+
+<span class="nv">cpus</span><span class="o">=</span><span class="m">12</span> <span class="c1">#max number of cpus to use in BLAST and RepeatMasker (not for MPI, leave 1 when using MPI)</span>
+
+<span class="c1">#-----MAKER Behavior Options</span>
+<span class="nv">max_dna_len</span><span class="o">=</span><span class="m">100000</span> <span class="c1">#length for dividing up contigs into chunks (increases/decreases memory usage)</span>
+<span class="nv">min_contig</span><span class="o">=</span><span class="m">1</span> <span class="c1">#skip genome contigs below this length (under 10kb are often useless)</span>
+
+<span class="nv">pred_flank</span><span class="o">=</span><span class="m">200</span> <span class="c1">#flank for extending evidence clusters sent to gene predictors</span>
+<span class="nv">pred_stats</span><span class="o">=</span><span class="m">0</span> <span class="c1">#report AED and QI statistics for all predictions as well as models</span>
+<span class="nv">AED_threshold</span><span class="o">=</span><span class="m">1</span> <span class="c1">#Maximum Annotation Edit Distance allowed (bound by 0 and 1)</span>
+<span class="nv">min_protein</span><span class="o">=</span><span class="m">0</span> <span class="c1">#require at least this many amino acids in predicted proteins</span>
+<span class="nv">alt_splice</span><span class="o">=</span><span class="m">0</span> <span class="c1">#Take extra steps to try and find alternative splicing, 1 = yes, 0 = no</span>
+<span class="nv">always_complete</span><span class="o">=</span><span class="m">0</span> <span class="c1">#extra steps to force start and stop codons, 1 = yes, 0 = no</span>
+<span class="nv">map_forward</span><span class="o">=</span><span class="m">0</span> <span class="c1">#map names and attributes forward from old GFF3 genes, 1 = yes, 0 = no</span>
+<span class="nv">keep_preds</span><span class="o">=</span><span class="m">0</span> <span class="c1">#Concordance threshold to add unsupported gene prediction (bound by 0 and 1)</span>
+
+<span class="nv">split_hit</span><span class="o">=</span><span class="m">10000</span> <span class="c1">#length for the splitting of hits (expected max intron size for evidence alignments)</span>
+<span class="nv">min_intron</span><span class="o">=</span><span class="m">20</span> <span class="c1">#minimum intron length (used for alignment polishing)</span>
+<span class="nv">single_exon</span><span class="o">=</span><span class="m">0</span> <span class="c1">#consider single exon EST evidence when generating annotations, 1 = yes, 0 = no</span>
+<span class="nv">single_length</span><span class="o">=</span><span class="m">250</span> <span class="c1">#min length required for single exon ESTs if &#39;single_exon is enabled&#39;</span>
+<span class="nv">correct_est_fusion</span><span class="o">=</span><span class="m">0</span> <span class="c1">#limits use of ESTs in annotation to avoid fusion genes</span>
+
+<span class="nv">tries</span><span class="o">=</span><span class="m">2</span> <span class="c1">#number of times to try a contig if there is a failure for some reason</span>
+<span class="nv">clean_try</span><span class="o">=</span><span class="m">0</span> <span class="c1">#remove all data from previous run before retrying, 1 = yes, 0 = no</span>
+<span class="nv">clean_up</span><span class="o">=</span><span class="m">0</span> <span class="c1">#removes theVoid directory with individual analysis files, 1 = yes, 0 = no</span>
+<span class="nv">TMP</span><span class="o">=</span> <span class="c1">#specify a directory other than the system default temporary directory for temporary files</span>
+</code></pre></div>
+<h3 id="34">3.4 迭代和整理结果<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<p>通过不断调整参数和迭代，可以获得多个基因组注释结果。最后一次的结果不一定是最好的，需要进行评估。</p>
+<div class="highlight"><pre><span></span><code>AED_cdf_generator.pl -b <span class="m">0</span>.025 roundN.full.gff   &gt; test.roundN.AED.distrubtion.txt
+</code></pre></div>
+<p>可以通过AED的值来评估注释的结果。</p>
+<p>AED值在0-1之间，数字越小，代表该基因注释的越准确。一般认为AED&lt;0.5即为比较好的结果。</p>
+<p>重新进行BUSCO的注释，这一次用蛋白水平的注释结果文件作为输入，统计BUSCO的评分。</p>
+<div class="highlight"><pre><span></span><code>busco -m prot -i test.all.protein.fasta  -l /fungi_odb10 -o busco4 -c <span class="m">12</span>  --offline <span class="p">&amp;</span>
 </code></pre></div>
                 
               
