@@ -2415,10 +2415,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4kegg" class="md-nav__link">
+    4.KEGG通路的可视化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 在线工具
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SourceSink/" class="md-nav__link">
+        06 SourceSink分析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tes2/" class="md-nav__link">
+        07 小鼠转录组分析模板
+      </a>
     </li>
   
 
@@ -2517,6 +2555,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4kegg" class="md-nav__link">
+    4.KEGG通路的可视化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 在线工具
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2552,11 +2604,15 @@
 <table>
 <thead>
 <tr>
-<th>ENSGALG00000054818</th>
-<th>K00088</th>
+<th>x1</th>
+<th>x2</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>ENSGALG00000054818</td>
+<td>K00088</td>
+</tr>
 <tr>
 <td>ENSGALG00000053455</td>
 <td></td>
@@ -2567,6 +2623,10 @@
 </tr>
 </tbody>
 </table>
+<p>针对一个基因有多个KO注释的情况，可以用R语言进行长宽数据的转化</p>
+<div class="highlight"><pre><span></span><code>library(dplyr)
+tmp %&gt;% group_by(X1) %&gt;%  do(data.frame(X2=paste(.$X1,collapse=&quot;,&quot;)))
+</code></pre></div>
 <h2 id="3kegg">3.KEGG富集分析<a class="headerlink" href="#3kegg" title="Permanent link">&para;</a></h2>
 <p>感谢CJ写的TBtools<a href="https://github.com/CJ-Chen/TBtools">CJ-Chen/TBtools: GUI/CommandLine Tool Box for biologistists to utilize NGS data. (github.com)</a>，可以实现图形界面或者命令行下的一健KEGG注释</p>
 <div class="highlight"><pre><span></span><code>ls
@@ -2576,7 +2636,7 @@ kegg_annotation.txt
 test.fasta.id.txt
 kegg.sh
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>bash kegg -h
+<div class="highlight"><pre><span></span><code>bash kegg.sh -h
 Usage: kegg.sh &lt;options&gt; -r TBtools.KeggBackEnd -b kegg_annotation -i sel_gene -o outfile
   ### INPUT: TBtools.KeggBackEnd(from Kegg or TBtools) kegg_annotation(gene KO) sel_gene ###
   ### OUTPUT: kegg.results.txt ###
@@ -2593,6 +2653,88 @@ Usage: kegg.sh &lt;options&gt; -r TBtools.KeggBackEnd -b kegg_annotation -i sel_
 </code></pre></div>
 <p>其中，TBtools.KeggBackEnd是KEGG的背景注释文件，从CJ处获得，kegg_annoation是KAAS的注释结果，test.fasta.id.txt是需要富集的基因ID，名称需要和kegg_annoation中的完全对应，test.out.txt是输出文件。</p>
 <p>可视化分析可以用<a href="https://www.omicstudio.cn/index">联川生物云平台 (omicstudio.cn)</a></p>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+help(){
+        cat &lt;&lt;-EOF
+  Usage: kegg.sh &lt;options&gt; -r TBtools.KeggBackEnd -b kegg_annotation -i sel_gene -o outfile 
+  ### INPUT: TBtools.KeggBackEnd(from Kegg or TBtools) kegg_annotation(gene KO) sel_gene ###
+  ### OUTPUT: kegg.results.txt ###
+
+  Options:
+
+    -r TBtools.KeggBackEnd.ref.txt 
+    -b kegg_annotation
+    -i sel_gene
+    -o result
+  NOTE:
+    1) ### kegg_annotation sep = \t ###
+
+EOF
+        exit 0
+}
+if [ $# -lt 1 ];then # $# -lt 1表示参数少于1个
+        help
+        exit 1
+fi
+
+while getopts &quot;:r:b:i:o:h&quot; opt
+do
+    case $opt in
+        r)
+        kegg=$OPTARG
+        ;;
+        b)
+        background=$OPTARG
+        ;;
+        i)
+        input=$OPTARG
+        ;;
+        o)
+        out=$OPTARG
+    ;;
+    h) help
+    ;;
+    ?) help
+            exit 1;;
+    esac
+done
+java -cp TBtools.jar biocjava.bioDoer.Kegg.AdvancedForEnrichment.KeggEnrichment --inKegRef $kegg  --Kannotation $background --selectedSet $input --outFile $out
+</code></pre></div>
+<h2 id="4kegg">4.KEGG通路的可视化<a class="headerlink" href="#4kegg" title="Permanent link">&para;</a></h2>
+<p>针对差异基因，可以用KEGG的官方网站进行可视化<a href="https://www.kegg.jp/kegg/mapper/color.html">KEGG Mapper Color</a></p>
+<p>也可以用R包pathview（<a href="https://pathview.uncc.edu/">Pathview (uncc.edu)</a>）进行批量的可视化</p>
+<p>Pathview是一个用于整合表达谱数据并用于可视化KEGG通路的一个R包，其会先下载KEGG官网上的通路图，然后整合输入数据对通路图进行再次渲染，从而对KEGG通路图进行一定程度上的个性化处理，并且丰富其信息展示。</p>
+<p>在<code>KEGG</code>中有两种代谢图。</p>
+<ul>
+<li>
+<p>参考代谢通路图 <code>reference pathway</code>，是根据已有的知识绘制的具有一般参考意义的代谢图；这种图上所有小框都是无色的，不会有绿色的小框，并且都可以点击查看更详细的信息；</p>
+</li>
+<li>
+<p>特定物种的代谢图 <code>species-specific pathway</code>，会用绿色来标出这个物种所有的基因或酶，只有这些绿色的框点击以后才会给出更详细的信息。</p>
+</li>
+</ul>
+<p>针对差异基因的数据，可以直接用基因的NCBI编号画图</p>
+<p>pathway id从之前的KEGG富集分析中获得，out.suffix 可以填该通路的名称</p>
+<div class="highlight"><pre><span></span><code>library(pathview)
+pathview(gene.data = diffgene$ENTREZID, pathway.id = &quot;04723&quot;, species = &quot;mmu&quot;,
+              out.suffix = &quot;test&quot;, kegg.native = T)
+</code></pre></div>
+<p>针对基因的表达量，或者foldchange,pvalue等数值型数据，需要把基因整理成"numeric"类型，其中name的值为基因的NCBI编号（ENTREZID）</p>
+<div class="highlight"><pre><span></span><code>pathview(gene.data = a, pathway.id = &quot;00071&quot;, species = &quot;mmu&quot;,
++          out.suffix = &quot;test&quot;, kegg.native = T)
+</code></pre></div>
+<p><img alt="mmu00071.test" src="../../assets/images/blog/mmu00071.test.png" /></p>
+<h2 id="5">5. 在线工具<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>KOBAS[<a href="http://kobas.cbi.pku.edu.cn/">http://kobas.cbi.pku.edu.cn/</a>]
+  北京大学生物信息学中心开发,2021年更新后支持很多物种</p>
+</li>
+<li>
+<p>Eggnog[<a href="http://eggnog-mapper.embl.de/">eggNOG-mapper (embl.de)</a>]</p>
+</li>
+</ul>
+<p><img alt="inial" src="http://eggnog-mapper.embl.de/static/inia.gif" /></p>
                 
               
               
@@ -2626,13 +2768,13 @@ Usage: kegg.sh &lt;options&gt; -r TBtools.KeggBackEnd -b kegg_annotation -i sel_
           </a>
         
         
-          <a href="../../about/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../SourceSink/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                
+                06 SourceSink分析
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
