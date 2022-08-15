@@ -1,0 +1,3322 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="多组学联合分析">
+      
+      
+      
+        <meta name="author" content="xanadu314">
+      
+      
+        <link rel="canonical" href="https://xanadu314.github.io/pathongs/blog/phage/">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+    
+    
+      
+        <title>噬菌体文献梳理 - HYX's Bioinformatics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-55420348-3","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://xanadu314.github.io/pathongs/" title="HYX&#39;s Bioinformatics" class="md-header-nav__button md-logo" aria-label="HYX's Bioinformatics">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            HYX's Bioinformatics
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              噬菌体文献梳理
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://xanadu314.github.io/pathongs" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Xanadu314
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../book/main/" class="md-tabs__link">
+        数据分析笔记
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tutorial/Linux/01_linux-installation/" class="md-tabs__link">
+        专项教程
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../protocol/" class="md-tabs__link">
+        实验手册
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../my-vim-ide/" class="md-tabs__link">
+        生信笔记
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        关于我们
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://xanadu314.github.io/pathongs/" title="HYX&#39;s Bioinformatics" class="md-nav__button md-logo" aria-label="HYX's Bioinformatics">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    HYX's Bioinformatics
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://xanadu314.github.io/pathongs" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Xanadu314
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
+        数据分析笔记
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="数据分析笔记" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          数据分析笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/main/" class="md-nav__link">
+        第零章 开始之前
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" >
+      
+      <label class="md-nav__link" for="nav-2-2">
+        第一章 常用工具
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第一章 常用工具" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-2">
+          <span class="md-nav__icon md-icon"></span>
+          第一章 常用工具
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C01_Common-Utility/01_database/" class="md-nav__link">
+        01. 基因组公共数据库
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C01_Common-Utility/02_get-data/" class="md-nav__link">
+        02. 下载基因组数据
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C01_Common-Utility/03_entrez/" class="md-nav__link">
+        03. Entrez 工具
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C01_Common-Utility/04_emboss/" class="md-nav__link">
+        04. EMBOSS 工具集
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C01_Common-Utility/05_blast/" class="md-nav__link">
+        05. Blast 比对
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C01_Common-Utility/06_fastqc/" class="md-nav__link">
+        06. FastQC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C01_Common-Utility/07_multiqc/" class="md-nav__link">
+        07. Multiqc
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C01_Common-Utility/08_seqkit/" class="md-nav__link">
+        08. SeqKit 工具
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C01_Common-Utility/09_kmer/" class="md-nav__link">
+        09. Kmer 工具
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" >
+      
+      <label class="md-nav__link" for="nav-2-3">
+        第二章 组装与比对
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第二章 组装与比对" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-3">
+          <span class="md-nav__icon md-icon"></span>
+          第二章 组装与比对
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline/" class="md-nav__link">
+        01. 基本比对流程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C02_Raw-Data-to-Genome/02_quast/" class="md-nav__link">
+        02. Quast 验证
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C02_Raw-Data-to-Genome/03_bacteria-assembly/" class="md-nav__link">
+        03. 细菌基因组组装
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C02_Raw-Data-to-Genome/04_virus-assembly/" class="md-nav__link">
+        04. 病毒基因组组装
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C02_Raw-Data-to-Genome/05_gatk3/" class="md-nav__link">
+        05. GATK3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C02_Raw-Data-to-Genome/06_gatk4/" class="md-nav__link">
+        06. GATK4
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C02_Raw-Data-to-Genome/11_long-noisy-reads-assembly/" class="md-nav__link">
+        11. 长序列比对
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C02_Raw-Data-to-Genome/12_hybrid-assembly/" class="md-nav__link">
+        12. 二代三代混合组装
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C02_Raw-Data-to-Genome/14_bwa-long-sequence-mapping/" class="md-nav__link">
+        14. bwa 长序列比对
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" >
+      
+      <label class="md-nav__link" for="nav-2-4">
+        第三章 基因组注释
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第三章 基因组注释" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-4">
+          <span class="md-nav__icon md-icon"></span>
+          第三章 基因组注释
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C03_Genome-Annotation/01_prokka/" class="md-nav__link">
+        01. Prokka 快速注释
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C03_Genome-Annotation/02_rast/" class="md-nav__link">
+        02. 在线注释工具 rast
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C03_Genome-Annotation/03_pgaap/" class="md-nav__link">
+        03. 注释工具 PGAAP
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C03_Genome-Annotation/04_snpeff/" class="md-nav__link">
+        04. SNP注释工具 snpEFF
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C03_Genome-Annotation/05_cog/" class="md-nav__link">
+        05. COG注释
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" >
+      
+      <label class="md-nav__link" for="nav-2-5">
+        第四章 基因组比较
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第四章 基因组比较" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-5">
+          <span class="md-nav__icon md-icon"></span>
+          第四章 基因组比较
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C06_Genome-Compare/01_mummer/" class="md-nav__link">
+        01. mummer
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C06_Genome-Compare/02_nucdiff/" class="md-nav__link">
+        02. nucdiff
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C06_Genome-Compare/03_mauve/" class="md-nav__link">
+        03. mauve
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C06_Genome-Compare/04_sibelia/" class="md-nav__link">
+        04. sibelia
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C06_Genome-Compare/05_ani/" class="md-nav__link">
+        05. ani
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C06_Genome-Compare/10_bigsi/" class="md-nav__link">
+        10. bigsi
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6" >
+      
+      <label class="md-nav__link" for="nav-2-6">
+        第五章 泛基因组分析
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第五章 泛基因组分析" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-6">
+          <span class="md-nav__icon md-icon"></span>
+          第五章 泛基因组分析
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C07_PanGenome-and-CoreGenome/01_pangenome/" class="md-nav__link">
+        01. Pangenome 概述
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C07_PanGenome-and-CoreGenome/02_get_homologues/" class="md-nav__link">
+        02. Get_Homologues 分析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C07_PanGenome-and-CoreGenome/03_bpga/" class="md-nav__link">
+        03. BPGA 分析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C07_PanGenome-and-CoreGenome/04_roary/" class="md-nav__link">
+        04. Roary 分析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C07_PanGenome-and-CoreGenome/05_panseq/" class="md-nav__link">
+        05. panseq 分析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C07_PanGenome-and-CoreGenome/07_orthmcl/" class="md-nav__link">
+        07. OrthMCL 分析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C07_PanGenome-and-CoreGenome/08_itep/" class="md-nav__link">
+        08. ITEP 分析
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7" >
+      
+      <label class="md-nav__link" for="nav-2-7">
+        第六章 基因组可视化
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第六章 基因组可视化" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-7">
+          <span class="md-nav__icon md-icon"></span>
+          第六章 基因组可视化
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C08_Genome-Visualization/01_igv/" class="md-nav__link">
+        01. igv 查看比对结果
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C08_Genome-Visualization/02_brig/" class="md-nav__link">
+        02. BRIG 分析工具
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C08_Genome-Visualization/03_circos/" class="md-nav__link">
+        03. circos 工具使用
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-8" type="checkbox" id="nav-2-8" >
+      
+      <label class="md-nav__link" for="nav-2-8">
+        第七章 综合分析平台
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第七章 综合分析平台" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-8">
+          <span class="md-nav__icon md-icon"></span>
+          第七章 综合分析平台
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C09_Analysis-Platform/01_docker/" class="md-nav__link">
+        01. 基于 docker 镜像
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C09_Analysis-Platform/02_galaxy/" class="md-nav__link">
+        02. Galaxy 平台
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C09_Analysis-Platform/03_amazon/" class="md-nav__link">
+        03. Amazon EC2 云平台
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C09_Analysis-Platform/04_others/" class="md-nav__link">
+        04. 其他平台
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C16_Standalone-Platform/01_anvio/" class="md-nav__link">
+        05. anvio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C16_Standalone-Platform/02_galaxy/" class="md-nav__link">
+        02. galaxy
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-9" type="checkbox" id="nav-2-9" >
+      
+      <label class="md-nav__link" for="nav-2-9">
+        第八章 重组与种群分析
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第八章 重组与种群分析" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-9">
+          <span class="md-nav__icon md-icon"></span>
+          第八章 重组与种群分析
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C10_Recombination-and-Population-Structure/01_virus-recombination/" class="md-nav__link">
+        01. 病毒重组
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C10_Recombination-and-Population-Structure/02_gubbins/" class="md-nav__link">
+        02. Gubbins 分析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C10_Recombination-and-Population-Structure/03_baps/" class="md-nav__link">
+        03. BAPS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-10" type="checkbox" id="nav-2-10" >
+      
+      <label class="md-nav__link" for="nav-2-10">
+        第九章 细菌扫描工具
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第九章 细菌扫描工具" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-10">
+          <span class="md-nav__icon md-icon"></span>
+          第九章 细菌扫描工具
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C11_Insilico-Scanning/01_srst2/" class="md-nav__link">
+        01. SRST2 短序列扫描工具
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C11_Insilico-Scanning/02_mlst/" class="md-nav__link">
+        02. MLST 扫描工具
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C11_Insilico-Scanning/03_ariba/" class="md-nav__link">
+        03. Ariba 耐药基因
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C11_Insilico-Scanning/04_abricate/" class="md-nav__link">
+        04. Abricate 多功能扫描工具
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-11" type="checkbox" id="nav-2-11" >
+      
+      <label class="md-nav__link" for="nav-2-11">
+        第十章 宏基因组分析
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第十章 宏基因组分析" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-11">
+          <span class="md-nav__icon md-icon"></span>
+          第十章 宏基因组分析
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C12_Metagenomics-Analysis/01_kraken/" class="md-nav__link">
+        01. kraken
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C12_Metagenomics-Analysis/02_centrifuge/" class="md-nav__link">
+        02. centrifuge
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C12_Metagenomics-Analysis/03_bracken/" class="md-nav__link">
+        03. bracken
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C12_Metagenomics-Analysis/04_sourmash/" class="md-nav__link">
+        04. sourmash
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C12_Metagenomics-Analysis/05_clark/" class="md-nav__link">
+        05. clark
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C12_Metagenomics-Analysis/06_krona/" class="md-nav__link">
+        06. krona
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C12_Metagenomics-Analysis/07_pavian/" class="md-nav__link">
+        07. pavian
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C12_Metagenomics-Analysis/08_supri/" class="md-nav__link">
+        08. supri
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C12_Metagenomics-Analysis/09_shotgun/" class="md-nav__link">
+        09. shotgun 分析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C12_Metagenomics-Analysis/10_16s/" class="md-nav__link">
+        10. 16S 种群分析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C12_Metagenomics-Analysis/11_kmerfinder/" class="md-nav__link">
+        11. KmerFinder
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C12_Metagenomics-Analysis/12_meta-beetl/" class="md-nav__link">
+        12. Meta-BEETL
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-12" type="checkbox" id="nav-2-12" >
+      
+      <label class="md-nav__link" for="nav-2-12">
+        第十一章 单分子测序
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第十一章 单分子测序" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-12">
+          <span class="md-nav__icon md-icon"></span>
+          第十一章 单分子测序
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C13_Single-Molecular-Sequencing/01_nanopore/" class="md-nav__link">
+        01. nanopore
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C13_Single-Molecular-Sequencing/02_pacbio/" class="md-nav__link">
+        02. pacbio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C13_Single-Molecular-Sequencing/03_canu/" class="md-nav__link">
+        03. canu
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C13_Single-Molecular-Sequencing/04_seqs-polish/" class="md-nav__link">
+        04. trimming
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C13_Single-Molecular-Sequencing/06_hybrid-assembling/" class="md-nav__link">
+        06. hybrid
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-13" type="checkbox" id="nav-2-13" >
+      
+      <label class="md-nav__link" for="nav-2-13">
+        第十二章 多重序列比对
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第十二章 多重序列比对" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-13">
+          <span class="md-nav__icon md-icon"></span>
+          第十二章 多重序列比对
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C14_Multiple-Sequence-Alignment/01_msa/" class="md-nav__link">
+        01. 多重序列比对
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-14" type="checkbox" id="nav-2-14" >
+      
+      <label class="md-nav__link" for="nav-2-14">
+        第十三章 进化树构建分析
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第十三章 进化树构建分析" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-14">
+          <span class="md-nav__icon md-icon"></span>
+          第十三章 进化树构建分析
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C15_Phylogeny-Analysis/00_all-about-phylogeny/" class="md-nav__link">
+        00. 构建进化书
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C15_Phylogeny-Analysis/02_raxml.md" class="md-nav__link">
+        01. RAxML
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C15_Phylogeny-Analysis/01_figtree.md" class="md-nav__link">
+        02. figtree
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C15_Phylogeny-Analysis/02_ggtree.md" class="md-nav__link">
+        03. ggtree
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-15" type="checkbox" id="nav-2-15" >
+      
+      <label class="md-nav__link" for="nav-2-15">
+        第十七章 分子地理流行病学
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第十七章 分子地理流行病学" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-15">
+          <span class="md-nav__icon md-icon"></span>
+          第十七章 分子地理流行病学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C17_Pathogen-Geospatial-Analysis/04_cartodb/" class="md-nav__link">
+        04. CartoDB
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C17_Pathogen-Geospatial-Analysis/05_leaflet/" class="md-nav__link">
+        05. leaflet
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-16" type="checkbox" id="nav-2-16" >
+      
+      <label class="md-nav__link" for="nav-2-16">
+        第十八章 分析实践
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第十八章 分析实践" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-16">
+          <span class="md-nav__icon md-icon"></span>
+          第十八章 分析实践
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C18_Analysis-Examples/01_trace-Pae-from-different-source-by-SNP/" class="md-nav__link">
+        01. 细菌SNP溯源分析一
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C18_Analysis-Examples/02_comparative-analysis-Ban-genomes/" class="md-nav__link">
+        02. 细菌比较基因组学研究
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-17" type="checkbox" id="nav-2-17" >
+      
+      <label class="md-nav__link" for="nav-2-17">
+        第十九章 工具流工具
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第十九章 工具流工具" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-17">
+          <span class="md-nav__icon md-icon"></span>
+          第十九章 工具流工具
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C19_Pipelines-and-Workflows/05_workflow-software/" class="md-nav__link">
+        05. workflow工具软件
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-18" type="checkbox" id="nav-2-18" >
+      
+      <label class="md-nav__link" for="nav-2-18">
+        第二十章 其他
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="第二十章 其他" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-18">
+          <span class="md-nav__icon md-icon"></span>
+          第二十章 其他
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../book/C20_Others/02_gi-to-accession/" class="md-nav__link">
+        02. GI转Accession
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
+        专项教程
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="专项教程" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          专项教程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" >
+      
+      <label class="md-nav__link" for="nav-3-1">
+        Linux入门
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux入门" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-1">
+          <span class="md-nav__icon md-icon"></span>
+          Linux入门
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Linux/01_linux-installation/" class="md-nav__link">
+        01. Linux 安装示例
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Linux/02_basic-cml/" class="md-nav__link">
+        02. Linux 基本命令
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Linux/03_linux-software/" class="md-nav__link">
+        03. Linux 软件管理
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Linux/04_awk/" class="md-nav__link">
+        04. awk 列处理工具
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Linux/05_sed/" class="md-nav__link">
+        05. sed 行处理工具
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Linux/06_tools/" class="md-nav__link">
+        06. 其他命令行工具
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Linux/07_vim/" class="md-nav__link">
+        07. vim
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+      
+      <label class="md-nav__link" for="nav-3-2">
+        常用编程语言
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="常用编程语言" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-2">
+          <span class="md-nav__icon md-icon"></span>
+          常用编程语言
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Programming/01_shell/" class="md-nav__link">
+        01. Shell 脚本
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Programming/02_perl/" class="md-nav__link">
+        02. Perl 编程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Programming/03_python/" class="md-nav__link">
+        03. Python 编程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Programming/04_biopython/" class="md-nav__link">
+        04. Biopython 编程
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Programming/05_r/" class="md-nav__link">
+        05. R 编程
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
+      
+      <label class="md-nav__link" for="nav-3-3">
+        数据文件格式
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="数据文件格式" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-3">
+          <span class="md-nav__icon md-icon"></span>
+          数据文件格式
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Format/01_fasta/" class="md-nav__link">
+        01. fasta
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Format/02_embl/" class="md-nav__link">
+        02. embl
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Format/05_fastq.md" class="md-nav__link">
+        03. fastq
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Format/04_gcg/" class="md-nav__link">
+        04. gcg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Format/05_sam/" class="md-nav__link">
+        05. sam
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Format/06_bam/" class="md-nav__link">
+        06. bam
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Format/07_bed/" class="md-nav__link">
+        07. bed
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Format/08_vcf/" class="md-nav__link">
+        08. vcf
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Format/09_gff/" class="md-nav__link">
+        09. gff
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/Format/10_cram/" class="md-nav__link">
+        10. cram
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+      
+      <label class="md-nav__link" for="nav-4">
+        实验手册
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="实验手册" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          实验手册
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocol/" class="md-nav__link">
+        
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../protocol/artic-network-covid19/" class="md-nav__link">
+        ArticNetwork Covid-19测序
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      
+      <label class="md-nav__link" for="nav-5">
+        生信笔记
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="生信笔记" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          生信笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../my-vim-ide/" class="md-nav__link">
+        01 TEST
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blast2sra/" class="md-nav__link">
+        02 blast2SRA
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tes/" class="md-nav__link">
+        03 Rmarkdown
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test0316/" class="md-nav__link">
+        04 SPAdes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../KEGG/" class="md-nav__link">
+        05 KEGG注释
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SourceSink/" class="md-nav__link">
+        06 SourceSink分析
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tes2/" class="md-nav__link">
+        07 小鼠转录组分析模板
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+      
+      <label class="md-nav__link" for="nav-6">
+        关于我们
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="关于我们" data-md-level="1">
+        <label class="md-nav__title" for="nav-6">
+          <span class="md-nav__icon md-icon"></span>
+          关于我们
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1复杂微生物群落概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2微生物群落中的噬菌体与质粒
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    1.2.1 可移动遗传元件的主要成分
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2.1 可移动遗传元件的主要成分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#122" class="md-nav__link">
+    1.2.2噬菌体的两种生存模式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3复杂微生物群落的微生物组学及其生物信息学方法
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3复杂微生物群落的微生物组学及其生物信息学方法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    1.3.1基于宏基因组技术的微生物组研究
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132" class="md-nav__link">
+    1.3.2微生物组学的生物信息分析与挑战
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    利用宏基因组研究噬菌体与质粒面临的困难
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    宏基因组噬菌体与质粒序列识别算法
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">噬菌体文献梳理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="11">1.1复杂微生物群落概述<a class="headerlink" href="#11" title="Permanent link">&para;</a></h2>
+<p>微生物广泛遍布在各种环境中，包括人肠道、海洋、士壤等。各种环境中的微生物
+群落对人类的健康、生态环境的调节起着重要作用。例如，据估计，大概有100万亿个
+微生物细胞分布在人体的各个部位，这些微生物的数量大概是人体自身细胞10倍，并
+且他们所编码的基因大约是人基因组的100倍口。同时，人的肠道微生物已经被证明和
+众多疾病相关，例如炎症性肠病山、糖尿病、肥胖3和抑郁症4。
+微生物群落中的物种组成一般比较复杂，遗传物质的来源具有多样性。
+一个微生
+物群落中的遗传物质来源既有原核微生物如细菌（bacteria）和古细菌（archaea），也有
+来自真核微生物如真菌（fungi）和原生生物（protista），同时还包含非细胞结构的微生
+物
+-病毒（virus）1。除此之外，还有相当一部分的遗传物质属于各类移动元件如质
+粒和转座子16。图1.1描述了人肠道微生物群落的生物组成，其微生物组成覆盖了上述
+生物体。按照DNA所占含量从多至少排序依次是细菌、病毒、古菌、原生生物与真菌。</p>
+<p><img alt="image-20220527084916986" src="/Users/hyx/Library/Application Support/typora-user-images/image-20220527084916986.png" /></p>
+<p>对于上述的每一种微生物，还可以分为更细的分类单元。相当一部分微生物群落
+在属（genus）水平的多样性较高。以人肠道菌群为例，占主导的属就有15个，占所有
+肠道微生物约70%181，如图1.2所示。微生物群落中不同物种间可以形成合作、竞争、
+寄生或捕食、偏利共生、偏害共生和无关共生等多种关系191，而不同遗传物质的表达产
+物之间同样存在多种相互作用，因此整个微生物群落是一个复杂的动力学系统，构成
+一个复杂的生态网络。与此同时，不同微生物群落的物种组成具有很大的差异，这种差
+异既可以体现在不同环境之间、也可以体现在不同的时间点以及其宿主不同的生理条
+件上。例如，在肠道微生物中，病毒(主要为噬菌体）和细菌个数的比例大约为1：100,
+而在人的口腔中却大约为35:101：在酸矿水微生物群落中，主导菌会随着季节的变化
+而变化121，在健康人、克罗恩病(Crohn'sdisease）患者以及溃疡性结肠炎(ulcerative
+colitis）患者的肠道菌群之间，各物种的丰度具有明显的差异凹。</p>
+<p><img alt="image-20220527084945099" src="/Users/hyx/Library/Application Support/typora-user-images/image-20220527084945099.png" /></p>
+<p>由于微生物群落对自然环境、人体健康等有着重要的影响，微生物组(microbiome)
+学成为当今研究的热点。“微生物组”指的是“所有微生物（包括细菌、真菌、低等和
+高等微生物以及病毒），这些微生物的基因组（即基因），以及周围环境条件所构成的整
+个栖息地”131。截至2020年5月9日，在NCBI(NationalCenterforBiotechnology
+Information）的基因组数据库（<a href="https://www.ncbi.nlm.nih.gow/genome/">https://www.ncbi.nlm.nih.gow/genome/</a>）中关于原核微生
+物的基因组记录就有248493条，而病毒则有38228条，质粒21584条，可见微生物具
+有极高的多样性。在过去一段时间内，人们对微生物组的研究主要集中在细菌上。主要
+的原因是在微生物群落中，来自细菌染色体的遗传物质占了绝大多数，对环境、宿主的
+影响相当大，而且细菌具有如16SDNA这些可以用于系统分类的基因，非常方便人们
+研究其具体的物种组成、丰度以及动力学行为。但随着对微生物组的复杂性有着越来
+越深入的了解，人们逐渐意识到，除了细菌外，微生物组中的其他成员对整个微生物群
+落同样起着非常重要的作用。例如，微生物群落中的真菌可以影响宿主的生理环境、代谢、能量吸收等过程14。在肠道中，某些真菌和其他微生物存在共生关系，共同影响
+人的代谢131（如图1.3所示)。过去，人们对肠道菌群与炎症性肠病关系的研究往往把
+重点放在细菌上，但最近一项研究表明，炎症性肠病与真菌也有密切关系，人体对真菌
+的抵抗能力的改变有可能导致疾病的发生11。在海洋系统中，原生生物对整个生态环
+境的微生物循环、碳循环起着非常大的作用17。同时，一些原生生物可以以真菌为食，
+从而对微生物群落造成影响1S1。除此之外，微生物组中还存在大量来自非染色体元件
+(extrachromosomalelements）的遗传物质，如噬菌体和质粒。他们对整个微生物群落
+的种群结构、细菌性状等产生非常重要的影响。</p>
+<p><img alt="image-20220527090241845" src="/Users/hyx/Library/Application Support/typora-user-images/image-20220527090241845.png" /></p>
+<p>上述现象表明，过去只把重点放在细菌上的研究手段已经无法让人们充分认识微
+生物组的复杂性。虽然长期以来对微生物群落中细菌成员的研究使我们认识到微生物
+群落在整个生物圈的重要性，但微生物群落是-
+一个复杂的整体，要更充分认识微生物
+群落的调节机制，以及对环境、人体健康的影响，必须充分考虑其遗传物质的多样性以</p>
+<p>及各生物体间的相互作用，以系统的眼光看待整个微生物群落，用割裂的手段单独研
+宄群落中的某些物种难以对微生物群落进行深度的分析。</p>
+<h2 id="12">1.2微生物群落中的噬菌体与质粒<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<p>如上节所述，微生物群落中物种组成复杂。在大部分微生物群落中，来白原核微生
+物染色体基因组的遗传物质居多。但与此同时，也存在大量非染色体元件的遗传物质，
+其中包括来自无细胞结构的生物噬菌体，以及来自质粒的遗传物质。噬菌体和质粒是
+微生物群落中重要的遗传元件，对微生物群落的调节起到重要作用。近年来，人们越来
+越意识到噬菌体和质粒对微生物群落的重要调节作用，各种病毒组(virome）和质粒组
+(plasmidome）的研究应运而生，关于病毒组的研究在近年来更是急剧上升（如图1.4
+所示），对啜菌体与质粒的研究将成为日后认识微生物群落复杂性的重要手段。</p>
+<p><img alt="image-20220527090937865" src="/Users/hyx/Library/Application Support/typora-user-images/image-20220527090937865.png" /></p>
+<h2 id="121">1.2.1 可移动遗传元件的主要成分<a class="headerlink" href="#121" title="Permanent link">&para;</a></h2>
+<p>微生物群落中存在频繁的遗传物质交换。在微生物群落中，噬菌体和质粒是可移
+动遗传元件(mobilegeneticelements,MGEs）的主要组成成分，也是水平基因转移
+(horizontalgenetransfer,HGT）的重要参与者0。微生物细胞之间的水平基因转移可以
+分为转导（transduction）、接合（conjugation）以及转化（transposition）101。各种水平基
+因转移的机制如图1.5所示。转导主要由噬菌体介导，温和噬菌体在感染细菌时，会将
+自己的基因组整合到宿主染色体基因组中。整合进宿主染色体的噬菌体也称为原噬菌</p>
+<p>体(prophage）。通过转导，细菌获得了外源的DNA。接合主要由质粒介导，它们通过
+Pilus蛋白在两个细胞之间建立通道，使质粒可以通过该通道从一个细胞转移到另-
+-个
+细胞。而转化则是通过转座子（transposon）、整合子（integron）等小型DNA介导，它
+们可以在染色体DNA、质粒DNA之间移动，从而介导基因的重组。</p>
+<p><img alt="image-20220527091221918" src="/Users/hyx/Library/Application Support/typora-user-images/image-20220527091221918.png" /></p>
+<p>由此可见，细胞之间大规模的遗传物质交换是通过噬菌体和质粒实现的。值得注
+意的是，并不是所有噬菌体和质粒均为介导水平基因转移的可移动遗传元件。对于噬
+菌体而言，介导水平基因转移的是温和噬菌体，而烈性噬菌体则不然。关于这两类噬菌
+体的介绍在下一小节展开。而对于质粒，也并不是所有质粒都能实现细胞间的转移。质
+粒可分为可转移质粒(transmissibleplasmid）与不可转移质粒(non-transmissibleplasmid)。
+而可转移质粒可进一步分为接合型质粒(conjugativeplasmid)和可移动质粒(mobilizable
+plasmid).
+一般而言，可转移质粒包含一些特定的功能基因(20。如图1.6所示，接合型
+质粒包含了质粒转移所需的全部基因，包括oriT(originoftransfer），松弛酶(relaxase)，</p>
+<p>IV型偶联蛋白(typeIVcouplingprotein,T4CP）和IV型分泌系统(typeIVsecretion
+system,74SS)。而一般的可移动质粒，有时并不包含这全套的基因，但一般认为必须具
+有orT与松弛酶基因。当质粒从一个细胞转移至另一个细胞中时，质粒的DNA构象
+需要发生变化，而该变化是由松弛酶来实现的。松弛酶在oriT区域将质粒DNA切断，
+并在T4CP与T4SS的参与下实现质粒细胞间的转移。</p>
+<p><img alt="image-20220527091443608" src="/Users/hyx/Library/Application Support/typora-user-images/image-20220527091443608.png" /></p>
+<p>当得到一个噬菌体或质粒的全基因组时，我们可以通过判断一些关键基因的有无
+来判断该噬菌体或质粒是否能介导水平基因转移。对质粒来说，该关键基因可以是上
+述的松弛酶。对噬菌体而言，该关键基因可以是整合酶(integrase)。由于当温和噬菌体
+将自己基因组整合到宿主染色体上时，需要整合酶的介导，因此温和噬菌体大多具有
+整合酶21。
+噬菌体和质粒可以通过水平基因转移来使细菌获得新基因，并由此表现出新性状
+移动元件最重要的功能之一就是抗性基因的传播。很多抗性基因均在移动元件上1221，
+移动元件可以通过传播抗性基因来使细菌获得新抗性。目前，由于临床上抗生素的过
+度使用，使得致病菌的耐药性不断增强，药物的研发变得更加困难，细菌的耐药性逐渐
+成为全球性的健康问题231。目前，从污水处理厂
+(wastewatertreatmentplant、活性污
+泥(activatedsludge）微生物群落中提取的质粒中发现了大量的抗性基因24.201。Fresia等
+人127研究了Montevideo城市水系统（包括污水和海滩）的微生物群落，结果表明与海
+滩相比，污水的微生物群落含有更多的抗药基因和毒力因子，大多数的抗性基因分布
+在可移动遗传元件上，而且污水中携带可移动抗性基因和毒力因子的物种可以作为污
+水中的生物标记(biomarker）。Saenz等人281在对细麟鲳鱼(Piaractusmesorotamicus)
+进行口服抗生素处理后，发现其肠道微生物中的可移动抗性基因得到增加。</p>
+<p>总体而言，由噬菌体和质粒介导的水平基因转移是微生物群落适应外部多变环境
+的重要手段。由于大量抗性基因与毒力因子均通过这些移动元件在微生物群落中传播，
+对可移动遗传元件的研究己成为临床的焦点。</p>
+<h3 id="122">1.2.2噬菌体的两种生存模式<a class="headerlink" href="#122" title="Permanent link">&para;</a></h3>
+<p>在微生物群落中，噬菌体对群落的影响是双方面的。
+一方面，一些噬菌体编码的基
+因可以帮助其宿主在微生物群落中更好地生存129，通过水平基因转移传播抗性基因帮
+助宿主适应外部环境30。而另一方面，噬菌体也会杀死大量宿主。例如，在海洋环境
+系统中，感染蓝细菌(cvanobucteria）的噬菌体每天将会杀死3%的宿主31。噬菌体对
+微生物群落的种群结构调节起着非常重要的作用。
+从生存模式而言，噬菌体可分为温和噬菌体(temperatephage）以及烈性噬菌体
+(virulentphage）【21】。两类噬菌体在宿主中经历着不同的复制周期(replicationcycles)。
+几种不同的复制周期如图1.7所示。对于烈性噬菌体，噬菌体感染宿主时会直接进入裂
+解周期(Ivticcvcle)，即将自己的遗传物质注射进宿主细胞内，并在宿主细胞内大量合
+成自己的后代，最后通过裂解宿主细胞释放后代病毒颗粒。与烈性噬菌体不同，温和噬
+菌体感染宿主后并不会立刻引起宿主的裂解。温和噬菌体通常会先进入溶原周期
+(lysogeniccycle），将自己的基因组整合到宿主的染色体基因组中，整合到宿主基因组
+的噬菌体即为原噬菌体。此时噬菌体的基因组会随着宿主基因组的复制而同步复制。
+当受到一些环境刺激（如DNA损伤）时，原噬菌体会进入裂解周期，在宿主内合成自
+己后代，并通过裂解宿主细胞释放后代。裂解周期和溶原周期是噬菌体两个主要的复
+制周期，除此之外，
+-些噬菌体还有慢性周期(chroniccycle）和假溶原周期
+(pseudolysogenycycle）。关于这两个周期的生物学机制目前还不是很清楚。参与慢性
+周期的主要是一些丝状噬菌体（filamentousphage），它们可以在不裂解宿主的情况下释
+放自己的后代。而假溶原周期的噬菌体在感染宿主后，自己的DNA会以游离的形式独
+立于宿主DNA存在于细胞中。
+由此可见，两类噬菌体对宿主有着完全不同的影响。烈性噬菌体与宿主更类似于
+捕食关系，而温和噬菌体在大部分情况下与宿主更类似共生关系。在人体微生物群落
+中，两类噬菌体的平衡和噬菌体所在的复制周期与人的生理条件、健康状况紧密相关。
+例如，
+一般情况下，人肠道的噬菌体大多以原噬菌体的形式存在10，在BD患者中，
+可能会有更多的原噬菌体被诱导进入裂解期32。噬菌体通过与宿主的不同相互作用模
+式，对微生物群落进行着复杂的调控。由于在微生物组中的重要作用，噬菌体在微生物
+组研究中扮演着非常重要的角色，例如噬菌体可以作为某些疾病的生物标记
+(biomarkers），或者可用于衡量微生物群落的多样性1331。图1.8中展示了噬菌体在人体
+健康研究的相关作用。</p>
+<p><img alt="image-20220527092950724" src="/Users/hyx/Library/Application Support/typora-user-images/image-20220527092950724.png" /></p>
+<p><img alt="image-20220527094546437" src="/Users/hyx/Library/Application Support/typora-user-images/image-20220527094546437.png" /></p>
+<p>在本文的研究中，我仃主要关注微生物群落中的噬菌体，既感染原核微生物的病
+毒。一般而言，在微生物群落中，噬菌体是病毒组的主要成分。但值得注意的是，在真实的病毒组中，病毒的多样性是极高的。如图1.9所示，除了噬菌体外，病毒组中还存
+在感染真核微生物以及高等生物的病毒，其遗传物质的组成既有DNA也有RNA，他
+们对跨物种的遗传物质交换、不同生物体之间的相互作用起到很大的作用，对宿主的
+基因型与表型有着重要关联341。病毒组中非噬菌体病毒是值得我们今后进一步关注的。</p>
+<p><img alt="image-20220527102702787" src="/Users/hyx/Library/Application Support/typora-user-images/image-20220527102702787.png" /></p>
+<h2 id="13">1.3复杂微生物群落的微生物组学及其生物信息学方法<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
+<h3 id="131">1.3.1基于宏基因组技术的微生物组研究<a class="headerlink" href="#131" title="Permanent link">&para;</a></h3>
+<p>在过去，对微生物群落的研究依赖于细菌的分离培养。这样做的优点是很容易得
+到某个细菌的全基因组，但缺点世很明显。首先，微生物群落是一个复杂的有机体，各
+种生物体之间存在复杂的相互作用，用隔离的手段单独研究某个特定的微生物并不能
+全面了解微生物群落的调控与和外界环境的相互作用。其次，微生物群落中绝大部分
+的微生物是不能分离培养的151，因此用分离培养的方法只能研究极少一部分的微生物。
+宏基因组（metagenome）的概念最早由Handelsman等人了1提出，指的是某个微生
+物群落中所有遗传物质的总和。与基于独立培养方法研究微生物群落不同，利用宏基
+因组手段研究微生物群落，并不经过对某种特定微生物分离培养这一环节，而是直接
+提取环境微生物群落中所有的遗传物质进行测序、分析。这样做的优点是，我们可以
+次性得到微生物群落中所有的遗传物质，可以从整体的角度对整个微生物群落进行研
+究。
+从广义的角度，宏基因组研究有两种策略。第一种为扩增子测序。这种测序并不是
+对微生物祥落中所有的DNA进行测序，而是对细菌中的16S™DNA（或真菌中的18S
+rDNA》进行测序。16S+DNA为细菌系统发育的“分子钟”，可以对细菌进行比较精确</p>
+<p>的物种注释。通过16SrDNA的测序，我们比较容易获得群落的物种组成和丰度信息：
+然而，这种方法并不能得到群落中每个成员的所有基因组信息，我们无法从测序数据
+中得到不同微生物包含的基因、行使的功能等信息。与扩增子测序对应的是宏基因组
+的全基因组测序(wholegenomesequencing.WGS)。全基因组测序对微生物群落中所有
+遗传物质进行测序，得到的数据包含群落中的所有遗传信息，更有利于分析每种微生
+物所行使的功能。由于全基因组测序包含的信息更多，随着测序技术的不断提高以及
+测序成本的不断下降，全基因组测序被广泛用于宏基因组研究中。
+但宏基因组的研究也面临很大的挑战，特别是基于全基因组测序的分析。从目前
+的测序技术来看，我们无法直接对微生物群落中每一个细胞的基因组全长进行一次性
+测序。在测序后，我们得到的是一段段DNA短读（shortread）片段的数据。根据测序
+技术的不同，这些片段的长度从几十到几千个碱基不等37:381。由于以Iumina为代表的
+二代测序技术性价比较高，目前被广泛使用在各种宏基因组研究中。Mlumina测序技术
+所得到的读长约在50至250个碱基之间。由于微生物群落物种组成复杂，即使通过序
+列拼接(assembly)，拼接后得到的叠连群(contig）的长度离基因组全长依日相差甚远：
+因此，在宏基因组数据中，我们最终得到的是来自群落中每个微生物基因组的一条条
+DNA片段。由于DNA短片段中所包涵的信息比较少，我们比较难从这些短片段中提
+取有效的信息来回答例如“该群落中有哪些物种，“该群落的微生物编码哪些基因»这些
+基本问题。同时，由于微生物群落中大部分物种不能分离培养，因此宏基因组中相当
+部分的DNA片段是无法在己有数据库中找到同源序列的。如何分析这些新序列所包涵
+的信息，也是宏基因组分析中的一大挑战。因此，要对宏基因组数据进行有效的分析，
+开发高效的生物信息学工具和算法是关键。</p>
+<h3 id="132">1.3.2微生物组学的生物信息分析与挑战<a class="headerlink" href="#132" title="Permanent link">&para;</a></h3>
+<p>对宏基因组进行分析时，往往需要回答两个基本问题，即“该微生物群落中存在哪
+些物种”以及“这些物种在做什么”1s9。宏基因组中的常用分析策略如图1.10所示
+对宏基因组的原始测序数据，往往需要通过质量控制(qualitycontrol,QC)步骤，去除
+短读序列上质量较差的碱基。在回答“该生物群落中存在哪些物种”时，
+一般需要在测
+序数据中寻找某些物种特有的标记基因（markergene)，通过这些标记基因可以了解群
+落中的物种多样性以及进行系统发育分析。除此之外，我们也会借助各种手段尽最大
+可能恢复群落中不同物种的基因组，这时需要对短读序列进行序列拼接或分箱
+(binning)。前者是将短读序列拼接成长度更大的叠连群，后者是对来自同一基因组的
+叠连群进行聚类。通过这些手段，我们可以对微生物群落中的基因组多样性进行分析，
+以及在群落中发现新物种。对回答“这些物种在做什么”时，我们需要对测序数据进行
+全面的基因预测以及基因的功能注释。前者是在DNA片段中找出编码ORF，而后者</p>
+<p>是在前者的基础上进一步分析这些编码ORF表达产物所行使的功能。在回答了上述两
+个基本问题之后，我们可以进行更复杂的下游比较宏基因组学的分析.</p>
+<p><img alt="image-20220527104652341" src="/Users/hyx/Library/Application Support/typora-user-images/image-20220527104652341.png" /></p>
+<p>宏基因组生物信息分析需要借助各种生物信息学工具和算法。从方法学层面看，
+分析宏基因组数据的方法可分为基于数据库搜索的方法以及从头开始(abinitio)方法，
+不少工具的设计也会同时综合这两种方法。基于数据库搜索的方法原理比较简单，操
+作起米也比较容易，即直接把我们得到的数据和己有的数据库进行同源性搜索，从而
+对数据进行注释。例如，如果研究者希望知道该微生物群落中是否存在某种抗性基因，
+那么便可以将该群落中的所有基因与抗性基因数据库如CARD123J、ARGO(40)、ARDB41.
+APD31421、CAMPR341等数据库进行同源性搜索。这种方法的优点是，当我们所分析的
+物种、基因的信息己经存在于已有数据库时，可以非常精确地对我们关心的信息进行
+注释。但缺点也很明显，真实微生物群落中包含了大量的未知物种以及未知基因，基于
+数据库搜秦的方法难以进一步挖掘这些未知信息。要挖掘这些未知信息，必需借助从
+头开始的方法。从头开始的方法需要借助高效的算法，其一般思路是用特定的数学模
+型对数据进行抽象的表征，并用特定的算法分析这些数据。由于从头开始方法可以挖
+掘更多的信息，基于从头开始方法的工具被广泛应用在宏基因组分析中的各种任务中
+开发从头开始的算法也是宏基因组算法设计的重要任务。</p>
+<p>1.3.2.1序列拼接
+以二代测序为代表的高通量测序(high-throughputsequencing）技术中，我们得到
+的是大量源于微生物群落不同物种的DNA短读片段，长度大约为几十到几百个碱基对
+(basepait,bp)。
+一般而言，这种DNA短片段所携带的信息过少，不利于后续分析，
+因此需要用特定方法将这些短读片段拼接成更长的叠连群。目前主流的序列拼接算法
+大多为从头开始算法，其主要思路是根据短读序列间的重叠情况(overlap）来对序列进
+行延长。在高通量测序中，基因组中的某个碱基会被多条短读序列覆盖，这样通过短读
+之间的重叠情况，便可以确定短读间的连接情况。值得注意的是，与单基因组序列拼接
+不同，宏基因组数据在拼接后依旧难以得到每个物种的全基因组，最终得到的叠连群
+依然是来自微生物群落中的DNA片段。影响序列拼接效果的因素有很多，其中影响比
+较大的是微生物群落的物种复杂度。当微生物群落中物种组成比较复杂时，拼接效果
+往往较差。同时，我们可以通过提高测序深度来改善拼接效果。测序深度越深，基因组
+上平均每个碱基会被更多的短读序列覆盖，对后续的拼接更有利。除此之外，物种的基
+因组结构也会影响拼接效果，当基因组中存在大量的重复序列时，拼接效果往往会受
+到影响。
+目前关于宏基因组序列拼接的工具有很多，比较常用的有DBA-UD4,
+Meta Velvet451, SOAPdenovo(46], SPAdes/47,48], MAp|-9), InteMApIs0) 4.</p>
+<p>1.3.2.2序列识别
+宏基因组中的DNA片段来源于不同的生物体，对宏基因组中的DNA片段进行识
+别和分类，了解每一个DNA片段的来源是十分重要的。按照研究目的的不同，序列分
+类可以从不同角度、以不同方式进行。例如，若需要研究微生物群落的物种组成，可以
+将每一条序列划分到相应的分类单元，即界（kingdom）、门（phylum）、纲(class)、目
+(order）、科（family）、属（genus）、种（species）、株（strain）中的某一个分类级别；
+对病毒的DNA片段，可以根据其宿主对DNA片段进行分类，以了解群落中病毒的宿
+主感染情况：若要研究微生物群落中的水平基因转移，可以将DNA片段分为来自染色
+体的DNA与来自噬菌体、质粒等移动元件的DNA。此外，由于微生物群落中含有大</p>
+<p>量的新物种，我们很多时候需要知道哪些DNA片段是来自同一个基因组的，以更全面
+地了解该微生物群落中每个物种的全基因组情况。这时，我们需要将来自同一个基西
+组的DNA片段归到一起，这个过程称为序列分箱(binning)。经过分箱后，每个箱(bin)
+的DNA均来自同一个基因组，最大程度地重构出群落中每个物种的全基因组信息。
+宏基因组中的序列识别和分类面临的挑战非常大。
+一般而言，不同分类单元的物
+种会有相对于其他物种特有的标记基因，这些基因可以帮助我们进行物种分类151.521。然
+而，宏基因组的DNA片段由于长度较短，只有极少数序列包含这些标记基因。因此
+绝大部分序列并不能依据标记基因来进行序列识别。如果该片段来自于己被当前数据
+库收录的物种，我们可以通过数据库的同源性搜索来获取该片段来源的信息。当设置
+的判定國值比较严格时，我们得到的注释信息会相对可靠。但这种方法的缺点是无法
+对来自未知物种的序列进行识别和分类。在宏基因组分析中，利用从头算法对序列进
+行识别和分类是重要的手段。
+在进化过程中，不同物种的基因组往往呈现不同的序列特征(sequencesignatures)
+1S31，例如GC含量以及密码子使用偏好等。序列分类的从头算法一般用特定的数学模
+型来对DNA的序列特征进行刻画，然后用特定的统计学、机器学习算法对DNA片段
+进行分类。飞寡核苷酸频率（K-merfrequencies）是目前广泛使用的数学模型。该数学模
+型是长度为4的特征向量，向量中每一个元素表示相应寡核苷酸在该DNA片段上的
+出现频率。例如，当k取4时，该向量的长度为41,向量第一个元素表示核苷酸串AAAA
+在序列上出现的频率，第二个元素表示核苷酸串AAAC在序列出现的频率，如此类推。
+山于DNA双链满足碱基互补配对，满足互补配对的寡核苷酸串在DNA双链中出现的
+频率是相同的。因此在实际应用中，该特征向量的长度可以大约缩减一半。除了k寡
+核苷酸频率之外，马尔可夫链(Markovchain）、隐马尔可夫模型(hiddenMarkovmodel,
+HMM)也是常用的数学模型。这类方法将DNA片段视为一随机过程，用随机过程的
+方法来判断DNA片段的来源。
+比较常用的宏基因组序列识别和分类工具有：Brackens54、Centrifuge55、CLARK56.
+CLARK-s57), Kraken (L) * Kraken2) (58), KrakenUnig(59), k-SLAM!), MegaBLASTION),
+metaOthello621、PathSea6sJ、prophvlelo4)、taxMaps【65】的等，Ye等人【66】的对这些常用工具的
+精度、运行时间、硬件需求等性能进行了细致的比较。而用于宏基因组分箱的工具有
+CONCOCTI67I, COCACOLA(68)„BMC3C|6
+、MetaBAT70、MaxBin71、GroopM1721等。</p>
+<p>1.3.2.3基因预测
+基因项测是宏基因组分析中最重要的步骤之一。基因预测的任务，是在所有DNA
+片段中，找出编码蛋白的开放阅读框(openreadingframe,ORF)。由于微生物群落中以
+原核微生物为主，宏基因组的基因预测主要针对原核微生物的基因结构进行。在宏基</p>
+<p>因组数据中进行基因预测比在完整全基因组中进行基因预测面临着更大的挑战。
+一般
+而言，由于受到不同的进化压力，编码ORF和非编码ORF的序列特征有很大的差异。
+在全基因组中，我们可以通过一些自迭代的方法将编码ORF和非编码ORF区分开来
+1731。然而，在宏基因组中，由于DNA片段较短，片段上的基因数目极少，往往达不到
+统计自学习的要求。在DNA短片段中，很多基因是不完整的，丢失了如翻译起始位点
+调控区这些对基因预测有帮助的重要信息，进
+一步增大基因预测的难度。同时，宏基医
+组中物种组成复杂，不同物种之间的序列特征、翻译起始位点的调控序列存在较大差
+异15374，宏基因组的这种复杂性使得用于全基因组基因预测的工具难以应用在宏基因
+组上。为了克服这一困难，近年来，一系列的宏基因组基因预测算法被开发。不少算法
+在设计中考虑了宏基因组物种组成的复杂性，为来自不同物种的序列建立不同的模型
+以提高预测的准确度。目前比较常用的宏基因组基因预测软件有Prodigal731.
+MetaGUN176), MetaGeneMark'7, FragGeneScan78), MetaGeneAnnotator79) fill Orphelial$0)
+等，</p>
+<table>
+<thead>
+<tr>
+<th>software</th>
+<th>year</th>
+<th>input format</th>
+<th>Target</th>
+<th>Journal</th>
+<th>website</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VIBRANT</td>
+<td>2020</td>
+<td>nucleotide/protein</td>
+<td>Virus</td>
+<td>Microbiome</td>
+<td><a href="https://github.com/AnantharamanLab/VIBRANT">https://github.com/AnantharamanLab/VIBRANT</a></td>
+</tr>
+<tr>
+<td>VirSorter</td>
+<td>2015</td>
+<td>nucleotide</td>
+<td>Virus</td>
+<td>PeerJ</td>
+<td><a href="https://github.com/simroux/VirSorter">https://github.com/simroux/VirSorter</a></td>
+</tr>
+<tr>
+<td>VirSorter2</td>
+<td>2021</td>
+<td>nucleotide</td>
+<td>Virus</td>
+<td>Microbiome</td>
+<td><a href="https://github.com/jiarong/VirSorter2">https://github.com/jiarong/VirSorter2</a></td>
+</tr>
+<tr>
+<td>VirFinder</td>
+<td>2017</td>
+<td>nucleotide</td>
+<td>Virus</td>
+<td>Microbiome</td>
+<td><a href="https://github.com/jessieren/VirFinder">https://github.com/jessieren/VirFinder</a></td>
+</tr>
+<tr>
+<td>DeepVirFinder</td>
+<td>2020</td>
+<td>nucleotide</td>
+<td>Virus</td>
+<td>Quantitative Biology</td>
+<td><a href="https://github.com/jessieren/DeepVirFinder">https://github.com/jessieren/DeepVirFinder</a></td>
+</tr>
+<tr>
+<td>MetaPhinder</td>
+<td>2016</td>
+<td>nucleotide</td>
+<td>Phage</td>
+<td>Plos one</td>
+<td><a href="https://github.com/vanessajurtz/MetaPhinder">https://github.com/vanessajurtz/MetaPhinder</a></td>
+</tr>
+<tr>
+<td>Earth Virome</td>
+<td>2016</td>
+<td>nucleotide</td>
+<td>Virus</td>
+<td>Nature Protocol</td>
+<td><a href="https://github.com/chengdai/earth_virome_pipeline">https://github.com/chengdai/earth_virome_pipeline</a></td>
+</tr>
+<tr>
+<td>Phybrid</td>
+<td>2020</td>
+<td>nucleotide</td>
+<td>Phage</td>
+<td></td>
+<td><a href="https://github.com/Strong-Lab/Phybrid">https://github.com/Strong-Lab/Phybrid</a></td>
+</tr>
+<tr>
+<td>Kraken2+VirKraken</td>
+<td>2019</td>
+<td>reads</td>
+<td>Virus</td>
+<td>Genome Biology</td>
+<td><a href="https://github.com/Strong-Lab/VirKraken">https://github.com/Strong-Lab/VirKraken</a></td>
+</tr>
+<tr>
+<td>DeePhage</td>
+<td>2021</td>
+<td>nucleotide</td>
+<td>Phage</td>
+<td>GigaScience</td>
+<td><a href="https://github.com/shufangwu/DeePhage">https://github.com/shufangwu/DeePhage</a></td>
+</tr>
+<tr>
+<td>HoPhage</td>
+<td>2021</td>
+<td>nucleotide</td>
+<td>Host</td>
+<td>Bioinformatics</td>
+<td><a href="http://cqb.pku.edu.cn/ZhuLab/HoPhage/">http://cqb.pku.edu.cn/ZhuLab/HoPhage/</a></td>
+</tr>
+<tr>
+<td>PPR-Meta</td>
+<td>2019</td>
+<td>nucleotide</td>
+<td>Phage&amp;Plasmid</td>
+<td>GigaScience</td>
+<td><a href="https://github.com/zhenchengfang/PPR-Meta">https://github.com/zhenchengfang/PPR-Meta</a></td>
+</tr>
+<tr>
+<td>Virtifier</td>
+<td>2021</td>
+<td>nucleotide</td>
+<td>Virus</td>
+<td>Bioinformatic</td>
+<td><a href="https://github.com/crazyinter/Seq2Vec">https://github.com/crazyinter/Seq2Vec</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>software</th>
+<th>year</th>
+<th>input format</th>
+<th>Target</th>
+<th>Journal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VIBRANT</td>
+<td>2020</td>
+<td>nucleotide/protein</td>
+<td>Virus</td>
+<td>Microbiome</td>
+</tr>
+<tr>
+<td>VirSorter</td>
+<td>2015</td>
+<td>nucleotide</td>
+<td>Virus</td>
+<td>PeerJ</td>
+</tr>
+<tr>
+<td>VirSorter2</td>
+<td>2021</td>
+<td>nucleotide</td>
+<td>Virus</td>
+<td>Microbiome</td>
+</tr>
+<tr>
+<td>VirFinder</td>
+<td>2017</td>
+<td>nucleotide</td>
+<td>Virus</td>
+<td>Microbiome</td>
+</tr>
+<tr>
+<td>DeepVirFinder</td>
+<td>2020</td>
+<td>nucleotide</td>
+<td>Virus</td>
+<td>Quantitative Biology</td>
+</tr>
+<tr>
+<td>MetaPhinder</td>
+<td>2016</td>
+<td>nucleotide</td>
+<td>Phage</td>
+<td>Plos one</td>
+</tr>
+<tr>
+<td>Earth Virome</td>
+<td>2016</td>
+<td>nucleotide</td>
+<td>Virus</td>
+<td>Nature Protocol</td>
+</tr>
+<tr>
+<td>Phybrid</td>
+<td>2020</td>
+<td>nucleotide</td>
+<td>Phage</td>
+<td></td>
+</tr>
+<tr>
+<td>Kraken2+VirKraken</td>
+<td>2019</td>
+<td>reads</td>
+<td>Virus</td>
+<td>Genome Biology</td>
+</tr>
+<tr>
+<td>DeePhage</td>
+<td>2021</td>
+<td>nucleotide</td>
+<td>Phage</td>
+<td>GigaScience</td>
+</tr>
+<tr>
+<td>HoPhage</td>
+<td>2021</td>
+<td>nucleotide</td>
+<td>Host</td>
+<td>Bioinformatics</td>
+</tr>
+<tr>
+<td>PPR-Meta</td>
+<td>2019</td>
+<td>nucleotide</td>
+<td>Phage&amp;Plasmid</td>
+<td>GigaScience</td>
+</tr>
+<tr>
+<td>Virtifier</td>
+<td>2021</td>
+<td>nucleotide</td>
+<td>Virus</td>
+<td>Bioinformatic</td>
+</tr>
+</tbody>
+</table>
+<p>1.3.2.4基因的功能注释</p>
+<p>基因预测的任务是找到编码ORF，而基因的功能注释则是进一步明确这些编码
+ORF翻译的蛋白所行使的功能、参与的代谢通路等信息。基因功能注释的常用方法是
+将基因预测步骤中得到的编码ORF在COGI<span class="arithmatex">\(1、KEGGIS2等功能数据库中进行同源性
+搜索。与其他基于数据库搜索的方法一样，这种方法无法预测大多数新基因的功能。目
+前，针对不同种类基因，己经开发出许多基于统计学习的基因功能注释工具，这些工具
+可以对新基因进行更有效的注释。例如，iVIREONSI831、PhagePred841、PVPredl\)</span>1、PvP.
+SVMI8O)、VIRALprOS71等工具运用统计、机器学习等方法对噬菌体的结构蛋白进行识别
+而DeepARGISSJ则使用深度学习识别宏基因组中的抗性基因。由于基因涉及的功能种类
+繁多，基因的功能注释是个极为复杂的任务。</p>
+<p>1.3.2.5微生物组复杂性带来的挑战</p>
+<p>上述的工具与方法，大多是通用的宏基因组分析手段。然而，微生物组的复杂性给
+这些传统手段带来很大的挑战。首先，微生物群落包含着各种来源的遗传物质，不少遗
+传物质（如病毒、质粒）并不具有如细菌16STDNA这些可用于物种识别的标记基因。
+而且，不同微生物的标记基因种类也不相同(如细菌为16STDNA，真菌为18SrDNA).
+因此，如1.3.1小结介绍的扩增子测序，只能对部分微生物进行定量研究，无法捕获到
+如病毒这些微生物的信息。上文介绍的各种工具，大多数都是在细菌染色体基因组数
+据上进行构建和测试的。当实际数据中混有非细菌数据时，这些工具的表现不得而知。
+例如，上文介绍的基因预测工具，都是针对原核基因结构进行设计的。然而，微生物群</p>
+<p>落中同时包含真核微生物。由于真核基因组结构与原核基因组结构有较大差异，这些
+工具在真核DNA数据中可能会产生错误的预测结果。而对拼接工具，微生物群落中各
+种复杂的DNA相互作用可能会导致拼接的错误。例如，噬菌体、质粒和各种移动元件，
+既可以单独存在，也可以全部或部分整合进宿主染色体中，即他们的基因组可能在微
+生物群落中以不同的方式存在多个拷贝。传统的拼接算法，其结果可能会抹掉这些信
+息。
+随着人们越来越意识到微生物组遗传物质的多样性，近年来也诞生了不少针对宏
+基因组非细菌染色体数据的分析工具。例如，在序列拼接方面，研究者开发了专门用于
+重构质粒序列的拼接工具，如RecvclerlS9J和plasmidSPAdes'90)，在序列分类方面，为了
+研宄噬菌体与细菌的相互作用，研宄者开发了对噬菌体序列以宿主为依据进行的分类
+工具，如VirHostMatcher'和WiSHI9。同时，Virus-HostDB93收集了不同病毒与宿主
+的对应关系，为研究不同微生物间相互作用提供依据。在基因功能注释方面，目前也存
+在-
+一些针对非细菌微生物的注释工具，如1.3.2.4小结提到的iVIREONS等噬菌体结构
+蛋白注释工具，以及噬菌体酶（enzymes）基因注释工具PHYPredl94)
+然而，与分析细菌基因组的工具相比，能高效分析非细菌遗传物质的算法与工具
+依旧匮乏。由于宏基因组中非细菌遗传物质的含量相对较少，己有的相关非细菌微生
+物数据库相对缺乏，如何高效地在复杂微生物群落中鉴定、重构这些非细菌遗传物质
+非常困难。此外，现存的一些非细菌基因组注释工具对数据质量的要求较高。例如上述
+的病毒宿主预测工具VirHostMatcher和WisH，只有当序列长度达到几千碱基时，才有
+相对理想的精度。由于不少非细菌微生物丰度较低，而像质粒这类非染色体遗传元件
+的基因组长度较短，在序列拼接时，这些非细菌染色体的DNA难以得到较长的片段。
+因此，现存的很多工具并不能很好适应微生物组的这种复杂性。开发针对不同来源遗
+传物质的高性能生物信息学算法，以及多功能的微生物组学综合分析工具，是微生物
+组学领域今后研究的重点</p>
+<h2 id="_2">利用宏基因组研究噬菌体与质粒面临的困难<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>噬菌体和质粒是复杂微生物群落中两种重要的非染色体遗传物质，其对微生物群
+落的调控作用己在1.2节中描述。然而，由于噬菌体和质粒的基因组长度相对较短，其
+遗传物质在整个微生物组中所占比例较小，因此在过去的研究中往往被研究者忽略。
+目前，很多对微生物群落噬菌体和质粒的研究依赖于对噬菌体或质粒的富集，即在测
+序之前，先用相应的实验方法对病毒颗粒或者质粒进行富集19.951，再对富集后的样品进
+行测序，以确保得到的DNA序列主要来自噬菌体或质粒。</p>
+<p><img alt="image-20220527110554775" src="/Users/hyx/Library/Application Support/typora-user-images/image-20220527110554775.png" /></p>
+<p>图1.11与图1.12展示出常用的对噬菌体或质粒进行富集的方法。然而，这种做法
+有很大的局限性。首先，相当一部分富集方法不能确保我们能得到环境中所有的噬菌
+体或质粒。在收集噬菌体DNA时，主要是通过对病毒颗粒进行富集实现的。在微生物
+群落中，很多温和噬菌体是以原噬菌体的形式存在，即将自己的基因组整合至宿主中，
+而不是以病毒颗粒的形式存在。因此，通过对病毒颗粒富集来获得噬菌体DNA，会丢
+失大量温和噬菌体的信息。而对质粒而言，目前较常用的质粒富集方法只对可移动的、
+能稳定复制的质粒有效1001，因此富集后的质粒样本同样丢失一部分信息。再者，通过
+富集手段来研究某种遗传物质，依旧是以割裂的手段来对微生物群落进行分析。噬菌
+体和质粒是通过与其宿主的相互作用来达到对微生物群落的调控的，而通过富集的样
+本并不包含宿主信息，这对我们充分认识噬菌体和质粒对微生物群落的调控是不利的
+例如，噬菌体与不同细菌的丰度信息可帮助我们推测噬菌体的宿主197，当缺乏细菌基
+因组信息时，我们对噬菌体宿主的推测就会变得困难。
+因此，对噬菌体或质粒研究的最好方法，就是将他们与其他生物体视为一个整体，
+在一个末经任何富集、保留了群落中所有遗传物质的宏基因组样本中进行研究。但遗
+憾的是，目前能高效分析宏基因组中噬菌体和质粒的生物信息学工具比较缺之。上小
+节提到的众多序列分类、基因预测等工具，对噬菌体和质粒的关注极少。例如，基因预
+测工具MetaGUN是基于SVM的机器学习方法，其训练集包涵261个原核微生物染色</p>
+<p><img alt="image-20220527110648194" src="/Users/hyx/Library/Application Support/typora-user-images/image-20220527110648194.png" /></p>
+<p>体基因组，并未将噬菌体、质粒考虑在内，因此其不能很好地适应噬菌体与质粒的序列
+特征。又如，对于大部分序列分箱的工具，其主要依据是将序列特征相似的序列聚类在
+同一个分箱中。然而，通过基因组改良(genomeamelioration）机制，质粒往往与其宿
+主染色体具有相似的序列特征(99,.100，因此质粒序列与其宿主染色体序列很可能会落在
+同一个分箱中而无法分离。
+要解决这些挑战，就必须立足于微生物群落中遗传物质来源的多样性，开发针对
+噬菌体和质粒高效的生物信息学算法，促进生物学家对噬菌体和质粒的认识．</p>
+<h2 id="_3">宏基因组噬菌体与质粒序列识别算法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>第一章所述，噬菌体与质粒是可移动遗传元件的主要组成部分，也是水平基因
+转移的重要参与者。这种元件可以通过与宿主的相互作用来对微生物群落进行调控。
+可移动遗传元件一个重要功能是在宏基因组中传播抗性基因以促进微生物群落对外界
+环境的适应。在大部分情况下，微生物群落中存在大量的噬菌体和质粒。例如，研究表
+明，在海洋系统中，噬菌体的丰度其至超过其他所有的生物体，并且，在海洋系统中分
+离的细菌中，超过一半含有多于一个的质粒108.100。因此，在宏基因组中鉴定噬菌体和
+质粒片段，是综合分析水平基因转移和可移动遗传元件与宿主相互作用的重要问题。
+虽然目前己经开发出一些在环境样本中富集噬菌体或质粒的实验方法，但富集的样本
+丢失了移动元件的宿主信息，不利于后续的综合分析。因此，我们需要开发可以直接从
+宏基因组中鉴定噬菌体和质粒的计算工具。
+然而，在宏基因组中高效签定这些元件是非常困难的。目前，在高通量测序数据
+中，噬菌体和质粒DNA的序列拼接效果往往不如宿主染色体DNA的序列拼接效果理
+想1s]。这意味着来自噬菌体或质粒的DNA大多以短片段的形式存在，大大地增加了识
+别难度。此外，在日前已有的数据库中，与细菌基因组相比，噬菌体和质粒的基因组数
+量更少问。特別地，虽然病毒被认为是地球上丰度最高的生物体121，但目前在NCBI数
+据库中，噬菌体的基因组数量连原核微生物基因组的十三分之一都不到，同时，据估
+计，在病毒宏基因组中，超过一半的序列不能在己发布的数据库中找到同源性19。因
+此，我们非常有必要开发能在混杂着大量短片段的宏基因组数据中签定新噬菌体和质
+粒的工具
+尽管该序列识别任务面临比较大的挑战，但目前依然开发了一些可在基于独立培
+养的全基因组测序数据或宏基因组数据中单独签别噬菌体或质粒的工具。目前已经存
+在一些可以在己测序的完整细菌基因组上探测原噬菌体的工具。这类工具有
+Prophinderll101、PhageFinderl、Phispyll2、PHAST（包括其增强版PHASTER013.141.
+Virsorter31和ProphETL1SJ。这些工具的主要策略是用一个扫描窗口在细菌的完整染色
+体基因组上移动，并通过和病毒数据库的同源性搜索，寻找可能源于噬菌体的区域。由
+于这些工具的扫描窗口的长度一般要求能覆盖若千个基因，而宏基因组中的序列一般
+都比较短，有时连一个完整的基因都没有16，因此这些工具很难应用在宏基因组数据
+中。虽然VirSorter也可以判断宏基因组中的contigs是噬菌体还是细菌，但它鉴定噬菌
+体的灵敏度非常低。此外，烈性噬菌体和部分温和噬菌体并不会将自己的基因组整合
+到宿主染色体中10，所以这些工具只能对某些种类的噬菌体进行签定。另
+一个工具</p>
+<p>MARVELI6可以判断宏基因组中的bin是源白噬菌体还是质粒，并在测试中显示出具
+有比先前工具更好的性能。但从另一个角度看，
+一些低丰度的噬菌体的序列可能不能
+有效地被分箱，为了鉴别来白这些噬菌体的序列，我们同样需要能直接对每条序列进
+行判断的工具。与MARVEL不同，ViFinderl17可以直接对每一条序列进行判断。该工
+具基于K-mer频率，利用逻辑回归(logisticregression）作为分类器来鉴定噬菌体序列，
+并体现出相对理想的性能。在质粒方面，目前大部分质粒鉴定的工具都是为基于分离
+培养的全基因组测序数据设计的，某些工具甚至只针对特定物种。这些工具包括
+PlasmidFinderl181、PLACNET(19J、PlasmidSeeker11201和mlplasmids/211。然而，在基于分
+离培养的全基因组测序数据中签定质粒的策略有时并不能应用在宏基因组上。例如，
+PlasmidSeeker在进行判断时认为，由于质粒在宿主中往往会存在多个拷贝，因此质粒
+的contig可能比染色体的contig具有更高的短读覆盖（readcoverage）。然而，在宏基
+因组中，contig之问短读覆盖的差异有可能是由于物种间的不同丰度造成的，而不是仅
+仅因为拷贝数。另-
+一个工具cBar1221是首个为在宏基因组中签定质粒而设计的工具。这
+个工具以k-mer频率作为序列的数学模型，并使用序列最小优化(sequentialminimal
+optimization,SMO）作为分类器。与cBar类似，PlasFlow1231也是一个基于太mer频率
+的宏基因组质粒识别工具。与cBar不一样的是，PlasFlow进一步综合不同太mer长度
+的信息，并用多个人工神经网络作为投票器来判断某条序列是否属于质粒。在测试结
+果中，PlasFlow取得了比cBar更好的性能。表2.1中对上述能在宏基因组中签定噬菌
+体或质粒的工具进行了总结。</p>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>Name</th>
+<th>Method</th>
+<th>Input</th>
+<th>Ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>噬菌体</td>
+<td>MARVEL</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>VirSorter</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>VirFinder</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2021 HZAU@Huang_Lab
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs', 'navigation.sections'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
