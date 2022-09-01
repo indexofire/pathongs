@@ -61,17 +61,17 @@ Prokka 的使用非常简单，准备好需要注释的核酸序列fasta格式�
 
 ```bash
 # 下载基因组数据
-$ esearch -db nuccore -query "1639[txid] AND egd" | efetch -format fasta > egd.fasta
+(prokka)$ esearch -db nuccore -query "1639[txid] AND egd" | efetch -format fasta > egd.fasta
 
 # 注释基因组序列
-$ prokka egd.fasta
+(prokka)$ prokka egd.fasta
 ```
 
 `--listdb` 参数可以查看 prokka 数据库信息。
 
 ```bash
 # 查看可以使用的数据库
-$ prokka --listdb
+(prokka)$ prokka --listdb
 
 Looking for databases in: ...
 * Kingdoms: Archaea Bacteria Mitochondria Viruses
@@ -84,8 +84,11 @@ Looking for databases in: ...
 
 ```bash
 # 注释 Listeria monocytogenes 标准株 egd
-$ prokka --outdir egd --prefix egd --addgenes --addmrna --compliant --centre CDC --genus Listeria --species "Listeria monocytogenes" --strain egd
---kingdom Bacteria --usegenus --cpus 4 --rfam --rnammer --force egd.fasta
+(prokka)$ prokka --outdir egd --prefix egd --addgenes \
+> --addmrna --compliant --centre CDC --genus Listeria \
+> --species "Listeria monocytogenes" --strain egd \
+> --kingdom Bacteria --usegenus --cpus 4 --rfam \
+> --rnammer --force egd.fasta
 ```
 
 **生成结果注释文件**
@@ -116,7 +119,7 @@ $ prokka --outdir egd --prefix egd --addgenes --addmrna --compliant --centre CDC
 如果要注释病毒基因组，除了添加`--kingdom`外
 
 ```bash
-$ prokka --kingdom Viruses contigs.fasta
+(prokka)$ prokka --kingdom Viruses contigs.fasta
 ```
 
 **.err 文件**
@@ -129,19 +132,21 @@ tsv 文件按照 locus_tag 顺序排序了注释的结果。
 
 ```bash
 # 显示 tsv 内容
-$ head egd.tsv
+(prokka)$ head egd.tsv | column -t
 
 locus_tag       ftype   length_bp       gene    EC_number       COG     product
-DJECODEN_00001  CDS     1356    dnaA            COG0593 Chromosomal replication initiator protein DnaA
-DJECODEN_00001  gene    1356    dnaA
-DJECODEN_00001  mRNA    1356    dnaA
-DJECODEN_00002  CDS     1146    dnaN            COG0592 Beta sliding clamp
-DJECODEN_00002  gene    1146    dnaN
-DJECODEN_00002  mRNA    1146    dnaN
-DJECODEN_00003  CDS     1344    yeeO_1          COG0534 putative FMN/FAD exporter YeeO
-DJECODEN_00003  gene    1344    yeeO_1
-DJECODEN_00003  mRNA    1344    yeeO_1
+DJECODEN_00001  CDS     1356            dnaA            COG0593 Chromosomal replication initiator protein DnaA
+DJECODEN_00001  gene    1356            dnaA
+DJECODEN_00001  mRNA    1356            dnaA
+DJECODEN_00002  CDS     1146            dnaN            COG0592 Beta sliding clamp
+DJECODEN_00002  gene    1146            dnaN
+DJECODEN_00002  mRNA    1146            dnaN
+DJECODEN_00003  CDS     1344            yeeO_1          COG0534 putative FMN/FAD exporter YeeO
+DJECODEN_00003  gene    1344            yeeO_1
+DJECODEN_00003  mRNA    1344            yeeO_1
 ```
+
+tsv注释文件可以看到注释gene名称，长度，功能，对应的EC、COG信息，以及注释的唯一性编号：
 
 - locus_tag: 注释基因的 locus 名称
 - ftype: 类型，默认为CDS，如果打开--addgenes和--addmrna参数，则会区别是RNA还是编码基因
@@ -155,22 +160,22 @@ DJECODEN_00003  mRNA    1344    yeeO_1
 
 ```bash
 # 批量注释基因组
-$ find . -name *.fna | sed 's/\.fna//g' | \
+(prokka)$ find . -name *.fna | sed 's/\.fna//g' | \
 > parallel --max-args=1 prorkka --outdir prokka/{1} --prefix {1} \
 > --addgenes --addmrna --mincontiglen 200 --centre 'HZCDC' \
 > --proteins ref.gbk --rnammer --rfam {1}.fna
 
 # 注释宏基因组
-$ prokka --metagenome --outdir meta contigs.fa
+(prokka)$ prokka --metagenome --outdir meta contigs.fa
 
 # 将注释CDS长度排序
-$ awk '/CDS/ {print $0}' egd.tsv | sort -kn3 -r | less
+(prokka)$ awk '/CDS/ {print $0}' egd.tsv | sort -kn3 -r | less
 
 # 显示所有的不重复注释产物
-$ awk '!a[$1]++{print}' egd.tsv
+(prokka)$ awk '!a[$1]++{print}' egd.tsv
 
 # 显示所有COG注释
-$ awk '/COG/' egd.tsv
+(prokka)$ awk '/COG/' egd.tsv
 ```
 
 ## Reference
