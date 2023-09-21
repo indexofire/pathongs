@@ -19,9 +19,9 @@
 $ bwa index ref.fa
 
 # 利用 mem 算法将 illumina reads 比对到参考基因组上
-# 并使用 samtools 将其转换为二进制 bam 个是文件
+# 并使用 samtools 将其转换为二进制 bam 格式文件
 $ bwa mem -t 40 ref.fa -R "@RG\tID:1\tSM:S1" 1_S1_L001_R1.fastq.gz 1_S1_L001_R2.fastq.gz | \
-> samtools view -bS > 1.bam
+  samtools view -bS - > 1.bam
 
 # 将 bam 文件排序
 $ samtools sort -O bam 1.sorted.bam 1.bam
