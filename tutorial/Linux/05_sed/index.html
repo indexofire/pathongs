@@ -9,14 +9,20 @@
         <meta name="description" content="杭州市疾控中心测序实验室">
       
       
-      
         <meta name="author" content="indexofire">
       
       
         <link rel="canonical" href="https://indexofire.github.io/pathongs/tutorial/Linux/05_sed/">
       
-      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      
+        <link rel="prev" href="../04_awk/">
+      
+      
+        <link rel="next" href="../06_tools/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
     
     
       
@@ -24,36 +30,35 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bcfcd587.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4051b5">
-        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
-    
+      
+
+
     
     
       
+    
+    
+      
+        
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-        
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-55420348-3","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-      
+
+    
     
     
   </head>
@@ -64,8 +69,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="">
-      
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -83,27 +87,29 @@
       
     </div>
     
+    
       
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-header-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="杭州市疾控中心测序实验室" class="md-header__button md-logo" aria-label="杭州市疾控中心测序实验室" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
-      <div class="md-header-nav__ellipsis">
-        <div class="md-header-nav__topic">
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
           <span class="md-ellipsis">
             杭州市疾控中心测序实验室
           </span>
         </div>
-        <div class="md-header-nav__topic">
+        <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
               05. sed 行处理工具
@@ -113,22 +119,34 @@
       </div>
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
       
-<div class="md-search" data-md-component="search" role="dialog">
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -136,7 +154,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -144,12 +162,11 @@
 </div>
     
     
-      <div class="md-header-nav__source">
-        
-<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source">
+      <div class="md-header__source">
+        <a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -158,6 +175,7 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
@@ -165,35 +183,43 @@
       
         
           
+            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
   
   
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  首页
 
-
-  <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
-      首页
-    </a>
-  </li>
+      </a>
+    </li>
+  
 
       
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../book/main/" class="md-tabs__link">
+          
+  
+  数据分析笔记
 
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../book/main/" class="md-tabs__link">
-        数据分析笔记
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -202,61 +228,72 @@
   
     
   
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../CML-download/01_start/" class="md-tabs__link">
+          
+  
+  专项教程
 
+        </a>
+      </li>
+    
+  
 
+    
+  
+
+      
+        
   
   
   
     
+    
+      <li class="md-tabs__item">
+        <a href="../../../protocol/" class="md-tabs__link">
+          
+  
+  实验手册
 
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../01_linux-installation/" class="md-tabs__link md-tabs__link--active">
-        专项教程
-      </a>
-    </li>
-  
-
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../protocol/" class="md-tabs__link">
-        实验手册
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
         
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/" class="md-tabs__link">
+          
+  
+  关于我们
 
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../about/" class="md-tabs__link">
-        关于我们
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
     </ul>
   </div>
 </nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -264,11 +301,10 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-
 
 
   
@@ -276,21 +312,20 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://indexofire.github.io/pathongs/" title="杭州市疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州市疾控中心测序实验室">
+    <a href="../../.." title="杭州市疾控中心测序实验室" class="md-nav__button md-logo" aria-label="杭州市疾控中心测序实验室" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     杭州市疾控中心测序实验室
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source">
+      <a href="https://github.com/indexofire/pathongs/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -302,1758 +337,2989 @@
     
       
       
-      
-
-
-
-  <li class="md-nav__item">
-    <a href="../../.." class="md-nav__link">
-      首页
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-
   
-  <li class="md-nav__item md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
-    
-    <label class="md-nav__link" for="nav-2">
-      数据分析笔记
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="数据分析笔记" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon"></span>
-        数据分析笔记
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/main/" class="md-nav__link">
-      第零章 开始之前
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
   
-    
   
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" >
-    
-    <label class="md-nav__link" for="nav-2-2">
-      第一章 常用工具
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第一章 常用工具" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-2">
-        <span class="md-nav__icon md-icon"></span>
-        第一章 常用工具
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C01_Common-Utility/01_database/" class="md-nav__link">
-      01. 基因组公共数据库
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C01_Common-Utility/02_get-data/" class="md-nav__link">
-      02. 下载基因组数据
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C01_Common-Utility/03_entrez/" class="md-nav__link">
-      03. Entrez 工具
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C01_Common-Utility/04_emboss/" class="md-nav__link">
-      04. EMBOSS 工具集
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C01_Common-Utility/05_blast/" class="md-nav__link">
-      05. Blast 比对
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C01_Common-Utility/06_fastqc/" class="md-nav__link">
-      06. FastQC
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C01_Common-Utility/07_multiqc/" class="md-nav__link">
-      07. Multiqc
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C01_Common-Utility/08_seqkit/" class="md-nav__link">
-      08. SeqKit 工具
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C01_Common-Utility/09_kmer/" class="md-nav__link">
-      09. Kmer 工具
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
   
-    
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
   
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" >
-    
-    <label class="md-nav__link" for="nav-2-3">
-      第二章 组装与比对
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第二章 组装与比对" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-3">
-        <span class="md-nav__icon md-icon"></span>
-        第二章 组装与比对
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline/" class="md-nav__link">
-      01. 基本比对流程
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C02_Raw-Data-to-Genome/02_quast/" class="md-nav__link">
-      02. Quast 验证
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C02_Raw-Data-to-Genome/03_bacteria-assembly/" class="md-nav__link">
-      03. 细菌基因组组装
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C02_Raw-Data-to-Genome/04_virus-assembly/" class="md-nav__link">
-      04. 病毒基因组组装
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C02_Raw-Data-to-Genome/05_gatk3/" class="md-nav__link">
-      05. GATK3
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C02_Raw-Data-to-Genome/06_gatk4/" class="md-nav__link">
-      06. GATK4
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C02_Raw-Data-to-Genome/11_long-noisy-reads-assembly/" class="md-nav__link">
-      11. 长序列比对
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C02_Raw-Data-to-Genome/12_hybrid-assembly/" class="md-nav__link">
-      12. 二代三代混合组装
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C02_Raw-Data-to-Genome/14_bwa-long-sequence-mapping/" class="md-nav__link">
-      14. bwa 长序列比对
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
+  <span class="md-ellipsis">
+    首页
+  </span>
   
-    
+
+      </a>
+    </li>
   
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" >
-    
-    <label class="md-nav__link" for="nav-2-4">
-      第三章 基因组注释
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第三章 基因组注释" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-4">
-        <span class="md-nav__icon md-icon"></span>
-        第三章 基因组注释
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C03_Genome-Annotation/01_prokka/" class="md-nav__link">
-      01. Prokka 快速注释
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C03_Genome-Annotation/02_rast/" class="md-nav__link">
-      02. 在线注释工具 rast
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C03_Genome-Annotation/03_pgaap/" class="md-nav__link">
-      03. 注释工具 PGAAP
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C03_Genome-Annotation/04_snpeff/" class="md-nav__link">
-      04. SNP注释工具 snpEFF
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C03_Genome-Annotation/05_cog/" class="md-nav__link">
-      05. COG注释
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  
-    
-  
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" >
-    
-    <label class="md-nav__link" for="nav-2-5">
-      第四章 基因组比较
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第四章 基因组比较" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-5">
-        <span class="md-nav__icon md-icon"></span>
-        第四章 基因组比较
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C06_Genome-Compare/01_mummer/" class="md-nav__link">
-      01. mummer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C06_Genome-Compare/02_nucdiff/" class="md-nav__link">
-      02. nucdiff
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C06_Genome-Compare/03_mauve/" class="md-nav__link">
-      03. mauve
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C06_Genome-Compare/04_sibelia/" class="md-nav__link">
-      04. sibelia
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C06_Genome-Compare/05_ani/" class="md-nav__link">
-      05. ani
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C06_Genome-Compare/10_bigsi/" class="md-nav__link">
-      10. bigsi
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  
-    
-  
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6" >
-    
-    <label class="md-nav__link" for="nav-2-6">
-      第五章 泛基因组分析
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第五章 泛基因组分析" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-6">
-        <span class="md-nav__icon md-icon"></span>
-        第五章 泛基因组分析
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C07_PanGenome-and-CoreGenome/01_pangenome/" class="md-nav__link">
-      01. Pangenome 概述
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C07_PanGenome-and-CoreGenome/02_get_homologues/" class="md-nav__link">
-      02. Get_Homologues 分析
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C07_PanGenome-and-CoreGenome/03_bpga/" class="md-nav__link">
-      03. BPGA 分析
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C07_PanGenome-and-CoreGenome/04_roary/" class="md-nav__link">
-      04. Roary 分析
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C07_PanGenome-and-CoreGenome/05_panseq/" class="md-nav__link">
-      05. panseq 分析
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C07_PanGenome-and-CoreGenome/07_orthmcl/" class="md-nav__link">
-      07. OrthMCL 分析
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C07_PanGenome-and-CoreGenome/08_itep/" class="md-nav__link">
-      08. ITEP 分析
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  
-    
-  
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7" >
-    
-    <label class="md-nav__link" for="nav-2-7">
-      第六章 基因组可视化
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第六章 基因组可视化" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-7">
-        <span class="md-nav__icon md-icon"></span>
-        第六章 基因组可视化
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C08_Genome-Visualization/01_igv/" class="md-nav__link">
-      01. igv 查看比对结果
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C08_Genome-Visualization/02_brig/" class="md-nav__link">
-      02. BRIG 分析工具
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C08_Genome-Visualization/03_circos/" class="md-nav__link">
-      03. circos 工具使用
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  
-    
-  
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-8" type="checkbox" id="nav-2-8" >
-    
-    <label class="md-nav__link" for="nav-2-8">
-      第七章 综合分析平台
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第七章 综合分析平台" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-8">
-        <span class="md-nav__icon md-icon"></span>
-        第七章 综合分析平台
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C09_Analysis-Platform/01_docker/" class="md-nav__link">
-      01. 基于 docker 镜像
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C09_Analysis-Platform/02_galaxy/" class="md-nav__link">
-      02. Galaxy 平台
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C09_Analysis-Platform/03_amazon/" class="md-nav__link">
-      03. Amazon EC2 云平台
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C09_Analysis-Platform/04_others/" class="md-nav__link">
-      04. 其他平台
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C16_Standalone-Platform/01_anvio/" class="md-nav__link">
-      05. anvio
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C16_Standalone-Platform/02_galaxy/" class="md-nav__link">
-      02. galaxy
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  
-    
-  
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-9" type="checkbox" id="nav-2-9" >
-    
-    <label class="md-nav__link" for="nav-2-9">
-      第八章 重组与种群分析
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第八章 重组与种群分析" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-9">
-        <span class="md-nav__icon md-icon"></span>
-        第八章 重组与种群分析
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C10_Recombination-and-Population-Structure/01_virus-recombination/" class="md-nav__link">
-      01. 病毒重组
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C10_Recombination-and-Population-Structure/02_gubbins/" class="md-nav__link">
-      02. Gubbins 分析
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C10_Recombination-and-Population-Structure/03_baps/" class="md-nav__link">
-      03. BAPS
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  
-    
-  
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-10" type="checkbox" id="nav-2-10" >
-    
-    <label class="md-nav__link" for="nav-2-10">
-      第九章 细菌扫描工具
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第九章 细菌扫描工具" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-10">
-        <span class="md-nav__icon md-icon"></span>
-        第九章 细菌扫描工具
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C11_Insilico-Scanning/01_srst2/" class="md-nav__link">
-      01. SRST2 短序列扫描工具
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C11_Insilico-Scanning/02_mlst/" class="md-nav__link">
-      02. MLST 扫描工具
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C11_Insilico-Scanning/03_ariba/" class="md-nav__link">
-      03. Ariba 耐药基因
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C11_Insilico-Scanning/04_abricate/" class="md-nav__link">
-      04. Abricate 多功能扫描工具
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  
-    
-  
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-11" type="checkbox" id="nav-2-11" >
-    
-    <label class="md-nav__link" for="nav-2-11">
-      第十章 宏基因组分析
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第十章 宏基因组分析" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-11">
-        <span class="md-nav__icon md-icon"></span>
-        第十章 宏基因组分析
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C12_Metagenomics-Analysis/01_kraken/" class="md-nav__link">
-      01. kraken
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C12_Metagenomics-Analysis/02_centrifuge/" class="md-nav__link">
-      02. centrifuge
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C12_Metagenomics-Analysis/03_bracken/" class="md-nav__link">
-      03. bracken
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C12_Metagenomics-Analysis/04_sourmash/" class="md-nav__link">
-      04. sourmash
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C12_Metagenomics-Analysis/05_clark/" class="md-nav__link">
-      05. clark
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C12_Metagenomics-Analysis/06_krona/" class="md-nav__link">
-      06. krona
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C12_Metagenomics-Analysis/07_pavian/" class="md-nav__link">
-      07. pavian
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C12_Metagenomics-Analysis/08_supri/" class="md-nav__link">
-      08. supri
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C12_Metagenomics-Analysis/09_shotgun/" class="md-nav__link">
-      09. shotgun 分析
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C12_Metagenomics-Analysis/10_16s/" class="md-nav__link">
-      10. 16S 种群分析
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C12_Metagenomics-Analysis/11_kmerfinder/" class="md-nav__link">
-      11. KmerFinder
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C12_Metagenomics-Analysis/12_meta-beetl/" class="md-nav__link">
-      12. Meta-BEETL
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  
-    
-  
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-12" type="checkbox" id="nav-2-12" >
-    
-    <label class="md-nav__link" for="nav-2-12">
-      第十一章 单分子测序
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第十一章 单分子测序" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-12">
-        <span class="md-nav__icon md-icon"></span>
-        第十一章 单分子测序
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C13_Single-Molecular-Sequencing/01_nanopore/" class="md-nav__link">
-      01. nanopore
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C13_Single-Molecular-Sequencing/02_pacbio/" class="md-nav__link">
-      02. pacbio
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C13_Single-Molecular-Sequencing/03_canu/" class="md-nav__link">
-      03. canu
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C13_Single-Molecular-Sequencing/04_seqs-polish/" class="md-nav__link">
-      04. trimming
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C13_Single-Molecular-Sequencing/06_hybrid-assembling/" class="md-nav__link">
-      06. hybrid
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  
-    
-  
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-13" type="checkbox" id="nav-2-13" >
-    
-    <label class="md-nav__link" for="nav-2-13">
-      第十二章 多重序列比对
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第十二章 多重序列比对" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-13">
-        <span class="md-nav__icon md-icon"></span>
-        第十二章 多重序列比对
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C14_Multiple-Sequence-Alignment/01_msa/" class="md-nav__link">
-      01. 多重序列比对
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  
-    
-  
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-14" type="checkbox" id="nav-2-14" >
-    
-    <label class="md-nav__link" for="nav-2-14">
-      第十三章 进化树构建分析
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第十三章 进化树构建分析" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-14">
-        <span class="md-nav__icon md-icon"></span>
-        第十三章 进化树构建分析
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C15_Phylogeny-Analysis/00_all-about-phylogeny/" class="md-nav__link">
-      00. 构建进化书
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C15_Phylogeny-Analysis/02_raxml.md" class="md-nav__link">
-      01. RAxML
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C15_Phylogeny-Analysis/01_figtree.md" class="md-nav__link">
-      02. figtree
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C15_Phylogeny-Analysis/02_ggtree.md" class="md-nav__link">
-      03. ggtree
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  
-    
-  
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-15" type="checkbox" id="nav-2-15" >
-    
-    <label class="md-nav__link" for="nav-2-15">
-      第十七章 分子地理流行病学
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第十七章 分子地理流行病学" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-15">
-        <span class="md-nav__icon md-icon"></span>
-        第十七章 分子地理流行病学
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C17_Pathogen-Geospatial-Analysis/04_cartodb/" class="md-nav__link">
-      04. CartoDB
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C17_Pathogen-Geospatial-Analysis/05_leaflet/" class="md-nav__link">
-      05. leaflet
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  
-    
-  
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-16" type="checkbox" id="nav-2-16" >
-    
-    <label class="md-nav__link" for="nav-2-16">
-      第十八章 分析实践
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第十八章 分析实践" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-16">
-        <span class="md-nav__icon md-icon"></span>
-        第十八章 分析实践
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C18_Analysis-Examples/01_trace-Pae-from-different-source-by-SNP/" class="md-nav__link">
-      01. 细菌SNP溯源分析一
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C18_Analysis-Examples/02_comparative-analysis-Ban-genomes/" class="md-nav__link">
-      02. 细菌比较基因组学研究
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  
-    
-  
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-17" type="checkbox" id="nav-2-17" >
-    
-    <label class="md-nav__link" for="nav-2-17">
-      第十九章 工具流工具
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第十九章 工具流工具" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-17">
-        <span class="md-nav__icon md-icon"></span>
-        第十九章 工具流工具
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C19_Pipelines-and-Workflows/05_workflow-software/" class="md-nav__link">
-      05. workflow工具软件
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  
-    
-  
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-18" type="checkbox" id="nav-2-18" >
-    
-    <label class="md-nav__link" for="nav-2-18">
-      第二十章 其他
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="第二十章 其他" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-18">
-        <span class="md-nav__icon md-icon"></span>
-        第二十章 其他
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../book/C20_Others/02_gi-to-accession/" class="md-nav__link">
-      02. GI转Accession
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
 
     
       
       
+  
+  
+  
+  
+    
+    
+    
       
-
-
-  
-
-
-  
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
-    <label class="md-nav__link" for="nav-3">
-      专项教程
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="专项教程" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon"></span>
-        专项教程
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+      
         
-        
-          
-          
-          
-
-
-  
-
-
-  
-    
-  
-  <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
-    
-    <label class="md-nav__link" for="nav-3-1">
-      Linux入门
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="Linux入门" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-1">
-        <span class="md-nav__icon md-icon"></span>
-        Linux入门
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../01_linux-installation/" class="md-nav__link">
-      01. Linux 安装示例
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../02_basic-cml/" class="md-nav__link">
-      02. Linux 基本命令
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../03_linux-software/" class="md-nav__link">
-      03. Linux 软件管理
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../04_awk/" class="md-nav__link">
-      04. awk 列处理工具
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        05. sed 行处理工具
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数据分析笔记
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            数据分析笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第零章 开始之前
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
-    <a href="./" class="md-nav__link md-nav__link--active">
-      05. sed 行处理工具
-    </a>
+    
     
       
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第一章 常用工具
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            第一章 常用工具
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C01_Common-Utility/01_database/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. 基因组公共数据库
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C01_Common-Utility/02_get-data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. 下载基因组数据
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C01_Common-Utility/03_entrez/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. Entrez 工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C01_Common-Utility/04_emboss/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. EMBOSS 工具集
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C01_Common-Utility/05_blast/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. Blast 比对
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C01_Common-Utility/06_fastqc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06. FastQC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C01_Common-Utility/07_multiqc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07. Multiqc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C01_Common-Utility/08_seqkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08. SeqKit 工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C01_Common-Utility/09_kmer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    09. Kmer 工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第二章 组装与比对
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            第二章 组装与比对
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C02_Raw-Data-to-Genome/01_bwa-samtools-pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. 基本比对流程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C02_Raw-Data-to-Genome/02_quast/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. Quast 验证
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C02_Raw-Data-to-Genome/03_bacteria-assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. 细菌基因组组装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C02_Raw-Data-to-Genome/04_virus-assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. 病毒基因组组装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C02_Raw-Data-to-Genome/05_gatk3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. GATK3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C02_Raw-Data-to-Genome/06_gatk4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06. GATK4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C02_Raw-Data-to-Genome/11_long-noisy-reads-assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. 长序列比对
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C02_Raw-Data-to-Genome/12_hybrid-assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. 二代三代混合组装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C02_Raw-Data-to-Genome/14_bwa-long-sequence-mapping/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. bwa 长序列比对
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第三章 基因组注释
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            第三章 基因组注释
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C03_Genome-Annotation/01_prokka/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. Prokka 快速注释
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C03_Genome-Annotation/02_rast/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. 在线注释工具 rast
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C03_Genome-Annotation/03_pgaap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. 注释工具 PGAAP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C03_Genome-Annotation/04_snpeff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. SNP注释工具 snpEFF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C03_Genome-Annotation/05_cog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. COG注释
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第四章 基因组比较
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            第四章 基因组比较
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C06_Genome-Compare/01_mummer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. mummer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C06_Genome-Compare/02_nucdiff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. nucdiff
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C06_Genome-Compare/03_mauve/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. mauve
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C06_Genome-Compare/04_sibelia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. sibelia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C06_Genome-Compare/05_ani/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. ani
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C06_Genome-Compare/10_bigsi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. bigsi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第五章 泛基因组分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            第五章 泛基因组分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C07_PanGenome-and-CoreGenome/01_pangenome/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. Pangenome 概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C07_PanGenome-and-CoreGenome/02_get_homologues/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. Get_Homologues 分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C07_PanGenome-and-CoreGenome/03_bpga/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. BPGA 分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C07_PanGenome-and-CoreGenome/04_roary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. Roary 分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C07_PanGenome-and-CoreGenome/05_panseq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. panseq 分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C07_PanGenome-and-CoreGenome/07_orthmcl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07. OrthMCL 分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C07_PanGenome-and-CoreGenome/08_itep/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08. ITEP 分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第六章 基因组可视化
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            第六章 基因组可视化
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C08_Genome-Visualization/01_igv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. igv 查看比对结果
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C08_Genome-Visualization/02_brig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. BRIG 分析工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C08_Genome-Visualization/03_circos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. circos 工具使用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第七章 综合分析平台
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            第七章 综合分析平台
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C09_Analysis-Platform/01_docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. 基于 docker 镜像
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C09_Analysis-Platform/02_galaxy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. Galaxy 平台
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C09_Analysis-Platform/03_amazon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. Amazon EC2 云平台
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C09_Analysis-Platform/04_others/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. 其他平台
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C16_Standalone-Platform/01_anvio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. anvio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C16_Standalone-Platform/02_galaxy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. galaxy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第八章 重组与种群分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            第八章 重组与种群分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C10_Recombination-and-Population-Structure/01_virus-recombination/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. 病毒重组
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C10_Recombination-and-Population-Structure/02_gubbins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. Gubbins 分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C10_Recombination-and-Population-Structure/03_baps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. BAPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第九章 细菌扫描工具
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            第九章 细菌扫描工具
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C11_Insilico-Scanning/01_srst2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. SRST2 短序列扫描工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C11_Insilico-Scanning/02_mlst/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. MLST 扫描工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C11_Insilico-Scanning/03_ariba/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. Ariba 耐药基因
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C11_Insilico-Scanning/04_abricate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. Abricate 多功能扫描工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第十章 宏基因组分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            第十章 宏基因组分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C12_Metagenomics-Analysis/01_kraken/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. kraken
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C12_Metagenomics-Analysis/02_centrifuge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. centrifuge
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C12_Metagenomics-Analysis/03_bracken/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. bracken
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C12_Metagenomics-Analysis/04_sourmash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. sourmash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C12_Metagenomics-Analysis/05_clark/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. clark
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C12_Metagenomics-Analysis/06_krona/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06. krona
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C12_Metagenomics-Analysis/07_pavian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07. pavian
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C12_Metagenomics-Analysis/08_supri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08. supri
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C12_Metagenomics-Analysis/09_shotgun/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    09. shotgun 分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C12_Metagenomics-Analysis/10_16s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. 16S 种群分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C12_Metagenomics-Analysis/11_kmerfinder/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. KmerFinder
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C12_Metagenomics-Analysis/12_meta-beetl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Meta-BEETL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第十一章 单分子测序
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
+            <span class="md-nav__icon md-icon"></span>
+            第十一章 单分子测序
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C13_Single-Molecular-Sequencing/01_nanopore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. nanopore
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C13_Single-Molecular-Sequencing/02_pacbio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. pacbio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C13_Single-Molecular-Sequencing/03_canu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. canu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C13_Single-Molecular-Sequencing/04_seqs-polish/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. trimming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C13_Single-Molecular-Sequencing/06_hybrid-assembling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06. hybrid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第十二章 多重序列比对
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            第十二章 多重序列比对
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C14_Multiple-Sequence-Alignment/01_msa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. 多重序列比对
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第十三章 进化树构建分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            第十三章 进化树构建分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C15_Phylogeny-Analysis/00_all-about-phylogeny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    00. 构建进化书
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C15_Phylogeny-Analysis/02_raxml.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. RAxML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C15_Phylogeny-Analysis/01_figtree.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. figtree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C15_Phylogeny-Analysis/02_ggtree.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. ggtree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_15" id="__nav_2_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第十七章 分子地理流行病学
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_15">
+            <span class="md-nav__icon md-icon"></span>
+            第十七章 分子地理流行病学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C17_Pathogen-Geospatial-Analysis/04_cartodb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. CartoDB
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C17_Pathogen-Geospatial-Analysis/05_leaflet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. leaflet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_16" id="__nav_2_16_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第十八章 分析实践
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_16">
+            <span class="md-nav__icon md-icon"></span>
+            第十八章 分析实践
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C18_Analysis-Examples/01_trace-Pae-from-different-source-by-SNP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. 细菌SNP溯源分析一
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C18_Analysis-Examples/02_comparative-analysis-Ban-genomes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. 细菌比较基因组学研究
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_17" id="__nav_2_17_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第十九章 工具流工具
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_17">
+            <span class="md-nav__icon md-icon"></span>
+            第十九章 工具流工具
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C19_Pipelines-and-Workflows/05_workflow-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. workflow工具软件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_18" id="__nav_2_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    第二十章 其他
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_18">
+            <span class="md-nav__icon md-icon"></span>
+            第二十章 其他
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../book/C20_Others/02_gi-to-accession/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. GI转Accession
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    专项教程
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            专项教程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    命令行工具下载基因组数据
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            命令行工具下载基因组数据
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CML-download/01_start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. 简介
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CML-download/02_assembly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. 下载Assembly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    新冠病毒分析平台
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            新冠病毒分析平台
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nCov/01_nextclade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. nextclade
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nCov/02_ncov/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. nextstrain
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Linux入门
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Linux入门
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_linux-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. Linux 安装示例
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_basic-cml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. Linux 基本命令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_linux-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. Linux 软件管理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_awk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. awk 列处理工具
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    05. sed 行处理工具
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    05. sed 行处理工具
+  </span>
+  
+
+      </a>
+      
+        
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
@@ -2063,11 +3329,13 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#1-sed" class="md-nav__link">
-    1. sed 命令基本逻辑
+    <span class="md-ellipsis">
+      1. sed 命令基本逻辑
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="1. sed 命令基本逻辑">
@@ -2075,21 +3343,27 @@
         
           <li class="md-nav__item">
   <a href="#11" class="md-nav__link">
-    1.1 输入
+    <span class="md-ellipsis">
+      1.1 输入
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#12" class="md-nav__link">
-    1.2 选项
+    <span class="md-ellipsis">
+      1.2 选项
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#13" class="md-nav__link">
-    1.3 脚本
+    <span class="md-ellipsis">
+      1.3 脚本
+    </span>
   </a>
   
 </li>
@@ -2101,7 +3375,9 @@
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    2. 脚本示例
+    <span class="md-ellipsis">
+      2. 脚本示例
+    </span>
   </a>
   
 </li>
@@ -2109,398 +3385,641 @@
     </ul>
   
 </nav>
-    
-  </li>
+      
+    </li>
+  
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_tools/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    06. 其他命令行工具
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../06_tools/" class="md-nav__link">
-      06. 其他命令行工具
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_vim/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    07. vim
+  </span>
+  
 
+      </a>
+    </li>
+  
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../07_vim/" class="md-nav__link">
-      07. vim
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
+              
+            
+              
+                
+  
+  
+  
   
     
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
   
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
-    
-    <label class="md-nav__link" for="nav-3-2">
-      常用编程语言
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="常用编程语言" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-2">
-        <span class="md-nav__icon md-icon"></span>
-        常用编程语言
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+  <span class="md-ellipsis">
+    常用编程语言
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            常用编程语言
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/01_shell/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    01. Shell 脚本
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../Programming/01_shell/" class="md-nav__link">
-      01. Shell 脚本
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/02_perl/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    02. Perl 编程
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../Programming/02_perl/" class="md-nav__link">
-      02. Perl 编程
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/03_python/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    03. Python 编程
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../Programming/03_python/" class="md-nav__link">
-      03. Python 编程
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/04_biopython/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    04. Biopython 编程
+  </span>
+  
 
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../Programming/04_biopython/" class="md-nav__link">
-      04. Biopython 编程
-    </a>
-  </li>
-
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming/05_r/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    05. R 编程
+  </span>
+  
 
+      </a>
+    </li>
+  
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../Programming/05_r/" class="md-nav__link">
-      05. R 编程
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-
+              
+            
+              
+                
+  
+  
+  
   
     
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
   
-  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
-    
-    <label class="md-nav__link" for="nav-3-3">
-      数据文件格式
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="数据文件格式" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-3">
-        <span class="md-nav__icon md-icon"></span>
-        数据文件格式
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../Format/01_fasta/" class="md-nav__link">
-      01. fasta
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../Format/02_embl/" class="md-nav__link">
-      02. embl
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../Format/05_fastq.md" class="md-nav__link">
-      03. fastq
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../Format/04_gcg/" class="md-nav__link">
-      04. gcg
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../Format/05_sam/" class="md-nav__link">
-      05. sam
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../Format/06_bam/" class="md-nav__link">
-      06. bam
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../Format/07_bed/" class="md-nav__link">
-      07. bed
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../Format/08_vcf/" class="md-nav__link">
-      08. vcf
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../Format/09_gff/" class="md-nav__link">
-      09. gff
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../Format/10_cram/" class="md-nav__link">
-      10. cram
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-
+  <span class="md-ellipsis">
+    数据文件格式
+  </span>
   
-  <li class="md-nav__item md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
-    
-    <label class="md-nav__link" for="nav-4">
-      实验手册
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="实验手册" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon"></span>
-        实验手册
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../protocol/" class="md-nav__link">
-      
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-
-  <li class="md-nav__item">
-    <a href="../../../protocol/artic-network-covid19/" class="md-nav__link">
-      ArticNetwork Covid-19测序
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            数据文件格式
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
-  <li class="md-nav__item md-nav__item--nested">
-    
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
-    
-    <label class="md-nav__link" for="nav-5">
-      关于我们
-      <span class="md-nav__icon md-icon"></span>
-    </label>
-    <nav class="md-nav" aria-label="关于我们" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon"></span>
-        关于我们
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format/01_fasta/" class="md-nav__link">
         
+  
+  <span class="md-ellipsis">
+    01. fasta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format/02_embl/" class="md-nav__link">
         
-          
-          
-          
+  
+  <span class="md-ellipsis">
+    02. embl
+  </span>
+  
 
+      </a>
+    </li>
+  
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format/05_fastq.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. fastq
+  </span>
+  
 
-  <li class="md-nav__item">
-    <a href="../../../about/" class="md-nav__link">
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format/04_gcg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. gcg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format/05_sam/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. sam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format/06_bam/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06. bam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format/07_bed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07. bed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format/08_vcf/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08. vcf
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format/09_gff/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    09. gff
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Format/10_cram/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. cram
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
-    </a>
-  </li>
+    </li>
+  
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
         
-      </ul>
-    </nav>
-  </li>
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    实验手册
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            实验手册
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../protocol/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../protocol/artic-network-covid19.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ArticNetwork Covid-19测序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    关于我们
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            关于我们
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
 
     
   </ul>
@@ -2511,11 +4030,13 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
     
@@ -2525,11 +4046,13 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#1-sed" class="md-nav__link">
-    1. sed 命令基本逻辑
+    <span class="md-ellipsis">
+      1. sed 命令基本逻辑
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="1. sed 命令基本逻辑">
@@ -2537,21 +4060,27 @@
         
           <li class="md-nav__item">
   <a href="#11" class="md-nav__link">
-    1.1 输入
+    <span class="md-ellipsis">
+      1.1 输入
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#12" class="md-nav__link">
-    1.2 选项
+    <span class="md-ellipsis">
+      1.2 选项
+    </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#13" class="md-nav__link">
-    1.3 脚本
+    <span class="md-ellipsis">
+      1.3 脚本
+    </span>
   </a>
   
 </li>
@@ -2563,7 +4092,9 @@
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    2. 脚本示例
+    <span class="md-ellipsis">
+      2. 脚本示例
+    </span>
   </a>
   
 </li>
@@ -2576,16 +4107,17 @@
               </div>
             
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                  <a href="https://github.com/indexofire/pathongs/edit/master/docs/tutorial/Linux/05_sed.md" title="Edit this page" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                <h1 id="sed">sed 用法<a class="headerlink" href="#sed" title="Permanent link">&para;</a></h1>
+                  
+
+  
+  
+
+
+<h1 id="sed">sed 用法<a class="headerlink" href="#sed" title="Permanent link">&para;</a></h1>
 <p><span class='git-page-authors git-authors'><a href='mailto:indexofire@gmail.com'>Mark Renton</a></span> 更新于: 2020-09-14</p>
 <hr />
 <p><img alt="sed" src="../assets/images/C01/05/header.jpg" /></p>
@@ -2608,19 +4140,18 @@
 <p><code>-i</code> 即sed编辑完后直接储存为源文件，与重定向符号类似<code>&gt;</code>（但重定向符号不能覆盖原文件，只会清空）。不过出于数据安全的愿意，建议还是用&gt;重定向到新文件或者保留备份文件比较好。</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1"># 删除file的空格，保存成file.new文件</span>
-$ sed -i <span class="s1">&#39;s/ //g&#39;</span> file &gt; file.new
-$ ls
-file           <span class="c1"># 原始文件</span>
-file.new       <span class="c1"># 新文件</span>
-
-<span class="c1"># 删除file的空格，原始文件保存成file.old</span>
-$ sed -i.old <span class="s1">&#39;s/ //g&#39;</span> file
-$ ls
-file           <span class="c1"># 新文件</span>
-file.old       <span class="c1"># 原始文件</span>
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 删除file的空格，保存成file.new文件</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/ //g&#39;</span><span class="w"> </span>file<span class="w"> </span>&gt;<span class="w"> </span>file.new
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>$<span class="w"> </span>ls
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>file<span class="w">           </span><span class="c1"># 原始文件</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>file.new<span class="w">       </span><span class="c1"># 新文件</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># 删除file的空格，原始文件保存成file.old</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>$<span class="w"> </span>sed<span class="w"> </span>-i.old<span class="w"> </span><span class="s1">&#39;s/ //g&#39;</span><span class="w"> </span>file
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>$<span class="w"> </span>ls
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>file<span class="w">           </span><span class="c1"># 新文件</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>file.old<span class="w">       </span><span class="c1"># 原始文件</span>
+</span></code></pre></div>
 <h3 id="13">1.3 脚本<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -2630,154 +4161,147 @@ file.old       <span class="c1"># 原始文件</span>
 <p><code>l</code> 打印行内容，包括特殊符号，比如换行符</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1"># file 文件内容</span>
-$ cat file
-Hello everyone
-my food is great
-food is ok
-Food
-fooooooooooood
-
-<span class="c1"># 打印文件第2行</span>
-$ sed -n <span class="s1">&#39;2p&#39;</span> file
-my food is great
-
-<span class="c1"># 打印文件第2行到第3行</span>
-$ sed -n <span class="s1">&#39;2,3p&#39;</span> file
-my food is great
-food is ok
-
-<span class="c1"># 不打印第一行</span>
-$ sed -n <span class="s1">&#39;1!p&#39;</span> file
-my food is great
-food is ok
-Food
-fooooooooooood
-
-<span class="c1"># 不打印第2-3行</span>
-$ sed -n <span class="s1">&#39;2,3!p&#39;</span> file
-Hello everyone
-Food
-fooooooooooood
-
-<span class="c1"># 打印文件最后一行, $符号表示文件最后一行</span>
-$ sed -n <span class="s1">&#39;$p&#39;</span> file
-fooooooooooood
-
-<span class="c1"># 打印包含&quot;food&quot;字符开始的行</span>
-$ sed -n <span class="s1">&#39;/^food/p&#39;</span> file
-food is ok
-
-<span class="c1"># 从第2行开始打印，直到第一个匹配的food打印的那一行为止（不包括第5行）</span>
-<span class="c1"># 如果没有匹配则一直输出到文件结束</span>
-$ sed -n <span class="s1">&#39;2,/food/p&#39;</span> file
-my food is great
-food is ok
-
-<span class="c1"># 显示$换行符</span>
-$ sed -n <span class="s1">&#39;1,3l&#39;</span> file
-Hello everyone$
-my food is great$
-food is ok$
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># file 文件内容</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$<span class="w"> </span>cat<span class="w"> </span>file
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Hello<span class="w"> </span>everyone
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>my<span class="w"> </span>food<span class="w"> </span>is<span class="w"> </span>great
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>food<span class="w"> </span>is<span class="w"> </span>ok
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Food
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>fooooooooooood
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># 打印文件第2行</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>$<span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;2p&#39;</span><span class="w"> </span>file
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>my<span class="w"> </span>food<span class="w"> </span>is<span class="w"> </span>great
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># 打印文件第2行到第3行</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>$<span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;2,3p&#39;</span><span class="w"> </span>file
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>my<span class="w"> </span>food<span class="w"> </span>is<span class="w"> </span>great
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>food<span class="w"> </span>is<span class="w"> </span>ok
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="c1"># 不打印第一行</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>$<span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;1!p&#39;</span><span class="w"> </span>file
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>my<span class="w"> </span>food<span class="w"> </span>is<span class="w"> </span>great
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>food<span class="w"> </span>is<span class="w"> </span>ok
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>Food
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>fooooooooooood
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="c1"># 不打印第2-3行</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>$<span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;2,3!p&#39;</span><span class="w"> </span>file
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>Hello<span class="w"> </span>everyone
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>Food
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>fooooooooooood
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="c1"># 打印文件最后一行, $符号表示文件最后一行</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>$<span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;$p&#39;</span><span class="w"> </span>file
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>fooooooooooood
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="c1"># 打印包含&quot;food&quot;字符开始的行</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>$<span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;/^food/p&#39;</span><span class="w"> </span>file
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>food<span class="w"> </span>is<span class="w"> </span>ok
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="c1"># 从第2行开始打印，直到第一个匹配的food打印的那一行为止（不包括第5行）</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="c1"># 如果没有匹配则一直输出到文件结束</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>$<span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;2,/food/p&#39;</span><span class="w"> </span>file
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>my<span class="w"> </span>food<span class="w"> </span>is<span class="w"> </span>great
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>food<span class="w"> </span>is<span class="w"> </span>ok
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="c1"># 显示$换行符</span>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>$<span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;1,3l&#39;</span><span class="w"> </span>file
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>Hello<span class="w"> </span>everyone$
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>my<span class="w"> </span>food<span class="w"> </span>is<span class="w"> </span>great$
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>food<span class="w"> </span>is<span class="w"> </span>ok$
+</span></code></pre></div>
 <ul>
 <li><code>=</code> 打印匹配的行号</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1"># 打印包含fo的行号</span>
-$ sed -n <span class="s1">&#39;/fo/=&#39;</span> file
-<span class="m">2</span>
-<span class="m">3</span>
-<span class="m">5</span>
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 打印包含fo的行号</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;/fo/=&#39;</span><span class="w"> </span>file
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="m">2</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="m">3</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="m">5</span>
+</span></code></pre></div>
 <ul>
 <li><code>a</code> 追加行模式</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1"># 在含fo内容的行后插入一个新行</span>
-$ sed <span class="s1">&#39;/fo/a\Insert a new line&#39;</span> file
-Hello everyone
-my food is great
-insert a new line
-food is ok
-insert a new line
-Food
-fooooooooooood
-insert a new line
-
-<span class="c1"># 在行尾插入内容</span>
-$ sed <span class="s1">&#39;$a\The end&#39;</span> file
-Hello everyone
-my food is great
-food is ok
-Food
-fooooooooooood
-The end
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 在含fo内容的行后插入一个新行</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;/fo/a\Insert a new line&#39;</span><span class="w"> </span>file
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Hello<span class="w"> </span>everyone
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>my<span class="w"> </span>food<span class="w"> </span>is<span class="w"> </span>great
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>insert<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>line
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>food<span class="w"> </span>is<span class="w"> </span>ok
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>insert<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>line
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>Food
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>fooooooooooood
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>insert<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>line
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># 在行尾插入内容</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;$a\The end&#39;</span><span class="w"> </span>file
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>Hello<span class="w"> </span>everyone
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>my<span class="w"> </span>food<span class="w"> </span>is<span class="w"> </span>great
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>food<span class="w"> </span>is<span class="w"> </span>ok
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>Food
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>fooooooooooood
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>The<span class="w"> </span>end
+</span></code></pre></div>
 <p><code>i</code> 插入行模式</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 在含fo内容的行前插入一个新行</span>
-$ sed <span class="s1">&#39;/fo/i\Insert a new line&#39;</span> file
-Hello everyone
-insert a new line
-my food is great
-insert a new line
-food is ok
-Food
-insert a new line
-fooooooooooood
-
-<span class="c1"># 在第一行前插入新行</span>
-$ sed <span class="s1">&#39;1i\Title:food&#39;</span> file
-Title:food
-Hello everyone
-my food is great
-food is ok
-Food
-fooooooooooood
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 在含fo内容的行前插入一个新行</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;/fo/i\Insert a new line&#39;</span><span class="w"> </span>file
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Hello<span class="w"> </span>everyone
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>insert<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>line
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>my<span class="w"> </span>food<span class="w"> </span>is<span class="w"> </span>great
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>insert<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>line
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>food<span class="w"> </span>is<span class="w"> </span>ok
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>Food
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>insert<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>line
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>fooooooooooood
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1"># 在第一行前插入新行</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;1i\Title:food&#39;</span><span class="w"> </span>file
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>Title:food
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>Hello<span class="w"> </span>everyone
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>my<span class="w"> </span>food<span class="w"> </span>is<span class="w"> </span>great
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>food<span class="w"> </span>is<span class="w"> </span>ok
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>Food
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>fooooooooooood
+</span></code></pre></div>
 <p><code>c</code> 修改模式</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 含fo的行替换成新的内容</span>
-$ sed <span class="s1">&#39;/fo/c\changed line content&#39;</span> file
-Hello everyone
-changed line content
-changed line content
-Food
-changed line content
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 含fo的行替换成新的内容</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;/fo/c\changed line content&#39;</span><span class="w"> </span>file
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Hello<span class="w"> </span>everyone
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>changed<span class="w"> </span>line<span class="w"> </span>content
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>changed<span class="w"> </span>line<span class="w"> </span>content
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>Food
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>changed<span class="w"> </span>line<span class="w"> </span>content
+</span></code></pre></div>
 <p><code>d</code> 删除行</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 删除第一行</span>
-$ sed <span class="s1">&#39;1d&#39;</span> file
-my food is great
-food is ok
-Food
-fooooooooooood
-
-<span class="c1"># 删除第2-4行</span>
-$ sed <span class="s1">&#39;2,4d&#39;</span> file
-Hello everyone
-fooooooooooood
-
-<span class="c1"># 删除匹配 food 的行</span>
-$ sed <span class="s1">&#39;/food/d&#39;</span> file
-Hello everyone
-Food
-fooooooooooood
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 删除第一行</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;1d&#39;</span><span class="w"> </span>file
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>my<span class="w"> </span>food<span class="w"> </span>is<span class="w"> </span>great
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>food<span class="w"> </span>is<span class="w"> </span>ok
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Food
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>fooooooooooood
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># 删除第2-4行</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;2,4d&#39;</span><span class="w"> </span>file
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>Hello<span class="w"> </span>everyone
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>fooooooooooood
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="c1"># 删除匹配 food 的行</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;/food/d&#39;</span><span class="w"> </span>file
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>Hello<span class="w"> </span>everyone
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>Food
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>fooooooooooood
+</span></code></pre></div>
 <p><code>s</code> 替换内容</p>
 <p>s 可以算sed中最常用的工具了（想象一下，我们用word处理文本，是不是也经常查找替换！）</p>
 <div class="admonition note">
 <p class="admonition-title">基本例子</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 把pattern1替换为pattern2</span>
-<span class="c1"># 首先搜索pattern1，然后将其替换为pattern2</span>
-$ sed s/pattern1/pattern2/flag
-
-flag:
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 把pattern1替换为pattern2</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># 首先搜索pattern1，然后将其替换为pattern2</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>$<span class="w"> </span>sed<span class="w"> </span>s/pattern1/pattern2/flag
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>flag:
+</span></code></pre></div>
 </div>
 <p><code>n</code> 读取下一行，替换当前模式空间
 <code>N</code> 读取下一行，追加在模1式空间后
@@ -2785,154 +4309,146 @@ flag:
 <code>r</code> 读取文本文件，并追加在模式空间后</p>
 <p><strong>执行多个命令</strong></p>
 <p>方法1: -e 参数串联</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 注意&#39;&#39;和&quot;&quot;转义时不同，&quot;&quot;会把$进行转义，所以打印行尾要用单引号</span>
-$ sed -n -e <span class="m">1</span><span class="s2">&quot;p&quot;</span> -e <span class="s2">&quot;2p&quot;</span> -e <span class="s1">&#39;$l&#39;</span> file
-Hello everyone
-my food is great
-fooooooooooood$
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 注意&#39;&#39;和&quot;&quot;转义时不同，&quot;&quot;会把$进行转义，所以打印行尾要用单引号</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>$<span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span>-e<span class="w"> </span><span class="m">1</span><span class="s2">&quot;p&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;2p&quot;</span><span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;$l&#39;</span><span class="w"> </span>file
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Hello<span class="w"> </span>everyone
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>my<span class="w"> </span>food<span class="w"> </span>is<span class="w"> </span>great
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>fooooooooooood$
+</span></code></pre></div>
 <p>方法2: {;} 命令在大括号里串联使用，用分号分割</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 注意单双引号区别</span>
-$ sed -n <span class="s2">&quot;{1p;2p;\$l}&quot;</span> file
-$ sed -n <span class="s1">&#39;{1p;2p;$l}&#39;</span> file
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># 注意单双引号区别</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>$<span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;{1p;2p;\$l}&quot;</span><span class="w"> </span>file
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>$<span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;{1p;2p;$l}&#39;</span><span class="w"> </span>file
+</span></code></pre></div>
 <p>{} 用法更为简便，也更为常用</p>
 <p><strong>保持空间</strong></p>
 <p>保持空间是对模式空间执行命令时的暂存场所，简单将就是提供了一个处理当前行内容时暂存之后，在下一行时再调用回来，或者反之的操作。</p>
 <p><code>h/H</code> 保存命令，将模式空间的内容复制/追加到保持空间
 <code>g/G</code> 取回命令，将保存空间的内容复制/追加到模式空间
 <code>x</code> 交换命令，将保持空间和模式空间内容互换</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 将文件倒续排列</span>
-$ sed  -e <span class="s1">&#39;{1!G;h;$!d}&#39;</span> file
-fooooooooooood
-Food
-food is ok
-my food is great
-Hello everyone
-
-<span class="c1"># 奇数行偶数行互换</span>
-$ cat data
-<span class="m">1</span>
-<span class="m">2</span>
-<span class="m">3</span>
-<span class="m">4</span>
-$ sed -n <span class="s1">&#39;{h;n;G;p}&#39;</span> <span class="m">2</span>
-<span class="m">2</span>
-<span class="m">1</span>
-<span class="m">4</span>
-<span class="m">3</span>
-<span class="c1"># 这条命令的原理是sed先读取第一行到模式空间，因为-n参数所以不会打印显示;然后h命令将第一行复制到保持空间，{}执行多个命令，进入下一个命令n,表示到第二行。然后是命令G，表示将保持空间的第一行内容追加到第二行后。然后命令p打印;接下来读取第三行</span>
-
-<span class="c1"># 用 sed 将 fastq 的reads数据转换为fasta数据</span>
-$ zcat <span class="m">1</span>.fastq.gz <span class="p">|</span> sed -n <span class="s1">&#39;{s/@/&gt;/g;p;n;p;n;n}&#39;</span> &gt; <span class="m">1</span>.fasta
-</code></pre></div>
-
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># 将文件倒续排列</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span>sed<span class="w">  </span>-e<span class="w"> </span><span class="s1">&#39;{1!G;h;$!d}&#39;</span><span class="w"> </span>file
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>fooooooooooood
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>Food
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>food<span class="w"> </span>is<span class="w"> </span>ok
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>my<span class="w"> </span>food<span class="w"> </span>is<span class="w"> </span>great
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Hello<span class="w"> </span>everyone
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="c1"># 奇数行偶数行互换</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>$<span class="w"> </span>cat<span class="w"> </span>data
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="m">1</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="m">2</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="m">3</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="m">4</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>$<span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;{h;n;G;p}&#39;</span><span class="w"> </span><span class="m">2</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="m">2</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="m">1</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="m">4</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="m">3</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="c1"># 这条命令的原理是sed先读取第一行到模式空间，因为-n参数所以不会打印显示;然后h命令将第一行复制到保持空间，{}执行多个命令，进入下一个命令n,表示到第二行。然后是命令G，表示将保持空间的第一行内容追加到第二行后。然后命令p打印;接下来读取第三行</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="c1"># 用 sed 将 fastq 的reads数据转换为fasta数据</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>$<span class="w"> </span>zcat<span class="w"> </span><span class="m">1</span>.fastq.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;{s/@/&gt;/g;p;n;p;n;n}&#39;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="m">1</span>.fasta
+</span></code></pre></div>
 <h2 id="2">2. 脚本示例<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <p><strong>给序列命名</strong></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 在序列test.fas第一行加入序列名称</span>
-$ <span class="nb">echo</span> <span class="s2">&quot;ATCCGAGTTAG&quot;</span> &gt; test.fas
-$ sed -i <span class="s1">&#39;1i\&gt;seq&#39;</span> test.fas
-$ cat test.fa
-&gt;seq
-ATCCGAGTTAG
-</code></pre></div>
-                
-                  
-                    
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># 在序列test.fas第一行加入序列名称</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ATCCGAGTTAG&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>test.fas
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>$<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;1i\&gt;seq&#39;</span><span class="w"> </span>test.fas
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>$<span class="w"> </span>cat<span class="w"> </span>test.fa
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>&gt;seq
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>ATCCGAGTTAG
+</span></code></pre></div>
 
-<hr>
-<div class="md-source-date">
-  <small>
+
+
+
+
+
+
+  
     
-      Last update: 2020-09-14
+  
+  
+
+
+  <aside class="md-source-file">
     
-  </small>
-</div>
-                  
-                
-              
-              
-                
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    2020-09-14
+  </span>
+
+    
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:indexofire@gmail.com">Mark Renton</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
 
 
-              
-            </article>
-          </div>
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
       </main>
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../04_awk/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                04. awk 列处理工具
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../06_tools/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                06. 其他命令行工具
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+        <footer class="md-footer">
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2016 - 2021 HZCDC@Lab
-          </div>
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-      </div>
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2016 - 2021 HZCDC@Lab
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
     
-      <script src="../../../assets/javascripts/vendor.08c56446.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
-      
-      <script>
-        app = initialize({
-          base: "../../..",
-          features: ['navigation.tabs', 'navigation.sections'],
-          search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.8c7e0a7e.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.1e8ae164.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
       
