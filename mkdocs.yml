@@ -125,6 +125,12 @@ nav:
     - '第二十章 其他':
       - '02. GI转Accession': book/C20_Others/02_gi-to-accession.md
   - '专项教程':
+    - '命令行工具下载基因组数据':
+      - '01. 简介': tutorial/CML-download/01_start.md
+      - '02. 下载Assembly': tutorial/CML-download/02_assembly.md
+    - '新冠病毒分析平台':
+      - '01. nextclade': tutorial/nCov/01_nextclade.md
+      - '02. nextstrain': tutorial/nCov/02_ncov.md
     - 'Linux入门':
       - '01. Linux 安装示例': tutorial/Linux/01_linux-installation.md
       - '02. Linux 基本命令': tutorial/Linux/02_basic-cml.md
@@ -170,15 +176,31 @@ markdown_extensions:
   - admonition
   - footnotes
   - meta
+  - attr_list
+  - md_in_html
+  - tables
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
   - toc:
       permalink: true
   - pymdownx.arithmatex
+  - pymdownx.details
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
   - pymdownx.critic
+  - pymdownx.keys
   - pymdownx.emoji:
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
@@ -186,10 +208,14 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.progressbar
 
-google_analytics: ['UA-55420348-3', 'auto']
+#google_analytics: ['UA-55420348-3', 'auto']
 
 plugins:
   - search
