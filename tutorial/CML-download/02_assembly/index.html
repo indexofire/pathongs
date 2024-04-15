@@ -3101,18 +3101,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#datasets" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      datasets工具
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ascp" class="md-nav__link">
-    <span class="md-ellipsis">
-      ascp工具
+      第三方工具
     </span>
   </a>
   
@@ -4052,18 +4043,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#datasets" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      datasets工具
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ascp" class="md-nav__link">
-    <span class="md-ellipsis">
-      ascp工具
+      第三方工具
     </span>
   </a>
   
@@ -4090,18 +4072,20 @@
 <h1 id="ncbi-assembly">命令行下载 NCBI Assembly 数据<a class="headerlink" href="#ncbi-assembly" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
 <p class="admonition-title">内容简介</p>
-<p>命令下有许多下载Assembly数据的方法和工具，根据不同下载方式介绍一些常用的方法。</p>
-</div>
-<p>本教材使用的工具包括：</p>
+<p>通过命令行下载<a href="https://www.ncbi.nlm.nih.gov/assembly/">Assembly</a>数据的方法和工具，不同工具之间的优缺点，可以根据自己网络情况和需求选择不同的下载方式，本节介绍研究工作需求下载数据时常用的一些方法。</p>
+<p>本节使用的工具包括：</p>
 <ul>
-<li>entrez-direct</li>
-<li>ncbi-datasets-cli</li>
-<li>aria2c</li>
-<li>curl</li>
+<li><a href="https://www.ncbi.nlm.nih.gov/books/NBK179288/">entrez-direct</a>: v16.2</li>
+<li><a href="https://www.ncbi.nlm.nih.gov/datasets/">ncbi-datasets-cli</a>: v16.11.0</li>
+<li><a href="https://aria2.github.io/">aria2</a>: v1.37.0</li>
+<li><a href="https://curl.se">curl</a>: v8.5.0</li>
+<li><a href="https://jqlang.github.io/jq/">jq</a>: v1.6</li>
 </ul>
+</div>
 <h2 id="_1">下载单个基因组数据<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>下载单独的<a href="https://www.ncbi.nlm.nih.gov/assembly/">Assembly</a>数据很简单，一般通过网页端即可。在终端下载可以使用的工具和方式：</p>
 <p><strong>FTP下载</strong></p>
-<p>已知assembly数据库的某个基因组accession，比如GCF_000006745.1，可以检索获得ftp url信息，通过wget,curl或aria2c等工具进行下载。</p>
+<p>如果已知assembly数据库的某个基因组accession，比如GCF_000006745.1，可以检索获得ftp url信息，通过wget,curl或aria2c等工具进行下载。</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 直接下载GCF_000006745.1基因组fasta数据</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$<span class="w"> </span>esearch<span class="w"> </span>-db<span class="w"> </span>assembly<span class="w"> </span>-query<span class="w"> </span><span class="s1">&#39;GCF_000006745.1&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>efetch<span class="w"> </span>-format<span class="w"> </span>docsum<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>&gt;<span class="w"> </span>xtract<span class="w"> </span>-pattern<span class="w"> </span>DocumentSummary<span class="w"> </span>-element<span class="w"> </span>FtpPath_RefSeq<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
@@ -4111,44 +4095,113 @@
 <p><strong>datasets下载</strong></p>
 <p>ncbi-datasets-cli是NCBI推出的下载assembly基因组数据的命令行工具。</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 默认下载GCF_000006745.1基因组fasta数据</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$<span class="w"> </span>datasets<span class="w"> </span>download<span class="w"> </span>genome<span class="w"> </span>accession<span class="w"> </span>--filename<span class="w"> </span>GCF_000006745.1.fna.gz<span class="w"> </span>GCF_000006745.1
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$<span class="w"> </span>datasets<span class="w"> </span>download<span class="w"> </span>genome<span class="w"> </span>accession<span class="w"> </span>GCF_000006745.1
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>$<span class="w"> </span>7z<span class="w"> </span>x<span class="w"> </span>ncbi_dataset.zip
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>$<span class="w"> </span>ls<span class="w"> </span>ncbi-dataset/data/GCF_000006745.1
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>GCF_000006745.1_ASM674v1_genomic.fna
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># 下载其他格式数据，比如下载gbk,gff格式的数据</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>$<span class="w"> </span>datasets<span class="w"> </span>download<span class="w"> </span>genome<span class="w"> </span>accession<span class="w"> </span>--include<span class="w"> </span>gbff,gff3<span class="w"> </span>GCF_000006745.1
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>$<span class="w"> </span>7z<span class="w"> </span>x<span class="w"> </span>ncbi_dataset.zip
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>$<span class="w"> </span>ls<span class="w"> </span>ncbi-dataset/data/GCF_000006745.1
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>GCF_000006745.1_ASM674v1_genomic.gbff
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>GCF_000006745.1_ASM674v1_genomic.gff
+</span></code></pre></div>
+<p>下载某个菌种的参考基因组</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 下载霍乱弧菌参考基因组</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span>datasets<span class="w"> </span>download<span class="w"> </span>genome<span class="w"> </span>taxon<span class="w"> </span><span class="m">666</span><span class="w"> </span>--reference
 </span></code></pre></div>
 <h2 id="_2">下载多个基因组数据<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><strong>通过API搜索</strong></p>
-<p>通过WEB访问NCBI的网页，利用其Entrez工具检索到所需要的基因组数据，通过http方式下载是用户的方式。同样的，当在服务器端，我们可以利用NCBI提供的Entrez命令行工具检索并下载数据。</p>
+<p><strong>通过API搜索需要的数据</strong></p>
+<p>通过WEB访问<a href="https://www.ncbi.nlm.nih.gov/">NCBI</a>的网页，利用其<a href="https://www.ncbi.nlm.nih.gov/search/">Entrez</a>工具检索到所需要的基因组数据，通过http方式下载是普通用户的一般方式。当在服务器终端下，我们可以利用<a href="https://www.ncbi.nlm.nih.gov/">NCBI</a>提供的<a href="https://www.ncbi.nlm.nih.gov/books/NBK179288/">Entrez</a>命令行工具检索并下载数据。</p>
+<p><strong>以检索条件下载</strong></p>
+<p><a href="https://www.ncbi.nlm.nih.gov/books/NBK179288/">entrez-direct</a>现在命令行根据筛选条件进行检索，获得ftp地址后通过<a href="https://aria2.github.io/">aria2</a>工具下载。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 检索2023年发布的refseq基因组数据</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$<span class="w"> </span>esearch<span class="w"> </span>-db<span class="w"> </span>assembly<span class="w"> </span>-query<span class="w"> </span><span class="s2">&quot;(&quot;</span>salmonella<span class="s2">&quot;[Organism:exp] AND (&quot;</span><span class="m">2023</span>/01/01<span class="s2">&quot;[SeqReleaseDate]:&quot;</span><span class="m">2023</span>/12/31<span class="s2">&quot;[SeqReleaseDate])) AND &quot;</span>latest+refseq<span class="s2">&quot;[filter]&quot;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>&lt;ENTREZ_DIRECT&gt;
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>&lt;Db&gt;assembly&lt;/Db&gt;
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span>&lt;WebEnv&gt;MCID_661cbbe57c9c0a08887ae7ca&lt;/WebEnv&gt;
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span>&lt;QueryKey&gt;1&lt;/QueryKey&gt;
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span>&lt;Count&gt;1174&lt;/Count&gt;
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span>&lt;Step&gt;1&lt;/Step&gt;
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># 下载1174个命中的结果信息</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>$<span class="w"> </span>esearch<span class="w"> </span>-db<span class="w"> </span>assembly<span class="w"> </span>-query<span class="w"> </span><span class="s2">&quot;(&quot;</span>salmonella<span class="s2">&quot;[Organism:exp] AND \</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="s2">&gt; (&quot;</span><span class="m">2023</span>/01/01<span class="s2">&quot;[SeqReleaseDate]:&quot;</span><span class="m">2023</span>/12/31<span class="s2">&quot;[SeqReleaseDate])) \</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="s2">&gt; AND &quot;</span>latest+refseq<span class="s2">&quot;[filter]&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>&gt;<span class="w"> </span>efetch<span class="w"> </span>-format<span class="w"> </span>docsum<span class="w"> </span>&gt;<span class="w"> </span>result.xml
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>$<span class="w"> </span>xtract<span class="w"> </span>-input<span class="w"> </span>result.xml<span class="w"> </span>-pattern<span class="w"> </span>DocumentSummary<span class="w"> </span>-element<span class="w"> </span>FtpPath_RefSeq<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>&gt;<span class="w"> </span>awk<span class="w"> </span>-F’/’<span class="w"> </span>‘<span class="o">{</span>print<span class="w"> </span><span class="nv">$0</span>”/”<span class="nv">$NF</span>”_genomic.fna.gz”<span class="o">}</span>’<span class="w"> </span>&gt;<span class="w"> </span>ftp_url
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>$<span class="w"> </span>aria2c<span class="w"> </span>-j<span class="w"> </span><span class="m">3</span><span class="w"> </span>-i<span class="w"> </span>ftp_url
+</span></code></pre></div>
+<p>通过检索得到的xml信息中accession信息生成列表清单，再通过datasets进行下载。dehydrated模式可以获得多个基因组下载地址，并通过rehydrated方式快速批量下载，效果好于ftp下载方式。是目前大规模下载<a href="https://www.ncbi.nlm.nih.gov/assembly/">Assembly</a>基因组数据最好的方法。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 提取之前1174个命中的基因组的accession</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span>xtract<span class="w"> </span>-input<span class="w"> </span>result.xml<span class="w"> </span>-pattern<span class="w"> </span>DocumentSummary<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>&gt;<span class="w"> </span>-element<span class="w"> </span>AssemblyAccession<span class="w"> </span>&gt;<span class="w"> </span>accession
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># 生成下载信息，包含在压缩包ncbi_datasets.zip</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>$<span class="w"> </span>datasets<span class="w"> </span>download<span class="w"> </span>genome<span class="w"> </span>accession<span class="w"> </span>--inputfile<span class="w"> </span>accession<span class="w"> </span>--dehydrated
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># 解压缩文件，下载信息保存在fetch.txt中</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>$<span class="w"> </span>7z<span class="w"> </span>x<span class="w"> </span>ncbi_datasets.zip
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># rehydrated，下载基因组</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>$<span class="w"> </span>datasets<span class="w"> </span>rehydrated<span class="w"> </span>--directory<span class="w"> </span>.
+</span></code></pre></div>
+<p>我们还可以使用<code>datasets summary</code>命令进一步筛选基因组。</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 使用summary命令生成json格式的基因组信息</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$<span class="w"> </span>datasets<span class="w"> </span>summary<span class="w"> </span>genome<span class="w"> </span>accession<span class="w"> </span>--inputfile<span class="w"> </span>accession<span class="w"> </span>&gt;<span class="w"> </span>result.json
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># jq工具进行筛选，保留checkM值大于99.7的基因组</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>$<span class="w"> </span>cat<span class="w"> </span>result.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.[][] | .accession, .checkm_info.completeness&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>&gt;<span class="w"> </span>xargs<span class="w"> </span>-n2<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{if($2&gt;99.7)print}&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>filter
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span>filter
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="m">199</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># 剩下符合条件基因组199个，dehydrated方式下载</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>$<span class="w"> </span>datasets<span class="w"> </span>download<span class="w"> </span>genome<span class="w"> </span>accession<span class="w"> </span>--inputfile<span class="w"> </span>filter<span class="w"> </span>--dehydrated
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>$<span class="w"> </span>7z<span class="w"> </span>x<span class="w"> </span>ncbi_datasets.zip
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>$<span class="w"> </span>datasets<span class="w"> </span>rehydrated<span class="w"> </span>--directory<span class="w"> </span>.
+</span></code></pre></div>
 <p><strong>以物种为单位进行下载</strong></p>
 <p>需要开展某个物种的研究，希望得到该物种的全部或部分测序数据时，可以从NCBI的taxonomy入手检索会非常方便。因为taxonomy数据库提供种以下的taxon id，这样我们甚至可以对亚种或者型为单位进行检索。以下例子为下载特定血清型沙门菌（乙型副伤寒沙门菌）的Assembly数据库。</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 检索乙型副伤寒的 taxonomy</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span>esearch<span class="w"> </span>-db<span class="w"> </span>taxonomy<span class="w"> </span>-query<span class="w"> </span><span class="s2">&quot;salmonella paratyphi B&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>efetch<span class="w"> </span>-format<span class="w"> </span>docsum<span class="w"> </span>&gt;<span class="w"> </span>taxon.xml
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>$<span class="w"> </span><span class="nv">txid</span><span class="o">=</span><span class="k">$(</span>xtract<span class="w"> </span>-input<span class="w"> </span>taxon.xml<span class="w"> </span>-pattern<span class="w"> </span>DocumentSummary<span class="w"> </span>-element<span class="w"> </span>Id<span class="k">)</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># 乙型副伤寒沙门菌的txid</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$txid</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="m">57045</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># 检索乙型副伤寒的 taxonomy</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span>esearch<span class="w"> </span>-db<span class="w"> </span>taxonomy<span class="w"> </span>-query<span class="w"> </span><span class="s2">&quot;salmonella paratyphi B&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>efetch<span class="w"> </span>-format<span class="w"> </span>docsum<span class="w"> </span>&gt;<span class="w"> </span>taxon.xml
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>$<span class="w"> </span><span class="nv">txid</span><span class="o">=</span><span class="k">$(</span>xtract<span class="w"> </span>-input<span class="w"> </span>taxon.xml<span class="w"> </span>-pattern<span class="w"> </span>DocumentSummary<span class="w"> </span>-element<span class="w"> </span>Id<span class="k">)</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># 乙型副伤寒沙门菌的txid</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$txid</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="m">57045</span>
 </span></code></pre></div>
 <p>通过entrez-direct工具获取txid后，可以抓取assembly数据库该txid对应的所有数据。然后将其中基因组在ftp服务器上的地址提取后，采用命令行下载工具如aria2c等进行下载。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>aria2c优点在与支持断点续传，大批量下载的过程发生断联后，未下载完成的文件可以看到aria2c的临时文件，因此可以方便的重新运行aria2c命令以及对应数据的url地址续传数据。</p>
 </div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 生成乙型副伤寒 Assembly 数据 xml 文件</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$<span class="w"> </span>esearch<span class="w"> </span>-db<span class="w"> </span>assembly<span class="w"> </span>-query<span class="w"> </span><span class="s2">&quot;txid</span><span class="si">${</span><span class="nv">id</span><span class="si">}</span><span class="s2">[Organism:exp] AND latest[filter]&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>efetch<span class="w"> </span>-format<span class="w"> </span>docsum<span class="w"> </span>&gt;<span class="w"> </span>info.xml
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># 提取 Genbank 下载链接</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>$<span class="w"> </span>xtract<span class="w"> </span>-input<span class="w"> </span>info.xml<span class="w"> </span>-pattern<span class="w"> </span>DocumentSummary<span class="w"> </span>-element<span class="w"> </span>FtpPath_GenBank<span class="w"> </span>&gt;<span class="w"> </span>ftp.list
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># 将info.xml数据中对应基因组的ftp地址提取到文件ftp_url中</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>$<span class="w"> </span>awk<span class="w"> </span>-F’/’<span class="w"> </span>‘<span class="o">{</span>print<span class="w"> </span><span class="nv">$0</span>”/”<span class="nv">$NF</span>”_genomic.fna.gz”<span class="o">}</span>’<span class="w"> </span>ftp.list<span class="w"> </span>&gt;<span class="w"> </span>ftp_url
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># aria2c工具下载乙型副伤寒沙门菌的 Assembly 数据，并发连接数3</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>$<span class="w"> </span>aria2c<span class="w"> </span>-j<span class="w"> </span><span class="m">3</span><span class="w"> </span>-i<span class="w"> </span>ftp_url
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># 解压缩文件并重命名</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>$<span class="w"> </span>gunzip<span class="w"> </span>*.gz
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1"># 将文件名重命名为assembly数据库中基因组的accession名称</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.fna<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>mv<span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="si">${</span><span class="nv">i</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">15</span><span class="si">}</span>.fna<span class="p">;</span><span class="w"> </span><span class="k">done</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 生成乙型副伤寒 Assembly 数据 xml 文件</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>$<span class="w"> </span>esearch<span class="w"> </span>-db<span class="w"> </span>assembly<span class="w"> </span>-query<span class="w"> </span><span class="s2">&quot;txid</span><span class="si">${</span><span class="nv">id</span><span class="si">}</span><span class="s2">[Organism:exp] AND latest[filter]&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>efetch<span class="w"> </span>-format<span class="w"> </span>docsum<span class="w"> </span>&gt;<span class="w"> </span>info.xml
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># 提取 Genbank 下载链接</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>$<span class="w"> </span>xtract<span class="w"> </span>-input<span class="w"> </span>info.xml<span class="w"> </span>-pattern<span class="w"> </span>DocumentSummary<span class="w"> </span>-element<span class="w"> </span>FtpPath_GenBank<span class="w"> </span>&gt;<span class="w"> </span>ftp.list
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># 将info.xml数据中对应基因组的ftp地址提取到文件ftp_url中</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>$<span class="w"> </span>awk<span class="w"> </span>-F’/’<span class="w"> </span>‘<span class="o">{</span>print<span class="w"> </span><span class="nv">$0</span>”/”<span class="nv">$NF</span>”_genomic.fna.gz”<span class="o">}</span>’<span class="w"> </span>ftp.list<span class="w"> </span>&gt;<span class="w"> </span>ftp_url
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># aria2c工具下载乙型副伤寒沙门菌的 Assembly 数据，并发连接数3</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>$<span class="w"> </span>aria2c<span class="w"> </span>-j<span class="w"> </span><span class="m">3</span><span class="w"> </span>-i<span class="w"> </span>ftp_url
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1"># 解压缩文件并重命名</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>$<span class="w"> </span>gunzip<span class="w"> </span>*.gz
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1"># 将文件名重命名为assembly数据库中基因组的accession名称</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.fna<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>mv<span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="si">${</span><span class="nv">i</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">15</span><span class="si">}</span>.fna<span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span></code></pre></div>
+<p>采用datasets下载物种<a href="https://www.ncbi.nlm.nih.gov/assembly/">Assembly</a>数据</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>datasets<span class="w"> </span>download<span class="w"> </span>genome<span class="w"> </span>taxon<span class="w"> </span><span class="nv">$txid</span><span class="w"> </span>--dehydrated
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>$<span class="w"> </span>7z<span class="w"> </span>x<span class="w"> </span>ncbi_datasets.zip
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>$<span class="w"> </span>datasets<span class="w"> </span>rehydrated<span class="w"> </span>--directory<span class="w"> </span>.
 </span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>NCBI最近即将更新其Genome和Assembly页面，新的版本和原页面功能有较大改变。</p>
 </div>
-<h2 id="datasets">datasets工具<a class="headerlink" href="#datasets" title="Permanent link">&para;</a></h2>
-<h2 id="ascp">ascp工具<a class="headerlink" href="#ascp" title="Permanent link">&para;</a></h2>
+<h2 id="_3">第三方工具<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>其他常用的第三方小工具：</p>
+<ul>
+<li><a href="https://github.com/davised/get_assemblies">get_assemblies</a></li>
+<li><a href="https://github.com/jameslz/ncbi-kit">ncbi-kit</a></li>
+</ul>
+<p>个人使用感受，目前下载<a href="https://www.ncbi.nlm.nih.gov/assembly/">Assembly</a>数据库的基因组数据最优秀的工具还是官方的<a href="https://www.ncbi.nlm.nih.gov/datasets/">ncbi-datasets-cli</a>工具，起<code>rehydrated</code>下载方式高效且不易出错。</p>
 
 
 
@@ -4180,12 +4233,13 @@
   <span class="md-source-file__fact">
     <span class="md-icon" title="Contributors">
       
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"/></svg>
       
     </span>
     <nav>
       
-        <a href="mailto:indexofire@gmail.com">Mark Renton</a>
+        <a href="mailto:indexofire@gmail.com">Mark Renton</a>, 
+        <a href="mailto:not.committed.yet">Not Committed Yet</a>
     </nav>
   </span>
 
