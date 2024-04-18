@@ -130,7 +130,7 @@ nav:
       - '02. 下载Assembly': tutorial/CML-download/02_assembly.md
     - '新冠病毒分析平台':
       - '01. nextclade': tutorial/nCov/01_nextclade.md
-      - '02. nextstrain': tutorial/nCov/02_ncov.md
+      - '02. nextstrain': tutorial/nCov/02_nextstrain.md
     - 'Linux入门':
       - '01. Linux 安装示例': tutorial/Linux/01_linux-installation.md
       - '02. Linux 基本命令': tutorial/Linux/02_basic-cml.md
