@@ -3025,6 +3025,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    01. 简介
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -3034,6 +3045,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ncbi" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. NCBI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      关于下载速度
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3140,7 +3203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nCov/02_ncov/" class="md-nav__link">
+      <a href="../../nCov/02_nextstrain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3961,6 +4024,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ncbi" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. NCBI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      关于下载速度
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3978,8 +4082,32 @@
 
 
 <h1 id="_1">命令行下载公共数据库测序数据<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
+<div class="admonition abstract">
 <p class="admonition-title">内容简介</p>
+<p>很多场合下需要用到公共数据库中他人提交的基因组，就需要下载基因组数据。常规方法可以通过NCBI的entrez或者EBI的在网页端搜索后，对检索到的结果以文件形式下载。</p>
+<p>如果要大规模下载数据，则建议在服务器端命令行中要进行操作，并通过构建自动化工作流程，实现无人值守同步数据。本节主要介绍 NCBI/EBI/DDBJ的公共数据库中数据在服务器端命令行下获得的方法。</p>
+</div>
+<h2 id="_2">基本概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1-ncbi">1. NCBI<a class="headerlink" href="#1-ncbi" title="Permanent link">&para;</a></h3>
+<p>NCBI常用的基因组数据库：</p>
+<ul>
+<li>Genbank</li>
+<li>Assembly</li>
+<li>SRA</li>
+<li>Geo</li>
+</ul>
+<h2 id="_3">关于下载速度<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>不同地区、不同时间下载速度会有很大差异。但总体上来说，峰值速度上，国内我们所在的网络线路速度如下：</p>
+<ul>
+<li>EBI ENA ascp 下载峰值 10~30Mb/s</li>
+<li>AWS s3 cp 下载峰值 ~1Mb/s</li>
+<li>NCBI http wget/curl/aria2c 不同工具的速度差异明显，但是总体上速度 &lt;1MB/s，大部分时间稳定在100KB/s</li>
+<li>prefetch http 下载最慢，~10KB/s</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">优点vs缺点</p>
+<p>通过<code>ascp</code>在ENA进行下载是目前的首选，但问题在于ENA也不够稳定，容易遇到无法访问或者认证错误等现象，如果是服务器的原因可能等一段时间就可以继续，这样需要人工干预。</p>
+<p>ENA可以直接下载fastq数据，省去sra dump fastq时对于IO和CPU的消耗。但是ENA下载容易中断，导致数据不完整，fastq数据不能像sra一样，可以用<code>vdb-validate</code>来验证下载数据的完整性。因此需要调用ENA reports API来抓取fastq文件的md5校验值。</p>
 </div>
 
 
@@ -4001,7 +4129,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    2024-04-15
+    2024-04-18
   </span>
 
     
