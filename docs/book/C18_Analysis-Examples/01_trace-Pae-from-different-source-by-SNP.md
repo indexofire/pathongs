@@ -236,11 +236,12 @@ Constructing alignment object for core.aln
 # RAxML 构建进化树
 $ raxmlHPC -f a -x 12345 -p 12345 -# 100 -m GTRGAMMA -s core.phy -n pae -T 40
 $ figtree RAxML_bestTree.pae
-```
 
-生成的进化树图类似下图
+---
 
-![Alt text](./RAxML_bestTree.ex.png)
+## 0. 进化树
+
+<!-- 图片示例: 用户需要运行上述命令生成 RAxML_bestTree.ex.png -->
 
 >因为比对的是fasta格式的文件，所以snps不止是编码区CDS的，而是整个基因组上的snps。
 

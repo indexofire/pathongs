@@ -400,7 +400,7 @@ df = pd.read_table("meta.txt")
 sns.jointplot(x="contig_count", y="scaffold_n50", data=df)
 ```
 
-![plot](../../assets/images/C02/03/plot.png)
+<!-- 图片缺失: plot.png -->
 
 **获取SRA菌株信息**
 

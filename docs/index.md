@@ -2,7 +2,7 @@
 
 **2020.3.20**
 
-1. 添加 artic network 关于 [covid19 新冠病毒基因组测序方法](protocol/artic-network-covid19/)
+1. <!-- 链接已移除: artic network covid19 测序方法 -->
 
 ---
 

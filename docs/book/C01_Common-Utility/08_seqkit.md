@@ -4,7 +4,7 @@
 
 ---
 
-[Seqkit]() 是由国人 [shenwei]() 开发，功能强大的命令行序列处理工具套件。
+[Seqkit](https://github.com/shenwei356/seqkit) 是由国人 [shenwei](https://github.com/shenwei356) 开发，功能强大的命令行序列处理工具套件。
 
 ## 使用
 

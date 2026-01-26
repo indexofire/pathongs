@@ -1,3 +1,12 @@
+# MkDocs Configuration File
+#
+# Documentation: https://www.mkdocs.org/user-guide/configuration/
+#
+# NOTE: This file uses !!python/name: tags which may cause LSP warnings.
+# These are valid MkDocs/Pymdownx tags and will work correctly with MkDocs.
+# Install yaml-language-server to avoid LSP warnings if needed.
+#
+
 site_name: 杭州市疾控中心测序实验室
 site_description: '杭州市疾控中心测序实验室'
 site_author: 'indexofire'
@@ -42,11 +51,9 @@ nav:
       - '04. 病毒基因组组装': book/C02_Raw-Data-to-Genome/04_virus-assembly.md
       - '05. GATK3': book/C02_Raw-Data-to-Genome/05_gatk3.md
       - '06. GATK4': book/C02_Raw-Data-to-Genome/06_gatk4.md
-      #- '10. snap': C04_Pathogen-Genome-Assembly/10_snap.md
       - '11. 长序列比对': book/C02_Raw-Data-to-Genome/11_long-noisy-reads-assembly.md
       - '12. 二代三代混合组装': book/C02_Raw-Data-to-Genome/12_hybrid-assembly.md
       - '14. bwa 长序列比对': book/C02_Raw-Data-to-Genome/14_bwa-long-sequence-mapping.md
-      #- '15. whatshap': C04_Pathogen-Genome-Assembly/15_whatshap.md
     - '第三章 基因组注释':
       - '01. Prokka 快速注释': book/C03_Genome-Annotation/01_prokka.md
       - '02. 在线注释工具 rast': book/C03_Genome-Annotation/02_rast.md
@@ -77,8 +84,6 @@ nav:
       - '02. Galaxy 平台': book/C09_Analysis-Platform/02_galaxy.md
       - '03. Amazon EC2 云平台': book/C09_Analysis-Platform/03_amazon.md
       - '04. 其他平台': book/C09_Analysis-Platform/04_others.md
-      - '05. anvio': book/C16_Standalone-Platform/01_anvio.md
-      - '02. galaxy': book/C16_Standalone-Platform/02_galaxy.md
     - '第八章 重组与种群分析':
       - '01. 病毒重组': book/C10_Recombination-and-Population-Structure/01_virus-recombination.md
       - '02. Gubbins 分析': book/C10_Recombination-and-Population-Structure/02_gubbins.md
@@ -157,14 +162,12 @@ nav:
       - '09. gff': tutorial/Format/09_gff.md
       - '10. cram': tutorial/Format/10_cram.md
   - '实验手册':
-    - '': protocol.md
-    - 'ArticNetwork Covid-19测序': protocol/artic-network-covid19.md
+    - '实验手册': protocol.md
   - '关于我们':
-    - '': about.md
+    - '关于我们': about.md
 use_directory_urls: true
 
 extra_javascript:
-  #- https://cdn.rawgit.com/knsv/mermaid/6.0.0/dist/mermaid.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js
   - https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js

@@ -34,7 +34,7 @@ BED 格式如下：
 
 !!! Tips
     此表显示了Genome Browser将BED分数值转换为灰色阴影
-    ![shade](../../assets/images/C03/11/shade.png)
+    ![shade](../../assets/images/book/C03/11/shade.png)
 
 **基本例子：**
 
