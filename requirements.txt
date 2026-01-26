@@ -1,3 +1,7 @@
+List of packages in environment: "/home/mark/.mamba/envs/pathongs"
+
+_libgcc_mutex=0.1=conda_forge
+_openmp_mutex=4.5=2_gnu
 babel=2.17.0=pyhd8ed1ab_0
 backports.zstd=1.3.0=py314h680f03e_0
 backrefs=5.8=pyhd8ed1ab_0
@@ -68,7 +72,7 @@ typing_extensions=4.15.0=pyhcf101f3_0
 tzdata=2025c=hc9c84f9_1
 urllib3=2.6.3=pyhd8ed1ab_0
 watchdog=6.0.0=py314hdafbbf9_2
-wheel=0.45.1=pyhd8ed1ab_1
+wheel=0.46.3=pyhd8ed1ab_0
 yaml=0.2.5=h280c20c_3
 zipp=3.23.0=pyhcf101f3_1
 zstd=1.5.7=hb78ec9c_6
